@@ -49,7 +49,8 @@ coverage likewise (1 for complete). amphid scores a read over the span
 its reference covers, so a partial reference is scored on fewer bases -
 the grade says how many fewer.
 
-WINDOWS. NC1 and NC2 are 20 bases. A 2xR read pair, primers trimmed,
+WINDOWS. Read lengths are set per build (--read-lengths, default
+150,250), one resolution table each. NC1 and NC2 are 20 bases. A 2xR read pair, primers trimmed,
 sees the first R-20 bases of the ITS2 and the last R-20 bases of the
 amplicon - of which ~47 are the 28S stretch the references leave out, so
 R-67 of the ITS2. Records that short or shorter are seen whole.
@@ -79,7 +80,7 @@ CONFLICT_RANKS = RANKS[:RANKS.index("order") + 1]
 GRADES = ["complete", "near_complete", "partial_90", "partial_75", "partial", "unmeasured"]
 PRIMER_LEN = 20
 STRETCH_28S = 47
-READ_LENGTHS = [150, 250]
+READ_LENGTHS = [150, 250]   # default; set per build with --read-lengths
 TOP = 30
 
 NOT_A_SPECIES = re.compile(r" x | (cf|aff)\.? |sensu lato| s\.l\.|environmental sample")
@@ -288,7 +289,11 @@ def main() -> int:
     ap.add_argument("--version", default="dev")
     ap.add_argument("--workers", type=int, default=os.cpu_count())
     ap.add_argument("--overrides", default=os.path.join(HERE, "curation", "overrides.tsv"))
+    ap.add_argument("--read-lengths", default=",".join(map(str, READ_LENGTHS)),
+                    help="comma-separated Illumina read lengths; one resolution table and "
+                         "margin column per length (default 150,250)")
     a = ap.parse_args()
+    read_lengths = [int(x) for x in a.read_lengths.split(",")]
     out = a.outdir
     os.makedirs(out, exist_ok=True)
 
@@ -411,7 +416,7 @@ def main() -> int:
             fh.write(f"{rid}\t{c}\t{e1}\t{e2}\t{acc}\n")
 
     # --- margins
-    geoms = [windows(r) for r in READ_LENGTHS]
+    geoms = [windows(r) for r in read_lengths]
     marg = margins(os.path.join(out, "refdb.fasta"), seqs, tax, geoms, a.workers)
     with open(os.path.join(out, "species_margins.tsv"), "w") as fh:
         fh.write("\t".join(["id", "margin_whole"] + [f"margin_{w1}x{w2}" for w1, w2 in geoms]
@@ -446,7 +451,7 @@ def main() -> int:
             mg = marg[rid][1] if rid in marg and r == "species" else ""
             fh.write(f"{rid}\t{r}\t{n}\t{tax[rid]['grade']}\t{mg}\n")
     geometries = []
-    for gi, (read_len, (w1, w2)) in enumerate(zip(READ_LENGTHS, geoms)):
+    for gi, (read_len, (w1, w2)) in enumerate(zip(read_lengths, geoms)):
         key = {rid: (s if len(s) <= w1 + w2 else s[:w1] + "|" + s[-w2:]) for rid, s in seqs.items()}
         by = collections.defaultdict(list)
         for rid, k in key.items():
