@@ -30,8 +30,9 @@ record anchored at both ends: `complete`, `near_complete` (>= 98%),
 
 ## The first build (scratch, 2026-11-09)
 
-12,988 records from 15,108 nemabiome sequences (version 20260317), 425
-genera, 1,837 species with a record of their own.
+12,980 records from 15,108 nemabiome sequences (version 20260317; 15
+dropped as mislabelled, `curation/overrides.tsv`), 424 genera, 1,838
+species with a record of their own.
 
 | Grade | Records |
 |---|---:|
@@ -48,12 +49,12 @@ is tied with it and stops at the rank they share.
 
 | Read | Species | Genus | Family or above |
 |---|---:|---:|---:|
-| Nanopore (whole ITS2) | 93% | 6% | 1% |
-| Illumina 150x150 | 92% | 7% | 1% |
-| Illumina 250x250 | 93% | 6% | 1% |
+| Nanopore (whole ITS2) | 94% | 6% | 0.2% |
+| Illumina 150x150 | 92% | 7% | 0.2% |
+| Illumina 250x250 | 94% | 6% | 0.2% |
 
-Most species-level records are close to another species: 1,040 at one
-edit, 859 at two, over a median ITS2 of 240 bases (`species_margins.tsv`).
+Most species-level records are close to another species: 1,019 at one
+edit, 836 at two, over a median ITS2 of 240 bases (`species_margins.tsv`).
 At that length amphid's 99.7% species limit allows no mismatch at all.
 
 ## Build

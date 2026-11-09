@@ -27,6 +27,9 @@ Writes the same set of files as vespa-18s-refdb, so amphid reads either:
   anchor_lookalikes.tsv         adapter-anchor near-copies (pre-flight mask)
   manifest.json, summary.txt
 
+CURATION. curation/overrides.tsv (--overrides) drops or relabels source
+records first; a dropped record stays in members.tsv with its reason.
+
 MERGING. Identical ITS2s become one record. At each rank the record
 takes the single informative name its members agree on; two names stop
 it there. Species names that do not name one species do not vote:
@@ -284,6 +287,7 @@ def main() -> int:
     ap.add_argument("outdir")
     ap.add_argument("--version", default="dev")
     ap.add_argument("--workers", type=int, default=os.cpu_count())
+    ap.add_argument("--overrides", default=os.path.join(HERE, "curation", "overrides.tsv"))
     a = ap.parse_args()
     out = a.outdir
     os.makedirs(out, exist_ok=True)
@@ -295,11 +299,36 @@ def main() -> int:
     for r in csv.DictReader(open(a.taxonomy), delimiter="\t"):
         label[r["accn"].split(".")[0]] = (r["accn"], [r[k] for k in RANKS])
 
+    # --- curation: drops and relabels (curation/overrides.tsv)
+    drops = {}
+    if a.overrides and os.path.exists(a.overrides):
+        rows = csv.DictReader((ln for ln in open(a.overrides) if not ln.startswith("#")), delimiter="\t")
+        for r in rows:
+            acc = r["accession"].split(".")[0]
+            if acc not in label:
+                sys.exit(f"override for {acc}, which is not in the backbone")
+            if r["action"] == "drop":
+                drops[acc] = r["reason"]
+            elif r["action"] == "relabel":
+                lab = r["label"].split(";")
+                if len(lab) != len(RANKS):
+                    sys.exit(f"relabel {acc}: need {len(RANKS)} ranks")
+                label[acc] = (label[acc][0], lab)
+            else:
+                sys.exit(f"override {acc}: unknown action {r['action']}")
+
     # --- collapse
     groups = collections.defaultdict(list)
     for acc, s in refs.items():
-        groups[s].append(acc)
+        if acc not in drops:
+            groups[s].append(acc)
     seqs, tax, members, conflicts = {}, {}, [], []
+    for acc in drops:
+        g = grade[acc]
+        members.append({"id": "", "source": a.source, "accession": label[acc][0],
+                        "label": ";".join(label[acc][1]), "role": "dropped", "grade": g["grade"],
+                        "coverage": g["coverage"], "trimmed_start": g["trimmed_start"],
+                        "trimmed_end": g["trimmed_end"], "note": drops[acc]})
     for s, accs in groups.items():
         rid = "ITS2_" + hashlib.sha1(s.encode()).hexdigest()[:12]
         labs = {acc: label[acc][1] for acc in accs}
@@ -335,7 +364,7 @@ def main() -> int:
             members.append({"id": rid, "source": a.source, "accession": label[acc][0],
                             "label": ";".join(labs[acc]), "role": role[acc], "grade": g["grade"],
                             "coverage": g["coverage"], "trimmed_start": g["trimmed_start"],
-                            "trimmed_end": g["trimmed_end"]})
+                            "trimmed_end": g["trimmed_end"], "note": ""})
     order = sorted(seqs)
 
     with open(os.path.join(out, "refdb.fasta"), "w") as fh:

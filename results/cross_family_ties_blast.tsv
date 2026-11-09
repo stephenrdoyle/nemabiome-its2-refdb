@@ -1,0 +1,62 @@
+# BLAST (megablast, nt, 2026-11-09) of every record on either side of a cross-family tie in the first build.
+# hits_98: hits >= 98% identity over >= 90% of the query, own accessions excluded (accessions listed where the tie table gives them).
+id	label	accessions	length	hits_98	best_other_hit
+ITS2_064c6115980a	Hysterothylacium amoyense	ON098270.1	206	Hysterothylacium amoyense x36; Hysterothylacium sp. x11; Contracaecum sp. x2; Contracaecum muraenesoxi x1	MW423794 1.000 Hysterothylacium amoyense
+ITS2_08009acf6e05	Oscheius tipulae	PX455932.1	238	Steinernema glaseri x8	KM016418 1.000 Steinernema glaseri
+ITS2_0ce1d5717fb5	Heterorhabditis bacteriophora	MG593948.1	231	Heterorhabditis bacteriophora x41; Heterorhabditis sp. x4; Heterorhabditis zacatecana x1; Steinernema khoisanae x1; Heterorhabditis ruandica x1; Heterorhabditis casmirica x1	MG334257 1.000 Heterorhabditis bacteriophora
+ITS2_0fbb52248f2a	Hysterothylacium amoyense	PX446498.1	138	Hysterothylacium amoyense x36; Hysterothylacium sp. x10; Contracaecum sp. x2; Contracaecum muraenesoxi x1	MW423794 1.000 Hysterothylacium amoyense
+ITS2_1024fb84592f	Pratylenchus crenatus	PQ403988.1	209	Punctodera mulveyi x7; Punctodera matadorensis x3	MN121005 1.000 Punctodera mulveyi
+ITS2_11b82ee9dd5b	Hysterothylacium amoyense	PX446490.1	185	Hysterothylacium amoyense x36; Hysterothylacium sp. x10; Contracaecum sp. x2; Contracaecum muraenesoxi x1	MW423794 1.000 Hysterothylacium amoyense
+ITS2_1621f7d0fe2c	Hysterothylacium amoyense	MW423789.1	306	Hysterothylacium amoyense x43; Contracaecum muraenesoxi x3; Contracaecum sp. x2; Hysterothylacium sp. x1	MT020120 1.000 Hysterothylacium amoyense
+ITS2_191343b6543f	Crenosoma vulpis	OK465458.1	370	Crenosoma vulpis x10; Cercopithifilaria sp. x1	OM480716 1.000 Crenosoma vulpis
+ITS2_1a1da5a4e230	Steinernema glaseri	KM016418.1	310	Steinernema glaseri x9	KM016405 0.994 Steinernema glaseri
+ITS2_1b1cbcc60433	Marshallagia occidentalis	KC295417.1	237	Marshallagia marshalli x15; Marshallagia trifida x4; Marshallagia schumakovitschi x3; Marshallagia occidentalis x3; Marshallagia sp. x3; Marshallagia sogdiana x2	MT110919 1.000 Marshallagia marshalli
+ITS2_2132195be9ab	Hysterothylacium amoyense	ON098269.1	119	Hysterothylacium amoyense x38; Hysterothylacium sp. x10; Contracaecum sp. x2	MW423794 1.000 Hysterothylacium amoyense
+ITS2_251d7b19df32	Heterorhabditis indica	OQ653109.1	186	Acrobeloides bodenheimeri x2	MW667577 1.000 Acrobeloides bodenheimeri
+ITS2_25b9f034c898	Oscheius onirici	LN613267.1,PX055666.1	249	Oscheius sp. x13; Oscheius onirici x7	PZ523045 1.000 Oscheius onirici
+ITS2_27e323c620f7	Contracaecum muraenesoxi	MW420927.1	303	Hysterothylacium amoyense x38; Hysterothylacium sp. x5; Contracaecum muraenesoxi x3; Contracaecum sp. x2; Hysterothylacium zhoushanense x1	MW961521 1.000 Hysterothylacium sp.
+ITS2_2ce1edce25fd	Hysterothylacium amoyense	ON098268.1	224	Hysterothylacium amoyense x33; Hysterothylacium sp. x10; Contracaecum muraenesoxi x3; Contracaecum sp. x2; Hysterothylacium zhoushanense x1	MW413317 1.000 Hysterothylacium amoyense
+ITS2_30cbd3228982	(order)	MF033536.1,MF372928.1,MF535289.1,MG334256.1,MG334257.1	241	Heterorhabditis bacteriophora x37; Heterorhabditis sp. x4; Heterorhabditis zacatecana x1; Steinernema khoisanae x1; Heterorhabditis ruandica x1; Heterorhabditis casmirica x1	MG593948 1.000 Heterorhabditis bacteriophora
+ITS2_3181dc2176cc	Hysterothylacium amoyense	KT749422.1	282	Hysterothylacium amoyense x44; Contracaecum muraenesoxi x3; Contracaecum sp. x2; Hysterothylacium sp. x1	MT020120 1.000 Hysterothylacium amoyense
+ITS2_31ff21231975	Hysterothylacium zhoushanense	MF539814.1	311	Hysterothylacium zhoushanense x24; Hysterothylacium zhoushanensis x6; Contracaecum muraenesoxi x1	MH211556 1.000 Hysterothylacium zhoushanense
+ITS2_3e486ad5e615	Hysterothylacium amoyense	ON098281.1	219	Hysterothylacium amoyense x36; Hysterothylacium sp. x10; Contracaecum sp. x2; Contracaecum muraenesoxi x1	MW423794 1.000 Hysterothylacium amoyense
+ITS2_3e8d65d10691	Hysterothylacium amoyense	PX446495.1	168	Hysterothylacium amoyense x36; Hysterothylacium sp. x10; Contracaecum sp. x2; Contracaecum muraenesoxi x1	MW423794 1.000 Hysterothylacium amoyense
+ITS2_4c4f7769d0d7	Punctodera mulveyi	MN121000.1	215	Punctodera mulveyi x6; Punctodera matadorensis x3; Pratylenchus crenatus x1	MN121005 1.000 Punctodera mulveyi
+ITS2_5869cf32a30b	Hysterothylacium amoyense	PX446497.1	124	Hysterothylacium amoyense x37; Hysterothylacium sp. x10; Contracaecum sp. x2	MW423794 1.000 Hysterothylacium amoyense
+ITS2_5a795eab151b	(order)	AJ577468.1,KJ192195.1,MG679517.1,MG685662.1	260	Mecistocirrus digitatus x8	LC800383 1.000 Mecistocirrus digitatus
+ITS2_5ede7e09c7a0	Steinernema siamkayai	GQ258640.1	174	Steinernema siamkayai x39; Steinernema sp. x10; Heterorhabditis indica x1	KP096500 1.000 Steinernema sp.
+ITS2_60a76a311484	Heterorhabditis indica	KF937810.1	203	Heterorhabditis indica x43; Heterorhabditis sp. x4; Steinernema siamkayai x2	KY977412 1.000 Heterorhabditis indica
+ITS2_615ce2fb03dc	(order)	MK760918.1,MN845180.1,MT110919.1	238	Marshallagia marshalli x14; Marshallagia trifida x4; Marshallagia schumakovitschi x3; Marshallagia occidentalis x3; Marshallagia sp. x3; Ostertagia occidentalis x2	MK760916 1.000 Marshallagia marshalli
+ITS2_660cd9541326	Oscheius onirici	LN613265.1	248	Oscheius sp. x13; Oscheius onirici x8	PZ523045 1.000 Oscheius onirici
+ITS2_6c97469e05b8	(order)	GQ258644.1,MN704735.1	221	Heterorhabditis indica x43; Heterorhabditis sp. x4; Steinernema siamkayai x1	KY977412 1.000 Heterorhabditis indica
+ITS2_6dfe33365b1b	Hysterothylacium amoyense	ON098267.1	220	Hysterothylacium amoyense x36; Hysterothylacium sp. x10; Contracaecum sp. x2; Contracaecum muraenesoxi x1	MW423794 1.000 Hysterothylacium amoyense
+ITS2_713ef5fb8e9c	Hysterothylacium amoyense	MW412582.1	303	Hysterothylacium amoyense x43; Contracaecum muraenesoxi x3; Contracaecum sp. x2; Hysterothylacium sp. x1	MT020120 1.000 Hysterothylacium amoyense
+ITS2_76686756a8bb	Steinernema siamkayai	GQ497252.1	235	Steinernema siamkayai x40; Steinernema sp. x9; Heterorhabditis indica x1	KP096500 1.000 Steinernema sp.
+ITS2_791e687b2a1c	Hysterothylacium amoyense	PX446496.1	125	Hysterothylacium amoyense x37; Hysterothylacium sp. x10; Contracaecum sp. x2; Contracaecum muraenesoxi x1	MW423794 1.000 Hysterothylacium amoyense
+ITS2_79ffb22cdf1c	Heterorhabditis indica	MN704744.1	401		MF939567 0.977 Steinernema sp.
+ITS2_7eaed451c056	Hysterothylacium amoyense	KT749421.1,ON803502.1	300	Hysterothylacium amoyense x43; Contracaecum muraenesoxi x3; Contracaecum sp. x2; Hysterothylacium sp. x1	MT020120 1.000 Hysterothylacium amoyense
+ITS2_84dadb21d6af	Pratylenchus speijeri	KF974735.1	315	Pratylenchus speijeri x3	KY424224 0.991 Pratylenchus speijeri
+ITS2_92f25506e9a0	Mecistocirrus digitatus	LC800430.1	265	Mecistocirrus digitatus x11; Oesophagostomum radiatum x1	KJ192195 1.000 Mecistocirrus digitatus
+ITS2_99e63f3a6d99	Hysterothylacium amoyense	ON098282.1	229	Hysterothylacium amoyense x34; Hysterothylacium sp. x9; Contracaecum muraenesoxi x3; Contracaecum sp. x2; Hysterothylacium zhoushanense x1	MW422169 1.000 Hysterothylacium amoyense
+ITS2_9af65954f6a4	Marshallagia occidentalis	KC295418.1	234	Marshallagia marshalli x15; Marshallagia trifida x4; Marshallagia schumakovitschi x3; Marshallagia occidentalis x3; Marshallagia sp. x3; Marshallagia sogdiana x2	MT110919 1.000 Marshallagia marshalli
+ITS2_a36161b82d4d	Caenorhabditis elegans	EU131007.1	313	Pratylenchus speijeri x4	KF974735 1.000 Pratylenchus speijeri
+ITS2_ac28cff5046a	Acrobeloides bodenheimeri	MW667574.1	262	Acrobeloides bodenheimeri x1	MW667577 1.000 Acrobeloides bodenheimeri
+ITS2_b0a50844c729	Heterorhabditis bacteriophora	JF416798.1	208	Heterorhabditis bacteriophora x42; Heterorhabditis sp. x3; Heterorhabditis zacatecana x1; Steinernema khoisanae x1; Heterorhabditis ruandica x1; Heterorhabditis casmirica x1	MG593948 1.000 Heterorhabditis bacteriophora
+ITS2_b17cdce9cf65	Heterorhabditis indica	GQ377413.1,KU214823.1,KY807714.1,MH489028.1,MT372498.1,MW548112.1,MW548116.1,MW548120.1	227	Heterorhabditis indica x36; Heterorhabditis sp. x5; Steinernema siamkayai x1	KY977412 1.000 Heterorhabditis indica
+ITS2_b9fe3528ce21	Cercopithifilaria bainae	JF501396.1	424	Crenosoma vulpis x10	OM480716 0.998 Crenosoma vulpis
+ITS2_bf71aed1c474	Heterorhabditis bacteriophora	MK421504.1	223	Heterorhabditis bacteriophora x42; Heterorhabditis sp. x3; Heterorhabditis zacatecana x1; Steinernema khoisanae x1; Heterorhabditis ruandica x1; Heterorhabditis casmirica x1	MG593948 1.000 Heterorhabditis bacteriophora
+ITS2_c4cf62756e8c	Heterorhabditis bacteriophora	MG593947.1	224	Heterorhabditis bacteriophora x41; Heterorhabditis sp. x4; Heterorhabditis zacatecana x1; Steinernema khoisanae x1; Heterorhabditis ruandica x1; Heterorhabditis casmirica x1	MG593948 1.000 Heterorhabditis bacteriophora
+ITS2_c850292a5e4a	Hysterothylacium amoyense	PX446500.1	112	Hysterothylacium amoyense x37; Hysterothylacium sp. x10; Contracaecum sp. x2	MW423794 1.000 Hysterothylacium amoyense
+ITS2_c90800691b70	Hysterothylacium amoyense	ON098283.1	182	Hysterothylacium amoyense x36; Hysterothylacium sp. x10; Contracaecum sp. x2; Contracaecum muraenesoxi x1	MW423794 1.000 Hysterothylacium amoyense
+ITS2_cf66f37cdd4c	Hysterothylacium amoyense	OL376800.1,OL376801.1,OL376802.1	298	Hysterothylacium amoyense x41; Contracaecum muraenesoxi x3; Contracaecum sp. x2; Hysterothylacium sp. x1	MT020120 1.000 Hysterothylacium amoyense
+ITS2_d7bf11a2256c	Hysterothylacium amoyense	ON098284.1	152	Hysterothylacium amoyense x37; Hysterothylacium sp. x10; Contracaecum sp. x2; Contracaecum muraenesoxi x1	MW423794 1.000 Hysterothylacium amoyense
+ITS2_d85e0c699545	Hysterothylacium amoyense	ON098280.1	238	Hysterothylacium amoyense x44; Contracaecum muraenesoxi x3; Contracaecum sp. x2; Hysterothylacium sp. x1	MT020120 1.000 Hysterothylacium amoyense
+ITS2_d9840bbeb40d	Heterorhabditis indica	MH029269.1,MK300683.1,MW548102.1,MW548117.1	223	Heterorhabditis indica x40; Heterorhabditis sp. x4; Steinernema siamkayai x2	KY977412 1.000 Heterorhabditis indica
+ITS2_dc5acd5ca2ab	Heterorhabditis georgiana	KY568701.1	164	Oscheius sp. x17; Oscheius onirici x10	PZ523045 1.000 Oscheius onirici
+ITS2_de0489da5779	(order)	EU826125.1,JX028277.1,KP326556.1	307	Hysterothylacium zhoushanense x24; Hysterothylacium zhoushanensis x5	MH211556 1.000 Hysterothylacium zhoushanense
+ITS2_df576cc4d96e	Hysterothylacium amoyense	PX446494.1	170	Hysterothylacium amoyense x36; Hysterothylacium sp. x10; Contracaecum sp. x2; Contracaecum muraenesoxi x1	MW423794 1.000 Hysterothylacium amoyense
+ITS2_e7a91c5c69eb	Heterorhabditis indica	PV646226.1	198	Heterorhabditis indica x41; Heterorhabditis sp. x5; Steinernema siamkayai x2; Heterorhabditis pakistanense x1	KY977412 1.000 Heterorhabditis indica
+ITS2_eef8ab4ff7b0	Heterorhabditis indica	MK995679.1	220	Heterorhabditis indica x43; Heterorhabditis sp. x4; Steinernema siamkayai x2	KY977412 1.000 Heterorhabditis indica
+ITS2_ef2fad3b0aa5	Steinernema siamkayai	PV355873.1	218	Steinernema siamkayai x41; Steinernema sp. x8; Heterorhabditis indica x1	KP096500 1.000 Steinernema sp.
+ITS2_f14b85f740db	Heterorhabditis indica	GQ377407.1,GQ377410.1	218	Heterorhabditis indica x42; Heterorhabditis sp. x4; Steinernema siamkayai x2	KY977412 1.000 Heterorhabditis indica
+ITS2_ffb9203a2c3b	(order)	KP252130.1,MT269312.1,MW404617.1,MW404619.1,MW404622.1	301	Hysterothylacium amoyense x41; Contracaecum muraenesoxi x3; Contracaecum sp. x2; Hysterothylacium sp. x1	MT020120 1.000 Hysterothylacium amoyense

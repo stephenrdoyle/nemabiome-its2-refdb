@@ -50,9 +50,9 @@ grade with the call, and consider requiring a minimum aligned length
 The V4 limits (species 99.7% Illumina / 99.5% nanopore, genus 99.5% /
 99%, family 95%) were set for a ~400-base insert. Over a 240-base ITS2,
 one edit is 0.42%, so 99.7% means an exact match and 99.5% means at
-most one edit. Margins are thin: of 12,857 species-level records, 732
-are tied with another species (margin 0), 1,040 are one edit away and
-859 two.
+most one edit. Margins are thin: of 12,855 species-level records, 705
+are tied with another species (margin 0), 1,019 are one edit away and
+836 two.
 
 Two suggestions:
 

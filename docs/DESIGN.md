@@ -163,47 +163,68 @@ same effect dropped pairs in vespa-18s-refdb's neighbour check.)
   "no vote" rather than "these members disagree". Fixed in
   `merge_records`.
 
-### 5.1 The first build (scratch, 2026-11-09)
+### 5.1 The first build (scratch, 2026-11-09, curated)
 
-`results/dev_build_summary.txt`. 12,988 records, 1,837 species with a
-record of their own (1,830 through 2x150 windows), 425 genera. Read
-whole, 93% of records resolve to species and 6% to genus; through 2x150
+`results/dev_build_summary.txt`. 12,980 records, 1,838 species with a
+record of their own (1,831 through 2x150 windows), 424 genera. Read
+whole, 94% of records resolve to species and 6% to genus; through 2x150
 windows, 92% and 7%.
 
 | Family | Records | Species | To species, whole | 2x150 |
 |---|---:|---:|---:|---:|
 | Strongylidae (incl. cyathostomins) | 1,343 | 265 | 100% | 99% |
-| Trichostrongylidae | 1,151 | 66 | 93% | 93% |
+| Trichostrongylidae | 1,153 | 66 | 93% | 93% |
 | Ancylostomatidae | 288 | 17 | 97% | 97% |
 | Metastrongylidae | 454 | 47 | 100% | 99% |
-| Onchocercidae | 386 | 25 | 96% | 93% |
+| Onchocercidae | 385 | 24 | 97% | 93% |
 | Trichuridae | 339 | 19 | 99% | 94% |
 | Ascarididae | 121 | 30 | 77% | 67% |
-| Heteroderidae | 1,148 | 109 | 86% | 86% |
+| Heteroderidae | 1,148 | 109 | 87% | 87% |
 
 "Resolves to species" means the record is distinct from every other
 species' record. It does not mean reads are named correctly. Margins
-are thin: of 12,857 species-level records, 1,040 are one edit from
-another species, 859 two, and 1,780 three to five. Over a 240-base
-ITS2, one edit is 0.4%. Intraspecific ITS2 variation is often that
-large, and in vespa-18s-refdb a leave-one-out test named 27-46% of reads
-as a sister species once identity limits were lifted. The same test is
-due here (§7).
+are thin: of 12,855 species-level records, 705 are tied with another
+species, 1,019 are one edit away, 836 two and 1,628 three to five. Over
+a 240-base ITS2, one edit is 0.4%. Intraspecific ITS2 variation is
+often that large, and in vespa-18s-refdb a leave-one-out test named
+27-46% of reads as a sister species once identity limits were lifted.
+The same test is due here (§7).
 
-### 5.2 Cross-family ties: probable mislabels
+### 5.2 Cross-family ties: mislabels, curated
 
-51 species-level records sit exactly inside a record of another family
-(`results/cross_family_ties.tsv`). Most look like mislabels, not shared
-ITS2:
+The uncurated build had 51 species-level records sitting exactly inside
+a record of another family (`results/cross_family_ties.tsv`). Every
+record on either side, 59 in all, was BLASTed against nt (megablast).
+Each record's label was then checked against the other GenBank entries
+at >= 98% identity over >= 90% of it
+(`results/cross_family_ties_blast.tsv`). In every case one side's label
+was contradicted by all the other near-identical entries. The 14
+mislabelled source records are dropped in `curation/overrides.tsv`. A
+15th was dropped on a second pass, after the first 14 drops exposed it:
+GQ258655, "*Steinernema siamkayai*", whose ITS2 is identical to three
+*Heterorhabditis* records.
 
-- partial *Hysterothylacium amoyense* records (Raphidascarididae)
-  inside *Contracaecum muraenesoxi* (Anisakidae), 15 records;
-- *Oscheius tipulae* (Rhabditidae) inside *Steinernema glaseri*;
-- *Pratylenchus crenatus* inside *Punctodera mulveyi*.
+- *Contracaecum muraenesoxi* MW420927, MW412588, EU826125: ITS2 of
+  *Hysterothylacium amoyense* / *H. zhoushanense*. 15 partial
+  *H. amoyense* records sat inside the first.
+- *Heterorhabditis* / *Steinernema* / *Oscheius* / *Acrobeloides*
+  (entomopathogenic and free-living nematodes): 8 records, including an
+  apparent label swap within one submission (MN704735 / MN704744).
+- *Oscheius tipulae* PX455932 = *Steinernema glaseri*; *Pratylenchus
+  crenatus* PQ403988 = *Punctodera*; "*Caenorhabditis elegans*"
+  EU131007 (NCBI: UNVERIFIED_ORG) = *Pratylenchus speijeri*.
+- "*Cercopithifilaria*" JF501396 = *Crenosoma vulpis*, a dog lungworm.
+  Probably the same dog's sample.
+- *Parabronema skrjabini* MK760918 inside a *Marshallagia marshalli*
+  record.
+- ***Oesophagostomum radiatum* MG685662 = *Mecistocirrus digitatus*.**
+  *O. radiatum* is on vespa-18s-refdb's watch list; its 5 other ITS2
+  records are unaffected.
 
-The tie rule already stops them at the shared rank. They are listed
-for a BLAST check (as for vespa-18s-refdb's neighbour check) before
-overrides are written.
+None remain after curation. One record still stops at order and is not
+a tie: two *Dujardinascaris gigantea* and one *Ortleppascaris sinensis*,
+both crocodilian ascaridoids that NCBI puts in different families. It
+is either a misidentification or shared ITS2; it is left, merged.
 
 ## 6. Release format
 
@@ -229,7 +250,9 @@ amphid needs changes before it can use this database:
 
 ## 7. Open questions
 
-1. **Cross-family ties** (§5.2): BLAST the 51, write overrides.
+1. **Ties within a family** (27 records stop at family, read whole):
+   check as for §5.2? Cross-genus ties are more often real than
+   cross-family ones.
 2. **Leave-one-out simulation** for ITS2, as in vespa-18s-refdb: how
    often a read from a species missing from the database is named as a
    sister species, at amphid's limits and at ITS2-appropriate ones.

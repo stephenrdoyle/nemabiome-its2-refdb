@@ -1,43 +1,43 @@
-nemits2_dev  built 2026-11-09T19:36:14Z  code uncommitted
+nemits2_dev  built 2026-11-09T19:45:19Z  code 8b280680ce04a17810a91d4e92f3b70f1018550c-dirty
 primers NC1 ACGTCTGGTTCAGGGTTGTT / NC2 TTAGTTTCTTTTCCTCCGCT
 source nemabiome_20260317
-records 12,988 from 15,108 source records; named species 1,870
-members: kept 15,108
+records 12,980 from 15,108 source records; named species 1,869
+members: dropped 15, kept 15,093
 conflicts (order or above): none
 
 Grade (best member):
-    complete         4,045   31.1%
-    near_complete    3,709   28.6%
-    partial_90       1,302   10.0%
-    partial_75         971    7.5%
-    partial            994    7.7%
-    unmeasured       1,967   15.1%
+    complete         4,044   31.2%
+    near_complete    3,707   28.6%
+    partial_90       1,301   10.0%
+    partial_75         970    7.5%
+    partial            992    7.6%
+    unmeasured       1,966   15.1%
 
-Deepest rank - nanopore (whole ITS2; 732 species-level records tied with another species' over their span):
-    species         12,125   93.4%
-    genus              777    6.0%
+Deepest rank - nanopore (whole ITS2; 705 species-level records tied with another species' over their span):
+    species         12,150   93.6%
+    genus              802    6.2%
     family              27    0.2%
-    order               59    0.5%
+    order                1    0.0%
     class                0    0.0%
     phylum               0    0.0%
     kingdom              0    0.0%
     superkingdom         0    0.0%
     (none)               0    0.0%
-  Illumina 150x150 (windows 130 + 83, 12,248 window groups; 745 tied):
-    species         11,967   92.1%
-    genus              931    7.2%
+  Illumina 150x150 (windows 130 + 83, 12,240 window groups; 732 tied):
+    species         11,992   92.4%
+    genus              957    7.4%
     family              30    0.2%
-    order               60    0.5%
+    order                1    0.0%
     class                0    0.0%
     phylum               0    0.0%
     kingdom              0    0.0%
     superkingdom         0    0.0%
     (none)               0    0.0%
-  Illumina 250x250 (windows 230 + 183, 12,932 window groups; 741 tied):
-    species         12,113   93.3%
-    genus              789    6.1%
+  Illumina 250x250 (windows 230 + 183, 12,924 window groups; 715 tied):
+    species         12,138   93.5%
+    genus              814    6.3%
     family              27    0.2%
-    order               59    0.5%
+    order                1    0.0%
     class                0    0.0%
     phylum               0    0.0%
     kingdom              0    0.0%
@@ -47,15 +47,15 @@ Deepest rank - nanopore (whole ITS2; 732 species-level records tied with another
 Primer fit (best member holding the sites):
     exact              202    1.6%
     near               364    2.8%
-    poor             1,111    8.6%
-    one_site         8,161   62.8%
-    unknown          3,150   24.3%
+    poor             1,110    8.6%
+    one_site         8,156   62.8%
+    unknown          3,148   24.3%
 
-Species margins over the shorter record's span, read whole (12,857 species-level records):
-    0 (inside another species' record: tied)         732
-    1 edit                                         1,040
-    2 edits                                          859
-    3-5 edits                                      1,780
+Species margins over the shorter record's span, read whole (12,855 species-level records):
+    0 (inside another species' record: tied)         705
+    1 edit                                         1,019
+    2 edits                                          836
+    3-5 edits                                      1,628
     6-10 edits                                     1,375
-    11+ edits                                      3,065
-    no other species within reach                  4,006
+    11+ edits                                      3,257
+    no other species within reach                  4,035

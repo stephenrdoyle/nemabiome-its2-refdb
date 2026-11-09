@@ -1,0 +1,21 @@
+# Source records the build drops or relabels. accession: without version.
+# action: drop (kept in members.tsv as "dropped", out of every record) or
+# relabel (label: eight ranks, ;-separated). Evidence: BLAST of the record's
+# ITS2 against nt, megablast, hits >= 98% identity over >= 90% of the query,
+# the record's own accessions excluded (results/cross_family_ties_blast.tsv).
+accession	action	label	reason
+MW420927	drop		Contracaecum muraenesoxi; ITS2 matches Hysterothylacium amoyense (38 hits) - cross-family tie, 2026-11-09
+MW412588	drop		Contracaecum muraenesoxi in a Hysterothylacium amoyense record (14 of 15 members; 32 H. amoyense hits) - cross-family tie
+EU826125	drop		Contracaecum muraenesoxi in a Hysterothylacium zhoushanense record (29 H. zhoushanense hits) - cross-family tie
+PX455932	drop		Oscheius tipulae; ITS2 matches Steinernema glaseri (8 hits) - cross-family tie
+MK928425	drop		Steinernema khoisanae in a Heterorhabditis bacteriophora record (6 of 7 members; 36 H. bacteriophora hits) - cross-family tie
+PQ403988	drop		Pratylenchus crenatus; ITS2 matches Punctodera mulveyi/matadorensis (10 hits) - cross-family tie
+JF501396	drop		"Cercopithifilaria sp." (NCBI: C. bainae); ITS2 matches Crenosoma vulpis (10 hits), a dog lungworm - cross-family tie
+MK760918	drop		Parabronema skrjabini in a Marshallagia marshalli record (Marshallagia hits only) - cross-family tie
+OQ653109	drop		Heterorhabditis indica; ITS2 matches Acrobeloides bodenheimeri (2 hits) - cross-family tie
+KY568701	drop		Heterorhabditis georgiana; ITS2 matches Oscheius onirici / Oscheius sp. (27 hits) - cross-family tie
+MN704735	drop		Steinernema siamkayai in a Heterorhabditis indica record (43 H. indica hits); same batch as MN704744, labels look swapped - cross-family tie
+MN704744	drop		Heterorhabditis indica; ITS2 is Steinernema (best hits S. siamkayai / Steinernema sp. at 97.5%); S. siamkayai records sit inside it - cross-family tie
+EU131007	drop		UNVERIFIED_ORG Caenorhabditis elegans; ITS2 matches Pratylenchus speijeri (4 hits) - cross-family tie
+MG685662	drop		Oesophagostomum radiatum in a Mecistocirrus digitatus record (3 of 4 members; 8 Mecistocirrus hits) - cross-family tie
+GQ258655	drop		Steinernema siamkayai strain SSRK27; ITS2 identical to three Heterorhabditis records (H. indica x2, H. gerrardi); genuine S. siamkayai records differ - second pass after the first 14 drops
