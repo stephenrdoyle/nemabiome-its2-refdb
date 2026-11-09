@@ -51,6 +51,7 @@ PER_GENUS = 2
 WINDOW, OVERLAP = 20000, 3000
 FLANK = 400
 MAX_ITS2 = 1500
+MIN_ITS2 = 80
 CIGAR = re.compile(r"(\d+)([MIDNSHP=X])")
 
 
@@ -148,15 +149,22 @@ class _Prepend(io.RawIOBase):
 
 # --- scan --------------------------------------------------------------------
 
-def cut(x):
+def cut(x, loose_ok=True):
     """ITS2 in x (panel strand): (start, end, nc1, s28, nc2) or None.
 
     The matcher reads N as any base, so an assembly gap matches every
     anchor perfectly (Dracunculus: ten 50-base "ITS2"s of pure N). Gaps
     are turned into a character that matches nothing, and an ITS2 with
-    any N in it is not reported."""
+    any N in it is not reported.
+
+    loose_ok: whether an NC1 site at 4-6 edits may be taken. A read that
+    starts inside the ITS2 has no NC1 at all, and the best 6-edit
+    look-alike inside the ITS2 then makes a truncated "ITS2" (11% of
+    Bunostomum's reads, all 50 bases). The caller allows it only when
+    the alignment starts at or before NC1 on the panel record, i.e. the
+    5.8S end is really there. MIN_ITS2 catches what is left."""
     x = x.replace("N", "#")
-    hit = find_anchor_cost(x, NC1, 3) or find_anchor_cost(x, NC1, 6)
+    hit = find_anchor_cost(x, NC1, 3) or (loose_ok and find_anchor_cost(x, NC1, 6))
     if not hit:
         return None
     s = hit[1]
@@ -164,7 +172,7 @@ def cut(x):
     if not end:
         return None
     e = s + 50 + end[0]
-    if "#" in x[s:e]:
+    if "#" in x[s:e] or e - s < MIN_ITS2:
         return None
     n2 = find_anchor_cost(x[e:e + 90], revcomp(NC2), 6)
     return s, e, hit[2], end[2], (n2[2] if n2 else "")
@@ -199,6 +207,8 @@ def scan(panel, src, out, reads, threads):
             p.stdin.close()
     t = threading.Thread(target=feed)
     t.start()
+    nc1_end = {name: (find_anchor_cost(s, NC1, 6) or (0, 0, 0))[1]
+               for name, s in read_fasta(panel).items()}
     seen, rows = set(), []
     for line in p.stdout:
         if line.startswith("@"):
@@ -216,7 +226,7 @@ def scan(panel, src, out, reads, threads):
             int(ops[-1][0]) if ops[-1][1] in "SH" else 0)
         lo, hi = max(0, qs - FLANK), qs + alen + FLANK
         x = seq[lo:hi]
-        c = cut(x)
+        c = cut(x, loose_ok=int(f[3]) - 1 <= nc1_end.get(f[2], 0))
         if not c:
             continue
         s, e, e1, e2, e3 = c

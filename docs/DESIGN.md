@@ -265,8 +265,102 @@ dropped, each contradicted by 10-49 other GenBank entries:
 
   Left in place.
 - **Cyathostomins**: *Cyathostomum catinatum* and *Cylicostephanus goldi*
-  records are 99.4-99.6% identical; HiFi reads of both species are being
-  scanned to settle whether that is biology.
+  records are 99.4-99.6% identical. HiFi reads of both species (§5.4)
+  show the genuine variants of the two are 4-8 edits apart. The one
+  *C. goldi* record behind the flag (PP923309) is 2 edits from the
+  nearest *C. catinatum* read variant and 3 from the nearest *C. goldi*
+  one: too close to call, so it is left.
+
+### 5.4 Genomes and HiFi reads
+
+`bin/its2_scan.py` finds the ITS2 in an assembly or a read set. It can't
+work as a primer scan does for V4: NC1 is 4-6 bases off in many orders,
+and no 5.8S k-mer is shared by all of them (Trichinellida lack
+GAAGAACGCAGC). So the rDNA is located by mapping to a panel: up to two
+5.8S-ITS2-28S stretches from each of 258 genera, taken from records
+anchored at both ends. Each hit is then cut at the NC1 and 28S anchors
+used for the backbone (§3.2). Assemblies are cut into 20 kb windows;
+reads are taken whole.
+
+Four faults found and fixed on the way:
+- **minimap2's chaining thresholds**: at the defaults (`-m/-s 40`) it
+  missed *Spirocerca*, which shares only the 5.8S tail and 28S head with
+  its nearest panel relative.
+- **Assembly gaps**: the matcher read N as any base, so runs of N
+  "matched" both anchors (ten 50-base ITS2s of pure N in *Dracunculus*).
+- **Soft-masked assemblies**: repeats in lower case counted as
+  mismatches throughout.
+- **Reads starting inside the ITS2**: these took a 6-edit NC1 look-alike
+  and gave truncated ITS2s (11% of *Bunostomum* reads). A loose NC1 is
+  now accepted only when the alignment starts at or before NC1 on the
+  panel record, and nothing shorter than 80 bases is reported.
+
+**Gap species** (watch-list nematodes with no ITS2 in the backbone). The
+assemblies that gave V4 were scanned:
+
+| Species | Assembly | ITS2 copies (distinct) | Edits between variants | Nearest backbone record |
+|---|---|---:|---|---|
+| *Loa loa* | GCA_053739935 | 3 (2) | 1 | *Dirofilaria* 64% |
+| *Acanthocheilonema viteae* | GCA_046563165 | 13 (9) | 6 median, 15 max | *A. reconditum* 86-88% |
+| *Litomosoides sigmodontis* | GCA_963070105 | 5 (5) | 27 median, 37 max | none above 56% |
+| *Spirocerca lupi* | GCA_965124195 (Tree of Life) | 24 (9) | 17 median, 46 max | filarioids ~61% |
+| *Trichuris incognita* | STPHxBioinformatics | 4 (4) | 28 median, 31 max | *T. trichiura* 96-100% |
+| *Dracunculus medinensis* | WBPS19 | 0 | - | - |
+
+- *Dracunculus*: NC1 sits about 6 bases off and NC2 about 6, but no 28S
+  stretch fits. Its rDNA is too far from any panel genus; there is no
+  Dracunculoidea or Camallanina in the backbone.
+- One *T. incognita* copy is identical to a GenBank "*T. trichiura*"
+  ITS2. The human *Trichuris* records may include *T. incognita*.
+- None of these is added yet. Copies from older short-read assemblies
+  (*A. viteae*, *Litomosoides*, *T. incognita*) may carry assembly
+  errors; the *Spirocerca* Tree of Life HiFi assembly is the most
+  trustworthy.
+
+**HiFi read sets** (the ten runs used for V4 in vespa-18s-refdb, first
+200,000 reads each). A variant is kept if it is >= 2% of the run's ITS2
+reads and seen in >= 5 reads:
+
+| Species | ITS2 reads | Variants | Edits between them | Main variants vs backbone |
+|---|---:|---:|---|---|
+| *Bunostomum trigonocephalum* | 2,449 | 3 | 1-2 | same species, 0-2 edits |
+| *Cyathostomum catinatum* | 1,402 | 7 | 1-4 | same species, 0 (one 2) |
+| *Cylicostephanus goldi* | 3,789 | 3 | 2-8 | same species, 0-1 |
+| *Cylicostephanus longibursatus* | 1,442 | 14 | 1-12 | same species, 0-1 (one 7 from anything) |
+| *Cylicocyclus insigne* | 496 | 6 | 1-6 within each of two groups ~20 apart | *C. insigne* and *C. ashworthi*, 0 |
+| *Cylicocyclus nassatus* | 933 | 2 | 2 | same species, 0 |
+| *Coronocyclus labiatus* | 183 | 1 | - | same species, 0 |
+| *Ancylostoma duodenale* (subreads) | 95 | 5 | 2-8 | same species, 0-4 |
+| *Angiostrongylus malaysiensis* | 4,105 | 8 | 2-8, plus a group 22-30 away | same species, 0-4 |
+| *Crenosoma striatum* | 781 | 8 | 1-4, plus 2 minor variants 11-24 away | same species, 0-2 |
+
+What the reads show:
+
+- **Labels hold.** Every run's main variants match backbone records of
+  the same species, usually exactly. That is independent confirmation
+  of the GenBank labels for nine of the ten species; the tenth is
+  *C. insigne*, below.
+- **Variation within one worm is as large as between species.** Variants
+  1-12 edits apart are routine; *C. goldi* and *C. catinatum* variants
+  are 4-8 apart, *C. longibursatus* 7-9 from both. Among cyathostomins
+  no identity or edit limit separates species. A read can be named to
+  species only when the database holds its exact variant. Many variants
+  already are in GenBank: most read variants match a record exactly.
+- ***Cylicocyclus insigne* / *C. ashworthi*.** ERR11658755 is one adult
+  worm (Sallé et al., PRJEB63274; INRAE, identified by ITS2 and COX1).
+  It carries two ITS2 types ~20 edits apart: a 324-base type matching
+  *C. insigne* records (34% of reads) and a 318-base type matching
+  *C. ashworthi* records exactly (43%). Either *C. insigne* carries an
+  "*ashworthi*" copy type, or the worm is a hybrid or misidentified;
+  its identification by ITS2 makes this circular. Reads matching the
+  *ashworthi* type may come from *C. insigne*. Left as is, flagged.
+- **Divergent minor copy types.** *A. malaysiensis* and *C. striatum*
+  carry a small group of variants 11-30 edits from the main ones. They
+  are either a second rDNA copy type or a second worm in the sample.
+
+Not yet added to the database. A read-variant layer, as in
+vespa-18s-refdb, would put the exact within-worm variants in, which is
+what species calls depend on (§7).
 
 ## 6. Release format
 
@@ -298,10 +392,12 @@ amphid needs changes before it can use this database:
 2. **Leave-one-out simulation** for ITS2, as in vespa-18s-refdb: how
    often a read from a species missing from the database is named as a
    sister species, at amphid's limits and at ITS2-appropriate ones.
-3. **Intraspecific variation.** *Haemonchus contortus* and other
-   strongylids carry ITS2 polymorphisms. Do conspecific records differ
-   by more than the species margin? If so, species calls need a limit
-   in edits, not percent.
+3. **Intraspecific variation**: answered in part by §5.4. Within one
+   worm, variants differ by 1-12 edits, as much as some species do. A
+   species call needs the read's exact variant in the database, not an
+   identity limit. Next: a read-variant layer from the HiFi runs and the
+   *Spirocerca* assembly, and the same scan of *Haemonchus*,
+   *Teladorsagia* and *Trichostrongylus* genomes.
 4. **Contained records of the same species.** Partials identical to
    part of a same-species complete record are separate records. That is
    harmless for calls, but it inflates record counts. Fold them into
