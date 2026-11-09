@@ -226,6 +226,48 @@ a tie: two *Dujardinascaris gigantea* and one *Ortleppascaris sinensis*,
 both crocodilian ascaridoids that NCBI puts in different families. It
 is either a misidentification or shared ITS2; it is left, merged.
 
+### 5.3 Neighbour check
+
+Exact ties miss a mislabel that differs from its true species by a base
+or two. As in vespa-18s-refdb's neighbour check, every species-level
+record whose nearest other-species record (over the shorter span) was
+>= 97% identical across families, or >= 99% across genera, was BLASTed
+with its neighbour: 209 pairs, 219 records
+(`results/neighbour_check_blast.tsv`). Seven more source records are
+dropped, each contradicted by 10-49 other GenBank entries:
+
+- *Cactodera estonica* AY692355 = *Heterodera*. This one record made 66
+  of the 209 pairs.
+- *Anisakis typica* PX761267 = *Hysterothylacium*.
+- *Ascaridia galli* MH392317 = *Heterorhabditis*.
+- *Contracaecum muraenesoxi* EU828749, MW418099, FJ234209 =
+  *Hysterothylacium amoyense*. With the three in §5.2, every *C.
+  muraenesoxi* ITS2 in the backbone is dropped and the species leaves
+  the database.
+- *Acrobeloides saeedi* MK935151 = *Heterorhabditis indica*.
+
+97 pairs remain (78 across genera >= 99%, 19 across families >= 97%):
+
+- **The same species under two genus names**: *Ostertagia trifurcata* /
+  *Teladorsagia circumcincta* (male morph); *Phocanema* /
+  *Pseudoterranova*; *Labiosimplex* / *Labiostrongylus longispicularis*;
+  *Parapoteriostomum* / *Cylicodontophorus mettami*; *Gracilacus* /
+  *Paratylenchus paralatescens*; *Betulodera* / *Cactodera* /
+  *Heterodera betulae*; *Japanema* / *Sheraphelenchus entomophagus*.
+  To be merged by relabels once the names are chosen.
+- **Unclear**:
+  - *Rostellascaris spinicaudatum* vs *Toxocara cati* (2-3%);
+  - *Oesophagostomum aculeatum* LC428824 vs *Ternidens deminutus*
+    (watch list; 99%);
+  - *Rugopharynx alpha* vs *Papillostrongylus barbatus*;
+  - *Steinernema khoisanae* vs *Oscheius chongmingensis*;
+  - *Ektaphelenchoides* vs *Bursaphelenchus*.
+
+  Left in place.
+- **Cyathostomins**: *Cyathostomum catinatum* and *Cylicostephanus goldi*
+  records are 99.4-99.6% identical; HiFi reads of both species are being
+  scanned to settle whether that is biology.
+
 ## 6. Release format
 
 As vespa-18s-refdb (`refdb.fasta`, `taxonomy.tsv`, `members.tsv`,

@@ -1,0 +1,212 @@
+# Neighbour check, first build: pairs >= 97% identical across families or >= 99% across genera (over the shorter span), BLAST (megablast, nt, 2026-11-09).
+# hits: genera of other GenBank entries >= 98% identity over >= 90% of the query, own accessions excluded. verdict: whose genus the hits contradict (i = first, j = second).
+level	species	accessions	hits	nearest_species	nearest_hits	identity	verdict
+family	Acrobeloides saeedi	MK935151	Heterorhabditis 10, Acrobeloides 3, Acrobeles 1	Heterorhabditis indica	Heterorhabditis 9, Acrobeloides 4, Acrobeles 1	0.9959	both supported
+family	Anisakis typica	PX761267	Hysterothylacium 49	Hysterothylacium fabri	Hysterothylacium 37	0.9943	i wrong
+family	Ascaridia galli	MH392317	Heterorhabditis 24	Heterorhabditis taysearae	Heterorhabditis 30, Ascaridia 1	0.9858	i wrong
+family	Contracaecum muraenesoxi	EU828749	Hysterothylacium 44, Contracaecum 5	Hysterothylacium amoyense	Hysterothylacium 44, Contracaecum 5	0.9967	both supported
+family	Contracaecum muraenesoxi	FJ234209	Hysterothylacium 44, Contracaecum 5	Hysterothylacium amoyense	Hysterothylacium 44, Contracaecum 5	0.9967	both supported
+family	Contracaecum muraenesoxi	MW418099	Hysterothylacium 4	Hysterothylacium amoyense	Hysterothylacium 42, Contracaecum 7	0.9836	i wrong
+family	Heterorhabditis indica	MK271288	Heterorhabditis 9, Acrobeloides 4, Acrobeles 1	Acrobeloides saeedi	Heterorhabditis 10, Acrobeloides 3, Acrobeles 1	0.9961	both supported
+family	Heterorhabditis indica	OP578202	Heterorhabditis 11, Acrobeloides 3, Acrobeles 1	Acrobeloides saeedi	Heterorhabditis 10, Acrobeloides 3, Acrobeles 1	0.9791	both supported
+family	Heterorhabditis indica	OP578204	Heterorhabditis 9, Acrobeloides 4, Acrobeles 1	Acrobeloides saeedi	Heterorhabditis 10, Acrobeloides 3, Acrobeles 1	0.9959	both supported
+family	Heterorhabditis indica	OQ443082	Heterorhabditis 9, Acrobeloides 4, Acrobeles 1	Acrobeloides saeedi	Heterorhabditis 10, Acrobeloides 3, Acrobeles 1	0.9884	both supported
+family	Heterorhabditis indica	PP869212	Heterorhabditis 9, Acrobeloides 4, Acrobeles 1	Acrobeloides saeedi	Heterorhabditis 10, Acrobeloides 3, Acrobeles 1	0.9923	both supported
+family	Hysterothylacium amoyense	KP252130,MT269312,MW404617,MW404619,MW40	Hysterothylacium 33, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9967	both supported
+family	Hysterothylacium amoyense	KT749421,ON803502	Hysterothylacium 44, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9967	both supported
+family	Hysterothylacium amoyense	KT749422	Hysterothylacium 45, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9965	both supported
+family	Hysterothylacium amoyense	KY081890	Hysterothylacium 16	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9749	both supported
+family	Hysterothylacium amoyense	MF539807	Hysterothylacium 44, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9933	both supported
+family	Hysterothylacium amoyense	MF539809	Hysterothylacium 44, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9933	both supported
+family	Hysterothylacium amoyense	MW404615,MW412593,MW423771,MW453086	Hysterothylacium 41, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9933	both supported
+family	Hysterothylacium amoyense	MW404680	Hysterothylacium 44, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9933	both supported
+family	Hysterothylacium amoyense	MW405344	Hysterothylacium 43, Contracaecum 6	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.98	both supported
+family	Hysterothylacium amoyense	MW412582	Hysterothylacium 44, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9967	both supported
+family	Hysterothylacium amoyense	MW412586	Hysterothylacium 1	Contracaecum muraenesoxi	Hysterothylacium 4	0.9704	j wrong
+family	Hysterothylacium amoyense	MW422166	Hysterothylacium 44, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.99	both supported
+family	Hysterothylacium amoyense	MW422168	Hysterothylacium 44, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9933	both supported
+family	Hysterothylacium amoyense	MW422169	Hysterothylacium 42, Contracaecum 7	Contracaecum muraenesoxi	Hysterothylacium 4	0.9836	j wrong
+family	Hysterothylacium amoyense	MW422786,MW422788	Hysterothylacium 43, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9933	both supported
+family	Hysterothylacium amoyense	MW422807	Hysterothylacium 43, Contracaecum 6	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9833	both supported
+family	Hysterothylacium amoyense	MW422809	Hysterothylacium 44, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9933	both supported
+family	Hysterothylacium amoyense	MW423773	Hysterothylacium 43, Contracaecum 6	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9867	both supported
+family	Hysterothylacium amoyense	MW423785	Hysterothylacium 43, Contracaecum 6	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9867	both supported
+family	Hysterothylacium amoyense	MW423788	Hysterothylacium 43, Contracaecum 6	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9833	both supported
+family	Hysterothylacium amoyense	MW423789	Hysterothylacium 44, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9967	both supported
+family	Hysterothylacium amoyense	OL376800,OL376801,OL376802	Hysterothylacium 42, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9966	both supported
+family	Hysterothylacium amoyense	ON098280	Hysterothylacium 45, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9958	both supported
+family	Hysterothylacium amoyense	PP770967	Hysterothylacium 44, Contracaecum 5	Contracaecum muraenesoxi	Hysterothylacium 44, Contracaecum 5	0.9933	both supported
+family	Hysterothylacium fabri	KU948632,KX083575,OR899265,OR899266,OR89	Hysterothylacium 37	Anisakis typica	Hysterothylacium 49	0.9943	j wrong
+family	Hysterothylacium fabri	KX592169,PX273797	Hysterothylacium 48	Anisakis typica	Hysterothylacium 49	0.9942	j wrong
+family	Hysterothylacium fabri	MF062511,PX273798	Hysterothylacium 48	Anisakis typica	Hysterothylacium 49	0.9942	j wrong
+family	Hysterothylacium fabri	MF693088	Hysterothylacium 50	Anisakis typica	Hysterothylacium 49	0.9942	j wrong
+family	Hysterothylacium fabri	OR899268	Hysterothylacium 49	Anisakis typica	Hysterothylacium 49	0.9931	j wrong
+family	Hysterothylacium fabri	OR899272	Hysterothylacium 49	Anisakis typica	Hysterothylacium 49	0.9943	j wrong
+family	Hysterothylacium fabri	OR899273	Hysterothylacium 49	Anisakis typica	Hysterothylacium 49	0.9943	j wrong
+family	Hysterothylacium fabri	PX273790	Hysterothylacium 49	Anisakis typica	Hysterothylacium 49	0.9943	j wrong
+family	Hysterothylacium fabri	PX273791	Hysterothylacium 49	Anisakis typica	Hysterothylacium 49	0.9909	j wrong
+family	Hysterothylacium fabri	PX273796	Hysterothylacium 49	Anisakis typica	Hysterothylacium 49	0.9883	j wrong
+family	Hysterothylacium fabri	PX273800	Hysterothylacium 49	Anisakis typica	Hysterothylacium 49	0.9942	j wrong
+family	Hysterothylacium fabri	PX273802	Hysterothylacium 49	Anisakis typica	Hysterothylacium 49	0.9898	j wrong
+family	Hysterothylacium fabri	PX273806	Hysterothylacium 49	Anisakis typica	Hysterothylacium 49	0.9906	j wrong
+family	Hysterothylacium fabri	PX273954	Hysterothylacium 49	Anisakis typica	Hysterothylacium 49	0.9964	j wrong
+family	Oscheius chongmingensis	OR350564	Steinernema 3, Oscheius 2	Steinernema khoisanae	Steinernema 3, Oscheius 3	0.9869	both supported
+family	Parabronema skrjabini	MT742154	Marshallagia 8, Ostertagia 2, Parabronema 1	Marshallagia marshalli	Marshallagia 27, Ostertagia 3, Parabronema 1	0.9795	both supported
+family	Rostellascaris spinicaudatum	KF633464	Dacnitoides 1, Rostellascaris 1	Hysterothylacium thalassini	Hysterothylacium 7	0.9767	both supported
+family	Rostellascaris spinicaudatum	KF636789	Rostellascaris 1, Dacnitoides 1	Hysterothylacium thalassini	Hysterothylacium 7	0.974	both supported
+family	Steinernema khoisanae	PP825473	Steinernema 3, Oscheius 3	Oscheius chongmingensis	Steinernema 3, Oscheius 2	0.9869	both supported
+family	Steinernema khoisanae	PX417372	Steinernema 3, Oscheius 3	Oscheius chongmingensis	Steinernema 3, Oscheius 2	0.9804	both supported
+family	Steinernema khoisanae	PX427354	Oscheius 3, Steinernema 3	Oscheius chongmingensis	Steinernema 3, Oscheius 2	0.9804	both supported
+family	Steinernema khoisanae	PX435342	Steinernema 3, Oscheius 3	Oscheius chongmingensis	Steinernema 3, Oscheius 2	0.9739	both supported
+family	Toxocara cati	MF592392	Toxocara 50	Rostellascaris spinicaudatum	none	0.9898	unclear
+family	Toxocara cati	MF592393	Toxocara 50	Rostellascaris spinicaudatum	none	0.9943	unclear
+family	Toxocara cati	MF592394	Toxocara 50	Rostellascaris spinicaudatum	none	0.9897	unclear
+family	Toxocara cati	MF592396	Toxocara 49	Rostellascaris spinicaudatum	none	0.9865	unclear
+family	Toxocara cati	MF592397	Toxocara 50	Rostellascaris spinicaudatum	none	0.9947	unclear
+family	Toxocara cati	MF592398	Toxocara 49	Rostellascaris spinicaudatum	none	0.991	unclear
+family	Toxocara cati	MF592400	Toxocara 49	Rostellascaris spinicaudatum	none	0.989	unclear
+family	Toxocara cati	MF592401	Toxocara 49	Rostellascaris spinicaudatum	none	0.9784	unclear
+family	Toxocara cati	PX443436	Toxocara 48	Rostellascaris spinicaudatum	none	0.9724	unclear
+family	Toxocara cati	PX443438	Toxocara 49	Rostellascaris spinicaudatum	none	0.9852	unclear
+family	Toxocara cati	PX596676	Toxocara 49	Rostellascaris spinicaudatum	none	0.9738	unclear
+genus	Aspidodera raillieti	JQ995300	Aspidodera 3, Nematomystes 3	Nematomystes scapteromi	Aspidodera 4, Nematomystes 2	0.9973	both supported
+genus	Aspidodera raillieti	JQ995303	Aspidodera 3, Nematomystes 3	Nematomystes scapteromi	Aspidodera 4, Nematomystes 2	0.9946	both supported
+genus	Aspidodera raillieti	KX954129	Aspidodera 4, Nematomystes 2	Nematomystes scapteromi	Aspidodera 4, Nematomystes 2	1.0	both supported
+genus	Betulodera betulae	HQ260385	Betulodera 1, Heterodera 1, Cactodera 1	Heterodera hordecalis	Betulodera 2, Cactodera 1	0.9951	j wrong
+genus	Betulodera betulae	KF214753	Heterodera 1, Betulodera 1, Cactodera 1	Heterodera hordecalis	Betulodera 2, Cactodera 1	1.0	j wrong
+genus	Bursaphelenchus thailandae	DQ497183	Ektaphelenchoides 1	Ektaphelenchoides compasi	Bursaphelenchus 4	0.9932	i wrong
+genus	Cactodera betulae	AY569018	Heterodera 1	Betulodera betulae	Betulodera 1, Heterodera 1, Cactodera 1	0.9951	unclear
+genus	Cactodera estonica	AY692355	Heterodera 49	Heterodera medicaginis	Heterodera 48, Cactodera 1	1.0	i wrong
+genus	Cyathostoma americana	PV739826	Cyathostoma 11, Hovorkonema 1		Cyathostoma 8	1.0	j wrong
+genus	Cyathostomum catinatum	PX289364	Cyathostomum 39, Cylicostephanus 10	Cylicostephanus goldi	Cyathostomum 40, Cylicostephanus 9	0.9938	both supported
+genus	Cyathostomum catinatum	PX289416	Cyathostomum 34, Cyathostominae 9, Cylicostephanus 6	Cylicostephanus goldi	Cyathostomum 40, Cylicostephanus 9	0.9964	both supported
+genus	Cyathostomum catinatum	PX289425	Cyathostomum 33, Cyathostominae 10, Cylicostephanus 6	Cylicostephanus goldi	Cyathostomum 40, Cylicostephanus 9	0.9964	both supported
+genus	Cylicodontophorus bicoronatus	PZ103495	Cyathostominae 17, Coronocyclus 12, Cylicostephanus 11, Cyathostomum 1	Cylicostephanus calicatus	Cylicostephanus 10, Cyathostominae 7, Cylicodontophorus 1	0.9902	i wrong
+genus	Cylicodontophorus mettami	AJ004846	Cylicodontophorus 1, Parapoteriostomum 1	Parapoteriostomum mettami	Parapoteriostomum 1, Cylicodontophorus 1	0.9969	both supported
+genus	Cylicostephanus calicatus	PZ103494	Cylicostephanus 10, Cyathostominae 7, Cylicodontophorus 1	Cylicodontophorus bicoronatus	Cyathostominae 17, Coronocyclus 12, Cylicostephanus 11, Cyathostomum 1	0.9902	j wrong
+genus	Cylicostephanus goldi	PP923300	Cyathostomum 34, Cylicostephanus 10	Cyathostomum catinatum	Cyathostomum 41, Cylicostephanus 8	0.99	both supported
+genus	Cylicostephanus goldi	PP923307	Cyathostomum 35, Cylicostephanus 9	Cyathostomum catinatum	Cyathostomum 36, Cyathostominae 7, Cylicostephanus 6	0.9931	both supported
+genus	Cylicostephanus goldi	PP923309	Cyathostomum 40, Cylicostephanus 9	Cyathostomum catinatum	Cyathostomum 41, Cylicostephanus 8	0.9933	both supported
+genus	Ektaphelenchoides compasi	DQ257622	Bursaphelenchus 4	Bursaphelenchus thailandae	Ektaphelenchoides 1	0.9932	i wrong
+genus	Gracilacus paralatescens	MH200615	Gracilacus 3, Paratylenchus 1	Paratylenchus paralatescens	Gracilacus 4	0.9953	j wrong
+genus	Gracilacus paralatescens	MW714357	Gracilacus 3, Paratylenchus 1	Paratylenchus paralatescens	Gracilacus 4	1.0	j wrong
+genus	Heterodera glycines	AF216579,AY590280,JX024213,KF055926,KF05	Heterodera 34	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	AF498387,KY794764,MK817510	Heterodera 48	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	EF611124,KT988079,KY794765	Heterodera 47	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	EU106167	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	GU595431	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	JQ068765	Heterodera 49	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	JQ068766	Heterodera 49	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	JQ340480	Heterodera 50	Cactodera estonica	Heterodera 49	0.9948	j wrong
+genus	Heterodera glycines	JQ340482	Heterodera 50	Cactodera estonica	Heterodera 49	0.9948	j wrong
+genus	Heterodera glycines	JQ340489	Heterodera 49	Cactodera estonica	Heterodera 49	0.99	j wrong
+genus	Heterodera glycines	JX024210	Heterodera 50	Cactodera estonica	Heterodera 49	0.9951	j wrong
+genus	Heterodera glycines	KJ161291	Heterodera 49	Cactodera estonica	Heterodera 49	0.9901	j wrong
+genus	Heterodera glycines	KT988083	Heterodera 50	Cactodera estonica	Heterodera 49	0.995	j wrong
+genus	Heterodera glycines	KT988084	Heterodera 50	Cactodera estonica	Heterodera 49	0.995	j wrong
+genus	Heterodera glycines	KT988087	Heterodera 49	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	KT988089,KT988102	Heterodera 48	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	KT988092,KT988100,PQ285251	Heterodera 47	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	KT988104	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	KU896218	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	KY794756	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	KY794757	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	KY794758	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	KY794762	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	KY794763	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	LC030368	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	LC030369	Heterodera 48, Cactodera 1	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	LC208695	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	MG836298	Heterodera 49	Cactodera estonica	Heterodera 49	0.9901	j wrong
+genus	Heterodera glycines	MG836299	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	MG836311	Heterodera 50	Cactodera estonica	Heterodera 49	0.9949	j wrong
+genus	Heterodera glycines	MG836318	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	MG836326	Heterodera 50	Cactodera estonica	Heterodera 49	0.9951	j wrong
+genus	Heterodera glycines	MG836327	Heterodera 49	Cactodera estonica	Heterodera 49	0.9901	j wrong
+genus	Heterodera glycines	MG845019,PQ198651	Heterodera 48	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	MG845022	Heterodera 49	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	MG845033	Heterodera 49	Cactodera estonica	Heterodera 49	0.99	j wrong
+genus	Heterodera glycines	MG845058	Heterodera 49	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	MG845069	Heterodera 50	Cactodera estonica	Heterodera 49	0.9944	j wrong
+genus	Heterodera glycines	MG845098	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	MG845108	Heterodera 49	Cactodera estonica	Heterodera 49	0.9947	j wrong
+genus	Heterodera glycines	MG845121	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	MH371375	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	MH934965	Heterodera 49	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	MK817509	Heterodera 50	Cactodera estonica	Heterodera 49	0.9949	j wrong
+genus	Heterodera glycines	MT199662	Heterodera 48, Cactodera 1	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	MT199664	Heterodera 48, Cactodera 1	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	PQ198650	Heterodera 49	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	PQ198652	Heterodera 49	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	PQ227795	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	PQ227804	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	PQ285211	Heterodera 6	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	PQ285217	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	PQ285219	Heterodera 49	Cactodera estonica	Heterodera 49	0.99	j wrong
+genus	Heterodera glycines	PQ285230	Heterodera 49	Cactodera estonica	Heterodera 49	0.9902	j wrong
+genus	Heterodera glycines	PQ285232	Heterodera 49	Cactodera estonica	Heterodera 49	0.9904	j wrong
+genus	Heterodera glycines	PQ285238	Heterodera 49	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera glycines	PX419197	Heterodera 50	Cactodera estonica	Heterodera 49	0.9943	j wrong
+genus	Heterodera hordecalis	AY045756	Betulodera 2, Cactodera 1	Betulodera betulae	Heterodera 1, Betulodera 1, Cactodera 1	1.0	i wrong
+genus	Heterodera medicaginis	MK093184	Heterodera 48, Cactodera 1	Cactodera estonica	Heterodera 49	1.0	j wrong
+genus	Heterodera medicaginis	MK093192	Heterodera 48, Cactodera 1	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera medicaginis	MN308440	Heterodera 48, Cactodera 1	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera medicaginis	PX603017	Heterodera 48, Cactodera 1	Cactodera estonica	Heterodera 49	0.9952	j wrong
+genus	Heterodera sonchophila	MW346595	Heterodera 48, Cactodera 1	Cactodera estonica	Heterodera 49	1.0	j wrong
+genus	Japanema entomophagus	KC875230	Sheraphelenchus 4	Sheraphelenchus sucus	Sheraphelenchus 4	0.9975	i wrong
+genus	Japanema entomophagus	KC875231	Sheraphelenchus 4	Sheraphelenchus sucus	Sheraphelenchus 4	0.9975	i wrong
+genus	Japanema entomophagus	LT903555	Sheraphelenchus 4	Sheraphelenchus sucus	Sheraphelenchus 5	0.9935	i wrong
+genus	Japanema entomophagus	LT903556	Sheraphelenchus 4	Sheraphelenchus sucus	Sheraphelenchus 5	0.9903	i wrong
+genus	Labiosimplex longispicularis	FR854208	Labiostrongylus 5, Labiosimplex 3	Labiostrongylus longispicularis	Labiosimplex 4, Labiostrongylus 4	0.9955	both supported
+genus	Labiosimplex longispicularis	KJ776388	Labiostrongylus 7, Labiosimplex 4	Labiostrongylus longispicularis	Labiostrongylus 7, Labiosimplex 5	0.9955	both supported
+genus	Labiostrongylus longispicularis	AJ308406	Labiostrongylus 6, Labiosimplex 5	Labiosimplex longispicularis	Labiostrongylus 7, Labiosimplex 4	0.9955	both supported
+genus	Labiostrongylus longispicularis	AJ308408	Labiosimplex 4, Labiostrongylus 4	Labiosimplex longispicularis	Labiostrongylus 5, Labiosimplex 3	0.9955	both supported
+genus	Labiostrongylus longispicularis	AJ308410	Labiostrongylus 5, Labiosimplex 5	Labiosimplex longispicularis	Labiostrongylus 7, Labiosimplex 4	0.991	both supported
+genus	Labiostrongylus longispicularis	AJ308411	Labiostrongylus 7, Labiosimplex 5	Labiosimplex longispicularis	Labiostrongylus 7, Labiosimplex 4	0.9955	both supported
+genus	Nematomystes scapteromi	JQ995297	Aspidodera 4, Nematomystes 2	Aspidodera raillieti	Aspidodera 4, Nematomystes 2	0.993	both supported
+genus	Nematomystes scapteromi	JQ995299	Aspidodera 4, Nematomystes 2	Aspidodera raillieti	Aspidodera 4, Nematomystes 2	1.0	both supported
+genus	Oesophagostomum aculeatum	LC428824	Ternidens 2	Ternidens deminutus	Ternidens 1, Oesophagostomum 1	0.9907	i wrong
+genus	Ostertagia trifurcata	MN845175	Teladorsagia 41, T.circumcinta 1	Teladorsagia circumcincta	Teladorsagia 41, Ostertagia 1, T.circumcinta 1	0.996	i wrong
+genus	Papillostrongylus barbatus	AJ309961	Papillostrongylus 2, Rugopharynx 1	Rugopharynx alpha	Papillostrongylus 3	0.9958	j wrong
+genus	Papillostrongylus barbatus	KJ776392	Papillostrongylus 2, Rugopharynx 1	Rugopharynx alpha	Papillostrongylus 3	1.0	j wrong
+genus	Papillostrongylus barbatus	KJ776393	Papillostrongylus 2, Rugopharynx 1	Rugopharynx alpha	Papillostrongylus 3	0.9958	j wrong
+genus	Parapoteriostomum mettami	KP693435	Cylicodontophorus 2	Cylicodontophorus mettami	Cylicodontophorus 1, Parapoteriostomum 1	0.9969	i wrong
+genus	Parapoteriostomum mettami	PX557810	Parapoteriostomum 1, Cylicodontophorus 1	Cylicodontophorus mettami	Cylicodontophorus 1, Parapoteriostomum 1	0.9969	both supported
+genus	Paratylenchus paralatescens	OR354384	Gracilacus 4	Gracilacus paralatescens	Gracilacus 3, Paratylenchus 1	1.0	i wrong
+genus	Phocanema bulbosa	AJ413972	Pseudoterranova 8, Phocanema 3	Pseudoterranova decipiens	Pseudoterranova 7, Phocanema 3	1.0	both supported
+genus	Phocanema bulbosa	OP355455	Pseudoterranova 7, Phocanema 3	Pseudoterranova decipiens	Pseudoterranova 7, Phocanema 3	1.0	both supported
+genus	Phocanema cattani	AJ413983	Pseudoterranova 48, Nematoda 1	Pseudoterranova decipiens	Pseudoterranova 47, Nematoda 1	0.9967	i wrong
+genus	Phocanema cattani	AJ413984	Pseudoterranova 48, Nematoda 1	Pseudoterranova decipiens	Pseudoterranova 47, Nematoda 1	0.9933	i wrong
+genus	Phocanema cattani	KC970078,KF781284	Pseudoterranova 47, Nematoda 1	Pseudoterranova decipiens	Pseudoterranova 48, Nematoda 1	1.0	i wrong
+genus	Phocanema krabbei	AJ413966	Phocanema 20, Pseudoterranova 9		Phocanema 19, Pseudoterranova 5	1.0	j wrong
+genus	Phocanema krabbei	OP355454	Phocanema 20, Pseudoterranova 9		Phocanema 19, Pseudoterranova 5	1.0	j wrong
+genus	Phocanema krabbei	PX285994	Phocanema 19, Pseudoterranova 10		Phocanema 19, Pseudoterranova 5	1.0	j wrong
+genus	Pseudoterranova decipiens	KT852550	Pseudoterranova 8, Phocanema 3	Phocanema bulbosa	Pseudoterranova 7, Phocanema 3	0.9916	both supported
+genus	Pseudoterranova decipiens	MG272333	Pseudoterranova 7, Phocanema 3	Phocanema bulbosa	Pseudoterranova 8, Phocanema 3	1.0	both supported
+genus	Pseudoterranova decipiens	MG272334	Pseudoterranova 12, Phocanema 3	Phocanema bulbosa	Pseudoterranova 7, Phocanema 3	1.0	both supported
+genus	Pseudoterranova decipiens	MG272336	Pseudoterranova 12, Phocanema 3	Phocanema bulbosa	Pseudoterranova 7, Phocanema 3	0.9929	both supported
+genus	Pseudoterranova decipiens	PV771507	Pseudoterranova 48, Nematoda 1	Phocanema cattani	Pseudoterranova 47, Nematoda 1	1.0	j wrong
+genus	Rugopharynx alpha	LN906946	Papillostrongylus 3	Papillostrongylus barbatus	Papillostrongylus 2, Rugopharynx 1	1.0	i wrong
+genus	Sheraphelenchus sucus	LC601019	Sheraphelenchus 5	Japanema entomophagus	Sheraphelenchus 4	0.9935	j wrong
+genus	Sheraphelenchus sucus	LC765395	Sheraphelenchus 4	Japanema entomophagus	Sheraphelenchus 4	0.9975	j wrong
+genus	Teladorsagia circumcincta	AF351781	Teladorsagia 38, T.circumcinta 1, Ostertagia 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.9919	j wrong
+genus	Teladorsagia circumcincta	AJ577463,PX963288,PZ016539	Teladorsagia 40, Ostertagia 1, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.992	j wrong
+genus	Teladorsagia circumcincta	JQ989274	Teladorsagia 29, Ostertagia 3, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 46, Ostertagia 2, T.circumcinta 1	0.9955	both supported
+genus	Teladorsagia circumcincta	KC998710,KU891919	Teladorsagia 40, T.circumcinta 1, Ostertagia 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.992	j wrong
+genus	Teladorsagia circumcincta	KF989498	Teladorsagia 45, Ostertagia 3, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.9944	j wrong
+genus	Teladorsagia circumcincta	KU891922	Teladorsagia 39, Ostertagia 1, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.992	j wrong
+genus	Teladorsagia circumcincta	KU891923	Teladorsagia 41, Ostertagia 1, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.992	j wrong
+genus	Teladorsagia circumcincta	KU891926	Teladorsagia 41, Ostertagia 1, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.996	j wrong
+genus	Teladorsagia circumcincta	KU891927	Teladorsagia 39, Ostertagia 1, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.992	j wrong
+genus	Teladorsagia circumcincta	MH047832	Teladorsagia 42, Ostertagia 1, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.992	j wrong
+genus	Teladorsagia circumcincta	MK033627	Teladorsagia 46, Ostertagia 3	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	1.0	j wrong
+genus	Teladorsagia circumcincta	MK033628	Teladorsagia 46, Ostertagia 3	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.9926	j wrong
+genus	Teladorsagia circumcincta	MN845176	Teladorsagia 40, Ostertagia 1, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.9905	j wrong
+genus	Teladorsagia circumcincta	MN888739	Teladorsagia 36, Ostertagia 1, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.996	j wrong
+genus	Teladorsagia circumcincta	MW161478	Teladorsagia 47, Ostertagia 1, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.991	j wrong
+genus	Teladorsagia circumcincta	MW161480	Teladorsagia 47, Ostertagia 1, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.9912	j wrong
+genus	Teladorsagia circumcincta	PQ763999	Teladorsagia 47, Ostertagia 1, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.9911	j wrong
+genus	Teladorsagia circumcincta	PQ764006	Teladorsagia 29, Ostertagia 3, T.circumcinta 1	Ostertagia trifurcata	Teladorsagia 46, Ostertagia 2, T.circumcinta 1	0.991	both supported
+genus	Teladorsagia circumcincta	PQ764007	Teladorsagia 44, T.circumcinta 1, Ostertagia 1	Ostertagia trifurcata	Teladorsagia 46, Ostertagia 2, T.circumcinta 1	0.991	both supported
+genus	Teladorsagia circumcincta	X86026	Teladorsagia 42, Ostertagia 1	Ostertagia trifurcata	Teladorsagia 41, T.circumcinta 1	0.9919	j wrong
+genus	Ternidens deminutus	KF319027	Ternidens 1, Oesophagostomum 1	Oesophagostomum aculeatum	Ternidens 2	0.9907	j wrong

@@ -2,7 +2,7 @@
 # action: drop (kept in members.tsv as "dropped", out of every record) or
 # relabel (label: eight ranks, ;-separated). Evidence: BLAST of the record's
 # ITS2 against nt, megablast, hits >= 98% identity over >= 90% of the query,
-# the record's own accessions excluded (results/cross_family_ties_blast.tsv).
+# the record's own accessions excluded (results/cross_family_ties_blast.tsv, results/neighbour_check_blast.tsv).
 accession	action	label	reason
 MW420927	drop		Contracaecum muraenesoxi; ITS2 matches Hysterothylacium amoyense (38 hits) - cross-family tie, 2026-11-09
 MW412588	drop		Contracaecum muraenesoxi in a Hysterothylacium amoyense record (14 of 15 members; 32 H. amoyense hits) - cross-family tie
@@ -19,3 +19,10 @@ MN704744	drop		Heterorhabditis indica; ITS2 is Steinernema (best hits S. siamkay
 EU131007	drop		UNVERIFIED_ORG Caenorhabditis elegans; ITS2 matches Pratylenchus speijeri (4 hits) - cross-family tie
 MG685662	drop		Oesophagostomum radiatum in a Mecistocirrus digitatus record (3 of 4 members; 8 Mecistocirrus hits) - cross-family tie
 GQ258655	drop		Steinernema siamkayai strain SSRK27; ITS2 identical to three Heterorhabditis records (H. indica x2, H. gerrardi); genuine S. siamkayai records differ - second pass after the first 14 drops
+AY692355	drop		Cactodera estonica; ITS2 matches Heterodera (49 hits >= 98%) - neighbour check (results/neighbour_check_blast.tsv), 2026-11-09
+PX761267	drop		Anisakis typica; ITS2 matches Hysterothylacium (49 hits; H. fabri within 1%) - neighbour check
+MH392317	drop		Ascaridia galli; ITS2 matches Heterorhabditis (24 hits; H. taysearae within 1.5%) - neighbour check
+EU828749	drop		Contracaecum muraenesoxi; ITS2 matches Hysterothylacium amoyense (44 hits; the 5 Contracaecum hits are these same submissions) - neighbour check
+MW418099	drop		Contracaecum muraenesoxi; ITS2 matches Hysterothylacium amoyense (44 hits) - neighbour check
+FJ234209	drop		Contracaecum muraenesoxi; ITS2 matches Hysterothylacium amoyense (44 hits) - neighbour check; with MW420927, MW412588, EU826125 every C. muraenesoxi ITS2 is dropped
+MK935151	drop		Acrobeloides saeedi; ITS2 matches Heterorhabditis indica (10 hits against 3 Acrobeloides) - neighbour check

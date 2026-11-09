@@ -30,8 +30,8 @@ record anchored at both ends: `complete`, `near_complete` (>= 98%),
 
 ## The first build (scratch, 2026-11-09)
 
-12,980 records from 15,108 nemabiome sequences (version 20260317; 15
-dropped as mislabelled, `curation/overrides.tsv`), 424 genera, 1,838
+12,973 records from 15,108 nemabiome sequences (version 20260317; 22
+dropped as mislabelled, `curation/overrides.tsv`), 424 genera, 1,837
 species with a record of their own.
 
 | Grade | Records |
