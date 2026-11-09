@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# Downloaded source databases (sources/README.md says where from)
+sources/*
+!sources/README.md
+
+# Build intermediates; the reports worth keeping are copied into results/
+work/
+
+# Releases: the data travel as the tarball; only the manifest and summary
+# of each release are committed.
+releases/*.tar.gz
+releases/*/*
+!releases/*/manifest.json
+!releases/*/summary.txt

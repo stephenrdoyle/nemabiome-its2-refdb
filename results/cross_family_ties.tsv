@@ -1,0 +1,52 @@
+id	species	family	grade	accessions	tied_with	tied_species	tied_family	tied_grade	tied_accessions
+ITS2_064c6115980a	Hysterothylacium amoyense	Raphidascarididae	partial	ON098270.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_08009acf6e05	Oscheius tipulae	Rhabditidae	partial_75	PX455932.1	ITS2_1a1da5a4e230	Steinernema glaseri	Steinernematidae	near_complete	KM016418.1
+ITS2_0ce1d5717fb5	Heterorhabditis bacteriophora	Heterorhabditidae	complete	MG593948.1	ITS2_30cbd3228982	(order)		near_complete	MF033536.1,MF372928.1,MF535289.1,MG334256.1,MG334257.1
+ITS2_0fbb52248f2a	Hysterothylacium amoyense	Raphidascarididae	partial	PX446498.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_1024fb84592f	Pratylenchus crenatus	Pratylenchidae	partial_90	PQ403988.1	ITS2_4c4f7769d0d7	Punctodera mulveyi	Heteroderidae	complete	MN121000.1
+ITS2_11b82ee9dd5b	Hysterothylacium amoyense	Raphidascarididae	partial	PX446490.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_1621f7d0fe2c	Hysterothylacium amoyense	Raphidascarididae	near_complete	MW423789.1	ITS2_ffb9203a2c3b	(order)		complete	KP252130.1,MT269312.1,MW404617.1,MW404619.1,MW404622.1
+ITS2_191343b6543f	Crenosoma vulpis	Crenosomatidae	partial_75	OK465458.1	ITS2_b9fe3528ce21	Cercopithifilaria bainae	Onchocercidae	near_complete	JF501396.1
+ITS2_1a1da5a4e230	Steinernema glaseri	Steinernematidae	near_complete	KM016418.1	ITS2_08009acf6e05	Oscheius tipulae	Rhabditidae	partial_75	PX455932.1
+ITS2_1b1cbcc60433	Marshallagia occidentalis	Trichostrongylidae	complete	KC295417.1	ITS2_615ce2fb03dc	(order)		complete	MK760918.1,MN845180.1,MT110919.1
+ITS2_2132195be9ab	Hysterothylacium amoyense	Raphidascarididae	partial	ON098269.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_251d7b19df32	Heterorhabditis indica	Heterorhabditidae	partial	OQ653109.1	ITS2_ac28cff5046a	Acrobeloides bodenheimeri	Cephalobidae	complete	MW667574.1
+ITS2_25b9f034c898	Oscheius onirici	Rhabditidae	complete	LN613267.1,PX055666.1	ITS2_dc5acd5ca2ab	Heterorhabditis georgiana	Heterorhabditidae	partial	KY568701.1
+ITS2_2ce1edce25fd	Hysterothylacium amoyense	Raphidascarididae	partial	ON098268.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_3181dc2176cc	Hysterothylacium amoyense	Raphidascarididae	partial_90	KT749422.1	ITS2_ffb9203a2c3b	(order)		complete	KP252130.1,MT269312.1,MW404617.1,MW404619.1,MW404622.1
+ITS2_31ff21231975	Hysterothylacium zhoushanense	Raphidascarididae	near_complete	MF539814.1	ITS2_de0489da5779	(order)		complete	EU826125.1,JX028277.1,KP326556.1
+ITS2_3e486ad5e615	Hysterothylacium amoyense	Raphidascarididae	partial	ON098281.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_3e8d65d10691	Hysterothylacium amoyense	Raphidascarididae	partial	PX446495.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_4c4f7769d0d7	Punctodera mulveyi	Heteroderidae	complete	MN121000.1	ITS2_1024fb84592f	Pratylenchus crenatus	Pratylenchidae	partial_90	PQ403988.1
+ITS2_5869cf32a30b	Hysterothylacium amoyense	Raphidascarididae	partial	PX446497.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_5ede7e09c7a0	Steinernema siamkayai	Steinernematidae	unmeasured	GQ258640.1	ITS2_79ffb22cdf1c	Heterorhabditis indica	Heterorhabditidae	unmeasured	MN704744.1
+ITS2_60a76a311484	Heterorhabditis indica	Heterorhabditidae	partial_90	KF937810.1	ITS2_6c97469e05b8	(order)		complete	GQ258644.1,MN704735.1
+ITS2_660cd9541326	Oscheius onirici	Rhabditidae	complete	LN613265.1	ITS2_dc5acd5ca2ab	Heterorhabditis georgiana	Heterorhabditidae	partial	KY568701.1
+ITS2_6dfe33365b1b	Hysterothylacium amoyense	Raphidascarididae	partial	ON098267.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_713ef5fb8e9c	Hysterothylacium amoyense	Raphidascarididae	near_complete	MW412582.1	ITS2_ffb9203a2c3b	(order)		complete	KP252130.1,MT269312.1,MW404617.1,MW404619.1,MW404622.1
+ITS2_76686756a8bb	Steinernema siamkayai	Steinernematidae	unmeasured	GQ497252.1	ITS2_79ffb22cdf1c	Heterorhabditis indica	Heterorhabditidae	unmeasured	MN704744.1
+ITS2_791e687b2a1c	Hysterothylacium amoyense	Raphidascarididae	partial	PX446496.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_7eaed451c056	Hysterothylacium amoyense	Raphidascarididae	near_complete	KT749421.1,ON803502.1	ITS2_ffb9203a2c3b	(order)		complete	KP252130.1,MT269312.1,MW404617.1,MW404619.1,MW404622.1
+ITS2_84dadb21d6af	Pratylenchus speijeri	Pratylenchidae	complete	KF974735.1	ITS2_a36161b82d4d	Caenorhabditis elegans	Rhabditidae	near_complete	EU131007.1
+ITS2_92f25506e9a0	Mecistocirrus digitatus	Trichostrongylidae	near_complete	LC800430.1	ITS2_5a795eab151b	(order)		complete	AJ577468.1,KJ192195.1,MG679517.1,MG685662.1
+ITS2_99e63f3a6d99	Hysterothylacium amoyense	Raphidascarididae	partial_75	ON098282.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_9af65954f6a4	Marshallagia occidentalis	Trichostrongylidae	complete	KC295418.1	ITS2_615ce2fb03dc	(order)		complete	MK760918.1,MN845180.1,MT110919.1
+ITS2_a36161b82d4d	Caenorhabditis elegans	Rhabditidae	near_complete	EU131007.1	ITS2_84dadb21d6af	Pratylenchus speijeri	Pratylenchidae	complete	KF974735.1
+ITS2_ac28cff5046a	Acrobeloides bodenheimeri	Cephalobidae	complete	MW667574.1	ITS2_251d7b19df32	Heterorhabditis indica	Heterorhabditidae	partial	OQ653109.1
+ITS2_b0a50844c729	Heterorhabditis bacteriophora	Heterorhabditidae	partial_90	JF416798.1	ITS2_30cbd3228982	(order)		near_complete	MF033536.1,MF372928.1,MF535289.1,MG334256.1,MG334257.1
+ITS2_b17cdce9cf65	Heterorhabditis indica	Heterorhabditidae	near_complete	GQ377413.1,KU214823.1,KY807714.1,MH489028.1,MT372498.1,MW548112.1,MW548116.1,MW548120.1	ITS2_6c97469e05b8	(order)		complete	GQ258644.1,MN704735.1
+ITS2_b9fe3528ce21	Cercopithifilaria bainae	Onchocercidae	near_complete	JF501396.1	ITS2_191343b6543f	Crenosoma vulpis	Crenosomatidae	partial_75	OK465458.1
+ITS2_bf71aed1c474	Heterorhabditis bacteriophora	Heterorhabditidae	complete	MK421504.1	ITS2_30cbd3228982	(order)		near_complete	MF033536.1,MF372928.1,MF535289.1,MG334256.1,MG334257.1
+ITS2_c4cf62756e8c	Heterorhabditis bacteriophora	Heterorhabditidae	complete	MG593947.1	ITS2_30cbd3228982	(order)		near_complete	MF033536.1,MF372928.1,MF535289.1,MG334256.1,MG334257.1
+ITS2_c850292a5e4a	Hysterothylacium amoyense	Raphidascarididae	partial	PX446500.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_c90800691b70	Hysterothylacium amoyense	Raphidascarididae	partial	ON098283.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_cf66f37cdd4c	Hysterothylacium amoyense	Raphidascarididae	complete	OL376800.1,OL376801.1,OL376802.1	ITS2_ffb9203a2c3b	(order)		complete	KP252130.1,MT269312.1,MW404617.1,MW404619.1,MW404622.1
+ITS2_d7bf11a2256c	Hysterothylacium amoyense	Raphidascarididae	partial	ON098284.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_d85e0c699545	Hysterothylacium amoyense	Raphidascarididae	partial_75	ON098280.1	ITS2_ffb9203a2c3b	(order)		complete	KP252130.1,MT269312.1,MW404617.1,MW404619.1,MW404622.1
+ITS2_d9840bbeb40d	Heterorhabditis indica	Heterorhabditidae	near_complete	MH029269.1,MK300683.1,MW548102.1,MW548117.1	ITS2_6c97469e05b8	(order)		complete	GQ258644.1,MN704735.1
+ITS2_dc5acd5ca2ab	Heterorhabditis georgiana	Heterorhabditidae	partial	KY568701.1	ITS2_25b9f034c898	Oscheius onirici	Rhabditidae	complete	LN613267.1,PX055666.1
+ITS2_df576cc4d96e	Hysterothylacium amoyense	Raphidascarididae	partial	PX446494.1	ITS2_27e323c620f7	Contracaecum muraenesoxi	Anisakidae	complete	MW420927.1
+ITS2_e7a91c5c69eb	Heterorhabditis indica	Heterorhabditidae	partial_90	PV646226.1	ITS2_6c97469e05b8	(order)		complete	GQ258644.1,MN704735.1
+ITS2_eef8ab4ff7b0	Heterorhabditis indica	Heterorhabditidae	complete	MK995679.1	ITS2_6c97469e05b8	(order)		complete	GQ258644.1,MN704735.1
+ITS2_ef2fad3b0aa5	Steinernema siamkayai	Steinernematidae	unmeasured	PV355873.1	ITS2_79ffb22cdf1c	Heterorhabditis indica	Heterorhabditidae	unmeasured	MN704744.1
+ITS2_f14b85f740db	Heterorhabditis indica	Heterorhabditidae	complete	GQ377407.1,GQ377410.1	ITS2_6c97469e05b8	(order)		complete	GQ258644.1,MN704735.1
