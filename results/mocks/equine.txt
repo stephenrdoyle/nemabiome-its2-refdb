@@ -1,0 +1,19 @@
+equine: 9 samples, 56 ASVs, 61,794 reads; clean 76.8%, noisy 22.5%, no source 0.7%
+
+Clean ASVs (an exact source copy; truth = the mock label), read-weighted:
+   arm                               right species      WRONG species       genus, right        WRONG genus  higher/unassigned  abund. err  vs mock
+   assignTaxonomy x nemabiome               100.0%               0.0%               0.0%               0.0%               0.0%        0.0%    73.3%
+   IdTaxa x nemabiome                       100.0%               0.0%               0.0%               0.0%               0.0%        0.0%    73.5%
+   assignTaxonomy x this db                  95.1%               0.0%               0.0%               0.0%               4.9%        5.6%    73.6%
+   IdTaxa x this db                          95.1%               0.0%               0.0%               0.0%               4.9%        5.6%    73.8%
+   gap rule x this db                       100.0%               0.0%               0.0%               0.0%               0.0%        0.0%    73.7%
+
+Noisy ASVs (1-8 edits from sources of one species), read-weighted:
+   arm                               right species      WRONG species       genus, right        WRONG genus  higher/unassigned
+   assignTaxonomy x nemabiome                95.8%               0.0%               4.2%               0.0%               0.0%
+   IdTaxa x nemabiome                        85.1%               0.0%              14.9%               0.0%               0.0%
+   assignTaxonomy x this db                  97.3%               0.0%               2.7%               0.0%               0.0%
+   IdTaxa x this db                          79.5%               0.0%              20.5%               0.0%               0.0%
+   gap rule x this db                        72.6%               0.0%              27.4%               0.0%               0.0%
+
+

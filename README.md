@@ -154,6 +154,14 @@ this database the ASVs' 28S stretch must be cut off first
 `results/dada2_comparison/` holds each arm's summary and the per-ASV
 calls.
 
+**Simulated mocks** (Jesudoss Chelladurai et al. 2025; canine, equine,
+ruminant, all species present): no classifier, with either database,
+named a wrong species for an exact copy of a source sequence; the
+k-mer classifiers named 86-100% of reads to species, the gap rule
+50-100%, stopping at genus where a sister species is 1-3 edits off.
+The mocks' truth includes two backbone mislabels this database corrects
+(docs/DESIGN.md §6.3; `results/mocks/`).
+
 ## Build
 
 ```bash
@@ -175,7 +183,7 @@ Testing: `bin/its2_leave_one_out.py` (gap rule), `bin/loo_dada2.py`
 (assignTaxonomy or IdTaxa on the same queries), `bin/loo_group_rules.py`;
 `bin/dada2_nemabiome.R`, `bin/trim_28s.py`, `bin/assign_taxonomy.R`,
 `bin/idtaxa.R`, `bin/classify_asvs.py` and `bin/compare_arms.py` for
-real data. These need R with dada2 and DECIPHER, and cutadapt.
+real data; `bin/mock_arms.sh` and `bin/score_mocks.py` for the mocks. These need R with dada2 and DECIPHER, and cutadapt.
 
 Needs Python 3.9+ and minimap2. `sources/README.md` says where each
 download comes from.

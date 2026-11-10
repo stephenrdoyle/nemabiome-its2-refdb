@@ -1,0 +1,23 @@
+canine: 9 samples, 39 ASVs, 76,639 reads; clean 98.2%, noisy 1.8%
+
+Clean ASVs (an exact source copy; truth = the mock label), read-weighted:
+   arm                               right species      WRONG species       genus, right        WRONG genus  higher/unassigned  abund. err  vs mock
+   assignTaxonomy x nemabiome                95.5%               0.0%               4.5%               0.0%               0.0%        3.9%    15.6%
+   IdTaxa x nemabiome                       100.0%               0.0%               0.0%               0.0%               0.0%        0.1%    15.0%
+   assignTaxonomy x this db                  95.5%               0.0%               4.5%               0.0%               0.0%        3.9%    15.6%
+   IdTaxa x this db                         100.0%               0.0%               0.0%               0.0%               0.0%        0.1%    15.0%
+   gap rule x this db                        82.6%               0.0%              17.4%               0.0%               0.0%       17.2%    28.9%
+
+Noisy ASVs (1-8 edits from sources of one species), read-weighted:
+   arm                               right species      WRONG species       genus, right        WRONG genus  higher/unassigned
+   assignTaxonomy x nemabiome                94.3%               5.7%               0.0%               0.0%               0.0%
+   IdTaxa x nemabiome                        94.3%               5.7%               0.0%               0.0%               0.0%
+   assignTaxonomy x this db                  94.3%               5.7%               0.0%               0.0%               0.0%
+   IdTaxa x this db                          94.3%               5.7%               0.0%               0.0%               0.0%
+   gap rule x this db                        26.0%               0.0%              74.0%               0.0%               0.0%
+
+
+   assignTaxonomy x nemabiome wrong: Ancylostoma caninum -> Ancylostoma ceylanicum 0.10%
+   IdTaxa x nemabiome wrong: Ancylostoma caninum -> Ancylostoma ceylanicum 0.10%
+   assignTaxonomy x this db wrong: Ancylostoma caninum -> Ancylostoma ceylanicum 0.10%
+   IdTaxa x this db wrong: Ancylostoma caninum -> Ancylostoma ceylanicum 0.10%

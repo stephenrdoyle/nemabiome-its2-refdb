@@ -564,6 +564,67 @@ missing (wildlife, new hosts, surveys), the gap rule's 3-6x lower error
 on missing species matters more than its lower depth. amphid should
 follow the gap rule (feedback note §5) and report `nearest` and `next`.
 
+### 6.3 Simulated mocks
+
+The simulated nemabiome mocks of Jesudoss Chelladurai et al. (2025,
+Parasites & Vectors, 10.1186/s13071-025-07184-1; Zenodo
+10.5281/zenodo.17019940): canine (4 species), equine (22) and ruminant
+(16), nine samples each, ART-Illumina 2x250 reads simulated from
+nemabiome v1.0.0 records, each read named for its species. Run through
+`bin/dada2_nemabiome.R` (no primer step: the reads carry none), then
+`bin/mock_arms.sh`; scored by `bin/score_mocks.py`
+(`results/mocks/`). An ASV's truth is the species of the source record
+it copies; ASVs 1-8 edits from a source (simulated errors DADA2 kept)
+are scored apart as "noisy".
+
+Exact source copies, % of reads to the right species / stopped at the
+right genus. No arm named a wrong species in any set:
+
+| Arm | Canine | Equine | Ruminant |
+|---|---|---|---|
+| assignTaxonomy x nemabiome | 95.5 / 4.5 | 100 / 0 | 93.8 / 6.2 |
+| IdTaxa x nemabiome | 100 / 0 | 100 / 0 | 94.6 / 3.7 |
+| assignTaxonomy x this db | 95.5 / 4.5 | 95.1 / 0 | 87.9 / 12.1 |
+| IdTaxa x this db | 100 / 0 | 95.1 / 0 | 86.2 / 11.7 |
+| gap rule x this db | 82.6 / 17.4 | 100 / 0 | 49.8 / 48.0 |
+
+Noisy ASVs: no wrong species in equine or ruminant; in canine every
+k-mer arm named 5.7% of them as the wrong species (an *A. caninum*
+variant called *A. ceylanicum*), and the gap rule stopped them at genus.
+
+What the mocks can and cannot say:
+
+- **Present species only.** Every source record is in both databases,
+  so the mocks re-test §6.1's present case. They reward naming boldly
+  and cannot show the gap rule's lower error on missing species. Its
+  genus stops are sisters 1-3 edits apart: *Cooperia oncophora* /
+  *C. surnabada* (31% of ruminant reads), *Trichostrongylus
+  colubriformis* / *T. capricola*, *Ancylostoma* species.
+- **They favour the backbone.** The sources are nemabiome's own
+  references, boundaries and all; this database's records are re-cut at
+  the anchors (§3.2), so ASVs carry flank bases its records lack.
+- **The truth carries the backbone's label errors.** The "*Oesophagostomum
+  radiatum*" source is MG685662, dropped here as *Mecistocirrus
+  digitatus* (§5.2): all five arms call it *M. digitatus*, with
+  nemabiome's own database too - hence the paper's "*O. radiatum* not
+  detected". Six "*Haemonchus contortus*" sources are the cattle records
+  dropped in §5.3; assignTaxonomy (both databases) and the gap rule call
+  them *H. placei*.
+- **Synonyms count as species.** The mock lists *Cylicostephanus
+  poculatus* and *Petrovinema poculatum* as two species, and this
+  database holds *Cylicodontophorus* and *Parapoteriostomum mettami*
+  apart, which splits the k-mer arms' votes (the equine 4.9% stopped
+  above genus). Scored as one species each.
+- **DADA2 at nemabiome.ca's defaults handles ART's reads badly.** With
+  error-heavy 3' tails, no truncation and no mismatch allowed in the
+  overlap, 3-57% of pairs merged, unevenly: one equine sample kept 4 of
+  22 species. Composition error against the simulated truth (15-74%) is
+  therefore DADA2's, the same in every arm.
+
+Evaluation stops here. What limits species calls now is curation
+(synonyms, shared ITS2 types, missing species), not thresholds or
+classifiers.
+
 ## 7. Release format
 
 As vespa-18s-refdb (`refdb.fasta`, `taxonomy.tsv`, `members.tsv`,
@@ -607,9 +668,9 @@ amphid needs changes before it can use this database:
    other genus-name pairs, awaiting a choice of names; the unclear
    neighbour pairs. These, not thresholds, are what limits species calls
    on missing-species errors (§6.1).
-6. **Mock communities**: the simulated nemabiome mocks of the QIIME2
-   comparison (Zenodo 10.5281/zenodo.17019940) would test against known
-   truth rather than agreement between classifiers.
+6. **Mock communities**: done (§6.3). They test present species only; a
+   missing-species version (each mock species removed in turn) was not
+   run.
 7. **Unmeasured records** (1,962): a lower-identity relative, or an HMM
    for the 28S stretch, could anchor more of them.
 8. **ITS1-5.8S-ITS2** for NC5/NC2 nanopore runs, should those be used

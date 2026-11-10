@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Cut the 28S stretch off DADA2 ASVs, for k-mer classifiers.
 
-    bin/trim_28s.py <asvs.tsv> <out.tsv>
+    bin/trim_28s.py <asvs.tsv> <out.tsv> [--anchor-only]
 
 A primer-trimmed NC1/NC2 ASV ends in the ~47-base 28S stretch before
 NC2; this database's records stop at its start (README: What a record
@@ -15,7 +15,9 @@ bases), taken only if it removes 35-60 bases; else the last 47 bases go.
 A concatenated ASV (forward + 10 N + reverse, from 2x150 pairs) is cut
 in its reverse part. ASVs with under 100 bases left are not ITS2 and are
 dropped (a few short junk ASVs; they also overflow IdTaxa's memory).
-Writes asv, sequence.
+--anchor-only leaves an ASV whole when the anchor is not found, for
+ASVs that may not reach 28S (the simulated mocks, which were made from
+database records rather than amplicons). Writes asv, sequence.
 """
 
 from __future__ import annotations
@@ -34,7 +36,7 @@ MIN_LEN = 100
 SEP = "N" * 10
 
 
-def trim(s):
+def trim(s, anchor_only=False):
     """(trimmed sequence, whether the anchor was found)."""
     head, sep, tail = s.partition(SEP)
     part = tail if sep else head
@@ -42,6 +44,8 @@ def trim(s):
     cut = len(part) - LOOK + hit[0] if hit else None
     found = cut is not None and CUT_RANGE[0] <= len(part) - cut <= CUT_RANGE[1]
     if not found:
+        if anchor_only:
+            return s, False
         cut = len(part) - STRETCH       # anchor missing or out of place
     part = part[:cut]
     return (head + sep + part if sep else part), found
@@ -49,12 +53,13 @@ def trim(s):
 
 def main() -> int:
     src, out = sys.argv[1:3]
+    anchor_only = "--anchor-only" in sys.argv[3:]
     n = found = dropped = 0
     with open(out, "w") as fh:
         fh.write("asv\tsequence\n")
         for r in csv.DictReader(open(src), delimiter="\t"):
             n += 1
-            s, f = trim(r["sequence"])
+            s, f = trim(r["sequence"], anchor_only)
             found += f
             if len(s.replace("N", "")) < MIN_LEN:
                 dropped += 1
