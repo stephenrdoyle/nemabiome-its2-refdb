@@ -4,6 +4,13 @@ From nemabiome-its2-refdb v0.1.0 (2026-11-10). The
 database follows vespa-18s-refdb's release format. These are the
 places where ITS2 needs something V4 did not.
 
+Tracked in amphid as
+[stephenrdoyle/nf-amphid-pipeline#9](https://github.com/stephenrdoyle/nf-amphid-pipeline/issues/9),
+which maps each point below to the amphid code it changes. The issue
+also covers two points not here: `taxonomy.tsv` has NCBI's eight ranks,
+not the PR2 levels amphid hard-codes, and amphid's identity charges a
+read's unaligned ends - for ITS2, the 28S stretch - as differences.
+
 ## 1. Score reads over the reference's span
 
 A reference runs from the 3' end of NC1 to the start of the ~47-base
