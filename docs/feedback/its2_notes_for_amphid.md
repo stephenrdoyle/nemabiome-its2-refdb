@@ -60,11 +60,11 @@ one edit is 0.42%, so 99.7% means an exact match. Margins are thin: of
 the species-level records, 410 are tied with another species, 897 are
 one edit away and 712 two.
 
-A leave-one-out test (DESIGN §6.1; 3,164 queries, 1,210 species) shows
-identity alone is the wrong measure. Under the V4 limits only 18.6% of
-reads whose species is in the database are named to species. What
-separates a right call from a wrong one is the margin to the next
-species. Recommended rule:
+A leave-one-out test (DESIGN §6.1; 3,195 queries, 1,224 species, on
+the current development build) shows identity alone is the wrong
+measure. Under the V4 limits only 17.9% of reads whose species is in
+the database are named to species. What separates a right call from a
+wrong one is the margin to the next species. Recommended rule:
 
 - **species**: >= 99% identity over the span AND the best reference of
   any other species is >= 4 edits further off (same span);
@@ -72,12 +72,16 @@ species. Recommended rule:
 - a reference with `species_status` = `unnamed` (hybrids, cf.,
   environmental) is not "another species"; a `shared` one is.
 
-| Rule (whole reads) | Species missing: wrong species | Present: right species | Present: wrong species |
-|---|---:|---:|---:|
-| V4 limits | 2.5% | 18.6% | 1.5% |
-| gap rule | 6.5% | 52.6% | 0.7% |
-| dada2 assignTaxonomy, for scale | 42.4% | 85.1% | 4.6% |
-| DECIPHER IdTaxa, for scale | 22.0% | 77.1% | 2.5% |
+Recall = right calls / reads; precision = right calls / calls made at
+that rank; over-classification = a species named for a read whose
+species is missing from the database.
+
+| Rule (whole reads) | Species recall | Species precision | Genus recall | Genus precision | Over-classification |
+|---|---:|---:|---:|---:|---:|
+| V4 limits | 17.9% | 93.7% | 49.7% | 99.3% | 2.0% |
+| gap rule | 52.3% | 98.6% | 89.2% | 99.3% | 6.3% |
+| dada2 assignTaxonomy, for scale | 85.4% | 94.6% | 97.4% | 99.2% | 43.9% |
+| DECIPHER IdTaxa, for scale | 76.9% | 96.7% | 93.5% | 99.4% | 22.7% |
 
 Limits set separately per genus or family did no better on held-out
 species. Thresholds cannot fix the remaining missing-species errors:
@@ -92,6 +96,18 @@ close". Both stop at genus for different reasons, and users act on them
 differently. `bin/classify_asvs.py` writes these as `nearest` and
 `next`.
 
+**Score read windows strictly.** Charge every reference base from the
+reference's own end to where a window stops; leave read bases free only
+before the reference's start (primer offset, up to 30). Cut the second
+window at the 28S anchor, not at a fixed 47 bases. Giving a reference's
+first bases slack let one partial *H. bedfordi* record tie *H. placei*
+reads in the reference scorer (DESIGN §6.2); amphid already charges
+them.
+
+**Orient reads.** A sequence whose best hit is on the reverse strand
+should be turned before scoring; IdTaxa does this with
+`strand = "both"`.
+
 ## 5a. If a k-mer classifier is used instead
 
 assignTaxonomy and IdTaxa compare k-mers over the whole ASV, not over
@@ -101,7 +117,7 @@ stretch off the ASVs first (`bin/trim_28s.py`, or `R/trim_28s.R` as
 shipped with the release: at the 28S anchor
 `AACCTGAGCTCAGTCGTGATTACCCGCCGAACTTAAGCATATCA`, else the last 47
 bases). Uncut, assignTaxonomy named 45% of reads of one sheep set to
-species; cut, 99.3%.
+species; cut, 99.2%.
 
 ## 6. Ties are already resolved in the tables
 

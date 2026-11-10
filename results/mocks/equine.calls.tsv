@@ -34,23 +34,23 @@ ASV00032	whole	4	320	0.9875	1	12	Cylicostephanus bidentatus 98.8%	Cylicocyclus e
 ASV00033	whole	0	218	1.0000	2	21	Cylicostephanus minutus 100.0%	Coronocyclus coronatus +21	species	Cylicostephanus minutus	species	Cylicostephanus minutus	species	Cylicostephanus minutus
 ASV00034	whole	2	320	0.9938	1	11	Cylicocyclus elongatus 99.4%	Cylicostephanus calicatus +11	family	Strongylidae	family	Strongylidae	species	Cylicocyclus elongatus
 ASV00035	whole	3	317	0.9905	2		Cyathostomum pateratum / Cylicostephanus goldi 99.1%	Cyathostomum catinatum +2	family	Strongylidae	family	Strongylidae	family	Strongylidae
-ASV00036	whole	1	273	0.9963	1	11	Cylicostephanus longibursatus 99.6%	Cylicostephanus goldi +11	genus	Cylicostephanus	genus	Cylicostephanus	species	Cylicostephanus longibursatus
+ASV00036	whole	12	270	0.9556	2	3	Cylicostephanus goldi 95.6%	Cyathostomum catinatum +3	family	Strongylidae	family	Strongylidae	family	Strongylidae
 ASV00037	whole	0	327	1.0000	2	7	Cylicocyclus nassatus 100.0%	Cylicocyclus radiatus +7	species	Cylicocyclus nassatus	species	Cylicocyclus nassatus	species	Cylicocyclus nassatus
 ASV00038	whole	0	323	1.0000	1	9	Cylicocyclus nassatus 100.0%	Cylicocyclus radiatus +9	species	Cylicocyclus nassatus	species	Cylicocyclus nassatus	species	Cylicocyclus nassatus
-ASV00039	whole	2	273	0.9927	1	5	Cylicostephanus longibursatus 99.3%	Cylicostephanus goldi +5	family	Strongylidae	family	Strongylidae	species	Cylicostephanus longibursatus
+ASV00039	whole	3	320	0.9906	1	5	Cylicostephanus longibursatus 99.1%	Cylicostephanus goldi +5	family	Strongylidae	family	Strongylidae	species	Cylicostephanus longibursatus
 ASV00040	whole	3	320	0.9906	1	7	Cylicostephanus longibursatus 99.1%	Cylicostephanus goldi +7	family	Strongylidae	family	Strongylidae	species	Cylicostephanus longibursatus
 ASV00041	whole	3	320	0.9906	1	6	Cylicostephanus longibursatus 99.1%	Cylicostephanus goldi +6	family	Strongylidae	family	Strongylidae	species	Cylicostephanus longibursatus
 ASV00042	whole	1	315	0.9968	1	3	Cylicocyclus ashworthi 99.7%	Cylicocyclus shared: ashworthi / insigne +3	genus	Cylicocyclus	genus	Cylicocyclus	genus	Cylicocyclus
 ASV00043	whole	1	315	0.9968	1	3	Cylicocyclus ashworthi 99.7%	Cylicocyclus insigne +3	genus	Cylicocyclus	genus	Cylicocyclus	genus	Cylicocyclus
 ASV00044	whole	0	318	1.0000	1	2	Cylicocyclus ashworthi 100.0%	Cylicocyclus insigne +2	species	Cylicocyclus ashworthi	species	Cylicocyclus ashworthi	genus	Cylicocyclus
 ASV00045	whole	0	318	1.0000	1	8	Cylicocyclus leptostomus 100.0%	Cylicocyclus ashworthi +8	species	Cylicocyclus leptostomus	species	Cylicocyclus leptostomus	species	Cylicocyclus leptostomus
-ASV00046	whole	1	273	0.9963	1	10	Cylicostephanus longibursatus 99.6%	Cylicostephanus goldi +10	genus	Cylicostephanus	genus	Cylicostephanus	species	Cylicostephanus longibursatus
+ASV00046	whole	11	270	0.9593	2	3	Cylicostephanus goldi 95.9%	Cyathostomum catinatum +3	family	Strongylidae	family	Strongylidae	family	Strongylidae
 ASV00047	whole	7	319	0.9781	1	3	Cyathostomum tetracanthum 97.8%	Cyathostomum montgomeryi +3	family	Strongylidae	family	Strongylidae	genus	Cyathostomum
 ASV00048	whole	4	319	0.9875	1	6	Cylicocyclus nassatus 98.7%	Cylicocyclus radiatus +6	family	Strongylidae	family	Strongylidae	genus	Cylicocyclus
-ASV00049	whole	3	273	0.9890	1	11	Cylicostephanus longibursatus 98.9%	Cylicostephanus goldi +11	family	Strongylidae	family	Strongylidae	genus	Cylicostephanus
+ASV00049	whole	14	270	0.9481	2	4	Cylicostephanus goldi 94.8%	Cyathostomum catinatum +4	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00050	whole	7	319	0.9781	1	5	Cyathostomum tetracanthum 97.8%	Cyathostomum montgomeryi +5	family	Strongylidae	family	Strongylidae	genus	Cyathostomum
-ASV00051	whole	2	273	0.9927	1	11	Cylicostephanus longibursatus 99.3%	Cylicostephanus goldi +11	family	Strongylidae	family	Strongylidae	species	Cylicostephanus longibursatus
-ASV00052	whole	3	273	0.9890	1	11	Cylicostephanus longibursatus 98.9%	Cylicostephanus goldi +11	family	Strongylidae	family	Strongylidae	genus	Cylicostephanus
+ASV00051	whole	13	270	0.9519	2	4	Cylicostephanus goldi 95.2%	Cyathostomum catinatum +4	family	Strongylidae	family	Strongylidae	family	Strongylidae
+ASV00052	whole	14	270	0.9481	2	4	Cylicostephanus goldi 94.8%	Cyathostomum catinatum +4	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00053	whole	1	323	0.9969	1	7	Cylicocyclus radiatus 99.7%	Cylicocyclus nassatus +7	genus	Cylicocyclus	genus	Cylicocyclus	species	Cylicocyclus radiatus
 ASV00054	whole	5	320	0.9844	1	6	Cylicostephanus longibursatus 98.4%	Cylicostephanus goldi +6	family	Strongylidae	family	Strongylidae	genus	Cylicostephanus
 ASV00055	whole	4	323	0.9876	1	13	Cylicostephanus bidentatus 98.8%	Cylicocyclus elongatus +13	family	Strongylidae	family	Strongylidae	genus	Cylicostephanus

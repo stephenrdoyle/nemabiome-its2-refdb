@@ -71,11 +71,25 @@ The full GenBank record behind every backbone accession is fetched
   backbone's boundary, the submitter trimmed there and the end is
   kept as `record`. Where flanking sequence exists but no anchor fits,
   the backbone's boundary is kept (`hmm`).
+- **part**: a record that starts with the tail of NC1 (the last >= 5
+  bases exact, or >= 8 with one mismatch) or ends with the head of the
+  28S stretch has that remnant cut off (`part`). Before this, 155
+  records started inside NC1 and 494 ended inside 28S, and a read was
+  charged for bases it does not carry. A remnant with an indel is not
+  caught: AM410070 (*H. placei*) keeps GGGTGTT at its start.
 - **guard**: a cut more than 30 bases longer than the backbone's ITS2
   falls back to the backbone's boundaries (LT159837 came out 1,187
   bases long, the anchor found in the wrong place).
+- **strand**: some records are deposited reverse-complemented, and the
+  anchors cannot tell, as a reversed record may still fit a loose anchor.
+  Records with a tight NC1 or 28S anchor (`primer`) set the strand;
+  every other cut is mapped against them (minimap2) and, if its best
+  match is on the minus strand, turned and cut again. 36 records turned,
+  among them MK087176 (*H. contortus*: 40 edits from its own species
+  before, 2 after) and AM410070. LN626259 (*Dirofilaria*) maps equally
+  well both ways and is left as deposited.
 
-Of 15,108 records: 4,832 anchored at both ends, 6,268 at the start
+Of 15,108 records (counts from before the strand and `part` steps): 4,832 anchored at both ends, 6,268 at the start
 only, 1,539 at the end only, 2,469 at neither. Both-anchored ITS2s are
 94-692 bases (median 230). 1,353 records run on to NC2; their 28S
 stretch (285 variants, 40-49 bases) is kept in `its2_cut.tsv` and never
@@ -156,8 +170,9 @@ same effect dropped pairs in vespa-18s-refdb's neighbour check.)
 - **Ties**: a species-level record at margin 0 sits exactly inside
   another species' record over its span. A read scores the same
   against both, so the resolution tables stop it at the rank the two
-  share. 410 records read whole, 522 through 2x150 windows (the current
-  build; 732 and 745 before curation and folding).
+  share. 343 records read whole, 473 through 2x150 windows (the current
+  development build; 410 and 522 in v0.1.0, 732 and 745 before curation
+  and folding).
 - **`species_status`** (`taxonomy.tsv`): `named` if the record reaches
   species; `shared` if it stops above species because its members name
   two or more species (95 records: real shared ITS2s, such as *Brugia*);
@@ -200,10 +215,13 @@ often that large, and in vespa-18s-refdb a leave-one-out test named
 27-46% of reads as a sister species once identity limits were lifted.
 The same test is in §6.
 
-The current build, after the curation of §5.2-5.3, folding (§8, item 4) and the
+v0.1.0, after the curation of §5.2-5.3, folding (§8, item 4) and the
 long-read layer (§5.5), has 11,956 records, 1,840 species with a record
 of their own and 426 genera; 96% of records resolve to species read
-whole, 94% through 2x150 windows (`results/dev_build_summary.txt`).
+whole, 94% through 2x150 windows. The current development build adds
+the strand and `part` steps (§3.2) and folds weak records (§8, item 9):
+11,146 records, the same species and genera, 96% to species read whole
+and 94% through 2x150 windows (`results/dev_build_summary.txt`).
 
 ### 5.2 Cross-family ties: mislabels, curated
 
@@ -470,11 +488,23 @@ pairs, `bin/classify_asvs.py` for DADA2 ASVs. Both share the scorer.
 - **Span scoring.** Each reference is placed whole inside the read, the
   read's extra bases free. 2x150 pairs that do not overlap are scored
   as two windows, against the start and the end of each reference.
+  Every reference base from its own end to where the window stops is
+  charged; read bases before the reference's start are free only up to
+  30 (primer offset and flank). The second window is cut at the 28S
+  anchor first (`trim_28s`, else 47 bases): the stretch runs 40-49
+  bases, so a fixed cut left a third of records' last bases nothing to
+  meet. v0.1.0's scorer gave up to 10 of a record's first bases free
+  (`SLACK`), which let a partial *H. bedfordi* record (§6.2) tie reads
+  of *H. placei*.
+- **Strand.** An ASV whose best minimap2 hit is on the minus strand is
+  turned round before scoring (none of the 810 real-data ASVs; one
+  mock ASV, §6.3).
 - **Every candidate scored.** minimap2 proposes; every reference it
   proposes is scored exactly. v0.1.0's figures came from the top 40 by
   matching bases, which hid the nearest other species from reads of
   species with hundreds of records: that neighbour is often a partial
-  with fewer matches (issue #1). The figures below are uncapped.
+  with fewer matches (issue #1). The figures below are uncapped, on the
+  current development build (§5.1).
 - **Ranking by identity**, not raw edits, over at least 100 bases:
   ranked by edits, a 77-base partial 32 edits off beat full-length
   references.
@@ -495,7 +525,7 @@ pairs, `bin/classify_asvs.py` for DADA2 ASVs. Both share the scorer.
 ### 6.1 Leave-one-out
 
 As in vespa-18s-refdb. `bin/its2_leave_one_out.py`: up to 5
-full-length species-level records per species, 3,164 queries from 1,210
+full-length species-level records per species, 3,195 queries from 1,224
 species, read whole and through 2x150 windows, as perfect reads.
 
 - **Missing**: every record holding a member of the query's species is
@@ -503,14 +533,25 @@ species, read whole and through 2x150 windows, as perfect reads.
 - **Present**: only the query's own record is removed, for species with
   another record.
 
-| Rule (whole) | Missing: wrong species | Present: right species | Present: wrong species |
-|---|---:|---:|---:|
-| amphid's V4 limits (99.7% / 99.5% / 95%) | 2.5% | 18.6% | 1.5% |
-| exact: species only at 0 edits | 1.8% | 11.4% | 1.1% |
-| gap (>= 99%, 4 edits clear) | 6.5% | 52.6% | 0.7% |
+Reported as recall (right calls / queries), precision (right calls /
+calls made at that rank or deeper; a species call is right at genus if
+its genus is) and over-classification (a species named when the species
+is missing; at genus, a genus named when the genus is missing too).
+Specificity is not used: with 1,224 species every query is a negative
+for all but one, and every method scores above 99.9%.
+(`bin/loo_metrics.py`, `results/leave_one_out/metrics.txt`.)
 
-At 2x150: 9.0%, 56.1% and 0.6% for the gap rule
-(`results/leave_one_out/gap_rule.txt`). The V4 and exact rules seldom
+| Rule (whole) | Species recall | Species precision | Genus recall | Genus precision | Over-classification, species | Over-classification, genus |
+|---|---:|---:|---:|---:|---:|---:|
+| amphid's V4 limits (99.7% / 99.5% / 95%) | 17.9% | 93.7% | 49.7% | 99.3% | 2.0% | 1.1% |
+| exact: species only at 0 edits | 10.7% | 92.2% | 52.6% | 99.3% | 1.6% | 1.1% |
+| gap (>= 99%, 4 edits clear) | 52.3% | 98.6% | 89.2% | 99.3% | 6.3% | 5.4% |
+
+At 2x150 the gap rule gives 54.0%, 99.0%, 90.2%, 99.4%, 6.9% and 5.0%
+(`results/leave_one_out/`). v0.1.0, scored uncapped, gave 52.6% recall
+and 6.5% over-classification read whole, 56.1% and 9.0% at 2x150: the
+stricter window scoring costs 2 points of recall at 2x150 and saves a
+quarter of the over-classification. The V4 and exact rules seldom
 name a species even when it is there. The gap rule names three to five
 times as many, and is wrong less often on present species, because the
 margin to the next species is what separates right from wrong, not the
@@ -525,11 +566,11 @@ differs). Could a rule per genus or family do better?
 `bin/loo_group_rules.py` let each genus or family choose its own
 identity floor (97-99%) and gap (1-10 edits), chosen on four fifths of
 the species and scored on the rest. On held-out species, per-group rules
-recovered 2.5-3 points of right calls for 0.3-0.4 more present-wrong and
-0.3-0.8 more missing-wrong. Loosening the global rule trades 6.7 points
-for 0.8 and 2.3 (`results/leave_one_out/group_rules.txt`). Per-family
-rules trade a little better, but by fractions of a point, from five
-splits of 1,210 species; one rule is kept.
+recovered 2.3-4.4 points of right calls for 0.4-0.6 more present-wrong
+and 0.4-1.0 more missing-wrong. Loosening the global rule trades 9.1
+points for 1.0 and 2.9 (`results/leave_one_out/group_rules.txt`). No
+per-group rule beats the global one by more than fractions of a point,
+from five splits of 1,224 species; one rule is kept.
 
 ### 6.2 Against DADA2
 
@@ -545,18 +586,25 @@ overlap over a 290-330 base amplicon and are joined with
 IdTaxa retrain per fold, so 10 folds rather than one species at a time;
 `results/leave_one_out/`):
 
-| Classifier, this database (whole) | Missing: wrong species | Missing: unassigned | Present: right species | Present: wrong species |
-|---|---:|---:|---:|---:|
-| assignTaxonomy | 42.4% | 0% | 85.1% | 4.6% |
-| IdTaxa | 22.0% | 51.6% | 77.1% | 2.5% |
-| gap rule | 6.5% | 59.8% | 52.6% | 0.7% |
+| Classifier, this database (whole) | Species recall | Species precision | Genus recall | Genus precision | Over-classification, species | Over-classification, genus |
+|---|---:|---:|---:|---:|---:|---:|
+| assignTaxonomy | 85.4% | 94.6% | 97.4% | 99.2% | 43.9% | 20.7% |
+| IdTaxa | 76.9% | 96.7% | 93.5% | 99.4% | 22.7% | 8.0% |
+| gap rule | 52.3% | 98.6% | 89.2% | 99.3% | 6.3% | 5.4% |
 
-The three sit on one trade-off line. assignTaxonomy never declines: a
-read from a missing species gets a species name 42% of the time. IdTaxa
-halves that. The gap rule is wrong least, by about three times, and
-names fewest. If 20% of a sample's reads come from species missing from
-the database, the share of species calls that are right is about 85%
-(assignTaxonomy), 91% (IdTaxa) and 96% (gap rule). Reads left
+At 2x150: assignTaxonomy 86.4% recall, 95.3% precision, 39.4%
+over-classification; IdTaxa 77.6%, 96.9%, 22.1%; the gap rule 54.0%,
+99.0%, 6.9%. The three sit on one trade-off line. At genus they are
+equally precise; at species they differ in how often they name a
+species that is not there. assignTaxonomy never declines: a read from a
+missing species gets a species name 44% of the time. IdTaxa halves
+that. The gap rule over-classifies least, by 3-7 times, and names
+fewest. If 20% of a sample's reads come from species missing from the
+database, the share of species calls that are right is about 84%
+(assignTaxonomy), 90% (IdTaxa) and 96% (gap rule). Of missing-species
+reads whose genus is still in the database, the gap rule names the
+genus for 28% (precision 93%), IdTaxa 42% (93%), assignTaxonomy 71%
+(93%); most of the gap rule's rest stay unassigned. Reads left
 unassigned by IdTaxa and the gap rule are not junk: they are reads whose
 nearest reference is too far for a family (< 95%).
 
@@ -567,10 +615,13 @@ species (`results/dada2_comparison/`):
 
 | Set | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db |
 |---|---:|---:|---:|---:|---:|
-| Šlapeta 2x250 | 69.5% | 95.4% | 99.3% | 99.7% | 84.1% |
-| Šlapeta 2x150 | 69.1% | 87.9% | 99.2% | 92.2% | 52.4% |
-| Gilleard 2x250 | 72.6% | 68.0% | 92.9% | 69.9% | 62.4% |
-| Gilleard 2x150 | 69.0% | 67.8% | 93.7% | 91.9% | 37.3% |
+| Šlapeta 2x250 | 69.5% | 95.4% | 99.2% | 99.4% | 91.2% |
+| Šlapeta 2x150 | 69.1% | 87.9% | 98.9% | 98.2% | 87.3% |
+| Gilleard 2x250 | 72.6% | 68.0% | 92.9% | 97.5% | 86.9% |
+| Gilleard 2x150 | 69.0% | 67.8% | 93.7% | 93.5% | 87.7% |
+
+With v0.1.0 as released, scored uncapped, the gap rule named 84.1 /
+52.4 / 62.4 / 37.3%; the changes are below.
 
 - **No arm contradicts another.** Wherever two arms both name a species,
   it is the same species, in all four sets. These are farm samples with
@@ -583,23 +634,25 @@ species (`results/dada2_comparison/`):
   ~47 bases of 28S that this database's records lack. The span scorer
   ignores them; assignTaxonomy and IdTaxa do not. Uncut, assignTaxonomy
   named 45% of Šlapeta 2x250 reads to species with this database; cut,
-  99.3% (`bin/trim_28s.py`: at
+  99.2% (`bin/trim_28s.py`: at
   the 28S anchor, else the last 47 bases). The columns for this
   database above are on cut ASVs.
 - **The gap rule names fewer species here** than the k-mer classifiers
-  with this database, and a few weak records decide most of the
+  with this database. On v0.1.0, a few weak records decided most of the
   difference: partial records resting on one accession.
-  - At 2x250, most of it is *H. placei* reads with an *H. contortus*
+  - At 2x250, most of it was *H. placei* reads with an *H. contortus*
     record 3 edits further off (25% of Gilleard reads, 7% of
     Šlapeta's). Typical records of the two species are 4-7 edits apart.
-    The 3-edit records are partial copies 1 edit from a full-length
-    *H. contortus* record, and one looks mislabelled (issue #2).
+    The 3-edit records were partial copies 1 edit from a full-length
+    *H. contortus* record (issue #2). They are now folded into that
+    record (§8, item 9), and MK087176, which had been cut on the wrong
+    strand, is turned (§3.2).
   - At 2x150, a single partial *H. bedfordi* record
-    (`ITS2_2c0973e14d2e`, partial_90) sits 2-3 edits behind both.
-    Through the windows it stops 49% of Gilleard reads and 37% of
-    Šlapeta's at *Haemonchus*. The window scoring places each window
-    with slack, so up to 10 of a record's first bases go uncounted
-    (`SLACK`). amphid counts them, which puts this record +6 off.
+    (`ITS2_2c0973e14d2e`, partial_90) sat 2-3 edits behind both through
+    the windows and stopped 49% of Gilleard reads and 37% of Šlapeta's
+    at *Haemonchus*. The window scoring gave up to 10 of its first bases
+    free; it now charges them (§6), which puts the record +5 or more
+    off, as amphid scores it.
 
   The other reads it stops at genus are mostly an exact
   match to one species with a sister 1-3 edits off (*Trichostrongylus
@@ -621,8 +674,8 @@ set is mostly this.
 **Which to use.** For samples whose species are all in the database
 (livestock), assignTaxonomy or IdTaxa on 28S-cut ASVs with this
 database names most, and here agreed with every other arm. Where species may be
-missing (wildlife, new hosts, surveys), the gap rule's 3-6x lower error
-on missing species matters more than its lower depth. amphid should
+missing (wildlife, new hosts, surveys), the gap rule's 3-7x lower
+over-classification matters more than its lower recall. amphid should
 follow the gap rule (feedback note §5) and report `nearest` and `next`.
 
 ### 6.3 Simulated mocks
@@ -638,20 +691,31 @@ nemabiome v1.0.0 records, each read named for its species. Run through
 it copies; ASVs 1-8 edits from a source (simulated errors DADA2 kept)
 are scored apart as "noisy".
 
-Exact source copies, % of reads to the right species / stopped at the
-right genus. No arm named a wrong species in any set:
+Every mock species is in the database, so the mocks measure recall,
+not over-classification. Exact source copies, read-weighted, species
+recall / genus recall. Precision is 100% at species and genus for every
+arm in every set: no arm named a wrong species or genus.
 
 | Arm | Canine | Equine | Ruminant |
 |---|---|---|---|
-| assignTaxonomy x nemabiome | 95.5 / 4.5 | 100 / 0 | 93.8 / 6.2 |
-| IdTaxa x nemabiome | 100 / 0 | 100 / 0 | 94.6 / 3.7 |
-| assignTaxonomy x this db | 95.5 / 4.5 | 95.1 / 0 | 87.9 / 12.1 |
-| IdTaxa x this db | 100 / 0 | 95.1 / 0 | 86.2 / 11.7 |
-| gap rule x this db | 82.6 / 17.4 | 100 / 0 | 45.1 / 52.7 |
+| assignTaxonomy x nemabiome | 95.5 / 100 | 100 / 100 | 93.8 / 100 |
+| IdTaxa x nemabiome | 100 / 100 | 100 / 100 | 94.6 / 98.2 |
+| assignTaxonomy x this db | 95.5 / 100 | 100 / 100 | 85.2 / 99.2 |
+| IdTaxa x this db | 100 / 100 | 100 / 100 | 92.7 / 97.9 |
+| gap rule x this db | 82.6 / 100 | 99.0 / 99.0 | 43.2 / 97.8 |
 
-Noisy ASVs: no wrong species in equine or ruminant; in canine every
-k-mer arm named 5.7% of them as the wrong species (an *A. caninum*
-variant called *A. ceylanicum*), and the gap rule stopped them at genus.
+v0.1.0 gave the gap rule 82.6 / 100 / 45.1% species recall. The
+ruminant's 2 points are one ASV (1.9% of reads), *T. colubriformis*:
+three single-accession partials 1 edit from it were folded into
+records 2 edits off (§8, item 9), so *T. retortaeformis* went from
++4 to +3, below the gap. Folding within 1 edit allows exactly this,
+and gained 0.7% of reads elsewhere (*Haemonchus*). The equine's 1
+point is a mock artefact (below).
+
+Noisy ASVs: species precision 100% in equine and ruminant; in canine
+every k-mer arm named 5.7% of them as the wrong species (an *A. caninum*
+variant called *A. ceylanicum*: precision 94.3%), and the gap rule
+stopped them at genus.
 
 What the mocks can and cannot say:
 
@@ -674,8 +738,18 @@ What the mocks can and cannot say:
 - **Synonyms count as species.** The mock lists *Cylicostephanus
   poculatus* and *Petrovinema poculatum* as two species, and this
   database holds *Cylicodontophorus* and *Parapoteriostomum mettami*
-  apart, which splits the k-mer arms' votes (the equine 4.9% stopped
-  above genus). Scored as one species each.
+  apart, which split the k-mer arms' votes on v0.1.0 (4.9% of equine
+  reads stopped above genus; none on the current build). Scored as one
+  species each.
+- **Two sources are not real amplicons.** One *H. placei* source is
+  AM410070 as deposited, reverse-complemented, so its ASV (0.75% of
+  ruminant reads) is reversed; the classifier now turns it (§6). One
+  *Cylicostephanus longibursatus* source is MG738692, a partial record
+  ~50 bases short of the ITS2's 3' end. v0.1.0 held it as a record of
+  its own and matched it exactly; the current build folds it into a
+  full-length record (§8, item 9), against which the truncated ASV is
+  charged for the missing end. That is the equine gap rule's 1.0%
+  unassigned. A real amplicon carries the full end.
 - **DADA2 at nemabiome.ca's defaults handles ART's reads badly.** With
   error-heavy 3' tails, no truncation and no mismatch allowed in the
   overlap, 3-57% of pairs merged, unevenly: one equine sample kept 4 of
@@ -731,7 +805,7 @@ amphid needs changes before it can use this database:
 4. **Contained records of the same species**: done. A partial record
    identical over its span to a full-length record of the same species is
    folded into it (`fold_contained` in `bin/build.py`): 1,115 records in
-   the current build. Its source records stay in `members.tsv`, noted.
+   v0.1.0, 1,122 in the current development build. Its source records stay in `members.tsv`, noted.
    Partials inside another species' full-length record are kept; they
    are real ties.
 5. **Shared ITS2 types** (§5.3, §5.4): *Cylicocyclus insigne* /
@@ -742,22 +816,31 @@ amphid needs changes before it can use this database:
 6. **Mock communities**: done (§6.3). They test present species only; a
    missing-species version (each mock species removed in turn) was not
    run.
-7. **Unmeasured records** (1,962): a lower-identity relative, or an HMM
+7. **Unmeasured records** (1,713 in the current build): a lower-identity relative, or an HMM
    for the 28S stretch, could anchor more of them.
 8. **ITS1-5.8S-ITS2** for NC5/NC2 nanopore runs, should those be used
    later: nemabiome has a separate database (v0.0.1).
-9. **Weak records** (issue #2): 4,066 records are partial or unmeasured
-   and rest on one accession. A few of them, 2-3 edits from another
-   species, stop most of the *Haemonchus* reads in §6.2 at genus.
-   Folding a weak record that is within 1 edit of a robust record of
-   its own species would recover most of these calls.
-10. **A record's first bases through 2x150 windows**: the window scoring
-    places each window with up to `SLACK` (10) bases of slack, so a
-    record's outermost bases can go uncounted. amphid charges them. The two differ by
-    about 2 points in the 2x150 leave-one-out, and on the
-    *H. bedfordi* record in §6.2.
+9. **Weak records** (issue #2): done. A weak record - partial or
+   unmeasured, resting on one accession - within 1 edit of a robust
+   record of its own species is folded into it (`fold_redundant` in
+   `bin/build.py`, every pair compared): 752 records in the current
+   build, each noted in `members.tsv`. In v0.1.0 a few of them, 2-3
+   edits from another species, stopped most of the *Haemonchus* reads
+   in §6.2 at genus. A read matching a folded record is at most 1 edit
+   further from its host, so a margin can fall by one: in the ruminant
+   mock, one *T. colubriformis* ASV fell from +4 to +3 (§6.3).
+10. **A record's first bases through 2x150 windows**: done. v0.1.0's
+    window scoring left up to `SLACK` (10) of a record's outermost bases
+    uncounted; amphid charged them. Both now charge them, and the second
+    window is cut at the 28S anchor rather than at a fixed 47 bases
+    (§6). It costs 2 points of 2x150 leave-one-out recall and saves a
+    quarter of the over-classification (§6.1).
 11. **Margins in v0.1.0's tables** (`build.py` `margins()`) came from the
     top 30 other-species candidates by matching bases. Scored uncapped,
     744 records' whole-read margins are lower, 128 fall below 4 edits and
-    3 become ties. The cap is lifted in the code; the next build carries
-    the corrected margins and resolution tables.
+    3 become ties. Done: the cap is lifted, and the current development
+    build carries the corrected margins and resolution tables. They reach
+    users with the next release.
+12. **Records cut on the wrong strand**: done (§3.2). 36 records turned.
+    LN626259 (*Dirofilaria*) maps equally well both ways and is left as
+    deposited; AM410070 keeps a 7-base NC1 remnant with an indel.

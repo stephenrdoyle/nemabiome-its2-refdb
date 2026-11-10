@@ -48,7 +48,7 @@ import tempfile
 MIN_IDENTITY = 0.80
 MIN_OVERHANG = 8
 END_SLOP = 3
-ANCHORED = ("primer", "loose")
+ANCHORED = ("primer", "loose", "part")
 
 
 def read_fasta(path):

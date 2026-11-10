@@ -1,26 +1,26 @@
-Leave-one-out, 3,164 queries (5 per species at most) from 1,210 species in work/build.
+Leave-one-out, 3,195 queries (5 per species at most) from 1,224 species in work/build.
 
-== hidden, whole (3,164 queries)
+== hidden, whole (3,195 queries)
    rule       right species    WRONG species     genus, right      WRONG genus family or higher       unassigned
-   v4                  0.0%             2.5%             3.5%             0.3%            33.9%            59.8%
-   exact               0.0%             1.8%             5.2%             0.4%            32.8%            59.8%
-   gap                 0.0%             6.5%            20.4%             1.4%            11.9%            59.8%
+   v4                  0.0%             2.0%             3.6%             0.3%            34.1%            60.0%
+   exact               0.0%             1.6%             4.9%             0.4%            33.1%            60.0%
+   gap                 0.0%             6.3%            20.2%             1.6%            12.0%            60.0%
 
-== hidden, 2x150 (2,597 queries)
+== hidden, 2x150 (2,612 queries)
    rule       right species    WRONG species     genus, right      WRONG genus family or higher       unassigned
-   v4                  0.0%             5.0%             5.3%             0.5%            31.7%            57.5%
-   exact               0.0%             5.0%             5.7%             0.6%            31.2%            57.5%
-   gap                 0.0%             9.0%            21.2%             1.7%            10.7%            57.5%
+   v4                  0.0%             2.5%             4.4%             0.4%            32.5%            60.2%
+   exact               0.0%             2.5%             4.6%             0.4%            32.4%            60.2%
+   gap                 0.0%             6.9%            19.4%             1.5%            12.1%            60.2%
 
-== present, whole (2,729 queries)
+== present, whole (2,743 queries)
    rule       right species    WRONG species     genus, right      WRONG genus family or higher       unassigned
-   v4                 18.6%             1.5%            31.3%             0.1%            43.8%             4.7%
-   exact              11.4%             1.1%            43.0%             0.3%            39.5%             4.7%
-   gap                52.6%             0.7%            35.9%             0.6%             5.4%             4.7%
+   v4                 17.9%             1.2%            30.9%             0.1%            44.9%             5.0%
+   exact              10.7%             0.9%            41.0%             0.3%            42.1%             5.0%
+   gap                52.3%             0.7%            36.2%             0.6%             5.2%             5.0%
 
-== present, 2x150 (2,224 queries)
+== present, 2x150 (2,226 queries)
    rule       right species    WRONG species     genus, right      WRONG genus family or higher       unassigned
-   v4                 32.6%             1.7%            34.6%             0.1%            26.9%             4.2%
-   exact              32.6%             1.7%            34.9%             0.1%            26.5%             4.2%
-   gap                56.1%             0.6%            34.1%             0.5%             4.5%             4.2%
+   v4                 20.8%             1.0%            38.4%             0.2%            35.0%             4.7%
+   exact              20.8%             1.0%            38.7%             0.2%            34.6%             4.7%
+   gap                54.0%             0.5%            35.7%             0.5%             4.5%             4.7%
 

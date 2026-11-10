@@ -130,22 +130,33 @@ Tested two ways (docs/DESIGN.md §6): leave-one-out on the database
 itself, and two published livestock datasets run through the standard
 nemabiome DADA2 workflow.
 
-**Leave-one-out** (3,164 records of 1,210 species, read whole; 2x150 is
-within 3 points). *Missing*: every record of the query's species
-removed, so any species named is wrong. *Present*: only the query's own
-record removed.
+Figures in this section are for the current code, built as a
+development build (11,146 records, `results/dev_build_summary.txt`), not
+the v0.1.0 release tables above: since v0.1.0 the classifier scores
+every candidate (issue #1), weak records are folded (issue #2), records
+are cut on the right strand, and read windows are scored strictly
+(docs/DESIGN.md §6.2).
 
-| Classifier, this database | Missing: wrong species | Present: right species | Present: wrong species |
-|---|---:|---:|---:|
-| `bin/classify_asvs.py`, gap rule | **6.5%** | 52.6% | **0.7%** |
-| DECIPHER IdTaxa (threshold 60) | 22.0% | 77.1% | 2.5% |
-| dada2 assignTaxonomy (minBoot 80) | 42.4% | **85.1%** | 4.6% |
+**Leave-one-out** (3,195 records of 1,224 species, read whole; 2x150 is
+within 3 points). *Present*: only the query's own record removed.
+*Missing*: every record of the query's species removed, so any species
+named is wrong. Recall = right calls / reads; precision = right calls /
+calls made at that rank; over-classification = species named for a
+missing species (`results/leave_one_out/metrics.txt`).
+
+| Classifier, this database | Species recall | Species precision | Genus recall | Genus precision | Over-classification |
+|---|---:|---:|---:|---:|---:|
+| `bin/classify_asvs.py`, gap rule | 52.3% | **98.6%** | 89.2% | 99.3% | **6.3%** |
+| DECIPHER IdTaxa (threshold 60) | 76.9% | 96.7% | 93.5% | **99.4%** | 22.7% |
+| dada2 assignTaxonomy (minBoot 80) | **85.4%** | 94.6% | **97.4%** | 99.2% | 43.9% |
 
 The gap rule names a species only when the read is >= 99% identical to
 it and every other species is >= 4 edits further off; otherwise it stops
 at genus (>= 97%) or family (>= 95%). It is the most conservative of the
 three: it names fewest species but is wrong least, which matters most in
-samples with species missing from the database (wildlife, new hosts).
+samples with species missing from the database (wildlife, new hosts). At
+genus all three are about 99% precise; they differ in how often they
+name a species that is not there.
 Tuning the rule per genus or family did not help on held-out species
 (`results/leave_one_out/group_rules.txt`). Each call carries `nearest`
 (the best species and its identity) and `next` (the nearest other
@@ -158,28 +169,27 @@ species wherever two of them named one):
 
 | Dataset | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db |
 |---|---:|---:|---:|---:|---:|
-| Šlapeta sheep, PRJNA936713, 2x250 | 69.5% | 95.4% | 99.3% | 99.7% | 84.1% |
-| same, cut to 2x150 | 69.1% | 87.9% | 99.2% | 92.2% | 52.4% |
-| Gilleard cattle, PRJNA1524548, 2x250 | 72.6% | 68.0% | 92.9% | 69.9% | 62.4% |
-| same, cut to 2x150 | 69.0% | 67.8% | 93.7% | 91.9% | 37.3% |
+| Šlapeta sheep, PRJNA936713, 2x250 | 69.5% | 95.4% | 99.2% | 99.4% | 91.2% |
+| same, cut to 2x150 | 69.1% | 87.9% | 98.9% | 98.2% | 87.3% |
+| Gilleard cattle, PRJNA1524548, 2x250 | 72.6% | 68.0% | 92.9% | 97.5% | 86.9% |
+| same, cut to 2x150 | 69.0% | 67.8% | 93.7% | 93.5% | 87.7% |
 
 assignTaxonomy and IdTaxa compare k-mers over the whole ASV, so with
 this database the ASVs' 28S stretch must be cut off first
 (`bin/trim_28s.py`); the columns for this database are on cut ASVs.
-The gap rule's figures are lower than those first published with v0.1.0
-(92.2 / 90.5 / 86.9 / 86.9%): the classifier then scored only the top 40
-candidates and could miss the nearest other species (issue #1). Most of
-what it now stops at genus is *Haemonchus*, held back by a few partial
-single-accession records 2-3 edits from *H. placei* and *H. contortus*
-(issue #2; docs/DESIGN.md §6.2).
+With v0.1.0 as released, the gap rule named 84.1 / 52.4 / 62.4 / 37.3%
+once it scored every candidate: a few partial single-accession
+*Haemonchus* records and the old window scoring held *H. placei* at
+genus (issues #1, #2; docs/DESIGN.md §6.2).
 `results/dada2_comparison/` holds each arm's summary and the per-ASV
 calls.
 
 **Simulated mocks** (Jesudoss Chelladurai et al. 2025; canine, equine,
-ruminant, all species present): no classifier, with either database,
-named a wrong species for an exact copy of a source sequence; the
-k-mer classifiers named 86-100% of reads to species, the gap rule
-45-100%, stopping at genus where a sister species is 1-3 edits off.
+ruminant, all species present, so they measure recall, not
+over-classification): no classifier, with either database, named a
+wrong species for an exact copy of a source sequence (precision 100%);
+the k-mer classifiers named 85-100% of reads to species, the gap rule
+43-99%, stopping at genus where a sister species is 1-3 edits off.
 The mocks' truth includes two backbone mislabels this database corrects
 (docs/DESIGN.md §6.3; `results/mocks/`).
 

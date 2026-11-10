@@ -21,8 +21,12 @@ are scored apart too, because their mock label is not the species:
             (curation/overrides.tsv, found by exact sequence in the backbone)
   synonym   Cylicostephanus poculatus = Petrovinema poculatum: the mock
             lists both; one species
-Per arm, read-weighted: right species, wrong species, right genus (stopped
-there), wrong genus, higher or unassigned; and per sample, the species
+Per arm, read-weighted, at species and at genus: recall (right calls /
+reads) and precision (right calls / reads called at that rank or deeper;
+a species call is right at genus when its genus is right). Every mock
+species is in the database, so there is no over-classification to
+measure here (bin/loo_metrics.py does, by leaving species out). And per
+sample, the species
 abundance error: half the summed absolute difference between called and
 true species shares (reads not named to species count as error) - over
 clean ASVs ("abund. err", the classifier alone), and over all reads
@@ -131,6 +135,11 @@ def main() -> int:
             return "genus, right" if nm == t.split()[0] else "WRONG genus"
         return "higher/unassigned"
     cats = ["right species", "WRONG species", "genus, right", "WRONG genus", "higher/unassigned"]
+    metrics = ["species recall", "precision", "genus recall", "precision"]
+
+    def call_genus(call):
+        rank, nm = call
+        return canon(nm).split()[0] if rank == "species" else nm
 
     mock = collections.defaultdict(collections.Counter)
     for r in csv.DictReader(open(os.path.join(d, "truth.tsv")), delimiter="\t"):
@@ -172,7 +181,7 @@ def main() -> int:
         if not any(kind[a] == which for a in asvs):
             continue
         lines.append(f"{title}, read-weighted:")
-        lines.append(f"   {'arm':28s}" + "".join(f"{c:>19s}" for c in cats)
+        lines.append(f"   {'arm':28s}" + "".join(f"{c:>17s}" for c in metrics)
                      + ("  abund. err  vs mock" if which == "clean" else ""))
         for label, calls in arms.items():
             c = collections.Counter()
@@ -180,8 +189,14 @@ def main() -> int:
                 for a, n in smp.items():
                     if kind[a] == which:
                         c[outcome(calls[a], truth[a])] += n
-            n = sum(c.values())
-            row = f"   {label:28s}" + "".join(f"{100 * c[x] / n:18.1f}%" for x in cats)
+                        if calls[a][0] in ("species", "genus"):
+                            c["genus calls"] += n
+                            c["genus right"] += n * (call_genus(calls[a]) == truth[a].split()[0])
+            n = sum(c[x] for x in cats)
+            sp_made = c["right species"] + c["WRONG species"]
+            vals = [c["right species"] / n, c["right species"] / sp_made if sp_made else float("nan"),
+                    c["genus right"] / n, c["genus right"] / c["genus calls"] if c["genus calls"] else float("nan")]
+            row = f"   {label:28s}" + "".join(f"{100 * v:16.1f}%" for v in vals)
             if which == "clean":
                 row += clean_errors(calls)
             lines.append(row)

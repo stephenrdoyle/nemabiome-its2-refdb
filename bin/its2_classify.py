@@ -65,6 +65,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build import RANKS, deepest, infix_distance, merge_records, read_fasta  # noqa: E402
 from its2 import NC1, NC2  # noqa: E402
 from seqmatch import find_anchor_cost, revcomp  # noqa: E402
+from trim_28s import trim as trim_28s  # noqa: E402
 
 SPACER = 3
 STRETCH_28S = 47
@@ -72,7 +73,7 @@ ALPHA = 2           # UNOISE3's default
 MIN_READS = 2       # a centroid seen once in a run is noise
 MIN_SPAN = 100      # bases a reference must cover to count
 SPAN_SLACK = 5      # spans this close are equally strong evidence
-TRIM, TRIM_STEP, SLACK = 30, 3, 10   # window overlap with partial references
+TRIM, SLACK = 30, 10   # window overhang allowed past a partial reference; indel room
 RULES = {"v4": [("species", 0.997), ("genus", 0.995), ("family", 0.95)],
          "exact": [("species", 1.0), ("genus", None), ("family", 0.95)],
          "gap": [("species", "gap"), ("genus", 0.97), ("family", 0.95)]}
@@ -96,8 +97,10 @@ GAP_IDENTITY, GAP_EDITS = 0.99, 4
 MM2 = ["-k", "11", "-w", "5", "-f", "1000000", "-N", "20000", "-p", "0.3"]
 
 
-def minimap_candidates(fasta, queries, workers):
-    """{query index: [reference ids]} for a list of query sequences."""
+def minimap_candidates(fasta, queries, workers, minus=None):
+    """{query index: [reference ids]} for a list of query sequences. If
+    minus is a set, the indexes of queries whose best hit (most matching
+    bases) is on the reverse strand are added to it."""
     with tempfile.TemporaryDirectory() as d:
         q = os.path.join(d, "q.fa")
         with open(q, "w") as fh:
@@ -105,9 +108,15 @@ def minimap_candidates(fasta, queries, workers):
         out = subprocess.run(["minimap2", "-t", str(workers)] + MM2 + [fasta, q],
                              capture_output=True, text=True, check=True).stdout
     c = collections.defaultdict(set)
+    best = {}
     for line in out.splitlines():
-        f = line.split("\t", 6)
-        c[int(f[0])].add(f[5])
+        f = line.split("\t", 10)
+        i, m = int(f[0]), int(f[9])
+        c[i].add(f[5])
+        if m > best.get(i, (-1, ""))[0]:
+            best[i] = (m, f[4])
+    if minus is not None:
+        minus.update(i for i, (_, s) in best.items() if s == "-")
     return {i: sorted(v) for i, v in c.items()}
 
 
@@ -211,26 +220,41 @@ def _init(refs, tax):
     _R, _T = refs, tax
 
 
+def overhang_distance(w, r, free=TRIM):
+    """(edits, record bases met) aligning read window w with the start of
+    record r: every base of the record is charged from its first up to
+    where the window ends (the record's bases beyond are free), and up to
+    `free` of the window's leading bases are free, but only as overhang
+    before the record's first base."""
+    m = len(r)
+    prev = list(range(m + 1))           # w[:0] against r[:j]: j deletions
+    for i, c in enumerate(w, 1):
+        cur = [0 if i <= free else i] + [0] * m
+        for j in range(1, m + 1):
+            cur[j] = min(prev[j - 1] + (c != r[j - 1]), prev[j] + 1, cur[j - 1] + 1)
+        prev = cur
+    d, j = min((prev[j], -j) for j in range(m + 1))
+    return d, -j
+
+
 def _window(r, w, start):
     """Edits and span of read window w against the start (or end) of
-    reference r. The reference may run past the window (it is placed with
-    slack), or stop short of it - a partial reference missing the ITS2's
-    first or last bases: then the window's outer bases have nothing to
-    meet, so up to TRIM of them are left out and only the overlap is
-    scored. Without this, a partial O. radiatum reference charged 3
-    edits to reads that match it exactly (a cattle set, 2x150)."""
+    reference r. The reference is charged from its own end up to where
+    the window stops, so a difference near the record's end counts. A
+    partial reference that stops short of the ITS2's end leaves the
+    window's outer bases nothing to meet: up to TRIM of them are left out
+    then, as overhang only. Without that, a partial O. radiatum reference
+    charged 3 edits to reads that match it exactly (a cattle set, 2x150).
+    v0.1.0 dropped up to TRIM outer bases wherever that raised identity,
+    and placed the window with SLACK of the record's bases free, so a
+    partial H. bedfordi record that differs at both ends scored 3 edits
+    from H. placei reads (6 counted fully) and held half of a cattle
+    set's 2x150 reads at genus. The span is the record bases met."""
     if not w:
         return 0, 0
-    best = None
-    for t in range(0, max(0, min(TRIM, len(w) - MIN_SPAN // 2)) + 1, TRIM_STEP):
-        x = w[t:] if start else w[:len(w) - t]
-        tail = r[:len(x) + SLACK] if start else r[-(len(x) + SLACK):]
-        d = infix_distance(x, tail)
-        if best is None or (1 - d / len(x)) > (1 - best[0] / best[1]) + 1e-9:
-            best = (d, len(x))
-        if d == 0:
-            break
-    return best
+    free = max(0, min(TRIM, len(w) - MIN_SPAN // 2))
+    tail = r[:len(w) + SLACK] if start else r[-(len(w) + SLACK):][::-1]
+    return overhang_distance(w if start else w[::-1], tail, free)
 
 
 def _score(job):
@@ -240,6 +264,15 @@ def _score(job):
     species); cover is the share of the read's scorable length the best
     span covers."""
     key, mode, a, b, cands = job
+    # Window 2 ends in the 28S stretch: cut at its anchor, else 47 bases
+    # (the stretch runs 40-49 bases; a fixed cut would leave the record's
+    # last bases nothing to meet). A stretch padded as N (the leave-one-out's
+    # simulated reads) is simply dropped: trim_28s would take its N run for
+    # a pair separator.
+    if b.endswith("N" * STRETCH_28S):
+        b = b.rstrip("N")
+    elif b:
+        b = trim_28s(b)[0]
     scores = []
     for c in cands:
         r = _R[c]
@@ -247,7 +280,7 @@ def _score(job):
             d, span = infix_distance(r, a), len(r)
         else:
             d1, k1 = _window(r, a, start=True)
-            d2, k2 = _window(r, b[:max(0, len(b) - STRETCH_28S)], start=False)
+            d2, k2 = _window(r, b, start=False)
             d, span = d1 + d2, k1 + k2
         scores.append((d, span, c))
     # Rank by identity over the span scored, not by raw edits: a short
@@ -258,7 +291,7 @@ def _score(job):
     scores = [x for x in scores if x[1] >= MIN_SPAN]
     # The read's scorable length: whole, less its 28S stretch; windowed,
     # both windows less window 2's stretch.
-    qlen = (len(a) - STRETCH_28S) if mode == "whole" else (len(a) + max(0, len(b) - STRETCH_28S))
+    qlen = (len(a) - STRETCH_28S) if mode == "whole" else (len(a) + len(b))
     if not scores:
         return key, None, 0, [], None, 0.0, None
     best = max(1 - d / sp for d, sp, _ in scores)

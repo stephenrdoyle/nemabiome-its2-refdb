@@ -53,7 +53,9 @@ listed for review. Below order, disagreement is left as biology: the
 record stops at the rank its members share.
 
 FOLDING. A partial record identical over its span to a full-length record
-of the same species is folded into it (fold_contained).
+of the same species is folded into it (fold_contained). Then a weak
+record - partial or unmeasured, one source record - within 1 edit of a
+robust record of its species is folded into that (fold_redundant).
 
 GRADE. A record's grade is its best member's (bin/its2_partials.py):
 complete, near_complete, partial_90, partial_75, partial, unmeasured;
@@ -329,6 +331,51 @@ def fold_contained(seqs, tax, members, workers):
     return len(host)
 
 
+def _near_host(job):
+    w, hosts = job
+    d, _, h = min((span_distance(_S[w], _S[h]), -len(_S[h]), h) for h in hosts)
+    return w, d, h
+
+
+def fold_redundant(seqs, tax, members, workers, max_edits=1):
+    """Fold a weak record - partial or unmeasured, one source record -
+    into a robust record (any other) of the same species within
+    max_edits over the shorter span. Weak records decide calls out of
+    proportion: six partial H. contortus copies, each 1 edit from a
+    full-length H. contortus record, sit 3 edits from H. placei because
+    they lack bases that separate the two, and held a quarter of one
+    cattle set's H. placei reads at genus (issue #2). A read matching
+    the weak record is at most max_edits from its host, so its species
+    stays as close. Every weak record is compared with every robust
+    record of its species, no cap. Returns the number folded."""
+    def weak(i):
+        return tax[i]["grade"] not in FULL_GRADES and tax[i]["members"] == 1
+
+    by_sp = collections.defaultdict(list)
+    for i, t in tax.items():
+        if t["species"]:
+            by_sp[t["species"]].append(i)
+    jobs = []
+    for ids in by_sp.values():
+        hosts = [i for i in ids if not weak(i)]
+        if hosts:
+            jobs += [(i, hosts) for i in ids if weak(i)]
+    with Pool(workers, initializer=_init, initargs=(seqs, [])) as pool:
+        near = pool.map(_near_host, jobs, chunksize=20)
+    host = {w: (h, d) for w, d, h in near if d <= max_edits}
+    for m in members:
+        if m["id"] in host:
+            h, d = host[m["id"]]
+            m["note"] = "; ".join(x for x in (m["note"], f"folded: weak record ({m['grade']}, one "
+                                                          f"source) {d} edit(s) from {h}, same species")
+                                  if x)
+            m["id"] = h
+            tax[h]["members"] += 1
+    for i in host:
+        del seqs[i], tax[i]
+    return len(host)
+
+
 def lookalike_chunk(items):
     return find_anchor_lookalikes(items, ANCHORS, LOOKALIKE_MAX_EDITS)
 
@@ -475,6 +522,7 @@ def main() -> int:
                             "coverage": g["coverage"], "trimmed_start": g["trimmed_start"],
                             "trimmed_end": g["trimmed_end"], "note": renamed.get(acc, "")})
     folded = fold_contained(seqs, tax, members, a.workers)
+    folded_weak = fold_redundant(seqs, tax, members, a.workers)
     order = sorted(seqs)
 
     with open(os.path.join(out, "refdb.fasta"), "w") as fh:
@@ -618,7 +666,7 @@ def main() -> int:
         "names": ({"file": os.path.basename(a.names), "sha256": sha256(a.names)}
                   if a.names and os.path.exists(a.names) else None),
         "counts": {"records": len(order), "members": len(members), "named_species": len(named),
-                   "grade": dict(gcount), "deepest_rank_nanopore": dict(nano), "folded": folded,
+                   "grade": dict(gcount), "deepest_rank_nanopore": dict(nano), "folded": folded, "folded_weak": folded_weak,
                    "renamed": len(renamed),
                    "member_roles": dict(roles), "conflicts": dict(dec), "primer_fit": dict(pf)},
         "files": {},
@@ -636,6 +684,7 @@ def main() -> int:
              f"named species {len(named):,}",
              "members: " + ", ".join(f"{k} {v:,}" for k, v in sorted(roles.items()))
              + f"; partial records folded into a same-species full-length record: {folded:,}"
+             + f"; weak records folded into a same-species record within 1 edit: {folded_weak:,}"
              + f"; renamed to current NCBI names: {len(renamed):,}",
              "conflicts (order or above): " + (", ".join(f"{k} {v}" for k, v in sorted(dec.items())) or "none"),
              "", "Grade (best member):"] + table(gcount, GRADES, len(order))

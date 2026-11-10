@@ -28,11 +28,25 @@ Each end is located, in order:
   loose     within 6 / 12 edits, in a window around the backbone
             boundary (taxa outside the Strongylida, whose primer site
             differs by 4-6 bases)
+  part      the record starts with the last bases of NC1 / ends with the
+            first bases of S28 (>= 5 exact, or >= 8 with 1 mismatch): the
+            submitter trimmed inside the primer or anchor, and the rest
+            is cut off. 155 records began inside NC1 and 494 ended inside
+            S28 in the v0.1.0 cut; reads lack those bases (primer trimmed,
+            28S cut), so they read as differences
   record    the record itself starts / ends at the backbone boundary:
             the submitter trimmed there, so the end is unanchored
   hmm       flanking sequence present but no anchor found: the
             backbone's boundary is kept (start moved 3 bases in, to
             where NC1 would end)
+
+The backbone's strand is kept, and a primer anchor (tight) fixes it. A
+record with none - a loose anchor alone can be a chance match on the
+wrong strand (AM410070, NC1 at 6 edits) - may sit the wrong way round
+(a short record deposited reverse-complemented: MK087176.1, 107 bases,
+was stored reversed and looked 40 edits from H. contortus, 2 when
+turned): orient() turns it if it matches the anchored records better on
+the minus strand.
 
 Writes <prefix>.fasta (re-cut ITS2, forward strand, keyed by accession)
 and <prefix>.tsv (accession, start/end method and edit cost, length,
@@ -45,7 +59,9 @@ from __future__ import annotations
 import collections
 import gzip
 import os
+import subprocess
 import sys
+import tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from seqmatch import find_anchor_cost, revcomp  # noqa: E402
@@ -88,6 +104,49 @@ def locate(record, its):
     return None, -1, -1
 
 
+def orient(cuts, anchored, workers=8):
+    """Accessions among cuts (accession: sequence) not in anchored whose
+    best match among the anchored cuts, by matching bases, is on the
+    minus strand."""
+    with tempfile.TemporaryDirectory() as d:
+        ref, q = os.path.join(d, "r.fa"), os.path.join(d, "q.fa")
+        with open(ref, "w") as fh:
+            fh.writelines(f">{a}\n{cuts[a]}\n" for a in anchored)
+        with open(q, "w") as fh:
+            fh.writelines(f">{a}\n{x}\n" for a, x in cuts.items() if a not in anchored)
+        out = subprocess.run(["minimap2", "-t", str(workers), "-k", "11", "-w", "5", "-f", "1000000",
+                              "-N", "50", "-p", "0.5", ref, q],
+                             capture_output=True, text=True, check=True).stdout
+    best = {}
+    for line in out.splitlines():
+        f = line.split("\t", 10)
+        m = int(f[9])
+        if m > best.get(f[0], (0, ""))[0]:
+            best[f[0]] = (m, f[4])
+    return sorted(a for a, (_, strand) in best.items() if strand == "-")
+
+
+def _mismatches(a, b):
+    return sum(u != v for u, v in zip(a, b))
+
+
+def nc1_tail(x):
+    """Bases of NC1's 3' end that x starts with: the longest k >= 5 with x[:k]
+    matching NC1[-k:], exactly under 8 bases, at most 1 mismatch from 8."""
+    for k in range(len(NC1) - 1, 4, -1):
+        if _mismatches(x[:k], NC1[-k:]) <= (1 if k >= 8 else 0):
+            return k
+    return 0
+
+
+def s28_head(x):
+    """Bases of S28's start that x ends with, as nc1_tail."""
+    for k in range(len(S28) - 1, 4, -1):
+        if _mismatches(x[-k:], S28[:k]) <= (1 if k >= 8 else 0):
+            return k
+    return 0
+
+
 def cut_start(x, p):
     # Long records run back through 5.8S and ITS1 into 18S: stay near.
     lo = max(0, p - 90)
@@ -99,7 +158,8 @@ def cut_start(x, p):
     if hit:
         return lo + hit[1], "loose", hit[2]
     if p == 0:
-        return 0, "record", ""
+        k = nc1_tail(x)
+        return (k, "part", "") if k else (0, "record", "")
     return p + HMM_START_SHIFT, "hmm", ""
 
 
@@ -116,43 +176,70 @@ def cut_end(x, q):
     if hit:
         return lo + hit[0], method, hit[2]
     if q == len(x):
-        return q, "record", ""
+        k = s28_head(x)
+        return (q - k, "part", "") if k else (q, "record", "")
     return q, "hmm", ""
+
+
+def cut(x, p, q, its_len):
+    """The ITS2 cut from x, the backbone's span in it at p..q: (sequence,
+    start method, edits, end method, edits, 28S flank, NC1 edits, NC2
+    edits), or None if under 50 bases."""
+    s, sm, sc = cut_start(x, p)
+    e, em, ec = cut_end(x, q)
+    if e - s > its_len + 30:
+        # Anchors can only trim what the HMM over-reached, never add
+        # much: a cut far longer than the backbone ITS2 found an
+        # anchor in the wrong copy or the wrong gene (LT159837).
+        s, sm, sc = (p + HMM_START_SHIFT if p else 0), ("hmm" if p else "record"), ""
+        e, em, ec = q, ("hmm" if q < len(x) else "record"), ""
+    if e - s < 50:
+        return None
+    flank, nc2_edits = "", ""
+    if em in ("primer", "loose"):
+        n2 = find_anchor_cost(x[e:e + 90], revcomp(NC2), 6)
+        if n2:
+            flank, nc2_edits = x[e:e + n2[0]], n2[2]
+    nc1_edits = sc if sm in ("primer", "loose") else ""
+    return x[s:e], sm, sc, em, ec, flank, nc1_edits, nc2_edits
 
 
 def main() -> int:
     bb_path, rec_path, prefix = sys.argv[1:4]
     bb, rec = read_fasta(bb_path), read_fasta(rec_path)
-    rows, tally = [], collections.Counter()
-    nc2r = revcomp(NC2)
+    tally = collections.Counter()
+    found, cuts = {}, {}
+    for acc, its in bb.items():
+        if acc not in rec:
+            tally["no record"] += 1
+            continue
+        x, p, q = locate(rec[acc], its)
+        if x is None:
+            tally["backbone not in record"] += 1
+            continue
+        c = cut(x, p, q, len(its))
+        if c is None:
+            tally["too short after cut"] += 1
+            continue
+        found[acc], cuts[acc] = (x, p, q, len(its)), c
+    # Turn records no primer anchor fixes to the anchored records' strand,
+    # and cut them again there.
+    anchored = {a for a, c in cuts.items() if "primer" in (c[1], c[3])}
+    flipped = orient({a: c[0] for a, c in cuts.items()}, anchored)
+    for acc in flipped:
+        x, p, q, n = found[acc]
+        c = cut(revcomp(x), len(x) - q, len(x) - p, n)
+        if c is None:
+            del cuts[acc]
+            tally["too short after cut"] += 1
+        else:
+            cuts[acc] = c
+    tally["no primer anchor, turned to the anchored records' strand"] = len(flipped)
+    rows = []
     with open(prefix + ".fasta", "w") as fa:
-        for acc, its in bb.items():
-            if acc not in rec:
-                tally["no record"] += 1
-                continue
-            x, p, q = locate(rec[acc], its)
-            if x is None:
-                tally["backbone not in record"] += 1
-                continue
-            s, sm, sc = cut_start(x, p)
-            e, em, ec = cut_end(x, q)
-            if e - s > len(its) + 30:
-                # Anchors can only trim what the HMM over-reached, never add
-                # much: a cut far longer than the backbone ITS2 found an
-                # anchor in the wrong copy or the wrong gene (LT159837).
-                s, sm, sc = (p + HMM_START_SHIFT if p else 0), ("hmm" if p else "record"), ""
-                e, em, ec = q, ("hmm" if q < len(x) else "record"), ""
-            if e - s < 50:
-                tally["too short after cut"] += 1
-                continue
-            flank, nc2_edits = "", ""
-            if em in ("primer", "loose"):
-                n2 = find_anchor_cost(x[e:e + 90], nc2r, 6)
-                if n2:
-                    flank, nc2_edits = x[e:e + n2[0]], n2[2]
-            nc1_edits = sc if sm in ("primer", "loose") else ""
-            fa.write(f">{acc}\n{x[s:e]}\n")
-            rows.append((acc, sm, sc, em, ec, e - s, flank, nc1_edits, nc2_edits))
+        for acc, (seq, sm, sc, em, ec, flank, n1, n2) in cuts.items():
+            fa.write(f">{acc}\n{seq}\n")
+            rows.append((acc, sm, sc, em, ec, len(seq), flank, n1, n2))
             tally[f"{sm}/{em}"] += 1
     with open(prefix + ".tsv", "w") as fh:
         fh.write("accession\tstart\tstart_edits\tend\tend_edits\tlength\tflank_28S"

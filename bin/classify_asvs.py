@@ -10,7 +10,9 @@ the same ASVs, scored as bin/its2_classify.py scores reads.
     whole, each reference placed inside it with the ASV's extra bases free;
   - a concatenated ASV (forward + 10 N + reverse, from 2x150 pairs that do
     not overlap) is split into its two windows, scored against the start
-    and the end of each reference.
+    and the end of each reference;
+  - an ASV whose best minimap2 hit is on the reverse strand (a library
+    sequenced in mixed orientation) is turned round first.
 
 A dada2 reference (headers of ;-separated ranks) is read as a build:
 identical sequences are collapsed, and a record keeps only the ranks its
@@ -39,6 +41,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build import RANKS, merge, read_fasta  # noqa: E402
 from its2_classify import (RULES, _init, _score, call, describe, load_taxonomy,  # noqa: E402
                            minimap_candidates)
+from seqmatch import revcomp  # noqa: E402
 
 SEP = "N" * 10
 
@@ -87,10 +90,14 @@ def main() -> int:
     asvs = [(r["asv"], r["sequence"]) for r in csv.DictReader(open(a.asvs), delimiter="\t")]
     with tempfile.TemporaryDirectory() as tmp:
         fa, refs, tax = load_reference(a.reference, tmp)
-        cand = minimap_candidates(fa, [s for _, s in asvs], a.workers)
+        minus = set()
+        cand = minimap_candidates(fa, [s for _, s in asvs], a.workers, minus)
+    print(f"{len(minus)} of {len(asvs)} ASVs on the reverse strand, turned", file=sys.stderr)
     jobs = []
     for i, (name, s) in enumerate(asvs):
         c = cand.get(i, [])
+        if i in minus:
+            s = revcomp(s)
         if SEP in s:
             x, _, y = s.partition(SEP)
             jobs.append((i, "window", x, y.strip("N"), c))
