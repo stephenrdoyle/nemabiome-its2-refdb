@@ -608,6 +608,52 @@ genus for 28% (precision 93%), IdTaxa 42% (93%), assignTaxonomy 71%
 unassigned by IdTaxa and the gap rule are not junk: they are reads whose
 nearest reference is too far for a family (< 95%).
 
+**Where the k-mer classifiers' extra species calls come from**
+(`bin/loo_kmer_vs_gap.py`, `results/leave_one_out/kmer_vs_gap.txt`;
+whole reads, points of all present queries, right / wrong species calls
+on the reads the gap rule stops short on):
+
+| Why the gap rule stops short | Share | assignTaxonomy | IdTaxa |
+|---|---:|---:|---:|
+| own species best, but < 99% | 22.9 | 21.1 / 0.2 | 18.1 / 0.1 |
+| own species >= 99%, a sister 0-3 edits off | 11.6 | 8.7 / 1.0 | 6.3 / 0.2 |
+| another species closest | 9.2 | 2.8 / 2.7 | 0.5 / 1.6 |
+| tied with another species | 2.4 | 1.1 / 0.4 | 0.2 / 0.0 |
+
+- **The 99% floor is most of it.** Two thirds of assignTaxonomy's
+  33-point recall lead are reads from a divergent variant of a present
+  species, which it names almost always correctly. Its confidence is
+  relative (does this species keep winning the bootstrap?), the gap
+  rule's absolute (is the read within 1% of a record?). The same
+  relative judgement names missing species: of hidden queries whose
+  nearest record is another species, assignTaxonomy names a species for
+  36 points of all hidden queries, IdTaxa for 17.
+- **One or two diagnostic sites suffice for them.** The gap rule wants 4
+  edits clear of the next species; the k-mer classifiers resolve sisters
+  1-3 edits apart, mostly correctly when the species is present. The
+  real-data genus stops are this kind (*T. axei* +2, *Cooperia* +1).
+  Tuned on held-out species, a 3-edit gap ties with 4 (§6.1).
+- **Where another species is closest, they gain nothing**: assignTaxonomy
+  is right as often as wrong, IdTaxa wrong more often than right.
+
+They do not see what identity misses. Within one identity band of the
+best hit, the k-mer classifiers name a species for a present species'
+variant more often than for a missing species, but not by much: at
+98-99%, assignTaxonomy 95% against 68% (338 right calls to 171 wrong),
+IdTaxa 88% against 57%; below 98%, wrong calls outnumber right ones.
+About 2 right calls per wrong one is also what a distance-scaled floor
+gives the gap rule: below 99%, a species at >= 98% when the next species
+is >= max(6, 3 x edits to the best) further off. Chosen on four fifths
+of the species and scored on the rest, as for the per-group rules
+(§6.1), it adds 7 points of recall at unchanged present-species
+precision for 2.5 more points of over-classification, and is chosen
+only when a wrong call is valued at 2 right ones or fewer; at 4 or 8
+every fold keeps the current rule (`bin/loo_scaled_floor.py`,
+`results/leave_one_out/scaled_floor.txt`). So the difference is where
+each sets its bar, not information: the k-mer classifiers are tuned for
+the species being in the database, the gap rule for it perhaps not
+being. The current rule is kept, with no relaxed mode.
+
 **Real data**: two published NC1/NC2 livestock sets. Šlapeta's sheep
 faecal larval cultures (PRJNA936713, 2x250) and Gilleard's cattle set
 (PRJNA1524548, 2x250), each also cut to 2x150. Share of reads named to
