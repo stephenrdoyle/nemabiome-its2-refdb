@@ -1,0 +1,67 @@
+nemits2_v0.1.0  built 2026-11-10T07:04:20Z  code face88d96a386f00274c9cedf2cbf87d354ed320
+primers NC1 ACGTCTGGTTCAGGGTTGTT / NC2 TTAGTTTCTTTTCCTCCGCT
+source nemabiome_20260317
+records 11,956 from 15,282 source records; named species 1,869
+members: dropped 28, kept 15,254; partial records folded into a same-species full-length record: 1,115; renamed to current NCBI names: 64
+conflicts (order or above): none
+
+Grade (best member):
+    complete         4,165   34.8%
+    near_complete    3,678   30.8%
+    partial_90         867    7.3%
+    partial_75         647    5.4%
+    partial            637    5.3%
+    unmeasured       1,962   16.4%
+
+Deepest rank - nanopore (whole ITS2; 410 species-level records tied with another species' over their span):
+    species         11,419   95.5%
+    genus              512    4.3%
+    family              24    0.2%
+    order                1    0.0%
+    class                0    0.0%
+    phylum               0    0.0%
+    kingdom              0    0.0%
+    superkingdom         0    0.0%
+    (none)               0    0.0%
+  Illumina 150x150 (windows 130 + 83, 11,211 window groups; 522 tied):
+    species         11,244   94.0%
+    genus              685    5.7%
+    family              26    0.2%
+    order                1    0.0%
+    class                0    0.0%
+    phylum               0    0.0%
+    kingdom              0    0.0%
+    superkingdom         0    0.0%
+    (none)               0    0.0%
+  Illumina 250x250 (windows 230 + 183, 11,900 window groups; 421 tied):
+    species         11,407   95.4%
+    genus              524    4.4%
+    family              24    0.2%
+    order                1    0.0%
+    class                0    0.0%
+    phylum               0    0.0%
+    kingdom              0    0.0%
+    superkingdom         0    0.0%
+    (none)               0    0.0%
+
+Primer fit (best member holding the sites):
+    exact              201    1.7%
+    near               364    3.0%
+    poor             1,109    9.3%
+    one_site         7,358   61.5%
+    unknown          2,924   24.5%
+
+Species margins over the shorter record's span, read whole (11,829 species-level records):
+    0 (inside another species' record: tied)         410
+    1 edit                                           897
+    2 edits                                          712
+    3-5 edits                                      1,512
+    6-10 edits                                     1,324
+    11+ edits                                      3,125
+    no other species within reach                  3,849
+
+For the DADA2 workflow (README: For DADA2 and IdTaxa users):
+  nemits2_v0.1.0_dada2.fasta
+  nemits2_v0.1.0_idtaxa.RData
+  trim_28s.R
+  Run trim_28s.R on the ASVs first: records stop before the 28S stretch.

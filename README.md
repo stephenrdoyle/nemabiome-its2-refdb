@@ -9,10 +9,24 @@ counterpart of [vespa-18s-refdb](https://github.com/stephenrdoyle/vespa-18s-refd
 writes the same release format, and is consumed by
 [amphid](https://github.com/stephenrdoyle/nf-amphid-pipeline).
 
-**Status: first scratch build. No release has been cut.** See
-[docs/DESIGN.md](docs/DESIGN.md) for the design and what the first build
-shows, and [docs/feedback/its2_notes_for_amphid.md](docs/feedback/its2_notes_for_amphid.md)
-for what amphid needs to change to use it.
+**Status: v0.1.0, the first release (2026-11-10).** See
+[docs/DESIGN.md](docs/DESIGN.md) for the design and the measurements
+behind it, and [docs/feedback/its2_notes_for_amphid.md](docs/feedback/its2_notes_for_amphid.md)
+for what amphid needs to change to use it. DADA2 and IdTaxa users: see
+[For DADA2 and IdTaxa users](#for-dada2-and-idtaxa-users).
+
+## Download and verify
+
+```bash
+V=v0.1.0
+curl -LO https://github.com/stephenrdoyle/nemabiome-its2-refdb/releases/download/$V/nemits2_$V.tar.gz
+shasum -a 256 nemits2_$V.tar.gz
+# df5a19c2fe043aae09f759eeb2682efe927bdf8ffdbdcfd7fa916cf62ccfe915
+tar -xzf nemits2_$V.tar.gz
+```
+
+Each file's sha256 is in `nemits2_<version>/manifest.json`; the manifest
+and summary of every release are also committed under `releases/`.
 
 ## What a record is
 
@@ -28,7 +42,7 @@ record anchored at both ends: `complete`, `near_complete` (>= 98%),
 `partial_90`, `partial_75`, `partial`, or `unmeasured` (no relative at
 >= 80% identity).
 
-## The first build (scratch, 2026-11-09)
+## v0.1.0
 
 11,956 records from 15,282 source records: 15,108 nemabiome sequences
 (version 20260317; 28 dropped as mislabelled and 6 relabelled,
@@ -44,15 +58,15 @@ record of their own.
 <!-- figures:start -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/grade_dark.svg">
-  <img alt="Bar chart: records per nematode group in nemits2_dev, by how much of the ITS2 they hold: I · animal parasites 395 (complete 28, near complete 176, partial 60, unmeasured 131); I · plant parasites 168 (complete 0, near complete 0, partial 0, unmeasured 168); I · free-living 16 (complete 2, near complete 2, partial 0, unmeasured 12); II · plant parasites 56 (complete 0, near complete 0, partial 0, unmeasured 56); II · free-living 19 (complete 1, near complete 0, partial 0, unmeasured 18); III · animal parasites 2,146 (complete 780, near complete 668, partial 484, unmeasured 214); IV · animal parasites 814 (complete 155, near complete 242, partial 111, unmeasured 306); IV · plant parasites 4,299 (complete 2,178, near complete 910, partial 630, unmeasured 581); IV · free-living 42 (complete 13, near complete 9, partial 6, unmeasured 14); V · animal parasites 3,679 (complete 864, near complete 1,609, partial 829, unmeasured 377); V · free-living 306 (complete 143, near complete 62, partial 31, unmeasured 70); Other Chromadoria · free-living 15 (complete 0, near complete 0, partial 0, unmeasured 15); Family not placed 1 (complete 1, near complete 0, partial 0, unmeasured 0)." src="docs/figures/grade_light.svg" width="760">
+  <img alt="Bar chart: records per nematode group in nemits2_v0.1.0, by how much of the ITS2 they hold: I · animal parasites 395 (complete 28, near complete 176, partial 60, unmeasured 131); I · plant parasites 168 (complete 0, near complete 0, partial 0, unmeasured 168); I · free-living 16 (complete 2, near complete 2, partial 0, unmeasured 12); II · plant parasites 56 (complete 0, near complete 0, partial 0, unmeasured 56); II · free-living 19 (complete 1, near complete 0, partial 0, unmeasured 18); III · animal parasites 2,146 (complete 780, near complete 668, partial 484, unmeasured 214); IV · animal parasites 814 (complete 155, near complete 242, partial 111, unmeasured 306); IV · plant parasites 4,299 (complete 2,178, near complete 910, partial 630, unmeasured 581); IV · free-living 42 (complete 13, near complete 9, partial 6, unmeasured 14); V · animal parasites 3,679 (complete 864, near complete 1,609, partial 829, unmeasured 377); V · free-living 306 (complete 143, near complete 62, partial 31, unmeasured 70); Other Chromadoria · free-living 15 (complete 0, near complete 0, partial 0, unmeasured 15); Family not placed 1 (complete 1, near complete 0, partial 0, unmeasured 0)." src="docs/figures/grade_light.svg" width="760">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/taxa_dark.svg">
-  <img alt="Bar chart: records per nematode group in nemits2_dev, and how many resolve to species read whole: I · animal parasites 395 (373 to species); I · plant parasites 168 (168 to species); I · free-living 16 (16 to species); II · plant parasites 56 (56 to species); II · free-living 19 (19 to species); III · animal parasites 2,146 (2,017 to species); IV · animal parasites 814 (775 to species); IV · plant parasites 4,299 (4,080 to species); IV · free-living 42 (42 to species); V · animal parasites 3,679 (3,564 to species); V · free-living 306 (295 to species); Other Chromadoria · free-living 15 (14 to species); Family not placed 1 (0 to species)." src="docs/figures/taxa_light.svg" width="760">
+  <img alt="Bar chart: records per nematode group in nemits2_v0.1.0, and how many resolve to species read whole: I · animal parasites 395 (373 to species); I · plant parasites 168 (168 to species); I · free-living 16 (16 to species); II · plant parasites 56 (56 to species); II · free-living 19 (19 to species); III · animal parasites 2,146 (2,017 to species); IV · animal parasites 814 (775 to species); IV · plant parasites 4,299 (4,080 to species); IV · free-living 42 (42 to species); V · animal parasites 3,679 (3,564 to species); V · free-living 306 (295 to species); Other Chromadoria · free-living 15 (14 to species); Family not placed 1 (0 to species)." src="docs/figures/taxa_light.svg" width="760">
 </picture>
 
-How many species nemits2_dev can name. A species named in the source records but with no record of its own shares its ITS2 with another species (or sits inside another species' record over its span), so a read from it is named only to genus or above. Names are counted as written.
+How many species nemits2_v0.1.0 can name. A species named in the source records but with no record of its own shares its ITS2 with another species (or sits inside another species' record over its span), so a read from it is named only to genus or above. Names are counted as written.
 
 | Records | Species named in sources | Species with their own record (read whole) | Species named through Illumina 150x150 | Species named through Illumina 250x250 | Genera |
 |---|---:|---:|---:|---:|---:|
@@ -71,7 +85,7 @@ How many species nemits2_dev can name. A species named in the source records but
 | Other Chromadoria · free-living | 1 | 1 | 1 | 1 | 2 |
 | Family not placed | 2 | 0 | 0 | 0 | 0 |
 
-How far a record can be named in nemits2_dev, best case (an exact read, no sequencing error): the share of records resolving to species, and to genus at best.
+How far a record can be named in nemits2_v0.1.0, best case (an exact read, no sequencing error): the share of records resolving to species, and to genus at best.
 
 | Records | Nanopore (whole ITS2): species | genus | Illumina 150x150: species | genus | Illumina 250x250: species | genus |
 |---|---:|---:|---:|---:|---:|---:|
@@ -105,8 +119,8 @@ animal parasites; fungal feeders (*Aphelenchoides*, *Bursaphelenchus*)
 count as plant parasites. A record whose span sits exactly inside
 another species' record is tied with it and stops at the rank they share.
 
-Most species-level records are close to another species: 900 at one
-edit, 711 at two, 410 tied (`species_margins.tsv`), over a median ITS2 of
+Most species-level records are close to another species: 897 at one
+edit, 712 at two, 410 tied (`species_margins.tsv`), over a median ITS2 of
 240 bases. At that length amphid's 99.7% species limit allows no
 mismatch at all.
 
@@ -216,6 +230,12 @@ python3 bin/build.py work/its2/its2 ${S}_taxonomy_nr.txt nemabiome_20260317 work
     --layer curation/long_read_its2.tsv
 bin/export_kmer.sh work/build work/build/kmer nemits2_dev   # DADA2 / IdTaxa files (R, dada2, DECIPHER)
 ```
+
+To cut a release, from committed code: build with `--version vX.Y.Z` into
+a fresh directory, then `bin/release.py <build dir> releases vX.Y.Z`. It
+adds the DADA2 / IdTaxa files, re-checksums, and writes
+`releases/nemits2_vX.Y.Z/` and its tarball; it refuses a build from
+uncommitted code and never overwrites a release.
 
 The long-read layer is committed. To remake it, scan each assembly or
 read set listed in `curation/long_read_sources.tsv` with

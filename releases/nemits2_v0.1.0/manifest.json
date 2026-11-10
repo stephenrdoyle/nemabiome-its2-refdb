@@ -1,0 +1,120 @@
+{
+ "name": "nemits2_v0.1.0",
+ "version": "v0.1.0",
+ "built": "2026-11-10T07:04:20Z",
+ "code_commit": "face88d96a386f00274c9cedf2cbf87d354ed320",
+ "marker": "ITS2 (nematodes)",
+ "primers": {
+  "forward": {
+   "name": "NC1",
+   "sequence": "ACGTCTGGTTCAGGGTTGTT"
+  },
+  "reverse": {
+   "name": "NC2",
+   "sequence": "TTAGTTTCTTTTCCTCCGCT"
+  },
+  "reference": "Gasser et al. 1993, Nucleic Acids Res 21:2525"
+ },
+ "insert": "from the 3' end of NC1 to the start of the 28S stretch before NC2; primers and the ~47-base 28S stretch not included",
+ "score_over": "the reference's own span (a read's 28S stretch counts neither for nor against)",
+ "illumina_geometries": [
+  {
+   "read_length": 150,
+   "windows": [
+    130,
+    83
+   ],
+   "file": "resolution_illumina_150x150.tsv",
+   "window_groups": 11211
+  },
+  {
+   "read_length": 250,
+   "windows": [
+    230,
+    183
+   ],
+   "file": "resolution_illumina_250x250.tsv",
+   "window_groups": 11900
+  }
+ ],
+ "anchors": {
+  "i5_inner_anchor": "TCGTCGGCAGCGTC",
+  "i7_inner_anchor": "CCGAGCCCACGAGAC"
+ },
+ "lookalike_max_edits": 3,
+ "source": "nemabiome_20260317",
+ "source_taxonomy_sha256": "a90709cbc6eccd0acc128debf30591b8d142d1cd30ca0e91ce622e803acc5150",
+ "layers": [
+  {
+   "file": "long_read_its2.tsv",
+   "sha256": "23b9e4f53879fa756174fafa90e6fbf9b614401bbd3998b708525a9cbe32b5ba"
+  }
+ ],
+ "names": {
+  "file": "ncbi_names.tsv",
+  "sha256": "64138e3421566666e770059e28e3921f07fa21405649fa875650245157cecd00"
+ },
+ "counts": {
+  "records": 11956,
+  "members": 15282,
+  "named_species": 1869,
+  "grade": {
+   "near_complete": 3678,
+   "partial": 637,
+   "unmeasured": 1962,
+   "complete": 4165,
+   "partial_75": 647,
+   "partial_90": 867
+  },
+  "deepest_rank_nanopore": {
+   "species": 11419,
+   "genus": 512,
+   "family": 24,
+   "order": 1
+  },
+  "folded": 1115,
+  "renamed": 64,
+  "member_roles": {
+   "dropped": 28,
+   "kept": 15254
+  },
+  "conflicts": {},
+  "primer_fit": {
+   "unknown": 2924,
+   "one_site": 7358,
+   "poor": 1109,
+   "exact": 201,
+   "near": 364
+  }
+ },
+ "files": {
+  "anchor_lookalikes.tsv": "604aaf0a84c8631980551bcbbab459bf0de434f1acda6f3bcb5dc0849f671446",
+  "conflicts.tsv": "984a644ec3b56d32b0404777e1eb73390c4b0742a6a0e183f07861056b6746de",
+  "members.tsv": "0243571ae49b26c648e363c55ebf3caf4a13eaacc85b7bc379519da602b9a04b",
+  "primer_fit.tsv": "3cd187be5656bd38bc9aa84ccd7505656e87db23616d60941ffd0bca1d7d14a4",
+  "refdb.fasta": "c43d3a29bc0317e3d789296b7fcf499de14d7dbe88c66cb068aead4f75f0eeab",
+  "resolution_illumina_150x150.tsv": "4b418b3796993d4e75f3ea28df1a1bb6c94bdb125a0437780ac1a4f8fbdcedd9",
+  "resolution_illumina_250x250.tsv": "5f63564f540c9af8cc6ad4d2ce04877c7ccc5da3dc1e877d4d593f0c348c7e17",
+  "resolution_nanopore.tsv": "ee4d595f669835d56ad5464d9fba685105751b41f428fdf94b7de2970218541a",
+  "species_margins.tsv": "bd72b8d07ca40fb296b5429c86b63aa363365e71384623d506c9802320b45809",
+  "taxonomy.tsv": "3e2a402f07176336e35c8363b1da33e30e472db313030209c9d0fd4ae231ec45",
+  "summary.txt": "316dec417e3e7834eeb79b7e456ab6705c8abe7de8ae63e70f640e3e79f64629",
+  "nemits2_v0.1.0_dada2.fasta": "9240496e14cc94dd260cab5fcfc7b95230bd24afadaa8fbe010060fe723ddbd1",
+  "nemits2_v0.1.0_idtaxa.RData": "f3b0b6263759ea17bd32808e293c89adec45259bda57c94f400999916eb75eae",
+  "trim_28s.R": "1afdfd0b6d4eeb33f3e69ec1f062362f16eb64af3240f117551f0716c8d5fdf8"
+ },
+ "kmer": {
+  "files": [
+   "nemits2_v0.1.0_dada2.fasta",
+   "nemits2_v0.1.0_idtaxa.RData",
+   "trim_28s.R"
+  ],
+  "made_with": {
+   "R": "4.5.0",
+   "dada2": "1.38.0",
+   "DECIPHER": "3.6.0"
+  },
+  "idtaxa": "LearnTaxa on the dada2 reference; IdTaxa(strand = 'both', threshold = 60) as nemabiome.ca runs it",
+  "asvs": "cut with trim_28s.R before classifying"
+ }
+}

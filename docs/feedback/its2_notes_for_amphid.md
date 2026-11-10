@@ -1,6 +1,6 @@
 # Notes for amphid: using the nemabiome ITS2 database
 
-From nemabiome-its2-refdb, scratch build of 2026-11-10. The
+From nemabiome-its2-refdb v0.1.0 (2026-11-10). The
 database follows vespa-18s-refdb's release format. These are the
 places where ITS2 needs something V4 did not.
 
@@ -50,8 +50,8 @@ grade with the call, and consider requiring a minimum aligned length
 The V4 limits (species 99.7% Illumina / 99.5% nanopore, genus 99.5% /
 99%, family 95%) were set for a ~400-base insert. Over a 240-base ITS2,
 one edit is 0.42%, so 99.7% means an exact match. Margins are thin: of
-the species-level records, 410 are tied with another species, 900 are
-one edit away and 711 two.
+the species-level records, 410 are tied with another species, 897 are
+one edit away and 712 two.
 
 A leave-one-out test (DESIGN §6.1; 3,164 queries, 1,210 species) shows
 identity alone is the wrong measure. Under the V4 limits only 18.5% of
