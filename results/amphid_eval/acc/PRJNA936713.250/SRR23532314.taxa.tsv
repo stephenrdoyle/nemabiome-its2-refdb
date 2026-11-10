@@ -1,0 +1,23 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532314	genus	Oesophagostomum	Oesophagostomum	6251	0.471560	11	0.9883	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR23532314	species	Oesophagostomum venulosum	Oesophagostomum venulosum	3160	0.238383	3	0.9961	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum venulosum	v0.1.0
+SRR23532314	family	Strongylidae	Strongylidae (96% to Oesophagostomum)	1053	0.079436	5	0.9650	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae	v0.1.0
+SRR23532314	species	Trichostrongylus rugatus	Trichostrongylus rugatus	896	0.067592	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus rugatus	v0.1.0
+SRR23532314	species	Haemonchus contortus	Haemonchus contortus	745	0.056201	7	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus contortus	v0.1.0
+SRR23532314	genus	Trichostrongylus	Trichostrongylus	327	0.024668	9	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR23532314	order	Rhabditida	unclassified, 95% to Oesophagostomum	191	0.014409	3	0.9494	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532314	order	Rhabditida	unclassified, 93% to Oesophagostomum	135	0.010184	7	0.9346	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532314	species	Trichostrongylus axei	Trichostrongylus axei	129	0.009731	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR23532314	order	Rhabditida	unclassified, 94% to Oesophagostomum	112	0.008449	3	0.9423	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532314	species	Teladorsagia circumcincta	Teladorsagia circumcincta	75	0.005658	4	0.9961	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Teladorsagia;Teladorsagia circumcincta	v0.1.0
+SRR23532314	family	Strongylidae	Strongylidae (97% to Oesophagostomum)	63	0.004753	1	0.9654	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae	v0.1.0
+SRR23532314	order	Rhabditida	unclassified, 92% to Oesophagostomum	37	0.002791	3	0.9222	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532314	family	Strongylidae	Strongylidae (95% to Oesophagostomum)	30	0.002263	4	0.9538	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae	v0.1.0
+SRR23532314	order	Rhabditida	unclassified, 91% to Oesophagostomum	17	0.001282	3	0.9115	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532314	genus	Teladorsagia	Teladorsagia	10	0.000754	1	0.9804	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Teladorsagia	v0.1.0
+SRR23532314	genus	Nematodirus	Nematodirus	10	0.000754	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Molineidae;Nematodirus	v0.1.0
+SRR23532314	order	Rhabditida	unclassified, 90% to Oesophagostomum	4	0.000302	1	0.9027	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532314	species	Trichostrongylus colubriformis	Trichostrongylus colubriformis	3	0.000226	1	0.9953	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus colubriformis	v0.1.0
+SRR23532314			chimera of SRR23532314_p10 and SRR23532314_p22	3	0.000226	1	0.9725		v0.1.0
+SRR23532314	order	Rhabditida	unclassified, 89% to Oesophagostomum	3	0.000226	1	0.8949	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532314	family	Trichostrongylidae	Trichostrongylidae (97% to Trichostrongylus)	2	0.000151	1	0.9660	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0

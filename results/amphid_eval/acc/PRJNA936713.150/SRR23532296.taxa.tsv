@@ -1,0 +1,22 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532296	species	Haemonchus contortus	Haemonchus contortus	20820	0.802745	65	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus contortus	v0.1.0
+SRR23532296	genus	Teladorsagia	Teladorsagia	2383	0.091880	16	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Teladorsagia	v0.1.0
+SRR23532296	genus	Cooperia	Cooperia	716	0.027606	7	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0
+SRR23532296	species	Oesophagostomum venulosum	Oesophagostomum venulosum	680	0.026218	1	0.9951	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum venulosum	v0.1.0
+SRR23532296	species	Teladorsagia circumcincta	Teladorsagia circumcincta	544	0.020975	4	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Teladorsagia;Teladorsagia circumcincta	v0.1.0
+SRR23532296	genus	Trichostrongylus	Trichostrongylus	319	0.012300	5	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR23532296	species	Trichostrongylus rugatus	Trichostrongylus rugatus	163	0.006285	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus rugatus	v0.1.0
+SRR23532296	genus	Haemonchus	Haemonchus	115	0.004434	12	0.9952	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR23532296	species	Ostertagia ostertagi	Ostertagia ostertagi	78	0.003007	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia;Ostertagia ostertagi	v0.1.0
+SRR23532296	species	Haemonchus placei	Haemonchus placei	25	0.000964	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR23532296	order	Rhabditida	unclassified, 92% to Haemonchus	22	0.000848	3	0.9235	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532296	genus	Oesophagostomum	Oesophagostomum	15	0.000578	2	0.9855	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR23532296	order	Rhabditida	unclassified, 92% to Teladorsagia	14	0.000540	2	0.9212	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532296	order	Rhabditida	unclassified, 93% to Teladorsagia	10	0.000386	1	0.9296	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532296	species	Trichostrongylus axei	Trichostrongylus axei	7	0.000270	1	0.9951	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR23532296	order	Rhabditida	unclassified, 93% to Haemonchus	5	0.000193	1	0.9348	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532296	family	Trichostrongylidae	Trichostrongylidae (96% to Teladorsagia)	5	0.000193	1	0.9639	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532296	order	Rhabditida	unclassified, 95% to Teladorsagia	5	0.000193	1	0.9461	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532296	order	Rhabditida	unclassified, 94% to Teladorsagia	4	0.000154	1	0.9360	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532296	family	Trichostrongylidae	Trichostrongylidae (97% to Cooperia)	3	0.000116	1	0.9665	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532296	order	Rhabditida	unclassified, 95% to Trichostrongylus	3	0.000116	1	0.9492	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0

@@ -1,0 +1,4 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549462	genus	Trichostrongylus	Trichostrongylus	25438	0.997882	39	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR40549462			unclassified, no database hit	42	0.001648	9	0.0000		v0.1.0
+SRR40549462	family	Trichostrongylidae	Trichostrongylidae (96% to Trichostrongylus)	12	0.000471	1	0.9572	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0

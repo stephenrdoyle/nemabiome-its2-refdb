@@ -1,0 +1,3 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549515	genus	Haemonchus	Haemonchus	10	0.714286	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR40549515	species	Metastrongylus apri	Metastrongylus apri	4	0.285714	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Metastrongylidae;Metastrongylus;Metastrongylus apri	v0.1.0

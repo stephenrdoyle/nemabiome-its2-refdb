@@ -1,0 +1,9 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532326	species	Haemonchus contortus	Haemonchus contortus	19104	0.974992	22	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus contortus	v0.1.0
+SRR23532326	species	Nematodirus spathiger	Nematodirus spathiger	181	0.009238	9	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Molineidae;Nematodirus;Nematodirus spathiger	v0.1.0
+SRR23532326	genus	Cooperia	Cooperia	172	0.008778	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0
+SRR23532326	genus	Teladorsagia	Teladorsagia	61	0.003113	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Teladorsagia	v0.1.0
+SRR23532326	species	Haemonchus placei	Haemonchus placei	38	0.001939	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR23532326	species	Teladorsagia circumcincta	Teladorsagia circumcincta	20	0.001021	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Teladorsagia;Teladorsagia circumcincta	v0.1.0
+SRR23532326	genus	Haemonchus	Haemonchus	12	0.000612	2	0.9855	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR23532326	genus	Trichostrongylus	Trichostrongylus	6	0.000306	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0

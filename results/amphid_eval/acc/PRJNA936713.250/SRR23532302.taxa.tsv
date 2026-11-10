@@ -1,0 +1,16 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532302	genus	Cooperia	Cooperia	8989	0.588016	27	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0
+SRR23532302	species	Ostertagia ostertagi	Ostertagia ostertagi	3132	0.204880	9	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia;Ostertagia ostertagi	v0.1.0
+SRR23532302	species	Oesophagostomum radiatum	Oesophagostomum radiatum	1675	0.109570	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum radiatum	v0.1.0
+SRR23532302	species	Trichostrongylus axei	Trichostrongylus axei	1328	0.086871	5	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR23532302	genus	Oesophagostomum	Oesophagostomum	74	0.004841	1	0.9864	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR23532302	genus	Haemonchus	Haemonchus	19	0.001243	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR23532302	family	Trichostrongylidae	Trichostrongylidae (96% to Trichostrongylus)	13	0.000850	1	0.9625	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532302	genus	Ostertagia	Ostertagia	12	0.000785	3	0.9856	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia	v0.1.0
+SRR23532302	family	Trichostrongylidae	Trichostrongylidae (96% to Cooperia)	10	0.000654	2	0.9633	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532302	family	Trichostrongylidae	Trichostrongylidae (97% to Cooperia)	9	0.000589	2	0.9681	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532302	species	Haemonchus placei	Haemonchus placei	8	0.000523	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR23532302	family	Trichostrongylidae	Trichostrongylidae (96% to Ostertagia)	8	0.000523	1	0.9585	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532302	family	Trichostrongylidae	Trichostrongylidae (95% to Ostertagia)	4	0.000262	1	0.9544	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532302			unclassified, no database hit	3	0.000196	1	0.0000		v0.1.0
+SRR23532302	order	Rhabditida	unclassified, 94% to Cooperia	3	0.000196	1	0.9385	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0

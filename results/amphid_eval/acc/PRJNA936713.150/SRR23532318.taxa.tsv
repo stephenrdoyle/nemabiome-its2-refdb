@@ -1,0 +1,26 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532318	species	Oesophagostomum venulosum	Oesophagostomum venulosum	4291	0.368960	4	0.9951	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum venulosum	v0.1.0
+SRR23532318	species	Teladorsagia circumcincta	Teladorsagia circumcincta	3368	0.289596	5	0.9952	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Teladorsagia;Teladorsagia circumcincta	v0.1.0
+SRR23532318	species	Trichostrongylus rugatus	Trichostrongylus rugatus	1909	0.164144	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus rugatus	v0.1.0
+SRR23532318	genus	Trichostrongylus	Trichostrongylus	572	0.049183	12	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR23532318	genus	Teladorsagia	Teladorsagia	394	0.033878	6	0.9855	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Teladorsagia	v0.1.0
+SRR23532318	species	Haemonchus contortus	Haemonchus contortus	364	0.031298	6	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus contortus	v0.1.0
+SRR23532318	species	Nematodirus spathiger	Nematodirus spathiger	323	0.027773	8	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Molineidae;Nematodirus;Nematodirus spathiger	v0.1.0
+SRR23532318	genus	Nematodirus	Nematodirus	142	0.012210	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Molineidae;Nematodirus	v0.1.0
+SRR23532318	genus	Oesophagostomum	Oesophagostomum	102	0.008770	6	0.9855	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR23532318	species	Trichostrongylus axei	Trichostrongylus axei	39	0.003353	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR23532318	order	Rhabditida	unclassified, 93% to Teladorsagia	21	0.001806	3	0.9340	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532318	order	Rhabditida	unclassified, 94% to Trichostrongylus	20	0.001720	2	0.9435	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532318			chimera of SRR23532318_p2 and SRR23532318_p4	9	0.000774	1	0.9505		v0.1.0
+SRR23532318	family	Trichostrongylidae	Trichostrongylidae (97% to Trichostrongylus)	9	0.000774	1	0.9665	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532318	family	Trichostrongylidae	Trichostrongylidae (97% to Teladorsagia)	9	0.000774	2	0.9668	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532318	family	Trichostrongylidae	Trichostrongylidae (96% to Trichostrongylus)	7	0.000602	1	0.9604	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532318			chimera of SRR23532318_p3 and SRR23532318_p1	7	0.000602	1	0.9659		v0.1.0
+SRR23532318			chimera of SRR23532318_p3 and SRR23532318_p2	7	0.000602	1	0.9474		v0.1.0
+SRR23532318	order	Rhabditida	unclassified, 95% to Ostertagia	7	0.000602	2	0.9492	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532318	order	Rhabditida	unclassified, 94% to Ostertagia	7	0.000602	2	0.9435	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532318	family	Trichostrongylidae	Trichostrongylidae (96% to Teladorsagia)	7	0.000602	2	0.9621	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532318	order	Rhabditida	unclassified, 93% to Oesophagostomum	5	0.000430	1	0.9347	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532318	order	Rhabditida	unclassified, 92% to Teladorsagia	5	0.000430	1	0.9245	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532318	order	Rhabditida	unclassified, 92% to Trichostrongylus	4	0.000344	1	0.9246	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532318	order	Rhabditida	unclassified, 93% to Trichostrongylus	2	0.000172	1	0.9286	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0

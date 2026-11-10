@@ -1,0 +1,6 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532325	species	Haemonchus contortus	Haemonchus contortus	22316	0.979717	29	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus contortus	v0.1.0
+SRR23532325	species	Trichostrongylus axei	Trichostrongylus axei	428	0.018790	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR23532325	genus	Haemonchus	Haemonchus	20	0.000878	4	0.9925	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR23532325			unclassified, no database hit	11	0.000483	1	0.0000		v0.1.0
+SRR23532325	genus	Cooperia	Cooperia	3	0.000132	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0

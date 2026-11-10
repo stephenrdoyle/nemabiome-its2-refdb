@@ -1,0 +1,10 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549494	species	Haemonchus placei	Haemonchus placei	15050	0.478294	42	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR40549494	genus	Haemonchus	Haemonchus	12854	0.408504	16	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR40549494	genus	Cooperia	Cooperia	1508	0.047925	18	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0
+SRR40549494	species	Ostertagia ostertagi	Ostertagia ostertagi	791	0.025138	8	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia;Ostertagia ostertagi	v0.1.0
+SRR40549494	species	Oesophagostomum radiatum	Oesophagostomum radiatum	700	0.022246	5	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum radiatum	v0.1.0
+SRR40549494	species	Trichostrongylus axei	Trichostrongylus axei	458	0.014555	4	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR40549494	genus	Oesophagostomum	Oesophagostomum	94	0.002987	1	0.9864	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR40549494	family	Trichostrongylidae	Trichostrongylidae (95% to Trichostrongylus)	6	0.000191	1	0.9517	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR40549494	family	Trichostrongylidae	Trichostrongylidae (95% to Ostertagia)	5	0.000159	1	0.9544	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0

@@ -1,0 +1,11 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549466	species	Metastrongylus apri	Metastrongylus apri	18696	0.956317	40	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Metastrongylidae;Metastrongylus;Metastrongylus apri	v0.1.0
+SRR40549466	genus	Meloidogyne	Meloidogyne	654	0.033453	9	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Meloidogynidae;Meloidogyne	v0.1.0
+SRR40549466	family	Metastrongylidae	Metastrongylidae (95% to Metastrongylus)	90	0.004604	4	0.9532	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Metastrongylidae	v0.1.0
+SRR40549466	order	Rhabditida	unclassified, 95% to Metastrongylus	35	0.001790	3	0.9481	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549466	family	Metastrongylidae	Metastrongylidae (96% to Metastrongylus)	31	0.001586	4	0.9634	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Metastrongylidae	v0.1.0
+SRR40549466	species	Meloidogyne hapla	Meloidogyne hapla	18	0.000921	4	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Meloidogynidae;Meloidogyne;Meloidogyne hapla	v0.1.0
+SRR40549466	order	Rhabditida	unclassified, 94% to Metastrongylus	13	0.000665	1	0.9443	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549466	species	Trichostrongylus axei	Trichostrongylus axei	7	0.000358	1	0.9958	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR40549466			unclassified, no database hit	3	0.000153	1	0.0000		v0.1.0
+SRR40549466	genus	Metastrongylus	Metastrongylus	3	0.000153	1	0.9853	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Metastrongylidae;Metastrongylus	v0.1.0

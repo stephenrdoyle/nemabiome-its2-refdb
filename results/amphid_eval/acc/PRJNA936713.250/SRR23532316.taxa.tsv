@@ -1,0 +1,9 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532316	species	Haemonchus placei	Haemonchus placei	5976	0.486407	5	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR23532316	genus	Haemonchus	Haemonchus	5209	0.423979	7	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR23532316	genus	Cooperia	Cooperia	868	0.070650	8	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0
+SRR23532316	species	Haemonchus contortus	Haemonchus contortus	207	0.016848	4	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus contortus	v0.1.0
+SRR23532316	species	Ostertagia ostertagi	Ostertagia ostertagi	19	0.001546	4	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia;Ostertagia ostertagi	v0.1.0
+SRR23532316	family	Trichostrongylidae	Trichostrongylidae (96% to Haemonchus)	3	0.000244	1	0.9624	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532316	order	Rhabditida	unclassified, 93% to Haemonchus	2	0.000163	1	0.9322	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532316	species	Trichostrongylus axei	Trichostrongylus axei	2	0.000163	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0

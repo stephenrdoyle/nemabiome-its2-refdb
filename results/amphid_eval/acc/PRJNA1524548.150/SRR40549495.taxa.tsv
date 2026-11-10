@@ -1,0 +1,18 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549495	species	Haemonchus placei	Haemonchus placei	16316	0.474509	45	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR40549495	genus	Haemonchus	Haemonchus	14067	0.409103	20	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR40549495	genus	Cooperia	Cooperia	1769	0.051447	15	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0
+SRR40549495	species	Ostertagia ostertagi	Ostertagia ostertagi	790	0.022975	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia;Ostertagia ostertagi	v0.1.0
+SRR40549495	species	Oesophagostomum radiatum	Oesophagostomum radiatum	741	0.021550	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum radiatum	v0.1.0
+SRR40549495	genus	Trichostrongylus	Trichostrongylus	365	0.010615	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR40549495	species	Trichostrongylus axei	Trichostrongylus axei	165	0.004799	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR40549495	genus	Oesophagostomum	Oesophagostomum	100	0.002908	2	0.9899	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR40549495	order	Rhabditida	unclassified, 89% to Haemonchus	21	0.000611	2	0.8908	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549495	family	Trichostrongylidae	Trichostrongylidae (97% to Cooperia)	19	0.000553	2	0.9665	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR40549495	family	Trichostrongylidae	Trichostrongylidae (96% to Cooperia)	6	0.000174	1	0.9628	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR40549495			chimera of SRR40549495_p5 and SRR40549495_p17	5	0.000145	1	0.9135		v0.1.0
+SRR40549495	genus	Ostertagia	Ostertagia	5	0.000145	1	0.9887	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia	v0.1.0
+SRR40549495			chimera of SRR40549495_p7 and SRR40549495_p21	5	0.000145	1	0.9403		v0.1.0
+SRR40549495			chimera of SRR40549495_p1 and SRR40549495_p6	4	0.000116	1	0.9898		v0.1.0
+SRR40549495	order	Rhabditida	unclassified, 84% to Haemonchus	4	0.000116	1	0.8444	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549495	order	Rhabditida	unclassified, 93% to Ashworthius	3	0.000087	1	0.9266	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0

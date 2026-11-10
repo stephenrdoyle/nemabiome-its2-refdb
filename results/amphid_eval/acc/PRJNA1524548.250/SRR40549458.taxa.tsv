@@ -1,0 +1,42 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549458	genus	Cloacina	Cloacina	14999	0.347811	68	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 93% to Macropostrongylus	10254	0.237779	18	0.9310	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	species	Cloacina macropodis	Cloacina macropodis	4399	0.102008	19	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina macropodis	v0.1.0
+SRR40549458	species	Cloacina clymene	Cloacina clymene	3054	0.070819	12	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina clymene	v0.1.0
+SRR40549458	genus	Popovastrongylus	Popovastrongylus	2362	0.054772	15	0.9872	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Popovastrongylus	v0.1.0
+SRR40549458	species	Hypodontus macropi	Hypodontus macropi	2119	0.049137	13	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Hypodontus;Hypodontus macropi	v0.1.0
+SRR40549458	family	Strongylidae	Strongylidae (96% to Cloacina)	1426	0.033067	5	0.9640	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae	v0.1.0
+SRR40549458	species	Cloacina phaethon	Cloacina phaethon	1080	0.025044	5	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina phaethon	v0.1.0
+SRR40549458	species	Cloacina pollux	Cloacina pollux	969	0.022470	6	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina pollux	v0.1.0
+SRR40549458	genus	Hypodontus	Hypodontus	843	0.019548	21	0.9899	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Hypodontus	v0.1.0
+SRR40549458	species	Cloacina parva	Cloacina parva	469	0.010876	3	0.9954	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina parva	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 92% to Macropostrongylus	293	0.006794	6	0.9224	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	species	Cloacina communis	Cloacina communis	264	0.006122	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina communis	v0.1.0
+SRR40549458	family	Strongylidae	Strongylidae (96% to Popovastrongylus)	154	0.003571	2	0.9617	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 95% to Cloacina	56	0.001299	6	0.9495	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 89% to Macropostrongylus	47	0.001090	3	0.8922	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 93% to Cloacina	44	0.001020	5	0.9336	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458			chimera of SRR40549458_p48 and SRR40549458_p50	42	0.000974	5	0.9267		v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 92% to Cloacina	26	0.000603	3	0.9234	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 90% to Cloacina	24	0.000557	2	0.9041	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	family	Strongylidae	Strongylidae (95% to Cloacina)	24	0.000557	5	0.9550	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 91% to Macropostrongylus	22	0.000510	2	0.9138	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 94% to Cloacina	19	0.000441	3	0.9430	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458			chimera of SRR40549458_p48 and SRR40549458_p47	17	0.000394	1	0.9267		v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 87% to Cloacina	13	0.000301	2	0.8716	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	family	Strongylidae	Strongylidae (97% to Cloacina)	13	0.000301	3	0.9693	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 94% to Popovastrongylus	12	0.000278	2	0.9404	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 90% to Macropostrongylus	9	0.000209	1	0.8966	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 36% to Metarhabditis	9	0.000209	2	0.3623	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 89% to Cloacina	9	0.000209	2	0.8950	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	species	Cloacina herceus	Cloacina herceus	8	0.000186	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina herceus	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 91% to Cloacina	8	0.000186	2	0.9099	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	family	Strongylidae	Strongylidae (97% to Hypodontus)	7	0.000162	3	0.9698	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae	v0.1.0
+SRR40549458	family	Strongylidae	Strongylidae (97% to Popovastrongylus)	6	0.000139	1	0.9660	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae	v0.1.0
+SRR40549458	species	Trichostrongylus axei	Trichostrongylus axei	6	0.000139	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 93% to Popovastrongylus	5	0.000116	1	0.9319	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	genus	Haemonchus	Haemonchus	4	0.000093	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR40549458			chimera of SRR40549458_p121 and SRR40549458_p50	3	0.000070	1	0.9310		v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 26% to Metarhabditis	2	0.000046	1	0.2609	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 35% to Metarhabditis	2	0.000046	1	0.3527	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549458	order	Rhabditida	unclassified, 95% to Popovastrongylus	2	0.000046	1	0.9489	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0

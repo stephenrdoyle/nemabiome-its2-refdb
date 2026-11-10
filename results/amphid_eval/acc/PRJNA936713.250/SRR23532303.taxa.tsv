@@ -1,0 +1,6 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532303	species	Haemonchus placei	Haemonchus placei	6847	0.367407	5	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR23532303	genus	Haemonchus	Haemonchus	6285	0.337250	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR23532303	species	Ostertagia ostertagi	Ostertagia ostertagi	5500	0.295128	6	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia;Ostertagia ostertagi	v0.1.0
+SRR23532303	order	Rhabditida	unclassified, 93% to Ostertagia	2	0.000107	1	0.9295	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532303	family	Trichostrongylidae	Trichostrongylidae (96% to Haemonchus)	2	0.000107	1	0.9624	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0

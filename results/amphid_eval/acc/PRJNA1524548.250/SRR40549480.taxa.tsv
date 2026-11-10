@@ -1,0 +1,13 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549480	species	Oesophagostomum radiatum	Oesophagostomum radiatum	22440	0.591351	62	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum radiatum	v0.1.0
+SRR40549480	genus	Haemonchus	Haemonchus	3822	0.100719	16	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR40549480	species	Haemonchus placei	Haemonchus placei	3590	0.094606	15	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR40549480	species	Ostertagia ostertagi	Ostertagia ostertagi	2531	0.066698	13	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia;Ostertagia ostertagi	v0.1.0
+SRR40549480	species	Trichostrongylus axei	Trichostrongylus axei	2413	0.063589	16	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR40549480	genus	Oesophagostomum	Oesophagostomum	2123	0.055946	13	0.9867	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR40549480	genus	Cooperia	Cooperia	981	0.025852	18	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0
+SRR40549480	genus	Trichostrongylus	Trichostrongylus	31	0.000817	3	0.9958	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR40549480	order	Rhabditida	unclassified, 91% to Oesophagostomum	6	0.000158	1	0.9140	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549480	order	Rhabditida	unclassified, 70% to Ancylostoma	5	0.000132	1	0.7000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549480	family	Trichostrongylidae	Trichostrongylidae (96% to Cooperia)	3	0.000079	1	0.9602	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR40549480	family	Trichostrongylidae	Trichostrongylidae (95% to Haemonchus)	2	0.000053	1	0.9549	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0

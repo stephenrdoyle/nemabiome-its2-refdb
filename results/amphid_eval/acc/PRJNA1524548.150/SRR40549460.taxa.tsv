@@ -1,0 +1,12 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549460	genus	Trichostrongylus	Trichostrongylus	33231	0.980468	52	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR40549460			unclassified, no database hit	442	0.013041	10	0.0000		v0.1.0
+SRR40549460	species	Trichostrongylus rugatus	Trichostrongylus rugatus	189	0.005576	4	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus rugatus	v0.1.0
+SRR40549460	order	Rhabditida	unclassified, 93% to Trichostrongylus	6	0.000177	1	0.9286	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549460	species	Metastrongylus apri	Metastrongylus apri	5	0.000148	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Metastrongylidae;Metastrongylus;Metastrongylus apri	v0.1.0
+SRR40549460	species	Haemonchus placei	Haemonchus placei	5	0.000148	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR40549460			chimera of SRR40549460_p33 and SRR40549460_p6	4	0.000118	1	0.0000		v0.1.0
+SRR40549460	order	Rhabditida	unclassified, 94% to Trichostrongylus	3	0.000089	1	0.9381	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549460	order	Rhabditida	unclassified, 95% to Trichostrongylus	3	0.000089	1	0.9476	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549460			chimera of SRR40549460_p33 and SRR40549460_p13	3	0.000089	1	0.0000		v0.1.0
+SRR40549460	family	Trichostrongylidae	Trichostrongylidae (97% to Trichostrongylus)	2	0.000059	1	0.9655	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
