@@ -27,6 +27,10 @@ Writes the same set of files as vespa-18s-refdb, so amphid reads either:
   anchor_lookalikes.tsv         adapter-anchor near-copies (pre-flight mask)
   manifest.json, summary.txt
 
+LAYERS. --layer adds ITS2 records from genome assemblies and long reads
+(bin/genome_layer.py), merged with the backbone like any other record;
+members.tsv names each one's source.
+
 CURATION. curation/overrides.tsv (--overrides) drops or relabels source
 records first; a dropped record stays in members.tsv with its reason.
 
@@ -42,6 +46,9 @@ two members and two thirds of them wins (majority); otherwise every
 member is merged and the record stops where they agree (unresolved),
 listed for review. Below order, disagreement is left as biology: the
 record stops at the rank its members share.
+
+FOLDING. A partial record identical over its span to a full-length record
+of the same species is folded into it (fold_contained).
 
 GRADE. A record's grade is its best member's (bin/its2_partials.py):
 complete, near_complete, partial_90, partial_75, partial, unmeasured;
@@ -67,6 +74,7 @@ import json
 import os
 import re
 import subprocess
+import tempfile
 import sys
 from multiprocessing import Pool
 
@@ -274,6 +282,50 @@ def margins(fasta, seqs, tax, geoms, workers):
         return {r[0]: r for r in pool.map(_margin, jobs, chunksize=100)}
 
 
+FULL_GRADES = ("complete", "near_complete")
+
+
+def fold_contained(seqs, tax, members, workers):
+    """Fold a partial record into a full-length record of the same species
+    that holds it exactly over its span (1,106 records in the first
+    build). It adds nothing a read could use: any read matching it matches
+    the longer record at least as well, and the longest-span rule of the
+    classifier prefers the longer one anyway. Its source records move to
+    the host record, noted, so members.tsv still lists every source.
+    A partial inside another species' record is kept: that is a real tie.
+    Returns the number folded."""
+    full = [i for i, t in tax.items() if t["grade"] in FULL_GRADES and t["species"]]
+    part = [i for i, t in tax.items() if t["grade"] not in FULL_GRADES and t["species"]]
+    with tempfile.TemporaryDirectory() as d:
+        ff, pf = os.path.join(d, "f.fa"), os.path.join(d, "p.fa")
+        with open(ff, "w") as fh:
+            fh.writelines(f">{i}\n{seqs[i]}\n" for i in full)
+        with open(pf, "w") as fh:
+            fh.writelines(f">{i}\n{seqs[i]}\n" for i in part)
+        out = subprocess.run(["minimap2", "-k", "11", "-w", "5", "-f", "1000000", "-N", "100",
+                              "-p", "0.5", "-t", str(workers), ff, pf],
+                             capture_output=True, text=True, check=True).stdout
+    cand = collections.defaultdict(set)
+    for line in out.splitlines():
+        f = line.split("\t")
+        if tax[f[5]]["species"] == tax[f[0]]["species"]:
+            cand[f[0]].add(f[5])
+    host = {}
+    for i, cs in cand.items():
+        hits = [c for c in cs if infix_distance(seqs[i], seqs[c]) == 0]
+        if hits:
+            host[i] = max(hits, key=lambda c: (len(seqs[c]), c))
+    for m in members:
+        if m["id"] in host:
+            h = host[m["id"]]
+            m["note"] = f"folded: identical over its span to {h}, same species"
+            m["id"] = h
+            tax[h]["members"] += 1
+    for i in host:
+        del seqs[i], tax[i]
+    return len(host)
+
+
 def lookalike_chunk(items):
     return find_anchor_lookalikes(items, ANCHORS, LOOKALIKE_MAX_EDITS)
 
@@ -289,6 +341,8 @@ def main() -> int:
     ap.add_argument("--version", default="dev")
     ap.add_argument("--workers", type=int, default=os.cpu_count())
     ap.add_argument("--overrides", default=os.path.join(HERE, "curation", "overrides.tsv"))
+    ap.add_argument("--layer", action="append", default=[],
+                    help="a layer TSV from bin/genome_layer.py; repeatable")
     ap.add_argument("--read-lengths", default=",".join(map(str, READ_LENGTHS)),
                     help="comma-separated Illumina read lengths; one resolution table and "
                          "margin column per length (default 150,250)")
@@ -303,6 +357,19 @@ def main() -> int:
     label = {}
     for r in csv.DictReader(open(a.taxonomy), delimiter="\t"):
         label[r["accn"].split(".")[0]] = (r["accn"], [r[k] for k in RANKS])
+    # Layers (bin/genome_layer.py): ITS2 from genome assemblies and long
+    # reads, cut at the same anchors, so complete by construction.
+    source_of, layer_files = {}, []
+    for path in a.layer:
+        layer_files.append(path)
+        for r in csv.DictReader(open(path), delimiter="\t"):
+            acc = r["accession"]
+            refs[acc] = r["sequence"].upper()
+            label[acc] = (acc, r["label"].split(";"))
+            grade[acc] = {"grade": "complete", "coverage": "1.000", "trimmed_start": 0,
+                          "trimmed_end": 0}
+            cut[acc] = {"nc1_edits": "", "nc2_edits": ""}
+            source_of[acc] = r["source"]
 
     # --- curation: drops and relabels (curation/overrides.tsv)
     drops = {}
@@ -361,21 +428,33 @@ def main() -> int:
         cov = max((1.0 if grade[acc]["grade"] == "complete" else float(grade[acc]["coverage"] or 0))
                   for acc in accs)
         seqs[rid] = s
+        # Why a record names no species: its members name two or more
+        # ("shared" - real evidence against naming either), or none names
+        # one ("unnamed" - hybrids, cf., environmental samples: no evidence
+        # about any species). The classifier's gap rule counts only the
+        # first as another species.
+        named = {labs[acc][-1] for acc in accs if role[acc] == "kept"
+                 and informative("species", labs[acc][-1])}
+        status = "named" if top[-1] else ("shared" if len(named) > 1 else "unnamed")
         tax[rid] = dict(zip(RANKS, top), id=rid, deepest_rank=rank, members=len(accs),
+                        species_status=status,
                         grade=GRADES[gs[0]], coverage="" if GRADES[gs[0]] == "unmeasured" else f"{cov:.3f}",
-                        sources=a.source)
+                        sources=";".join(sorted({source_of.get(acc, a.source) for acc in accs})))
         for acc in accs:
             g = grade[acc]
-            members.append({"id": rid, "source": a.source, "accession": label[acc][0],
+            members.append({"id": rid, "source": source_of.get(acc, a.source),
+                            "accession": label[acc][0],
                             "label": ";".join(labs[acc]), "role": role[acc], "grade": g["grade"],
                             "coverage": g["coverage"], "trimmed_start": g["trimmed_start"],
                             "trimmed_end": g["trimmed_end"], "note": ""})
+    folded = fold_contained(seqs, tax, members, a.workers)
     order = sorted(seqs)
 
     with open(os.path.join(out, "refdb.fasta"), "w") as fh:
         for rid in order:
             fh.write(f">{rid}\n{seqs[rid]}\n")
-    cols = ["id"] + RANKS + ["deepest_rank", "members", "grade", "coverage", "sources"]
+    cols = ["id"] + RANKS + ["deepest_rank", "species_status", "members", "grade", "coverage",
+                             "sources"]
     with open(os.path.join(out, "taxonomy.tsv"), "w") as fh:
         w = csv.DictWriter(fh, fieldnames=cols, delimiter="\t", lineterminator="\n")
         w.writeheader()
@@ -391,7 +470,7 @@ def main() -> int:
     # --- primer fit: the best-fitting member that holds both sites
     fit = {}
     for m in members:
-        acc = m["accession"].split(".")[0]
+        acc = m["accession"] if m["accession"] in cut else m["accession"].split(".")[0]
         e1, e2 = cut[acc]["nc1_edits"], cut[acc]["nc2_edits"]
         known = (e1 != "") + (e2 != "")
         key = (-known, (int(e1) if e1 else 0) + (int(e2) if e2 else 0))
@@ -508,8 +587,9 @@ def main() -> int:
                                 for g in geometries],
         "anchors": ANCHORS, "lookalike_max_edits": LOOKALIKE_MAX_EDITS,
         "source": a.source, "source_taxonomy_sha256": sha256(a.taxonomy),
+        "layers": [{"file": os.path.basename(f), "sha256": sha256(f)} for f in layer_files],
         "counts": {"records": len(order), "members": len(members), "named_species": len(named),
-                   "grade": dict(gcount), "deepest_rank_nanopore": dict(nano),
+                   "grade": dict(gcount), "deepest_rank_nanopore": dict(nano), "folded": folded,
                    "member_roles": dict(roles), "conflicts": dict(dec), "primer_fit": dict(pf)},
         "files": {},
     }
@@ -524,7 +604,8 @@ def main() -> int:
              f"primers NC1 {NC1} / NC2 {NC2}", f"source {a.source}",
              f"records {len(order):,} from {len(members):,} source records; "
              f"named species {len(named):,}",
-             "members: " + ", ".join(f"{k} {v:,}" for k, v in sorted(roles.items())),
+             "members: " + ", ".join(f"{k} {v:,}" for k, v in sorted(roles.items()))
+             + f"; partial records folded into a same-species full-length record: {folded:,}",
              "conflicts (order or above): " + (", ".join(f"{k} {v}" for k, v in sorted(dec.items())) or "none"),
              "", "Grade (best member):"] + table(gcount, GRADES, len(order))
     lines += ["", f"Deepest rank - nanopore (whole ITS2; {nano_tied:,} species-level records "

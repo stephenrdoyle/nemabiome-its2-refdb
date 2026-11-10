@@ -1,0 +1,30 @@
+== whole
+  current (99%, gap 4)               present right  52.9%  wrong  0.7%   hidden wrong  6.6%
+  lam 2: global                      present right  61.6%  wrong  1.6%   hidden wrong  9.2%
+  lam 2: genus                       present right  59.2%  wrong  1.6%   hidden wrong  8.8%
+  lam 2: family                      present right  61.1%  wrong  1.4%   hidden wrong  8.8%
+  lam 2: genus>family                present right  60.2%  wrong  1.5%   hidden wrong  9.4%
+  lam 4: global                      present right  52.3%  wrong  0.7%   hidden wrong  6.8%
+  lam 4: genus                       present right  54.7%  wrong  1.1%   hidden wrong  7.4%
+  lam 4: family                      present right  55.4%  wrong  1.1%   hidden wrong  7.2%
+  lam 4: genus>family                present right  55.9%  wrong  1.2%   hidden wrong  7.9%
+  lam 8: global                      present right  40.8%  wrong  0.4%   hidden wrong  4.7%
+  lam 8: genus                       present right  51.7%  wrong  1.0%   hidden wrong  7.0%
+  lam 8: family                      present right  52.7%  wrong  1.0%   hidden wrong  6.4%
+  lam 8: genus>family                present right  54.0%  wrong  1.1%   hidden wrong  7.3%
+
+== 2x150
+  current (99%, gap 4)               present right  56.7%  wrong  0.5%   hidden wrong  8.8%
+  lam 2: global                      present right  58.4%  wrong  0.6%   hidden wrong 10.1%
+  lam 2: genus                       present right  60.6%  wrong  0.9%   hidden wrong  9.6%
+  lam 2: family                      present right  59.0%  wrong  0.9%   hidden wrong  9.8%
+  lam 2: genus>family                present right  60.4%  wrong  1.0%   hidden wrong 10.0%
+  lam 4: global                      present right  49.4%  wrong  0.4%   hidden wrong  7.7%
+  lam 4: genus                       present right  55.0%  wrong  0.8%   hidden wrong  8.8%
+  lam 4: family                      present right  54.7%  wrong  0.7%   hidden wrong  8.3%
+  lam 4: genus>family                present right  56.1%  wrong  0.8%   hidden wrong  8.9%
+  lam 8: global                      present right  41.7%  wrong  0.2%   hidden wrong  5.8%
+  lam 8: genus                       present right  50.5%  wrong  0.6%   hidden wrong  7.7%
+  lam 8: family                      present right  53.1%  wrong  0.5%   hidden wrong  7.4%
+  lam 8: genus>family                present right  53.3%  wrong  0.6%   hidden wrong  8.0%
+

@@ -1,6 +1,6 @@
 # Notes for amphid: using the nemabiome ITS2 database
 
-From nemabiome-its2-refdb, first scratch build (2026-11-09). The
+From nemabiome-its2-refdb, scratch build of 2026-11-10. The
 database follows vespa-18s-refdb's release format. These are the
 places where ITS2 needs something V4 did not.
 
@@ -45,26 +45,55 @@ bases, most 2x250 pairs and many 2x150 pairs overlap and merge.
 grade with the call, and consider requiring a minimum aligned length
 (say 150 bases) for a species call.
 
-## 5. Identity limits
+## 5. Identity limits: use the gap rule
 
 The V4 limits (species 99.7% Illumina / 99.5% nanopore, genus 99.5% /
 99%, family 95%) were set for a ~400-base insert. Over a 240-base ITS2,
-one edit is 0.42%, so 99.7% means an exact match and 99.5% means at
-most one edit. Margins are thin: of 12,855 species-level records, 705
-are tied with another species (margin 0), 1,019 are one edit away and
-836 two.
+one edit is 0.42%, so 99.7% means an exact match. Margins are thin: of
+the species-level records, 410 are tied with another species, 900 are
+one edit away and 711 two.
 
-Two suggestions:
+A leave-one-out test (DESIGN §6.1; 3,164 queries, 1,210 species) shows
+identity alone is the wrong measure. Under the V4 limits only 18.5% of
+reads whose species is in the database are named to species. What
+separates a right call from a wrong one is the margin to the next
+species. Recommended rule:
 
-- express the species limit in edits over the aligned span (0 for
-  Illumina, <= 1 for nanopore after correction), or keep percent
-  but check it against the margin table;
-- a call whose best and second-best references (different species)
-  are within one edit should stop at genus, whatever the identity.
-  `species_margins.tsv` gives each record's nearest other species.
+- **species**: >= 99% identity over the span AND the best reference of
+  any other species is >= 4 edits further off (same span);
+- **genus** >= 97%, **family** >= 95%;
+- a reference with `species_status` = `unnamed` (hybrids, cf.,
+  environmental) is not "another species"; a `shared` one is.
 
-A leave-one-out test (as for V4) is planned and will set these
-properly.
+| Rule (whole reads) | Species missing: wrong species | Present: right species | Present: wrong species |
+|---|---:|---:|---:|
+| V4 limits | 2.4% | 18.5% | 1.4% |
+| gap rule | 6.6% | 52.9% | 0.7% |
+| dada2 assignTaxonomy, for scale | 42.4% | 85.1% | 4.6% |
+| DECIPHER IdTaxa, for scale | 22.0% | 77.1% | 2.5% |
+
+Limits set separately per genus or family did no better on held-out
+species. Thresholds cannot fix the remaining missing-species errors:
+they are reads identical to a record deposited under another name.
+
+**Report how close a call came.** With each call, give the best species
+and its identity, and the nearest other species with how many edits
+further it is. Example: "*Trichostrongylus*; nearest *T. retortaeformis*
+100%; next *T. axei* +2". A genus call then says whether it is "exactly
+species X, but its sister is 2 edits away" or "98% to X, nothing else
+close". Both stop at genus for different reasons, and users act on them
+differently. `bin/classify_asvs.py` writes these as `nearest` and
+`next`.
+
+## 5a. If a k-mer classifier is used instead
+
+assignTaxonomy and IdTaxa compare k-mers over the whole ASV, not over
+the reference's span. Against this database, whose records stop before
+the 28S stretch, every ASV carries ~47 bases no reference has. Cut the
+stretch off the ASVs first (`bin/trim_28s.py`: at the 28S anchor
+`AACCTGAGCTCAGTCGTGATTACCCGCCGAACTTAAGCATATCA`, else the last 47
+bases). Uncut, assignTaxonomy named 45% of reads of one sheep set to
+species; cut, 99.3%.
 
 ## 6. Ties are already resolved in the tables
 

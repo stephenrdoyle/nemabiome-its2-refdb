@@ -156,7 +156,17 @@ same effect dropped pairs in vespa-18s-refdb's neighbour check.)
 - **Ties**: a species-level record at margin 0 sits exactly inside
   another species' record over its span. A read scores the same
   against both, so the resolution tables stop it at the rank the two
-  share. 732 records read whole, 745 through 2x150 windows.
+  share. 410 records read whole, 522 through 2x150 windows (the current
+  build; 732 and 745 before curation and folding).
+- **`species_status`** (`taxonomy.tsv`): `named` if the record reaches
+  species; `shared` if it stops above species because its members name
+  two or more species (95 records: real shared ITS2s, such as *Brugia*);
+  `unnamed` if no member names a species at all (32: hybrids, cf.,
+  environmental samples). The classifier's gap counts a shared record as
+  another species - a read matching it could be either - but ignores an
+  unnamed one, which says nothing about which species a read is from.
+  Before this, three hybrid records cut species calls in a cattle set
+  from 87% to 35%.
 - **Windows never resolve deeper than whole**: the build stops if any
   would. The first run did stop. A record already at genus was named to
   species through a window group, because a blank species was read as
@@ -188,7 +198,12 @@ species, 1,019 are one edit away, 836 two and 1,628 three to five. Over
 a 240-base ITS2, one edit is 0.4%. Intraspecific ITS2 variation is
 often that large, and in vespa-18s-refdb a leave-one-out test named
 27-46% of reads as a sister species once identity limits were lifted.
-The same test is due here (§7).
+The same test is in §6.
+
+The current build, after the curation of §5.2-5.3, folding (§8, item 4) and the
+long-read layer (§5.5), has 11,956 records, 1,843 species with a record
+of their own and 427 genera; 96% of records resolve to species read
+whole, 94% through 2x150 windows (`results/dev_build_summary.txt`).
 
 ### 5.2 Cross-family ties: mislabels, curated
 
@@ -271,6 +286,22 @@ dropped, each contradicted by 10-49 other GenBank entries:
   nearest *C. catinatum* read variant and 3 from the nearest *C. goldi*
   one: too close to call, so it is left.
 
+**The *Haemonchus contortus* / *H. placei* shared variant.** One ITS2 was
+deposited twice as *H. contortus* (KX829170, MH481602) and twice as
+*H. placei*. It is the most common ASV in a cattle larval set
+(PRJNA1524548, 23% of reads), which therefore stopped at genus. Two
+*H. contortus* assemblies hold 13 ITS2 copies between them: MHco3(ISE)
+(WBPS19) and GCA_041937105.1. Every copy is 5-9 edits from that variant
+and matches *H. contortus* records exactly; every copy is 6-10 edits
+from *H. placei* records. *H. contortus* rDNA does not carry the variant.
+Both "*H. contortus*" records came from cattle, *H. placei*'s host, so
+they are probably *H. placei* or hybrids. Both are dropped, and the
+variant is called *H. placei*. Four more "*H. contortus*" records from
+the same cattle survey as MH481602 (MH481579, MH481580, MH481588,
+MH481596) are 1 edit from *H. placei* records and 5-6 from every
+*H. contortus* genome copy; they are dropped too. The *H. placei* assembly (WBPS19
+PRJEB509, short reads) gave no ITS2, nor did McMaster or GCA_007637855.2.
+
 ### 5.4 Genomes and HiFi reads
 
 `bin/its2_scan.py` finds the ITS2 in an assembly or a read set. It can't
@@ -323,16 +354,21 @@ reads and seen in >= 5 reads:
 
 | Species | ITS2 reads | Variants | Edits between them | Main variants vs backbone |
 |---|---:|---:|---|---|
-| *Bunostomum trigonocephalum* | 2,449 | 3 | 1-2 | same species, 0-2 edits |
-| *Cyathostomum catinatum* | 1,402 | 7 | 1-4 | same species, 0 (one 2) |
-| *Cylicostephanus goldi* | 3,789 | 3 | 2-8 | same species, 0-1 |
-| *Cylicostephanus longibursatus* | 1,442 | 14 | 1-12 | same species, 0-1 (one 7 from anything) |
-| *Cylicocyclus insigne* | 496 | 6 | 1-6 within each of two groups ~20 apart | *C. insigne* and *C. ashworthi*, 0 |
-| *Cylicocyclus nassatus* | 933 | 2 | 2 | same species, 0 |
-| *Coronocyclus labiatus* | 183 | 1 | - | same species, 0 |
-| *Ancylostoma duodenale* (subreads) | 95 | 5 | 2-8 | same species, 0-4 |
-| *Angiostrongylus malaysiensis* | 4,105 | 8 | 2-8, plus a group 22-30 away | same species, 0-4 |
-| *Crenosoma striatum* | 781 | 8 | 1-4, plus 2 minor variants 11-24 away | same species, 0-2 |
+| *Bunostomum trigonocephalum* | 2,151 | 3 | 1-2 | same species, 0-2 edits |
+| *Cyathostomum catinatum* | 1,411 | 7 | 1-4 | same species, 0 (one 2) |
+| *Cylicostephanus goldi* | 3,789\* | 3 | 2-8 | same species, 0-1 |
+| *Cylicostephanus longibursatus* | 1,438 | 14 | 1-12 | same species, 0-1 (one 7 from anything) |
+| *Cylicocyclus insigne* | 1,620 | 7 | 1-7 within each of two groups 18-23 apart | *C. insigne* and *C. ashworthi*, 0 |
+| *Cylicocyclus nassatus* | 719 | 2 | 2 | same species, 0 |
+| *Coronocyclus labiatus* | 182 | 1 | - | same species, 0 |
+| *Ancylostoma duodenale* (subreads) | 798 | 5 | 2-8 | same species, 0-4 |
+| *Angiostrongylus malaysiensis* | 4,103 | 8 | 2-8, plus a group 22-30 away | same species, 0-4 |
+| *Crenosoma striatum* | 730 | 8 | 1-4, plus 2 minor variants 11-24 away | same species, 0-2 |
+
+\* From the first scan; the rescan with the fixed scanner got only 67,323
+reads before EBI's download stopped (1,300 ITS2 reads, the same three
+variants). *C. nassatus* and *C. striatum* stopped at 155,204 and 189,087
+reads.
 
 What the reads show:
 
@@ -348,9 +384,9 @@ What the reads show:
   already are in GenBank: most read variants match a record exactly.
 - ***Cylicocyclus insigne* / *C. ashworthi*.** ERR11658755 is one adult
   worm (Sallé et al., PRJEB63274; INRAE, identified by ITS2 and COX1).
-  It carries two ITS2 types ~20 edits apart: a 324-base type matching
-  *C. insigne* records (34% of reads) and a 318-base type matching
-  *C. ashworthi* records exactly (43%). Either *C. insigne* carries an
+  It carries two ITS2 types 18-23 edits apart: a 324-base type matching
+  *C. insigne* records and a 318-base type matching
+  *C. ashworthi* records exactly. Either *C. insigne* carries an
   "*ashworthi*" copy type, or the worm is a hybrid or misidentified;
   its identification by ITS2 makes this circular. Reads matching the
   *ashworthi* type may come from *C. insigne*. Left as is, flagged.
@@ -358,11 +394,177 @@ What the reads show:
   carry a small group of variants 11-30 edits from the main ones. They
   are either a second rDNA copy type or a second worm in the sample.
 
-Not yet added to the database. A read-variant layer, as in
-vespa-18s-refdb, would put the exact within-worm variants in, which is
-what species calls depend on (§7).
+These copies, and the assemblies' below, are now in the database as a
+layer (§5.5).
 
-## 6. Release format
+### 5.5 The long-read layer
+
+`curation/long_read_its2.tsv`, made by `bin/genome_layer.py` from the
+scans listed in `curation/long_read_sources.tsv` and merged by
+`bin/build.py --layer` like any other source. Every copy is cut at the
+backbone's anchors, so it collapses with identical backbone records.
+
+- **Assemblies** (31: 24 long-read assemblies of 16 species, the two
+  *H. contortus* assemblies of §5.3, and the five gap-species assemblies
+  of §5.4 that gave an ITS2): every distinct copy is kept, except that
+  in an array of >= 20 copies a variant must be seen twice (one copy
+  in a big array may be an assembly error).
+- **HiFi reads** (the ten runs above): a variant is kept if it is >= 2%
+  of the run's ITS2 reads and seen in >= 5.
+- **Labels** come from the backbone's records of the species (else its
+  genus), else NCBI Taxonomy.
+
+174 copies: 51 match a backbone record, 97 are new records of 25
+species, and
+six species enter the database: *Loa loa*, *Acanthocheilonema viteae*,
+*Litomosoides sigmodontis*, *Spirocerca lupi*, *Trichuris incognita*,
+*Heligmosomoides bakeri*. The two pre-release Tree of Life
+*Angiostrongylus* assemblies are not used.
+
+Of the 51 matches, 47 are to records of the same species - more
+confirmation of the labels. The other four stop at genus: three
+*C. insigne* read variants identical to *C. ashworthi* records (the
+shared type of §5.4), and a *Parascaris univalens* copy identical to a
+record shared with *P. equorum*.
+
+## 6. Naming reads: the classifier and its tests
+
+amphid cannot use this database yet (§7), so a small stand-in scores
+reads the way the amphid notes ask: `bin/its2_classify.py` for raw read
+pairs, `bin/classify_asvs.py` for DADA2 ASVs. Both share the scorer.
+
+- **Span scoring.** Each reference is placed whole inside the read, the
+  read's extra bases free. 2x150 pairs that do not overlap are scored
+  as two windows, against the start and the end of each reference.
+- **Ranking by identity**, not raw edits, over at least 100 bases:
+  ranked by edits, a 77-base partial 32 edits off beat full-length
+  references.
+- **Ties**: every reference at the best identity whose span is within
+  5 bases of the longest such span. A partial matching only over a
+  shorter span does not tie with a full-length match.
+- **The gap rule**: species when >= 99% identical and the nearest
+  reference of any other species is >= 4 edits further off (exact
+  matches included: sister species share variants); genus at >= 97%,
+  family at >= 95%. `shared` records count as another species,
+  `unnamed` ones do not (§5).
+- **What it reports**: identity, ties and gap, and two columns that say
+  how close a call that stopped short came. `nearest` is the tied
+  species and their identity; `next` is the nearest other species and
+  how many edits further it is. A shared record is shown with the
+  species its members name (*Cooperia* shared: punctata / spatulata).
+
+### 6.1 Leave-one-out
+
+As in vespa-18s-refdb. `bin/its2_leave_one_out.py`: up to 5
+full-length species-level records per species, 3,164 queries from 1,210
+species, read whole and through 2x150 windows, as perfect reads.
+
+- **Missing**: every record holding a member of the query's species is
+  removed. Any species named is wrong; genus or above is right.
+- **Present**: only the query's own record is removed, for species with
+  another record.
+
+| Rule (whole) | Missing: wrong species | Present: right species | Present: wrong species |
+|---|---:|---:|---:|
+| amphid's V4 limits (99.7% / 99.5% / 95%) | 2.4% | 18.5% | 1.4% |
+| exact: species only at 0 edits | 1.8% | 11.3% | 1.1% |
+| gap (>= 99%, 4 edits clear) | 6.6% | 52.9% | 0.7% |
+
+At 2x150: 8.8%, 56.7% and 0.5% for the gap rule
+(`results/leave_one_out/gap_rule.txt`). The V4 and exact rules seldom
+name a species even when it is there. The gap rule names three to five
+times as many, and is wrong less often on present species, because the
+margin to the next species is what separates right from wrong, not the
+identity. Its missing-species errors are mostly reads identical to a
+record of another species - a shared ITS2 deposited under two names -
+which no threshold can catch.
+
+A third of present-species reads stop at genus. 27% of queries are
+below 99% identity to their own species (intraspecific variation; §5.4)
+and 15% have a gap of 0-3 edits (sister species whose ITS2 barely
+differs). Could a rule per genus or family do better?
+`bin/loo_group_rules.py` let each genus or family choose its own
+identity floor (97-99%) and gap (1-10 edits), chosen on four fifths of
+the species and scored on the rest. On held-out species, per-group rules
+recovered about 2.5 points of right calls for 0.4 more present-wrong and
+0.6 more missing-wrong - no better than loosening the global rule, which
+trades the same way (`results/leave_one_out/group_rules.txt`). The
+current rule already sits on that trade-off; one rule is kept.
+
+### 6.2 Against DADA2
+
+The standard nemabiome workflow is DADA2: cutadapt, filterAndTrim,
+learnErrors, dada, mergePairs, removeBimeraDenovo, then assignTaxonomy
+(minBoot 80) or, as nemabiome.ca now runs it, DECIPHER IdTaxa (threshold
+60, 100 bootstraps). `bin/dada2_nemabiome.R`, `bin/assign_taxonomy.R`,
+`bin/idtaxa.R` (dada2 1.38.0, DECIPHER 3.6.0). 2x150 pairs do not
+overlap over a 290-330 base amplicon and are joined with
+`justConcatenate`.
+
+**Leave-one-out, same queries** (`bin/loo_dada2.py`; assignTaxonomy and
+IdTaxa retrain per fold, so 10 folds rather than one species at a time;
+`results/leave_one_out/`):
+
+| Classifier, this database (whole) | Missing: wrong species | Missing: unassigned | Present: right species | Present: wrong species |
+|---|---:|---:|---:|---:|
+| assignTaxonomy | 42.4% | 0% | 85.1% | 4.6% |
+| IdTaxa | 22.0% | 51.6% | 77.1% | 2.5% |
+| gap rule | 6.6% | 60.0% | 52.9% | 0.7% |
+
+The three sit on one trade-off line. assignTaxonomy never declines: a
+read from a missing species gets a species name 42% of the time. IdTaxa
+halves that. The gap rule is wrong least, by about three times, and
+names fewest. If 20% of a sample's reads come from species missing from
+the database, the share of species calls that are right is about 85%
+(assignTaxonomy), 91% (IdTaxa) and 96% (gap rule). Reads left
+unassigned by IdTaxa and the gap rule are not junk: they are reads whose
+nearest reference is too far for a family (< 95%).
+
+**Real data**: two published NC1/NC2 livestock sets. Šlapeta's sheep
+faecal larval cultures (PRJNA936713, 2x250) and Gilleard's cattle set
+(PRJNA1524548, 2x250), each also cut to 2x150. Share of reads named to
+species (`results/dada2_comparison/`):
+
+| Set | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db |
+|---|---:|---:|---:|---:|---:|
+| Šlapeta 2x250 | 69.5% | 95.4% | 99.3% | 99.7% | 92.2% |
+| Šlapeta 2x150 | 69.1% | 87.9% | 99.2% | 92.2% | 90.5% |
+| Gilleard 2x250 | 72.6% | 68.0% | 92.9% | 69.9% | 86.9% |
+| Gilleard 2x150 | 69.0% | 67.8% | 93.7% | 91.9% | 86.9% |
+
+- **No arm contradicts another.** Wherever two arms both name a species,
+  it is the same species, in all four sets. These are farm samples with
+  few species, all in the database; the arms differ only in how deep
+  they go, and 99-100% of reads reach genus in every arm.
+- **This database helps both DADA2 classifiers**, mostly through
+  curation: with the backbone, *Haemonchus* reads stop at genus because
+  of the shared *H. contortus* / *H. placei* variant (§5.3).
+- **The 28S stretch must be cut for k-mer classifiers.** ASVs carry
+  ~47 bases of 28S that this database's records lack. The span scorer
+  ignores them; assignTaxonomy and IdTaxa do not. Uncut, assignTaxonomy
+  named 45% of Šlapeta 2x250 reads to species with this database; cut,
+  99.3% (`bin/trim_28s.py`: at
+  the 28S anchor, else the last 47 bases). The columns for this
+  database above are on cut ASVs.
+- **The gap rule names fewer species here** than the k-mer classifiers
+  with this database. The reads it stops at genus are mostly an exact
+  match to one species with a sister 1-3 edits off (*Trichostrongylus
+  retortaeformis* / *T. axei* +2, *Cooperia oncophora* / *C. surnabada*
+  +1), or < 99% to the nearest species with nothing else close
+  (*Oesophagostomum radiatum* 98.6%, next +25; *Teladorsagia
+  circumcincta* 98.0%, next +7). The leave-one-out says the first kind
+  is where assignTaxonomy's present-species errors come from, and that
+  the second kind cannot be told from a missing relative. The `nearest`
+  and `next` columns put both on the record.
+
+**Which to use.** For samples whose species are all in the database
+(livestock), assignTaxonomy or IdTaxa on 28S-cut ASVs with this
+database names most, and here agreed with every other arm. Where species may be
+missing (wildlife, new hosts, surveys), the gap rule's 3-6x lower error
+on missing species matters more than its lower depth. amphid should
+follow the gap rule (feedback note §5) and report `nearest` and `next`.
+
+## 7. Release format
 
 As vespa-18s-refdb (`refdb.fasta`, `taxonomy.tsv`, `members.tsv`,
 `conflicts.tsv`, `primer_fit.tsv`, resolution tables, `anchor_lookalikes.tsv`,
@@ -384,25 +586,31 @@ As vespa-18s-refdb (`refdb.fasta`, `taxonomy.tsv`, `members.tsv`,
 amphid needs changes before it can use this database:
 [feedback/its2_notes_for_amphid.md](feedback/its2_notes_for_amphid.md).
 
-## 7. Open questions
+## 8. Open questions
 
 1. **Ties within a family** (27 records stop at family, read whole):
    check as for §5.2? Cross-genus ties are more often real than
    cross-family ones.
-2. **Leave-one-out simulation** for ITS2, as in vespa-18s-refdb: how
-   often a read from a species missing from the database is named as a
-   sister species, at amphid's limits and at ITS2-appropriate ones.
-3. **Intraspecific variation**: answered in part by §5.4. Within one
-   worm, variants differ by 1-12 edits, as much as some species do. A
-   species call needs the read's exact variant in the database, not an
-   identity limit. Next: a read-variant layer from the HiFi runs and the
-   *Spirocerca* assembly, and the same scan of *Haemonchus*,
-   *Teladorsagia* and *Trichostrongylus* genomes.
-4. **Contained records of the same species.** Partials identical to
-   part of a same-species complete record are separate records. That is
-   harmless for calls, but it inflates record counts. Fold them into
-   the complete record?
-5. **Unmeasured records** (2,018): a lower-identity relative, or an HMM
+2. **Leave-one-out**: done (§6.1, §6.2).
+3. **Intraspecific variation**: within one worm, variants differ by
+   1-12 edits, as much as some species do (§5.4). The long-read layer
+   (§5.5) adds the variants found so far. More long-read assemblies and
+   HiFi runs would add more; *H. placei* has none yet.
+4. **Contained records of the same species**: done. A partial record
+   identical over its span to a full-length record of the same species is
+   folded into it (`fold_contained` in `bin/build.py`): 1,115 records in
+   the current build. Its source records stay in `members.tsv`, noted.
+   Partials inside another species' full-length record are kept; they
+   are real ties.
+5. **Shared ITS2 types and genus synonyms** (§5.3, §5.4): *Cylicocyclus
+   insigne* / *C. ashworthi*; *Phocanema* / *Pseudoterranova* and the
+   other genus-name pairs, awaiting a choice of names; the unclear
+   neighbour pairs. These, not thresholds, are what limits species calls
+   on missing-species errors (§6.1).
+6. **Mock communities**: the simulated nemabiome mocks of the QIIME2
+   comparison (Zenodo 10.5281/zenodo.17019940) would test against known
+   truth rather than agreement between classifiers.
+7. **Unmeasured records** (1,962): a lower-identity relative, or an HMM
    for the 28S stretch, could anchor more of them.
-6. **ITS1-5.8S-ITS2** for NC5/NC2 nanopore runs, should those be used
+8. **ITS1-5.8S-ITS2** for NC5/NC2 nanopore runs, should those be used
    later: nemabiome has a separate database (v0.0.1).

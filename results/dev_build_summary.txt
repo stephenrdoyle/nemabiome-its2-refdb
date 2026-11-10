@@ -1,42 +1,42 @@
-nemits2_dev  built 2026-11-09T20:31:04Z  code 85c2e401eb4ce2a222c8b90bafb317679a121a15-dirty
+nemits2_dev  built 2026-11-09T22:27:54Z  code 8388ab6ac069a56d593132c9aa2f952bb81f0ca2-dirty
 primers NC1 ACGTCTGGTTCAGGGTTGTT / NC2 TTAGTTTCTTTTCCTCCGCT
 source nemabiome_20260317
-records 12,973 from 15,108 source records; named species 1,868
-members: dropped 22, kept 15,086
+records 11,956 from 15,282 source records; named species 1,872
+members: dropped 28, kept 15,254; partial records folded into a same-species full-length record: 1,115
 conflicts (order or above): none
 
 Grade (best member):
-    complete         4,040   31.1%
-    near_complete    3,704   28.6%
-    partial_90       1,301   10.0%
-    partial_75         970    7.5%
-    partial            992    7.6%
-    unmeasured       1,966   15.2%
+    complete         4,165   34.8%
+    near_complete    3,678   30.8%
+    partial_90         867    7.3%
+    partial_75         647    5.4%
+    partial            637    5.3%
+    unmeasured       1,962   16.4%
 
-Deepest rank - nanopore (whole ITS2; 703 species-level records tied with another species' over their span):
-    species         12,145   93.6%
-    genus              803    6.2%
-    family              24    0.2%
+Deepest rank - nanopore (whole ITS2; 410 species-level records tied with another species' over their span):
+    species         11,419   95.5%
+    genus              516    4.3%
+    family              20    0.2%
     order                1    0.0%
     class                0    0.0%
     phylum               0    0.0%
     kingdom              0    0.0%
     superkingdom         0    0.0%
     (none)               0    0.0%
-  Illumina 150x150 (windows 130 + 83, 12,233 window groups; 730 tied):
-    species         11,987   92.4%
-    genus              958    7.4%
-    family              27    0.2%
+  Illumina 150x150 (windows 130 + 83, 11,211 window groups; 522 tied):
+    species         11,244   94.0%
+    genus              689    5.8%
+    family              22    0.2%
     order                1    0.0%
     class                0    0.0%
     phylum               0    0.0%
     kingdom              0    0.0%
     superkingdom         0    0.0%
     (none)               0    0.0%
-  Illumina 250x250 (windows 230 + 183, 12,917 window groups; 713 tied):
-    species         12,133   93.5%
-    genus              815    6.3%
-    family              24    0.2%
+  Illumina 250x250 (windows 230 + 183, 11,900 window groups; 421 tied):
+    species         11,407   95.4%
+    genus              528    4.4%
+    family              20    0.2%
     order                1    0.0%
     class                0    0.0%
     phylum               0    0.0%
@@ -45,17 +45,17 @@ Deepest rank - nanopore (whole ITS2; 703 species-level records tied with another
     (none)               0    0.0%
 
 Primer fit (best member holding the sites):
-    exact              202    1.6%
-    near               364    2.8%
-    poor             1,109    8.5%
-    one_site         8,150   62.8%
-    unknown          3,148   24.3%
+    exact              201    1.7%
+    near               364    3.0%
+    poor             1,109    9.3%
+    one_site         7,358   61.5%
+    unknown          2,924   24.5%
 
-Species margins over the shorter record's span, read whole (12,848 species-level records):
-    0 (inside another species' record: tied)         703
-    1 edit                                         1,005
-    2 edits                                          820
-    3-5 edits                                      1,632
-    6-10 edits                                     1,388
-    11+ edits                                      3,260
-    no other species within reach                  4,040
+Species margins over the shorter record's span, read whole (11,829 species-level records):
+    0 (inside another species' record: tied)         410
+    1 edit                                           900
+    2 edits                                          711
+    3-5 edits                                      1,512
+    6-10 edits                                     1,324
+    11+ edits                                      3,128
+    no other species within reach                  3,844
