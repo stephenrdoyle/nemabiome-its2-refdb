@@ -632,7 +632,9 @@ on the reads the gap rule stops short on):
   edits clear of the next species; the k-mer classifiers resolve sisters
   1-3 edits apart, mostly correctly when the species is present. The
   real-data genus stops are this kind (*T. axei* +2, *Cooperia* +1).
-  Tuned on held-out species, a 3-edit gap ties with 4 (§6.1).
+  Tuned on held-out species, the gap stays at 4 edits or more for whole
+  reads and at 3 or 4 at 2x150 (`results/leave_one_out/scaled_floor.txt`,
+  plain rule, lam 4).
 - **Where another species is closest, they gain nothing**: assignTaxonomy
   is right as often as wrong, IdTaxa wrong more often than right.
 
