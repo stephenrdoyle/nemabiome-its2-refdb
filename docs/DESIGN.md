@@ -470,6 +470,11 @@ pairs, `bin/classify_asvs.py` for DADA2 ASVs. Both share the scorer.
 - **Span scoring.** Each reference is placed whole inside the read, the
   read's extra bases free. 2x150 pairs that do not overlap are scored
   as two windows, against the start and the end of each reference.
+- **Every candidate scored.** minimap2 proposes; every reference it
+  proposes is scored exactly. v0.1.0's figures came from the top 40 by
+  matching bases, which hid the nearest other species from reads of
+  species with hundreds of records: that neighbour is often a partial
+  with fewer matches (issue #1). The figures below are uncapped.
 - **Ranking by identity**, not raw edits, over at least 100 bases:
   ranked by edits, a 77-base partial 32 edits off beat full-length
   references.
@@ -500,11 +505,11 @@ species, read whole and through 2x150 windows, as perfect reads.
 
 | Rule (whole) | Missing: wrong species | Present: right species | Present: wrong species |
 |---|---:|---:|---:|
-| amphid's V4 limits (99.7% / 99.5% / 95%) | 2.4% | 18.5% | 1.4% |
-| exact: species only at 0 edits | 1.8% | 11.3% | 1.1% |
-| gap (>= 99%, 4 edits clear) | 6.6% | 52.9% | 0.7% |
+| amphid's V4 limits (99.7% / 99.5% / 95%) | 2.5% | 18.6% | 1.5% |
+| exact: species only at 0 edits | 1.8% | 11.4% | 1.1% |
+| gap (>= 99%, 4 edits clear) | 6.5% | 52.6% | 0.7% |
 
-At 2x150: 8.8%, 56.7% and 0.5% for the gap rule
+At 2x150: 9.0%, 56.1% and 0.6% for the gap rule
 (`results/leave_one_out/gap_rule.txt`). The V4 and exact rules seldom
 name a species even when it is there. The gap rule names three to five
 times as many, and is wrong less often on present species, because the
@@ -520,10 +525,11 @@ differs). Could a rule per genus or family do better?
 `bin/loo_group_rules.py` let each genus or family choose its own
 identity floor (97-99%) and gap (1-10 edits), chosen on four fifths of
 the species and scored on the rest. On held-out species, per-group rules
-recovered about 2.5 points of right calls for 0.4 more present-wrong and
-0.6 more missing-wrong - no better than loosening the global rule, which
-trades the same way (`results/leave_one_out/group_rules.txt`). The
-current rule already sits on that trade-off; one rule is kept.
+recovered 2.5-3 points of right calls for 0.3-0.4 more present-wrong and
+0.3-0.8 more missing-wrong. Loosening the global rule trades 6.7 points
+for 0.8 and 2.3 (`results/leave_one_out/group_rules.txt`). Per-family
+rules trade a little better, but by fractions of a point, from five
+splits of 1,210 species; one rule is kept.
 
 ### 6.2 Against DADA2
 
@@ -543,7 +549,7 @@ IdTaxa retrain per fold, so 10 folds rather than one species at a time;
 |---|---:|---:|---:|---:|
 | assignTaxonomy | 42.4% | 0% | 85.1% | 4.6% |
 | IdTaxa | 22.0% | 51.6% | 77.1% | 2.5% |
-| gap rule | 6.6% | 60.0% | 52.9% | 0.7% |
+| gap rule | 6.5% | 59.8% | 52.6% | 0.7% |
 
 The three sit on one trade-off line. assignTaxonomy never declines: a
 read from a missing species gets a species name 42% of the time. IdTaxa
@@ -561,10 +567,10 @@ species (`results/dada2_comparison/`):
 
 | Set | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db |
 |---|---:|---:|---:|---:|---:|
-| Šlapeta 2x250 | 69.5% | 95.4% | 99.3% | 99.7% | 92.2% |
-| Šlapeta 2x150 | 69.1% | 87.9% | 99.2% | 92.2% | 90.5% |
-| Gilleard 2x250 | 72.6% | 68.0% | 92.9% | 69.9% | 86.9% |
-| Gilleard 2x150 | 69.0% | 67.8% | 93.7% | 91.9% | 86.9% |
+| Šlapeta 2x250 | 69.5% | 95.4% | 99.3% | 99.7% | 84.1% |
+| Šlapeta 2x150 | 69.1% | 87.9% | 99.2% | 92.2% | 52.4% |
+| Gilleard 2x250 | 72.6% | 68.0% | 92.9% | 69.9% | 62.4% |
+| Gilleard 2x150 | 69.0% | 67.8% | 93.7% | 91.9% | 37.3% |
 
 - **No arm contradicts another.** Wherever two arms both name a species,
   it is the same species, in all four sets. These are farm samples with
@@ -581,7 +587,21 @@ species (`results/dada2_comparison/`):
   the 28S anchor, else the last 47 bases). The columns for this
   database above are on cut ASVs.
 - **The gap rule names fewer species here** than the k-mer classifiers
-  with this database. The reads it stops at genus are mostly an exact
+  with this database, and a few weak records decide most of the
+  difference: partial records resting on one accession.
+  - At 2x250, most of it is *H. placei* reads with an *H. contortus*
+    record 3 edits further off (25% of Gilleard reads, 7% of
+    Šlapeta's). Typical records of the two species are 4-7 edits apart.
+    The 3-edit records are partial copies 1 edit from a full-length
+    *H. contortus* record, and one looks mislabelled (issue #2).
+  - At 2x150, a single partial *H. bedfordi* record
+    (`ITS2_2c0973e14d2e`, partial_90) sits 2-3 edits behind both.
+    Through the windows it stops 49% of Gilleard reads and 37% of
+    Šlapeta's at *Haemonchus*. The window scoring places each window
+    with slack, so up to 10 of a record's first bases go uncounted
+    (`SLACK`). amphid counts them, which puts this record +6 off.
+
+  The other reads it stops at genus are mostly an exact
   match to one species with a sister 1-3 edits off (*Trichostrongylus
   retortaeformis* / *T. axei* +2, *Cooperia oncophora* / *C. surnabada*
   +1), or < 99% to the nearest species with nothing else close
@@ -627,7 +647,7 @@ right genus. No arm named a wrong species in any set:
 | IdTaxa x nemabiome | 100 / 0 | 100 / 0 | 94.6 / 3.7 |
 | assignTaxonomy x this db | 95.5 / 4.5 | 95.1 / 0 | 87.9 / 12.1 |
 | IdTaxa x this db | 100 / 0 | 95.1 / 0 | 86.2 / 11.7 |
-| gap rule x this db | 82.6 / 17.4 | 100 / 0 | 49.8 / 48.0 |
+| gap rule x this db | 82.6 / 17.4 | 100 / 0 | 45.1 / 52.7 |
 
 Noisy ASVs: no wrong species in equine or ruminant; in canine every
 k-mer arm named 5.7% of them as the wrong species (an *A. caninum*
@@ -726,3 +746,18 @@ amphid needs changes before it can use this database:
    for the 28S stretch, could anchor more of them.
 8. **ITS1-5.8S-ITS2** for NC5/NC2 nanopore runs, should those be used
    later: nemabiome has a separate database (v0.0.1).
+9. **Weak records** (issue #2): 4,066 records are partial or unmeasured
+   and rest on one accession. A few of them, 2-3 edits from another
+   species, stop most of the *Haemonchus* reads in §6.2 at genus.
+   Folding a weak record that is within 1 edit of a robust record of
+   its own species would recover most of these calls.
+10. **A record's first bases through 2x150 windows**: the window scoring
+    places each window with up to `SLACK` (10) bases of slack, so a
+    record's outermost bases can go uncounted. amphid charges them. The two differ by
+    about 2 points in the 2x150 leave-one-out, and on the
+    *H. bedfordi* record in §6.2.
+11. **Margins in v0.1.0's tables** (`build.py` `margins()`) came from the
+    top 30 other-species candidates by matching bases. Scored uncapped,
+    744 records' whole-read margins are lower, 128 fall below 4 edits and
+    3 become ties. The cap is lifted in the code; the next build carries
+    the corrected margins and resolution tables.

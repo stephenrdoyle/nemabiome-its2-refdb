@@ -61,7 +61,7 @@ the species-level records, 410 are tied with another species, 897 are
 one edit away and 712 two.
 
 A leave-one-out test (DESIGN §6.1; 3,164 queries, 1,210 species) shows
-identity alone is the wrong measure. Under the V4 limits only 18.5% of
+identity alone is the wrong measure. Under the V4 limits only 18.6% of
 reads whose species is in the database are named to species. What
 separates a right call from a wrong one is the margin to the next
 species. Recommended rule:
@@ -74,8 +74,8 @@ species. Recommended rule:
 
 | Rule (whole reads) | Species missing: wrong species | Present: right species | Present: wrong species |
 |---|---:|---:|---:|
-| V4 limits | 2.4% | 18.5% | 1.4% |
-| gap rule | 6.6% | 52.9% | 0.7% |
+| V4 limits | 2.5% | 18.6% | 1.5% |
+| gap rule | 6.5% | 52.6% | 0.7% |
 | dada2 assignTaxonomy, for scale | 42.4% | 85.1% | 4.6% |
 | DECIPHER IdTaxa, for scale | 22.0% | 77.1% | 2.5% |
 

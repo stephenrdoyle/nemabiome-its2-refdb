@@ -1,22 +1,22 @@
 asv	mode	edits	span	identity	ties	gap	nearest	next	v4_rank	v4_name	exact_rank	exact_name	gap_rank	gap_name
-ASV00001	whole	0	203	1.0000	1	33	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +33	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
+ASV00001	whole	0	203	1.0000	1	5	Trichostrongylus colubriformis 100.0%	Trichostrongylus retortaeformis +5	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
 ASV00002	whole	0	242	1.0000	5	1	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +1	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
 ASV00003	whole	0	249	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia spatulata +0	genus	Cooperia	genus	Cooperia	genus	Cooperia
-ASV00004	whole	0	234	1.0000	4	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00004	whole	0	234	1.0000	4	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00005	whole	0	242	1.0000	5	1	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +1	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
 ASV00006	whole	0	242	1.0000	2	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
 ASV00007	whole	0	244	1.0000	2	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00008	whole	0	244	1.0000	2	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00009	whole	1	203	0.9951	1	32	Trichostrongylus colubriformis 99.5%	Trichostrongylus capricola +32	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus colubriformis
+ASV00009	whole	1	203	0.9951	1	4	Trichostrongylus colubriformis 99.5%	Trichostrongylus retortaeformis +4	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus colubriformis
 ASV00010	whole	0	236	1.0000	3	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
 ASV00011	whole	0	236	1.0000	3	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00012	whole	0	234	1.0000	4	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00012	whole	0	234	1.0000	4	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00013	whole	0	244	1.0000	3	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00014	whole	0	255	1.0000	1	8	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +8	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
 ASV00015	whole	3	261	0.9885	1	15	Oesophagostomum venulosum 98.9%	Oesophagostomum asperum +15	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
 ASV00016	whole	0	244	1.0000	3	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00017	whole	0	249	1.0000	2	8	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +8	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00018	whole	0	234	1.0000	4	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00017	whole	0	249	1.0000	2	5	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +5	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
+ASV00018	whole	0	234	1.0000	4	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00019	whole	0	244	1.0000	1	1	Cooperia spatulata 100.0%	Cooperia punctata +1	species	Cooperia spatulata	species	Cooperia spatulata	genus	Cooperia
 ASV00020	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00021	whole	0	244	1.0000	1	1	Cooperia punctata 100.0%	Cooperia shared: punctata / spatulata +1	species	Cooperia punctata	species	Cooperia punctata	genus	Cooperia
@@ -25,7 +25,7 @@ ASV00023	whole	0	242	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	
 ASV00024	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00025	whole	0	245	1.0000	1	4	Cooperia oncophora 100.0%	Cooperia surnabada +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00026	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00027	whole	0	240	1.0000	1	107	Haemonchus placei 100.0%	Haemonchus contortus +107	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
+ASV00027	whole	0	240	1.0000	1	7	Haemonchus placei 100.0%	Haemonchus contortus +7	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
 ASV00028	whole	0	244	1.0000	1	3	Cooperia oncophora 100.0%	Cooperia surnabada +3	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00029	whole	0	244	1.0000	2	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00030	whole	0	265	1.0000	2	265	Mecistocirrus digitatus 100.0%	none close	species	Mecistocirrus digitatus	species	Mecistocirrus digitatus	species	Mecistocirrus digitatus
@@ -35,21 +35,21 @@ ASV00033	whole	0	244	1.0000	1	3	Cooperia oncophora 100.0%	Cooperia surnabada +3	
 ASV00034	whole	0	244	1.0000	1	3	Cooperia oncophora 100.0%	Cooperia surnabada +3	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00035	whole	0	244	1.0000	1	3	Cooperia oncophora 100.0%	Cooperia surnabada +3	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00036	whole	0	244	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia surnabada +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00037	whole	0	249	1.0000	2	9	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +9	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00038	whole	0	236	1.0000	2	30	Chabertia ovina 100.0%	Chabertia erschowi +30	species	Chabertia ovina	species	Chabertia ovina	species	Chabertia ovina
+ASV00037	whole	0	249	1.0000	2	3	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +3	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	genus	Teladorsagia
+ASV00038	whole	0	236	1.0000	2	25	Chabertia ovina 100.0%	Oesophagostomum bifurcum +25	species	Chabertia ovina	species	Chabertia ovina	species	Chabertia ovina
 ASV00039	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00040	whole	0	244	1.0000	1	3	Cooperia oncophora 100.0%	Cooperia surnabada +3	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00041	whole	0	244	1.0000	1	3	Cooperia oncophora 100.0%	Cooperia surnabada +3	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00042	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00043	whole	0	244	1.0000	1	3	Cooperia oncophora 100.0%	Cooperia surnabada +3	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00044	whole	0	244	1.0000	1	3	Cooperia oncophora 100.0%	Cooperia surnabada +3	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00045	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00045	whole	0	234	1.0000	2	6	Haemonchus contortus 100.0%	Haemonchus placei +6	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00046	whole	0	244	1.0000	1	4	Cooperia oncophora 100.0%	Cooperia surnabada +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00047	whole	0	249	1.0000	1	8	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +8	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
+ASV00047	whole	0	249	1.0000	1	5	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +5	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
 ASV00048	whole	0	244	1.0000	1	3	Cooperia oncophora 100.0%	Cooperia surnabada +3	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00049	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00050	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00051	whole	0	242	1.0000	1	242	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00051	whole	0	242	1.0000	1	12	Haemonchus contortus 100.0%	Ashworthius sidemi +12	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00052	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00053	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00054	whole	0	244	1.0000	1	3	Cooperia oncophora 100.0%	Cooperia surnabada +3	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
@@ -57,146 +57,146 @@ ASV00055	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	
 ASV00056	whole	0	243	1.0000	1	4	Cooperia oncophora 100.0%	Cooperia surnabada +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00057	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00058	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00059	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00060	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00059	whole	0	234	1.0000	1	10	Haemonchus contortus 100.0%	Ashworthius sidemi +10	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00060	whole	0	234	1.0000	1	5	Haemonchus contortus 100.0%	Haemonchus placei +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00061	whole	0	244	1.0000	1	4	Cooperia oncophora 100.0%	Cooperia surnabada +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00062	whole	0	234	1.0000	1	234	Bunostomum trigonocephalum 100.0%	none close	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum
-ASV00063	whole	0	224	1.0000	1	224	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00062	whole	0	234	1.0000	1	44	Bunostomum trigonocephalum 100.0%	Bunostomum phlebotomum +44	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum
+ASV00063	whole	0	224	1.0000	1	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00064	whole	0	254	1.0000	1	18	Oesophagostomum venulosum 100.0%	Oesophagostomum asperum +18	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum
-ASV00065	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00066	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00065	whole	0	234	1.0000	1	7	Haemonchus contortus 100.0%	Haemonchus placei +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00066	whole	0	234	1.0000	1	5	Haemonchus contortus 100.0%	Haemonchus placei +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00067	whole	0	261	1.0000	1	17	Oesophagostomum venulosum 100.0%	Oesophagostomum asperum +17	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum
 ASV00068	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00069	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00070	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00071	whole	0	249	1.0000	2	8	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +8	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
+ASV00071	whole	0	249	1.0000	2	2	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +2	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	genus	Teladorsagia
 ASV00072	whole	0	257	1.0000	1	28	Oesophagostomum venulosum 100.0%	Oesophagostomum asperum +28	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum
-ASV00073	whole	0	249	1.0000	1	10	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +10	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00074	whole	0	249	1.0000	1	9	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +9	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
+ASV00073	whole	0	249	1.0000	1	5	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +5	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
+ASV00074	whole	0	249	1.0000	1	2	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +2	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	genus	Teladorsagia
 ASV00075	whole	0	260	1.0000	1	26	Oesophagostomum venulosum 100.0%	Oesophagostomum asperum +26	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum
-ASV00076	whole	0	249	1.0000	3	9	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +9	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00077	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00076	whole	0	249	1.0000	3	3	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +3	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	genus	Teladorsagia
+ASV00077	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Ashworthius sidemi +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00078	whole	0	244	1.0000	1	1	Cooperia punctata 100.0%	Cooperia shared: punctata / spatulata +1	species	Cooperia punctata	species	Cooperia punctata	genus	Cooperia
 ASV00079	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00080	whole	0	244	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia punctata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
 ASV00081	whole	0	244	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia shared: punctata / spatulata +2	genus	Cooperia	genus	Cooperia	genus	Cooperia
 ASV00082	whole	0	244	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia shared: punctata / spatulata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
-ASV00083	whole	0	236	1.0000	1	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
+ASV00083	whole	0	236	1.0000	1	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
 ASV00084	whole	0	241	1.0000	1	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
 ASV00085	whole	0	241	1.0000	1	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
 ASV00086	whole	0	242	1.0000	5	1	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +1	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
 ASV00087	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00088	whole	0	244	1.0000	1	3	Cooperia oncophora 100.0%	Cooperia surnabada +3	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00089	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00090	whole	17	233	0.9270	1	1	Trichostrongylus vitrinus 92.7%	Trichostrongylus rugatus +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00091	whole	0	205	1.0000	1	28	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +28	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00092	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00093	whole	0	249	1.0000	3	9	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +9	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00094	whole	0	233	1.0000	1	16	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +16	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
+ASV00090	whole	12	168	0.9286	1	0	Trichostrongylus colubriformis 92.9%	Trichostrongylus vitrinus +0	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
+ASV00091	whole	0	205	1.0000	1	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
+ASV00092	whole	0	234	1.0000	2	5	Haemonchus contortus 100.0%	Haemonchus bedfordi +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00093	whole	0	249	1.0000	3	3	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +3	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	genus	Teladorsagia
+ASV00094	whole	0	233	1.0000	1	6	Trichostrongylus colubriformis 100.0%	Trichostrongylus retortaeformis +6	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
 ASV00095	whole	0	234	1.0000	2	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00096	whole	0	234	1.0000	4	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00097	whole	0	241	1.0000	1	241	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00098	whole	6	225	0.9733	1	1	Haemonchus contortus 97.3%	Haemonchus placei +1	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
-ASV00099	whole	0	203	1.0000	1	33	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +33	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
-ASV00100	whole	0	249	1.0000	2	8	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +8	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00101	whole	0	241	1.0000	1	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00102	whole	21	238	0.9118	1	1	Trichostrongylus probolurus 91.2%	Trichostrongylus retortaeformis +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00103	whole	6	225	0.9733	1	1	Haemonchus contortus 97.3%	Haemonchus placei +1	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
+ASV00096	whole	0	234	1.0000	4	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00097	whole	0	241	1.0000	1	3	Haemonchus contortus 100.0%	Ashworthius sidemi +3	species	Haemonchus contortus	species	Haemonchus contortus	genus	Haemonchus
+ASV00098	whole	3	205	0.9854	1	3	Haemonchus contortus 98.5%	Haemonchus placei +3	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
+ASV00099	whole	0	203	1.0000	1	5	Trichostrongylus colubriformis 100.0%	Trichostrongylus retortaeformis +5	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
+ASV00100	whole	0	249	1.0000	2	2	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +2	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	genus	Teladorsagia
+ASV00101	whole	0	241	1.0000	1	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
+ASV00102	whole	7	136	0.9485	1	1	Trichostrongylus axei 94.9%	Trichostrongylus vitrinus +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
+ASV00103	whole	3	205	0.9854	1	3	Haemonchus contortus 98.5%	Haemonchus placei +3	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
 ASV00104	whole	0	234	1.0000	2	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00105	whole	11	199	0.9447	1	2	Trichostrongylus retortaeformis 94.5%	Trichostrongylus probolurus +2	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
+ASV00105	whole	6	136	0.9559	1	2	Trichostrongylus axei 95.6%	Trichostrongylus retortaeformis +2	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
 ASV00106	whole	0	241	1.0000	1	3	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +3	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
-ASV00107	whole	0	241	1.0000	1	241	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00107	whole	0	241	1.0000	1	5	Haemonchus contortus 100.0%	Haemonchus placei +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00108	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00109	whole	0	244	1.0000	1	1	Cooperia spatulata 100.0%	Cooperia punctata +1	species	Cooperia spatulata	species	Cooperia spatulata	genus	Cooperia
-ASV00110	whole	0	234	1.0000	2	4	Haemonchus placei 100.0%	Haemonchus contortus +4	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00111	whole	0	212	1.0000	2	212	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00112	whole	0	235	1.0000	1	28	Chabertia ovina 100.0%	Chabertia erschowi +28	species	Chabertia ovina	species	Chabertia ovina	species	Chabertia ovina
+ASV00110	whole	0	234	1.0000	2	3	Haemonchus placei 100.0%	Haemonchus contortus +3	species	Haemonchus placei	species	Haemonchus placei	genus	Haemonchus
+ASV00111	whole	0	212	1.0000	2	7	Haemonchus contortus 100.0%	Ashworthius sidemi +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00112	whole	0	235	1.0000	1	23	Chabertia ovina 100.0%	Oesophagostomum bifurcum +23	species	Chabertia ovina	species	Chabertia ovina	species	Chabertia ovina
 ASV00113	whole	11	261	0.9579	1	13	Oesophagostomum venulosum 95.8%	Oesophagostomum asperum +13	family	Strongylidae	family	Strongylidae	family	Strongylidae
 ASV00114	whole	1	234	0.9957	1	4	Haemonchus placei 99.6%	Haemonchus contortus +4	genus	Haemonchus	genus	Haemonchus	species	Haemonchus placei
 ASV00115	whole	0	261	1.0000	1	16	Oesophagostomum venulosum 100.0%	Oesophagostomum asperum +16	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum
-ASV00116	whole	0	234	1.0000	3	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00117	whole	0	234	1.0000	1	10	Haemonchus contortus 100.0%	Haemonchus placei +10	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00118	whole	0	249	1.0000	2	8	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +8	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00119	whole	0	234	1.0000	2	6	Haemonchus contortus 100.0%	Haemonchus placei +6	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00120	whole	0	234	1.0000	3	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00121	whole	0	234	1.0000	1	234	Bunostomum trigonocephalum 100.0%	none close	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum
-ASV00122	whole	0	234	1.0000	1	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00123	whole	7	234	0.9701	1	0	Haemonchus placei 97.0%	Haemonchus contortus +0	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
+ASV00116	whole	0	234	1.0000	3	5	Haemonchus contortus 100.0%	Haemonchus placei +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00117	whole	0	234	1.0000	1	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00118	whole	0	249	1.0000	2	3	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +3	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	genus	Teladorsagia
+ASV00119	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00120	whole	0	234	1.0000	3	5	Haemonchus contortus 100.0%	Ashworthius sidemi +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00121	whole	0	234	1.0000	1	43	Bunostomum trigonocephalum 100.0%	Bunostomum phlebotomum +43	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum
+ASV00122	whole	0	234	1.0000	1	7	Haemonchus contortus 100.0%	Ashworthius sidemi +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00123	whole	4	205	0.9805	1	2	Haemonchus contortus 98.0%	Haemonchus placei +2	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
 ASV00124	whole	0	242	1.0000	5	1	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +1	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
-ASV00125	whole	0	234	1.0000	1	234	Bunostomum trigonocephalum 100.0%	none close	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum
+ASV00125	whole	0	234	1.0000	1	43	Bunostomum trigonocephalum 100.0%	Bunostomum phlebotomum +43	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum
 ASV00126	whole	2	234	0.9915	1	4	Haemonchus contortus 99.1%	Haemonchus placei +4	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00127	whole	0	220	1.0000	1	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
+ASV00127	whole	0	220	1.0000	1	4	Haemonchus placei 100.0%	Haemonchus contortus +4	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
 ASV00128	whole	0	241	1.0000	1	23	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +23	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
 ASV00129	whole	0	248	1.0000	1	8	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +8	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00130	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00131	whole	21	238	0.9118	1	1	Trichostrongylus probolurus 91.2%	Trichostrongylus retortaeformis +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
+ASV00130	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Ashworthius sidemi +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00131	whole	7	136	0.9485	1	1	Trichostrongylus axei 94.9%	Trichostrongylus vitrinus +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00132	whole	0	236	1.0000	3	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00133	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00134	whole	11	199	0.9447	1	2	Trichostrongylus retortaeformis 94.5%	Trichostrongylus probolurus +2	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00135	whole	0	203	1.0000	1	28	Ostertagia ostertagi 100.0%	Ostertagia arctica +28	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00136	whole	0	234	1.0000	2	4	Haemonchus placei 100.0%	Haemonchus contortus +4	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
+ASV00133	whole	0	234	1.0000	2	5	Haemonchus contortus 100.0%	Haemonchus bedfordi +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00134	whole	6	136	0.9559	1	2	Trichostrongylus axei 95.6%	Trichostrongylus retortaeformis +2	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
+ASV00135	whole	0	203	1.0000	1	24	Ostertagia ostertagi 100.0%	Orloffia dahurica +24	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
+ASV00136	whole	0	234	1.0000	2	3	Haemonchus placei 100.0%	Haemonchus contortus +3	species	Haemonchus placei	species	Haemonchus placei	genus	Haemonchus
 ASV00137	whole	0	255	1.0000	1	8	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +8	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
 ASV00138	whole	0	240	1.0000	2	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00139	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00139	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00140	whole	0	241	1.0000	2	20	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +20	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00141	whole	0	234	1.0000	4	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00141	whole	0	234	1.0000	4	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00142	whole	8	261	0.9693	1	14	Oesophagostomum venulosum 96.9%	Oesophagostomum asperum +14	family	Strongylidae	family	Strongylidae	family	Strongylidae
 ASV00143	whole	0	240	1.0000	1	5	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +5	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00144	whole	0	241	1.0000	1	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
+ASV00144	whole	0	241	1.0000	1	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
 ASV00145	whole	0	240	1.0000	2	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00146	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00147	whole	0	234	1.0000	1	10	Haemonchus contortus 100.0%	Haemonchus placei +10	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00146	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Ashworthius sidemi +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00147	whole	0	234	1.0000	1	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00148	whole	0	241	1.0000	1	5	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +5	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00149	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00150	whole	7	136	0.9485	1	1	Trichostrongylus axei 94.9%	Trichostrongylus retortaeformis +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
+ASV00149	whole	0	234	1.0000	1	5	Haemonchus contortus 100.0%	Haemonchus bedfordi +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00150	whole	5	100	0.9500	2	0	Trichostrongylus vitrinus 95.0%	Trichostrongylus axei +0	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
 ASV00151	whole	0	240	1.0000	2	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00152	whole	0	254	1.0000	1	18	Oesophagostomum venulosum 100.0%	Oesophagostomum asperum +18	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum
-ASV00153	whole	0	233	1.0000	1	16	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +16	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
+ASV00153	whole	0	233	1.0000	1	6	Trichostrongylus colubriformis 100.0%	Trichostrongylus retortaeformis +6	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
 ASV00154	whole	0	244	1.0000	1	1	Cooperia spatulata 100.0%	Cooperia punctata +1	species	Cooperia spatulata	species	Cooperia spatulata	genus	Cooperia
-ASV00155	whole	0	241	1.0000	1	241	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00156	whole	0	212	1.0000	2	212	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00157	whole	0	234	1.0000	2	4	Haemonchus placei 100.0%	Haemonchus contortus +4	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00158	whole	0	241	1.0000	1	241	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00155	whole	0	241	1.0000	1	3	Haemonchus contortus 100.0%	Ashworthius sidemi +3	species	Haemonchus contortus	species	Haemonchus contortus	genus	Haemonchus
+ASV00156	whole	0	212	1.0000	2	7	Haemonchus contortus 100.0%	Ashworthius sidemi +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00157	whole	0	234	1.0000	2	3	Haemonchus placei 100.0%	Haemonchus contortus +3	species	Haemonchus placei	species	Haemonchus placei	genus	Haemonchus
+ASV00158	whole	0	241	1.0000	1	5	Haemonchus contortus 100.0%	Haemonchus placei +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00159	whole	0	241	1.0000	2	20	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +20	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00160	whole	0	203	1.0000	1	28	Ostertagia ostertagi 100.0%	Ostertagia arctica +28	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
+ASV00160	whole	0	203	1.0000	1	24	Ostertagia ostertagi 100.0%	Orloffia dahurica +24	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
 ASV00161	whole	0	255	1.0000	1	8	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +8	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
 ASV00162	whole	0	241	1.0000	1	5	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +5	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00163	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00164	whole	0	234	1.0000	1	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00165	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00166	whole	0	234	1.0000	1	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00167	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00163	whole	0	234	1.0000	1	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00164	whole	0	234	1.0000	1	7	Haemonchus contortus 100.0%	Ashworthius sidemi +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00165	whole	0	234	1.0000	1	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00166	whole	0	234	1.0000	1	3	Haemonchus contortus 100.0%	Haemonchus placei +3	species	Haemonchus contortus	species	Haemonchus contortus	genus	Haemonchus
+ASV00167	whole	0	234	1.0000	1	5	Haemonchus contortus 100.0%	Haemonchus placei +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00168	whole	0	254	1.0000	1	2	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +2	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	genus	Teladorsagia
-ASV00169	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00170	whole	1	205	0.9951	1	9	Haemonchus contortus 99.5%	Haemonchus placei +9	genus	Haemonchus	genus	Haemonchus	species	Haemonchus contortus
-ASV00171	whole	0	224	1.0000	1	224	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00172	whole	0	234	1.0000	1	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00173	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00174	whole	0	205	1.0000	1	28	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +28	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00175	whole	0	233	1.0000	1	16	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +16	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
-ASV00176	whole	0	241	1.0000	1	241	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00177	whole	17	192	0.9115	1	2	Trichostrongylus retortaeformis 91.1%	Trichostrongylus axei +2	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00178	whole	0	234	1.0000	1	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00179	whole	0	369	1.0000	1	369	Trichostrongylus axei 100.0%	none close	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00180	whole	0	234	1.0000	4	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00181	whole	0	233	1.0000	1	233	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00182	whole	0	241	1.0000	1	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
+ASV00169	whole	0	234	1.0000	1	7	Haemonchus contortus 100.0%	Haemonchus placei +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00170	whole	1	205	0.9951	1	3	Haemonchus contortus 99.5%	Ashworthius sidemi +3	genus	Haemonchus	genus	Haemonchus	genus	Haemonchus
+ASV00171	whole	0	224	1.0000	1	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00172	whole	0	234	1.0000	1	3	Haemonchus contortus 100.0%	Haemonchus placei +3	species	Haemonchus contortus	species	Haemonchus contortus	genus	Haemonchus
+ASV00173	whole	0	234	1.0000	1	5	Haemonchus contortus 100.0%	Haemonchus placei +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00174	whole	0	205	1.0000	1	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
+ASV00175	whole	0	233	1.0000	1	6	Trichostrongylus colubriformis 100.0%	Trichostrongylus retortaeformis +6	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
+ASV00176	whole	0	241	1.0000	1	3	Haemonchus contortus 100.0%	Ashworthius sidemi +3	species	Haemonchus contortus	species	Haemonchus contortus	genus	Haemonchus
+ASV00177	whole	5	100	0.9500	2	2	Trichostrongylus vitrinus 95.0%	Trichostrongylus axei +2	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
+ASV00178	whole	0	234	1.0000	1	3	Haemonchus contortus 100.0%	Haemonchus placei +3	species	Haemonchus contortus	species	Haemonchus contortus	genus	Haemonchus
+ASV00179	whole	0	369	1.0000	1	22	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +22	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
+ASV00180	whole	0	234	1.0000	4	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00181	whole	0	233	1.0000	1	5	Haemonchus contortus 100.0%	Haemonchus placei +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00182	whole	0	241	1.0000	1	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
 ASV00183	whole	0	241	1.0000	1	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
-ASV00184	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00184	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00185	whole	0	240	1.0000	1	5	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +5	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00186	whole	0	234	1.0000	1	5	Haemonchus contortus 100.0%	Haemonchus placei +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00187	whole	0	233	1.0000	1	233	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00186	whole	0	234	1.0000	1	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00187	whole	0	233	1.0000	1	4	Haemonchus contortus 100.0%	Ashworthius sidemi +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00188	whole	0	244	1.0000	3	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00189	whole	0	241	1.0000	1	241	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00190	whole	0	241	1.0000	1	241	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00191	whole	0	234	1.0000	1	234	Bunostomum trigonocephalum 100.0%	none close	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum
-ASV00192	whole	0	234	1.0000	1	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00193	whole	0	249	1.0000	2	8	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +8	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00194	whole	0	234	1.0000	2	6	Haemonchus contortus 100.0%	Haemonchus placei +6	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00195	whole	0	249	1.0000	1	10	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +10	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
+ASV00189	whole	0	241	1.0000	1	3	Haemonchus contortus 100.0%	Ashworthius sidemi +3	species	Haemonchus contortus	species	Haemonchus contortus	genus	Haemonchus
+ASV00190	whole	0	241	1.0000	1	3	Haemonchus contortus 100.0%	Ashworthius sidemi +3	species	Haemonchus contortus	species	Haemonchus contortus	genus	Haemonchus
+ASV00191	whole	0	234	1.0000	1	44	Bunostomum trigonocephalum 100.0%	Bunostomum phlebotomum +44	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum	species	Bunostomum trigonocephalum
+ASV00192	whole	0	234	1.0000	1	3	Haemonchus contortus 100.0%	Haemonchus placei +3	species	Haemonchus contortus	species	Haemonchus contortus	genus	Haemonchus
+ASV00193	whole	0	249	1.0000	2	3	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +3	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	genus	Teladorsagia
+ASV00194	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00195	whole	0	249	1.0000	1	5	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +5	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
 ASV00196	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00197	whole	0	234	1.0000	2	6	Haemonchus contortus 100.0%	Haemonchus placei +6	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00198	whole	0	249	1.0000	1	9	Teladorsagia circumcincta 100.0%	Teladorsagia davtiani +9	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
+ASV00197	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00198	whole	0	249	1.0000	1	2	Teladorsagia circumcincta 100.0%	Ostertagia ostertagi +2	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	genus	Teladorsagia
 ASV00199	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00200	whole	0	241	1.0000	1	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
 ASV00201	whole	0	244	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia shared: punctata / spatulata +2	genus	Cooperia	genus	Cooperia	genus	Cooperia
@@ -206,34 +206,34 @@ ASV00204	whole	2	234	0.9915	1	4	Haemonchus contortus 99.1%	Haemonchus placei +4	
 ASV00205	whole	0	241	1.0000	1	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
 ASV00206	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00207	whole	0	241	1.0000	1	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
-ASV00208	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00209	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00210	whole	0	240	1.0000	1	8	Haemonchus contortus 100.0%	Haemonchus placei +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00211	whole	0	234	1.0000	2	6	Haemonchus contortus 100.0%	Haemonchus placei +6	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00208	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00209	whole	0	234	1.0000	1	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00210	whole	0	240	1.0000	1	7	Haemonchus contortus 100.0%	Haemonchus placei +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00211	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00212	whole	0	241	1.0000	1	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
-ASV00213	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00213	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00214	whole	0	242	1.0000	5	1	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +1	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
 ASV00215	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00216	whole	0	233	1.0000	1	16	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +16	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
-ASV00217	whole	0	234	1.0000	1	10	Haemonchus contortus 100.0%	Haemonchus placei +10	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00216	whole	0	233	1.0000	1	6	Trichostrongylus colubriformis 100.0%	Trichostrongylus retortaeformis +6	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
+ASV00217	whole	0	234	1.0000	1	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00218	whole	0	244	1.0000	3	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus
 ASV00219	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00220	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00221	whole	0	234	1.0000	3	10	Haemonchus contortus 100.0%	Haemonchus placei +10	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00222	whole	0	240	1.0000	1	8	Haemonchus contortus 100.0%	Haemonchus placei +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00223	whole	0	234	1.0000	1	10	Haemonchus contortus 100.0%	Haemonchus placei +10	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00224	whole	0	240	1.0000	1	8	Haemonchus contortus 100.0%	Haemonchus placei +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00225	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00226	whole	0	234	1.0000	1	10	Haemonchus contortus 100.0%	Haemonchus placei +10	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00220	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Haemonchus placei +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00221	whole	0	234	1.0000	3	5	Haemonchus contortus 100.0%	Ashworthius sidemi +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00222	whole	0	240	1.0000	1	7	Haemonchus contortus 100.0%	Haemonchus placei +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00223	whole	0	234	1.0000	1	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00224	whole	0	240	1.0000	1	7	Haemonchus contortus 100.0%	Haemonchus placei +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00225	whole	0	234	1.0000	1	5	Haemonchus contortus 100.0%	Haemonchus bedfordi +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00226	whole	0	234	1.0000	1	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00227	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00228	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00229	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
 ASV00230	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00231	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00232	whole	0	236	1.0000	1	236	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00233	whole	0	234	1.0000	3	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00231	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Ashworthius sidemi +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00232	whole	0	236	1.0000	1	8	Haemonchus contortus 100.0%	Haemonchus longistipes +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00233	whole	0	234	1.0000	3	5	Haemonchus contortus 100.0%	Ashworthius sidemi +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00234	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00235	whole	0	234	1.0000	1	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00236	whole	0	238	1.0000	1	238	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00237	whole	0	234	1.0000	2	234	Haemonchus contortus 100.0%	none close	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00235	whole	0	234	1.0000	1	5	Haemonchus contortus 100.0%	Haemonchus bedfordi +5	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00236	whole	0	238	1.0000	1	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
+ASV00237	whole	0	234	1.0000	2	4	Haemonchus contortus 100.0%	Ashworthius sidemi +4	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
 ASV00238	whole	0	244	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia

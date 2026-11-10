@@ -137,7 +137,7 @@ record removed.
 
 | Classifier, this database | Missing: wrong species | Present: right species | Present: wrong species |
 |---|---:|---:|---:|
-| `bin/classify_asvs.py`, gap rule | **6.6%** | 52.9% | **0.7%** |
+| `bin/classify_asvs.py`, gap rule | **6.5%** | 52.6% | **0.7%** |
 | DECIPHER IdTaxa (threshold 60) | 22.0% | 77.1% | 2.5% |
 | dada2 assignTaxonomy (minBoot 80) | 42.4% | **85.1%** | 4.6% |
 
@@ -158,14 +158,20 @@ species wherever two of them named one):
 
 | Dataset | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db |
 |---|---:|---:|---:|---:|---:|
-| Šlapeta sheep, PRJNA936713, 2x250 | 69.5% | 95.4% | 99.3% | 99.7% | 92.2% |
-| same, cut to 2x150 | 69.1% | 87.9% | 99.2% | 92.2% | 90.5% |
-| Gilleard cattle, PRJNA1524548, 2x250 | 72.6% | 68.0% | 92.9% | 69.9% | 86.9% |
-| same, cut to 2x150 | 69.0% | 67.8% | 93.7% | 91.9% | 86.9% |
+| Šlapeta sheep, PRJNA936713, 2x250 | 69.5% | 95.4% | 99.3% | 99.7% | 84.1% |
+| same, cut to 2x150 | 69.1% | 87.9% | 99.2% | 92.2% | 52.4% |
+| Gilleard cattle, PRJNA1524548, 2x250 | 72.6% | 68.0% | 92.9% | 69.9% | 62.4% |
+| same, cut to 2x150 | 69.0% | 67.8% | 93.7% | 91.9% | 37.3% |
 
 assignTaxonomy and IdTaxa compare k-mers over the whole ASV, so with
 this database the ASVs' 28S stretch must be cut off first
 (`bin/trim_28s.py`); the columns for this database are on cut ASVs.
+The gap rule's figures are lower than those first published with v0.1.0
+(92.2 / 90.5 / 86.9 / 86.9%): the classifier then scored only the top 40
+candidates and could miss the nearest other species (issue #1). Most of
+what it now stops at genus is *Haemonchus*, held back by a few partial
+single-accession records 2-3 edits from *H. placei* and *H. contortus*
+(issue #2; docs/DESIGN.md §6.2).
 `results/dada2_comparison/` holds each arm's summary and the per-ASV
 calls.
 
@@ -173,7 +179,7 @@ calls.
 ruminant, all species present): no classifier, with either database,
 named a wrong species for an exact copy of a source sequence; the
 k-mer classifiers named 86-100% of reads to species, the gap rule
-50-100%, stopping at genus where a sister species is 1-3 edits off.
+45-100%, stopping at genus where a sister species is 1-3 edits off.
 The mocks' truth includes two backbone mislabels this database corrects
 (docs/DESIGN.md §6.3; `results/mocks/`).
 

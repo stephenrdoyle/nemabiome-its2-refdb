@@ -28,8 +28,9 @@ see denoise()): a rare sequence 1-2 edits from a much commoner one is
 taken as its sequencing error and folded into it, and sequences with a
 single read in the run are dropped as noise. Only the centroids are scored.
 
-Distances are exact (bit-parallel edit distance) among candidates
-minimap2 proposes. References are ranked by identity over the span
+Distances are exact (bit-parallel edit distance) against every
+reference minimap2 proposes (minimap_candidates(): no cap). References
+are ranked by identity over the span
 scored (at least MIN_SPAN bases); every reference at the best identity
 whose span is within SPAN_SLACK of the longest such span is a tie (a
 partial matching only over a shorter span does not tie with a longer
@@ -67,7 +68,6 @@ from seqmatch import find_anchor_cost, revcomp  # noqa: E402
 
 SPACER = 3
 STRETCH_28S = 47
-TOP = 40
 ALPHA = 2           # UNOISE3's default
 MIN_READS = 2       # a centroid seen once in a run is noise
 MIN_SPAN = 100      # bases a reference must cover to count
@@ -85,6 +85,30 @@ RULES = {"v4": [("species", 0.997), ("genus", 0.995), ("family", 0.95)],
 # its reads are named as a sister species, which no per-read rule can
 # prevent. The gap is reported with each call as its confidence.
 GAP_IDENTITY, GAP_EDITS = 0.99, 4
+
+
+# Every reference minimap2 proposes is scored. A cap on the top N by
+# matching bases hid the nearest other species from reads of species with
+# hundreds of records: that neighbour is often a partial with fewer
+# matches (a T. circumcincta ASV, next O. ostertagi +3, read as +9 under a
+# cap of 40; issue #1). -N above the record count, so minimap2 drops
+# nothing either; -p 0.3 keeps hits down to 30% of the best chain.
+MM2 = ["-k", "11", "-w", "5", "-f", "1000000", "-N", "20000", "-p", "0.3"]
+
+
+def minimap_candidates(fasta, queries, workers):
+    """{query index: [reference ids]} for a list of query sequences."""
+    with tempfile.TemporaryDirectory() as d:
+        q = os.path.join(d, "q.fa")
+        with open(q, "w") as fh:
+            fh.writelines(f">{i}\n{s}\n" for i, s in enumerate(queries))
+        out = subprocess.run(["minimap2", "-t", str(workers)] + MM2 + [fasta, q],
+                             capture_output=True, text=True, check=True).stdout
+    c = collections.defaultdict(set)
+    for line in out.splitlines():
+        f = line.split("\t", 6)
+        c[int(f[0])].add(f[5])
+    return {i: sorted(v) for i, v in c.items()}
 
 
 def fastq_pairs(r1):
@@ -372,27 +396,13 @@ def main() -> int:
           + ", ".join(f"{m} {stats[m + ' folded']:,} / {stats[m + ' noise']:,}" for m in uniq),
           file=sys.stderr)
 
-    # --- candidates from minimap2 (whole amplicon, or the two windows joined)
-    def candidates(items):
-        with tempfile.TemporaryDirectory() as d:
-            q = os.path.join(d, "q.fa")
-            with open(q, "w") as fh:
-                for i, s in enumerate(items):
-                    fh.write(f">{i}\n{s}\n")
-            out = subprocess.run(["minimap2", "-t", str(a.workers), "-k", "11", "-w", "5",
-                                  "-f", "1000000", "-N", str(TOP), "-p", "0.5",
-                                  os.path.join(a.build, "refdb.fasta"), q],
-                                 capture_output=True, text=True, check=True).stdout
-        c = collections.defaultdict(dict)
-        for line in out.splitlines():
-            f = line.split("\t")
-            c[int(f[0])][f[5]] = max(c[int(f[0])].get(f[5], 0), int(f[9]))
-        return {i: sorted(v, key=lambda t: -v[t])[:TOP] for i, v in c.items()}
-
     items = {m: list(c) for m, c in uniq.items()}
     jobs = []
     for m, its in items.items():
-        cand = candidates(its if m == "whole" else [x + "N" * 20 + y for x, y in its])
+        # whole amplicon, or the two windows joined
+        cand = minimap_candidates(os.path.join(a.build, "refdb.fasta"),
+                                  its if m == "whole" else [x + "N" * 20 + y for x, y in its],
+                                  a.workers)
         for i, s in enumerate(its):
             x, y = (s, "") if m == "whole" else s
             jobs.append(((m, i), "whole" if m == "whole" else "window", x, y, cand.get(i, [])))

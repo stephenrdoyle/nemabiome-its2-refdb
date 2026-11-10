@@ -94,7 +94,6 @@ GRADES = ["complete", "near_complete", "partial_90", "partial_75", "partial", "u
 PRIMER_LEN = 20
 STRETCH_28S = 47
 READ_LENGTHS = [150, 250]   # default; set per build with --read-lengths
-TOP = 30
 
 NOT_A_SPECIES = re.compile(r" x | (cf|aff)\.? |sensu lato| s\.l\.|environmental sample")
 
@@ -257,15 +256,18 @@ def _margin(job):
 
 def margins(fasta, seqs, tax, geoms, workers):
     """Edits from each species-level record to the nearest record naming
-    another species (or none): minimap2 proposes the TOP most similar,
-    span_distance decides. -f 1000000 so shared minimizers are not
-    dropped across thousands of near-identical strongylid records; a
+    another species (or none): every record of another species minimap2
+    proposes is scored with span_distance. v0.1.0 kept the top 30 by
+    matching bases, which missed the nearest one for 744 records (a
+    partial has fewer matches; issue #1). -f 1000000 so shared
+    minimizers are not dropped across thousands of near-identical
+    strongylid records; a
     candidate must chain matches over half the SHORTER record, so a
     partial still finds the complete records it sits inside."""
     p = subprocess.Popen(["minimap2", "-t", str(workers), "-X", "-k", "11", "-w", "5",
                           "-f", "1000000", "-N", "2000", "-p", "0.5", fasta, fasta],
                          stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
-    score = collections.defaultdict(dict)
+    cand = collections.defaultdict(set)
     for line in p.stdout:
         f = line.split("\t", 11)
         q, t, m = f[0], f[5], int(f[9])
@@ -273,15 +275,10 @@ def margins(fasta, seqs, tax, geoms, workers):
             continue
         for a, b in ((q, t), (t, q)):
             if tax[a]["deepest_rank"] == "species" and tax[b]["species"] != tax[a]["species"]:
-                d = score[a]
-                if m > d.get(b, -1):
-                    d[b] = m
-                    if len(d) > 8 * TOP:
-                        for c in sorted(d, key=d.get)[:4 * TOP]:
-                            del d[c]
+                cand[a].add(b)
     if p.wait():
         sys.exit("minimap2 failed")
-    jobs = [(rid, sorted(score[rid], key=lambda c: -score[rid][c])[:TOP])
+    jobs = [(rid, sorted(cand[rid]))
             for rid, t in tax.items() if t["deepest_rank"] == "species"]
     with Pool(workers, initializer=_init, initargs=(seqs, geoms)) as pool:
         return {r[0]: r for r in pool.map(_margin, jobs, chunksize=100)}

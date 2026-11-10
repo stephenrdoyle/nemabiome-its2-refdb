@@ -31,14 +31,14 @@ import collections
 import csv
 import hashlib
 import os
-import subprocess
 import sys
 import tempfile
 from multiprocessing import Pool
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build import RANKS, merge, read_fasta  # noqa: E402
-from its2_classify import RULES, TOP, _init, _score, call, describe, load_taxonomy  # noqa: E402
+from its2_classify import (RULES, _init, _score, call, describe, load_taxonomy,  # noqa: E402
+                           minimap_candidates)
 
 SEP = "N" * 10
 
@@ -87,20 +87,10 @@ def main() -> int:
     asvs = [(r["asv"], r["sequence"]) for r in csv.DictReader(open(a.asvs), delimiter="\t")]
     with tempfile.TemporaryDirectory() as tmp:
         fa, refs, tax = load_reference(a.reference, tmp)
-        q = os.path.join(tmp, "q.fa")
-        with open(q, "w") as fh:
-            for i, (_, s) in enumerate(asvs):
-                fh.write(f">{i}\n{s}\n")
-        out = subprocess.run(["minimap2", "-t", str(a.workers), "-k", "11", "-w", "5",
-                              "-f", "1000000", "-N", str(TOP), "-p", "0.5", fa, q],
-                             capture_output=True, text=True, check=True).stdout
-    cand = collections.defaultdict(dict)
-    for line in out.splitlines():
-        f = line.split("\t")
-        cand[int(f[0])][f[5]] = max(cand[int(f[0])].get(f[5], 0), int(f[9]))
+        cand = minimap_candidates(fa, [s for _, s in asvs], a.workers)
     jobs = []
     for i, (name, s) in enumerate(asvs):
-        c = sorted(cand[i], key=lambda t: -cand[i][t])[:TOP]
+        c = cand.get(i, [])
         if SEP in s:
             x, _, y = s.partition(SEP)
             jobs.append((i, "window", x, y.strip("N"), c))

@@ -29,16 +29,12 @@ import collections
 import csv
 import os
 import random
-import subprocess
 import sys
-import tempfile
 from multiprocessing import Pool
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build import RANKS, deepest, merge_records, read_fasta  # noqa: E402
-from its2_classify import RULES, STRETCH_28S, _init, _score, call  # noqa: E402
-
-N_CAND = 300
+from its2_classify import RULES, STRETCH_28S, _init, _score, call, minimap_candidates  # noqa: E402
 
 
 def main() -> int:
@@ -65,28 +61,17 @@ def main() -> int:
                rng.sample(sorted(by_sp[sp]), min(a.per_species, len(by_sp[sp])))]
     print(f"{len(queries):,} queries from {len(by_sp):,} species", file=sys.stderr)
 
-    with tempfile.TemporaryDirectory() as d:
-        q = os.path.join(d, "q.fa")
-        with open(q, "w") as fh:
-            fh.writelines(f">{i}\n{seqs[i]}\n" for i in queries)
-        out = subprocess.run(["minimap2", "-t", str(a.workers), "-k", "11", "-w", "5",
-                              "-f", "1000000", "-N", str(N_CAND), "-p", "0.3",
-                              os.path.join(a.build, "refdb.fasta"), q],
-                             capture_output=True, text=True, check=True).stdout
-    cand = collections.defaultdict(dict)
-    for line in out.splitlines():
-        f = line.split("\t")
-        cand[f[0]][f[5]] = max(cand[f[0]].get(f[5], 0), int(f[9]))
+    found = minimap_candidates(os.path.join(a.build, "refdb.fasta"), [seqs[i] for i in queries], a.workers)
+    cand = {qi: found.get(n, []) for n, qi in enumerate(queries)}
 
     views = [("whole", None)] + [(f"2x{r}", int(r)) for r in a.read_lengths.split(",")]
     jobs, meta = [], []
     for qi in queries:
         sp = tax[qi]["species"]
-        ranked = sorted(cand[qi], key=lambda c: -cand[qi][c])
         for mode, drop in (("hidden", holds[sp] | {qi}), ("present", {qi})):
             if mode == "present" and not (holds[sp] - {qi}):
                 continue      # no other record of the species: present = hidden
-            cs = [c for c in ranked if c not in drop][:60]
+            cs = [c for c in cand[qi] if c not in drop]
             s = seqs[qi]
             for view, r in views:
                 if r is None:
