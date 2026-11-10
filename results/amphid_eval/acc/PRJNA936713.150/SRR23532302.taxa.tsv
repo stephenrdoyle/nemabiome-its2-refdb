@@ -1,0 +1,16 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532302	genus	Cooperia	Cooperia	9021	0.587458	23	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0
+SRR23532302	species	Ostertagia ostertagi	Ostertagia ostertagi	3126	0.203569	5	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia;Ostertagia ostertagi	v0.1.0
+SRR23532302	species	Oesophagostomum radiatum	Oesophagostomum radiatum	1698	0.110576	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum radiatum	v0.1.0
+SRR23532302	genus	Trichostrongylus	Trichostrongylus	1066	0.069419	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR23532302	species	Trichostrongylus axei	Trichostrongylus axei	259	0.016866	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR23532302	genus	Oesophagostomum	Oesophagostomum	75	0.004884	1	0.9851	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR23532302	genus	Ostertagia	Ostertagia	21	0.001368	4	0.9899	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia	v0.1.0
+SRR23532302	genus	Haemonchus	Haemonchus	20	0.001302	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR23532302	family	Trichostrongylidae	Trichostrongylidae (96% to Cooperia)	19	0.001237	3	0.9630	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532302			chimera of SRR23532302_p6 and SRR23532302_p21	13	0.000847	1	0.9563		v0.1.0
+SRR23532302			chimera of SRR23532302_p1 and SRR23532302_p6	10	0.000651	1	0.9944		v0.1.0
+SRR23532302	family	Trichostrongylidae	Trichostrongylidae (96% to Ostertagia)	9	0.000586	2	0.9650	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532302	species	Haemonchus placei	Haemonchus placei	8	0.000521	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR23532302			chimera of SRR23532302_p2 and SRR23532302_p21	8	0.000521	1	0.9524		v0.1.0
+SRR23532302			unclassified, no database hit	3	0.000195	1	0.0000		v0.1.0

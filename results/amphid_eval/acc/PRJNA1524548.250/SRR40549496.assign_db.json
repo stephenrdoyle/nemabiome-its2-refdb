@@ -1,0 +1,68 @@
+{
+  "sample_id": "SRR40549496",
+  "mode": "database",
+  "platform": "illumina",
+  "database": {
+    "version": "v0.1.0",
+    "name": "nemits2_v0.1.0",
+    "path": "/Users/sd21/Documents/WORK/informatics_workbook/nemabiome-its2-refdb/work/build_v0.1.0"
+  },
+  "minimap2": "2.31-r1302",
+  "elapsed_s": 49.57,
+  "reads": {
+    "reads_in": 38930,
+    "no_primer": 903,
+    "too_short": 4,
+    "low_quality": 1391,
+    "clustered": 36418,
+    "unclustered": 214,
+    "whole_insert": 5,
+    "merged": 36542
+  },
+  "reads_note": "Read pairs. reads_in = no_primer + too_short + low_quality + clustered + unclustered; whole_insert counts the pairs (within clustered or unclustered) whose insert was shorter than R1. rel_abundance is over clustered pairs: relative 18S abundance. merged counts the pairs (within clustered or unclustered) whose mates overlapped and were merged into the insert.",
+  "remapped_divergent": 0,
+  "quality_values": 9,
+  "quality_filter_blind": false,
+  "clusters": 129,
+  "haplotype_splits": 0,
+  "chimeras": {
+    "sequences": 0,
+    "reads": 0,
+    "within_genus_kept": {
+      "sequences": 28,
+      "reads": 236
+    }
+  },
+  "settings": {
+    "window_r1": 230,
+    "window_r2": 183,
+    "max_ee": 2.0,
+    "min_size": 2,
+    "max_diffs": "1.5% of length, at least 3",
+    "alpha": 2.0,
+    "floors": {
+      "species": 0.99,
+      "genus": 0.97,
+      "family": 0.95
+    },
+    "lca_margin": 0.005,
+    "read_windows": [
+      227,
+      227
+    ],
+    "primer_offset": 3,
+    "score_over": "reference span",
+    "calling_rule": "gap",
+    "gap_edits": 4,
+    "min_span": 100,
+    "min_species_span": 100,
+    "span_slack": 5,
+    "resolution_table": "resolution_illumina_250x250.tsv"
+  },
+  "rank_reached": {
+    "species": 79,
+    "genus": 44,
+    "family": 3,
+    "order": 3
+  }
+}

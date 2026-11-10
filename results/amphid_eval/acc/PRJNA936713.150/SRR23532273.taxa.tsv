@@ -1,0 +1,10 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532273	genus	Haemonchus	Haemonchus	4758	0.343265	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR23532273	species	Haemonchus placei	Haemonchus placei	3889	0.280571	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR23532273	species	Oesophagostomum radiatum	Oesophagostomum radiatum	3698	0.266792	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum radiatum	v0.1.0
+SRR23532273	genus	Trichostrongylus	Trichostrongylus	769	0.055479	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR23532273	species	Ostertagia ostertagi	Ostertagia ostertagi	497	0.035856	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia;Ostertagia ostertagi	v0.1.0
+SRR23532273	genus	Oesophagostomum	Oesophagostomum	232	0.016738	2	0.9854	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR23532273	genus	Cooperia	Cooperia	10	0.000721	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0
+SRR23532273	order	Rhabditida	unclassified, 89% to Haemonchus	4	0.000289	1	0.8857	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532273	species	Oesophagostomum venulosum	Oesophagostomum venulosum	4	0.000289	1	0.9951	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum venulosum	v0.1.0

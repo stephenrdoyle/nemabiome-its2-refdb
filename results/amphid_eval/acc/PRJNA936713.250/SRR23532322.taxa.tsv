@@ -1,0 +1,7 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532322	species	Haemonchus contortus	Haemonchus contortus	25235	0.993582	25	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus contortus	v0.1.0
+SRR23532322	species	Nematodirus spathiger	Nematodirus spathiger	107	0.004213	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Molineidae;Nematodirus;Nematodirus spathiger	v0.1.0
+SRR23532322	genus	Nematodirus	Nematodirus	44	0.001732	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Molineidae;Nematodirus	v0.1.0
+SRR23532322	genus	Haemonchus	Haemonchus	6	0.000236	1	0.9925	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR23532322			unclassified, no database hit	3	0.000118	1	0.0000		v0.1.0
+SRR23532322	species	Ostertagia ostertagi	Ostertagia ostertagi	3	0.000118	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia;Ostertagia ostertagi	v0.1.0

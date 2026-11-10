@@ -1,0 +1,14 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549521	species	Haemonchus placei	Haemonchus placei	13098	0.396501	41	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR40549521	genus	Haemonchus	Haemonchus	10570	0.319973	16	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR40549521	species	Oesophagostomum radiatum	Oesophagostomum radiatum	5140	0.155597	19	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum radiatum	v0.1.0
+SRR40549521	genus	Cooperia	Cooperia	1950	0.059030	15	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0
+SRR40549521	genus	Trichostrongylus	Trichostrongylus	1380	0.041775	7	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR40549521	genus	Oesophagostomum	Oesophagostomum	576	0.017437	3	0.9899	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR40549521	species	Trichostrongylus axei	Trichostrongylus axei	258	0.007810	2	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR40549521			chimera of SRR40549521_p1 and SRR40549521_p3	15	0.000454	1	0.9949		v0.1.0
+SRR40549521	family	Trichostrongylidae	Trichostrongylidae (97% to Cooperia)	15	0.000454	2	0.9676	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR40549521	order	Rhabditida	unclassified, 90% to Haemonchus	14	0.000424	1	0.8966	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549521			chimera of SRR40549521_p5 and SRR40549521_p20	12	0.000363	2	0.9403		v0.1.0
+SRR40549521	order	Rhabditida	unclassified, 89% to Haemonchus	3	0.000091	1	0.8857	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549521	order	Rhabditida	unclassified, 82% to Haemonchus	3	0.000091	1	0.8153	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0

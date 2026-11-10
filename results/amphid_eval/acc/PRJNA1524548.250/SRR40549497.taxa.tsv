@@ -1,0 +1,13 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549497	species	Haemonchus placei	Haemonchus placei	16534	0.480528	46	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR40549497	genus	Haemonchus	Haemonchus	14110	0.410079	18	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR40549497	genus	Cooperia	Cooperia	1705	0.049552	21	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0
+SRR40549497	species	Oesophagostomum radiatum	Oesophagostomum radiatum	743	0.021594	6	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum radiatum	v0.1.0
+SRR40549497	species	Ostertagia ostertagi	Ostertagia ostertagi	712	0.020693	5	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia;Ostertagia ostertagi	v0.1.0
+SRR40549497	species	Trichostrongylus axei	Trichostrongylus axei	498	0.014473	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR40549497	genus	Oesophagostomum	Oesophagostomum	85	0.002470	3	0.9864	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR40549497	family	Trichostrongylidae	Trichostrongylidae (97% to Haemonchus)	6	0.000174	1	0.9699	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR40549497	order	Rhabditida	unclassified, 94% to Ostertagia	5	0.000145	1	0.9378	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549497	order	Rhabditida	unclassified, 93% to Ostertagia	4	0.000116	1	0.9330	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549497	order	Rhabditida	unclassified, 92% to Ostertagia	4	0.000116	1	0.9212	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549497	family	Trichostrongylidae	Trichostrongylidae (96% to Cooperia)	2	0.000058	1	0.9641	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0

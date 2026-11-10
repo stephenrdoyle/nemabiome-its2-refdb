@@ -1,0 +1,27 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549455	species	Cloacina clymene	Cloacina clymene	15100	0.317928	26	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina clymene	v0.1.0
+SRR40549455	genus	Cloacina	Cloacina	12215	0.257185	97	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina	v0.1.0
+SRR40549455	species	Cloacina macropodis	Cloacina macropodis	11215	0.236130	23	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina macropodis	v0.1.0
+SRR40549455	family	Strongylidae	Strongylidae (96% to Cloacina)	2268	0.047752	19	0.9650	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae	v0.1.0
+SRR40549455	species	Cloacina communis	Cloacina communis	2128	0.044805	11	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina communis	v0.1.0
+SRR40549455	species	Cloacina edwardsi	Cloacina edwardsi	1683	0.035435	9	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina edwardsi	v0.1.0
+SRR40549455	species	Cloacina feronia	Cloacina feronia	903	0.019013	5	0.9975	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina feronia	v0.1.0
+SRR40549455	genus	Hypodontus	Hypodontus	537	0.011306	14	0.9899	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Hypodontus	v0.1.0
+SRR40549455	species	Cloacina phaethon	Cloacina phaethon	504	0.010612	2	0.9908	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina phaethon	v0.1.0
+SRR40549455	species	Cloacina parva	Cloacina parva	324	0.006822	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina parva	v0.1.0
+SRR40549455	species	Hypodontus macropi	Hypodontus macropi	244	0.005137	5	0.9966	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Hypodontus;Hypodontus macropi	v0.1.0
+SRR40549455	family	Strongylidae	Strongylidae (97% to Cloacina)	155	0.003264	15	0.9696	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae	v0.1.0
+SRR40549455	order	Rhabditida	unclassified, 94% to Cloacina	42	0.000884	6	0.9450	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549455	family	Strongylidae	Strongylidae (95% to Cloacina)	31	0.000653	5	0.9543	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae	v0.1.0
+SRR40549455	order	Rhabditida	unclassified, 95% to Cloacina	29	0.000611	4	0.9478	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549455	order	Rhabditida	unclassified, 91% to Cloacina	24	0.000505	4	0.9123	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549455	order	Rhabditida	unclassified, 92% to Cloacina	23	0.000484	4	0.9234	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549455	order	Rhabditida	unclassified, 93% to Cloacina	19	0.000400	4	0.9348	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549455	order	Rhabditida	unclassified, 36% to Metarhabditis	18	0.000379	2	0.3623	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549455	order	Rhabditida	unclassified, 90% to Cloacina	13	0.000274	3	0.9041	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549455	order	Rhabditida	unclassified, 26% to Metarhabditis	4	0.000084	1	0.2609	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549455	order	Rhabditida	unclassified, 87% to Cloacina	4	0.000084	1	0.8739	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549455	order	Rhabditida	unclassified, 51% to Metarhabditis	3	0.000063	1	0.5091	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549455	order	Rhabditida	unclassified, 74% to Cloacina	3	0.000063	1	0.7395	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549455	species	Cloacina herceus	Cloacina herceus	3	0.000063	1	0.9975	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Cloacina;Cloacina herceus	v0.1.0
+SRR40549455	order	Rhabditida	unclassified, 78% to Cloacina	3	0.000063	1	0.7844	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0

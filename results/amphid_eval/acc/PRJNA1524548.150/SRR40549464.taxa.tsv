@@ -1,0 +1,8 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549464	species	Metastrongylus apri	Metastrongylus apri	23432	0.975480	32	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Metastrongylidae;Metastrongylus;Metastrongylus apri	v0.1.0
+SRR40549464	genus	Metastrongylus	Metastrongylus	537	0.022355	13	0.9904	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Metastrongylidae;Metastrongylus	v0.1.0
+SRR40549464	order	Rhabditida	unclassified, 83% to Metastrongylus	29	0.001207	3	0.8333	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549464	order	Rhabditida	unclassified, 45% to Metastrongylus	8	0.000333	2	0.4479	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549464			unclassified, no database hit	7	0.000291	2	0.0000		v0.1.0
+SRR40549464	order	Rhabditida	unclassified, 82% to Metastrongylus	6	0.000250	1	0.8212	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549464	family	Metastrongylidae	Metastrongylidae (97% to Metastrongylus)	2	0.000083	1	0.9663	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Metastrongylidae	v0.1.0

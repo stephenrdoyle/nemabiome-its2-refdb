@@ -1,0 +1,13 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR40549475	species	Oesophagostomum radiatum	Oesophagostomum radiatum	21118	0.608921	47	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum radiatum	v0.1.0
+SRR40549475	genus	Haemonchus	Haemonchus	3275	0.094432	16	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR40549475	species	Haemonchus placei	Haemonchus placei	3245	0.093567	19	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus placei	v0.1.0
+SRR40549475	species	Ostertagia ostertagi	Ostertagia ostertagi	2291	0.066059	15	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia;Ostertagia ostertagi	v0.1.0
+SRR40549475	species	Trichostrongylus axei	Trichostrongylus axei	2146	0.061878	15	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus axei	v0.1.0
+SRR40549475	genus	Oesophagostomum	Oesophagostomum	1775	0.051181	12	0.9867	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR40549475	genus	Cooperia	Cooperia	788	0.022721	15	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0
+SRR40549475	genus	Trichostrongylus	Trichostrongylus	17	0.000490	2	0.9958	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR40549475	order	Rhabditida	unclassified, 70% to Ancylostoma	8	0.000231	1	0.7000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549475	family	Trichostrongylidae	Trichostrongylidae (96% to Cooperia)	8	0.000231	1	0.9590	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR40549475	order	Rhabditida	unclassified, 91% to Oesophagostomum	7	0.000202	1	0.9140	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR40549475	order	Rhabditida	unclassified, 90% to Oesophagostomum	3	0.000087	1	0.9005	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0

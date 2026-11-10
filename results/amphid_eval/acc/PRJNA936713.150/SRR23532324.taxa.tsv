@@ -1,0 +1,12 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532324	species	Haemonchus contortus	Haemonchus contortus	15501	0.897049	30	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus contortus	v0.1.0
+SRR23532324	genus	Teladorsagia	Teladorsagia	1677	0.097049	4	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Teladorsagia	v0.1.0
+SRR23532324	genus	Haemonchus	Haemonchus	60	0.003472	9	0.9903	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus	v0.1.0
+SRR23532324	genus	Ostertagia	Ostertagia	11	0.000637	4	0.9832	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Ostertagia	v0.1.0
+SRR23532324	order	Rhabditida	unclassified, 92% to Haemonchus	10	0.000579	3	0.9235	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532324	genus	Trichostrongylus	Trichostrongylus	6	0.000347	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR23532324	family	Trichostrongylidae	Trichostrongylidae (96% to Teladorsagia)	6	0.000347	1	0.9608	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532324	family	Trichostrongylidae	Trichostrongylidae (95% to Teladorsagia)	3	0.000174	1	0.9510	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532324	order	Rhabditida	unclassified, 93% to Haemonchus	2	0.000116	1	0.9348	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532324	order	Rhabditida	unclassified, 93% to Teladorsagia	2	0.000116	1	0.9296	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532324	species	Teladorsagia circumcincta	Teladorsagia circumcincta	2	0.000116	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Teladorsagia;Teladorsagia circumcincta	v0.1.0

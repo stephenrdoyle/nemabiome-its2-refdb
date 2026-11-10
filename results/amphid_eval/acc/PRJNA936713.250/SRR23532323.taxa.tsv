@@ -1,0 +1,8 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532323	species	Nematodirus spathiger	Nematodirus spathiger	9172	0.878208	21	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Molineidae;Nematodirus;Nematodirus spathiger	v0.1.0
+SRR23532323	species	Haemonchus contortus	Haemonchus contortus	1185	0.113462	5	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus contortus	v0.1.0
+SRR23532323	genus	Nematodirus	Nematodirus	54	0.005170	8	0.9874	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Molineidae;Nematodirus	v0.1.0
+SRR23532323	order	Rhabditida	unclassified, 86% to Nematodirus	17	0.001628	3	0.8646	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532323	family	Molineidae	Molineidae (97% to Nematodirus)	10	0.000957	2	0.9658	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Molineidae	v0.1.0
+SRR23532323	order	Rhabditida	unclassified, 89% to Nematodirus	4	0.000383	1	0.8908	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida	v0.1.0
+SRR23532323	genus	Cooperia	Cooperia	2	0.000191	1	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Cooperia	v0.1.0

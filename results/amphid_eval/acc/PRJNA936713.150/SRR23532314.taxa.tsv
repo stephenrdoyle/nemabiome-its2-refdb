@@ -1,0 +1,13 @@
+sample_id	rank	taxon	label	reads	rel_abundance	clusters	best_identity	lineage	database_version
+SRR23532314	species	Oesophagostomum venulosum	Oesophagostomum venulosum	10959	0.812681	8	0.9951	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum;Oesophagostomum venulosum	v0.1.0
+SRR23532314	species	Trichostrongylus rugatus	Trichostrongylus rugatus	878	0.065109	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus rugatus	v0.1.0
+SRR23532314	species	Haemonchus contortus	Haemonchus contortus	748	0.055469	4	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Haemonchus;Haemonchus contortus	v0.1.0
+SRR23532314	genus	Trichostrongylus	Trichostrongylus	467	0.034631	8	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus	v0.1.0
+SRR23532314	genus	Oesophagostomum	Oesophagostomum	323	0.023953	3	0.9855	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Strongylidae;Oesophagostomum	v0.1.0
+SRR23532314	species	Teladorsagia circumcincta	Teladorsagia circumcincta	75	0.005562	4	0.9952	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Teladorsagia;Teladorsagia circumcincta	v0.1.0
+SRR23532314	genus	Teladorsagia	Teladorsagia	10	0.000742	1	0.9855	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Teladorsagia	v0.1.0
+SRR23532314	genus	Nematodirus	Nematodirus	10	0.000742	3	1.0000	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Molineidae;Nematodirus	v0.1.0
+SRR23532314	family	Trichostrongylidae	Trichostrongylidae (97% to Trichostrongylus)	7	0.000519	1	0.9665	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
+SRR23532314			chimera of SRR23532314_p17 and SRR23532314_p11	3	0.000222	1	0.9662		v0.1.0
+SRR23532314	species	Trichostrongylus colubriformis	Trichostrongylus colubriformis	3	0.000222	1	0.9944	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae;Trichostrongylus;Trichostrongylus colubriformis	v0.1.0
+SRR23532314	family	Trichostrongylidae	Trichostrongylidae (96% to Trichostrongylus)	2	0.000148	1	0.9615	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Trichostrongylidae	v0.1.0
