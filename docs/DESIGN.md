@@ -201,8 +201,8 @@ often that large, and in vespa-18s-refdb a leave-one-out test named
 The same test is in §6.
 
 The current build, after the curation of §5.2-5.3, folding (§8, item 4) and the
-long-read layer (§5.5), has 11,956 records, 1,843 species with a record
-of their own and 427 genera; 96% of records resolve to species read
+long-read layer (§5.5), has 11,956 records, 1,840 species with a record
+of their own and 426 genera; 96% of records resolve to species read
 whole, 94% through 2x150 windows (`results/dev_build_summary.txt`).
 
 ### 5.2 Cross-family ties: mislabels, curated
@@ -263,13 +263,15 @@ dropped, each contradicted by 10-49 other GenBank entries:
 
 97 pairs remain (78 across genera >= 99%, 19 across families >= 97%):
 
-- **The same species under two genus names**: *Ostertagia trifurcata* /
-  *Teladorsagia circumcincta* (male morph); *Phocanema* /
-  *Pseudoterranova*; *Labiosimplex* / *Labiostrongylus longispicularis*;
-  *Parapoteriostomum* / *Cylicodontophorus mettami*; *Gracilacus* /
-  *Paratylenchus paralatescens*; *Betulodera* / *Cactodera* /
-  *Heterodera betulae*; *Japanema* / *Sheraphelenchus entomophagus*.
-  To be merged by relabels once the names are chosen.
+- **The same species under two names**: *Ostertagia trifurcata* /
+  *Teladorsagia circumcincta* and *O. lyrata* / *O. ostertagi* (minor
+  male morphs; relabelled in `curation/overrides.tsv`); *Parapoteriostomum* /
+  *Cylicodontophorus mettami* and *Betulodera* / *Cactodera betulae*
+  (settled by current NCBI names, §5.6). NCBI keeps four look-alike pairs
+  as separate species, and so does this database: *Phocanema* /
+  *Pseudoterranova*, *Labiosimplex* / *Labiostrongylus longispicularis*,
+  *Gracilacus* / *Paratylenchus paralatescens*, *Japanema* /
+  *Sheraphelenchus*.
 - **Unclear**:
   - *Rostellascaris spinicaudatum* vs *Toxocara cati* (2-3%);
   - *Oesophagostomum aculeatum* LC428824 vs *Ternidens deminutus*
@@ -426,6 +428,38 @@ confirmation of the labels. The other four stop at genus: three
 *C. insigne* read variants identical to *C. ashworthi* records (the
 shared type of §5.4), and a *Parascaris univalens* copy identical to a
 record shared with *P. equorum*.
+
+### 5.6 Names: current NCBI Taxonomy
+
+markerDB named each record when the backbone was built; NCBI has renamed
+taxa since. Rather than choose names pair by pair, the rule is: **use
+NCBI Taxonomy's current name**. `bin/ncbi_names.py` fetches the current
+order, family, genus and species of every backbone taxid (1,915) into
+`curation/ncbi_names.tsv`, and `bin/build.py --names` applies it before
+`curation/overrides.tsv` (which keeps the last word). A rank is renamed
+only where the record names it, and names that are not one species
+(hybrids, cf., environmental) are left alone. Each renamed source record
+says so in `members.tsv`.
+
+On 2026-11-10, 64 source records (20 species names, 14 genera, 2
+families) took a new name, among them:
+
+- three synonym pairs that had split one species in two: *Parapoteriostomum
+  mettami* -> *Cylicodontophorus mettami*, *Betulodera betulae* ->
+  *Cactodera betulae*, *Tylenchorhynchus ventrosignatus* -> *Bitylenchus
+  ventrosignatus* (named species 1,872 -> 1,869). The *mettami* split had
+  stopped the k-mer classifiers at family on 5% of equine mock reads (§6.3);
+- genus moves such as *Phasmarhabditis* -> *Pellioditis* (4 species),
+  *Geocenamus*/*Merlinius* -> *Scutylenchus*, *Heterakis spumosa* ->
+  *Ganguleterakis spumosa*, *Aphelenchoides avenae* -> *Aphelenchus
+  avenae* (Aphelenchidae).
+
+Resolution is unchanged except for one record: NCBI moved *Oscheius
+microvilli* to *Caenorhabditis*, but its ITS2 is identical to an
+*Oscheius myriophilus* record, so the shared record now stops at
+Rhabditidae. ITS2 sides with *Oscheius*; the rule follows NCBI, and the
+case is left as a flag. The evaluation in §6 was run on the build before
+this step; renaming changes labels, not sequences or ties.
 
 ## 6. Naming reads: the classifier and its tests
 
@@ -663,10 +697,10 @@ amphid needs changes before it can use this database:
    the current build. Its source records stay in `members.tsv`, noted.
    Partials inside another species' full-length record are kept; they
    are real ties.
-5. **Shared ITS2 types and genus synonyms** (§5.3, §5.4): *Cylicocyclus
-   insigne* / *C. ashworthi*; *Phocanema* / *Pseudoterranova* and the
-   other genus-name pairs, awaiting a choice of names; the unclear
-   neighbour pairs. These, not thresholds, are what limits species calls
+5. **Shared ITS2 types** (§5.3, §5.4): *Cylicocyclus insigne* /
+   *C. ashworthi*; the four look-alike pairs NCBI keeps apart (§5.3); the
+   unclear neighbour pairs. Names now follow NCBI (§5.6); refetch
+   `curation/ncbi_names.tsv` before each release. These, not thresholds, are what limits species calls
    on missing-species errors (§6.1).
 6. **Mock communities**: done (§6.3). They test present species only; a
    missing-species version (each mock species removed in turn) was not

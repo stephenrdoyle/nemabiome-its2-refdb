@@ -31,8 +31,13 @@ LAYERS. --layer adds ITS2 records from genome assemblies and long reads
 (bin/genome_layer.py), merged with the backbone like any other record;
 members.tsv names each one's source.
 
-CURATION. curation/overrides.tsv (--overrides) drops or relabels source
-records first; a dropped record stays in members.tsv with its reason.
+CURATION. Names first: curation/ncbi_names.tsv (--names, from
+bin/ncbi_names.py) holds NCBI Taxonomy's current order, family, genus and
+species for each backbone taxid; a record named otherwise when markerDB
+built the backbone takes NCBI's current names (a moved genus, a synonym),
+noted in members.tsv. Then curation/overrides.tsv (--overrides) drops or
+relabels source records; a dropped record stays in members.tsv with its
+reason.
 
 MERGING. Identical ITS2s become one record. At each rank the record
 takes the single informative name its members agree on; two names stop
@@ -318,7 +323,8 @@ def fold_contained(seqs, tax, members, workers):
     for m in members:
         if m["id"] in host:
             h = host[m["id"]]
-            m["note"] = f"folded: identical over its span to {h}, same species"
+            m["note"] = "; ".join(x for x in (m["note"], f"folded: identical over its span to {h}, "
+                                                          "same species") if x)
             m["id"] = h
             tax[h]["members"] += 1
     for i in host:
@@ -341,6 +347,8 @@ def main() -> int:
     ap.add_argument("--version", default="dev")
     ap.add_argument("--workers", type=int, default=os.cpu_count())
     ap.add_argument("--overrides", default=os.path.join(HERE, "curation", "overrides.tsv"))
+    ap.add_argument("--names", default=os.path.join(HERE, "curation", "ncbi_names.tsv"),
+                    help="current NCBI names per taxid (bin/ncbi_names.py); '' to skip")
     ap.add_argument("--layer", action="append", default=[],
                     help="a layer TSV from bin/genome_layer.py; repeatable")
     ap.add_argument("--read-lengths", default=",".join(map(str, READ_LENGTHS)),
@@ -354,9 +362,10 @@ def main() -> int:
     refs = read_fasta(a.its2 + "_refs.fasta")
     grade = {r["accession"]: r for r in csv.DictReader(open(a.its2 + "_refs.tsv"), delimiter="\t")}
     cut = {r["accession"]: r for r in csv.DictReader(open(a.its2 + "_cut.tsv"), delimiter="\t")}
-    label = {}
+    label, taxid = {}, {}
     for r in csv.DictReader(open(a.taxonomy), delimiter="\t"):
         label[r["accn"].split(".")[0]] = (r["accn"], [r[k] for k in RANKS])
+        taxid[r["accn"].split(".")[0]] = r["taxid"]
     # Layers (bin/genome_layer.py): ITS2 from genome assemblies and long
     # reads, cut at the same anchors, so complete by construction.
     source_of, layer_files = {}, []
@@ -371,7 +380,28 @@ def main() -> int:
             cut[acc] = {"nc1_edits": "", "nc2_edits": ""}
             source_of[acc] = r["source"]
 
-    # --- curation: drops and relabels (curation/overrides.tsv)
+    # --- curation: current NCBI names, then drops and relabels
+    renamed = {}
+    if a.names and os.path.exists(a.names):
+        names = {r["taxid"]: r for r in csv.DictReader(open(a.names), delimiter="\t")}
+        for acc, tid in taxid.items():
+            n = names.get(tid)
+            if n is None:
+                continue
+            accn, lab = label[acc]
+            new = list(lab)
+            for k in ("order", "family", "genus", "species"):
+                i = RANKS.index(k)
+                # Only rename what the record names: a genus-level record
+                # does not gain a species, and a name that is not one
+                # species (hybrid, cf., environmental) is left alone.
+                if n[k] and lab[i] and informative(k, lab[i]):
+                    new[i] = n[k]
+            if new != lab:
+                was = [f"{lab[RANKS.index(k)]}" for k in ("order", "family", "genus", "species")
+                       if lab[RANKS.index(k)] != new[RANKS.index(k)]]
+                renamed[acc] = f"NCBI name (taxid {tid}): was {', '.join(was)}"
+                label[acc] = (accn, new)
     drops = {}
     if a.overrides and os.path.exists(a.overrides):
         rows = csv.DictReader((ln for ln in open(a.overrides) if not ln.startswith("#")), delimiter="\t")
@@ -446,7 +476,7 @@ def main() -> int:
                             "accession": label[acc][0],
                             "label": ";".join(labs[acc]), "role": role[acc], "grade": g["grade"],
                             "coverage": g["coverage"], "trimmed_start": g["trimmed_start"],
-                            "trimmed_end": g["trimmed_end"], "note": ""})
+                            "trimmed_end": g["trimmed_end"], "note": renamed.get(acc, "")})
     folded = fold_contained(seqs, tax, members, a.workers)
     order = sorted(seqs)
 
@@ -588,8 +618,11 @@ def main() -> int:
         "anchors": ANCHORS, "lookalike_max_edits": LOOKALIKE_MAX_EDITS,
         "source": a.source, "source_taxonomy_sha256": sha256(a.taxonomy),
         "layers": [{"file": os.path.basename(f), "sha256": sha256(f)} for f in layer_files],
+        "names": ({"file": os.path.basename(a.names), "sha256": sha256(a.names)}
+                  if a.names and os.path.exists(a.names) else None),
         "counts": {"records": len(order), "members": len(members), "named_species": len(named),
                    "grade": dict(gcount), "deepest_rank_nanopore": dict(nano), "folded": folded,
+                   "renamed": len(renamed),
                    "member_roles": dict(roles), "conflicts": dict(dec), "primer_fit": dict(pf)},
         "files": {},
     }
@@ -605,7 +638,8 @@ def main() -> int:
              f"records {len(order):,} from {len(members):,} source records; "
              f"named species {len(named):,}",
              "members: " + ", ".join(f"{k} {v:,}" for k, v in sorted(roles.items()))
-             + f"; partial records folded into a same-species full-length record: {folded:,}",
+             + f"; partial records folded into a same-species full-length record: {folded:,}"
+             + f"; renamed to current NCBI names: {len(renamed):,}",
              "conflicts (order or above): " + (", ".join(f"{k} {v}" for k, v in sorted(dec.items())) or "none"),
              "", "Grade (best member):"] + table(gcount, GRADES, len(order))
     lines += ["", f"Deepest rank - nanopore (whole ITS2; {nano_tied:,} species-level records "

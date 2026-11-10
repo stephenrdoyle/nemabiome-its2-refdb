@@ -1,8 +1,8 @@
-nemits2_dev  built 2026-11-09T22:27:54Z  code 8388ab6ac069a56d593132c9aa2f952bb81f0ca2-dirty
+nemits2_dev  built 2026-11-10T06:45:48Z  code 63ab026e57a5627bbdf529d068815b580a1ee3f3-dirty
 primers NC1 ACGTCTGGTTCAGGGTTGTT / NC2 TTAGTTTCTTTTCCTCCGCT
 source nemabiome_20260317
-records 11,956 from 15,282 source records; named species 1,872
-members: dropped 28, kept 15,254; partial records folded into a same-species full-length record: 1,115
+records 11,956 from 15,282 source records; named species 1,869
+members: dropped 28, kept 15,254; partial records folded into a same-species full-length record: 1,115; renamed to current NCBI names: 64
 conflicts (order or above): none
 
 Grade (best member):
@@ -15,8 +15,8 @@ Grade (best member):
 
 Deepest rank - nanopore (whole ITS2; 410 species-level records tied with another species' over their span):
     species         11,419   95.5%
-    genus              516    4.3%
-    family              20    0.2%
+    genus              512    4.3%
+    family              24    0.2%
     order                1    0.0%
     class                0    0.0%
     phylum               0    0.0%
@@ -25,8 +25,8 @@ Deepest rank - nanopore (whole ITS2; 410 species-level records tied with another
     (none)               0    0.0%
   Illumina 150x150 (windows 130 + 83, 11,211 window groups; 522 tied):
     species         11,244   94.0%
-    genus              689    5.8%
-    family              22    0.2%
+    genus              685    5.7%
+    family              26    0.2%
     order                1    0.0%
     class                0    0.0%
     phylum               0    0.0%
@@ -35,8 +35,8 @@ Deepest rank - nanopore (whole ITS2; 410 species-level records tied with another
     (none)               0    0.0%
   Illumina 250x250 (windows 230 + 183, 11,900 window groups; 421 tied):
     species         11,407   95.4%
-    genus              528    4.4%
-    family              20    0.2%
+    genus              524    4.4%
+    family              24    0.2%
     order                1    0.0%
     class                0    0.0%
     phylum               0    0.0%
@@ -53,9 +53,9 @@ Primer fit (best member holding the sites):
 
 Species margins over the shorter record's span, read whole (11,829 species-level records):
     0 (inside another species' record: tied)         410
-    1 edit                                           900
-    2 edits                                          711
+    1 edit                                           897
+    2 edits                                          712
     3-5 edits                                      1,512
     6-10 edits                                     1,324
-    11+ edits                                      3,128
-    no other species within reach                  3,844
+    11+ edits                                      3,125
+    no other species within reach                  3,849

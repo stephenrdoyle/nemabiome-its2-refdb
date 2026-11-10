@@ -36,8 +36,9 @@ record anchored at both ends: `complete`, `near_complete` (>= 98%),
 assemblies and HiFi reads (`curation/long_read_its2.tsv`, which adds six
 species: *Loa loa*, *Acanthocheilonema viteae*, *Litomosoides
 sigmodontis*, *Spirocerca lupi*, *Trichuris incognita*, *Heligmosomoides
-bakeri*). 1,115 partial records are folded into a full-length record of
-the same species that holds them. 427 genera, 1,843 species with a
+bakeri*). Names follow current NCBI Taxonomy
+(`curation/ncbi_names.tsv`; 64 source records renamed). 1,115 partial records are folded into a full-length record of
+the same species that holds them. 426 genera, 1,840 species with a
 record of their own.
 
 <!-- figures:start -->
@@ -55,18 +56,18 @@ How many species nemits2_dev can name. A species named in the source records but
 
 | Records | Species named in sources | Species with their own record (read whole) | Species named through Illumina 150x150 | Species named through Illumina 250x250 | Genera |
 |---|---:|---:|---:|---:|---:|
-| All records | 1,888 | 1,843 | 1,836 | 1,843 | 427 |
+| All records | 1,885 | 1,840 | 1,833 | 1,840 | 426 |
 | **I · animal parasites** | 34 | 33 | 33 | 33 | 6 |
 | I · plant parasites | 65 | 65 | 64 | 65 | 3 |
 | I · free-living | 10 | 10 | 10 | 10 | 9 |
 | II · plant parasites | 18 | 18 | 18 | 18 | 2 |
 | II · free-living | 9 | 9 | 9 | 9 | 6 |
-| **III · animal parasites** | 299 | 289 | 283 | 289 | 100 |
+| **III · animal parasites** | 299 | 289 | 283 | 289 | 101 |
 | **IV · animal parasites** | 152 | 148 | 148 | 148 | 13 |
-| IV · plant parasites | 664 | 645 | 645 | 645 | 95 |
-| IV · free-living | 21 | 21 | 21 | 21 | 11 |
-| **V · animal parasites** | 509 | 504 | 504 | 504 | 156 |
-| V · free-living | 104 | 100 | 100 | 100 | 24 |
+| IV · plant parasites | 662 | 643 | 643 | 643 | 93 |
+| IV · free-living | 21 | 21 | 21 | 21 | 12 |
+| **V · animal parasites** | 508 | 503 | 503 | 503 | 156 |
+| V · free-living | 104 | 100 | 100 | 100 | 23 |
 | Other Chromadoria · free-living | 1 | 1 | 1 | 1 | 2 |
 | Family not placed | 2 | 0 | 0 | 0 | 0 |
 
@@ -85,7 +86,7 @@ How far a record can be named in nemits2_dev, best case (an exact read, no seque
 | IV · plant parasites (4,299) | 95% | 5% | 94% | 5% | 95% | 5% |
 | IV · free-living (42) | 100% | 0% | 100% | 0% | 100% | 0% |
 | **V · animal parasites** (3,679) | 97% | 3% | 96% | 4% | 97% | 3% |
-| V · free-living (306) | 96% | 4% | 96% | 4% | 96% | 4% |
+| V · free-living (306) | 96% | 2% | 96% | 2% | 96% | 2% |
 | Other Chromadoria · free-living (15) | 93% | 7% | 93% | 7% | 93% | 7% |
 | Family not placed (1) | 0% | 0% | 0% | 0% | 0% | 0% |
 <!-- figures:end -->
@@ -170,6 +171,7 @@ python3 bin/nemabiome_export.py sources/nemabiome_its2_20260317/raw/database.xls
 python3 bin/fetch_backbone_records.py ${S}_taxonomy_nr.txt sources/genbank_backbone/records.fasta.gz
 python3 bin/its2.py ${S}_seqs_nr.fasta sources/genbank_backbone/records.fasta.gz work/its2/its2_cut
 python3 bin/its2_partials.py work/its2/its2_cut work/its2/its2_refs 8
+python3 bin/ncbi_names.py ${S}_taxonomy_nr.txt curation/ncbi_names.tsv   # current NCBI names; refetch before a release
 python3 bin/build.py work/its2/its2 ${S}_taxonomy_nr.txt nemabiome_20260317 work/build --workers 8 \
     --layer curation/long_read_its2.tsv
 ```
