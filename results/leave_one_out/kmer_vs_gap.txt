@@ -1,0 +1,26 @@
+Whole reads. Points of all queries of the mode; right / wrong species calls.
+
+== present (2,743 queries)
+   gap rule outcome                      share        assignTaxonomy                IdTaxa
+   gap rule names species                53.0%       51.5 /   0.5       51.5 /   0.7
+   own species best, < 99%               22.9%       21.1 /   0.2       18.1 /   0.1
+   own >= 99%, sister 0-3 edits off      11.6%        8.7 /   1.0        6.3 /   0.2
+   another species closest                9.2%        2.8 /   2.7        0.5 /   1.6
+   tied with another species              2.4%        1.1 /   0.4        0.2 /   0.0
+   no hit                                 0.8%        0.2 /   0.0        0.1 /   0.0
+
+== hidden (3,195 queries)
+   gap rule outcome                      share        assignTaxonomy                IdTaxa
+   gap rule names species                 6.3%        0.0 /   5.5        0.0 /   5.4
+   another species closest               70.0%        0.0 /  35.9        0.0 /  17.0
+   tied with another species              2.4%        0.0 /   0.5        0.0 /   0.1
+   no hit                                21.3%        0.0 /   2.0        0.0 /   0.2
+
+Species-call rate by identity of the best hit: present (own species best; calls right) /
+hidden (species missing; calls wrong).
+   identity   present  hidden        assignTaxonomy                IdTaxa
+   >= 99%       1,790     367      95% /  74% (1705:273)      89% /  60% (1598:222)
+   98-99%         354     253      95% /  68% (338:171)      88% /  57% (311:144)
+   97-98%          98     277      90% /  56% (88:155)      79% /  47% (77:130)
+   95-97%         108     382      89% /  53% (96:203)      78% /  37% (84:140)
+   90-95%          61     597      89% /  46% (54:277)      44% /  11% (27:66)
