@@ -90,7 +90,8 @@ differently. `bin/classify_asvs.py` writes these as `nearest` and
 assignTaxonomy and IdTaxa compare k-mers over the whole ASV, not over
 the reference's span. Against this database, whose records stop before
 the 28S stretch, every ASV carries ~47 bases no reference has. Cut the
-stretch off the ASVs first (`bin/trim_28s.py`: at the 28S anchor
+stretch off the ASVs first (`bin/trim_28s.py`, or `R/trim_28s.R` as
+shipped with the release: at the 28S anchor
 `AACCTGAGCTCAGTCGTGATTACCCGCCGAACTTAAGCATATCA`, else the last 47
 bases). Uncut, assignTaxonomy named 45% of reads of one sheep set to
 species; cut, 99.3%.

@@ -163,6 +163,46 @@ k-mer classifiers named 86-100% of reads to species, the gap rule
 The mocks' truth includes two backbone mislabels this database corrects
 (docs/DESIGN.md §6.3; `results/mocks/`).
 
+## For DADA2 and IdTaxa users
+
+The release carries the database in the formats of the nemabiome.ca
+DADA2 workflow, to use in place of nemabiome's own files:
+
+| file | use |
+|---|---|
+| `nemits2_<version>_dada2.fasta` | `assignTaxonomy` reference |
+| `nemits2_<version>_idtaxa.RData` | `load()` it for `trainingSet`, then `IdTaxa` |
+| `trim_28s.R` | **required**: cut the 28S stretch off ASVs before classifying |
+
+Records here stop where the ~47-base 28S stretch before NC2 starts; your
+ASVs end in it. assignTaxonomy and IdTaxa compare k-mers over the whole
+ASV, so uncut ASVs lose most species calls (one sheep set: 45% of reads
+to species uncut, 99.3% cut). After `removeBimeraDenovo`:
+
+```r
+source("trim_28s.R")
+seqs <- getSequences(seqtab.nochim)
+cut  <- trim_28s(seqs)
+ok   <- nchar(gsub("N", "", cut)) >= 100      # shorter is not ITS2
+
+taxa <- assignTaxonomy(cut[ok], "nemits2_<version>_dada2.fasta", minBoot = 80)
+rownames(taxa) <- seqs[ok]                      # back to your ASVs
+
+load("nemits2_<version>_idtaxa.RData")          # trainingSet
+ids <- IdTaxa(DNAStringSet(cut[ok]), trainingSet, strand = "both", threshold = 60)
+```
+
+Concatenated 2x150 ASVs (`mergePairs(justConcatenate = TRUE)`) are cut
+in their reverse part. Set a seed and report it: IdTaxa's calls are
+random draws, and ASVs near its threshold change between runs - in one
+cattle set, *Haemonchus placei* ASVs holding 10-23% of reads sat at
+confidence 62-76 and switched between species and genus with the seed.
+
+Which classifier to use is a trade-off (docs/DESIGN.md §6.2): k-mer
+classifiers name the most species when every species is in the
+database; when some may be missing, they name a wrong one far more often
+than the span-scored gap rule (`bin/classify_asvs.py`).
+
 ## Build
 
 ```bash
@@ -174,6 +214,7 @@ python3 bin/its2_partials.py work/its2/its2_cut work/its2/its2_refs 8
 python3 bin/ncbi_names.py ${S}_taxonomy_nr.txt curation/ncbi_names.tsv   # current NCBI names; refetch before a release
 python3 bin/build.py work/its2/its2 ${S}_taxonomy_nr.txt nemabiome_20260317 work/build --workers 8 \
     --layer curation/long_read_its2.tsv
+bin/export_kmer.sh work/build work/build/kmer nemits2_dev   # DADA2 / IdTaxa files (R, dada2, DECIPHER)
 ```
 
 The long-read layer is committed. To remake it, scan each assembly or
@@ -203,6 +244,7 @@ download comes from.
 | `species_margins.tsv` | edits to the nearest record of another species, over the shorter record's span |
 | `anchor_lookalikes.tsv` | adapter-anchor near-copies, for amphid's pre-flight mask |
 | `manifest.json`, `summary.txt` | versions, primers, windows, counts, checksums |
+| `nemits2_<version>_dada2.fasta`, `nemits2_<version>_idtaxa.RData`, `trim_28s.R` | for the DADA2 workflow (above) |
 
 ## Citation
 

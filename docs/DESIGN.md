@@ -591,6 +591,13 @@ species (`results/dada2_comparison/`):
   the second kind cannot be told from a missing relative. The `nearest`
   and `next` columns put both on the record.
 
+IdTaxa's calls are random draws (bootstraps, and sampling in
+training). In the cattle set the large *H. placei* ASVs sit at
+confidence 62-76 against a threshold of 60, and across five seeds ASVs
+holding 10-23% of reads switched between species and genus; the IdTaxa
+columns above are single runs, and the 2x150 / 2x250 difference in that
+set is mostly this.
+
 **Which to use.** For samples whose species are all in the database
 (livestock), assignTaxonomy or IdTaxa on 28S-cut ASVs with this
 database names most, and here agreed with every other arm. Where species may be
@@ -677,6 +684,16 @@ As vespa-18s-refdb (`refdb.fasta`, `taxonomy.tsv`, `members.tsv`,
   primer to primer;
 - `manifest.json` adds `score_over`, the rule the windows and margins
   assume.
+- **k-mer classifier files** (`bin/export_kmer.sh`), for the DADA2
+  workflow: an assignTaxonomy reference (`bin/export_dada2.py`; a record
+  is written only to the rank it reaches), an IdTaxa `trainingSet`
+  (`bin/train_idtaxa.R`), and `R/trim_28s.R`, which users must run on
+  their ASVs first (§6.2). The records are not padded with a borrowed
+  28S stretch to spare that step: most records lack their own, it varies
+  by 1-6 bases, and borrowing would invent sequence. `trim_28s.R` gives
+  the same cuts as `bin/trim_28s.py` on all 1,143 test and mock ASVs, and
+  with the released files reproduced the assignTaxonomy results of §6.2
+  exactly.
 
 amphid needs changes before it can use this database:
 [feedback/its2_notes_for_amphid.md](feedback/its2_notes_for_amphid.md).
