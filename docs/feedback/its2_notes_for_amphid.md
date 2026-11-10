@@ -1,6 +1,6 @@
 # Notes for amphid: using the nemabiome ITS2 database
 
-From nemabiome-its2-refdb v0.1.0 (2026-11-10). The
+From nemabiome-its2-refdb v0.1.1 (2026-11-10). The
 database follows vespa-18s-refdb's release format. These are the
 places where ITS2 needs something V4 did not.
 
@@ -61,7 +61,7 @@ the species-level records, 410 are tied with another species, 897 are
 one edit away and 712 two.
 
 A leave-one-out test (DESIGN §6.1; 3,195 queries, 1,224 species, on
-the current development build) shows identity alone is the wrong
+v0.1.1) shows identity alone is the wrong
 measure. Under the V4 limits only 17.9% of reads whose species is in
 the database are named to species. What separates a right call from a
 wrong one is the margin to the next species. Recommended rule:

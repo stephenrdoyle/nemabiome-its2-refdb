@@ -171,7 +171,7 @@ same effect dropped pairs in vespa-18s-refdb's neighbour check.)
   another species' record over its span. A read scores the same
   against both, so the resolution tables stop it at the rank the two
   share. 343 records read whole, 473 through 2x150 windows (the current
-  development build; 410 and 522 in v0.1.0, 732 and 745 before curation
+  v0.1.1; 410 and 522 in v0.1.0, 732 and 745 before curation
   and folding).
 - **`species_status`** (`taxonomy.tsv`): `named` if the record reaches
   species; `shared` if it stops above species because its members name
@@ -218,7 +218,7 @@ The same test is in §6.
 v0.1.0, after the curation of §5.2-5.3, folding (§8, item 4) and the
 long-read layer (§5.5), has 11,956 records, 1,840 species with a record
 of their own and 426 genera; 96% of records resolve to species read
-whole, 94% through 2x150 windows. The current development build adds
+whole, 94% through 2x150 windows. v0.1.1 adds
 the strand and `part` steps (§3.2) and folds weak records (§8, item 9):
 11,146 records, the same species and genera, 96% to species read whole
 and 94% through 2x150 windows (`results/dev_build_summary.txt`).
@@ -504,7 +504,7 @@ pairs, `bin/classify_asvs.py` for DADA2 ASVs. Both share the scorer.
   matching bases, which hid the nearest other species from reads of
   species with hundreds of records: that neighbour is often a partial
   with fewer matches (issue #1). The figures below are uncapped, on the
-  current development build (§5.1).
+  v0.1.1 (§5.1).
 - **Ranking by identity**, not raw edits, over at least 100 bases:
   ranked by edits, a 77-base partial 32 edits off beat full-length
   references.
@@ -739,14 +739,14 @@ What the mocks can and cannot say:
   poculatus* and *Petrovinema poculatum* as two species, and this
   database holds *Cylicodontophorus* and *Parapoteriostomum mettami*
   apart, which split the k-mer arms' votes on v0.1.0 (4.9% of equine
-  reads stopped above genus; none on the current build). Scored as one
+  reads stopped above genus; none in v0.1.1). Scored as one
   species each.
 - **Two sources are not real amplicons.** One *H. placei* source is
   AM410070 as deposited, reverse-complemented, so its ASV (0.75% of
   ruminant reads) is reversed; the classifier now turns it (§6). One
   *Cylicostephanus longibursatus* source is MG738692, a partial record
   ~50 bases short of the ITS2's 3' end. v0.1.0 held it as a record of
-  its own and matched it exactly; the current build folds it into a
+  its own and matched it exactly; v0.1.1 folds it into a
   full-length record (§8, item 9), against which the truncated ASV is
   charged for the missing end. That is the equine gap rule's 1.0%
   unassigned. A real amplicon carries the full end.
@@ -805,7 +805,7 @@ amphid needs changes before it can use this database:
 4. **Contained records of the same species**: done. A partial record
    identical over its span to a full-length record of the same species is
    folded into it (`fold_contained` in `bin/build.py`): 1,115 records in
-   v0.1.0, 1,122 in the current development build. Its source records stay in `members.tsv`, noted.
+   v0.1.0, 1,122 in v0.1.1. Its source records stay in `members.tsv`, noted.
    Partials inside another species' full-length record are kept; they
    are real ties.
 5. **Shared ITS2 types** (§5.3, §5.4): *Cylicocyclus insigne* /
@@ -816,15 +816,15 @@ amphid needs changes before it can use this database:
 6. **Mock communities**: done (§6.3). They test present species only; a
    missing-species version (each mock species removed in turn) was not
    run.
-7. **Unmeasured records** (1,713 in the current build): a lower-identity relative, or an HMM
+7. **Unmeasured records** (1,713 in v0.1.1): a lower-identity relative, or an HMM
    for the 28S stretch, could anchor more of them.
 8. **ITS1-5.8S-ITS2** for NC5/NC2 nanopore runs, should those be used
    later: nemabiome has a separate database (v0.0.1).
 9. **Weak records** (issue #2): done. A weak record - partial or
    unmeasured, resting on one accession - within 1 edit of a robust
    record of its own species is folded into it (`fold_redundant` in
-   `bin/build.py`, every pair compared): 752 records in the current
-   build, each noted in `members.tsv`. In v0.1.0 a few of them, 2-3
+   `bin/build.py`, every pair compared): 752 records in
+   v0.1.1, each noted in `members.tsv`. In v0.1.0 a few of them, 2-3
    edits from another species, stopped most of the *Haemonchus* reads
    in §6.2 at genus. A read matching a folded record is at most 1 edit
    further from its host, so a margin can fall by one: in the ruminant
@@ -838,9 +838,8 @@ amphid needs changes before it can use this database:
 11. **Margins in v0.1.0's tables** (`build.py` `margins()`) came from the
     top 30 other-species candidates by matching bases. Scored uncapped,
     744 records' whole-read margins are lower, 128 fall below 4 edits and
-    3 become ties. Done: the cap is lifted, and the current development
-    build carries the corrected margins and resolution tables. They reach
-    users with the next release.
+    3 become ties. Done: the cap is lifted, and v0.1.1 carries the
+    corrected margins and resolution tables.
 12. **Records cut on the wrong strand**: done (§3.2). 36 records turned.
     LN626259 (*Dirofilaria*) maps equally well both ways and is left as
     deposited; AM410070 keeps a 7-base NC1 remnant with an indel.
