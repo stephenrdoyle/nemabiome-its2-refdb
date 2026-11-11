@@ -170,8 +170,8 @@ same effect dropped pairs in vespa-18s-refdb's neighbour check.)
 - **Ties**: a species-level record at margin 0 sits exactly inside
   another species' record over its span. A read scores the same
   against both, so the resolution tables stop it at the rank the two
-  share. 297 records read whole, 416 through 2x150 windows (`main` after
-  the 2026-11-11 curation pass; 343 and 473 in v0.1.1, 410 and 522 in
+  share. 297 records read whole, 416 through 2x150 windows (v0.1.2; 343
+  and 473 in v0.1.1, 410 and 522 in
   v0.1.0, 732 and 745 before curation and folding).
 - **`species_status`** (`taxonomy.tsv`): `named` if the record reaches
   species; `shared` if it stops above species because its members name

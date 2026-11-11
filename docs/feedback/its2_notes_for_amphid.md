@@ -61,7 +61,7 @@ the species-level records, 410 are tied with another species, 897 are
 one edit away and 712 two.
 
 A leave-one-out test (DESIGN §6.1; 3,182 queries, 1,220 species, on
-`main` after the 2026-11-11 curation pass) shows identity alone is the wrong
+v0.1.2) shows identity alone is the wrong
 measure. Under the V4 limits only 18.2% of reads whose species is in
 the database are named to species. What separates a right call from a
 wrong one is the margin to the next species. Recommended rule:
