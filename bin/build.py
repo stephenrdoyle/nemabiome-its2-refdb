@@ -14,7 +14,7 @@ Writes the same set of files as vespa-18s-refdb, so amphid reads either:
 
   refdb.fasta                   one record per unique ITS2, NC1 end to 28S
   taxonomy.tsv                  merged taxonomy, deepest rank, members,
-                                grade and coverage (below)
+                                grade and coverage (below), lineage
   members.tsv                   every source record and what became of it
   conflicts.tsv                 records whose members disagree at order or
                                 above, and how each was decided
@@ -37,7 +37,11 @@ species for each backbone taxid; a record named otherwise when markerDB
 built the backbone takes NCBI's current names (a moved genus, a synonym),
 noted in members.tsv. Then curation/overrides.tsv (--overrides) drops or
 relabels source records; a dropped record stays in members.tsv with its
-reason.
+reason. Last, curation/lineages.tsv (--lineages) names a published line
+within a species (the Teladorsagia circumcincta goat line): a record
+takes the lineage of its annotated members, in taxonomy.tsv's lineage
+column, and keeps its species. Members disagreeing on a lineage stop the
+build.
 
 MERGING. Identical ITS2s become one record. At each rank the record
 takes the single informative name its members agree on; two names stop
@@ -393,6 +397,8 @@ def main() -> int:
     ap.add_argument("--overrides", default=os.path.join(HERE, "curation", "overrides.tsv"))
     ap.add_argument("--names", default=os.path.join(HERE, "curation", "ncbi_names.tsv"),
                     help="current NCBI names per taxid (bin/ncbi_names.py); '' to skip")
+    ap.add_argument("--lineages", default=os.path.join(HERE, "curation", "lineages.tsv"),
+                    help="accession -> lineage within its species; '' to skip")
     ap.add_argument("--layer", action="append", default=[],
                     help="a layer TSV from bin/genome_layer.py; repeatable")
     ap.add_argument("--read-lengths", default=",".join(map(str, READ_LENGTHS)),
@@ -462,6 +468,14 @@ def main() -> int:
                 label[acc] = (label[acc][0], lab)
             else:
                 sys.exit(f"override {acc}: unknown action {r['action']}")
+    lineage_of = {}
+    if a.lineages and os.path.exists(a.lineages):
+        rows = csv.DictReader((ln for ln in open(a.lineages) if not ln.startswith("#")), delimiter="\t")
+        for r in rows:
+            acc = r["accession"].split(".")[0]
+            if acc not in label or acc in drops:
+                sys.exit(f"lineage for {acc}, which is not in the backbone or is dropped")
+            lineage_of[acc] = r["lineage"]
 
     # --- collapse
     groups = collections.defaultdict(list)
@@ -524,12 +538,25 @@ def main() -> int:
     folded = fold_contained(seqs, tax, members, a.workers)
     folded_weak = fold_redundant(seqs, tax, members, a.workers)
     order = sorted(seqs)
+    # Lineages after folding: a record takes its annotated members' lineage.
+    lines_of = collections.defaultdict(set)
+    for m in members:
+        acc = m["accession"].split(".")[0]
+        if m["role"] == "kept" and acc in lineage_of:
+            lines_of[m["id"]].add(lineage_of[acc])
+    for rid in order:
+        ls = lines_of.get(rid, set())
+        if len(ls) > 1:
+            sys.exit(f"{rid}: members name lineages {sorted(ls)}")
+        if ls and not tax[rid]["species"]:
+            sys.exit(f"{rid}: lineage {ls.pop()} on a record with no species")
+        tax[rid]["lineage"] = ls.pop() if ls else ""
 
     with open(os.path.join(out, "refdb.fasta"), "w") as fh:
         for rid in order:
             fh.write(f">{rid}\n{seqs[rid]}\n")
     cols = ["id"] + RANKS + ["deepest_rank", "species_status", "members", "grade", "coverage",
-                             "sources"]
+                             "sources", "lineage"]
     with open(os.path.join(out, "taxonomy.tsv"), "w") as fh:
         w = csv.DictWriter(fh, fieldnames=cols, delimiter="\t", lineterminator="\n")
         w.writeheader()
@@ -648,6 +675,8 @@ def main() -> int:
     dec = collections.Counter(c["decision"] for c in conflicts)
     pf = collections.Counter(fit_class.values())
     named = {t["species"] for t in tax.values() if t["species"]}
+    lcount = collections.Counter(f"{tax[rid]['species']}: {tax[rid]['lineage']}" for rid in order
+                                 if tax[rid]["lineage"])
     manifest = {
         "name": f"nemits2_{a.version}", "version": a.version,
         "built": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -665,7 +694,10 @@ def main() -> int:
         "layers": [{"file": os.path.basename(f), "sha256": sha256(f)} for f in layer_files],
         "names": ({"file": os.path.basename(a.names), "sha256": sha256(a.names)}
                   if a.names and os.path.exists(a.names) else None),
+        "lineages": ({"file": os.path.basename(a.lineages), "sha256": sha256(a.lineages)}
+                     if a.lineages and os.path.exists(a.lineages) else None),
         "counts": {"records": len(order), "members": len(members), "named_species": len(named),
+                   "lineage_records": dict(lcount),
                    "grade": dict(gcount), "deepest_rank_nanopore": dict(nano), "folded": folded, "folded_weak": folded_weak,
                    "renamed": len(renamed),
                    "member_roles": dict(roles), "conflicts": dict(dec), "primer_fit": dict(pf)},
@@ -687,6 +719,7 @@ def main() -> int:
              + f"; weak records folded into a same-species record within 1 edit: {folded_weak:,}"
              + f"; renamed to current NCBI names: {len(renamed):,}",
              "conflicts (order or above): " + (", ".join(f"{k} {v}" for k, v in sorted(dec.items())) or "none"),
+             "lineages (records): " + (", ".join(f"{k} {v}" for k, v in sorted(lcount.items())) or "none"),
              "", "Grade (best member):"] + table(gcount, GRADES, len(order))
     lines += ["", f"Deepest rank - nanopore (whole ITS2; {nano_tied:,} species-level records "
                   f"tied with another species' over their span):"] + table(nano, keys, len(order))

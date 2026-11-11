@@ -323,6 +323,18 @@ MH481596) are 1 edit from *H. placei* records and 5-6 from every
 *H. contortus* genome copy; they are dropped too. The *H. placei* assembly (WBPS19
 PRJEB509, short reads) gave no ITS2, nor did McMaster or GCA_007637855.2.
 
+**Lineages.** *Teladorsagia circumcincta* has two ITS2 lines: a
+sheep-and-goat line (61 records, mostly 249 bases) and a goat line
+(255 bases; a 6-base insertion and 4 substitutions, 10 edits from the
+other). Francis & Šlapeta (2023) found the goat line in goats only on
+a pasture shared with sheep. Two records here hold it: AJ577464 and
+MG651890 (one ITS2; genotype Mdh2C of Leignel et al., and an aoudad in
+Tunisia) and AF351782. Rather than split the species,
+`curation/lineages.tsv` gives these records `lineage` = "goat line"
+and the classifier reports it (§7). Their Australian goat-line ASVs
+are 1-5 edits from these, so 8.6% of goat reads stop at genus under the
+gap rule (98.0-98.8%) but still report the line.
+
 **The 2026-11-11 curation pass** (`docs/curation_pass_2026-11-11.md`,
 53 rows added to `curation/overrides.tsv`) went after the two causes of
 the leave-one-out's missing-species errors that a threshold cannot
@@ -941,6 +953,11 @@ As vespa-18s-refdb (`refdb.fasta`, `taxonomy.tsv`, `members.tsv`,
   primer to primer;
 - `manifest.json` adds `score_over`, the rule the windows and margins
   assume.
+- `taxonomy.tsv` ends with `lineage`, a published line within a species
+  (`curation/lineages.tsv`): blank for nearly every record. The species
+  name is unchanged, so the ranks, resolution tables and k-mer files are
+  as without it. The classifier reports it in a `lineage` column when
+  every tied best record carries it.
 - **k-mer classifier files** (`bin/export_kmer.sh`), for the DADA2
   workflow: an assignTaxonomy reference (`bin/export_dada2.py`; a record
   is written only to the rank it reaches), an IdTaxa `trainingSet`

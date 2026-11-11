@@ -20,10 +20,12 @@ labels agree on - so either database can be used with either classifier.
 
 Writes one row per ASV: edits, span, identity, ties, gap, nearest (the
 tied species and their identity) and next (the nearest other species and
-how many edits further it is), and the call under
-each rule of its2_classify.py (v4: amphid's V4 limits; exact: species
+how many edits further it is), the call under each rule of
+its2_classify.py (v4: amphid's V4 limits; exact: species
 only at 0 edits, genus at <= 1; gap: >= 99% and 4 edits
-clearer of any other species - the gap column is that margin).
+clearer of any other species - the gap column is that margin), and the
+lineage within its species that the nearest records carry
+(curation/lineages.tsv), if any.
 """
 
 from __future__ import annotations
@@ -39,8 +41,8 @@ from multiprocessing import Pool
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build import RANKS, merge, read_fasta  # noqa: E402
-from its2_classify import (RULES, _init, _score, call, describe, load_taxonomy,  # noqa: E402
-                           minimap_candidates)
+from its2_classify import (RULES, _init, _score, call, describe, lineage,  # noqa: E402
+                           load_taxonomy, minimap_candidates)
 from seqmatch import revcomp  # noqa: E402
 
 SEP = "N" * 10
@@ -107,7 +109,7 @@ def main() -> int:
         res = {k: (d, sp, t, g, cv, nx) for k, d, sp, t, g, cv, nx in pool.imap_unordered(_score, jobs, chunksize=50)}
     with open(a.out, "w") as fh:
         fh.write("asv\tmode\tedits\tspan\tidentity\tties\tgap\tnearest\tnext\t"
-                 + "\t".join(f"{r}_rank\t{r}_name" for r in RULES) + "\n")
+                 + "\t".join(f"{r}_rank\t{r}_name" for r in RULES) + "\tlineage\n")
         for i, (name, s) in enumerate(asvs):
             d, sp, t, g, cv, nx = res[i]
             near, nxt = describe(tax, t, d, sp, nx)
@@ -115,7 +117,8 @@ def main() -> int:
             calls = [call(tax, t, d, sp, r, g, cv) for r in RULES]
             fh.write(f"{name}\t{'window' if SEP in s else 'whole'}\t{'' if d is None else d}\t"
                      f"{sp}\t{ident}\t{len(t)}\t{'' if g is None else g}\t{near}\t{nxt}\t"
-                     + "\t".join(f"{rk or 'unassigned'}\t{nm}" for rk, nm in calls) + "\n")
+                     + "\t".join(f"{rk or 'unassigned'}\t{nm}" for rk, nm in calls)
+                     + f"\t{lineage(tax, t)}\n")
     return 0
 
 

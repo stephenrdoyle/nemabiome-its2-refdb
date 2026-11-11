@@ -360,6 +360,16 @@ def describe(tax, ties, d, span, nxt):
     return f"{near} {100 * (1 - d / span):.1f}%", f"{nxt[0]} +{nxt[1]}" if nxt else "none close"
 
 
+def lineage(tax, ties):
+    """The lineage column: the line within its species (taxonomy.tsv's
+    lineage, curation/lineages.tsv) that every tied best record carries,
+    else blank. It describes the nearest records whatever rank the call
+    stops at: a goat-line read at 98% stops at genus but still says
+    "goat line"."""
+    ls = {tax[t].get("lineage", "") for t in ties}
+    return ls.pop() if len(ls) == 1 else ""
+
+
 def call(tax, ties, d, span, rule, gap=None, cover=1.0):
     lab = merge_records([[tax[t][k] for k in RANKS] for t in ties])
     if d is None or span == 0:
@@ -444,14 +454,14 @@ def main() -> int:
 
     idx = {m: {s: i for i, s in enumerate(its)} for m, its in items.items()}
     with open(a.prefix + ".reads.tsv", "w") as fh:
-        fh.write("mode\tkey\treads\tedits\tspan\tidentity\tties\tnearest\tnext\n")
+        fh.write("mode\tkey\treads\tedits\tspan\tidentity\tties\tnearest\tnext\tlineage\n")
         for mode, its in items.items():
             for i, s in enumerate(its):
                 d, sp, t, _, _, nx = res[(mode, i)]
                 near, nxt = describe(tax, t, d, sp, nx)
                 ident = "" if d is None or not sp else f"{1 - d / sp:.4f}"
                 fh.write(f"{mode}\t{i}\t{uniq[mode][s]}\t{'' if d is None else d}\t{sp}\t{ident}\t{len(t)}\t"
-                         f"{near}\t{nxt}\n")
+                         f"{near}\t{nxt}\t{lineage(tax, t)}\n")
     rows = collections.Counter()
     for run, cnt in per_run.items():
         for mode, c in cnt.items():

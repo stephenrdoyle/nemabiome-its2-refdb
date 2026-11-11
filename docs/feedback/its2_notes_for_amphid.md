@@ -99,6 +99,16 @@ close". Both stop at genus for different reasons, and users act on them
 differently. `bin/classify_asvs.py` writes these as `nearest` and
 `next`.
 
+**Report the lineage.** `taxonomy.tsv` has a `lineage` column: a
+published line within a species, kept under the species' name. For now
+only the *Teladorsagia circumcincta* goat line (2 records), which
+Francis & Šlapeta (2023) found in goats and not in sheep on shared
+pasture. When every tied best reference carries the same lineage,
+report it with the call, at any rank: a goat-line read at 98% stops at
+genus but is still "nearest *T. circumcincta* (goat line) 98.0%". Blank
+means no line is recorded, not the other line. `bin/classify_asvs.py`
+writes it as `lineage`.
+
 **Score read windows strictly.** Charge every reference base from the
 reference's own end to where a window stops; leave read bases free only
 before the reference's start (primer offset, up to 30). Cut the second

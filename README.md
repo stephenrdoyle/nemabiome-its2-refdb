@@ -317,7 +317,7 @@ download comes from.
 | file | holds |
 |---|---|
 | `refdb.fasta` | one record per unique ITS2 |
-| `taxonomy.tsv` | superkingdom ... species, deepest rank, members, grade, coverage |
+| `taxonomy.tsv` | superkingdom ... species, deepest rank, members, grade, coverage, sources, lineage (a published line within a species; blank for nearly all) |
 | `members.tsv` | every source record, its grade, and bases trimmed at each end |
 | `conflicts.tsv` | records whose members disagree at order or above |
 | `primer_fit.tsv` | NC1/NC2 edits of each record's best member, where its source record holds the sites |

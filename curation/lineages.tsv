@@ -1,0 +1,14 @@
+# Lineages within a species: a named, published intraspecific line that a
+# read can be told apart by, kept under its species' name. bin/build.py
+# (--lineages) gives a record the lineage of its annotated members; the
+# record's taxonomy is unchanged. Accession without version.
+#
+# Teladorsagia circumcincta goat line (Francis & Slapeta 2023, Parasitology
+# 150:672-682): a 6-base insertion and 4 substitutions against the
+# sheep-and-goat line. The same ITS2 type is in GenBank as genotype Mdh2C
+# (Leignel et al., J Parasitol, in press per AF351782) and from an aoudad
+# in Tunisia. The sheep-and-goat line is left unannotated.
+accession	lineage	note
+AJ577464	goat line	T. circumcincta genotype Mdh2C (Leignel, France); 255 bases against 249 for the sheep-and-goat line
+MG651890	goat line	T. circumcincta from Ammotragus lervia, Tunisia; identical to AJ577464
+AF351782	goat line	T. circumcincta genotype Mdh2C (Leignel et al., J Parasitol); 252 bases, near complete
