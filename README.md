@@ -9,7 +9,7 @@ counterpart of [vespa-18s-refdb](https://github.com/stephenrdoyle/vespa-18s-refd
 writes the same release format, and is consumed by
 [amphid](https://github.com/stephenrdoyle/nf-amphid-pipeline).
 
-**Status: v0.1.2 (2026-11-11).** v0.1.0 was the first release. See
+**Status: v0.1.3 (2026-11-11).** v0.1.0 was the first release. See
 [docs/DESIGN.md](docs/DESIGN.md) for the design and the measurements
 behind it, and [docs/feedback/its2_notes_for_amphid.md](docs/feedback/its2_notes_for_amphid.md)
 for what amphid needs to change to use it. DADA2 and IdTaxa users: see
@@ -18,10 +18,10 @@ for what amphid needs to change to use it. DADA2 and IdTaxa users: see
 ## Download and verify
 
 ```bash
-V=v0.1.2
+V=v0.1.3
 curl -LO https://github.com/stephenrdoyle/nemabiome-its2-refdb/releases/download/$V/nemits2_$V.tar.gz
 shasum -a 256 nemits2_$V.tar.gz
-# f13d04e88320c8da1537fa5f3a9bb03579d78156cdbbf36947459172873c4d84
+# 890beb48998fa6a1f2203e4184b342a380f2274de663a73dd5a4a1f6c9b9385e
 tar -xzf nemits2_$V.tar.gz
 ```
 
@@ -42,7 +42,11 @@ record anchored at both ends: `complete`, `near_complete` (>= 98%),
 `partial_90`, `partial_75`, `partial`, or `unmeasured` (no relative at
 >= 80% identity).
 
-## v0.1.2
+## v0.1.3
+
+v0.1.3 adds a `lineage` column to `taxonomy.tsv` (the *Teladorsagia
+circumcincta* goat line, `curation/lineages.tsv`); records and calls are
+as in v0.1.2.
 
 11,135 records from 15,282 source records: 15,108 nemabiome sequences
 (version 20260317; 54 dropped and 33 relabelled,
@@ -74,15 +78,15 @@ and margins and resolution tables computed against every candidate
 <!-- figures:start -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/grade_dark.svg">
-  <img alt="Bar chart: records per nematode group in nemits2_v0.1.2, by how much of the ITS2 they hold: I · animal parasites 390 (complete 28, near complete 176, partial 55, unmeasured 131); I · plant parasites 168 (complete 0, near complete 0, partial 0, unmeasured 168); I · free-living 16 (complete 2, near complete 2, partial 0, unmeasured 12); II · plant parasites 56 (complete 0, near complete 0, partial 0, unmeasured 56); II · free-living 19 (complete 1, near complete 0, partial 0, unmeasured 18); III · animal parasites 2,003 (complete 778, near complete 670, partial 348, unmeasured 207); IV · animal parasites 702 (complete 155, near complete 240, partial 89, unmeasured 218); IV · plant parasites 4,098 (complete 2,186, near complete 899, partial 450, unmeasured 563); IV · free-living 42 (complete 13, near complete 9, partial 6, unmeasured 14); V · animal parasites 3,334 (complete 1,077, near complete 1,431, partial 557, unmeasured 269); V · free-living 291 (complete 173, near complete 58, partial 19, unmeasured 41); Other Chromadoria · free-living 15 (complete 0, near complete 0, partial 0, unmeasured 15); Family not placed 1 (complete 1, near complete 0, partial 0, unmeasured 0)." src="docs/figures/grade_light.svg" width="760">
+  <img alt="Bar chart: records per nematode group in nemits2_v0.1.3, by how much of the ITS2 they hold: I · animal parasites 390 (complete 28, near complete 176, partial 55, unmeasured 131); I · plant parasites 168 (complete 0, near complete 0, partial 0, unmeasured 168); I · free-living 16 (complete 2, near complete 2, partial 0, unmeasured 12); II · plant parasites 56 (complete 0, near complete 0, partial 0, unmeasured 56); II · free-living 19 (complete 1, near complete 0, partial 0, unmeasured 18); III · animal parasites 2,003 (complete 778, near complete 670, partial 348, unmeasured 207); IV · animal parasites 702 (complete 155, near complete 240, partial 89, unmeasured 218); IV · plant parasites 4,098 (complete 2,186, near complete 899, partial 450, unmeasured 563); IV · free-living 42 (complete 13, near complete 9, partial 6, unmeasured 14); V · animal parasites 3,334 (complete 1,077, near complete 1,431, partial 557, unmeasured 269); V · free-living 291 (complete 173, near complete 58, partial 19, unmeasured 41); Other Chromadoria · free-living 15 (complete 0, near complete 0, partial 0, unmeasured 15); Family not placed 1 (complete 1, near complete 0, partial 0, unmeasured 0)." src="docs/figures/grade_light.svg" width="760">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/taxa_dark.svg">
-  <img alt="Bar chart: records per nematode group in nemits2_v0.1.2, and how many resolve to species read whole: I · animal parasites 390 (368 to species); I · plant parasites 168 (168 to species); I · free-living 16 (16 to species); II · plant parasites 56 (56 to species); II · free-living 19 (19 to species); III · animal parasites 2,003 (1,880 to species); IV · animal parasites 702 (684 to species); IV · plant parasites 4,098 (3,938 to species); IV · free-living 42 (42 to species); V · animal parasites 3,334 (3,261 to species); V · free-living 291 (280 to species); Other Chromadoria · free-living 15 (14 to species); Family not placed 1 (0 to species)." src="docs/figures/taxa_light.svg" width="760">
+  <img alt="Bar chart: records per nematode group in nemits2_v0.1.3, and how many resolve to species read whole: I · animal parasites 390 (368 to species); I · plant parasites 168 (168 to species); I · free-living 16 (16 to species); II · plant parasites 56 (56 to species); II · free-living 19 (19 to species); III · animal parasites 2,003 (1,880 to species); IV · animal parasites 702 (684 to species); IV · plant parasites 4,098 (3,938 to species); IV · free-living 42 (42 to species); V · animal parasites 3,334 (3,261 to species); V · free-living 291 (280 to species); Other Chromadoria · free-living 15 (14 to species); Family not placed 1 (0 to species)." src="docs/figures/taxa_light.svg" width="760">
 </picture>
 
-How many species nemits2_v0.1.2 can name. A species named in the source records but with no record of its own shares its ITS2 with another species (or sits inside another species' record over its span), so a read from it is named only to genus or above. Names are counted as written.
+How many species nemits2_v0.1.3 can name. A species named in the source records but with no record of its own shares its ITS2 with another species (or sits inside another species' record over its span), so a read from it is named only to genus or above. Names are counted as written.
 
 | Records | Species named in sources | Species with their own record (read whole) | Species named through Illumina 150x150 | Species named through Illumina 250x250 | Genera |
 |---|---:|---:|---:|---:|---:|
@@ -101,7 +105,7 @@ How many species nemits2_v0.1.2 can name. A species named in the source records 
 | Other Chromadoria · free-living | 1 | 1 | 1 | 1 | 2 |
 | Family not placed | 2 | 0 | 0 | 0 | 0 |
 
-How far a record can be named in nemits2_v0.1.2, best case (an exact read, no sequencing error): the share of records resolving to species, and to genus at best.
+How far a record can be named in nemits2_v0.1.3, best case (an exact read, no sequencing error): the share of records resolving to species, and to genus at best.
 
 | Records | Nanopore (whole ITS2): species | genus | Illumina 150x150: species | genus | Illumina 250x250: species | genus |
 |---|---:|---:|---:|---:|---:|---:|
@@ -146,7 +150,7 @@ Tested two ways (docs/DESIGN.md §6): leave-one-out on the database
 itself, and two livestock datasets (one published) run through the standard
 nemabiome DADA2 workflow.
 
-Figures in this section are for v0.1.2. Since v0.1.0 the classifier
+Figures in this section are for v0.1.2 and v0.1.3 (same records). Since v0.1.0 the classifier
 also scores every candidate (issue #1) and scores read windows strictly
 (docs/DESIGN.md §6).
 
