@@ -1,0 +1,42 @@
+== whole: 2,743 present, 3,195 hidden queries
+   identity   gap  present   right  wrong  hidden  right if called
+   100%         1       40      24     16       5   60.0% of present
+   100%         2       23      21      2       3   91.3% of present
+   100%         3       11      10      1       0   90.9% of present
+   100%         4        8       8      0       1  100.0% of present
+   100%       5-6       24      23      1      11   95.8% of present
+   100%        7+      207     203      4      28   98.1% of present
+   99-100%      1      107      77     30      52   72.0% of present
+   99-100%      2       91      80     11      18   87.9% of present
+   99-100%      3       63      58      5      20   92.1% of present
+   99-100%      4       61      58      3      16   95.1% of present
+   99-100%    5-6      103     101      2      20   98.1% of present
+   99-100%     7+    1,052   1,042     10     125   99.0% of present
+
+   Exact matches named at a smaller gap (99-100%: still gap 4):
+   current                recall  52.3%  precision  98.6%  over-class.   6.3%
+   exact at gap >= 3      recall  52.7%  precision  98.6%  over-class.   6.3%
+   exact at gap >= 2      recall  53.4%  precision  98.5%  over-class.   6.4%
+   exact at gap >= 1      recall  54.3%  precision  97.4%  over-class.   6.5%
+
+== 2x150: 2,226 present, 2,612 hidden queries
+   identity   gap  present   right  wrong  hidden  right if called
+   100%         1       38      24     14       2   63.2% of present
+   100%         2       28      26      2       3   92.9% of present
+   100%         3       26      24      2       1   92.3% of present
+   100%         4       15      14      1       5   93.3% of present
+   100%       5-6       37      37      0      19  100.0% of present
+   100%        7+      338     335      3      35   99.1% of present
+   99-100%      1       82      61     21      44   74.4% of present
+   99-100%      2       55      51      4      21   92.7% of present
+   99-100%      3       54      48      6      11   88.9% of present
+   99-100%      4       59      59      0       7  100.0% of present
+   99-100%    5-6      110     109      1      18   99.1% of present
+   99-100%     7+      656     649      7      96   98.9% of present
+
+   Exact matches named at a smaller gap (99-100%: still gap 4):
+   current                recall  54.0%  precision  99.0%  over-class.   6.9%
+   exact at gap >= 3      recall  55.1%  precision  98.9%  over-class.   6.9%
+   exact at gap >= 2      recall  56.3%  precision  98.7%  over-class.   7.0%
+   exact at gap >= 1      recall  57.4%  precision  97.7%  over-class.   7.1%
+

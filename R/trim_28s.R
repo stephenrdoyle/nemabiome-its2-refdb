@@ -22,14 +22,16 @@
 #   ids <- IdTaxa(DNAStringSet(cut[ok]), trainingSet, strand = "both",
 #                 threshold = 60)
 #
-# The cut is at the 28S anchor AACCTGAGCTCAGTCGTGATTACCCGCCGAACTTAAGCATATCA
-# (<= 12 edits, best fit within the last 90 bases), taken only if it
-# removes 35-60 bases; otherwise the last 47 bases go (anchor_only = TRUE
-# leaves such an ASV whole). A concatenated ASV (forward + 10 N + reverse,
-# from mergePairs(justConcatenate = TRUE)) is cut in its reverse part.
+# The cut is at the 28S anchor AACCTGAGCTCAGTCGTGATTACCCGCCGAACTTAAGCAT,
+# which stops at the end of the conserved motif so that reads cut there
+# still fit it in place (<= 12 edits, best fit within the last 90
+# bases), taken only if it removes 35-60 bases; otherwise the last 47
+# bases go (anchor_only = TRUE leaves such an ASV whole). A concatenated
+# ASV (forward + 10 N + reverse, from mergePairs(justConcatenate = TRUE))
+# is cut in its reverse part.
 # The same rule as bin/trim_28s.py.
 
-S28_ANCHOR <- "AACCTGAGCTCAGTCGTGATTACCCGCCGAACTTAAGCATATCA"
+S28_ANCHOR <- "AACCTGAGCTCAGTCGTGATTACCCGCCGAACTTAAGCAT"
 
 # Start (0-based) of the best fit of pattern anywhere in text, the
 # pattern aligned end to end; the earliest end on a tie. NA if no fit

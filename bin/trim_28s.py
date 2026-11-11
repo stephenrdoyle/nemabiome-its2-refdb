@@ -34,13 +34,18 @@ STRETCH, LOOK, MAX_EDITS = 47, 90, 12
 CUT_RANGE = (35, 60)
 MIN_LEN = 100
 SEP = "N" * 10
+# The anchor stops at the conserved motif's end (...AAGCAT). bin/trim_primers.py
+# cuts read 2 there, so an ASV ends on it; the 4 bases S28 carries past it
+# would be missing, and the fit would slide 4 bases into ITS2 to make up
+# for them, costing a 2x150 window 4 edits.
+ANCHOR = S28[:-4]
 
 
 def trim(s, anchor_only=False):
     """(trimmed sequence, whether the anchor was found)."""
     head, sep, tail = s.partition(SEP)
     part = tail if sep else head
-    hit = find_anchor_cost(part[-LOOK:], S28, MAX_EDITS) if len(part) >= LOOK else None
+    hit = find_anchor_cost(part[-LOOK:], ANCHOR, MAX_EDITS) if len(part) >= LOOK else None
     cut = len(part) - LOOK + hit[0] if hit else None
     found = cut is not None and CUT_RANGE[0] <= len(part) - cut <= CUT_RANGE[1]
     if not found:

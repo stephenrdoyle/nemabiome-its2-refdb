@@ -4,23 +4,23 @@ Leave-one-out, 3,195 queries (5 per species at most) from 1,224 species in work/
    rule       right species    WRONG species     genus, right      WRONG genus family or higher       unassigned
    v4                  0.0%             2.0%             3.6%             0.3%            34.1%            60.0%
    exact               0.0%             1.6%             4.9%             0.4%            33.1%            60.0%
-   gap                 0.0%             6.3%            20.2%             1.6%            12.0%            60.0%
+   gap                 0.0%             6.4%            20.1%             1.6%            12.0%            60.0%
 
 == hidden, 2x150 (2,612 queries)
    rule       right species    WRONG species     genus, right      WRONG genus family or higher       unassigned
    v4                  0.0%             2.5%             4.4%             0.4%            32.5%            60.2%
    exact               0.0%             2.5%             4.6%             0.4%            32.4%            60.2%
-   gap                 0.0%             6.9%            19.4%             1.5%            12.1%            60.2%
+   gap                 0.0%             7.0%            19.2%             1.5%            12.1%            60.2%
 
 == present, whole (2,743 queries)
    rule       right species    WRONG species     genus, right      WRONG genus family or higher       unassigned
    v4                 17.9%             1.2%            30.9%             0.1%            44.9%             5.0%
    exact              10.7%             0.9%            41.0%             0.3%            42.1%             5.0%
-   gap                52.3%             0.7%            36.2%             0.6%             5.2%             5.0%
+   gap                53.4%             0.8%            34.9%             0.6%             5.2%             5.0%
 
 == present, 2x150 (2,226 queries)
    rule       right species    WRONG species     genus, right      WRONG genus family or higher       unassigned
    v4                 20.8%             1.0%            38.4%             0.2%            35.0%             4.7%
    exact              20.8%             1.0%            38.7%             0.2%            34.6%             4.7%
-   gap                54.0%             0.5%            35.7%             0.5%             4.5%             4.7%
+   gap                56.3%             0.7%            33.2%             0.5%             4.5%             4.7%
 

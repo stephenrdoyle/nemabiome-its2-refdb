@@ -4,17 +4,17 @@ Clean ASVs (an exact source copy; truth = the mock label), read-weighted:
    arm                            species recall        precision     genus recall        precision  abund. err  vs mock
    assignTaxonomy x nemabiome              93.8%           100.0%           100.0%           100.0%        6.2%    30.7%
    IdTaxa x nemabiome                      94.6%           100.0%            98.2%           100.0%        5.5%    26.5%
-   assignTaxonomy x this db                85.2%           100.0%            99.2%           100.0%       14.9%    38.8%
-   IdTaxa x this db                        92.7%           100.0%            97.9%           100.0%        7.4%    29.3%
-   gap rule x this db                      43.2%           100.0%            97.8%           100.0%       56.8%    61.4%
+   assignTaxonomy x this db                85.3%           100.0%            99.2%           100.0%       14.8%    38.7%
+   IdTaxa x this db                        92.8%           100.0%            97.7%           100.0%        7.4%    29.2%
+   gap rule x this db                      78.9%           100.0%            97.8%           100.0%       20.9%    31.6%
 
 Noisy ASVs (1-8 edits from sources of one species), read-weighted:
    arm                            species recall        precision     genus recall        precision
    assignTaxonomy x nemabiome              99.5%           100.0%           100.0%           100.0%
    IdTaxa x nemabiome                     100.0%           100.0%           100.0%           100.0%
-   assignTaxonomy x this db                68.0%           100.0%           100.0%           100.0%
-   IdTaxa x this db                        81.9%           100.0%           100.0%           100.0%
-   gap rule x this db                      80.1%           100.0%           100.0%           100.0%
+   assignTaxonomy x this db                68.2%           100.0%           100.0%           100.0%
+   IdTaxa x this db                        85.8%           100.0%           100.0%           100.0%
+   gap rule x this db                     100.0%           100.0%           100.0%           100.0%
 
 
 

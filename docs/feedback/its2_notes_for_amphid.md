@@ -67,7 +67,8 @@ the database are named to species. What separates a right call from a
 wrong one is the margin to the next species. Recommended rule:
 
 - **species**: >= 99% identity over the span AND the best reference of
-  any other species is >= 4 edits further off (same span);
+  any other species is >= 4 edits further off (same span); or an exact
+  match (0 edits) AND that reference is >= 2 edits off;
 - **genus** >= 97%, **family** >= 95%;
 - a reference with `species_status` = `unnamed` (hybrids, cf.,
   environmental) is not "another species"; a `shared` one is.
@@ -79,7 +80,7 @@ species is missing from the database.
 | Rule (whole reads) | Species recall | Species precision | Genus recall | Genus precision | Over-classification |
 |---|---:|---:|---:|---:|---:|
 | V4 limits | 17.9% | 93.7% | 49.7% | 99.3% | 2.0% |
-| gap rule | 52.3% | 98.6% | 89.2% | 99.3% | 6.3% |
+| gap rule | 53.4% | 98.5% | 89.2% | 99.3% | 6.4% |
 | dada2 assignTaxonomy, for scale | 85.4% | 94.6% | 97.4% | 99.2% | 43.9% |
 | DECIPHER IdTaxa, for scale | 76.9% | 96.7% | 93.5% | 99.4% | 22.7% |
 
@@ -89,9 +90,9 @@ they are reads identical to a record deposited under another name.
 
 **Report how close a call came.** With each call, give the best species
 and its identity, and the nearest other species with how many edits
-further it is. Example: "*Trichostrongylus*; nearest *T. retortaeformis*
-100%; next *T. axei* +2". A genus call then says whether it is "exactly
-species X, but its sister is 2 edits away" or "98% to X, nothing else
+further it is. Example: "*Cooperia*; nearest *C. oncophora* 100%; next
+*C. surnabada* +1". A genus call then says whether it is "exactly
+species X, but its sister is 1 edit away" or "98% to X, nothing else
 close". Both stop at genus for different reasons, and users act on them
 differently. `bin/classify_asvs.py` writes these as `nearest` and
 `next`.

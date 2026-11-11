@@ -77,15 +77,14 @@ TRIM, SLACK = 30, 10   # window overhang allowed past a partial reference; indel
 RULES = {"v4": [("species", 0.997), ("genus", 0.995), ("family", 0.95)],
          "exact": [("species", 1.0), ("genus", None), ("family", 0.95)],
          "gap": [("species", "gap"), ("genus", 0.97), ("family", 0.95)]}
-# Set by leave-one-out (bin/its2_leave_one_out.py, DESIGN 5.6). A species
+# Set by leave-one-out (bin/its2_leave_one_out.py, DESIGN 6.1). A species
 # call needs >= 99% identity and the nearest other species >= 4 edits
-# further away - exact matches included: sister species share variants,
-# so an exact match with another species close by was right only 75% of
-# the time. With the species in the database, 98.3% (whole) and 98.7%
-# (2x150) of species calls are right; with it missing, 6.8% and 9.1% of
-# its reads are named as a sister species, which no per-read rule can
-# prevent. The gap is reported with each call as its confidence.
-GAP_IDENTITY, GAP_EDITS = 0.99, 4
+# further away, or an exact match and the next species >= 2 edits away:
+# sister species share variants, and an exact match with another species
+# 1 edit off was right only 60% of the time, against 91% at 2-3 edits
+# (bin/loo_gap_split.py). Below 100%, 2-3 edits stay too close. The gap
+# is reported with each call as its confidence.
+GAP_IDENTITY, GAP_EDITS, GAP_EXACT = 0.99, 4, 2
 
 
 # Every reference minimap2 proposes is scored. A cap on the top N by
@@ -369,7 +368,8 @@ def call(tax, ties, d, span, rule, gap=None, cover=1.0):
     allowed = None
     for rank, lim in RULES[rule]:
         if lim == "gap":
-            ok = ident >= GAP_IDENTITY and gap is not None and gap >= GAP_EDITS
+            ok = gap is not None and ((ident >= GAP_IDENTITY and gap >= GAP_EDITS)
+                                      or (d == 0 and gap >= GAP_EXACT))
         else:
             ok = (d <= 1) if lim is None else ident >= lim
         if ok:

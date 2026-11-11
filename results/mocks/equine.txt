@@ -14,6 +14,6 @@ Noisy ASVs (1-8 edits from sources of one species), read-weighted:
    IdTaxa x nemabiome                      85.1%           100.0%           100.0%           100.0%
    assignTaxonomy x this db                97.3%           100.0%           100.0%           100.0%
    IdTaxa x this db                        81.1%           100.0%           100.0%           100.0%
-   gap rule x this db                      72.6%           100.0%           100.0%           100.0%
+   gap rule x this db                      73.0%           100.0%           100.0%           100.0%
 
 

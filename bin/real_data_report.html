@@ -1,0 +1,291 @@
+<title>{{TITLE}}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<!-- template for bin/real_data_report.py: {{TITLE}}, {{NOTES}}, {{DATA}} -->
+<style>
+/* Layout: one reading column for text, full-width bands for charts and the sample table. */
+:root {
+  --bg: #f7f8f6; --panel: #ffffff; --fg: #15191a; --fg2: #4b5452; --muted: #7b8582; --rule: #dde2df;
+  --accent: #0f6e66;
+  --lv-species: #184f95; --lv-genus: #3987e5; --lv-higher: #86b6ef;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300; --s7: #6250d6;
+  --other: #a3aca9; --unassigned: #d6dbd8;
+  --display: "Public Sans", system-ui, sans-serif; --body: "Public Sans", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121615; --panel: #1a1f1e; --fg: #eef1ef; --fg2: #bcc5c2; --muted: #8b9592; --rule: #2d3533;
+  --accent: #4fc2b5;
+  --lv-species: #b7d3f6; --lv-genus: #5598e7; --lv-higher: #1c5cab;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9;
+  --other: #66706d; --unassigned: #3a4341; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121615; --panel: #1a1f1e; --fg: #eef1ef; --fg2: #bcc5c2; --muted: #8b9592; --rule: #2d3533;
+  --accent: #4fc2b5;
+  --lv-species: #b7d3f6; --lv-genus: #5598e7; --lv-higher: #1c5cab;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9;
+  --other: #66706d; --unassigned: #3a4341; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 32px 64px }
+main { max-width: 1120px; margin: 0 auto; display: grid; gap: 40px }
+.prose { max-width: 68ch }
+h1 { font: 700 1.9rem/1.2 var(--display); margin: 0; text-wrap: balance; letter-spacing: -0.01em }
+h2 { font: 700 1.2rem/1.3 var(--display); margin: 0 0 6px; text-wrap: balance }
+.eyebrow { font: 600 0.72rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent) }
+.lede { color: var(--fg2); margin: 8px 0 0 }
+.notes { color: var(--fg); }
+.notes p, .notes ul { margin: 10px 0 0 } .notes li { margin: 4px 0 }
+.sub { color: var(--fg2); margin: 0 0 14px; max-width: 75ch }
+section { display: grid; gap: 4px; min-width: 0 }
+.panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 18px; min-width: 0 }
+.scroll { overflow-x: auto }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums }
+th, td { padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--rule); white-space: nowrap }
+th { font: 600 0.72rem var(--mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); vertical-align: bottom }
+th:first-child, td:first-child, td.l, th.l { text-align: left }
+td.mono { font-family: var(--mono); font-size: 0.85rem }
+tr.best td { font-weight: 600 }
+.small-multiples { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 22px 28px }
+.sm h3 { font: 600 0.9rem var(--body); margin: 0 0 8px }
+.bar-row { display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 10px; margin: 5px 0; font-size: 0.82rem; color: var(--fg2) }
+.stack { display: flex; height: 18px; gap: 2px; background: var(--bg) }
+.stack span { display: block; height: 100%; position: relative }
+.stack span:first-child { border-radius: 4px 0 0 4px } .stack span:last-child { border-radius: 0 4px 4px 0 }
+.stack .lab { position: absolute; left: 5px; top: 0; font: 600 0.7rem/18px var(--mono); color: #fff }
+:root[data-theme="dark"] .stack .lab { color: #0d1b2e }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .stack .lab { color: #0d1b2e } }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.8rem; color: var(--fg2); margin: 4px 0 12px }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 6px }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-bottom: 12px; align-items: end }
+.controls label { display: grid; gap: 4px; font: 600 0.72rem var(--mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted) }
+select { font: 0.9rem var(--body); padding: 6px 8px; border-radius: 6px; border: 1px solid var(--rule); background: var(--panel); color: var(--fg); max-width: 100% }
+select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px }
+svg text { fill: var(--fg2); font: 11px var(--body) }
+svg .host { fill: var(--fg); font-weight: 600; font-size: 12px }
+svg .tick { fill: var(--muted); font: 10px var(--mono) }
+#tip { position: fixed; pointer-events: none; background: var(--panel); color: var(--fg); border: 1px solid var(--rule);
+  border-radius: 6px; padding: 8px 10px; font-size: 0.8rem; box-shadow: 0 4px 16px rgba(0,0,0,.15); max-width: 320px; z-index: 5 }
+#tip b { font-weight: 600 } #tip .row { display: flex; justify-content: space-between; gap: 14px; font-variant-numeric: tabular-nums }
+.pill { display: inline-block; padding: 1px 7px; border-radius: 99px; font: 600 0.7rem var(--mono); border: 1px solid var(--rule); color: var(--fg2) }
+.pill.warn { border-color: var(--s4); color: var(--fg) }
+.minibar { display: inline-block; height: 8px; background: var(--lv-genus); border-radius: 2px; vertical-align: 0; margin-left: 6px }
+footer { color: var(--muted); font-size: 0.8rem }
+</style>
+
+<main>
+  <header class="prose">
+    <div class="eyebrow" id="eyebrow"></div>
+    <h1>{{TITLE}}</h1>
+    <p class="lede" id="lede"></p>
+    <div class="notes">{{NOTES}}</div>
+  </header>
+
+  <section>
+    <h2>Reads through the pipeline</h2>
+    <p class="sub">Read pairs after primer trimming, then what each DADA2 option keeps after chimera removal. Every 2x250 option is denoised once; they differ only in how a pair is joined.</p>
+    <div class="panel scroll"><table id="pipeline"></table></div>
+  </section>
+
+  <section>
+    <h2>How deep each classifier names the reads</h2>
+    <p class="sub">Share of reads named to species, stopped at genus, or left at family or above. Hover a bar for the numbers.</p>
+    <div class="legend"><span><i style="background:var(--lv-species)"></i>Species</span><span><i style="background:var(--lv-genus)"></i>Genus</span><span><i style="background:var(--lv-higher)"></i>Family or above, or unassigned</span></div>
+    <div class="panel"><div class="small-multiples" id="depth"></div></div>
+  </section>
+
+  <section>
+    <h2>Composition by sample</h2>
+    <p class="sub">Each column is one sample, grouped by host. Colour is the genus; a solid block is named to species, a hatched block stops at genus.</p>
+    <div class="controls">
+      <label for="set">DADA2 option<select id="set"></select></label>
+      <label for="arm">Classifier<select id="arm"></select></label>
+    </div>
+    <div class="legend" id="genus-legend"></div>
+    <div class="panel scroll"><svg id="comp" role="img" aria-label="Per-sample composition"></svg></div>
+  </section>
+
+  <section>
+    <h2>Per sample</h2>
+    <p class="sub">Trimming and reads kept by each 2x250 option, with the species share and top call for the option and classifier chosen above. Gain is hybrid over merged.</p>
+    <div class="panel scroll"><table id="samples"></table></div>
+  </section>
+
+  <footer>Generated by bin/real_data_report.py from bin/real_data.sh outputs.</footer>
+</main>
+<div id="tip" hidden></div>
+
+<script>
+const D = {{DATA}};
+const $ = s => document.querySelector(s);
+const fmt = n => n.toLocaleString("en-GB");
+const pct = (a, b) => b ? (100 * a / b) : 0;
+const p1 = x => x.toFixed(1) + "%";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const tip = $("#tip");
+function showTip(e, h) { tip.innerHTML = h; tip.hidden = false; moveTip(e) }
+function moveTip(e) {
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = e.clientX + 14, y = e.clientY + 14;
+  if (x + w > innerWidth - 8) x = e.clientX - w - 14;
+  if (y + h > innerHeight - 8) y = e.clientY - h - 14;
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function hideTip() { tip.hidden = true }
+
+const hosts = {}; D.samples.forEach(s => hosts[s.host] = (hosts[s.host] || 0) + 1);
+$("#eyebrow").textContent = D.project;
+$("#lede").textContent = `${D.samples.length} samples: ` + Object.entries(hosts).map(([h, n]) => `${n} ${h}`).join(", ") + ".";
+
+/* pipeline table */
+(function () {
+  const pairs = D.samples.reduce((a, s) => a + s.pairs, 0), kept = D.samples.reduce((a, s) => a + s.kept, 0);
+  const in28 = D.samples.reduce((a, s) => a + s.in28s, 0);
+  let h = `<tr><th class="l">Step</th><th>ASVs</th><th>Reads</th><th>Of raw pairs</th></tr>
+    <tr><td>Raw read pairs</td><td></td><td>${fmt(pairs)}</td><td>100%</td></tr>
+    <tr><td>After primer trimming <span class="pill">${p1(pct(in28, kept))} read 2 in 28S</span></td><td></td><td>${fmt(kept)}</td><td>${p1(pct(kept, pairs))}</td></tr>`;
+  const best = Math.max(...D.sets.filter(s => s.id.startsWith("250")).map(s => tot(s)));
+  D.sets.forEach(s => {
+    const n = tot(s);
+    h += `<tr class="${n === best ? "best" : ""}"><td>${esc(s.label)}</td><td>${fmt(s.asvs)}</td><td>${fmt(n)}</td><td>${p1(pct(n, pairs))}</td></tr>`;
+  });
+  $("#pipeline").innerHTML = h;
+  function tot(s) { return Object.values(s.track).reduce((a, t) => a + t.nonchim, 0) }
+})();
+
+/* depth small multiples */
+function levels(set, arm) {
+  const c = {species: 0, genus: 0, higher: 0};
+  Object.values(set.arms[arm] || {}).forEach(rows => rows.forEach(([lv, , , n]) => c[lv] += n));
+  return c;
+}
+(function () {
+  let h = "";
+  D.arms.forEach(arm => {
+    h += `<div class="sm"><h3>${esc(arm)}</h3>`;
+    D.sets.forEach(s => {
+      if (!s.arms[arm]) return;
+      const c = levels(s, arm), t = c.species + c.genus + c.higher;
+      const seg = ["species", "genus", "higher"].map(lv => {
+        const w = pct(c[lv], t);
+        return w > 0 ? `<span style="width:${w}%;background:var(--lv-${lv})">${lv === "species" && w > 14 ? `<b class="lab">${w.toFixed(0)}%</b>` : ""}</span>` : "";
+      }).join("");
+      h += `<div class="bar-row" data-arm="${esc(arm)}" data-set="${s.id}"><span>${esc(s.label)}</span><div class="stack">${seg}</div></div>`;
+    });
+    h += `</div>`;
+  });
+  $("#depth").innerHTML = h;
+  document.querySelectorAll("#depth .bar-row").forEach(el => {
+    const s = D.sets.find(x => x.id === el.dataset.set), c = levels(s, el.dataset.arm), t = c.species + c.genus + c.higher;
+    const html = `<b>${esc(el.dataset.arm)}</b><br>${esc(s.label)}` +
+      ["species", "genus", "higher"].map(lv => `<div class="row"><span>${lv === "higher" ? "Family or above" : lv[0].toUpperCase() + lv.slice(1)}</span><span>${p1(pct(c[lv], t))}</span></div>`).join("");
+    el.addEventListener("mouseenter", e => showTip(e, html));
+    el.addEventListener("mousemove", moveTip);
+    el.addEventListener("mouseleave", hideTip);
+  });
+})();
+
+/* genus colours: fixed by total reads over every set and classifier, so they never repaint */
+const gTot = {};
+D.sets.forEach(s => Object.values(s.arms).forEach(per => Object.values(per).forEach(rows =>
+  rows.forEach(([lv, g, , n]) => { if (g) gTot[g] = (gTot[g] || 0) + n }))));
+const topG = Object.entries(gTot).sort((a, b) => b[1] - a[1]).slice(0, 7).map(x => x[0]);
+const gColor = g => topG.includes(g) ? `var(--s${topG.indexOf(g) + 1})` : g ? "var(--other)" : "var(--unassigned)";
+const gKey = g => topG.includes(g) ? g : g ? "Other genera" : "Family or above";
+$("#genus-legend").innerHTML = topG.map(g => `<span><i style="background:${gColor(g)}"></i><em>${esc(g)}</em></span>`).join("") +
+  `<span><i style="background:var(--other)"></i>Other genera</span><span><i style="background:var(--unassigned)"></i>Family or above, or unassigned</span>` +
+  `<span><i style="background:repeating-linear-gradient(135deg,var(--fg2) 0 2px,transparent 2px 5px)"></i>Stops at genus</span>`;
+
+const setSel = $("#set"), armSel = $("#arm");
+setSel.innerHTML = D.sets.map(s => `<option value="${s.id}">${esc(s.label)}</option>`).join("");
+armSel.innerHTML = D.arms.map(a => `<option>${esc(a)}</option>`).join("");
+const pref = D.sets.find(s => s.id === "250.hybrid") || D.sets[0];
+setSel.value = pref.id;
+try { const v = JSON.parse(localStorage.getItem("rdr-" + D.project) || "{}");
+  if (D.sets.some(s => s.id === v.set)) setSel.value = v.set; if (D.arms.includes(v.arm)) armSel.value = v.arm } catch (e) {}
+function save() { try { localStorage.setItem("rdr-" + D.project, JSON.stringify({set: setSel.value, arm: armSel.value})) } catch (e) {} }
+
+function sampleBlocks(rows) {
+  /* group a sample's calls into genus blocks, species part then genus-only part */
+  const order = [...topG, "Other genera", "Family or above"], b = {};
+  rows.forEach(([lv, g, lab, n]) => {
+    const k = gKey(g), x = b[k] = b[k] || {sp: 0, ge: 0, hi: 0, g, items: []};
+    x[lv === "species" ? "sp" : lv === "genus" ? "ge" : "hi"] += n; x.items.push([lab, n]);
+  });
+  return order.filter(k => b[k]).map(k => ({key: k, ...b[k]}));
+}
+
+function drawComp() {
+  const set = D.sets.find(s => s.id === setSel.value), per = set.arms[armSel.value] || {};
+  const S = D.samples.filter(s => per[s.run]);
+  const nHost = new Set(S.map(s => s.host)).size, gap = 3, hostGap = 18, top = 26, H = 220, left = 40;
+  const avail = $("#comp").parentElement.clientWidth - 36 - left - 10 - hostGap * (nHost - 1);
+  const bw = Math.max(8, Math.min(28, Math.floor(avail / S.length) - gap));
+  let x = left, prev = null, out = [], heads = [];
+  const svgNS = "http://www.w3.org/2000/svg";
+  S.forEach(s => {
+    if (s.host !== prev) { if (prev) x += hostGap; heads.push([x, s.host]); prev = s.host }
+    const rows = per[s.run], t = rows.reduce((a, r) => a + r[3], 0);
+    let y = top + H;
+    sampleBlocks(rows).forEach(bk => {
+      [["sp", false], ["ge", true], ["hi", false]].forEach(([f, hatch]) => {
+        if (!bk[f]) return;
+        const h = H * bk[f] / t; y -= h;
+        const fill = bk.key === "Family or above" ? "var(--unassigned)" : gColor(bk.g);
+        out.push(`<rect x="${x}" y="${y.toFixed(2)}" width="${bw}" height="${Math.max(h - 1, 0.5).toFixed(2)}" fill="${fill}"${hatch ? ` mask="url(#hatch)"` : ""} data-run="${s.run}"/>`);
+      });
+    });
+    out.push(`<rect x="${x - 1}" y="${top}" width="${bw + 2}" height="${H}" fill="transparent" data-run="${s.run}" class="hit"/>`);
+    x += bw + gap;
+  });
+  const W = Math.max(x + 10, 320);
+  const ticks = [0, 25, 50, 75, 100].map(v => {
+    const y = top + H - H * v / 100;
+    return `<line x1="${left - 4}" x2="${W - 10}" y1="${y}" y2="${y}" stroke="var(--rule)" stroke-width="1"/><text class="tick" x="${left - 8}" y="${y + 3}" text-anchor="end">${v}%</text>`;
+  }).join("");
+  const svg = $("#comp");
+  svg.setAttribute("viewBox", `0 0 ${W} ${top + H + 12}`);
+  svg.setAttribute("width", W); svg.setAttribute("height", top + H + 12);
+  svg.innerHTML = `<defs><pattern id="hp" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#fff"/><rect width="2" height="5" fill="#000"/></pattern><mask id="hatch" maskContentUnits="userSpaceOnUse"><rect x="0" y="0" width="${W}" height="${top + H + 12}" fill="url(#hp)"/></mask></defs>` +
+    ticks + heads.map(([hx, h]) => `<text class="host" x="${hx}" y="${top - 10}">${esc(h)}</text>`).join("") + out.join("");
+  svg.querySelectorAll(".hit").forEach(r => {
+    const s = D.samples.find(q => q.run === r.dataset.run), rows = per[s.run], t = rows.reduce((a, q) => a + q[3], 0);
+    const html = `<b>${esc(s.alias)}</b> · ${esc(s.run)} · ${esc(s.host)}<br>${fmt(t)} reads` +
+      rows.slice(0, 8).map(([lv, g, lab, n]) => `<div class="row"><span>${lv === "species" ? `<em>${esc(lab)}</em>` : esc(lab)}</span><span>${p1(pct(n, t))}</span></div>`).join("") +
+      (rows.length > 8 ? `<div class="row"><span>${rows.length - 8} more</span><span>${p1(pct(rows.slice(8).reduce((a, q) => a + q[3], 0), t))}</span></div>` : "");
+    r.addEventListener("mouseenter", e => { r.setAttribute("stroke", "var(--fg)"); showTip(e, html) });
+    r.addEventListener("mousemove", moveTip);
+    r.addEventListener("mouseleave", () => { r.removeAttribute("stroke"); hideTip() });
+  });
+}
+
+function drawSamples() {
+  const set = D.sets.find(s => s.id === setSel.value), per = set.arms[armSel.value] || {};
+  const g = id => D.sets.find(s => s.id === id);
+  const m = g("250.merge"), c = g("250.concat"), hy = g("250.hybrid");
+  const nc = (st, r) => st && st.track[r] ? st.track[r].nonchim : null;
+  const cell = v => v == null ? "<td>–</td>" : `<td>${fmt(v)}</td>`;
+  let h = `<tr><th class="l">Sample</th><th class="l">Host</th><th>Raw pairs</th><th>Trimmed</th><th>Read 2</th>
+    <th>Merged</th><th>Concat.</th><th>Hybrid</th><th>Gain</th><th>Chimeras</th><th>Species, ${esc(set.label)}</th><th class="l">Top call</th></tr>`;
+  D.samples.forEach(s => {
+    const rows = per[s.run] || [], t = rows.reduce((a, q) => a + q[3], 0);
+    const sp = rows.filter(q => q[0] === "species").reduce((a, q) => a + q[3], 0);
+    const tr = set.track[s.run], chim = tr ? pct(tr.used - tr.nonchim, tr.used) : null;
+    const gain = nc(m, s.run) && nc(hy, s.run) ? pct(nc(hy, s.run) - nc(m, s.run), nc(m, s.run)) : null;
+    const top = rows[0];
+    h += `<tr><td class="mono">${esc(s.alias)} <span style="color:var(--muted)">${esc(s.run)}</span></td><td class="l">${esc(s.host)}</td>
+      <td>${fmt(s.pairs)}</td><td>${p1(pct(s.kept, s.pairs))}</td>
+      <td>${s.in28s > s.nc2 ? '<span class="pill">in 28S</span>' : '<span class="pill">at NC2</span>'}</td>
+      ${cell(nc(m, s.run))}${cell(nc(c, s.run))}${cell(nc(hy, s.run))}
+      <td>${gain == null ? "–" : (gain >= 10 ? `<span class="pill warn">+${gain.toFixed(0)}%</span>` : "+" + gain.toFixed(1) + "%")}</td>
+      <td>${chim == null ? "–" : p1(chim)}</td>
+      <td>${t ? p1(pct(sp, t)) + `<span class="minibar" style="width:${(40 * sp / t).toFixed(1)}px;background:var(--lv-species)"></span>` : "–"}</td>
+      <td class="l">${top ? (top[0] === "species" ? `<em>${esc(top[2])}</em>` : esc(top[2])) + ` <span style="color:var(--muted)">${p1(pct(top[3], t))}</span>` : "–"}</td></tr>`;
+  });
+  $("#samples").innerHTML = h;
+}
+function redraw() { drawComp(); drawSamples(); save() }
+setSel.addEventListener("change", redraw); armSel.addEventListener("change", redraw);
+let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(drawComp, 150) });
+redraw();
+</script>

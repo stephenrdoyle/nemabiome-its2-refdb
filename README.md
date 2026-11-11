@@ -150,13 +150,14 @@ missing species (`results/leave_one_out/metrics.txt`).
 
 | Classifier, this database | Species recall | Species precision | Genus recall | Genus precision | Over-classification |
 |---|---:|---:|---:|---:|---:|
-| `bin/classify_asvs.py`, gap rule | 52.3% | **98.6%** | 89.2% | 99.3% | **6.3%** |
+| `bin/classify_asvs.py`, gap rule | 53.4% | **98.5%** | 89.2% | 99.3% | **6.4%** |
 | DECIPHER IdTaxa (threshold 60) | 76.9% | 96.7% | 93.5% | **99.4%** | 22.7% |
 | dada2 assignTaxonomy (minBoot 80) | **85.4%** | 94.6% | **97.4%** | 99.2% | 43.9% |
 
 The gap rule names a species only when the read is >= 99% identical to
-it and every other species is >= 4 edits further off; otherwise it stops
-at genus (>= 97%) or family (>= 95%). It is the most conservative of the
+it and every other species is >= 4 edits further off, or the match is
+exact and every other species is >= 2 edits off; otherwise it stops at
+genus (>= 97%) or family (>= 95%). It is the most conservative of the
 three: it names fewest species but is wrong least, which matters most in
 samples with species missing from the database (wildlife, new hosts). At
 genus all three are about 99% precise; they differ in how often they
@@ -165,35 +166,39 @@ Tuning the rule per genus or family did not help on held-out species
 (`results/leave_one_out/group_rules.txt`). Each call carries `nearest`
 (the best species and its identity) and `next` (the nearest other
 species and how many edits further), so a genus call still says how
-close it came: *Trichostrongylus*; nearest *T. retortaeformis* 100.0%;
-next *T. axei* +2.
+close it came: *Cooperia*; nearest *C. oncophora* 100.0%; next
+*C. surnabada* +1.
 
 **Real data** (share of reads named to species; all arms named the same
-species wherever two of them named one):
+species wherever two of them named one). Two published NC1/NC2 sets,
+2x250 pairs joined hybrid (merged where they overlap, concatenated where
+they do not), and cut to 2x150:
 
 | Dataset | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db |
 |---|---:|---:|---:|---:|---:|
-| Šlapeta sheep, PRJNA936713, 2x250 | 69.5% | 95.4% | 99.2% | 99.4% | 91.2% |
-| same, cut to 2x150 | 69.1% | 87.9% | 98.9% | 98.2% | 87.3% |
-| Gilleard cattle, PRJNA1524548, 2x250 | 72.6% | 68.0% | 92.9% | 97.5% | 86.9% |
-| same, cut to 2x150 | 69.0% | 67.8% | 93.7% | 93.5% | 87.7% |
+| Francis & Šlapeta, cattle, goats, sheep, PRJNA936713, 2x250 | 72.0% | 81.7% | 99.5% | 99.4% | 92.0% |
+| same, cut to 2x150 | 76.0% | 88.2% | 98.9% | 97.8% | 92.4% |
+| Gilleard, cattle, kangaroos, pigs, rabbits, PRJNA1524548, 2x250 | 70.4% | 69.7% | 93.7% | 96.6% | 92.9% |
+| same, cut to 2x150 | 73.7% | 65.9% | 93.7% | 95.7% | 93.8% |
 
 assignTaxonomy and IdTaxa compare k-mers over the whole ASV, so with
 this database the ASVs' 28S stretch must be cut off first
 (`bin/trim_28s.py`); the columns for this database are on cut ASVs.
-With v0.1.0 as released, the gap rule named 84.1 / 52.4 / 62.4 / 37.3%
-once it scored every candidate: a few partial single-accession
-*Haemonchus* records and the old window scoring held *H. placei* at
-genus (issues #1, #2; docs/DESIGN.md §6.2).
-`results/dada2_comparison/` holds each arm's summary and the per-ASV
-calls.
+Merging only, as the standard workflow does, loses the ITS2 too long
+for a 2x250 pair to overlap: two of the four Gilleard pig libraries kept
+6 and 665 reads merged and 22,932 and 19,801 hybrid, all *Metastrongylus
+apri* (see For DADA2 and IdTaxa users). Half the Gilleard libraries have
+read 2 starting inside 28S, without NC2; `bin/trim_primers.py` keeps
+them. `results/dada2_comparison/` holds each arm's summary, the per-ASV
+calls, the merged and concatenated runs, and an HTML report per set
+(docs/DESIGN.md §6.2).
 
 **Simulated mocks** (Jesudoss Chelladurai et al. 2025; canine, equine,
 ruminant, all species present, so they measure recall, not
 over-classification): no classifier, with either database, named a
 wrong species for an exact copy of a source sequence (precision 100%);
 the k-mer classifiers named 85-100% of reads to species, the gap rule
-43-99%, stopping at genus where a sister species is 1-3 edits off.
+79-100%, stopping at genus where a sister species is 1 edit off.
 The mocks' truth includes two backbone mislabels this database corrects
 (docs/DESIGN.md §6.3; `results/mocks/`).
 
@@ -210,8 +215,32 @@ DADA2 workflow, to use in place of nemabiome's own files:
 
 Records here stop where the ~47-base 28S stretch before NC2 starts; your
 ASVs end in it. assignTaxonomy and IdTaxa compare k-mers over the whole
-ASV, so uncut ASVs lose most species calls (one sheep set: 45% of reads
-to species uncut, 99.3% cut). After `removeBimeraDenovo`:
+ASV, so uncut ASVs lose most species calls (one livestock set: 45% of
+reads to species uncut, 99.3% cut).
+
+At 2x250, join pairs hybrid rather than by merging alone. `mergePairs`
+needs 12 bases of overlap; after primer trimming (about 230 + 230
+bases) an ITS2 over about 400 bases never merges, and those pairs are
+silently dropped: *Metastrongylus* (413-422 bases), Trichuridae,
+Metastrongylidae, Onchocercidae and others. Keep the merged pairs and
+concatenate only the rest:
+
+```r
+mm <- mergePairs(dadaF, derepF, dadaR, derepR, returnRejects = TRUE)
+cc <- mergePairs(dadaF, derepF, dadaR, derepR, justConcatenate = TRUE)
+hybrid <- mapply(function(m, c) {
+  acc <- m[m$accept, ]
+  rest <- !paste(c$forward, c$reverse) %in% paste(acc$forward, acc$reverse)
+  rbind(acc[, c("sequence", "abundance")], c[rest, c("sequence", "abundance")])
+}, mm, cc, SIMPLIFY = FALSE)
+seqtab <- makeSequenceTable(hybrid)
+```
+
+(for one sample, `mm` and `cc` are data frames rather than lists: wrap
+them in `list()`; `bin/dada2_nemabiome.R` does this as its `hybrid`
+mode). Concatenating every pair instead suits the k-mer classifiers but
+costs the gap rule species calls where read 1 runs through a short ITS2
+into 28S. After `removeBimeraDenovo`:
 
 ```r
 source("trim_28s.R")
@@ -226,8 +255,8 @@ load("nemits2_<version>_idtaxa.RData")          # trainingSet
 ids <- IdTaxa(DNAStringSet(cut[ok]), trainingSet, strand = "both", threshold = 60)
 ```
 
-Concatenated 2x150 ASVs (`mergePairs(justConcatenate = TRUE)`) are cut
-in their reverse part. Set a seed and report it: IdTaxa's calls are
+Concatenated ASVs (2x150, or the unmerged part of a hybrid join) are
+cut in their reverse part. Set a seed and report it: IdTaxa's calls are
 random draws, and ASVs near its threshold change between runs - in one
 cattle set, *Haemonchus placei* ASVs holding 10-23% of reads sat at
 confidence 62-76 and switched between species and genus with the seed.
@@ -264,9 +293,11 @@ read set listed in `curation/long_read_sources.tsv` with
 
 Testing: `bin/its2_leave_one_out.py` (gap rule), `bin/loo_dada2.py`
 (assignTaxonomy or IdTaxa on the same queries), `bin/loo_group_rules.py`;
+`bin/real_data.sh` for real data (`bin/trim_primers.py`,
 `bin/dada2_nemabiome.R`, `bin/trim_28s.py`, `bin/assign_taxonomy.R`,
-`bin/idtaxa.R`, `bin/classify_asvs.py` and `bin/compare_arms.py` for
-real data; `bin/mock_arms.sh` and `bin/score_mocks.py` for the mocks. These need R with dada2 and DECIPHER, and cutadapt.
+`bin/idtaxa.R`, `bin/classify_asvs.py`, `bin/compare_arms.py`, then
+`bin/real_data_report.py` for the HTML report); `bin/mock_arms.sh` and
+`bin/score_mocks.py` for the mocks. These need R with dada2 and DECIPHER.
 
 Needs Python 3.9+ and minimap2. `sources/README.md` says where each
 download comes from.
