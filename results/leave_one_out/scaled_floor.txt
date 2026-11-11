@@ -1,18 +1,18 @@
 
 == whole
-  current (99%, gap 4)           recall  52.3%  precision  98.6%  over-class.   6.3%
-  lam 2: plain                   recall  61.4%  precision  97.2%  over-class.   9.2%   chosen 0.985/2, 0.985/4, 0.99/2
-  lam 2: scaled                  recall  59.5%  precision  98.6%  over-class.   8.8%   chosen 0.98/6/3, 0.98/8/3, 0.985/10/3, 0.985/4/1.5
-  lam 4: plain                   recall  48.3%  precision  98.7%  over-class.   5.7%   chosen 0.99/4, 0.99/6
-  lam 4: scaled                  recall  52.3%  precision  98.6%  over-class.   6.3%   chosen None/0/0
-  lam 8: plain                   recall  40.6%  precision  98.9%  over-class.   4.3%   chosen 0.99/10
-  lam 8: scaled                  recall  52.3%  precision  98.6%  over-class.   6.3%   chosen None/0/0
+  current (99%, gap 4)           recall  54.1%  precision  98.9%  over-class.   5.7%
+  lam 2: plain                   recall  65.4%  precision  97.9%  over-class.   9.3%   chosen 0.985/2, 0.99/2
+  lam 2: scaled                  recall  62.8%  precision  99.0%  over-class.   8.5%   chosen 0.98/8/3
+  lam 4: plain                   recall  55.3%  precision  98.8%  over-class.   6.3%   chosen 0.99/2, 0.99/3, 0.99/4
+  lam 4: scaled                  recall  54.1%  precision  98.9%  over-class.   5.7%   chosen None/0/0
+  lam 8: plain                   recall  41.5%  precision  99.1%  over-class.   4.0%   chosen 0.99/10
+  lam 8: scaled                  recall  54.1%  precision  98.9%  over-class.   5.7%   chosen None/0/0
 
 == 2x150
-  current (99%, gap 4)           recall  54.0%  precision  99.0%  over-class.   6.9%
-  lam 2: plain                   recall  61.0%  precision  98.3%  over-class.   8.9%   chosen 0.985/3, 0.99/2
-  lam 2: scaled                  recall  60.1%  precision  99.0%  over-class.   9.5%   chosen 0.975/4/1.5, 0.985/4/1.5, 0.985/8/2
-  lam 4: plain                   recall  54.4%  precision  98.9%  over-class.   7.1%   chosen 0.99/3, 0.99/4
-  lam 4: scaled                  recall  54.0%  precision  99.0%  over-class.   6.9%   chosen None/0/0
-  lam 8: plain                   recall  39.0%  precision  99.1%  over-class.   4.6%   chosen 0.99/10
-  lam 8: scaled                  recall  54.0%  precision  99.0%  over-class.   6.9%   chosen None/0/0
+  current (99%, gap 4)           recall  55.8%  precision  99.2%  over-class.   6.4%
+  lam 2: plain                   recall  62.9%  precision  98.4%  over-class.   8.6%   chosen 0.985/3, 0.99/2
+  lam 2: scaled                  recall  61.0%  precision  99.2%  over-class.   8.1%   chosen 0.985/4/1.5, 0.985/6/2, 0.985/8/2
+  lam 4: plain                   recall  56.1%  precision  99.1%  over-class.   6.5%   chosen 0.99/3, 0.99/4
+  lam 4: scaled                  recall  55.8%  precision  99.2%  over-class.   6.4%   chosen None/0/0
+  lam 8: plain                   recall  40.2%  precision  99.3%  over-class.   4.4%   chosen 0.99/10
+  lam 8: scaled                  recall  55.8%  precision  99.2%  over-class.   6.4%   chosen None/0/0

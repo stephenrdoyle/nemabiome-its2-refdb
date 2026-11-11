@@ -5,7 +5,7 @@ Clean ASVs (an exact source copy; truth = the mock label), read-weighted:
    assignTaxonomy x nemabiome             100.0%           100.0%           100.0%           100.0%        0.0%    73.3%
    IdTaxa x nemabiome                     100.0%           100.0%           100.0%           100.0%        0.0%    73.5%
    assignTaxonomy x this db               100.0%           100.0%           100.0%           100.0%        0.0%    73.0%
-   IdTaxa x this db                       100.0%           100.0%           100.0%           100.0%        0.0%    73.5%
+   IdTaxa x this db                       100.0%           100.0%           100.0%           100.0%        0.0%    73.3%
    gap rule x this db                      99.0%           100.0%            99.0%           100.0%        0.9%    74.5%
 
 Noisy ASVs (1-8 edits from sources of one species), read-weighted:
@@ -13,7 +13,7 @@ Noisy ASVs (1-8 edits from sources of one species), read-weighted:
    assignTaxonomy x nemabiome              95.8%           100.0%           100.0%           100.0%
    IdTaxa x nemabiome                      85.1%           100.0%           100.0%           100.0%
    assignTaxonomy x this db                97.3%           100.0%           100.0%           100.0%
-   IdTaxa x this db                        81.1%           100.0%           100.0%           100.0%
+   IdTaxa x this db                        82.3%           100.0%           100.0%           100.0%
    gap rule x this db                      73.0%           100.0%           100.0%           100.0%
 
 

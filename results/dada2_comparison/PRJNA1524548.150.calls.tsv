@@ -29,9 +29,9 @@ ASV00027	window	0	210	1.0000	1	8	Cloacina clymene 100.0%	Cloacina dryope +8	spec
 ASV00028	window	0	212	1.0000	2	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00029	window	3	207	0.9855	1	27	Oesophagostomum radiatum 98.6%	Oesophagostomum stephanostomum +27	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
 ASV00030	window	1	237	0.9958	2	36	Oesophagostomum radiatum 99.6%	Oesophagostomum stephanostomum +36	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum
-ASV00031	window	0	212	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia punctata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00031	window	0	212	1.0000	2	2	Cooperia punctata 100.0%	Cooperia oncophora +2	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00032	window	1	237	0.9958	1	4	Haemonchus placei 99.6%	Haemonchus contortus +4	genus	Haemonchus	genus	Haemonchus	species	Haemonchus placei
-ASV00033	window	0	240	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia punctata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00033	window	0	240	1.0000	2	3	Cooperia punctata 100.0%	Cooperia oncophora +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00034	window	0	236	1.0000	1	9	Cloacina clymene 100.0%	Cloacina dryope +9	species	Cloacina clymene	species	Cloacina clymene	species	Cloacina clymene
 ASV00035	window	2	231	0.9913	1	33	Oesophagostomum radiatum 99.1%	Oesophagostomum stephanostomum +33	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum
 ASV00036	window	0	236	1.0000	1	7	Cloacina macropodis 100.0%	Cloacina johnstoni +7	species	Cloacina macropodis	species	Cloacina macropodis	species	Cloacina macropodis
@@ -41,7 +41,7 @@ ASV00039	window	0	211	1.0000	2	4	Trichostrongylus axei 100.0%	Trichostrongylus r
 ASV00040	window	1	210	0.9952	1	4	Haemonchus placei 99.5%	Haemonchus contortus +4	genus	Haemonchus	genus	Haemonchus	species	Haemonchus placei
 ASV00041	window	0	236	1.0000	1	2	Cloacina herceus 100.0%	Cloacina hydriformis +2	species	Cloacina herceus	species	Cloacina herceus	species	Cloacina herceus
 ASV00042	window	0	240	1.0000	2	22	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +22	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00043	window	0	212	1.0000	3	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00043	window	0	212	1.0000	3	2	Cooperia oncophora 100.0%	Cooperia punctata +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00044	window	0	212	1.0000	2	18	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +18	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
 ASV00045	window	0	207	1.0000	2	5	Cloacina macropodis 100.0%	Cloacina johnstoni +5	species	Cloacina macropodis	species	Cloacina macropodis	species	Cloacina macropodis
 ASV00046	window	15	210	0.9286	1	3	Macropostrongylus macropostrongylus 92.9%	Macropostrongylus petrogale +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
@@ -50,7 +50,7 @@ ASV00048	window	0	207	1.0000	1	2	Cloacina herceus 100.0%	Cloacina hydriformis +2
 ASV00049	window	3	232	0.9871	1	32	Oesophagostomum radiatum 98.7%	Oesophagostomum stephanostomum +32	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
 ASV00050	window	3	210	0.9857	1	9	Cloacina echidne 98.6%	Cloacina artemis +9	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00051	window	17	236	0.9280	1	6	Macropostrongylus macropostrongylus 92.8%	Alocostoma clelandi +6	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00052	window	0	240	1.0000	2	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00052	window	0	240	1.0000	2	3	Cooperia oncophora 100.0%	Cooperia punctata +3	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00053	window	1	212	0.9953	1	4	Haemonchus placei 99.5%	Haemonchus contortus +4	genus	Haemonchus	genus	Haemonchus	species	Haemonchus placei
 ASV00054	window	1	240	0.9958	1	4	Haemonchus placei 99.6%	Haemonchus contortus +4	genus	Haemonchus	genus	Haemonchus	species	Haemonchus placei
 ASV00055	window	0	210	1.0000	2	16	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +16	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
@@ -59,7 +59,7 @@ ASV00057	window	0	237	1.0000	2	20	Ostertagia ostertagi 100.0%	Ostertagia gruehne
 ASV00058	window	0	210	1.0000	1	2	Cloacina herceus 100.0%	Cloacina hydriformis +2	species	Cloacina herceus	species	Cloacina herceus	species	Cloacina herceus
 ASV00059	window	1	204	0.9951	1	30	Oesophagostomum radiatum 99.5%	Oesophagostomum stephanostomum +30	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum
 ASV00060	window	1	234	0.9957	1	36	Oesophagostomum radiatum 99.6%	Oesophagostomum stephanostomum +36	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum
-ASV00061	window	0	211	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia punctata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00061	window	0	211	1.0000	2	2	Cooperia punctata 100.0%	Cooperia oncophora +2	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00062	window	0	211	1.0000	2	16	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +16	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
 ASV00063	window	2	228	0.9912	1	33	Oesophagostomum radiatum 99.1%	Oesophagostomum stephanostomum +33	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum
 ASV00064	window	0	210	1.0000	2	5	Cloacina macropodis 100.0%	Cloacina johnstoni +5	species	Cloacina macropodis	species	Cloacina macropodis	species	Cloacina macropodis
@@ -68,41 +68,41 @@ ASV00066	window	2	203	0.9901	1	27	Oesophagostomum radiatum 99.0%	Oesophagostomum
 ASV00067	window	0	237	1.0000	2	22	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +22	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
 ASV00068	window	0	211	1.0000	2	18	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +18	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
 ASV00069	window	0	210	1.0000	2	18	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +18	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00070	window	0	237	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia punctata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00070	window	0	237	1.0000	2	3	Cooperia punctata 100.0%	Cooperia oncophora +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00071	window	1	234	0.9957	1	36	Oesophagostomum radiatum 99.6%	Oesophagostomum stephanostomum +36	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum
 ASV00072	window	3	206	0.9854	1	27	Oesophagostomum radiatum 98.5%	Oesophagostomum stephanostomum +27	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
 ASV00073	window	0	236	1.0000	5	3	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +3	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00074	window	0	239	1.0000	2	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00075	window	0	213	1.0000	2	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00076	window	0	239	1.0000	5	3	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +3	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00077	window	0	237	1.0000	2	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00077	window	0	237	1.0000	2	3	Cooperia oncophora 100.0%	Cooperia punctata +3	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00078	window	0	239	1.0000	2	20	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +20	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00079	window	0	212	1.0000	7	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00079	window	0	212	1.0000	7	3	Cooperia oncophora 100.0%	Cooperia punctata +3	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00080	window	1	212	0.9953	1	4	Trichostrongylus axei 99.5%	Trichostrongylus retortaeformis +4	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus axei
 ASV00081	window	0	209	1.0000	1	6	Cloacina communis 100.0%	Cloacina petrogale +6	species	Cloacina communis	species	Cloacina communis	species	Cloacina communis
-ASV00082	window	0	212	1.0000	1	3	Cooperia punctata 100.0%	Cooperia shared: punctata / spatulata +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
+ASV00082	window	0	212	1.0000	1	5	Cooperia punctata 100.0%	Cooperia oncophora +5	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00083	window	0	236	1.0000	1	6	Cloacina communis 100.0%	Cloacina petrogale +6	species	Cloacina communis	species	Cloacina communis	species	Cloacina communis
 ASV00084	window	1	209	0.9952	2	30	Oesophagostomum radiatum 99.5%	Oesophagostomum stephanostomum +30	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum
-ASV00085	window	0	211	1.0000	3	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00085	window	0	211	1.0000	3	2	Cooperia oncophora 100.0%	Cooperia punctata +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00086	window	1	209	0.9952	1	2	Cloacina herceus 99.5%	Cloacina hydriformis +2	genus	Cloacina	genus	Cloacina	genus	Cloacina
 ASV00087	window	1	236	0.9958	1	9	Cloacina clymene 99.6%	Cloacina dryope +9	genus	Cloacina	genus	Cloacina	species	Cloacina clymene
 ASV00088	window	1	240	0.9958	1	4	Trichostrongylus axei 99.6%	Trichostrongylus retortaeformis +4	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus axei
 ASV00089	window	4	210	0.9810	1	9	Cloacina echidne 98.1%	Cloacina artemis +9	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00090	window	1	210	0.9952	1	8	Cloacina clymene 99.5%	Cloacina dryope +8	genus	Cloacina	genus	Cloacina	species	Cloacina clymene
-ASV00091	window	1	212	0.9953	1	1	Cooperia punctata 99.5%	Cooperia shared: punctata / spatulata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00091	window	1	212	0.9953	1	3	Cooperia punctata 99.5%	Cooperia oncophora +3	genus	Cooperia	genus	Cooperia	genus	Cooperia
 ASV00092	window	16	210	0.9238	1	3	Macropostrongylus macropostrongylus 92.4%	Macropostrongylus petrogale +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00093	window	0	240	1.0000	1	3	Cooperia punctata 100.0%	Cooperia shared: punctata / spatulata +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
+ASV00093	window	0	240	1.0000	1	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00094	window	18	236	0.9237	1	6	Macropostrongylus macropostrongylus 92.4%	Alocostoma clelandi +6	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00095	window	8	237	0.9662	1	22	Cloacina typhon 96.6%	Cloacina magnipapillata +22	family	Strongylidae	family	Strongylidae	family	Strongylidae
 ASV00096	window	1	237	0.9958	1	4	Trichostrongylus axei 99.6%	Trichostrongylus retortaeformis +4	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus axei
-ASV00097	window	0	239	1.0000	2	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00097	window	0	239	1.0000	2	3	Cooperia oncophora 100.0%	Cooperia punctata +3	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00098	window	0	239	1.0000	2	22	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +22	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
 ASV00099	window	1	236	0.9958	1	2	Cloacina herceus 99.6%	Cloacina hydriformis +2	genus	Cloacina	genus	Cloacina	genus	Cloacina
 ASV00100	window	1	210	0.9952	1	209	Hypodontus macropi 99.5%	none close	genus	Hypodontus	genus	Hypodontus	species	Hypodontus macropi
-ASV00101	window	0	212	1.0000	3	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00101	window	0	212	1.0000	3	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00102	window	4	236	0.9831	1	13	Cloacina echidne 98.3%	Cloacina artemis +13	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00103	window	0	209	1.0000	1	6	Cloacina macropodis 100.0%	Cloacina johnstoni +6	species	Cloacina macropodis	species	Cloacina macropodis	species	Cloacina macropodis
-ASV00104	window	0	239	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia punctata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00104	window	0	239	1.0000	2	3	Cooperia punctata 100.0%	Cooperia oncophora +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00105	window	0	233	1.0000	2	36	Oesophagostomum radiatum 100.0%	Oesophagostomum stephanostomum +36	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum
 ASV00106	window	0	209	1.0000	1	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00107	window	2	210	0.9905	1	20	Popovastrongylus macropodis 99.0%	Alocostoma propinquum +20	family	Strongylidae	family	Strongylidae	species	Popovastrongylus macropodis
@@ -110,12 +110,12 @@ ASV00108	window	0	212	1.0000	6	3	Trichostrongylus axei 100.0%	Trichostrongylus r
 ASV00109	window	0	240	1.0000	2	21	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +21	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
 ASV00110	window	0	236	1.0000	1	8	Cloacina macropodis 100.0%	Cloacina johnstoni +8	species	Cloacina macropodis	species	Cloacina macropodis	species	Cloacina macropodis
 ASV00111	window	1	237	0.9958	1	236	Hypodontus macropi 99.6%	none close	genus	Hypodontus	genus	Hypodontus	species	Hypodontus macropi
-ASV00112	window	0	240	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00112	window	0	240	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00113	window	1	210	0.9952	1	4	Trichostrongylus axei 99.5%	Trichostrongylus retortaeformis +4	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus axei
 ASV00114	window	1	211	0.9953	1	4	Trichostrongylus axei 99.5%	Trichostrongylus retortaeformis +4	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus axei
-ASV00115	window	0	240	1.0000	3	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00115	window	0	240	1.0000	3	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00116	window	1	212	0.9953	1	4	Trichostrongylus axei 99.5%	Trichostrongylus retortaeformis +4	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus axei
-ASV00117	window	1	240	0.9958	1	1	Cooperia punctata 99.6%	Cooperia shared: punctata / spatulata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00117	window	1	240	0.9958	1	4	Cooperia punctata 99.6%	Cooperia oncophora +4	genus	Cooperia	genus	Cooperia	species	Cooperia punctata
 ASV00118	window	0	211	1.0000	2	18	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +18	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
 ASV00119	window	4	210	0.9810	1	18	Popovastrongylus macropodis 98.1%	Alocostoma propinquum +18	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus
 ASV00120	window	2	210	0.9905	1	8	Cloacina clymene 99.0%	Cloacina dryope +8	family	Strongylidae	family	Strongylidae	species	Cloacina clymene
@@ -124,7 +124,7 @@ ASV00122	window	0	238	1.0000	5	3	Trichostrongylus axei 100.0%	Trichostrongylus r
 ASV00123	window	2	208	0.9904	1	206	Hypodontus macropi 99.0%	none close	family	Strongylidae	family	Strongylidae	species	Hypodontus macropi
 ASV00124	window	1	228	0.9956	1	35	Oesophagostomum radiatum 99.6%	Oesophagostomum stephanostomum +35	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum
 ASV00125	window	0	209	1.0000	6	3	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +3	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00126	window	0	213	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia punctata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00126	window	0	213	1.0000	2	2	Cooperia punctata 100.0%	Cooperia oncophora +2	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00127	window	18	236	0.9237	1	6	Macropostrongylus macropostrongylus 92.4%	Alocostoma clelandi +6	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00128	window	0	237	1.0000	1	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00129	window	1	207	0.9952	1	8	Cloacina clymene 99.5%	Cloacina dryope +8	genus	Cloacina	genus	Cloacina	species	Cloacina clymene
@@ -155,13 +155,13 @@ ASV00153	window	3	207	0.9855	2	4	Cloacina communis 98.6%	Cloacina phaedra +4	fam
 ASV00154	window	2	236	0.9915	1	9	Cloacina clymene 99.2%	Cloacina dryope +9	family	Strongylidae	family	Strongylidae	species	Cloacina clymene
 ASV00155	window	1	237	0.9958	1	38	Cloacina pollux 99.6%	Wallabinema macropodis +38	genus	Cloacina	genus	Cloacina	species	Cloacina pollux
 ASV00156	window	2	210	0.9905	1	208	Hypodontus macropi 99.0%	none close	family	Strongylidae	family	Strongylidae	species	Hypodontus macropi
-ASV00157	window	0	211	1.0000	3	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00157	window	0	211	1.0000	3	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00158	window	9	211	0.9573	1	18	Cloacina typhon 95.7%	Cloacina magnipapillata +18	family	Strongylidae	family	Strongylidae	family	Strongylidae
 ASV00159	window	0	237	1.0000	1	3	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +3	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00160	window	9	211	0.9573	1	16	Cloacina typhon 95.7%	Cloacina magnipapillata +16	family	Strongylidae	family	Strongylidae	family	Strongylidae
 ASV00161	window	0	213	1.0000	2	18	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +18	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
 ASV00162	window	1	237	0.9958	1	20	Cloacina edwardsi 99.6%	Cloacina artemis +20	genus	Cloacina	genus	Cloacina	species	Cloacina edwardsi
-ASV00163	window	0	210	1.0000	3	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00163	window	0	210	1.0000	3	2	Cooperia oncophora 100.0%	Cooperia punctata +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00164	window	4	239	0.9833	1	16	Cloacina edwardsi 98.3%	Cloacina artemis +16	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00165	window	1	213	0.9953	1	4	Trichostrongylus axei 99.5%	Trichostrongylus retortaeformis +4	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus axei
 ASV00166	window	3	237	0.9873	1	234	Hypodontus macropi 98.7%	none close	family	Strongylidae	family	Strongylidae	genus	Hypodontus
@@ -170,11 +170,11 @@ ASV00168	window	1	237	0.9958	1	11	Cloacina phaethon 99.6%	Cloacina pearsoni +11	
 ASV00169	window	1	236	0.9958	3	7	Cloacina feronia 99.6%	Cloacina themis +7	genus	Cloacina	genus	Cloacina	species	Cloacina feronia
 ASV00170	window	3	236	0.9873	1	4	Cloacina communis 98.7%	Cloacina phaedra +4	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00171	window	1	211	0.9953	2	30	Oesophagostomum radiatum 99.5%	Oesophagostomum stephanostomum +30	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum
-ASV00172	window	1	237	0.9958	2	5	Cloacina parva 99.6%	Cloacina shared: caenis / ernabella +5	genus	Cloacina	genus	Cloacina	species	Cloacina parva
-ASV00173	window	0	240	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00174	window	1	211	0.9953	1	1	Cooperia punctata 99.5%	Cooperia shared: punctata / spatulata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00172	window	1	237	0.9958	2	5	Cloacina parva 99.6%	Cloacina caenis +5	genus	Cloacina	genus	Cloacina	species	Cloacina parva
+ASV00173	window	0	240	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00174	window	1	211	0.9953	1	3	Cooperia punctata 99.5%	Cooperia oncophora +3	genus	Cooperia	genus	Cooperia	genus	Cooperia
 ASV00175	window	0	209	1.0000	1	19	Cloacina edwardsi 100.0%	Cloacina artemis +19	species	Cloacina edwardsi	species	Cloacina edwardsi	species	Cloacina edwardsi
-ASV00176	window	0	211	1.0000	1	3	Cooperia punctata 100.0%	Cooperia shared: punctata / spatulata +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
+ASV00176	window	0	211	1.0000	1	5	Cooperia punctata 100.0%	Cooperia oncophora +5	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00177	window	1	210	0.9952	2	5	Cloacina macropodis 99.5%	Cloacina johnstoni +5	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis
 ASV00178	window	2	229	0.9913	1	33	Oesophagostomum radiatum 99.1%	Oesophagostomum stephanostomum +33	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum
 ASV00179	window	0	210	1.0000	1	19	Cloacina edwardsi 100.0%	Cloacina artemis +19	species	Cloacina edwardsi	species	Cloacina edwardsi	species	Cloacina edwardsi
@@ -192,108 +192,108 @@ ASV00190	window	9	237	0.9620	1	20	Cloacina typhon 96.2%	Cloacina magnipapillata 
 ASV00191	window	0	211	1.0000	6	3	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +3	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00192	window	1	210	0.9952	2	5	Cloacina macropodis 99.5%	Cloacina johnstoni +5	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis
 ASV00193	window	9	238	0.9622	1	22	Cloacina typhon 96.2%	Cloacina magnipapillata +22	family	Strongylidae	family	Strongylidae	family	Strongylidae
-ASV00194	window	0	237	1.0000	4	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00194	window	0	237	1.0000	4	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00195	window	0	236	1.0000	1	11	Cloacina phaethon 100.0%	Cloacina pearsoni +11	species	Cloacina phaethon	species	Cloacina phaethon	species	Cloacina phaethon
 ASV00196	window	0	237	1.0000	1	20	Cloacina edwardsi 100.0%	Cloacina artemis +20	species	Cloacina edwardsi	species	Cloacina edwardsi	species	Cloacina edwardsi
 ASV00197	window	0	208	1.0000	1	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00198	window	2	200	0.9900	1	27	Oesophagostomum radiatum 99.0%	Oesophagostomum stephanostomum +27	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum
 ASV00199	window	1	234	0.9957	1	2	Cloacina herceus 99.6%	Cloacina hydriformis +2	genus	Cloacina	genus	Cloacina	genus	Cloacina
 ASV00200	window	1	239	0.9958	1	4	Trichostrongylus axei 99.6%	Trichostrongylus retortaeformis +4	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus axei
-ASV00201	window	0	237	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00201	window	0	237	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00202	window	5	205	0.9756	1	26	Oesophagostomum radiatum 97.6%	Oesophagostomum stephanostomum +26	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
 ASV00203	window	0	210	1.0000	1	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00204	window	1	237	0.9958	1	7	Cloacina macropodis 99.6%	Cloacina johnstoni +7	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis
 ASV00205	window	5	212	0.9764	4	2	Metastrongylus salmi 97.6%	Metastrongylus apri +2	family	Metastrongylidae	family	Metastrongylidae	genus	Metastrongylus
 ASV00206	window	1	240	0.9958	1	20	Ostertagia ostertagi 99.6%	Ostertagia gruehneri +20	genus	Ostertagia	genus	Ostertagia	species	Ostertagia ostertagi
-ASV00207	window	1	237	0.9958	1	1	Cooperia punctata 99.6%	Cooperia shared: punctata / spatulata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00207	window	1	237	0.9958	1	4	Cooperia punctata 99.6%	Cooperia oncophora +4	genus	Cooperia	genus	Cooperia	species	Cooperia punctata
 ASV00208	window	2	226	0.9912	1	33	Oesophagostomum radiatum 99.1%	Oesophagostomum stephanostomum +33	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum
-ASV00209	window	0	211	1.0000	7	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
-ASV00210	window	0	212	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00209	window	0	211	1.0000	7	3	Cooperia oncophora 100.0%	Cooperia punctata +3	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00210	window	0	212	1.0000	1	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00211	window	1	236	0.9958	2	3	Cloacina communis 99.6%	Cloacina petrogale +3	genus	Cloacina	genus	Cloacina	genus	Cloacina
 ASV00212	window	0	233	1.0000	1	20	Cloacina edwardsi 100.0%	Cloacina artemis +20	species	Cloacina edwardsi	species	Cloacina edwardsi	species	Cloacina edwardsi
 ASV00213	window	1	210	0.9952	1	8	Cloacina clymene 99.5%	Cloacina dryope +8	genus	Cloacina	genus	Cloacina	species	Cloacina clymene
 ASV00214	window	3	234	0.9872	1	33	Oesophagostomum radiatum 98.7%	Oesophagostomum stephanostomum +33	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00215	window	0	236	1.0000	2	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00215	window	0	236	1.0000	2	3	Cooperia oncophora 100.0%	Cooperia punctata +3	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00216	window	1	237	0.9958	1	20	Ostertagia ostertagi 99.6%	Ostertagia gruehneri +20	genus	Ostertagia	genus	Ostertagia	species	Ostertagia ostertagi
 ASV00217	window	2	237	0.9916	1	12	Cloacina phaethon 99.2%	Cloacina pearsoni +12	family	Strongylidae	family	Strongylidae	species	Cloacina phaethon
 ASV00218	window	2	230	0.9913	1	33	Oesophagostomum radiatum 99.1%	Oesophagostomum stephanostomum +33	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum
-ASV00219	window	0	237	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00219	window	0	237	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00220	window	4	207	0.9807	1	9	Cloacina echidne 98.1%	Cloacina artemis +9	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00221	window	5	207	0.9758	1	26	Oesophagostomum radiatum 97.6%	Oesophagostomum stephanostomum +26	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00222	window	2	240	0.9917	1		Cooperia punctata / Cooperia spatulata 99.2%	Cooperia spatulata +0	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia
-ASV00223	window	0	213	1.0000	3	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00222	window	2	240	0.9917	1	1	Cooperia punctata 99.2%	Cooperia oncophora +1	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia
+ASV00223	window	0	213	1.0000	3	2	Cooperia oncophora 100.0%	Cooperia punctata +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00224	window	8	238	0.9664	1	22	Cloacina typhon 96.6%	Cloacina magnipapillata +22	family	Strongylidae	family	Strongylidae	family	Strongylidae
-ASV00225	window	1	207	0.9952	2	4	Cloacina parva 99.5%	Cloacina shared: caenis / ernabella +4	genus	Cloacina	genus	Cloacina	species	Cloacina parva
+ASV00225	window	1	207	0.9952	2	4	Cloacina parva 99.5%	Cloacina caenis +4	genus	Cloacina	genus	Cloacina	species	Cloacina parva
 ASV00226	window	1	237	0.9958	1	4	Trichostrongylus axei 99.6%	Trichostrongylus retortaeformis +4	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus axei
 ASV00227	window	2	210	0.9905	3	6	Cloacina feronia 99.0%	Cloacina themis +6	family	Strongylidae	family	Strongylidae	species	Cloacina feronia
 ASV00228	window	5	210	0.9762	1	9	Cloacina echidne 97.6%	Cloacina artemis +9	family	Strongylidae	family	Strongylidae	genus	Cloacina
-ASV00229	window	0	237	1.0000	1	3	Cooperia punctata 100.0%	Cooperia shared: punctata / spatulata +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
-ASV00230	window	0	237	1.0000	1	3	Cooperia punctata 100.0%	Cooperia shared: punctata / spatulata +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
+ASV00229	window	0	237	1.0000	1	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
+ASV00230	window	0	237	1.0000	1	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00231	window	1	209	0.9952	2	5	Cloacina macropodis 99.5%	Cloacina johnstoni +5	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis
 ASV00232	window	0	206	1.0000	1	3	Trichostrongylus rugatus 100.0%	Trichostrongylus retortaeformis +3	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus
 ASV00233	window	0	238	1.0000	2	21	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +21	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00234	window	2	212	0.9906	3		Cooperia oncophora / Cooperia punctata / Cooperia spatulata 99.1%	Cooperia spatulata +0	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia
-ASV00235	window	2	208	0.9904	2	4	Cloacina parva 99.0%	Cloacina shared: caenis / ernabella +4	family	Strongylidae	family	Strongylidae	species	Cloacina parva
+ASV00234	window	2	212	0.9906	3		Cooperia oncophora / Cooperia punctata 99.1%	Cooperia curticei +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia
+ASV00235	window	2	208	0.9904	2	4	Cloacina parva 99.0%	Cloacina caenis +4	family	Strongylidae	family	Strongylidae	species	Cloacina parva
 ASV00236	window	4	235	0.9830	1	2	Haemonchus placei 98.3%	Haemonchus contortus +2	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
 ASV00237	window	3	210	0.9857	1	33	Cloacina pollux 98.6%	Wallabinema macropodis +33	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00238	window	4	235	0.9830	1	13	Cloacina echidne 98.3%	Cloacina artemis +13	family	Strongylidae	family	Strongylidae	genus	Cloacina
-ASV00239	window	0	211	1.0000	3	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00239	window	0	211	1.0000	3	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00240	window	3	205	0.9854	1	27	Oesophagostomum radiatum 98.5%	Oesophagostomum stephanostomum +27	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00241	window	0	239	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00241	window	0	239	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00242	window	0	234	1.0000	1	3	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +3	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00243	window	5	237	0.9789	1	13	Cloacina echidne 97.9%	Cloacina artemis +13	family	Strongylidae	family	Strongylidae	genus	Cloacina
-ASV00244	window	0	239	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00244	window	0	239	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00245	window	0	210	1.0000	1	6	Cloacina communis 100.0%	Cloacina petrogale +6	species	Cloacina communis	species	Cloacina communis	species	Cloacina communis
 ASV00246	window	38	219	0.8265	1	10	Metastrongylus apri 82.6%	Metastrongylus salmi +10	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00247	window	2	228	0.9912	1	33	Oesophagostomum radiatum 99.1%	Oesophagostomum stephanostomum +33	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum
 ASV00248	window	1	211	0.9953	1	16	Ostertagia ostertagi 99.5%	Ostertagia gruehneri +16	genus	Ostertagia	genus	Ostertagia	species	Ostertagia ostertagi
 ASV00249	window	2	234	0.9915	1	4	Cloacina macropodis 99.1%	Cloacina johnstoni +4	family	Strongylidae	family	Strongylidae	species	Cloacina macropodis
-ASV00250	window	0	205	1.0000	1	4	Cloacina parva 100.0%	Cloacina shared: caenis / ernabella +4	species	Cloacina parva	species	Cloacina parva	species	Cloacina parva
+ASV00250	window	0	205	1.0000	1	4	Cloacina parva 100.0%	Cloacina caenis +4	species	Cloacina parva	species	Cloacina parva	species	Cloacina parva
 ASV00251	window	0	236	1.0000	1	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
 ASV00252	window	0	237	1.0000	1	4	Trichostrongylus rugatus 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus
 ASV00253	window	3	209	0.9856	2	5	Cloacina communis 98.6%	Cloacina petrogale +5	family	Strongylidae	family	Strongylidae	genus	Cloacina
-ASV00254	window	0	211	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00254	window	0	211	1.0000	1	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00255	window	1	208	0.9952	3	3	Cloacina communis 99.5%	Cloacina petrogale +3	genus	Cloacina	genus	Cloacina	genus	Cloacina
-ASV00256	window	0	239	1.0000	3	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00256	window	0	239	1.0000	3	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00257	window	2	237	0.9916	3	7	Cloacina feronia 99.2%	Cloacina themis +7	family	Strongylidae	family	Strongylidae	species	Cloacina feronia
 ASV00258	window	5	239	0.9791	4	2	Metastrongylus salmi 97.9%	Metastrongylus apri +2	family	Metastrongylidae	family	Metastrongylidae	genus	Metastrongylus
-ASV00259	window	1	212	0.9953	1		Cooperia punctata / Cooperia spatulata 99.5%	Cooperia spatulata +0	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00259	window	1	212	0.9953	1	2	Cooperia punctata 99.5%	Cooperia oncophora +2	genus	Cooperia	genus	Cooperia	genus	Cooperia
 ASV00260	window	2	204	0.9902	1	2	Cloacina macropodis 99.0%	Cloacina johnstoni +2	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00261	window	2	211	0.9905	1	36	Cloacina pollux 99.1%	Wallabinema macropodis +36	family	Strongylidae	family	Strongylidae	species	Cloacina pollux
 ASV00262	window	22	197	0.8883	1	3	Haemonchus contortus 88.8%	Haemonchus placei +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00263	window	0	236	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00263	window	0	236	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00264	window	5	237	0.9789	1	24	Popovastrongylus macropodis 97.9%	Macropostrongylus macropostrongylus +24	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus
-ASV00265	window	0	213	1.0000	3	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00265	window	0	213	1.0000	3	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00266	window	18	221	0.9186	1	4	Haemonchus placei 91.9%	Haemonchus contortus +4	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00267	window	2	234	0.9915	1	2	Cloacina herceus 99.1%	Cloacina hydriformis +2	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00268	window	2	210	0.9905	1	8	Cloacina clymene 99.0%	Cloacina dryope +8	family	Strongylidae	family	Strongylidae	species	Cloacina clymene
-ASV00269	window	0	210	1.0000	8	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00269	window	0	210	1.0000	8	3	Cooperia oncophora 100.0%	Cooperia punctata +3	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00270	window	2	240	0.9917	1	5	Haemonchus placei 99.2%	Haemonchus contortus +5	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus placei
-ASV00271	window	0	236	1.0000	1	5	Cloacina parva 100.0%	Cloacina shared: caenis / ernabella +5	species	Cloacina parva	species	Cloacina parva	species	Cloacina parva
+ASV00271	window	0	236	1.0000	1	5	Cloacina parva 100.0%	Cloacina caenis +5	species	Cloacina parva	species	Cloacina parva	species	Cloacina parva
 ASV00272	window	10	239	0.9582	1	18	Popovastrongylus macropodis 95.8%	Alocostoma propinquum +18	family	Strongylidae	family	Strongylidae	family	Strongylidae
-ASV00273	window	0	239	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00274	window	1	240	0.9958	1		Cooperia punctata / Cooperia spatulata 99.6%	Cooperia spatulata +0	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00273	window	0	239	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00274	window	1	240	0.9958	1	3	Cooperia punctata 99.6%	Cooperia oncophora +3	genus	Cooperia	genus	Cooperia	genus	Cooperia
 ASV00275	window	2	235	0.9915	1	5	Haemonchus placei 99.1%	Haemonchus contortus +5	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus placei
-ASV00276	window	0	213	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00276	window	0	213	1.0000	1	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00277	window	1	229	0.9956	1	37	Oesophagostomum radiatum 99.6%	Oesophagostomum stephanostomum +37	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum
 ASV00278	window	9	211	0.9573	1	13	Popovastrongylus macropodis 95.7%	Alocostoma propinquum +13	family	Strongylidae	family	Strongylidae	family	Strongylidae
-ASV00279	window	0	238	1.0000	1	3	Cooperia punctata 100.0%	Cooperia shared: punctata / spatulata +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
+ASV00279	window	0	238	1.0000	1	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00280	window	22	198	0.8889	1	3	Haemonchus contortus 88.9%	Haemonchus placei +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00281	window	2	236	0.9915	1	9	Cloacina clymene 99.2%	Cloacina dryope +9	family	Strongylidae	family	Strongylidae	species	Cloacina clymene
 ASV00282	window	3	233	0.9871	1	33	Oesophagostomum radiatum 98.7%	Oesophagostomum stephanostomum +33	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00283	window	0	210	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia punctata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
-ASV00284	window	2	237	0.9916	2	5	Cloacina parva 99.2%	Cloacina shared: caenis / ernabella +5	family	Strongylidae	family	Strongylidae	species	Cloacina parva
+ASV00283	window	0	210	1.0000	2	2	Cooperia punctata 100.0%	Cooperia oncophora +2	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
+ASV00284	window	2	237	0.9916	2	5	Cloacina parva 99.2%	Cloacina caenis +5	family	Strongylidae	family	Strongylidae	species	Cloacina parva
 ASV00285	window	2	210	0.9905	1	11	Cloacina phaethon 99.0%	Cloacina parva +11	family	Strongylidae	family	Strongylidae	species	Cloacina phaethon
 ASV00286	window	3	210	0.9857	1	33	Cloacina pollux 98.6%	Wallabinema macropodis +33	family	Strongylidae	family	Strongylidae	genus	Cloacina
-ASV00287	window	0	238	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia punctata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00287	window	0	238	1.0000	2	3	Cooperia punctata 100.0%	Cooperia oncophora +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00288	window	5	238	0.9790	4	2	Metastrongylus salmi 97.9%	Metastrongylus apri +2	family	Metastrongylidae	family	Metastrongylidae	genus	Metastrongylus
 ASV00289	window	4	234	0.9829	1	3	Haemonchus placei 98.3%	Haemonchus contortus +3	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
-ASV00290	window	1	239	0.9958	1	1	Cooperia punctata 99.6%	Cooperia shared: punctata / spatulata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00290	window	1	239	0.9958	1	4	Cooperia punctata 99.6%	Cooperia oncophora +4	genus	Cooperia	genus	Cooperia	species	Cooperia punctata
 ASV00291	window	5	212	0.9764	4	2	Metastrongylus salmi 97.6%	Metastrongylus apri +2	family	Metastrongylidae	family	Metastrongylidae	genus	Metastrongylus
 ASV00292	window	2	205	0.9902	1	1	Cloacina herceus 99.0%	Cloacina hydriformis +1	family	Strongylidae	family	Strongylidae	genus	Cloacina
-ASV00293	window	0	234	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00294	window	2	207	0.9903	2	4	Cloacina parva 99.0%	Cloacina shared: caenis / ernabella +4	family	Strongylidae	family	Strongylidae	species	Cloacina parva
-ASV00295	window	0	239	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia punctata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00293	window	0	234	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00294	window	2	207	0.9903	2	4	Cloacina parva 99.0%	Cloacina caenis +4	family	Strongylidae	family	Strongylidae	species	Cloacina parva
+ASV00295	window	0	239	1.0000	2	3	Cooperia punctata 100.0%	Cooperia oncophora +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00296	window	1	235	0.9957	2	3	Cloacina communis 99.6%	Cloacina petrogale +3	genus	Cloacina	genus	Cloacina	genus	Cloacina
 ASV00297	window	5	240	0.9792	4	2	Metastrongylus salmi 97.9%	Metastrongylus apri +2	family	Metastrongylidae	family	Metastrongylidae	genus	Metastrongylus
 ASV00298	window	3	232	0.9871	1	33	Oesophagostomum radiatum 98.7%	Oesophagostomum stephanostomum +33	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
@@ -310,53 +310,53 @@ ASV00308	window	4	210	0.9810	5	5	Metastrongylus apri 98.1%	Metastrongylus salmi 
 ASV00309	window	5	232	0.9784	1	31	Oesophagostomum radiatum 97.8%	Oesophagostomum stephanostomum +31	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
 ASV00310	window	3	237	0.9873	1	38	Cloacina pollux 98.7%	Wallabinema macropodis +38	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00311	window	4	210	0.9810	1	2	Haemonchus placei 98.1%	Haemonchus contortus +2	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
-ASV00312	window	0	211	1.0000	1	3	Cooperia punctata 100.0%	Cooperia shared: punctata / spatulata +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
+ASV00312	window	0	211	1.0000	1	5	Cooperia punctata 100.0%	Cooperia oncophora +5	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00313	window	22	195	0.8872	1	3	Haemonchus contortus 88.7%	Haemonchus placei +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00314	window	0	236	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00314	window	0	236	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00315	window	2	210	0.9905	3	3	Cloacina macropodis 99.0%	Cloacina johnstoni +3	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00316	window	6	210	0.9714	1	17	Popovastrongylus macropodis 97.1%	Alocostoma propinquum +17	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus
-ASV00317	window	1	239	0.9958	1	1	Cooperia punctata 99.6%	Cooperia shared: punctata / spatulata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00317	window	1	239	0.9958	1	4	Cooperia punctata 99.6%	Cooperia oncophora +4	genus	Cooperia	genus	Cooperia	species	Cooperia punctata
 ASV00318	window	1	210	0.9952	1	16	Ostertagia ostertagi 99.5%	Ostertagia gruehneri +16	genus	Ostertagia	genus	Ostertagia	species	Ostertagia ostertagi
 ASV00319	window	2	238	0.9916	1	42	Cloacina pollux 99.2%	Wallabinema macropodis +42	family	Strongylidae	family	Strongylidae	species	Cloacina pollux
 ASV00320	window	0	236	1.0000	1	2	Trichostrongylus retortaeformis 100.0%	Trichostrongylus axei +2	species	Trichostrongylus retortaeformis	species	Trichostrongylus retortaeformis	species	Trichostrongylus retortaeformis
-ASV00321	window	0	210	1.0000	2		Cooperia punctata / Cooperia spatulata 100.0%	Cooperia punctata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
-ASV00322	window	1	209	0.9952	1	1	Cooperia punctata 99.5%	Cooperia shared: punctata / spatulata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00321	window	0	210	1.0000	2	2	Cooperia punctata 100.0%	Cooperia oncophora +2	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
+ASV00322	window	1	209	0.9952	1	3	Cooperia punctata 99.5%	Cooperia oncophora +3	genus	Cooperia	genus	Cooperia	genus	Cooperia
 ASV00323	window	1	236	0.9958	1	4	Haemonchus placei 99.6%	Haemonchus contortus +4	genus	Haemonchus	genus	Haemonchus	species	Haemonchus placei
 ASV00324	window	4	239	0.9833	1	38	Cloacina pollux 98.3%	Wallabinema macropodis +38	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00325	window	4	235	0.9830	4	5	Metastrongylus apri 98.3%	Metastrongylus salmi +5	family	Metastrongylidae	family	Metastrongylidae	genus	Metastrongylus
-ASV00326	window	1	237	0.9958	1	1	Cooperia punctata 99.6%	Cooperia shared: punctata / spatulata +1	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00326	window	1	237	0.9958	1	4	Cooperia punctata 99.6%	Cooperia oncophora +4	genus	Cooperia	genus	Cooperia	species	Cooperia punctata
 ASV00327	window	5	206	0.9757	1	26	Oesophagostomum radiatum 97.6%	Oesophagostomum stephanostomum +26	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
 ASV00328	window	1	213	0.9953	1	16	Ostertagia ostertagi 99.5%	Ostertagia gruehneri +16	genus	Ostertagia	genus	Ostertagia	species	Ostertagia ostertagi
 ASV00329	window	5	232	0.9784	1	32	Oesophagostomum radiatum 97.8%	Oesophagostomum stephanostomum +32	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
 ASV00330	window	1	207	0.9952	2	5	Cloacina macropodis 99.5%	Cloacina johnstoni +5	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis
 ASV00331	window	3	235	0.9872	1	1	Cloacina herceus 98.7%	Cloacina hydriformis +1	family	Strongylidae	family	Strongylidae	genus	Cloacina
-ASV00332	window	0	235	1.0000	1	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00332	window	0	235	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00333	window	2	237	0.9916	2		Trichostrongylus colubriformis / Trichostrongylus retortaeformis 99.2%	Trichostrongylus capricola +1	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus
 ASV00334	window	3	212	0.9858	4		Haemonchus (genus) / Haemonchus contortus / Haemonchus placei 98.6%	Haemonchus bedfordi +3	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
 ASV00335	window	1	199	0.9950	1	31	Oesophagostomum radiatum 99.5%	Oesophagostomum stephanostomum +31	family	Strongylidae	genus	Oesophagostomum	species	Oesophagostomum radiatum
 ASV00336	window	1	198	0.9949	1	31	Oesophagostomum radiatum 99.5%	Oesophagostomum stephanostomum +31	family	Strongylidae	genus	Oesophagostomum	species	Oesophagostomum radiatum
-ASV00337	window	0	212	1.0000	3	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00338	window	0	234	1.0000	1	3	Cooperia punctata 100.0%	Cooperia shared: punctata / spatulata +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
-ASV00339	window	0	239	1.0000	1	3	Cooperia punctata 100.0%	Cooperia shared: punctata / spatulata +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
+ASV00337	window	0	212	1.0000	3	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00338	window	0	234	1.0000	1	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
+ASV00339	window	0	239	1.0000	1	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00340	window	3	237	0.9873	1	38	Cloacina pollux 98.7%	Wallabinema macropodis +38	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00341	window	3	234	0.9872	3	5	Cloacina macropodis 98.7%	Cloacina johnstoni +5	family	Strongylidae	family	Strongylidae	genus	Cloacina
 ASV00342	window	0	207	1.0000	1	6	Cloacina communis 100.0%	Cloacina petrogale +6	species	Cloacina communis	species	Cloacina communis	species	Cloacina communis
-ASV00343	window	0	207	1.0000	8	1	Cooperia oncophora 100.0%	Cooperia surnabada +1	species	Cooperia oncophora	species	Cooperia oncophora	genus	Cooperia
+ASV00343	window	0	207	1.0000	8	3	Cooperia oncophora 100.0%	Cooperia punctata +3	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00344	window	1	201	0.9950	1	31	Oesophagostomum radiatum 99.5%	Oesophagostomum stephanostomum +31	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum
 ASV00345	window	3	237	0.9873	1	11	Cloacina phaethon 98.7%	Cloacina pearsoni +11	family	Strongylidae	family	Strongylidae	genus	Cloacina
-ASV00346	window	6	207	0.9710	1	13	Ostertagia ostertagi 97.1%	Ostertagia arctica +13	family	Trichostrongylidae	family	Trichostrongylidae	genus	Ostertagia
+ASV00346	window	6	207	0.9710	1	13	Ostertagia ostertagi 97.1%	Ostertagia gruehneri +13	family	Trichostrongylidae	family	Trichostrongylidae	genus	Ostertagia
 ASV00347	window	59	204	0.7108	1	145	Sachsia putridicola 71.1%	none close	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00348	window	0	210	1.0000	3	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00349	window	0	236	1.0000	1	3	Cooperia punctata 100.0%	Cooperia shared: punctata / spatulata +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
+ASV00348	window	0	210	1.0000	3	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00349	window	0	236	1.0000	1	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
 ASV00350	window	22	194	0.8866	1	1	Haemonchus placei 88.7%	Haemonchus contortus +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00351	window	2	211	0.9905	3		Cooperia oncophora / Cooperia punctata / Cooperia spatulata 99.1%	Cooperia spatulata +0	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia
+ASV00351	window	2	211	0.9905	3		Cooperia oncophora / Cooperia punctata 99.1%	Cooperia curticei +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia
 ASV00352	window	2	222	0.9910	1	4	Trichostrongylus axei 99.1%	Trichostrongylus retortaeformis +4	family	Trichostrongylidae	family	Trichostrongylidae	species	Trichostrongylus axei
 ASV00353	window	33	177	0.8136	1	4	Haemonchus contortus 81.4%	Haemonchus placei +4	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00354	window	24	217	0.8894	1	1	Haemonchus placei 88.9%	Haemonchus contortus +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00355	window	22	193	0.8860	2	3	Haemonchus contortus 88.6%	Haemonchus placei +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00356	window	23	193	0.8808	2	3	Haemonchus contortus 88.1%	Haemonchus placei +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00357	window	22	193	0.8860	2	3	Haemonchus contortus 88.6%	Haemonchus placei +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00358	window	0	209	1.0000	3	2	Cooperia oncophora 100.0%	Cooperia surnabada +2	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
+ASV00358	window	0	209	1.0000	3	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
 ASV00359	window	24	209	0.8852	1	2	Macropostrongylus macropostrongylus 88.5%	Papillostrongylus labiatus +2	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00360	window	6	198	0.9697	1	4	Trichostrongylus axei 97.0%	Trichostrongylus colubriformis +4	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
 ASV00361	window	33	199	0.8342	1	0	Haemonchus placei 83.4%	Haemonchus contortus +0	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
@@ -371,7 +371,7 @@ ASV00369	window	26	237	0.8903	1	4	Macropostrongylus macropostrongylus 89.0%	Papi
 ASV00370	window	24	219	0.8904	1	1	Haemonchus placei 89.0%	Haemonchus contortus +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00371	window	22	219	0.8995	1	1	Haemonchus placei 90.0%	Haemonchus contortus +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00372	window	2	239	0.9916	1	1	Haemonchus contortus 99.2%	Haemonchus placei +1	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
-ASV00373	window	1	240	0.9958	1	2	Cooperia oncophora 99.6%	Cooperia surnabada +2	genus	Cooperia	genus	Cooperia	genus	Cooperia
+ASV00373	window	1	240	0.9958	1	5	Cooperia oncophora 99.6%	Cooperia punctata +5	genus	Cooperia	genus	Cooperia	species	Cooperia oncophora
 ASV00374	window	6	225	0.9733	1	4	Trichostrongylus axei 97.3%	Trichostrongylus retortaeformis +4	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus
 ASV00375	window	26	215	0.8791	1	0	Haemonchus contortus 87.9%	Ashworthius sidemi +0	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00376	window	22	196	0.8878	1	1	Haemonchus placei 88.8%	Haemonchus contortus +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
@@ -386,7 +386,7 @@ ASV00384	window	2	192	0.9896	1	4	Trichostrongylus axei 99.0%	Trichostrongylus re
 ASV00385	window	3	240	0.9875	1	2	Haemonchus contortus 98.8%	Haemonchus placei +2	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
 ASV00386	window	17	203	0.9163	1	18	Oesophagostomum radiatum 91.6%	Oesophagostomum stephanostomum +18	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00387	window	35	199	0.8241	1	4	Haemonchus contortus 82.4%	Haemonchus placei +4	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00388	window	3	212	0.9858	1	1	Cooperia oncophora 98.6%	Cooperia shared: punctata / spatulata +1	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia
+ASV00388	window	3	212	0.9858	1	1	Cooperia oncophora 98.6%	Cooperia punctata +1	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia
 ASV00389	window	23	192	0.8802	1	3	Haemonchus contortus 88.0%	Haemonchus placei +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00390	window		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00391	window	13	234	0.9444	1	7	Cloacina echidne 94.4%	Cloacina artemis +7	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
@@ -429,7 +429,7 @@ ASV00427	window	17	204	0.9167	1	18	Oesophagostomum radiatum 91.7%	Oesophagostomu
 ASV00428	window	30	218	0.8624	1	2	Cloacina herceus 86.2%	Cloacina hydriformis +2	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00429	window	24	175	0.8629	5	6	Metastrongylus apri 86.3%	Metastrongylus salmi +6	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00430	window	49	185	0.7351	1	2	Haemonchus contortus 73.5%	Ashworthius sidemi +2	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00431	window	7	204	0.9657	1	13	Ostertagia ostertagi 96.6%	Ostertagia arctica +13	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
+ASV00431	window	7	204	0.9657	1	13	Ostertagia ostertagi 96.6%	Ostertagia gruehneri +13	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
 ASV00432	window	33	202	0.8366	1	1	Haemonchus placei 83.7%	Haemonchus contortus +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00433	window	33	175	0.8114	1	4	Haemonchus contortus 81.1%	Haemonchus placei +4	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00434	window	24	204	0.8824	1	15	Oesophagostomum radiatum 88.2%	Oesophagostomum stephanostomum +15	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
@@ -440,7 +440,7 @@ ASV00438	window	2	217	0.9908	1	4	Trichostrongylus axei 99.1%	Trichostrongylus re
 ASV00439	window	15	238	0.9370	1	27	Oesophagostomum radiatum 93.7%	Oesophagostomum stephanostomum +27	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00440	window	17	206	0.9175	1	18	Oesophagostomum radiatum 91.7%	Oesophagostomum stephanostomum +18	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00441	window	36	188	0.8085	2	10	Ostertagia ostertagi 80.9%	Ostertagia antipini +10	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00442	window	19	206	0.9078	1	8	Ostertagia ostertagi 90.8%	Ostertagia arctica +8	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
+ASV00442	window	19	206	0.9078	1	8	Ostertagia ostertagi 90.8%	Ostertagia gruehneri +8	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00443	window		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00444	window	13	200	0.9350	1	19	Oesophagostomum radiatum 93.5%	Oesophagostomum stephanostomum +19	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00445	window	0	211	1.0000	5	7	Metastrongylus apri 100.0%	Metastrongylus salmi +7	species	Metastrongylus apri	species	Metastrongylus apri	species	Metastrongylus apri
@@ -460,14 +460,14 @@ ASV00458	window	27	231	0.8831	1	12	Oesophagostomum radiatum 88.3%	Cloacina echid
 ASV00459	window	32	199	0.8392	1	1	Haemonchus placei 83.9%	Haemonchus contortus +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00460	window	30	225	0.8667	1	3	Haemonchus placei 86.7%	Haemonchus contortus +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00461	window	8	207	0.9614	1	6	Haemonchus contortus 96.1%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
-ASV00462	window	18	210	0.9143	1	8	Ostertagia ostertagi 91.4%	Ostertagia arctica +8	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
+ASV00462	window	18	210	0.9143	1	8	Ostertagia ostertagi 91.4%	Ostertagia gruehneri +8	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00463	window	32	175	0.8171	1	4	Haemonchus contortus 81.7%	Haemonchus placei +4	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00464	window	26	172	0.8488	1	0	Haemonchus contortus 84.9%	Haemonchus placei +0	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00465	window	13	198	0.9343	1	19	Oesophagostomum radiatum 93.4%	Oesophagostomum stephanostomum +19	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00466	window	40	212	0.8113	1	4	Haemonchus placei 81.1%	Haemonchus contortus +4	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00467	window	25	179	0.8603	2		Haemonchus contortus / Haemonchus placei 86.0%	Haemonchus bedfordi +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00468	window	15	205	0.9268	2	6	Cloacina clymene 92.7%	Cloacina dryope +6	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00469	window	19	219	0.9132	1	9	Ostertagia ostertagi 91.3%	Ostertagia arctica +9	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
+ASV00469	window	19	219	0.9132	1	9	Ostertagia ostertagi 91.3%	Ostertagia gruehneri +9	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00470	window	21	171	0.8772	5	6	Metastrongylus apri 87.7%	Metastrongylus salmi +6	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00471	window	22	190	0.8842	1	14	Ostertagia ostertagi 88.4%	Ostertagia gruehneri +14	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
 ASV00472	window	38	208	0.8173	5	6	Metastrongylus apri 81.7%	Metastrongylus salmi +6	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned

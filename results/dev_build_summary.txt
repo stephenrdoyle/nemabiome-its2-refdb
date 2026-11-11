@@ -1,42 +1,42 @@
-nemits2_dev  built 2026-11-10T13:36:41Z  code 4135f791f718262d2388bac40180585449afa89c-dirty
+nemits2_dev  built 2026-11-11T14:50:23Z  code 32c2e5b389da5c0329a12e6b2a31763b916ce39b-dirty
 primers NC1 ACGTCTGGTTCAGGGTTGTT / NC2 TTAGTTTCTTTTCCTCCGCT
 source nemabiome_20260317
-records 11,146 from 15,282 source records; named species 1,869
-members: dropped 28, kept 15,254; partial records folded into a same-species full-length record: 1,122; weak records folded into a same-species record within 1 edit: 752; renamed to current NCBI names: 64
+records 11,135 from 15,282 source records; named species 1,864
+members: dropped 54, kept 15,228; partial records folded into a same-species full-length record: 1,125; weak records folded into a same-species record within 1 edit: 749; renamed to current NCBI names: 64
 conflicts (order or above): none
 
 Grade (best member):
-    complete         4,419   39.6%
-    near_complete    3,484   31.3%
-    partial_90         634    5.7%
-    partial_75         448    4.0%
-    partial            448    4.0%
-    unmeasured       1,713   15.4%
+    complete         4,414   39.6%
+    near_complete    3,485   31.3%
+    partial_90         633    5.7%
+    partial_75         445    4.0%
+    partial            446    4.0%
+    unmeasured       1,712   15.4%
 
-Deepest rank - nanopore (whole ITS2; 343 species-level records tied with another species' over their span):
-    species         10,675   95.8%
-    genus              446    4.0%
-    family              24    0.2%
+Deepest rank - nanopore (whole ITS2; 297 species-level records tied with another species' over their span):
+    species         10,726   96.3%
+    genus              388    3.5%
+    family              20    0.2%
     order                1    0.0%
     class                0    0.0%
     phylum               0    0.0%
     kingdom              0    0.0%
     superkingdom         0    0.0%
     (none)               0    0.0%
-  Illumina 150x150 (windows 130 + 83, 10,415 window groups; 473 tied):
-    species         10,503   94.2%
-    genus              616    5.5%
-    family              26    0.2%
+  Illumina 150x150 (windows 130 + 83, 10,404 window groups; 416 tied):
+    species         10,570   94.9%
+    genus              542    4.9%
+    family              22    0.2%
     order                1    0.0%
     class                0    0.0%
     phylum               0    0.0%
     kingdom              0    0.0%
     superkingdom         0    0.0%
     (none)               0    0.0%
-  Illumina 250x250 (windows 230 + 183, 11,090 window groups; 354 tied):
-    species         10,663   95.7%
-    genus              458    4.1%
-    family              24    0.2%
+  Illumina 250x250 (windows 230 + 183, 11,079 window groups; 303 tied):
+    species         10,719   96.3%
+    genus              395    3.5%
+    family              20    0.2%
     order                1    0.0%
     class                0    0.0%
     phylum               0    0.0%
@@ -46,16 +46,16 @@ Deepest rank - nanopore (whole ITS2; 343 species-level records tied with another
 
 Primer fit (best member holding the sites):
     exact              201    1.8%
-    near               364    3.3%
-    poor             1,109    9.9%
-    one_site         6,849   61.4%
-    unknown          2,623   23.5%
+    near               363    3.3%
+    poor             1,108   10.0%
+    one_site         6,843   61.5%
+    unknown          2,620   23.5%
 
-Species margins over the shorter record's span, read whole (11,018 species-level records):
-    0 (inside another species' record: tied)         343
-    1 edit                                           790
-    2 edits                                          665
-    3-5 edits                                      1,425
-    6-10 edits                                     1,254
-    11+ edits                                      2,808
-    no other species within reach                  3,733
+Species margins over the shorter record's span, read whole (11,023 species-level records):
+    0 (inside another species' record: tied)         297
+    1 edit                                           738
+    2 edits                                          589
+    3-5 edits                                      1,371
+    6-10 edits                                     1,288
+    11+ edits                                      2,883
+    no other species within reach                  3,857

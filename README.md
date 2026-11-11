@@ -134,14 +134,15 @@ mismatch at all.
 ## How well reads are named
 
 Tested two ways (docs/DESIGN.md §6): leave-one-out on the database
-itself, and two published livestock datasets run through the standard
+itself, and two livestock datasets (one published) run through the standard
 nemabiome DADA2 workflow.
 
-Figures in this section are for v0.1.1. Since v0.1.0 the classifier
+Figures in this section are for `main` after the 2026-11-11 curation pass
+(`docs/curation_pass_2026-11-11.md`). Since v0.1.0 the classifier
 also scores every candidate (issue #1) and scores read windows strictly
 (docs/DESIGN.md §6).
 
-**Leave-one-out** (3,195 records of 1,224 species, read whole; 2x150 is
+**Leave-one-out** (3,182 records of 1,220 species, read whole; 2x150 is
 within 3 points). *Present*: only the query's own record removed.
 *Missing*: every record of the query's species removed, so any species
 named is wrong. Recall = right calls / reads; precision = right calls /
@@ -150,9 +151,9 @@ missing species (`results/leave_one_out/metrics.txt`).
 
 | Classifier, this database | Species recall | Species precision | Genus recall | Genus precision | Over-classification |
 |---|---:|---:|---:|---:|---:|
-| `bin/classify_asvs.py`, gap rule | 53.4% | **98.5%** | 89.2% | 99.3% | **6.4%** |
-| DECIPHER IdTaxa (threshold 60) | 76.9% | 96.7% | 93.5% | **99.4%** | 22.7% |
-| dada2 assignTaxonomy (minBoot 80) | **85.4%** | 94.6% | **97.4%** | 99.2% | 43.9% |
+| `bin/classify_asvs.py`, gap rule | 55.3% | **98.8%** | 88.9% | 99.3% | **5.9%** |
+| DECIPHER IdTaxa (threshold 60) | 78.8% | 96.9% | 93.5% | **99.5%** | 23.2% |
+| dada2 assignTaxonomy (minBoot 80) | **86.0%** | 95.1% | **97.2%** | 99.2% | 43.5% |
 
 The gap rule names a species only when the read is >= 99% identical to
 it and every other species is >= 4 edits further off, or the match is
@@ -166,28 +167,29 @@ Tuning the rule per genus or family did not help on held-out species
 (`results/leave_one_out/group_rules.txt`). Each call carries `nearest`
 (the best species and its identity) and `next` (the nearest other
 species and how many edits further), so a genus call still says how
-close it came: *Cooperia*; nearest *C. oncophora* 100.0%; next
-*C. surnabada* +1.
+close it came: *Trichostrongylus*; nearest *T. colubriformis* 100.0%;
+next *T. capricola* +1.
 
 **Real data** (share of reads named to species; all arms named the same
-species wherever two of them named one). Two published NC1/NC2 sets,
+species wherever two of them named one). Two NC1/NC2 sets from the
+Šlapeta group, one published,
 2x250 pairs joined hybrid (merged where they overlap, concatenated where
 they do not), and cut to 2x150:
 
 | Dataset | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db |
 |---|---:|---:|---:|---:|---:|
-| Francis & Šlapeta, cattle, goats, sheep, PRJNA936713, 2x250 | 72.0% | 81.7% | 99.5% | 99.4% | 92.0% |
-| same, cut to 2x150 | 76.0% | 88.2% | 98.9% | 97.8% | 92.4% |
-| Gilleard, cattle, kangaroos, pigs, rabbits, PRJNA1524548, 2x250 | 70.4% | 69.7% | 93.7% | 96.6% | 92.9% |
-| same, cut to 2x150 | 73.7% | 65.9% | 93.7% | 95.7% | 93.8% |
+| Francis & Šlapeta, cattle, goats, sheep, PRJNA936713, 2x250 | 72.0% | 81.7% | 99.9% | 99.8% | 93.8% |
+| same, cut to 2x150 | 76.0% | 88.2% | 99.1% | 99.1% | 94.5% |
+| Šlapeta group, unpublished, PRJNA1524548, cattle, kangaroos, pigs, rabbits, 2x250 | 70.4% | 69.7% | 94.9% | 99.1% | 95.2% |
+| same, cut to 2x150 | 73.7% | 65.9% | 94.8% | 87.2% | 95.9% |
 
 assignTaxonomy and IdTaxa compare k-mers over the whole ASV, so with
 this database the ASVs' 28S stretch must be cut off first
 (`bin/trim_28s.py`); the columns for this database are on cut ASVs.
 Merging only, as the standard workflow does, loses the ITS2 too long
-for a 2x250 pair to overlap: two of the four Gilleard pig libraries kept
+for a 2x250 pair to overlap: two of the four PRJNA1524548 pig libraries kept
 6 and 665 reads merged and 22,932 and 19,801 hybrid, all *Metastrongylus
-apri* (see For DADA2 and IdTaxa users). Half the Gilleard libraries have
+apri* (see For DADA2 and IdTaxa users). Half the PRJNA1524548 libraries have
 read 2 starting inside 28S, without NC2; `bin/trim_primers.py` keeps
 them. `results/dada2_comparison/` holds each arm's summary, the per-ASV
 calls, the merged and concatenated runs, and an HTML report per set
@@ -197,8 +199,8 @@ calls, the merged and concatenated runs, and an HTML report per set
 ruminant, all species present, so they measure recall, not
 over-classification): no classifier, with either database, named a
 wrong species for an exact copy of a source sequence (precision 100%);
-the k-mer classifiers named 85-100% of reads to species, the gap rule
-79-100%, stopping at genus where a sister species is 1 edit off.
+the k-mer classifiers named 89-100% of reads to species, the gap rule
+88-100%, stopping at genus where a sister species is 1 edit off.
 The mocks' truth includes two backbone mislabels this database corrects
 (docs/DESIGN.md §6.3; `results/mocks/`).
 

@@ -20,7 +20,9 @@ are scored apart too, because their mock label is not the species:
   curated   records this database drops as mislabelled
             (curation/overrides.tsv, found by exact sequence in the backbone)
   synonym   Cylicostephanus poculatus = Petrovinema poculatum: the mock
-            lists both; one species
+            lists both; one species. So are the species overrides.tsv
+            relabels whole (morphs: C. spatulata = C. punctata), for
+            labels and calls alike
 Per arm, read-weighted, at species and at genus: recall (right calls /
 reads) and precision (right calls / reads called at that rank or deeper;
 a species call is right at genus when its genus is right). Every mock
@@ -39,6 +41,7 @@ from __future__ import annotations
 import collections
 import csv
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -75,6 +78,13 @@ def our_calls(path):
 
 def main() -> int:
     d, src_fa, overrides, backbone = sys.argv[1:5]
+    # A species relabelled as a whole ("A -> B: ...", the morph pairs) is
+    # one species: score its mock label and any call of it as B.
+    for r in csv.reader(open(overrides), delimiter="\t"):
+        m = (r and not r[0].startswith("#") and r[1] == "relabel"
+             and re.match(r"([A-Z][a-z]+ [a-z]+) -> ([A-Z][a-z]+ [a-z]+):", r[3]))
+        if m:
+            SYNONYMS[m.group(1)] = m.group(2)
     name = os.path.basename(d.rstrip("/"))
     P = os.path.join(d, name)
     # sources: sequence -> species; curated sources -> what they really are

@@ -1,12 +1,12 @@
-ruminant: 9 samples, 238 ASVs, 693,693 reads; clean 92.3%, ambiguous source 4.3%, curated 1.8%, noisy 1.6%
+ruminant: 9 samples, 238 ASVs, 693,693 reads; clean 96.6%, curated 1.8%, noisy 1.6%
 
 Clean ASVs (an exact source copy; truth = the mock label), read-weighted:
    arm                            species recall        precision     genus recall        precision  abund. err  vs mock
-   assignTaxonomy x nemabiome              93.8%           100.0%           100.0%           100.0%        6.2%    30.7%
-   IdTaxa x nemabiome                      94.6%           100.0%            98.2%           100.0%        5.5%    26.5%
-   assignTaxonomy x this db                85.3%           100.0%            99.2%           100.0%       14.8%    38.7%
-   IdTaxa x this db                        92.8%           100.0%            97.7%           100.0%        7.4%    29.2%
-   gap rule x this db                      78.9%           100.0%            97.8%           100.0%       20.9%    31.6%
+   assignTaxonomy x nemabiome              93.0%           100.0%           100.0%           100.0%        7.0%    28.9%
+   IdTaxa x nemabiome                      91.5%           100.0%            98.3%           100.0%        8.4%    26.4%
+   assignTaxonomy x this db                88.7%           100.0%            99.2%           100.0%       11.4%    34.8%
+   IdTaxa x this db                        95.3%           100.0%            96.7%           100.0%        4.7%    27.5%
+   gap rule x this db                      87.8%           100.0%            97.9%           100.0%       12.3%    28.9%
 
 Noisy ASVs (1-8 edits from sources of one species), read-weighted:
    arm                            species recall        precision     genus recall        precision
@@ -22,5 +22,5 @@ Curated sources (mock label is a record this database drops as mislabelled):
    assignTaxonomy x nemabiome   Oesophagostomum radiatum -> Mecistocirrus digitatus (species) 0.74%; Haemonchus contortus -> Haemonchus placei (species) 0.59%;  -> Haemonchus placei (species) 0.45%
    IdTaxa x nemabiome           Oesophagostomum radiatum -> Mecistocirrus digitatus (species) 0.74%; Haemonchus contortus -> Haemonchus contortus (species) 0.59%;  -> Haemonchus (genus) 0.30%;  -> Haemonchus contortus (species) 0.15%
    assignTaxonomy x this db     Oesophagostomum radiatum -> Mecistocirrus digitatus (species) 0.74%; Haemonchus contortus -> Haemonchus placei (species) 0.59%;  -> Haemonchus placei (species) 0.45%
-   IdTaxa x this db             Oesophagostomum radiatum -> Mecistocirrus digitatus (species) 0.74%; Haemonchus contortus -> Trichostrongylidae (family) 0.59%;  -> Haemonchus (genus) 0.30%;  -> Haemonchus placei (species) 0.15%
+   IdTaxa x this db             Oesophagostomum radiatum -> Mecistocirrus digitatus (species) 0.74%; Haemonchus contortus -> Trichostrongylidae (family) 0.59%;  -> Trichostrongylidae (family) 0.45%
    gap rule x this db           Oesophagostomum radiatum -> Mecistocirrus digitatus (species) 0.74%; Haemonchus contortus -> Haemonchus placei (species) 0.59%;  -> Haemonchus placei (species) 0.45%

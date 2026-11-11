@@ -1,0 +1,234 @@
+record	other_record	A	B	split	acc_A	acc_B	n_A	near_A	within3_A	spread_A	n_B	near_B	within3_B	spread_B	call	accessions_A	accessions_B
+ITS2_0197736f1130		Meloidogyne hispanica	Meloidogyne incognita	species	1	1	8	4	0.00	3.5	66	4	0.00	2	both	MZ328460.1	PV574219.1
+ITS2_0459bd33f93a		Hysterothylacium liparis	Hysterothylacium sinense	species	1	1	13	1	0.85	2	131	0	0.53	1	both	MW370679.1	MW371003.1
+ITS2_0ba847f99815		Globodera pallida	Globodera rostochiensis	species	5	1	46	0	0.57	1	65	3	0.03	1	both	HM159428.1,HQ670267.1,LT159835.1,MK791519.1,MN475966.1	OQ271373.1
+ITS2_1377281a7184		Paratylenchus nanus	Paratylenchus neoprojectus	species	2	1	8	0	0.38	1.5	1	1	1.00		both	KF242263.1,KF242266.1	MW282775.1
+ITS2_161afdab2581		Meloidogyne incognita	Meloidogyne enterolobii	species	1	1	66	25	0.00	2	40	0	0.40	2	fits B	FJ534515.1	MT490925.1
+ITS2_1834692630ac		Meloidogyne incognita	Meloidogyne javanica	species	11	1	66	0	0.53	2	8	0	0.62	2	both	MW551791.1,MZ960905.1,ON694347.1,PP339671.1,PX204986.1,PX204987.1,PX204989.1,PX2	AF077082.1
+ITS2_1888d161d54c		Globodera artemisiae	Globodera hypolysi	species	1	1	5	0	0.60	1	1	2	1.00		both	EU855121.1	LC030415.1
+ITS2_18995bf97278		Heterodera goettingiana	Heterodera microulae	species	1	1	15	24	0.00	1	0				one-sided	HM370423.1	MT573437.1
+ITS2_1a1cf0128ef0		Criconemoides brevistylus	Mesocriconema onoense	genus	1	1	1	2	1.00		2	3	0.50	9	both	JQ231188.1	MZ361701.1
+ITS2_1a405d010dc0		Heterorhabditis pakistanense	Heterorhabditis indica	species	1	1	5	0	0.80	1	110	0	0.62	2	both	JN571087.1	OP452818.1
+ITS2_1ed327bb518f		Baylisascaris transfuga	Baylisascaris schroederi	species	1	1	12	0	0.58	2	2	15	0.00	0	fits A	LC810978.1	MH030599.1
+ITS2_1f16d5ba8169		Ditylenchus dipsaci	Ditylenchus weischeri	species	15	1	25	0	0.52	2	22	21	0.00	0.5	fits A	AY703059.1,DQ452957.1,DQ520930.1,HQ219244.1,HQ219247.1,JX123258.1,KU179470.1,KU1	MG386845.1
+ITS2_21c87bab2907		Hysterothylacium sinense	Hysterothylacium fabri	species	3	1	131	0	0.57	1	55	33	0.00	1	fits A	MW370825.1,MW370840.1,PP029292.1	MW370888.1
+ITS2_26e883d0eb21		Parascaris univalens	Parascaris equorum	species	8	4	5	5	0.00	1	5	0	0.40	2	fits B	GCA_037576465.1:CM075173.1:105821584,MZ577214.1,OP747659.1,OP747660.1,OP747667.1	MG882023.1,MH030605.1,MT579850.1,OM876360.1
+ITS2_2856fcd23a76		Brugia pahangi	Brugia malayi	species	1	1	28	1	0.57	2	38	8	0.00	3.5	fits A	EU373628.1	PV646252.1
+ITS2_2a4aad74a1e3		Marshallagia marshalli	Marshallagia schumakovitschi	species	1	1	17	1	0.47	1	2	3	0.50	6	both	MN845179.1	MT110927.1
+ITS2_2d4a70377b2b		Cactodera estonica	Cactodera eremica	species	1	1	9	0	0.44	0	0				one-sided	HM560730.1	JQ910901.1
+ITS2_2d9dd42d99e5		Hysterothylacium sinense	Hysterothylacium liparis	species	1	1	131	0	0.49	1	13	2	0.85	2	both	MW370548.1	MW370680.1
+ITS2_338c11bd92cb		Pseudoterranova decipiens	Phocanema krabbei	genus	5	1	42	10	0.00	2	3	0	1.00	0	fits B	HF680317.1,HF680318.1,HF680319.1,HF680320.1,MF983559.1	PV189174.1
+ITS2_352641e8f2d5		Contracaecum micropapillatum	Contracaecum gibsoni	species	1	1	7	0	1.00	1	2	5	0.00	1	fits A	ON714964.1	PP953626.1
+ITS2_39fe5b0c09f0		Hysterothylacium fabri	Hysterothylacium sinense	species	3	1	55	0	0.16	1	131	0	0.02	1	both	MW370928.1,MW370965.1,MW371016.1	MW370972.1
+ITS2_3a835fd97fc6		Anisakis simplex	Anisakis pegreffii	species	2	1	97	0	0.78	1	48	0	0.75	1	both	KX550944.1,KX550946.1	KY426258.1
+ITS2_3b7a4ae44f09		Cephalenchus cylindricus	Cephalenchus daisuce	species	1	1	1	12	0.00		27	2	0.22	1	fits B	KU723345.1	KU723428.1
+ITS2_3e0d20f41d7d		Cephalenchus cylindricus	Cephalenchus cephalodiscus	species	2	2	1	0	1.00		7	1	0.86	1	both	KU723328.1,KU723331.1	KU723352.1,KU723353.1
+ITS2_44537a431010		Anisakis simplex	Anisakis pegreffii	species	2	1	97	0	0.77	1	48	0	0.75	1	both	PV828143.1,PX056988.1	MW370785.1
+ITS2_4634cc870cb0		Meloidogyne hispanica	Meloidogyne luci	species	3	3	8	1	0.12	3.5	2	0	1.00	1	both	JX885742.1,KU521802.1,PX969675.1	PQ610424.1,PQ610425.1,PQ610426.1
+ITS2_46fd64aad3b5		Ditylenchus destructor	Ditylenchus arachis	species	1	1	98	57	0.00	1	4	47	0.00	0.5	neither	MT492484.1	MT492485.1
+ITS2_4baefe475740		Hysterothylacium aduncum	Hysterothylacium auctum	species	7	1	49	0	0.84	1	0				one-sided	JQ934879.1,JQ934880.1,JQ934881.1,JQ934882.1,JQ934883.1,KX083576.1,MF062510.1	AF115571.1
+ITS2_4d6d6b79441a		Meloidogyne incognita	Meloidogyne arenaria	species	10	1	66	0	0.55	2	14	0	0.57	1	both	AF387093.1,KJ451617.1,KJ451618.1,KJ739707.1,KJ739708.1,KU521800.1,KY882488.1,KY9	AF387092.1
+ITS2_52b4f8ef21ae		Cyathostoma americana	Hovorkonema variegatum	genus	4	1	3	0	0.67	1	3	5	0.00	1	fits A	KR349495.1,KR349496.1,KR349497.1,KR349498.1	AY702699.1
+ITS2_5318fcf65e77		Pseudoterranova decipiens	Pseudoterranova azarasi	species	1	1	42	0	0.64	2	2	1	1.00	0	both	AY821743.1	LC511600.1
+ITS2_55301caf8a2a		Hysterothylacium sinense	Hysterothylacium liparis	species	39	3	131	0	0.57	1	13	1	0.92	2	both	MW370544.1,MW370554.1,MW370559.1,MW370560.1,MW370562.1,MW370587.1,MW370588.1,MW3	KF601896.1,KP301509.1,MW370709.1
+ITS2_56462493c4a3		Anisakis pegreffii	Anisakis simplex	species	24	18	48	0	0.75	1	97	0	0.77	1	both	AB196670.1,AY826720.1,EU873166.1,JQ900763.1,KJ818851.1,KX354832.1,KY781737.1,PV7	GQ169361.1,GQ169362.1,GQ169364.1,GQ169372.1,GQ472926.1,HF680314.1,HF680315.1,HF6
+ITS2_597fd887cf59		Heterodera schachtii	Heterodera trifolii	species	2	1	32	1	0.66	1	10	0	0.80	2	both	EF611118.1,JX024218.1	LC208683.1
+ITS2_5c36c3e8f793		Marshallagia marshalli	Marshallagia trifida	species	2	2	17	1	0.59	1	2	1	1.00	2	both	MG011724.1,MZ148588.1	MT118028.1,MZ148613.1
+ITS2_5dd8bcfc4057		Oscheius myriophilus	Caenorhabditis microvilli	genus	2	1	17	0	0.65	0	1	1	1.00		both	OP684306.1,OR681559.1	KT825914.1
+ITS2_5eab8c375991		Hemicriconemoides chitwoodi	Hemicriconemoides californianus	species	3	1	6	0	0.67	1	4	80	0.00	2	fits A	MH444609.1,MH444610.1,MZ008217.1	EU180057.1
+ITS2_5ed791884949		Contracaecum gibsoni	Contracaecum micropapillatum	species	7	2	2	99	0.00	1	7	98	0.00	1	neither	ON723780.1,ON723782.1,ON723783.1,ON723785.1,ON723786.1,ON723787.1,PP953621.1	PP953630.1,PP953631.1
+ITS2_6547769759ab		Anguina agrostis	Anguina tritici	species	1	1	3	17	0.00	2	8	13	0.00	0	neither	OL405087.1	ON146309.1
+ITS2_69a57f02b8b6		Cloacina caenis	Cloacina ernabella	species	1	1	8	1	0.25	4.5	3	21	0.00	2	fits A	KJ776343.1	KJ776346.1
+ITS2_6c1efb56dafa		Gyrinicola gulabrevioris	Gyrinicola moohsia	species	1	1	6	1	0.50	3	0				one-sided	OR247768.1	PP354088.1
+ITS2_765233cdbab0		Heterodera trifolii	Heterodera schachtii	species	2	1	10	1	1.00	2	32	1	0.84	1	both	AY590283.1,PQ686674.1	EF611123.1
+ITS2_767645726092		Hysterothylacium fabri	Hysterothylacium sinense	species	4	1	55	0	0.09	1	131	96	0.00	1	fits A	MT273078.1,MT273079.1,MW370778.1,MW370985.1	MW370934.1
+ITS2_775d61e2b117		Rotylenchus goodeyi	Rotylenchus rhomboides	species	1	1	9	0	0.56	1	1	3	1.00		both	MK114128.1	MW345981.1
+ITS2_80c8601e8bc6		Anisakis simplex	Anisakis pegreffii	species	3	1	97	0	0.77	1	48	0	0.75	1	both	GQ169367.1,MT516319.1,PV828135.1	GQ131688.1
+ITS2_84a5aa07fabe		Meloidogyne incognita	Meloidogyne javanica	species	7	2	66	0	0.53	2	8	0	0.62	2	both	KP233823.1,MT071550.1,MT490888.1,MT490909.1,MT490910.1,OP030611.1,OP030612.1	AF510057.1,PQ893914.1
+ITS2_8a6d8c90286c		Heterorhabditis taysearae	Heterorhabditis sonorensis	species	2	2	3	0	1.00	1	8	1	0.62	2	both	EF043443.1,MW544011.1	KY228995.1,MF372596.1
+ITS2_8c39ae7a6b1c		Meloidogyne incognita	Meloidogyne enterolobii	species	1	1	66	2	0.03	2	40	0	0.20	2	both	FJ534516.1	PP658066.1
+ITS2_906fc5329026		Contracaecum rudolphii	Contracaecum rudolphii D	species	1	1	22	0	0.23	1	1	1	1.00		both	OP453441.1	PV893032.1
+ITS2_92fd83c8cc2d		Ascaris lumbricoides	Ascaris suum	species	4	2	7	0	1.00	1	6	0	0.83	1	both	AB110027.1,LC422642.1,LC422643.1,PX590275.1	FJ418786.1,MH030604.1
+ITS2_93dd775c5d07		Labiostrongylus longispicularis	Labiosimplex longispicularis	genus	1	1	5	3	0.40	2	2	2	0.50	3	both	AJ308405.1	FR854210.1
+ITS2_99ea40fe9cf1		Labiostrongylus longispicularis	Labiosimplex longispicularis	genus	1	1	5	2	0.60	2	2	1	0.50	3	both	AJ308407.1	FR854209.1
+ITS2_9a321ed179d5		Paratylenchus nanus	Paratylenchus projectus	species	1	1	8	1	0.38	1.5	0				one-sided	KY468905.1	OQ749699.1
+ITS2_9abfff83f480		Rotylenchus goodeyi	Rotylenchus rhomboides	species	1	1	9	3	0.56	1	1	6	0.00		fits A	MK114130.1	ON845605.1
+ITS2_9db3ef3f5d05		Cylicocyclus insigne	Cylicocyclus ashworthi	species	1	1	29	5	0.00	1	20	2	0.35	1	fits B	ERR11658755:v1	PP923408.1
+ITS2_a112d9955925		Cylicocyclus insigne	Cylicocyclus ashworthi	species	1	1	29	5	0.00	1	20	1	0.70	1	fits B	ERR11658755:v4	PP923395.1
+ITS2_a35374d8cfe5		Caenorhabditis remanei	Caenorhabditis becei	species	1	1	2	0	0.50	12	0				one-sided	JN636112.1	MH809943.1
+ITS2_a8903f76da24		Pseudoterranova decipiens	Pseudoterranova azarasi	species	2	1	42	1	0.55	2	2	0	1.00	0	both	AB277824.1,KF806034.1	AB576757.1
+ITS2_a8cde36de4f9		Serpentirhabdias moi	Serpentirhabdias viperidicus	species	1	1	0				0				one-sided	MH283886.1	MH516095.1
+ITS2_aae86002538b		Pratylenchus thornei	Pratylenchus curvicauda	species	8	1	22	0	0.27	3	14	1	0.07	2	both	FR692299.1,OP393907.1,OP895690.1,OP902281.1,OP902282.1,OP902287.1,OP902289.1,OQ6	MN010408.1
+ITS2_ad09ff7274bd		Heterorhabditis indica	Heterorhabditis gerrardi	species	2	1	110	0	0.59	2	0				one-sided	KY977412.1,MN883933.1	FJ152545.1
+ITS2_adaa29a63812		Parascaris equorum	Parascaris univalens	species	1	1	5	0	0.20	2	5	5	0.00	1	fits A	JN617987.1	PV382398.1
+ITS2_ae516e5ada46		Hysterothylacium liparis	Hysterothylacium sinense	species	1	1	13	2	0.77	2	131	0	0.44	1	both	MW370581.1	MW370871.1
+ITS2_af68caeb7245		Meloidogyne enterolobii	Meloidogyne incognita	species	4	1	40	0	0.40	2	66	25	0.00	2	fits A	MK990040.1,MT062610.1,OQ642284.1,PX463263.1	KJ489433.1
+ITS2_b716fd49a344		Hysterothylacium sinense	Hysterothylacium liparis	species	1	1	131	0	0.49	1	13	2	0.85	2	both	MW370598.1	MW370860.1
+ITS2_b8396d056467		Heterodera avenae	Heterodera arenaria	species	6	1	184	0	0.53	2	1	0	1.00		both	JX024198.1,KF225719.1,KM199818.1,KM199820.1,KM199828.1,KM504379.1	AF239233.1
+ITS2_b926deb0f0ce		Uncinaria hamiltoni	Uncinaria sanguinis	species	6	4	8	0	0.88	0	1	0	1.00		both	HQ262102.1,HQ262104.1,HQ262106.1,HQ262108.1,HQ262109.1,HQ262119.1	KF690650.1,KF690651.1,KF690652.1,KF690668.1
+ITS2_bb078d366528		Meloidogyne ethiopica	Meloidogyne hispanica	species	1	1	2	1	0.50	24	8	1	0.12	3.5	both	MF168951.1	MZ328452.1
+ITS2_bcd04f7fc3a1		Meloidogyne incognita	Meloidogyne enterolobii	species	1	1	66	2	0.03	2	40	0	0.20	2	both	KC594036.1	MT952000.1
+ITS2_bce72e67b5c6		Steinernema kraussei	Steinernema silvaticum	species	1	1	41	21	0.00	1	2	1	1.00	2	fits B	KC608621.1	KU736743.1
+ITS2_c20a8aec0d4b		Hysterothylacium sinense	Hysterothylacium liparis	species	20	1	131	0	0.57	1	13	1	0.92	2	both	MW370583.1,MW370586.1,MW370600.1,MW370601.1,MW370613.1,MW370636.1,MW370645.1,MW3	MW370868.1
+ITS2_c2b57ee3947c		Parascaris equorum	Parascaris univalens	species	1	1	5	0	0.40	2	5	5	0.00	1	fits A	MG882015.1	PV382411.1
+ITS2_c58ecb40e1bf		Cephalenchus daisuce	Cephalenchus leptus	species	1	1	27	1	0.26	1	3	3	0.33	3	both	KU723397.1	KX462113.1
+ITS2_c794d1c6e1c5		Anisakis simplex	Anisakis pegreffii	species	29	3	97	0	0.77	1	48	0	0.75	1	both	AF411202.1,EU718471.1,GQ169366.1,GQ169369.1,HF680313.1,HQ616675.1,JQ934875.1,KF9	HM802275.1,KP857648.1,OM328181.1
+ITS2_cabd5fa83373		Cylicocyclus insigne	Cylicocyclus ashworthi	species	1	1	29	6	0.00	1	20	1	0.45	1	fits B	ERR11658755:v7	PP923388.1
+ITS2_d09186eff978		Contracaecum micropapillatum	Contracaecum gibsoni	species	4	1	7	1	1.00	1	2	5	0.00	1	fits A	ON714958.1,ON714966.1,ON714974.1,PP953629.1	PP953624.1
+ITS2_d52f3e90d9e3		Heterorhabditis mexicana	Heterorhabditis sonorensis	species	1	1	6	4	0.00	1	8	1	0.62	2	fits B	KY088210.1	MF372589.1
+ITS2_d57ca3da4b47		Hemicycliophora conida	Hemicycliophora gracilis	species	1	1	3	60	0.00	1	4	1	1.00	1.5	fits B	FN435301.1	KF430560.1
+ITS2_d938c5723b2e		Steinernema feltiae	Steinernema litorale	species	1	1	144	16	0.00	3	9	1	0.11	4	fits B	MN861048.1	MN861049.1
+ITS2_deff4bd239ae		Cephalenchus cylindricus	Cephalenchus daisuce	species	1	1	1	12	0.00		27	0	0.15	1	fits B	KU723348.1	KU723431.1
+ITS2_e04ea83cda77		Cosmocercoides tonkinensis	Cosmocercoides wuyiensis	species	1	1	0				0				one-sided	AB908160.1	MK110871.2
+ITS2_e3ac2a48b367		Steinernema abbasi	Steinernema thermophilum	species	4	1	30	0	0.70	1	1	14	0.00		fits A	AY230158.1,MG189969.1,MK855429.1,MK995660.1	MF919610.1
+ITS2_e866c93773bf		Anisakis simplex	Anisakis pegreffii	species	2	1	97	0	0.78	1	48	0	0.75	1	both	KX550937.1,KX550943.1	JQ934874.1
+ITS2_e8d21de49fd3		Hysterothylacium sinense	Hysterothylacium liparis	species	1	1	131	0	0.40	1	13	2	0.85	2	both	MW370607.1	MW370615.1
+ITS2_eb7af1f4c4fd		Hysterothylacium sinense	Hysterothylacium liparis	species	21	1	131	0	0.57	1	13	1	0.92	2	both	MW370538.1,MW370602.1,MW370610.1,MW370617.1,MW370624.1,MW370637.1,MW370649.1,MW3	MW370627.1
+ITS2_ee756a793e27		Hysterothylacium aduncum	Hysterothylacium fabri	species	7	1	49	0	0.61	1	55	1	0.02	1	both	AB277826.1,HQ702732.1,HQ702733.1,KP276150.1,KP301504.1,MW370833.1,PP029287.1	MW370897.1
+ITS2_f07740a34942		Dujardinascaris gigantea	Ortleppascaris sinensis	family	2	1	0				0				one-sided	KJ643592.1,MF061680.1	KM891739.1
+ITS2_f0787b7268c5		Pratylenchus scribneri	Pratylenchus coffeae	species	5	1	30	0	0.30	2	145	115	0.00	2	fits A	KP995312.1,KY424229.1,OQ592848.1,OQ594024.1,OQ594660.1	OQ586460.1
+ITS2_f3088df575d2		Ditylenchus dipsaci	Ditylenchus gigas	species	1	1	25	1	0.12	2	8	0	0.38	4	both	AY714537.1	HQ219231.1
+ITS2_f563c427ed8e		Meloidogyne paranaensis	Meloidogyne izalcoensis	species	2	2	2	7	0.00	23	0				one-sided	KY911106.1,KY911107.1	MZ361699.1,MZ363741.1
+ITS2_f61db265e8af		Heterorhabditis indica	Heterorhabditis zealandica	species	7	1	110	0	0.03	2	17	91	0.00	0	fits A	MW654496.1,MW654497.1,MW654499.1,MW654500.1,MW654501.1,OP035897.1,OR073690.1	MN341010.1
+ITS2_faee59afdb8b		Hysterothylacium liparis	Hysterothylacium sinense	species	1	1	13	4	0.00	2	131	0	0.15	1	both	MW370570.1	MW370572.1
+ITS2_fd2b70ec304f		Pratylenchus parazeae	Pratylenchus haiduongensis	species	2	1	17	1	0.06	4	1	28	0.00		fits A	KY424252.1,MK368513.1	MF429809.1
+ITS2_001d612fc243	ITS2_733e77011e3f	Pristionchus pacificus	Pristionchus entomophilus	species	1	1	4	0	0.50	3	0				one-sided	MG551685.1	KP762795.1
+ITS2_00cce5a3d53a	ITS2_5bf46e7aaabe	Heterodera schachtii	Heterodera betae	species	1	1	31	3	0.23	1	4	1	0.75	2	both	EF611108.1	MW346566.1
+ITS2_0141c6fc355a	ITS2_0a8c24256204	Heterodera avenae	Heterodera arenaria	species	8	1	183	0	0.45	2	0				one-sided	EF153843.1,JX024191.1,JX024196.1,JX024199.1,KC736856.1,KC847094.1,KM199806.1,MG8	MG523155.1
+ITS2_01f204170159	ITS2_52864f74cf1f	Steinernema minutum	Steinernema tami	species	1	1	4	0	0.75	0	1	13	0.00	13	both	KY807715.1	KY807716.1
+ITS2_04d1b50e229b	ITS2_5102129be25a	Heterodera betae	Heterodera schachtii	species	1	2	4	2	0.50	2	31	0	0.65	1	both	MW346574.1	MN720074.1,MW856649.1
+ITS2_04dcc4eccc00	ITS2_d607278394f0	Heterorhabditis indica	Heterorhabditis pakistanense	species	1	1	109	0	0.46	2	4	1	0.75	1	both	OP035844.1	JN571094.1
+ITS2_051798bec30c	ITS2_8a3384c470ef	Heterodera ciceri	Heterodera schachtii	species	1	3	2	0	1.00	0	31	1	0.84	1	both	JX024201.1	KT874516.1,KT874517.1,MW346551.1
+ITS2_0867ea12ed4f	ITS2_22a5077ffffe	Steinernema siamkayai	Steinernema abbasi	species	1	5	46	52	0.00	3	29	0	0.83	1	fits B	OP026096.1	MK078603.1,OP028051.1,PV336079.1,PV361458.1,PV361698.1
+ITS2_097695d058c6	ITS2_651ecb53c0a6	Heterodera pratensis	Heterodera avenae	species	1	1	5	1	0.80	1	183	0	0.68	2	both	AY148351.1	KF679366.1
+ITS2_09c0206b2b40	ITS2_5e86528530bf	Cactodera estonica	Cactodera xinanensis	species	1	1	8	0	0.25	0	0				one-sided	MN658364.1	PP728282.1
+ITS2_0aba69f09b4f	ITS2_685285d51838	Heterodera carotae	Heterodera cruciferae	species	6	3	9	1	0.89	1	7	1	0.71	1	both	AY347917.1,MG563236.1,PV138342.1,PV138344.1,PV138346.1,PV138349.1	JX402415.1,LC884694.1,MG693179.1
+ITS2_0b301e156967	ITS2_f0c72babb0f9	Heterodera elachista	Heterodera oryzae	species	1	1	20	1	0.60	1	0				one-sided	JN202916.1	MT823206.1
+ITS2_0d546b2c517c	ITS2_e5042c958e74	Hysterothylacium thalassini	Hysterothylacium fabri	species	3	1	4	0	0.50	1	54	104	0.00	1	fits A	JX982126.1,JX982129.1,MW863308.1	MW370927.1
+ITS2_0d8412e4e40b	ITS2_ea624173b324	Meloidogyne oryzae	Meloidogyne graminicola	species	1	1	1	1	1.00	1	58	1	0.10	2	both	LS974440.1	HM623443.1
+ITS2_1023c870e07e	ITS2_32da03279432	Trichuris incognita	Trichuris trichiura	species	1	1	3	16	0.00	20	88	4	0.00	2	both	STPHxBioinformatics:TTRE_chr2_scaffold39:13832551	KJ588135.1
+ITS2_11e1a3b6c302	ITS2_66eef7c9560d	Heterakis isolonche	Heterakis dispar	species	1	1	0				2	1	1.00	1	one-sided	KM212953.1	MF319969.1
+ITS2_13000ac73ffc	ITS2_eec1be34d8ba	Contracaecum ogmorhini	Contracaecum rudolphii	species	1	1	3	0	1.00	0.5	21	3	0.10	1	both	MW315533.1	OP453442.1
+ITS2_15000fd858da	ITS2_42b11c35680f	Bursaphelenchus piniperdae	Bursaphelenchus sexdentati	species	1	1	0				27	1	0.56	1	one-sided	MK262710.1	KP292859.1
+ITS2_15bcbb2a374b	ITS2_b8b2dec543b7	Meloidogyne fallax	Meloidogyne chitwoodi	species	2	1	6	0	1.00	0	5	8	0.00	1	fits A	KC241954.1,PV960599.1	AF077090.1
+ITS2_16a6a5488dff	ITS2_c752ebb3ea0a	Steinernema carpocapsae	Steinernema cameroonense	species	28	1	13	2	0.38	4	1	125	0.00	121	both	AF121049.1,AF331913.1,AY170334.1,AY171282.1,EU598239.1,HM140694.1,KJ818295.1,KJ9	OD921260.1
+ITS2_17f349f22d52	ITS2_f7d9393bfa15	Heterodera schachtii	Heterodera trifolii	species	3	1	31	0	0.65	1	9	2	0.44	2	both	EF611110.1,EF611112.1,MW346588.1	MW346576.1
+ITS2_18c6d43dc81b	ITS2_f7d9393bfa15	Heterodera schachtii	Heterodera trifolii	species	3	1	31	1	0.87	1	9	2	0.89	2	both	EF611116.1,JX024219.1,MW346552.1	MW346576.1
+ITS2_1a052d264cc2	ITS2_f7e862a92fd7	Raphidascaris lophii	Raphidascaris trichiuri	species	1	1	4	0	1.00	1	0				one-sided	MT428361.1	FJ009682.1
+ITS2_1a2d7437f1af	ITS2_93bf4ebb8b15	Globodera achilleae	Globodera millefolii	species	1	1	0				1	43	0.00	37	one-sided	AY599498.1	HQ260407.1
+ITS2_1bc4d4376334	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MW349694.1	MK340917.1
+ITS2_1cfa0f5a359e	ITS2_b608856e6f7f	Meloidogyne suginamiensis	Meloidogyne vitis	species	2	1	3	1	1.00	1.5	0				one-sided	MN101822.1,MN101828.1	MN816222.1
+ITS2_22d9beb994c1	ITS2_0a8c24256204	Heterodera filipjevi	Heterodera arenaria	species	1	1	54	3	0.04	1	0				one-sided	HG738845.1	MG523155.1
+ITS2_24c25f98d96e	ITS2_ff02bb2cc823	Hysterothylacium liparis	Hysterothylacium sinense	species	1	1	12	2	0.83	2	130	1	0.43	1	both	KP301514.1	MW370557.1
+ITS2_28905aaa5cb0	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MK545507.1	MK340917.1
+ITS2_28af51f73711	ITS2_30868717eec4	Heterodera australis	Heterodera avenae	species	6	3	1	2	1.00	2	183	0	0.65	2	both	AY148392.1,OR701388.1,OR701389.1,OR701390.1,OR701391.1,OR701392.1	EU106165.1,HM027894.1,HQ380889.1
+ITS2_299984930d7e	ITS2_996913ff9b47	Hemicriconemoides strictathecatus	Hemicriconemoides litchi	species	1	1	7	1	0.71	1	2	1	1.00	1	both	MH142617.1	GQ354786.1
+ITS2_29aae5262a58	ITS2_733e77011e3f	Pristionchus pacificus	Pristionchus entomophilus	species	5	1	4	0	0.50	3	0				one-sided	JQ699288.1,KY914569.1,MW136950.1,MW136951.1,MW136953.1	KP762795.1
+ITS2_2e263254cc89	ITS2_aa757feada65	Heterodera avenae	Heterodera pratensis	species	1	1	183	1	0.51	2	5	1	0.60	1	both	JN657202.1	AY148387.1
+ITS2_2f865b3c61e9	ITS2_0a8c24256204	Heterodera avenae	Heterodera arenaria	species	1	1	183	0	0.22	2	0				one-sided	OQ300109.1	MG523155.1
+ITS2_2fe8c4e3d178	ITS2_b8b2dec543b7	Meloidogyne fallax	Meloidogyne chitwoodi	species	6	1	6	0	1.00	0	5	8	0.00	1	fits A	EU252015.1,GU433344.1,JX465594.1,KP825332.1,KP825333.1,ON496982.1	AF077090.1
+ITS2_33b912eedd49	ITS2_514afa656c57	Hoplolaimus stephanus	Hoplolaimus galeatus	species	1	1	33	0	0.58	0	18	1	0.22	0	both	OR948480.1	PV863246.1
+ITS2_346d647ae9dd	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	OP480438.1	MK340917.1
+ITS2_394067085338	ITS2_ff5f4489f0f9	Spiculopteragia boehmi	Spiculopteragia spiculoptera	species	2	3	0				10	1	0.80	1	one-sided	AJ577460.1,MW839588.1	DQ354326.1,OR257712.1,OR257714.1
+ITS2_3aa511db7326	ITS2_f0c72babb0f9	Heterodera elachista	Heterodera oryzae	species	1	1	20	4	0.00	1	0				one-sided	MT579616.1	MT823206.1
+ITS2_448b35e24411	ITS2_704e59482bb5	Cactodera betulae	Heterodera hordecalis	genus	1	1	2	1	1.00	1	18	62	0.00	2	fits A	KF214753.1	AY045756.1
+ITS2_45710c392838	ITS2_09c8917bf0b5	Meloidogyne javanica	Meloidogyne incognita	species	8	8	7	1	0.43	2	65	0	0.49	2	both	AF387094.1,KU356191.1,MK072827.1,MT348502.1,ON112363.1,OQ469835.1,PV569571.1,PV6	KP179223.1,KP751205.1,KR265163.1,MF168966.1,MT490887.1,MZ960902.1,MZ960906.1,OP9
+ITS2_4856b4692cfc	ITS2_0a8c24256204	Heterodera avenae	Heterodera arenaria	species	1	1	183	0	0.20	2	0				one-sided	KC736871.1	MG523155.1
+ITS2_4a3c423abbc6	ITS2_8e89020643bc	Trichuris globulosa	Trichuris ovis	species	1	1	6	8	0.00	1	20	3	0.05	3	fits B	LN813018.1	AJ238220.1
+ITS2_4c2adc1f4ebb	ITS2_ee05e0bcece4	Oscheius shamimi	Oscheius siddiqii	species	1	1	2	83	0.00	0	0				one-sided	MK277315.1	PV355141.1
+ITS2_4cf405cd5d31	ITS2_09c8917bf0b5	Meloidogyne arenaria	Meloidogyne incognita	species	5	8	13	1	0.54	1	65	0	0.52	2	both	KU356190.1,MG773545.1,MK018121.1,MK188462.1,OQ331164.1	KP179223.1,KP751205.1,KR265163.1,MF168966.1,MT490887.1,MZ960902.1,MZ960906.1,OP9
+ITS2_4d3b938b8724	ITS2_7e071688b5d1	Aphelenchoides oryzae	Aphelenchoides besseyi	species	1	4	1	2	1.00	2	61	1	0.20	2	both	PP903698.1	KP757371.1,MN062021.1,MN556215.1,MW216945.1
+ITS2_4f45ba4d1b7f	ITS2_d43dd2867c7f	Hoplolaimus galeatus	Hoplolaimus stephanus	species	1	1	18	4	0.00	0	33	4	0.00	0	neither	PV863256.1	KP303660.1
+ITS2_50eb4e0c6736	ITS2_eea820d66c50	Globodera rostochiensis	Globodera pallida	species	3	1	64	0	0.53	1	45	1	0.47	1	both	MK758068.1,MT251881.1,PZ039037.1	DQ097514.2
+ITS2_51ae4f1e748f	ITS2_bd080b76b704	Paratylenchus paralatescens	Gracilacus paralatescens	genus	1	1	0				2	1	0.50	1	one-sided	OR354384.1	MW714357.1
+ITS2_52de05daea9f	ITS2_bbd493e0910f	Anisakis simplex	Anisakis pegreffii	species	1	2	96	1	0.72	1	47	1	0.70	1	both	KM272451.1	LC745161.1,MH197040.1
+ITS2_5313fe9edb39	ITS2_b8b2dec543b7	Meloidogyne fallax	Meloidogyne chitwoodi	species	1	1	6	1	1.00	0	5	8	0.00	1	fits A	JN157869.1	AF077090.1
+ITS2_53d1cad9b984	ITS2_6498b50a0555	Ascaris lumbricoides	Ascaris suum	species	2	1	6	0	1.00	1	5	0	0.80	1	both	LN600402.1,OQ539679.1	PZ017198.1
+ITS2_5412fccec978	ITS2_b8b2dec543b7	Meloidogyne fallax	Meloidogyne chitwoodi	species	1	1	6	0	1.00	0	5	8	0.00	1	fits A	KC241958.1	AF077090.1
+ITS2_5a67770962d8	ITS2_b8b2dec543b7	Meloidogyne fallax	Meloidogyne chitwoodi	species	2	1	6	0	1.00	0	5	8	0.00	1	fits A	KC241955.1,KC241956.1	AF077090.1
+ITS2_5ac9b9667019	ITS2_e172effaf444	Meloidogyne marylandi	Meloidogyne graminis	species	2	1	8	1	0.62	1	15	1	0.13	1	both	JN157854.1,MN744309.1	JN241868.1
+ITS2_5bffc125430d	ITS2_514afa656c57	Hoplolaimus stephanus	Hoplolaimus galeatus	species	1	1	33	0	0.61	0	18	0	0.22	0	both	OR948475.1	PV863246.1
+ITS2_5cfb41584fc0	ITS2_c06121cb5656	Globodera mexicana	Globodera pallida	species	1	2	8	1	0.88	1	45	1	0.71	1	both	EU006708.1	HQ260428.1,HQ670277.1
+ITS2_5e4d63377012	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MK545492.1	MK340917.1
+ITS2_66a5a3cffc3e	ITS2_0a8c24256204	Heterodera avenae	Heterodera arenaria	species	2	1	183	0	0.53	2	0				one-sided	HM560755.1,MK840645.1	MG523155.1
+ITS2_674dce4e72db	ITS2_d783e941cbeb	Steinernema intermedium	Steinernema affine	species	1	1	3	34	0.00	0	15	1	0.07	2	fits B	JN808124.1	PP446794.1
+ITS2_684eb36f8af8	ITS2_097695d058c6	Heterodera avenae	Heterodera pratensis	species	11	1	183	0	0.64	2	5	1	0.80	1	both	KF679363.1,KF679368.1,KF679377.1,KF679382.1,KF679386.1,KF679394.1,MK606028.1,OP2	AY148351.1
+ITS2_6873df3be8c7	ITS2_423a03fe0b14	Heterodera trifolii	Heterodera daverti	species	5	1	9	1	0.78	2	1	0	1.00	2	both	AY692354.1,MG682350.1,MN720073.1,MN720083.1,MW346569.1	KT163232.1
+ITS2_699573efc3a5	ITS2_ff166553f0f8	Devibursaphelenchus hunanensis	Devibursaphelenchus eproctatus	species	1	1	0				1	2	1.00	2	one-sided	EU400449.1	JN122011.1
+ITS2_6af0842158af	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MK545518.1	MK340917.1
+ITS2_6bd3fdf804ca	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MK545504.1	MK340917.1
+ITS2_6c97469e05b8	ITS2_72a9b123d31a	Heterorhabditis indica	Heterorhabditis pakistanense	species	1	1	109	0	0.58	2	4	2	0.75	1	both	GQ258644.1	JX144740.1
+ITS2_6f9fe726897d	ITS2_09c8917bf0b5	Meloidogyne javanica	Meloidogyne incognita	species	2	8	7	1	0.57	2	65	0	0.52	2	both	MZ747739.1,ON150871.1	KP179223.1,KP751205.1,KR265163.1,MF168966.1,MT490887.1,MZ960902.1,MZ960906.1,OP9
+ITS2_700b62e7fcbb	ITS2_d2b35f62865f	Heterorhabditis sonorensis	Heterorhabditis taysearae	species	1	3	7	0	0.57	2	2	1	1.00	1	both	MF372595.1	MW599211.1,MW599238.1,PQ483111.1
+ITS2_70e356f14ecf	ITS2_d037df3cadcb	Heterodera trifolii	Heterodera schachtii	species	1	1	9	2	0.33	2	31	1	0.52	1	both	AF498388.1	KT874519.1
+ITS2_72f5db4dcf74	ITS2_aa9070bbbf07	Pseudoterranova decipiens	Phocanema bulbosa	genus	3	1	41	2	0.05	2	1	0	1.00	2	both	MG272333.1,MG272334.1,MG272336.1	AJ413972.1
+ITS2_755893714421	ITS2_fcf0a9ab335d	Helicotylenchus crenacauda	Helicotylenchus microlobus	species	1	10	1	53	0.00	53	12	2	0.25	3	both	GQ906356.1	KM506859.1,KM506860.1,MN764342.1,OR158034.1,OR852617.1,OR852619.1,PX723970.1,PX7
+ITS2_762e82a1ceca	ITS2_52864f74cf1f	Steinernema minutum	Steinernema tami	species	1	1	4	0	0.75	0	1	13	0.00	13	both	KY807711.1	KY807716.1
+ITS2_7897620a5efd	ITS2_0a8c24256204	Heterodera avenae	Heterodera arenaria	species	2	1	183	0	0.53	2	0				one-sided	LT159844.1,OP217018.1	MG523155.1
+ITS2_78fcd4cdca1b	ITS2_8dc25157aaed	Baylisascaris columnaris	Baylisascaris procyonis	species	1	1	3	2	0.67	1	6	2	0.33	0	both	KC543485.1	MZ092850.1
+ITS2_7976b4d969d8	ITS2_52864f74cf1f	Steinernema minutum	Steinernema tami	species	1	1	4	1	0.75	0	1	14	0.00	13	both	KY807717.1	KY807716.1
+ITS2_7bf0018f0e60	ITS2_0867ea12ed4f	Steinernema abbasi	Steinernema siamkayai	species	1	1	29	1	0.76	1	46	52	0.00	3	fits A	KY807713.1	OP026096.1
+ITS2_7ca19945a29e	ITS2_ee5fcf98aa77	Pratylenchus gutierrezi	Pratylenchus panamaensis	species	1	1	6	1	0.33	2	0				one-sided	FR692277.1	OL687383.1
+ITS2_80092ca1a3fe	ITS2_04d1b50e229b	Heterodera schachtii	Heterodera betae	species	1	1	31	0	0.39	1	4	2	0.50	2	both	EF611104.1	MW346574.1
+ITS2_8284ff70fbc4	ITS2_8a3384c470ef	Heterodera ciceri	Heterodera schachtii	species	2	3	2	0	1.00	0	31	1	0.84	1	both	AF274393.1,MW346579.1	KT874516.1,KT874517.1,MW346551.1
+ITS2_82b7b26e444d	ITS2_0a8c24256204	Heterodera avenae	Heterodera arenaria	species	1	1	183	0	0.22	2	0				one-sided	KM199816.1	MG523155.1
+ITS2_84bff4558f2a	ITS2_4cf405cd5d31	Meloidogyne incognita	Meloidogyne arenaria	species	1	5	65	0	0.52	2	13	2	0.46	1	both	KY009880.1	KU356190.1,MG773545.1,MK018121.1,MK188462.1,OQ331164.1
+ITS2_86e4d5e95a21	ITS2_0a8c24256204	Heterodera avenae	Heterodera arenaria	species	1	1	183	0	0.53	2	0				one-sided	KM199822.1	MG523155.1
+ITS2_891e010830d1	ITS2_b7a779dcee33	Heterodera sonchophila	Heterodera medicaginis	species	1	1	1	2	1.00	2	5	1	1.00	1	both	MW346595.1	MK093184.1
+ITS2_91ce23679006	ITS2_097695d058c6	Heterodera avenae	Heterodera pratensis	species	5	1	183	0	0.67	2	5	1	0.80	1	both	EU106175.1,EU616706.1,HM027886.1,HQ456215.1,PX904876.1	AY148351.1
+ITS2_92e15981a78b	ITS2_eea820d66c50	Globodera rostochiensis	Globodera pallida	species	1	1	64	0	0.53	1	45	1	0.49	1	both	AY700060.1	DQ097514.2
+ITS2_92e2f2076e87	ITS2_e5042c958e74	Hysterothylacium thalassini	Hysterothylacium fabri	species	1	1	4	0	0.50	1	54	104	0.00	1	fits A	MW370980.1	MW370927.1
+ITS2_93c4237a92a1	ITS2_2066a63aeafe	Anisakis pegreffii	Anisakis simplex	species	17	3	47	0	0.74	1	96	0	0.77	1	both	FR849715.1,LC745162.1,LC745204.1,MW315527.1,MW507186.1,MZ458414.1,OR607651.1,OR6	LC774449.1,MF668726.1,OM418766.1
+ITS2_95e351938a7c	ITS2_be62ca32b2b3	Rugopharynx alpha	Papillostrongylus barbatus	genus	1	1	0				2	1	1.00	1	one-sided	LN906946.1	KJ776392.1
+ITS2_9923cdfca9a4	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MK545511.1	MK340917.1
+ITS2_9e7597bf5715	ITS2_28af51f73711	Heterodera avenae	Heterodera australis	species	1	6	183	0	0.64	2	1	2	1.00	2	both	OP216978.1	AY148392.1,OR701388.1,OR701389.1,OR701390.1,OR701391.1,OR701392.1
+ITS2_a537aede60eb	ITS2_5bffc125430d	Hoplolaimus galeatus	Hoplolaimus stephanus	species	1	1	18	0	0.22	0	33	0	0.48	0	both	PV863243.1	OR948475.1
+ITS2_a5e34d060780	ITS2_c752ebb3ea0a	Steinernema colombiense	Steinernema cameroonense	species	1	1	0				1	130	0.00	121	one-sided	EU345421.1	OD921260.1
+ITS2_a631d66a206d	ITS2_0a8c24256204	Heterodera avenae	Heterodera arenaria	species	1	1	183	0	0.22	2	0				one-sided	KX574285.1	MG523155.1
+ITS2_a669fc4a88f5	ITS2_5bf46e7aaabe	Heterodera daverti	Heterodera betae	species	2	1	1	2	1.00	2	4	1	0.75	2	both	KT163231.1,PX049242.1	MW346566.1
+ITS2_a7b628e711cf	ITS2_282d35e11d22	Hysterothylacium amoyense	Hysterothylacium fabri	species	1	1	38	97	0.00	1	54	1	0.15	1	fits B	MW370925.1	MW370908.1
+ITS2_a9a6ed17604e	ITS2_6498b50a0555	Ascaris lumbricoides	Ascaris suum	species	1	1	6	0	1.00	1	5	0	0.80	1	both	AJ000894.1	PZ017198.1
+ITS2_aa37bfbbbac5	ITS2_f7d9393bfa15	Heterodera schachtii	Heterodera trifolii	species	1	1	31	1	0.42	1	9	2	0.33	2	both	AF498389.1	MW346576.1
+ITS2_aac3def5dde1	ITS2_09c8917bf0b5	Meloidogyne ethiopica	Meloidogyne incognita	species	1	8	1	24	0.00	24	65	0	0.52	2	both	LN626967.1	KP179223.1,KP751205.1,KR265163.1,MF168966.1,MT490887.1,MZ960902.1,MZ960906.1,OP9
+ITS2_aae535c694a0	ITS2_53d1cad9b984	Ascaris suum	Ascaris lumbricoides	species	1	2	5	0	0.80	1	6	0	1.00	1	both	AB571302.1	LN600402.1,OQ539679.1
+ITS2_ad4d203a3ac3	ITS2_72f5db4dcf74	Phocanema bulbosa	Pseudoterranova decipiens	genus	1	3	1	2	1.00	2	41	2	0.05	2	both	OP355455.1	MG272333.1,MG272334.1,MG272336.1
+ITS2_b2c1fb7adf28	ITS2_6498b50a0555	Ascaris lumbricoides	Ascaris suum	species	4	1	6	0	1.00	1	5	0	0.80	1	both	AB571295.1,AB571297.1,AB571298.1,PX549804.1	PZ017198.1
+ITS2_b734d1cea672	ITS2_2066a63aeafe	Anisakis pegreffii	Anisakis simplex	species	1	3	47	0	0.74	1	96	0	0.77	1	both	MZ458416.1	LC774449.1,MF668726.1,OM418766.1
+ITS2_b89c9bbd1a7f	ITS2_be442d5d96c3	Dirofilaria asiatica	Dirofilaria repens	species	1	1	2	5	0.00	5	23	0	0.17	2	both	PX956660.1	ON332071.1
+ITS2_ba3fe6598995	ITS2_282d35e11d22	Hysterothylacium sinense	Hysterothylacium fabri	species	1	1	130	2	0.02	1	54	1	0.15	1	both	MW371013.1	MW370908.1
+ITS2_bb32dad2ec06	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MK545537.1	MK340917.1
+ITS2_bc330435c8e7	ITS2_1045b899e212	Uncinaria sanguinis	Uncinaria hamiltoni	species	2	1	0				7	0	0.86	0	one-sided	KF690654.1,KF690657.1	HQ262113.1
+ITS2_bc93e9e3d901	ITS2_f7683613c396	Ditylenchus weischeri	Ditylenchus dipsaci	species	1	1	21	1	1.00	0.5	24	13	0.00	2	fits A	MG384318.1	MG384729.1
+ITS2_bd111b6a149b	ITS2_dd160f0120a2	Trichostrongylus probolurus	Trichostrongylus colubriformis	species	1	1	4	2	1.00	2	47	6	0.00	2	fits A	EF427623.1	MT193647.1
+ITS2_bdeaf3afa3b0	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	OK380960.1	MK340917.1
+ITS2_ca18e9cbd0fb	ITS2_891e010830d1	Heterodera glycines	Heterodera sonchophila	species	1	1	121	1	0.13	1	1	2	1.00	2	both	MT254750.1	MW346595.1
+ITS2_ca1b5f53f62c	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	OP592131.1	MK340917.1
+ITS2_cd3aa02660ff	ITS2_b8b2dec543b7	Meloidogyne fallax	Meloidogyne chitwoodi	species	1	1	6	0	1.00	0	5	8	0.00	1	fits A	KC241957.1	AF077090.1
+ITS2_d152623dc731	ITS2_f7e862a92fd7	Raphidascaris lophii	Raphidascaris trichiuri	species	2	1	4	0	1.00	1	0				one-sided	MF422212.1,MW132926.1	FJ009682.1
+ITS2_d2c4157e59dd	ITS2_8eece698d1aa	Caenorhabditis microvilli	Oscheius myriophilus	genus	2	2	0				16	1	0.56	0	one-sided	MN932153.1,OM004005.1	OP422210.1,OR681560.1
+ITS2_d42e1fc186df	ITS2_514afa656c57	Hoplolaimus stephanus	Hoplolaimus galeatus	species	1	1	33	0	0.58	0	18	0	0.22	0	both	OR948497.1	PV863246.1
+ITS2_d4dadf73e764	ITS2_d2b35f62865f	Heterorhabditis sonorensis	Heterorhabditis taysearae	species	4	3	7	0	0.57	2	2	1	1.00	1	both	KF723798.1,KY228993.1,KY228994.1,MF372597.1	MW599211.1,MW599238.1,PQ483111.1
+ITS2_d8965706d70b	ITS2_0a8c24256204	Heterodera avenae	Heterodera arenaria	species	1	1	183	1	0.20	2	0				one-sided	JX024193.1	MG523155.1
+ITS2_d8f31b683bc6	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MK545512.1	MK340917.1
+ITS2_d9840bbeb40d	ITS2_72a9b123d31a	Heterorhabditis indica	Heterorhabditis pakistanense	species	8	1	109	0	0.57	2	4	2	0.75	1	both	KF937810.1,MK300683.1,MW548102.1,MW548112.1,MW548116.1,MW548117.1,PV646226.1,PZ0	JX144740.1
+ITS2_d9e697461290	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MZ648893.1	MK340917.1
+ITS2_da0525bb3635	ITS2_f53ce3aa7672	Steinernema tbilisiensis	Steinernema borjomiense	species	1	1	0				2	13	0.00	13	one-sided	KC287223.1	LT984409.1
+ITS2_da71291b3575	ITS2_b89c9bbd1a7f	Dirofilaria repens	Dirofilaria asiatica	species	6	1	23	0	0.17	2	2	5	0.00	5	both	ON332067.1,ON332068.1,ON332069.1,ON332070.1,PV643875.1,PV643876.1	PX956660.1
+ITS2_da8d7a552d79	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MK545529.1	MK340917.1
+ITS2_dbf3df9e3690	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	OP592132.1	MK340917.1
+ITS2_dfc922ee4dee	ITS2_097695d058c6	Heterodera avenae	Heterodera pratensis	species	2	1	183	0	0.68	2	5	1	0.80	1	both	KF679380.1,PX904904.1	AY148351.1
+ITS2_e2f195c683f6	ITS2_eb70fc9847a4	Pratylenchoides leiocauda	Pratylenchoides ritteri	species	2	1	2	0	1.00	0	0				one-sided	OQ625808.1,PQ867375.1	KY424249.1
+ITS2_e44388bc42c8	ITS2_52864f74cf1f	Steinernema minutum	Steinernema tami	species	1	1	4	0	0.75	0	1	13	0.00	13	both	KY807712.1	KY807716.1
+ITS2_e60225526c2d	ITS2_eb70fc9847a4	Pratylenchoides leiocauda	Pratylenchoides ritteri	species	1	1	2	0	1.00	0	0				one-sided	MZ418133.1	KY424249.1
+ITS2_e6a12df7f8a7	ITS2_0a8c24256204	Heterodera avenae	Heterodera arenaria	species	1	1	183	0	0.53	2	0				one-sided	AF274395.1	MG523155.1
+ITS2_ec867cbf985a	ITS2_4cf405cd5d31	Meloidogyne incognita	Meloidogyne arenaria	species	1	5	65	0	0.52	2	13	1	0.54	1	both	JQ405212.1	KU356190.1,MG773545.1,MK018121.1,MK188462.1,OQ331164.1
+ITS2_eef8ab4ff7b0	ITS2_72a9b123d31a	Heterorhabditis indica	Heterorhabditis pakistanense	species	8	1	109	0	0.59	2	4	2	0.75	1	both	GQ377413.1,KU214823.1,KY807714.1,MH029269.1,MH489028.1,MK995679.1,MT372498.1,MW5	JX144740.1
+ITS2_effe80a64e7c	ITS2_eec1be34d8ba	Contracaecum ogmorhini	Contracaecum rudolphii	species	1	1	3	0	1.00	0.5	21	3	0.10	1	both	MT635346.1	OP453442.1
+ITS2_f0fa6dcc587a	ITS2_0a8c24256204	Heterodera avenae	Heterodera arenaria	species	1	1	183	0	0.15	2	0				one-sided	KM199808.1	MG523155.1
+ITS2_f14b85f740db	ITS2_72a9b123d31a	Heterorhabditis indica	Heterorhabditis pakistanense	species	2	1	109	0	0.60	2	4	2	0.75	1	both	GQ377407.1,GQ377410.1	JX144740.1
+ITS2_f5bb0b07189e	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MW349695.1	MK340917.1
+ITS2_f687894546a3	ITS2_f7d9393bfa15	Heterodera schachtii	Heterodera trifolii	species	1	1	31	0	0.65	1	9	2	0.44	2	both	AY166435.1	MW346576.1
+ITS2_f86aca38c770	ITS2_d607278394f0	Heterorhabditis indica	Heterorhabditis pakistanense	species	1	1	109	0	0.39	2	4	1	0.50	1	both	MH496627.1	JN571094.1
+ITS2_fa1208bf6bd6	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MK545497.1	MK340917.1
+ITS2_fc9037838782	ITS2_5e86528530bf	Cactodera estonica	Cactodera xinanensis	species	1	1	8	0	0.25	0	0				one-sided	MW821355.1	PP728282.1
+ITS2_fe117fb8eb5b	ITS2_55df6316941a	Eustrongylides excisus	Eustrongylides ignotus	species	1	1	23	0	0.87	0	0				one-sided	MZ648894.1	MK340917.1
