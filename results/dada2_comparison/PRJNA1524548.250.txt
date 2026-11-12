@@ -1,25 +1,25 @@
-work/test4/PRJNA1524548.250.hybrid: 531 ASVs, 2,903,183 reads
+work/test6/PRJNA1524548.250.hybrid: 531 ASVs, 2,903,183 reads
 arm                        species  genus  higher/unassigned
 dada2 x nemabiome            70.4%   28.9%    0.7%
 dada2 x this db              97.9%    1.4%    0.7%
 span x nemabiome             79.0%   12.0%    9.0%
 span x this db               80.8%   13.1%    6.1%
 gap x nemabiome              86.5%   10.9%    2.5%
-gap x this db                95.2%    3.8%    1.1%
-dada2 x this db, 28S cut     94.9%    4.5%    0.7%
-idtaxa x this db, 28S cut    99.1%    0.1%    0.8%
+gap x this db                94.3%    4.6%    1.1%
+dada2 x this db, 28S cut     95.1%    4.2%    0.7%
+idtaxa x this db, 28S cut    75.9%   23.3%    0.8%
 idtaxa x nemabiome           69.7%   29.4%    0.9%
-idtaxa x this db             42.0%   32.5%   25.5%
+idtaxa x this db             42.7%   33.1%   24.2%
 
-idtaxa x this db, 28S cut vs gap x this db: both at species 95.1% of reads; disagree on 0.0%
+idtaxa x this db, 28S cut vs gap x this db: both at species 71.1% of reads; disagree on 0.0%
 
-idtaxa x nemabiome vs gap x this db: both at species 66.3% of reads; disagree on 0.0%
+idtaxa x nemabiome vs gap x this db: both at species 65.5% of reads; disagree on 0.0%
 
-dada2 x nemabiome vs gap x this db: both at species 66.6% of reads; disagree on 0.0%
+dada2 x nemabiome vs gap x this db: both at species 65.8% of reads; disagree on 0.0%
 
-idtaxa x this db vs gap x this db: both at species 38.7% of reads; disagree on 0.0%
+idtaxa x this db vs gap x this db: both at species 38.6% of reads; disagree on 0.0%
 
-dada2 x this db vs gap x this db: both at species 94.1% of reads; disagree on 1.2%
+dada2 x this db vs gap x this db: both at species 93.3% of reads; disagree on 1.2%
      34,547  Cooperia spatulata  vs  Cooperia punctata
 
 dada2 x nemabiome | Haemonchus placei 28.4%, Oesophagostomum radiatum 26.3%, (genus) Haemonchus 23.2%, (genus) Trichostrongylus 4.4%, Trichostrongylus axei 3.6%, Metastrongylus apri 3.0%, Ostertagia ostertagi 3.0%
@@ -27,8 +27,8 @@ dada2 x this db | Haemonchus placei 51.6%, Oesophagostomum radiatum 26.3%, Trich
 span x nemabiome | Haemonchus placei 51.4%, Oesophagostomum radiatum 12.6%, (genus) Oesophagostomum 10.3%, (family) Strongylidae 4.8%, Trichostrongylus retortaeformis 4.2%, Trichostrongylus axei 3.5%, (family) Metastrongylidae 3.0%
 span x this db | Haemonchus placei 50.2%, Oesophagostomum radiatum 12.6%, (genus) Oesophagostomum 10.3%, (family) Strongylidae 4.8%, Trichostrongylus retortaeformis 4.2%, Trichostrongylus axei 3.5%, Ostertagia ostertagi 2.8%
 gap x nemabiome | Haemonchus placei 51.5%, Oesophagostomum radiatum 23.9%, Trichostrongylus retortaeformis 4.2%, Trichostrongylus axei 3.6%, (genus) Ostertagia 3.0%, (genus) Cooperia 2.7%, (genus) Oesophagostomum 2.4%
-gap x this db | Haemonchus placei 51.5%, Oesophagostomum radiatum 23.9%, Trichostrongylus retortaeformis 4.2%, Trichostrongylus axei 3.6%, Ostertagia ostertagi 3.0%, Metastrongylus apri 3.0%, (genus) Oesophagostomum 2.4%
-dada2 x this db, 28S cut | Haemonchus placei 51.6%, Oesophagostomum radiatum 26.3%, (genus) Trichostrongylus 4.4%, Trichostrongylus axei 3.6%, Metastrongylus apri 3.0%, Ostertagia ostertagi 3.0%, Cooperia punctata 1.5%
-idtaxa x this db, 28S cut | Haemonchus placei 51.5%, Oesophagostomum radiatum 26.3%, Trichostrongylus retortaeformis 4.4%, Trichostrongylus axei 3.6%, Metastrongylus apri 3.0%, Ostertagia ostertagi 3.0%, Cooperia punctata 1.5%
+gap x this db | Haemonchus placei 51.5%, Oesophagostomum radiatum 23.1%, Trichostrongylus retortaeformis 4.2%, Trichostrongylus axei 3.6%, (genus) Oesophagostomum 3.3%, Ostertagia ostertagi 3.0%, Metastrongylus apri 3.0%
+dada2 x this db, 28S cut | Haemonchus placei 51.6%, Oesophagostomum radiatum 26.3%, (genus) Trichostrongylus 4.2%, Trichostrongylus axei 3.6%, Metastrongylus apri 3.0%, Ostertagia ostertagi 3.0%, Cooperia punctata 1.5%
+idtaxa x this db, 28S cut | Haemonchus placei 28.3%, Oesophagostomum radiatum 26.3%, (genus) Haemonchus 23.2%, Trichostrongylus retortaeformis 4.4%, Trichostrongylus axei 3.6%, Metastrongylus apri 3.0%, Ostertagia ostertagi 3.0%
 idtaxa x nemabiome | Haemonchus placei 27.1%, Oesophagostomum radiatum 26.3%, (genus) Haemonchus 24.5%, (genus) Trichostrongylus 4.4%, Trichostrongylus axei 3.6%, Metastrongylus apri 3.0%, Ostertagia ostertagi 3.0%
-idtaxa x this db | (genus) Haemonchus 27.1%, Oesophagostomum radiatum 26.3%, (family) Trichostrongylidae 24.5%, (genus) Trichostrongylus 4.4%, Trichostrongylus axei 3.6%, Metastrongylus apri 3.0%, Ostertagia ostertagi 3.0%
+idtaxa x this db | (genus) Haemonchus 28.3%, Oesophagostomum radiatum 26.3%, (family) Trichostrongylidae 23.2%, (genus) Trichostrongylus 4.4%, Trichostrongylus axei 3.6%, Metastrongylus apri 3.0%, Ostertagia ostertagi 3.0%

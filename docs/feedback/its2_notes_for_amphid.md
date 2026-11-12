@@ -71,7 +71,8 @@ wrong one is the margin to the next species. Recommended rule:
   match (0 edits) AND that reference is >= 2 edits off;
 - **genus** >= 97%, **family** >= 95%;
 - a reference with `species_status` = `unnamed` (hybrids, cf.,
-  environmental) is not "another species"; a `shared` one is.
+  environmental, informal "sp." names) is not "another species"; a
+  `shared` one is.
 
 Recall = right calls / reads; precision = right calls / calls made at
 that rank; over-classification = a species named for a read whose
@@ -79,10 +80,12 @@ species is missing from the database.
 
 | Rule (whole reads) | Species recall | Species precision | Genus recall | Genus precision | Over-classification |
 |---|---:|---:|---:|---:|---:|
-| V4 limits | 18.2% | 94.0% | 49.5% | 99.3% | 2.0% |
-| gap rule | 55.3% | 98.8% | 88.9% | 99.3% | 5.9% |
-| dada2 assignTaxonomy, for scale | 86.0% | 95.1% | 97.2% | 99.2% | 43.5% |
-| DECIPHER IdTaxa, for scale | 78.8% | 96.9% | 93.5% | 99.5% | 23.2% |
+| V4 limits | 18.5% | 95.2% | 50.5% | 99.3% | 1.8% |
+| gap rule | 56.4% | 99.2% | 89.4% | 99.4% | 5.4% |
+| dada2 assignTaxonomy, for scale | 86.3% | 95.4% | 97.7% | 99.3% | 42.9% |
+| DECIPHER IdTaxa, for scale | 80.3% | 97.5% | 94.5% | 99.6% | 20.6% |
+
+(`main` after v0.1.3; v0.1.3 gave the gap rule 55.3%, 98.8% and 5.9%.)
 
 Limits set separately per genus or family did no better on held-out
 species. Thresholds cannot fix the remaining missing-species errors:
@@ -100,10 +103,12 @@ differently. `bin/classify_asvs.py` writes these as `nearest` and
 `next`.
 
 **Report the lineage.** `taxonomy.tsv` has a `lineage` column: a
-published line within a species, kept under the species' name. For now
-only the *Teladorsagia circumcincta* goat line (2 records), which
-Francis & Šlapeta (2023) found in goats and not in sheep on shared
-pasture. When every tied best reference carries the same lineage,
+published line within a species, kept under the species' name: the
+*Teladorsagia circumcincta* goat line (2 records), which Francis &
+Šlapeta (2023) found in goats and not in sheep on shared pasture. On
+`main` after v0.1.3 it also carries the informal name of a genus-level
+record (19: *Oesophagostomum* sp. 3335_MDR_CAM_OH15, *Cloacina* sp. 1
+AJ-2019, *Trichostrongylus* sp. SMNPOL33R), whose species is blank. When every tied best reference carries the same lineage,
 report it with the call, at any rank: a goat-line read at 98% stops at
 genus but is still "nearest *T. circumcincta* (goat line) 98.0%". Blank
 means no line is recorded, not the other line. `bin/classify_asvs.py`

@@ -77,6 +77,8 @@ TIGHT = {"NC1": 3, "S28": 8}
 LOOSE = {"NC1": 6, "S28": 12}
 WINDOW = 30         # loose search: bases either side of the backbone boundary
 HMM_START_SHIFT = 3  # backbone ITS2 starts 3 bases before NC1 ends (2,544 of 3,820)
+INNER, INNER_EDITS = 25, 2  # an NC1 this far into a cut, this close, is the real start
+END_REACH = 60      # a record ending this close past the boundary may end in a 28S stub
 
 
 def read_fasta(path):
@@ -178,6 +180,14 @@ def cut_end(x, q):
     if q == len(x):
         k = s28_head(x)
         return (q - k, "part", "") if k else (q, "record", "")
+    # The record ends a short way past the boundary, in a 28S stub shorter
+    # than the anchor (PZ347037, Oesophagostomum radiatum: ITS2 complete,
+    # 23 bases of 28S): the stub's head is the end, as if the boundary
+    # were the record's end.
+    if len(x) - q <= END_REACH:
+        k = s28_head(x)
+        if k:
+            return len(x) - k, "part", ""
     return q, "hmm", ""
 
 
@@ -193,6 +203,12 @@ def cut(x, p, q, its_len):
         # anchor in the wrong copy or the wrong gene (LT159837).
         s, sm, sc = (p + HMM_START_SHIFT if p else 0), ("hmm" if p else "record"), ""
         e, em, ec = q, ("hmm" if q < len(x) else "record"), ""
+    # NC1 well inside the cut: the start was placed early (by the HMM, or
+    # by an NC1-like stretch further back) and 5.8S, even ITS1, came with
+    # it (KR259650: 656 bases, nearly all ITS1). The inner NC1 is the start.
+    inner = find_anchor_cost(x[s + INNER:e], NC1, INNER_EDITS)
+    if inner:
+        s, sm, sc = s + INNER + inner[1], "primer", inner[2]
     if e - s < 50:
         return None
     flank, nc2_edits = "", ""

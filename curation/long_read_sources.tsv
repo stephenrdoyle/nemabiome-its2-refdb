@@ -40,3 +40,5 @@ work/reads/coronocyclus_labiatus.tsv	reads	Coronocyclus labiatus	ERR11658728
 work/reads/ancylostoma_duodenale.tsv	reads	Ancylostoma duodenale	SRR33113994
 work/reads/angiostrongylus_malaysiensis.tsv	reads	Angiostrongylus malaysiensis	ERR17736586
 work/reads/crenosoma_striatum.tsv	reads	Crenosoma striatum	ERR12657672
+work/genomes/oesophagostomum_venulosum.GCA_966212565.tsv	assembly	Oesophagostomum venulosum	GCA_966212565.1
+work/genomes/oesophagostomum_venulosum.GCA_966212575.tsv	assembly	Oesophagostomum venulosum	GCA_966212575.1

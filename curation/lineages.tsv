@@ -1,5 +1,6 @@
-# Lineages within a species: a named, published intraspecific line that a
-# read can be told apart by, kept under its species' name. bin/build.py
+# Lineages: a named, published line within a species that a read can be
+# told apart by, kept under its species' name; or the informal name of a
+# genus-level record (an "Oesophagostomum sp." lineage with no species). bin/build.py
 # (--lineages) gives a record the lineage of its annotated members; the
 # record's taxonomy is unchanged. Accession without version.
 #
@@ -12,3 +13,32 @@ accession	lineage	note
 AJ577464	goat line	T. circumcincta genotype Mdh2C (Leignel, France); 255 bases against 249 for the sheep-and-goat line
 MG651890	goat line	T. circumcincta from Ammotragus lervia, Tunisia; identical to AJ577464
 AF351782	goat line	T. circumcincta genotype Mdh2C (Leignel et al., J Parasitol); 252 bases, near complete
+PP785340	Oesophagostomum sp. ASV_88	genus-level record; 16 edits from the nearest named record (Oesophagostomum dentatum); Oesophagostomum sp. clone ASV_88 internal transcribed spacer 2 and lar
+PP785339	Oesophagostomum sp. ASV_40	genus-level record; 16 edits from the nearest named record (Oesophagostomum dentatum); Oesophagostomum sp. clone ASV_40 internal transcribed spacer 2 and lar
+PP785337	Oesophagostomum sp. ASV_12	genus-level record; 5 edits from the nearest named record (Oesophagostomum dentatum); Oesophagostomum sp. clone ASV_12 internal transcribed spacer 2 and lar
+PP235523	Oesophagostomum sp. 29_S2-217OLI / 31_S2-324COC	genus-level record; 10 edits from the nearest named record (Oesophagostomum bifurcum); Oesophagostomum sp. isolate 31_S2-324COC internal transcribed spacer 2; identical ITS2 to PP235521 (29_S2-217OLI), so one lineage
+PP235522	Oesophagostomum sp. 30_S2-29ZYO	genus-level record; 11 edits from the nearest named record (Oesophagostomum bifurcum); Oesophagostomum sp. isolate 30_S2-29ZYO internal transcribed spacer 2 
+PP235521	Oesophagostomum sp. 29_S2-217OLI / 31_S2-324COC	genus-level record; 10 edits from the nearest named record (Oesophagostomum bifurcum); Oesophagostomum sp. isolate 29_S2-217OLI internal transcribed spacer 2; identical ITS2 to PP235523 (31_S2-324COC), so one lineage
+ON178641	Oesophagostomum sp. OTU_180	genus-level record; 4 edits from the nearest named record (Oesophagostomum stephanostomum); Oesophagostomum sp. isolate OTU_180 internal transcribed spacer 2, par
+ON178622	Oesophagostomum sp. OTU_152	genus-level record; 10 edits from the nearest named record (Oesophagostomum stephanostomum); Oesophagostomum sp. isolate OTU_152 internal transcribed spacer 2, par
+ON178613	Oesophagostomum sp. OTU_142	genus-level record; 4 edits from the nearest named record (Oesophagostomum bifurcum); Oesophagostomum sp. isolate OTU_142 internal transcribed spacer 2, par
+MW621346	Oesophagostomum sp. 3341_CEB_CAM / 9800_CEB_CAM_A_OH13	genus-level record; 9 edits from the nearest named record (Oesophagostomum stephanostomum); Oesophagostomum sp. 3341_CEB_CAM internal transcribed spacer 2 and lar; identical ITS2 to MW528477 (9800_CEB_CAM_A_OH13), so one lineage
+MW528478	Oesophagostomum sp. 9800_CEB_CAM_B_OH14	genus-level record; 8 edits from the nearest named record (Oesophagostomum stephanostomum); Oesophagostomum sp. 9800_CEB_CAM_B_OH14 internal transcribed spacer 2,
+MW528477	Oesophagostomum sp. 3341_CEB_CAM / 9800_CEB_CAM_A_OH13	genus-level record; 9 edits from the nearest named record (Oesophagostomum stephanostomum); Oesophagostomum sp. 9800_CEB_CAM_A_OH13 internal transcribed spacer 2,; identical ITS2 to MW621346 (3341_CEB_CAM), so one lineage
+MW528475	Oesophagostomum sp. 3335_MDR_CAM_OH15	genus-level record; 12 edits from the nearest named record (Oesophagostomum bifurcum); Oesophagostomum sp. 3335_MDR_CAM_OH15 internal transcribed spacer 2, p
+KR149658	Oesophagostomum sp. MC-2015	genus-level record; 10 edits from the nearest named record (Oesophagostomum stephanostomum); Oesophagostomum sp. MC-2015 internal transcribed spacer 2 and 28S ribo
+MK573546	Cloacina sp. 4 AJ-2019	genus-level record; 11 edits from the nearest named record (Cloacina eos)
+MK573545	Cloacina sp. 1 AJ-2019	genus-level record; 10 edits from the nearest named record (Cloacina eos)
+MK573543	Cloacina sp. 3 AJ-2019	genus-level record; 12 edits from the nearest named record (Cloacina eos)
+MH047848	Trichostrongylus sp. SMNPGL3R2	genus-level record; 5 edits from the nearest named record (Trichostrongylus axei)
+MH047849	Trichostrongylus sp. SMNPGL33R	genus-level record; 5 edits from the nearest named record (Trichostrongylus axei)
+MH047842	Trichostrongylus sp. SMNPOL33R	genus-level record; 10 edits from the nearest named record (Trichostrongylus axei)
+MH047841	Trichostrongylus sp. SMNPOL33F	genus-level record; 12 edits from the nearest named record (Trichostrongylus axei)
+MH047840	Trichostrongylus sp. SMNPOL32R	genus-level record; 12 edits from the nearest named record (Trichostrongylus axei)
+MH047847	Trichostrongylus sp. SMNPGL34R	genus-level record; 4 edits from the nearest named record (Trichostrongylus axei)
+MH047846	Trichostrongylus sp. SMNPGL32R	genus-level record; 4 edits from the nearest named record (Trichostrongylus axei)
+MG770098	Trichostrongylus sp. 3 SS-2018	genus-level record; 4 edits from the nearest named record (Trichostrongylus axei)
+MG770097	Trichostrongylus sp. 2 SS-2018	genus-level record; 5 edits from the nearest named record (Trichostrongylus axei)
+MG770096	Trichostrongylus sp. 1 SS-2018	genus-level record; 4 edits from the nearest named record (Trichostrongylus axei)
+KP688063	Trichostrongylus sp. Trich-R34-0909-139-3	genus-level record; 6 edits from the nearest named record (Trichostrongylus colubriformis)
+KP688062	Trichostrongylus sp. Trich-R34-0909-139-6	genus-level record; 7 edits from the nearest named record (Trichostrongylus vitrinus)

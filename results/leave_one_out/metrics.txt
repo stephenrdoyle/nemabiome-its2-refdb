@@ -1,20 +1,20 @@
-Leave-one-out, 3,182 queries, work/build.
+Leave-one-out, 3,224 queries, work/build.
 Recall = right / queries; precision = right / calls made at that rank or deeper;
 over-classification = calls made where the right answer is not in the database.
 
-== whole: present 2,732 queries; hidden 3,182 (genus kept 2,921, genus gone 261)
+== whole: present 2,768 queries; hidden 3,224 (genus kept 2,962, genus gone 262)
    arm                species recall        precision     genus recall        precision   over-class. sp  genus kept: rec             prec genus gone: over
-   v4                          18.2%            94.0%            49.5%            99.3%             2.0%             5.5%            92.6%             1.1%
-   exact                       10.8%            92.2%            52.3%            99.3%             1.6%             6.4%            93.5%             1.1%
-   gap                         55.3%            98.8%            88.9%            99.3%             5.9%            26.6%            93.3%             5.4%
-   assignTaxonomy              86.0%            95.1%            97.2%            99.2%            43.5%            72.2%            94.7%            23.4%
-   IdTaxa                      78.8%            96.9%            93.5%            99.5%            23.2%            42.2%            94.4%            10.0%
+   v4                          18.5%            95.2%            50.5%            99.3%             1.8%             5.3%            92.4%             1.1%
+   exact                       11.2%            94.0%            53.1%            99.3%             1.3%             6.2%            93.4%             1.1%
+   gap                         56.4%            99.2%            89.4%            99.4%             5.4%            26.0%            94.0%             4.6%
+   assignTaxonomy              86.3%            95.4%            97.7%            99.3%            42.9%            71.0%            94.1%            23.7%
+   IdTaxa                      80.3%            97.5%            94.5%            99.6%            20.6%            40.2%            93.9%             9.5%
 
-== 2x150: present 2,212 queries; hidden 2,596 (genus kept 2,358, genus gone 238)
+== 2x150: present 2,250 queries; hidden 2,640 (genus kept 2,401, genus gone 239)
    arm                species recall        precision     genus recall        precision   over-class. sp  genus kept: rec             prec genus gone: over
-   v4                          21.0%            95.7%            59.5%            99.4%             2.5%             6.7%            92.9%             1.3%
-   exact                       21.0%            95.7%            59.9%            99.4%             2.5%             7.0%            93.2%             1.3%
-   gap                         58.1%            99.0%            90.0%            99.4%             6.5%            27.2%            94.1%             5.5%
-   assignTaxonomy              86.8%            95.8%            97.2%            99.0%            39.9%            70.3%            94.7%            24.8%
-   IdTaxa                      79.7%            97.1%            94.1%            99.6%            22.6%            42.3%            94.6%            10.5%
+   v4                          21.7%            96.1%            60.8%            99.3%             2.3%             6.0%            91.8%             1.3%
+   exact                       21.7%            96.1%            61.2%            99.4%             2.3%             6.4%            92.2%             1.3%
+   gap                         59.3%            99.4%            90.3%            99.4%             5.9%            26.2%            94.0%             4.6%
+   assignTaxonomy              87.1%            96.2%            97.6%            99.3%            38.3%            68.2%            94.3%            24.3%
+   IdTaxa                      80.3%            97.9%            94.2%            99.7%            20.3%            40.8%            94.6%            10.5%
 

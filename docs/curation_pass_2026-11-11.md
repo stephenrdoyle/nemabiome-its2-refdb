@@ -1,9 +1,13 @@
 # Curation pass, 2026-11-11
 
 Status: **A, B and E applied** (53 rows added to `curation/overrides.tsv`,
-2026-11-11); C left to check; D: *Ascaris lumbricoides* and *A. suum*
+2026-11-11; v0.1.2); C left to check; D: *Ascaris lumbricoides* and *A. suum*
 stay apart (decided), the rest open. Rebuilt: 11,135 records, 1,864
 named species, 54 source records dropped (11,146, 1,869 and 28 before).
+**F, G, H and I applied after v0.1.3** (2026-11-12, on `main`): 65 more
+drops and 2 relabels, the GenBank update, and two fixes to the cut.
+Rebuilt: 11,288 records, 1,874 named species, 119 source records
+dropped (I, below).
 
 ## Effect
 
@@ -104,9 +108,10 @@ is certain.
   48 *T. colubriformis* records. Dropping it removes the species.
 - **MT193647** *T. colubriformis* (Bactrian camel, China) is identical to
   *T. probolurus* EF427623 (Kuznetsov 2007). *T. probolurus* is a camel
-  parasite, so this record may be *T. probolurus*.
-- **OP787564**, the only *Ashworthius sidemi* record (European bison;
-  partial), holds 7 *H. contortus* records.
+  parasite, so this record may be *T. probolurus*. Dropped in E.
+- **OP787564**, an *Ashworthius sidemi* record (European bison;
+  partial), holds 7 *H. contortus* records. It is *H. contortus* ITS2:
+  proposed in F.
 - **PZ103494 / PZ103495** (*Cylicostephanus calicatus* / *Cylicodontophorus
   bicoronatus*, one Malaysian horse study) sit 2 edits apart, while both
   species otherwise sit a median 11 from anything. One of the two is
@@ -221,7 +226,11 @@ it does not change the picture much.
 
 - ***Ascaris lumbricoides* / *A. suum*: kept apart** (decided
   2026-11-11). The records interleave at 0-1 edits, so reads stop at
-  *Ascaris*.
+  *Ascaris*. Reaffirmed after the GenBank update: 7 and 6 records
+  (and one shared), 274-285 bases; between the species a median 2 edits
+  (0-9), within them 1 (0-4) and 2 (0-8). An exact match to the two
+  records furthest from the other species (*A. suum* PP179022, 6 edits;
+  *A. lumbricoides* LN600404, 3) is still named.
 - **NCBI look-alike pairs** (DESIGN §5.3): *Phocanema* / *Pseudoterranova*,
   *Labiosimplex* / *Labiostrongylus longispicularis*, *Gracilacus* /
   *Paratylenchus paralatescens*, *Japanema* / *Sheraphelenchus*. These
@@ -233,3 +242,163 @@ it does not change the picture much.
   - *Globodera pallida* DQ097514 holds 34 *G. rostochiensis* records.
 
   Whether to go through these depends on who uses the database.
+
+## F. Records that do not sit with their own species (28 rows, applied)
+
+Found by checking *Ashworthius sidemi* against NCBI. NC1 matches all
+11 *A. sidemi* records that hold the 5.8S end, and NC2 the one that
+holds its 28S site, so the primers are not the problem. But of the
+three *A. sidemi* records here, the one held by 10 accessions from
+independent studies is the species. OP787564 (European bison, Poland)
+is 81 edits from it and 2 from *Haemonchus contortus*, and AJ577470
+(unpublished) is 79 from it and 33+ from everything else.
+
+`bin/species_coherence.py` asks the same of every named record in a
+species with two or more records (`results/curation/species_coherence.tsv`):
+`own`, the edits to the nearest other record of its species; `other`,
+the edits to the nearest record of another species; and `to_core`, the
+edits to the species' best-supported record (most accessions, >= 3).
+
+- **displaced** (53): `other` <= 3 and `own` >= 10. 32 of them are one
+  accession next to a species whose record sits with its own: the
+  likely mislabels. 24 of the 32 are proposed for dropping. Held back:
+  six *Hysterothylacium* records (MW370920, MW370925, MW370927,
+  MW370746, MW370896, MW413285; a genus whose labels cover several
+  lineages, as in E), *Ditylenchus dipsaci* MG384729 (as in E) and
+  *Meloidogyne ethiopica* LN626967 (identical to *M. incognita*; the
+  tropical root-knot species share near-identical ITS2). The other 21
+  rest on two-record species or a neighbour that is itself odd: listed,
+  not proposed.
+- **stray** (171): `own` >= 20, >= 20 from the core, and nothing within
+  10 edits. 104 sit in 15 species with three or more strays each
+  (*Acanthocheilonema reconditum* 19, *Parabronema skrjabini* 16,
+  *Angiostrongylus malaysiensis* 16): real diversity within the label,
+  or cryptic species, not single mislabels. Left. Of the 67 isolated
+  strays, four are proposed: AJ577470 (above), MK087177 (*H.
+  contortus*, 119 bases, 39 edits from every other *H. contortus*
+  record), and AJ242966 / AJ242967 (*Dirofilaria repens*: the 5S rRNA
+  spacer, not this ITS2). The rest are listed. A stray holds no other
+  species at genus; a read matching it would be named wrongly, but few
+  reads will.
+- **closer** (400): nearer another species than its own, by less. Sister
+  species and partials; listed only.
+- **layer** (23): long-read copies within one worm far from their
+  species' other records (*Cylicocyclus nassatus* copies 17-88 edits
+  off, *Strongylus vulgaris* 13-31). rDNA copies, not labels, but the
+  far ones may be pseudogene copies; worth a look in the layer itself.
+
+Also corrects C: dropping OP787564 does not remove *A. sidemi*.
+The 28 rows are in `curation/overrides.tsv`.
+
+## G. GenBank since the backbone (applied; 733 records in the I rebuild)
+
+`bin/genbank_update.py` fetches nematode records the backbone (nemabiome
+20260317) lacks: ITS2 records published since 17 March 2026 (1,773),
+5.8S / 28S records published since then (1,919), and records of any date
+annotated with 5.8S and 28S but never ITS2 (128). Of 3,820, 3,055 are
+formally named species (not "sp.", cf., aff.), and 1,737 hold an ITS2
+region (>= 80 bases at >= 70% to a record here). They are cut and graded
+with the backbone (`bin/its2.py`, `bin/its2_partials.py`), which leaves
+the backbone's own cuts as they were (15,103 of 15,108 identical).
+
+`bin/its2.py` places its anchors near the backbone HMM's ITS2 boundary;
+for a new record that boundary is where the record aligns to our records.
+Where no anchor is found it falls back to that boundary, which for many
+plant-parasitic and entomopathogenic records ran into ITS1 (*Heterodera*
+median 539 bases against 212). So only the 601 records cut at an anchor
+or at their own end are taken; the other 1,136 (mostly Tylenchida and
+*Heterorhabditis*, and the 30 new *Dictyocaulus filaria*) wait for a
+better boundary. Of the 601, 167 join existing records, 188 fold into
+one, and 246 make 160 new records: 11,273 records, 1,869 species.
+Ruminant gains: *Dictyocaulus viviparus* 19 -> 48 accessions (14 -> 43
+records), *Cystocaulus ocreatus* 7 -> 37, *Oesophagostomum columbianum*
+10 -> 21, *Haemonchus contortus* 476 -> 516, *Trichostrongylus
+colubriformis* 155 -> 181, and a first complete *Ostertagia gruehneri*
+(PZ782686).
+
+Screened as the backbone was. 34 not to take in, now in
+`curation/overrides.tsv`:
+- 23 "*H. contortus*" from goats and sheep in Ghana (PZ4068xx, 2026)
+  carrying the *H. placei* ITS2 of LC367244 and OR702556, which no *H.
+  contortus* genome copy carries (DESIGN §5.3); taken in, they would make
+  that *H. placei* record shared and hold its reads at genus;
+- one *Steinernema kraussei* identical to *S. feltiae*;
+- 10 strays (8 records), among them PZ369172 (*Ashworthius sidemi*,
+  titled ITS1 + 5.8S).
+
+## H. Records that still hold 5.8S (22, fixed in the cut)
+
+22 records hold NC1 (<= 2 edits) more than 25 bases in, so 5.8S, and in
+two cases ITS1, was left on: *Ostertagia antipini* KR259650 (elk; 656
+bases, ITS1 + 5.8S + a few bases of ITS2), two *Heterodera*, eight
+marine-mammal lungworms (*Stenurus*, *Parafilaroides*, 29 bases each),
+seven *Caenorhabditis*, *Ancylostoma ceylanicum* AJ001593 (106 bases;
+also displaced, F). `bin/its2.py` now cuts at an NC1 (<= 2 edits) more
+than 25 bases inside a cut (DESIGN §3.2).
+
+## I. The rebuild after v0.1.3 (applied)
+
+The update rerun with `curation/genbank_named.tsv` (98 accessions found
+missing by hand: strongylid species and variants, informal
+*Oesophagostomum*, *Cloacina* and *Trichostrongylus* lineages; 1,834
+records holding ITS2, 733 kept), cut with H's fix and a second one: a
+record ending in a 28S stub too short for the anchor is cut at the stub
+(DESIGN §3.2), which brings in complete *Oesophagostomum radiatum*
+PZ347035/37. Screened again (`bin/species_coherence.py`; new records
+within 2 edits of another species):
+
+- **PZ569106** "*H. contortus*" (isolate sm001, Nigeria, 2026) carries
+  the *H. placei* ITS2, 1 edit from the main *H. placei* ASVs, as the
+  Ghana records in G. A single record, so the shared-record check missed
+  it, and *Haemonchus* species sit 4 edits apart, so the coherence
+  screen did too. It held PRJNA1524548's main *H. placei* ASVs at genus
+  (2x150 reads to species 95.9% -> 71.2%). Dropped.
+- **MK573551** "*Cloacina* sp. 2 AJ-2019" is identical to *Zoniolaimus
+  occidentalis* MT084411 and OM987392, 28 edits from the nearest
+  *Cloacina*: a *Zoniolaimus*. Kept, it pulled the *Z. occidentalis*
+  record to family. Dropped.
+- **MG711656** "*Trichostrongylus* sp. RR-2017" is 0 edits over its span
+  from *Cooperia pectinata*, 23 from any *Trichostrongylus*. Dropped.
+- **Informal names are not species.** `bin/build.py` read "sp." names
+  as species (the backbone has none), so 19 informal records went in as
+  named species of their own. "sp."/"spp." now count as no name, as cf.
+  and hybrids do: the records are genus-level, `unnamed`, with the
+  informal name in `lineage`.
+- **Two pairs of informal *Oesophagostomum* isolates** have identical
+  ITS2s (MW621346 / MW528477; PP235521 / PP235523, each pair from one
+  study). Each pair shares one `lineage` name, joined with " / ".
+
+Kept, as real neighbours: *Heligmosomoides bibullosus* 1 edit from *H.
+vandegrifti*, *Metastrongylus asymmetricus* 1 from *M. salmi*, a complete
+*T. retortaeformis* 4 from *T. axei* (3 through 2x150 windows), *T.
+colubriformis* records 2 from *T. capricola* JF276023 (C).
+
+**Partials** (`--drop-partials`, tested, not applied): dropping the 394
+partial records (< 75% of the ITS2) of species with a full-length
+record loses no species, and changes the gap rule's leave-one-out by
+0.3 points of species recall or less (56.4% -> 56.7% whole) with
+precision and over-classification unchanged. 277 of those partials are
+>= 4 edits from their species' full-length records: variants a read can
+match, which a test of full-length queries cannot count. Kept.
+
+**Effect**, gap rule, v0.1.3 -> after I (`results/`):
+
+| Test | v0.1.3 | After I |
+|---|---:|---:|
+| Leave-one-out, species present, right species (whole) | 55.3% | 56.4% |
+| same, 2x150 | 58.1% | 59.3% |
+| Leave-one-out, species present, wrong species (whole) | 0.7% | 0.4% |
+| Leave-one-out, species missing, wrong species (whole) | 5.9% | 5.4% |
+| same, 2x150 | 6.5% | 5.9% |
+| Ruminant mock, species recall | 87.8% | 89.7% |
+| Canine / equine mocks | 100 / 99.0% | same |
+| Francis & Šlapeta 2x250 hybrid, reads to species | 93.8% | 93.9% |
+| PRJNA1524548 2x250 hybrid, reads to species | 95.2% | 94.3% |
+
+Missing-species errors (whole) fell from 187 to 173. assignTaxonomy and
+IdTaxa on the same queries: species recall 86.0% to 86.3% and 78.8% to
+80.3%, over-classification 43.5% to 42.9% and 23.2% to 20.6%.
+PRJNA1524548 loses a point to two more honest calls: some *Oe. radiatum*
+ASVs are 98.3-98.8% to the complete record that now holds the partials
+they matched exactly, and *T. axei* through 2x150 windows is 3 edits from
+the new *T. retortaeformis*.

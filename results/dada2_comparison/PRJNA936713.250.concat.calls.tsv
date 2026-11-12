@@ -1,295 +1,295 @@
-asv	mode	edits	span	identity	ties	gap	nearest	next	v4_rank	v4_name	exact_rank	exact_name	gap_rank	gap_name
-ASV00001	window	0	412	1.0000	3	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00002	window	1	409	0.9976	1	40	Oesophagostomum venulosum 99.8%	Oesophagostomum asperum +40	species	Oesophagostomum venulosum	genus	Oesophagostomum	species	Oesophagostomum venulosum
-ASV00003	window	0	415	1.0000	1	12	Haemonchus contortus 100.0%	Ashworthius sidemi +12	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00004	window	0	415	1.0000	2	35	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00005	window	3	415	0.9928	1	12	Teladorsagia circumcincta 99.3%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00006	window	0	412	1.0000	2	7	Haemonchus contortus 100.0%	Ashworthius sidemi +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00007	window	0	415	1.0000	2	8	Haemonchus placei 100.0%	Haemonchus contortus +8	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00008	window	0	412	1.0000	2	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00009	window	0	410	1.0000	1	7	Trichostrongylus rugatus 100.0%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus
-ASV00010	window	0	412	1.0000	2	8	Haemonchus placei 100.0%	Haemonchus contortus +8	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00011	window	0	415	1.0000	2	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00012	window	2	415	0.9952	1	14	Teladorsagia circumcincta 99.5%	Teladorsagia boreoarcticus +14	genus	Teladorsagia	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00013	window	0	415	1.0000	2	38	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +38	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00014	window	8	415	0.9807	1	12	Teladorsagia circumcincta 98.1%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia
-ASV00015	window	0	415	1.0000	3	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00016	window	5	399	0.9875	1	57	Oesophagostomum radiatum 98.7%	Oesophagostomum stephanostomum +57	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00017	window	0	415	1.0000	2	6	Cooperia oncophora 100.0%	Cooperia punctata +6	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00018	window	0	412	1.0000	1	12	Haemonchus contortus 100.0%	Ashworthius sidemi +12	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00019	window	5	408	0.9877	1	40	Oesophagostomum venulosum 98.8%	Oesophagostomum asperum +40	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00020	window	0	412	1.0000	2	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00021	window	4	415	0.9904	1	14	Teladorsagia circumcincta 99.0%	Teladorsagia boreoarcticus +14	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00022	window	3	409	0.9927	1	36	Oesophagostomum venulosum 99.3%	Oesophagostomum asperum +36	family	Strongylidae	family	Strongylidae	species	Oesophagostomum venulosum
-ASV00023	window	3	409	0.9927	1	40	Oesophagostomum venulosum 99.3%	Oesophagostomum asperum +40	family	Strongylidae	family	Strongylidae	species	Oesophagostomum venulosum
-ASV00024	window	0	412	1.0000	3	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00025	window	1	415	0.9976	1	14	Nematodirus spathiger 99.8%	Nematodirus helvetianus +14	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger
-ASV00026	window	2	415	0.9952	2	10	Haemonchus contortus 99.5%	Ashworthius sidemi +10	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00027	window	0	412	1.0000	2	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00028	window	0	415	1.0000	2	7	Haemonchus contortus 100.0%	Ashworthius sidemi +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00029	window	0	414	1.0000	1	14	Nematodirus spathiger 100.0%	Nematodirus helvetianus +14	species	Nematodirus spathiger	species	Nematodirus spathiger	species	Nematodirus spathiger
-ASV00030	window	1	410	0.9976	1	7	Trichostrongylus rugatus 99.8%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	genus	Trichostrongylus	species	Trichostrongylus rugatus
-ASV00031	window	0	412	1.0000	3	16	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +16	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00032	window	6	403	0.9851	2	59	Oesophagostomum radiatum 98.5%	Oesophagostomum stephanostomum +59	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00033	window	0	415	1.0000	1	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00034	window	0	412	1.0000	2	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00035	window	2	414	0.9952	1	14	Teladorsagia circumcincta 99.5%	Teladorsagia boreoarcticus +14	genus	Teladorsagia	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00036	window	2	414	0.9952	2	10	Haemonchus contortus 99.5%	Ashworthius sidemi +10	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00037	window	12	402	0.9701	1	53	Oesophagostomum radiatum 97.0%	Oesophagostomum stephanostomum +53	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00038	window	5	415	0.9880	1	12	Teladorsagia circumcincta 98.8%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia
-ASV00039	window	0	413	1.0000	4	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
-ASV00040	window	6	406	0.9852	2	61	Oesophagostomum radiatum 98.5%	Oesophagostomum stephanostomum +61	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00041	window	0	412	1.0000	2	15	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +15	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00042	window	0	411	1.0000	2	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00043	window	2	412	0.9951	1	8	Haemonchus contortus 99.5%	Ashworthius sidemi +8	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00044	window	3	414	0.9928	1	12	Teladorsagia circumcincta 99.3%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00045	window	0	415	1.0000	3	8	Cooperia oncophora 100.0%	Cooperia punctata +8	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00046	window	21	390	0.9462	1	29	Oesophagostomum venulosum 94.6%	Oesophagostomum asperum +29	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00047	window	2	410	0.9951	1	3	Trichostrongylus rugatus 99.5%	Trichostrongylus retortaeformis +3	genus	Trichostrongylus	family	Trichostrongylidae	genus	Trichostrongylus
-ASV00048	window	0	410	1.0000	2	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00049	window	2	414	0.9952	2	10	Haemonchus contortus 99.5%	Ashworthius sidemi +10	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00050	window	2	415	0.9952	1	34	Ostertagia ostertagi 99.5%	Ostertagia gruehneri +34	genus	Ostertagia	family	Trichostrongylidae	species	Ostertagia ostertagi
-ASV00051	window	7	408	0.9828	1	40	Oesophagostomum venulosum 98.3%	Oesophagostomum asperum +40	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00052	window	1	412	0.9976	1	8	Haemonchus contortus 99.8%	Ashworthius sidemi +8	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus
-ASV00053	window	0	412	1.0000	1	10	Haemonchus contortus 100.0%	Ashworthius sidemi +10	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00054	window	0	412	1.0000	1	19	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +19	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00055	window	1	412	0.9976	1	7	Haemonchus contortus 99.8%	Ashworthius sidemi +7	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus
-ASV00056	window	4	414	0.9903	1	14	Teladorsagia circumcincta 99.0%	Teladorsagia boreoarcticus +14	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00057	window	1	412	0.9976	2	8	Haemonchus contortus 99.8%	Ashworthius sidemi +8	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus
-ASV00058	window	0	411	1.0000	2	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00059	window	0	411	1.0000	2	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00060	window	3	415	0.9928	1	14	Nematodirus spathiger 99.3%	Nematodirus helvetianus +14	family	Molineidae	family	Molineidae	species	Nematodirus spathiger
-ASV00061	window	0	411	1.0000	3	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00062	window	4	412	0.9903	1	11	Teladorsagia circumcincta 99.0%	Teladorsagia boreoarcticus +11	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00063	window	2	412	0.9951	2	10	Haemonchus contortus 99.5%	Ashworthius sidemi +10	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00064	window	5	407	0.9877	1	39	Oesophagostomum venulosum 98.8%	Oesophagostomum asperum +39	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00065	window	0	414	1.0000	2	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
-ASV00066	window	3	415	0.9928	1	14	Nematodirus spathiger 99.3%	Nematodirus helvetianus +14	family	Molineidae	family	Molineidae	species	Nematodirus spathiger
-ASV00067	window	2	412	0.9951	1	5	Haemonchus placei 99.5%	Haemonchus contortus +5	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus placei
-ASV00068	window	2	409	0.9951	1	39	Oesophagostomum venulosum 99.5%	Oesophagostomum asperum +39	genus	Oesophagostomum	family	Strongylidae	species	Oesophagostomum venulosum
-ASV00069	window	2	414	0.9952	1	14	Teladorsagia circumcincta 99.5%	Teladorsagia boreoarcticus +14	genus	Teladorsagia	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00070	window	3	409	0.9927	1	40	Oesophagostomum venulosum 99.3%	Oesophagostomum asperum +40	family	Strongylidae	family	Strongylidae	species	Oesophagostomum venulosum
-ASV00071	window	0	410	1.0000	2	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00072	window	13	396	0.9672	1	30	Oesophagostomum venulosum 96.7%	Oesophagostomum asperum +30	family	Strongylidae	family	Strongylidae	family	Strongylidae
-ASV00073	window	0	409	1.0000	1	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00074	window	2	414	0.9952	1	38	Ostertagia ostertagi 99.5%	Ostertagia gruehneri +38	genus	Ostertagia	family	Trichostrongylidae	species	Ostertagia ostertagi
-ASV00075	window	2	412	0.9951	1	8	Haemonchus contortus 99.5%	Ashworthius sidemi +8	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00076	window	0	414	1.0000	2	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00077	window	0	414	1.0000	2	6	Cooperia oncophora 100.0%	Cooperia punctata +6	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00078	window	0	415	1.0000	1	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00079	window	2	410	0.9951	1	7	Trichostrongylus rugatus 99.5%	Trichostrongylus retortaeformis +7	genus	Trichostrongylus	family	Trichostrongylidae	species	Trichostrongylus rugatus
-ASV00080	window	19	388	0.9510	1	40	Oesophagostomum venulosum 95.1%	Oesophagostomum asperum +40	family	Strongylidae	family	Strongylidae	family	Strongylidae
-ASV00081	window	2	414	0.9952	1	12	Haemonchus contortus 99.5%	Ashworthius sidemi +12	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00082	window	2	409	0.9951	2	5	Haemonchus contortus 99.5%	Ashworthius sidemi +5	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00083	window	3	410	0.9927	1	7	Trichostrongylus rugatus 99.3%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	species	Trichostrongylus rugatus
-ASV00084	window	2	412	0.9951	1	7	Haemonchus contortus 99.5%	Ashworthius sidemi +7	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00085	window	2	415	0.9952	1	12	Haemonchus contortus 99.5%	Ashworthius sidemi +12	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00086	window	0	411	1.0000	2	8	Haemonchus placei 100.0%	Haemonchus contortus +8	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00087	window	0	414	1.0000	2	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00088	window	0	411	1.0000	1	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00089	window	0	412	1.0000	1	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00090	window	7	406	0.9828	1	39	Oesophagostomum venulosum 98.3%	Oesophagostomum asperum +39	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00091	window	0	409	1.0000	2	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00092	window	2	410	0.9951	1	7	Trichostrongylus rugatus 99.5%	Trichostrongylus retortaeformis +7	genus	Trichostrongylus	family	Trichostrongylidae	species	Trichostrongylus rugatus
-ASV00093	window	0	412	1.0000	4	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
-ASV00094	window	0	414	1.0000	1	12	Haemonchus contortus 100.0%	Ashworthius sidemi +12	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00095	window	2	414	0.9952	1	14	Nematodirus spathiger 99.5%	Nematodirus helvetianus +14	genus	Nematodirus	family	Molineidae	species	Nematodirus spathiger
-ASV00096	window	1	410	0.9976	1	5	Trichostrongylus rugatus 99.8%	Trichostrongylus retortaeformis +5	species	Trichostrongylus rugatus	genus	Trichostrongylus	species	Trichostrongylus rugatus
-ASV00097	window	0	409	1.0000	1	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00098	window	1	412	0.9976	1	35	Ostertagia ostertagi 99.8%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	genus	Ostertagia	species	Ostertagia ostertagi
-ASV00099	window	6	399	0.9850	1	56	Oesophagostomum radiatum 98.5%	Oesophagostomum stephanostomum +56	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00100	window	42	369	0.8862	1	30	Oesophagostomum venulosum 88.6%	Oesophagostomum asperum +30	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00101	window	0	414	1.0000	1	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00102	window	17	395	0.9570	1	30	Oesophagostomum venulosum 95.7%	Oesophagostomum asperum +30	family	Strongylidae	family	Strongylidae	family	Strongylidae
-ASV00103	window	2	414	0.9952	1	7	Haemonchus contortus 99.5%	Ashworthius sidemi +7	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00104	window	1	412	0.9976	1	6	Haemonchus placei 99.8%	Haemonchus contortus +6	species	Haemonchus placei	genus	Haemonchus	species	Haemonchus placei
-ASV00105	window	0	409	1.0000	2	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00106	window	0	414	1.0000	1	12	Haemonchus contortus 100.0%	Ashworthius sidemi +12	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00107	window	21	388	0.9459	1	40	Oesophagostomum venulosum 94.6%	Oesophagostomum asperum +40	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00108	window	1	412	0.9976	1	8	Haemonchus contortus 99.8%	Ashworthius sidemi +8	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus
-ASV00109	window	2	415	0.9952	1	10	Haemonchus contortus 99.5%	Ashworthius sidemi +10	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00110	window	5	414	0.9879	1	12	Teladorsagia circumcincta 98.8%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia
-ASV00111	window	0	412	1.0000	2	18	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +18	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00112	window	1	409	0.9976	1	7	Trichostrongylus rugatus 99.8%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	genus	Trichostrongylus	species	Trichostrongylus rugatus
-ASV00113	window	3	411	0.9927	1	13	Nematodirus spathiger 99.3%	Nematodirus helvetianus +13	family	Molineidae	family	Molineidae	species	Nematodirus spathiger
-ASV00114	window	0	413	1.0000	2	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00115	window	19	392	0.9515	1	36	Oesophagostomum venulosum 95.2%	Oesophagostomum asperum +36	family	Strongylidae	family	Strongylidae	family	Strongylidae
-ASV00116	window	4	413	0.9903	1	11	Teladorsagia circumcincta 99.0%	Teladorsagia boreoarcticus +11	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00117	window	0	410	1.0000	3	16	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +16	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00118	window	1	412	0.9976	1	35	Ostertagia ostertagi 99.8%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	genus	Ostertagia	species	Ostertagia ostertagi
-ASV00119	window	1	415	0.9976	1	15	Nematodirus spathiger 99.8%	Nematodirus helvetianus +15	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger
-ASV00120	window	2	414	0.9952	1	14	Nematodirus spathiger 99.5%	Nematodirus helvetianus +14	genus	Nematodirus	family	Molineidae	species	Nematodirus spathiger
-ASV00121	window	19	390	0.9513	1	35	Oesophagostomum venulosum 95.1%	Oesophagostomum asperum +35	family	Strongylidae	family	Strongylidae	family	Strongylidae
-ASV00122	window	1	410	0.9976	1	6	Haemonchus placei 99.8%	Haemonchus contortus +6	species	Haemonchus placei	genus	Haemonchus	species	Haemonchus placei
-ASV00123	window	17	396	0.9571	1	30	Oesophagostomum venulosum 95.7%	Oesophagostomum asperum +30	family	Strongylidae	family	Strongylidae	family	Strongylidae
-ASV00124	window	0	414	1.0000	4	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00125	window	0	413	1.0000	3	8	Cooperia oncophora 100.0%	Cooperia punctata +8	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00126	window	0	412	1.0000	2	8	Haemonchus placei 100.0%	Haemonchus contortus +8	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00127	window	2	414	0.9952	1	10	Cooperia oncophora 99.5%	Cooperia punctata +10	genus	Cooperia	family	Trichostrongylidae	species	Cooperia oncophora
-ASV00128	window	2	413	0.9952	1	13	Nematodirus spathiger 99.5%	Nematodirus helvetianus +13	genus	Nematodirus	family	Molineidae	species	Nematodirus spathiger
-ASV00129	window	1	413	0.9976	1	35	Ostertagia ostertagi 99.8%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	genus	Ostertagia	species	Ostertagia ostertagi
-ASV00130	window	2	409	0.9951	2	6	Haemonchus contortus 99.5%	Ashworthius sidemi +6	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00131	window	0	409	1.0000	1	7	Trichostrongylus rugatus 100.0%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus
-ASV00132	window	0	410	1.0000	4	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
-ASV00133	window	0	414	1.0000	3	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00134	window	6	399	0.9850	1	57	Oesophagostomum radiatum 98.5%	Oesophagostomum stephanostomum +57	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00135	window	2	414	0.9952	1	38	Ostertagia ostertagi 99.5%	Ostertagia gruehneri +38	genus	Ostertagia	family	Trichostrongylidae	species	Ostertagia ostertagi
-ASV00136	window	2	409	0.9951	1	40	Oesophagostomum venulosum 99.5%	Oesophagostomum asperum +40	genus	Oesophagostomum	family	Strongylidae	species	Oesophagostomum venulosum
-ASV00137	window	1	412	0.9976	1	13	Nematodirus spathiger 99.8%	Nematodirus helvetianus +13	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger
-ASV00138	window	0	411	1.0000	2	7	Haemonchus contortus 100.0%	Ashworthius sidemi +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00139	window	37	371	0.9003	1	37	Oesophagostomum venulosum 90.0%	Oesophagostomum asperum +37	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00140	window	0	415	1.0000	2	8	Haemonchus placei 100.0%	Haemonchus contortus +8	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00141	window	5	399	0.9875	1	57	Oesophagostomum radiatum 98.7%	Oesophagostomum stephanostomum +57	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00142	window	0	412	1.0000	1	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00143	window	5	410	0.9878	1	7	Trichostrongylus rugatus 98.8%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus
-ASV00144	window	39	369	0.8943	1	36	Oesophagostomum venulosum 89.4%	Oesophagostomum asperum +36	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00145	window	7	402	0.9826	1	59	Oesophagostomum radiatum 98.3%	Oesophagostomum stephanostomum +59	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00146	window	7	399	0.9825	1	57	Oesophagostomum radiatum 98.2%	Oesophagostomum stephanostomum +57	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00147	window	1	408	0.9975	1	1	Nematodirus oiratianus 99.8%	Nematodirus abnormalis +1	species	Nematodirus oiratianus	genus	Nematodirus	genus	Nematodirus
-ASV00148	window	0	410	1.0000	2	15	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +15	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00149	window	2	410	0.9951	1	7	Trichostrongylus rugatus 99.5%	Trichostrongylus retortaeformis +7	genus	Trichostrongylus	family	Trichostrongylidae	species	Trichostrongylus rugatus
-ASV00150	window	23	392	0.9413	1	30	Oesophagostomum venulosum 94.1%	Oesophagostomum asperum +30	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00151	window	45	364	0.8764	1	36	Oesophagostomum venulosum 87.6%	Oesophagostomum asperum +36	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00152	window	2	412	0.9951	1	8	Haemonchus contortus 99.5%	Ashworthius sidemi +8	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00153	window	7	403	0.9826	2	58	Oesophagostomum radiatum 98.3%	Oesophagostomum stephanostomum +58	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00154	window	8	413	0.9806	1	12	Teladorsagia circumcincta 98.1%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia
-ASV00155	window	1	412	0.9976	2	16	Teladorsagia circumcincta 99.8%	Teladorsagia boreoarcticus +16	species	Teladorsagia circumcincta	genus	Teladorsagia	species	Teladorsagia circumcincta
-ASV00156	window	10	398	0.9749	1	53	Oesophagostomum radiatum 97.5%	Oesophagostomum stephanostomum +53	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00157	window	4	415	0.9904	1	5	Haemonchus contortus 99.0%	Haemonchus placei +5	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00158	window	1	415	0.9976	1	7	Haemonchus contortus 99.8%	Ashworthius sidemi +7	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus
-ASV00159	window	4	411	0.9903	1	1	Cooperia punctata 99.0%	Cooperia oncophora +1	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia
-ASV00160	window	0	412	1.0000	1	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00161	window	0	410	1.0000	2	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00162	window	2	410	0.9951	1	34	Ostertagia ostertagi 99.5%	Ostertagia gruehneri +34	genus	Ostertagia	family	Trichostrongylidae	species	Ostertagia ostertagi
-ASV00163	window	0	413	1.0000	1	10	Cooperia punctata 100.0%	Cooperia oncophora +10	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
-ASV00164	window	0	413	1.0000	2	7	Haemonchus contortus 100.0%	Ashworthius sidemi +7	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00165	window	6	399	0.9850	1	57	Oesophagostomum radiatum 98.5%	Oesophagostomum stephanostomum +57	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00166	window	1	412	0.9976	1	6	Haemonchus placei 99.8%	Haemonchus contortus +6	species	Haemonchus placei	genus	Haemonchus	species	Haemonchus placei
-ASV00167	window	2	414	0.9952	1	6	Cooperia punctata 99.5%	Cooperia oncophora +6	genus	Cooperia	family	Trichostrongylidae	species	Cooperia punctata
-ASV00168	window	1	412	0.9976	1	7	Haemonchus contortus 99.8%	Ashworthius sidemi +7	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus
-ASV00169	window	0	414	1.0000	2	38	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +38	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00170	window	0	413	1.0000	2	36	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +36	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00171	window	3	411	0.9927	2	4	Haemonchus contortus 99.3%	Ashworthius sidemi +4	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00172	window	1	412	0.9976	1	8	Haemonchus placei 99.8%	Haemonchus contortus +8	species	Haemonchus placei	genus	Haemonchus	species	Haemonchus placei
-ASV00173	window	1	414	0.9976	1	8	Cooperia punctata 99.8%	Cooperia oncophora +8	species	Cooperia punctata	genus	Cooperia	species	Cooperia punctata
-ASV00174	window	2	414	0.9952	1	7	Haemonchus contortus 99.5%	Ashworthius sidemi +7	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00175	window	2	411	0.9951	2	6	Haemonchus contortus 99.5%	Ashworthius sidemi +6	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00176	window	1	414	0.9976	1	14	Nematodirus spathiger 99.8%	Nematodirus helvetianus +14	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger
-ASV00177	window	2	412	0.9951	2	6	Haemonchus contortus 99.5%	Ashworthius sidemi +6	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00178	window	1	410	0.9976	1	7	Trichostrongylus rugatus 99.8%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	genus	Trichostrongylus	species	Trichostrongylus rugatus
-ASV00179	window	2	414	0.9952	1	13	Nematodirus spathiger 99.5%	Nematodirus helvetianus +13	genus	Nematodirus	family	Molineidae	species	Nematodirus spathiger
-ASV00180	window	1	409	0.9976	1	8	Haemonchus contortus 99.8%	Ashworthius sidemi +8	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus
-ASV00181	window	1	412	0.9976	1	8	Trichostrongylus axei 99.8%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	genus	Trichostrongylus	species	Trichostrongylus axei
-ASV00182	window	1	411	0.9976	1	8	Haemonchus contortus 99.8%	Ashworthius sidemi +8	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus
-ASV00183	window	0	414	1.0000	1	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00184	window	0	413	1.0000	1	12	Haemonchus contortus 100.0%	Ashworthius sidemi +12	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00185	window	0	413	1.0000	2	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
-ASV00186	window	0	414	1.0000	2	35	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00187	window	5	410	0.9878	1	5	Trichostrongylus rugatus 98.8%	Trichostrongylus retortaeformis +5	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus
-ASV00188	window	7	403	0.9826	2	59	Oesophagostomum radiatum 98.3%	Oesophagostomum stephanostomum +59	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00189	window	25	385	0.9351	1	35	Oesophagostomum venulosum 93.5%	Oesophagostomum asperum +35	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00190	window	1	412	0.9976	1	8	Trichostrongylus axei 99.8%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	genus	Trichostrongylus	species	Trichostrongylus axei
-ASV00191	window	11	404	0.9728	1	33	Oesophagostomum venulosum 97.3%	Oesophagostomum asperum +33	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00192	window	3	414	0.9928	1	12	Teladorsagia circumcincta 99.3%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00193	window	1	409	0.9976	1	8	Haemonchus contortus 99.8%	Ashworthius sidemi +8	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus
-ASV00194	window	0	407	1.0000	1	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00195	window	2	412	0.9951	1	6	Trichostrongylus axei 99.5%	Trichostrongylus retortaeformis +6	genus	Trichostrongylus	family	Trichostrongylidae	species	Trichostrongylus axei
-ASV00196	window	4	414	0.9903	1	12	Teladorsagia circumcincta 99.0%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00197	window	0	408	1.0000	1	7	Trichostrongylus rugatus 100.0%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus
-ASV00198	window	3	411	0.9927	1	7	Haemonchus contortus 99.3%	Ashworthius sidemi +7	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00199	window	1	413	0.9976	1	13	Nematodirus spathiger 99.8%	Nematodirus helvetianus +13	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger
-ASV00200	window	0	412	1.0000	2	35	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi
-ASV00201	window	5	415	0.9880	1	14	Teladorsagia circumcincta 98.8%	Teladorsagia boreoarcticus +14	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia
-ASV00202	window	4	410	0.9902	1	3	Trichostrongylus rugatus 99.0%	Trichostrongylus retortaeformis +3	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus
-ASV00203	window	0	414	1.0000	3	16	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +16	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00204	window	6	403	0.9851	2	59	Oesophagostomum radiatum 98.5%	Oesophagostomum stephanostomum +59	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00205	window	1	414	0.9976	1	14	Nematodirus spathiger 99.8%	Nematodirus helvetianus +14	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger
-ASV00206	window	0	415	1.0000	2	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata
-ASV00207	window	4	413	0.9903	2	6	Haemonchus contortus 99.0%	Ashworthius sidemi +6	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00208	window	2	415	0.9952	1	14	Nematodirus spathiger 99.5%	Nematodirus helvetianus +14	genus	Nematodirus	family	Molineidae	species	Nematodirus spathiger
-ASV00209	window	1	409	0.9976	1	8	Trichostrongylus axei 99.8%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	genus	Trichostrongylus	species	Trichostrongylus axei
-ASV00210	window	3	410	0.9927	1	6	Trichostrongylus rugatus 99.3%	Trichostrongylus retortaeformis +6	family	Trichostrongylidae	family	Trichostrongylidae	species	Trichostrongylus rugatus
-ASV00211	window	8	403	0.9801	2	59	Oesophagostomum radiatum 98.0%	Oesophagostomum stephanostomum +59	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00212	window	7	405	0.9827	2	60	Oesophagostomum radiatum 98.3%	Oesophagostomum stephanostomum +60	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00213	window	0	410	1.0000	3	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00214	window	1	409	0.9976	1	8	Trichostrongylus axei 99.8%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	genus	Trichostrongylus	species	Trichostrongylus axei
-ASV00215	window	10	409	0.9756	1	31	Oesophagostomum venulosum 97.6%	Oesophagostomum asperum +31	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00216	window	0	409	1.0000	2	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00217	window	0	413	1.0000	1	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00218	window	4	413	0.9903	1	6	Cooperia punctata 99.0%	Cooperia oncophora +6	family	Trichostrongylidae	family	Trichostrongylidae	species	Cooperia punctata
-ASV00219	window	5	415	0.9880	1	12	Teladorsagia circumcincta 98.8%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia
-ASV00220	window	0	412	1.0000	4	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00221	window	5	408	0.9877	1	1	Nematodirus oiratianus 98.8%	Nematodirus abnormalis +1	family	Molineidae	family	Molineidae	genus	Nematodirus
-ASV00222	window	4	409	0.9902	1	7	Trichostrongylus rugatus 99.0%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	species	Trichostrongylus rugatus
-ASV00223	window	4	410	0.9902	1	7	Trichostrongylus rugatus 99.0%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	species	Trichostrongylus rugatus
-ASV00224	window	0	414	1.0000	3	9	Haemonchus contortus 100.0%	Ashworthius sidemi +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00225	window	2	414	0.9952	1	14	Nematodirus spathiger 99.5%	Nematodirus helvetianus +14	genus	Nematodirus	family	Molineidae	species	Nematodirus spathiger
-ASV00226	window	12	402	0.9701	1	53	Oesophagostomum radiatum 97.0%	Oesophagostomum stephanostomum +53	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00227	window	3	414	0.9928	1	9	Haemonchus contortus 99.3%	Haemonchus placei +9	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00228	window	5	409	0.9878	1	7	Trichostrongylus rugatus 98.8%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus
-ASV00229	window	4	415	0.9904	1	6	Cooperia punctata 99.0%	Cooperia oncophora +6	family	Trichostrongylidae	family	Trichostrongylidae	species	Cooperia punctata
-ASV00230	window	2	415	0.9952	1	12	Haemonchus contortus 99.5%	Ashworthius sidemi +12	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00231	window	0	412	1.0000	2	17	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +17	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta
-ASV00232	window	4	412	0.9903	1	8	Haemonchus placei 99.0%	Haemonchus contortus +8	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus placei
-ASV00233	window	2	413	0.9952	2	6	Cooperia punctata 99.5%	Cooperia oncophora +6	genus	Cooperia	family	Trichostrongylidae	species	Cooperia punctata
-ASV00234	window	2	415	0.9952	1	6	Haemonchus placei 99.5%	Haemonchus contortus +6	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus placei
-ASV00235	window	1	413	0.9976	1	14	Nematodirus spathiger 99.8%	Nematodirus helvetianus +14	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger
-ASV00236	window	4	414	0.9903	1	6	Trichostrongylus axei 99.0%	Trichostrongylus retortaeformis +6	family	Trichostrongylidae	family	Trichostrongylidae	species	Trichostrongylus axei
-ASV00237	window	0	409	1.0000	2	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00238	window	3	411	0.9927	1	16	Teladorsagia circumcincta 99.3%	Teladorsagia boreoarcticus +16	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00239	window	7	410	0.9829	1	7	Trichostrongylus rugatus 98.3%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus
-ASV00240	window	2	415	0.9952	1	7	Haemonchus contortus 99.5%	Haemonchus placei +7	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00241	window	2	413	0.9952	2	6	Haemonchus contortus 99.5%	Ashworthius sidemi +6	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00242	window	5	410	0.9878	1	1	Nematodirus oiratianus 98.8%	Nematodirus abnormalis +1	family	Molineidae	family	Molineidae	genus	Nematodirus
-ASV00243	window	0	412	1.0000	1	25	Oesophagostomum venulosum 100.0%	Oesophagostomum asperum +25	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum
-ASV00244	window	2	413	0.9952	1	6	Cooperia punctata 99.5%	Cooperia oncophora +6	genus	Cooperia	family	Trichostrongylidae	species	Cooperia punctata
-ASV00245	window	0	411	1.0000	2	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00246	window	2	408	0.9951	1	6	Haemonchus contortus 99.5%	Ashworthius sidemi +6	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00247	window	15	397	0.9622	1	17	Teladorsagia circumcincta 96.2%	Teladorsagia boreoarcticus +17	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
-ASV00248	window	4	408	0.9902	1	3	Trichostrongylus rugatus 99.0%	Trichostrongylus retortaeformis +3	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus
-ASV00249	window	2	411	0.9951	1	18	Teladorsagia circumcincta 99.5%	Teladorsagia boreoarcticus +18	genus	Teladorsagia	family	Trichostrongylidae	species	Teladorsagia circumcincta
-ASV00250	window	0	411	1.0000	2	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei
-ASV00251	window	0	409	1.0000	1	7	Trichostrongylus rugatus 100.0%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus
-ASV00252	window	0	414	1.0000	1	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora
-ASV00253	window	31	396	0.9217	1	3	Haemonchus contortus 92.2%	Haemonchus placei +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00254	window	2	411	0.9951	1	6	Trichostrongylus axei 99.5%	Trichostrongylus retortaeformis +6	genus	Trichostrongylus	family	Trichostrongylidae	species	Trichostrongylus axei
-ASV00255	window	13	406	0.9680	1	6	Trichostrongylus rugatus 96.8%	Trichostrongylus vitrinus +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
-ASV00256	window	15	419	0.9642	1	8	Teladorsagia circumcincta 96.4%	Teladorsagia boreoarcticus +8	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
-ASV00257	window	4	411	0.9903	1	6	Haemonchus contortus 99.0%	Ashworthius sidemi +6	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00258	window	7	413	0.9831	1	13	Nematodirus spathiger 98.3%	Nematodirus helvetianus +13	family	Molineidae	family	Molineidae	genus	Nematodirus
-ASV00259	window	2	415	0.9952	3	6	Cooperia oncophora 99.5%	Cooperia punctata +6	genus	Cooperia	family	Trichostrongylidae	species	Cooperia oncophora
-ASV00260	window	0	412	1.0000	4	8	Haemonchus contortus 100.0%	Ashworthius sidemi +8	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus
-ASV00261	window	52	414	0.8744	3		Nematodirella longissimespiculata / Nematodirus spathiger 87.4%	Nematodirus helvetianus +2	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00262	window	0	411	1.0000	4	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis
-ASV00263	window	18	408	0.9559	1	8	Trichostrongylus axei 95.6%	Trichostrongylus retortaeformis +8	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
-ASV00264	window	2	415	0.9952	3	6	Haemonchus contortus 99.5%	Ashworthius sidemi +6	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00265	window	4	412	0.9903	1	6	Haemonchus contortus 99.0%	Ashworthius sidemi +6	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00266	window	5	402	0.9876	1	59	Oesophagostomum radiatum 98.8%	Oesophagostomum stephanostomum +59	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum
-ASV00267	window	1	407	0.9975	2	6	Trichostrongylus axei 99.8%	Trichostrongylus retortaeformis +6	species	Trichostrongylus axei	genus	Trichostrongylus	species	Trichostrongylus axei
-ASV00268	window	8	412	0.9806	1	12	Teladorsagia circumcincta 98.1%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia
-ASV00269	window	2	413	0.9952	1	5	Cooperia punctata 99.5%	Cooperia oncophora +5	genus	Cooperia	family	Trichostrongylidae	species	Cooperia punctata
-ASV00270	window	6	413	0.9855	1	0	Trichostrongylus retortaeformis 98.5%	Trichostrongylus axei +0	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus
-ASV00271	window	8	408	0.9804	1	7	Trichostrongylus rugatus 98.0%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus
-ASV00272	window	21	405	0.9481	1	2	Haemonchus placei 94.8%	Haemonchus contortus +2	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00273	window	6	414	0.9855	2	5	Haemonchus contortus 98.6%	Haemonchus placei +5	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
-ASV00274	window	11	413	0.9734	1	13	Nematodirus spathiger 97.3%	Nematodirus helvetianus +13	family	Molineidae	family	Molineidae	genus	Nematodirus
-ASV00275	window	0	412	1.0000	2	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei
-ASV00276	window	31	416	0.9255	4	25	Ostertagia ostertagi 92.5%	Ostertagia gruehneri +25	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00277	window	8	407	0.9803	1	7	Trichostrongylus rugatus 98.0%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus
-ASV00278	window	7	411	0.9830	1	3	Haemonchus contortus 98.3%	Ashworthius sidemi +3	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
-ASV00279	window	54	360	0.8500	1	13	Haemonchus contortus 85.0%	Haemonchus longistipes +13	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00280	window	21	422	0.9502	2	28	Ostertagia ostertagi 95.0%	Ostertagia gruehneri +28	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
-ASV00281	window	6	412	0.9854	1	12	Teladorsagia circumcincta 98.5%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia
-ASV00282	window	42	390	0.8923	1	11	Nematodirus spathiger 89.2%	Nematodirus helvetianus +11	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00283	window	42	390	0.8923	1	14	Nematodirus spathiger 89.2%	Nematodirus helvetianus +14	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00284	window	33	404	0.9183	1	16	Teladorsagia circumcincta 91.8%	Teladorsagia trifurcata +16	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00285	window	56	354	0.8418	1	36	Oesophagostomum radiatum 84.2%	Oesophagostomum stephanostomum +36	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00286	window	20	422	0.9526	1	30	Ostertagia ostertagi 95.3%	Ostertagia gruehneri +30	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
-ASV00287	window	2	411	0.9951	1	7	Haemonchus contortus 99.5%	Haemonchus placei +7	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus
-ASV00288	window		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00289	window	11	415	0.9735	3	6	Cooperia oncophora 97.3%	Cooperia punctata +6	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia
-ASV00290	window	9	415	0.9783	1	6	Cooperia oncophora 97.8%	Cooperia punctata +6	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia
-ASV00291	window	112	332	0.6627	1	2	Haemonchus contortus 66.3%	Haemonchus placei +2	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned
-ASV00292	window	19	415	0.9542	1	1	Trichostrongylus rugatus 95.4%	Trichostrongylus retortaeformis +1	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
-ASV00293	window	11	392	0.9719	1	7	Haemonchus contortus 97.2%	Ashworthius sidemi +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus
-ASV00294	window	15	415	0.9639	1	4	Haemonchus contortus 96.4%	Ashworthius sidemi +4	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae
+asv	mode	edits	span	identity	ties	gap	nearest	next	v4_rank	v4_name	exact_rank	exact_name	gap_rank	gap_name	lineage
+ASV00001	window	0	412	1.0000	4	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00002	window	1	409	0.9976	1	40	Oesophagostomum venulosum 99.8%	Oesophagostomum asperum +40	species	Oesophagostomum venulosum	genus	Oesophagostomum	species	Oesophagostomum venulosum	
+ASV00003	window	0	415	1.0000	1	15	Haemonchus contortus 100.0%	Haemonchus placei +15	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00004	window	0	415	1.0000	2	35	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi	
+ASV00005	window	3	415	0.9928	1	12	Teladorsagia circumcincta 99.3%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta	goat line
+ASV00006	window	0	412	1.0000	2	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00007	window	0	415	1.0000	2	8	Haemonchus placei 100.0%	Haemonchus contortus +8	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
+ASV00008	window	0	412	1.0000	2	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
+ASV00009	window	0	410	1.0000	1	7	Trichostrongylus rugatus 100.0%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	
+ASV00010	window	0	412	1.0000	2	8	Haemonchus placei 100.0%	Haemonchus contortus +8	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
+ASV00011	window	0	415	1.0000	2	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
+ASV00012	window	2	415	0.9952	1	14	Teladorsagia circumcincta 99.5%	Teladorsagia boreoarcticus +14	genus	Teladorsagia	family	Trichostrongylidae	species	Teladorsagia circumcincta	goat line
+ASV00013	window	0	415	1.0000	2	38	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +38	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi	
+ASV00014	window	8	415	0.9807	1	12	Teladorsagia circumcincta 98.1%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia	goat line
+ASV00015	window	0	415	1.0000	4	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00016	window	2	408	0.9951	1	62	Oesophagostomum radiatum 99.5%	Oesophagostomum stephanostomum +62	genus	Oesophagostomum	family	Strongylidae	species	Oesophagostomum radiatum	
+ASV00017	window	0	415	1.0000	2	6	Cooperia oncophora 100.0%	Cooperia punctata +6	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
+ASV00018	window	0	412	1.0000	1	15	Haemonchus contortus 100.0%	Haemonchus placei +15	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00019	window	5	408	0.9877	1	40	Oesophagostomum venulosum 98.8%	Oesophagostomum asperum +40	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00020	window	0	412	1.0000	2	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei	
+ASV00021	window	4	415	0.9904	1	14	Teladorsagia circumcincta 99.0%	Teladorsagia boreoarcticus +14	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta	goat line
+ASV00022	window	3	409	0.9927	1	36	Oesophagostomum venulosum 99.3%	Oesophagostomum asperum +36	family	Strongylidae	family	Strongylidae	species	Oesophagostomum venulosum	
+ASV00023	window	3	409	0.9927	1	40	Oesophagostomum venulosum 99.3%	Oesophagostomum asperum +40	family	Strongylidae	family	Strongylidae	species	Oesophagostomum venulosum	
+ASV00024	window	0	412	1.0000	3	13	Haemonchus contortus 100.0%	Haemonchus placei +13	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00025	window	1	415	0.9976	1	14	Nematodirus spathiger 99.8%	Nematodirus helvetianus +14	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger	
+ASV00026	window	2	415	0.9952	2	13	Haemonchus contortus 99.5%	Haemonchus placei +13	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00027	window	0	412	1.0000	2	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00028	window	0	415	1.0000	2	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00029	window	0	414	1.0000	1	14	Nematodirus spathiger 100.0%	Nematodirus helvetianus +14	species	Nematodirus spathiger	species	Nematodirus spathiger	species	Nematodirus spathiger	
+ASV00030	window	1	410	0.9976	1	7	Trichostrongylus rugatus 99.8%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	genus	Trichostrongylus	species	Trichostrongylus rugatus	
+ASV00031	window	0	412	1.0000	3	16	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +16	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	
+ASV00032	window	4	408	0.9902	1	62	Oesophagostomum radiatum 99.0%	Oesophagostomum stephanostomum +62	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum	
+ASV00033	window	0	415	1.0000	1	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
+ASV00034	window	0	412	1.0000	2	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00035	window	2	414	0.9952	1	14	Teladorsagia circumcincta 99.5%	Teladorsagia boreoarcticus +14	genus	Teladorsagia	family	Trichostrongylidae	species	Teladorsagia circumcincta	goat line
+ASV00036	window	2	414	0.9952	2	13	Haemonchus contortus 99.5%	Haemonchus placei +13	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00037	window	9	411	0.9781	1	57	Oesophagostomum radiatum 97.8%	Oesophagostomum stephanostomum +57	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00038	window	5	415	0.9880	1	12	Teladorsagia circumcincta 98.8%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia	goat line
+ASV00039	window	0	413	1.0000	4	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	
+ASV00040	window	4	411	0.9903	1	63	Oesophagostomum radiatum 99.0%	Oesophagostomum stephanostomum +63	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum	
+ASV00041	window	0	412	1.0000	2	15	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +15	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	
+ASV00042	window	0	411	1.0000	2	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00043	window	2	412	0.9951	1	9	Haemonchus contortus 99.5%	Haemonchus placei +9	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00044	window	3	414	0.9928	1	12	Teladorsagia circumcincta 99.3%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta	goat line
+ASV00045	window	0	415	1.0000	3	8	Cooperia oncophora 100.0%	Cooperia punctata +8	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
+ASV00046	window	21	390	0.9462	1	29	Oesophagostomum venulosum 94.6%	Oesophagostomum asperum +29	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00047	window	2	410	0.9951	1	3	Trichostrongylus rugatus 99.5%	Trichostrongylus retortaeformis +3	genus	Trichostrongylus	family	Trichostrongylidae	genus	Trichostrongylus	
+ASV00048	window	0	410	1.0000	2	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00049	window	2	414	0.9952	2	13	Haemonchus contortus 99.5%	Haemonchus placei +13	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00050	window	2	415	0.9952	1	34	Ostertagia ostertagi 99.5%	Ostertagia gruehneri +34	genus	Ostertagia	family	Trichostrongylidae	species	Ostertagia ostertagi	
+ASV00051	window	7	408	0.9828	1	40	Oesophagostomum venulosum 98.3%	Oesophagostomum asperum +40	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00052	window	1	412	0.9976	1	9	Haemonchus contortus 99.8%	Haemonchus placei +9	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus	
+ASV00053	window	0	412	1.0000	1	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00054	window	0	412	1.0000	1	19	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +19	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	
+ASV00055	window	1	412	0.9976	1	11	Haemonchus contortus 99.8%	Haemonchus placei +11	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus	
+ASV00056	window	4	414	0.9903	1	14	Teladorsagia circumcincta 99.0%	Teladorsagia boreoarcticus +14	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta	goat line
+ASV00057	window	1	412	0.9976	2	9	Haemonchus contortus 99.8%	Haemonchus placei +9	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus	
+ASV00058	window	0	411	1.0000	2	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00059	window	0	411	1.0000	2	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei	
+ASV00060	window	3	415	0.9928	1	14	Nematodirus spathiger 99.3%	Nematodirus helvetianus +14	family	Molineidae	family	Molineidae	species	Nematodirus spathiger	
+ASV00061	window	0	411	1.0000	3	13	Haemonchus contortus 100.0%	Haemonchus placei +13	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00062	window	4	412	0.9903	1	11	Teladorsagia circumcincta 99.0%	Teladorsagia boreoarcticus +11	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta	goat line
+ASV00063	window	2	412	0.9951	2	13	Haemonchus contortus 99.5%	Haemonchus placei +13	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00064	window	5	407	0.9877	1	39	Oesophagostomum venulosum 98.8%	Oesophagostomum asperum +39	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00065	window	0	414	1.0000	2	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata	
+ASV00066	window	3	415	0.9928	1	14	Nematodirus spathiger 99.3%	Nematodirus helvetianus +14	family	Molineidae	family	Molineidae	species	Nematodirus spathiger	
+ASV00067	window	2	412	0.9951	1	5	Haemonchus placei 99.5%	Haemonchus contortus +5	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus placei	
+ASV00068	window	2	409	0.9951	1	39	Oesophagostomum venulosum 99.5%	Oesophagostomum asperum +39	genus	Oesophagostomum	family	Strongylidae	species	Oesophagostomum venulosum	
+ASV00069	window	2	414	0.9952	1	14	Teladorsagia circumcincta 99.5%	Teladorsagia boreoarcticus +14	genus	Teladorsagia	family	Trichostrongylidae	species	Teladorsagia circumcincta	goat line
+ASV00070	window	3	409	0.9927	1	40	Oesophagostomum venulosum 99.3%	Oesophagostomum asperum +40	family	Strongylidae	family	Strongylidae	species	Oesophagostomum venulosum	
+ASV00071	window	0	410	1.0000	2	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00072	window	13	396	0.9672	1	30	Oesophagostomum venulosum 96.7%	Oesophagostomum asperum +30	family	Strongylidae	family	Strongylidae	family	Strongylidae	
+ASV00073	window	0	409	1.0000	1	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei	
+ASV00074	window	2	414	0.9952	1	38	Ostertagia ostertagi 99.5%	Ostertagia gruehneri +38	genus	Ostertagia	family	Trichostrongylidae	species	Ostertagia ostertagi	
+ASV00075	window	2	412	0.9951	1	9	Haemonchus contortus 99.5%	Haemonchus placei +9	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00076	window	0	414	1.0000	2	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00077	window	0	414	1.0000	2	6	Cooperia oncophora 100.0%	Cooperia punctata +6	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
+ASV00078	window	0	415	1.0000	1	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
+ASV00079	window	2	410	0.9951	1	7	Trichostrongylus rugatus 99.5%	Trichostrongylus retortaeformis +7	genus	Trichostrongylus	family	Trichostrongylidae	species	Trichostrongylus rugatus	
+ASV00080	window	19	388	0.9510	1	40	Oesophagostomum venulosum 95.1%	Oesophagostomum asperum +40	family	Strongylidae	family	Strongylidae	family	Strongylidae	
+ASV00081	window	2	414	0.9952	1	15	Haemonchus contortus 99.5%	Haemonchus placei +15	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00082	window	2	409	0.9951	2	10	Haemonchus contortus 99.5%	Haemonchus placei +10	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00083	window	3	410	0.9927	1	7	Trichostrongylus rugatus 99.3%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	species	Trichostrongylus rugatus	
+ASV00084	window	2	412	0.9951	1	11	Haemonchus contortus 99.5%	Haemonchus placei +11	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00085	window	2	415	0.9952	1	15	Haemonchus contortus 99.5%	Haemonchus placei +15	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00086	window	0	411	1.0000	2	8	Haemonchus placei 100.0%	Haemonchus contortus +8	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
+ASV00087	window	0	414	1.0000	2	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
+ASV00088	window	0	411	1.0000	1	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00089	window	0	412	1.0000	1	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00090	window	7	406	0.9828	1	39	Oesophagostomum venulosum 98.3%	Oesophagostomum asperum +39	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00091	window	0	409	1.0000	2	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei	
+ASV00092	window	2	410	0.9951	1	7	Trichostrongylus rugatus 99.5%	Trichostrongylus retortaeformis +7	genus	Trichostrongylus	family	Trichostrongylidae	species	Trichostrongylus rugatus	
+ASV00093	window	0	412	1.0000	4	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	
+ASV00094	window	0	414	1.0000	1	15	Haemonchus contortus 100.0%	Haemonchus placei +15	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00095	window	2	414	0.9952	1	14	Nematodirus spathiger 99.5%	Nematodirus helvetianus +14	genus	Nematodirus	family	Molineidae	species	Nematodirus spathiger	
+ASV00096	window	1	410	0.9976	1	5	Trichostrongylus rugatus 99.8%	Trichostrongylus retortaeformis +5	species	Trichostrongylus rugatus	genus	Trichostrongylus	species	Trichostrongylus rugatus	
+ASV00097	window	0	409	1.0000	1	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00098	window	1	412	0.9976	1	35	Ostertagia ostertagi 99.8%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	genus	Ostertagia	species	Ostertagia ostertagi	
+ASV00099	window	3	408	0.9926	1	61	Oesophagostomum radiatum 99.3%	Oesophagostomum stephanostomum +61	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum	
+ASV00100	window	42	369	0.8862	1	30	Oesophagostomum venulosum 88.6%	Oesophagostomum asperum +30	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00101	window	0	414	1.0000	1	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
+ASV00102	window	17	395	0.9570	1	30	Oesophagostomum venulosum 95.7%	Oesophagostomum asperum +30	family	Strongylidae	family	Strongylidae	family	Strongylidae	
+ASV00103	window	2	414	0.9952	1	11	Haemonchus contortus 99.5%	Haemonchus placei +11	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00104	window	1	412	0.9976	1	6	Haemonchus placei 99.8%	Haemonchus contortus +6	species	Haemonchus placei	genus	Haemonchus	species	Haemonchus placei	
+ASV00105	window	0	409	1.0000	2	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00106	window	0	414	1.0000	1	15	Haemonchus contortus 100.0%	Haemonchus placei +15	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00107	window	21	388	0.9459	1	40	Oesophagostomum venulosum 94.6%	Oesophagostomum asperum +40	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00108	window	1	412	0.9976	1	9	Haemonchus contortus 99.8%	Haemonchus placei +9	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus	
+ASV00109	window	2	415	0.9952	1	11	Haemonchus contortus 99.5%	Haemonchus placei +11	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00110	window	5	414	0.9879	1	12	Teladorsagia circumcincta 98.8%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia	goat line
+ASV00111	window	0	412	1.0000	2	18	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +18	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	
+ASV00112	window	1	409	0.9976	1	7	Trichostrongylus rugatus 99.8%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	genus	Trichostrongylus	species	Trichostrongylus rugatus	
+ASV00113	window	3	411	0.9927	1	13	Nematodirus spathiger 99.3%	Nematodirus helvetianus +13	family	Molineidae	family	Molineidae	species	Nematodirus spathiger	
+ASV00114	window	0	413	1.0000	2	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
+ASV00115	window	19	392	0.9515	1	36	Oesophagostomum venulosum 95.2%	Oesophagostomum asperum +36	family	Strongylidae	family	Strongylidae	family	Strongylidae	
+ASV00116	window	4	413	0.9903	1	11	Teladorsagia circumcincta 99.0%	Teladorsagia boreoarcticus +11	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta	goat line
+ASV00117	window	0	410	1.0000	3	16	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +16	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	
+ASV00118	window	1	412	0.9976	1	35	Ostertagia ostertagi 99.8%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	genus	Ostertagia	species	Ostertagia ostertagi	
+ASV00119	window	1	415	0.9976	1	15	Nematodirus spathiger 99.8%	Nematodirus helvetianus +15	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger	
+ASV00120	window	2	414	0.9952	1	14	Nematodirus spathiger 99.5%	Nematodirus helvetianus +14	genus	Nematodirus	family	Molineidae	species	Nematodirus spathiger	
+ASV00121	window	19	390	0.9513	1	35	Oesophagostomum venulosum 95.1%	Oesophagostomum asperum +35	family	Strongylidae	family	Strongylidae	family	Strongylidae	
+ASV00122	window	1	410	0.9976	1	6	Haemonchus placei 99.8%	Haemonchus contortus +6	species	Haemonchus placei	genus	Haemonchus	species	Haemonchus placei	
+ASV00123	window	17	396	0.9571	1	30	Oesophagostomum venulosum 95.7%	Oesophagostomum asperum +30	family	Strongylidae	family	Strongylidae	family	Strongylidae	
+ASV00124	window	0	414	1.0000	5	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00125	window	0	413	1.0000	3	8	Cooperia oncophora 100.0%	Cooperia punctata +8	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
+ASV00126	window	0	412	1.0000	2	8	Haemonchus placei 100.0%	Haemonchus contortus +8	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
+ASV00127	window	2	414	0.9952	1	10	Cooperia oncophora 99.5%	Cooperia punctata +10	genus	Cooperia	family	Trichostrongylidae	species	Cooperia oncophora	
+ASV00128	window	2	413	0.9952	1	13	Nematodirus spathiger 99.5%	Nematodirus helvetianus +13	genus	Nematodirus	family	Molineidae	species	Nematodirus spathiger	
+ASV00129	window	1	413	0.9976	1	35	Ostertagia ostertagi 99.8%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	genus	Ostertagia	species	Ostertagia ostertagi	
+ASV00130	window	2	409	0.9951	2	9	Haemonchus contortus 99.5%	Haemonchus placei +9	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00131	window	0	409	1.0000	1	7	Trichostrongylus rugatus 100.0%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	
+ASV00132	window	0	410	1.0000	4	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	
+ASV00133	window	0	414	1.0000	3	13	Haemonchus contortus 100.0%	Haemonchus placei +13	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00134	window	3	408	0.9926	1	62	Oesophagostomum radiatum 99.3%	Oesophagostomum stephanostomum +62	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum	
+ASV00135	window	2	414	0.9952	1	38	Ostertagia ostertagi 99.5%	Ostertagia gruehneri +38	genus	Ostertagia	family	Trichostrongylidae	species	Ostertagia ostertagi	
+ASV00136	window	2	409	0.9951	1	40	Oesophagostomum venulosum 99.5%	Oesophagostomum asperum +40	genus	Oesophagostomum	family	Strongylidae	species	Oesophagostomum venulosum	
+ASV00137	window	1	412	0.9976	1	13	Nematodirus spathiger 99.8%	Nematodirus helvetianus +13	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger	
+ASV00138	window	0	411	1.0000	2	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00139	window	37	371	0.9003	1	37	Oesophagostomum venulosum 90.0%	Oesophagostomum asperum +37	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00140	window	0	415	1.0000	2	8	Haemonchus placei 100.0%	Haemonchus contortus +8	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
+ASV00141	window	2	408	0.9951	1	62	Oesophagostomum radiatum 99.5%	Oesophagostomum stephanostomum +62	genus	Oesophagostomum	family	Strongylidae	species	Oesophagostomum radiatum	
+ASV00142	window	0	412	1.0000	1	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00143	window	5	410	0.9878	1	7	Trichostrongylus rugatus 98.8%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus	
+ASV00144	window	39	369	0.8943	1	36	Oesophagostomum venulosum 89.4%	Oesophagostomum asperum +36	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00145	window	4	411	0.9903	1	63	Oesophagostomum radiatum 99.0%	Oesophagostomum stephanostomum +63	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum	
+ASV00146	window	4	408	0.9902	1	62	Oesophagostomum radiatum 99.0%	Oesophagostomum stephanostomum +62	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum	
+ASV00147	window	1	408	0.9975	1	1	Nematodirus oiratianus 99.8%	Nematodirus abnormalis +1	species	Nematodirus oiratianus	genus	Nematodirus	genus	Nematodirus	
+ASV00148	window	0	410	1.0000	2	15	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +15	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	
+ASV00149	window	2	410	0.9951	1	7	Trichostrongylus rugatus 99.5%	Trichostrongylus retortaeformis +7	genus	Trichostrongylus	family	Trichostrongylidae	species	Trichostrongylus rugatus	
+ASV00150	window	23	392	0.9413	1	30	Oesophagostomum venulosum 94.1%	Oesophagostomum asperum +30	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00151	window	45	364	0.8764	1	36	Oesophagostomum venulosum 87.6%	Oesophagostomum asperum +36	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00152	window	2	412	0.9951	1	9	Haemonchus contortus 99.5%	Haemonchus placei +9	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00153	window	5	408	0.9877	1	61	Oesophagostomum radiatum 98.8%	Oesophagostomum stephanostomum +61	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00154	window	8	413	0.9806	1	12	Teladorsagia circumcincta 98.1%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia	goat line
+ASV00155	window	1	412	0.9976	2	16	Teladorsagia circumcincta 99.8%	Teladorsagia boreoarcticus +16	species	Teladorsagia circumcincta	genus	Teladorsagia	species	Teladorsagia circumcincta	
+ASV00156	window	8	411	0.9805	1	57	Oesophagostomum radiatum 98.1%	Oesophagostomum stephanostomum +57	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00157	window	4	415	0.9904	1	5	Haemonchus contortus 99.0%	Haemonchus placei +5	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00158	window	1	415	0.9976	1	11	Haemonchus contortus 99.8%	Haemonchus placei +11	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus	
+ASV00159	window	4	411	0.9903	1	1	Cooperia punctata 99.0%	Cooperia oncophora +1	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia	
+ASV00160	window	0	412	1.0000	1	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei	
+ASV00161	window	0	410	1.0000	2	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei	
+ASV00162	window	2	410	0.9951	1	34	Ostertagia ostertagi 99.5%	Ostertagia gruehneri +34	genus	Ostertagia	family	Trichostrongylidae	species	Ostertagia ostertagi	
+ASV00163	window	0	413	1.0000	1	10	Cooperia punctata 100.0%	Cooperia oncophora +10	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata	
+ASV00164	window	0	413	1.0000	2	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00165	window	3	408	0.9926	1	62	Oesophagostomum radiatum 99.3%	Oesophagostomum stephanostomum +62	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum	
+ASV00166	window	1	412	0.9976	1	6	Haemonchus placei 99.8%	Haemonchus contortus +6	species	Haemonchus placei	genus	Haemonchus	species	Haemonchus placei	
+ASV00167	window	2	414	0.9952	1	6	Cooperia punctata 99.5%	Cooperia oncophora +6	genus	Cooperia	family	Trichostrongylidae	species	Cooperia punctata	
+ASV00168	window	1	412	0.9976	1	11	Haemonchus contortus 99.8%	Haemonchus placei +11	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus	
+ASV00169	window	0	414	1.0000	2	38	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +38	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi	
+ASV00170	window	0	413	1.0000	2	36	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +36	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi	
+ASV00171	window	3	411	0.9927	2	8	Haemonchus contortus 99.3%	Haemonchus placei +8	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00172	window	1	412	0.9976	1	8	Haemonchus placei 99.8%	Haemonchus contortus +8	species	Haemonchus placei	genus	Haemonchus	species	Haemonchus placei	
+ASV00173	window	1	414	0.9976	1	8	Cooperia punctata 99.8%	Cooperia oncophora +8	species	Cooperia punctata	genus	Cooperia	species	Cooperia punctata	
+ASV00174	window	2	414	0.9952	1	11	Haemonchus contortus 99.5%	Haemonchus placei +11	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00175	window	2	411	0.9951	2	9	Haemonchus contortus 99.5%	Haemonchus placei +9	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00176	window	1	414	0.9976	1	14	Nematodirus spathiger 99.8%	Nematodirus helvetianus +14	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger	
+ASV00177	window	2	412	0.9951	2	9	Haemonchus contortus 99.5%	Haemonchus placei +9	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00178	window	1	410	0.9976	1	7	Trichostrongylus rugatus 99.8%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	genus	Trichostrongylus	species	Trichostrongylus rugatus	
+ASV00179	window	2	414	0.9952	1	13	Nematodirus spathiger 99.5%	Nematodirus helvetianus +13	genus	Nematodirus	family	Molineidae	species	Nematodirus spathiger	
+ASV00180	window	1	409	0.9976	1	9	Haemonchus contortus 99.8%	Haemonchus placei +9	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus	
+ASV00181	window	1	412	0.9976	1	8	Trichostrongylus axei 99.8%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	genus	Trichostrongylus	species	Trichostrongylus axei	
+ASV00182	window	1	411	0.9976	1	9	Haemonchus contortus 99.8%	Haemonchus placei +9	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus	
+ASV00183	window	0	414	1.0000	1	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
+ASV00184	window	0	413	1.0000	1	15	Haemonchus contortus 100.0%	Haemonchus placei +15	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00185	window	0	413	1.0000	2	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata	
+ASV00186	window	0	414	1.0000	2	35	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi	
+ASV00187	window	5	410	0.9878	1	5	Trichostrongylus rugatus 98.8%	Trichostrongylus retortaeformis +5	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus	
+ASV00188	window	5	408	0.9877	1	62	Oesophagostomum radiatum 98.8%	Oesophagostomum stephanostomum +62	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00189	window	25	385	0.9351	1	35	Oesophagostomum venulosum 93.5%	Oesophagostomum asperum +35	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00190	window	1	412	0.9976	1	8	Trichostrongylus axei 99.8%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	genus	Trichostrongylus	species	Trichostrongylus axei	
+ASV00191	window	11	404	0.9728	1	33	Oesophagostomum venulosum 97.3%	Oesophagostomum asperum +33	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00192	window	3	414	0.9928	1	12	Teladorsagia circumcincta 99.3%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta	goat line
+ASV00193	window	1	409	0.9976	1	9	Haemonchus contortus 99.8%	Haemonchus placei +9	species	Haemonchus contortus	genus	Haemonchus	species	Haemonchus contortus	
+ASV00194	window	0	407	1.0000	1	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei	
+ASV00195	window	2	412	0.9951	1	6	Trichostrongylus axei 99.5%	Trichostrongylus retortaeformis +6	genus	Trichostrongylus	family	Trichostrongylidae	species	Trichostrongylus axei	
+ASV00196	window	4	414	0.9903	1	12	Teladorsagia circumcincta 99.0%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta	goat line
+ASV00197	window	0	408	1.0000	1	7	Trichostrongylus rugatus 100.0%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	
+ASV00198	window	3	411	0.9927	1	11	Haemonchus contortus 99.3%	Haemonchus placei +11	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00199	window	1	413	0.9976	1	13	Nematodirus spathiger 99.8%	Nematodirus helvetianus +13	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger	
+ASV00200	window	0	412	1.0000	2	35	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi	
+ASV00201	window	5	415	0.9880	1	14	Teladorsagia circumcincta 98.8%	Teladorsagia boreoarcticus +14	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia	goat line
+ASV00202	window	4	410	0.9902	1	3	Trichostrongylus rugatus 99.0%	Trichostrongylus retortaeformis +3	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus	
+ASV00203	window	0	414	1.0000	3	16	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +16	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	
+ASV00204	window	4	408	0.9902	1	62	Oesophagostomum radiatum 99.0%	Oesophagostomum stephanostomum +62	family	Strongylidae	family	Strongylidae	species	Oesophagostomum radiatum	
+ASV00205	window	1	414	0.9976	1	14	Nematodirus spathiger 99.8%	Nematodirus helvetianus +14	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger	
+ASV00206	window	0	415	1.0000	2	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata	
+ASV00207	window	4	413	0.9903	2	9	Haemonchus contortus 99.0%	Haemonchus placei +9	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00208	window	2	415	0.9952	1	14	Nematodirus spathiger 99.5%	Nematodirus helvetianus +14	genus	Nematodirus	family	Molineidae	species	Nematodirus spathiger	
+ASV00209	window	1	409	0.9976	1	8	Trichostrongylus axei 99.8%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	genus	Trichostrongylus	species	Trichostrongylus axei	
+ASV00210	window	3	410	0.9927	1	6	Trichostrongylus rugatus 99.3%	Trichostrongylus retortaeformis +6	family	Trichostrongylidae	family	Trichostrongylidae	species	Trichostrongylus rugatus	
+ASV00211	window	6	408	0.9853	1	62	Oesophagostomum radiatum 98.5%	Oesophagostomum stephanostomum +62	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00212	window	5	410	0.9878	1	63	Oesophagostomum radiatum 98.8%	Oesophagostomum stephanostomum +63	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00213	window	0	410	1.0000	3	13	Haemonchus contortus 100.0%	Haemonchus placei +13	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00214	window	1	409	0.9976	1	8	Trichostrongylus axei 99.8%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	genus	Trichostrongylus	species	Trichostrongylus axei	
+ASV00215	window	10	409	0.9756	1	31	Oesophagostomum venulosum 97.6%	Oesophagostomum asperum +31	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00216	window	0	409	1.0000	2	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
+ASV00217	window	0	413	1.0000	1	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
+ASV00218	window	4	413	0.9903	1	6	Cooperia punctata 99.0%	Cooperia oncophora +6	family	Trichostrongylidae	family	Trichostrongylidae	species	Cooperia punctata	
+ASV00219	window	5	415	0.9880	1	12	Teladorsagia circumcincta 98.8%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia	goat line
+ASV00220	window	0	412	1.0000	6	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00221	window	5	408	0.9877	1	1	Nematodirus oiratianus 98.8%	Nematodirus abnormalis +1	family	Molineidae	family	Molineidae	genus	Nematodirus	
+ASV00222	window	4	409	0.9902	1	7	Trichostrongylus rugatus 99.0%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	species	Trichostrongylus rugatus	
+ASV00223	window	4	410	0.9902	1	7	Trichostrongylus rugatus 99.0%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	species	Trichostrongylus rugatus	
+ASV00224	window	0	414	1.0000	3	13	Haemonchus contortus 100.0%	Haemonchus placei +13	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00225	window	2	414	0.9952	1	14	Nematodirus spathiger 99.5%	Nematodirus helvetianus +14	genus	Nematodirus	family	Molineidae	species	Nematodirus spathiger	
+ASV00226	window	9	411	0.9781	1	57	Oesophagostomum radiatum 97.8%	Oesophagostomum stephanostomum +57	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
+ASV00227	window	3	414	0.9928	1	9	Haemonchus contortus 99.3%	Haemonchus placei +9	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00228	window	5	409	0.9878	1	7	Trichostrongylus rugatus 98.8%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus	
+ASV00229	window	4	415	0.9904	1	6	Cooperia punctata 99.0%	Cooperia oncophora +6	family	Trichostrongylidae	family	Trichostrongylidae	species	Cooperia punctata	
+ASV00230	window	2	415	0.9952	1	15	Haemonchus contortus 99.5%	Haemonchus placei +15	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00231	window	0	412	1.0000	2	17	Teladorsagia circumcincta 100.0%	Teladorsagia boreoarcticus +17	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	species	Teladorsagia circumcincta	
+ASV00232	window	4	412	0.9903	1	8	Haemonchus placei 99.0%	Haemonchus contortus +8	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus placei	
+ASV00233	window	2	413	0.9952	2	6	Cooperia punctata 99.5%	Cooperia oncophora +6	genus	Cooperia	family	Trichostrongylidae	species	Cooperia punctata	
+ASV00234	window	2	415	0.9952	1	6	Haemonchus placei 99.5%	Haemonchus contortus +6	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus placei	
+ASV00235	window	1	413	0.9976	1	14	Nematodirus spathiger 99.8%	Nematodirus helvetianus +14	species	Nematodirus spathiger	genus	Nematodirus	species	Nematodirus spathiger	
+ASV00236	window	4	414	0.9903	1	6	Trichostrongylus axei 99.0%	Trichostrongylus retortaeformis +6	family	Trichostrongylidae	family	Trichostrongylidae	species	Trichostrongylus axei	
+ASV00237	window	0	409	1.0000	2	11	Haemonchus contortus 100.0%	Haemonchus placei +11	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00238	window	3	411	0.9927	1	16	Teladorsagia circumcincta 99.3%	Teladorsagia boreoarcticus +16	family	Trichostrongylidae	family	Trichostrongylidae	species	Teladorsagia circumcincta	
+ASV00239	window	7	410	0.9829	1	7	Trichostrongylus rugatus 98.3%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus	
+ASV00240	window	2	415	0.9952	1	7	Haemonchus contortus 99.5%	Haemonchus placei +7	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00241	window	2	413	0.9952	2	9	Haemonchus contortus 99.5%	Haemonchus placei +9	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00242	window	5	410	0.9878	1	1	Nematodirus oiratianus 98.8%	Nematodirus abnormalis +1	family	Molineidae	family	Molineidae	genus	Nematodirus	
+ASV00243	window	0	412	1.0000	1	25	Oesophagostomum venulosum 100.0%	Oesophagostomum asperum +25	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum	species	Oesophagostomum venulosum	
+ASV00244	window	2	413	0.9952	1	6	Cooperia punctata 99.5%	Cooperia oncophora +6	genus	Cooperia	family	Trichostrongylidae	species	Cooperia punctata	
+ASV00245	window	0	411	1.0000	2	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
+ASV00246	window	2	408	0.9951	1	10	Haemonchus contortus 99.5%	Haemonchus placei +10	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00247	window	15	397	0.9622	1	17	Teladorsagia circumcincta 96.2%	Teladorsagia boreoarcticus +17	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
+ASV00248	window	4	408	0.9902	1	3	Trichostrongylus rugatus 99.0%	Trichostrongylus retortaeformis +3	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus	
+ASV00249	window	2	411	0.9951	1	18	Teladorsagia circumcincta 99.5%	Teladorsagia boreoarcticus +18	genus	Teladorsagia	family	Trichostrongylidae	species	Teladorsagia circumcincta	
+ASV00250	window	0	411	1.0000	2	6	Haemonchus placei 100.0%	Haemonchus contortus +6	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
+ASV00251	window	0	409	1.0000	1	7	Trichostrongylus rugatus 100.0%	Trichostrongylus retortaeformis +7	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	
+ASV00252	window	0	414	1.0000	1	10	Cooperia oncophora 100.0%	Cooperia punctata +10	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
+ASV00253	window	31	396	0.9217	1	3	Haemonchus contortus 92.2%	Haemonchus placei +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00254	window	2	411	0.9951	1	6	Trichostrongylus axei 99.5%	Trichostrongylus retortaeformis +6	genus	Trichostrongylus	family	Trichostrongylidae	species	Trichostrongylus axei	
+ASV00255	window	13	406	0.9680	1	6	Trichostrongylus rugatus 96.8%	Trichostrongylus vitrinus +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
+ASV00256	window	15	419	0.9642	1	8	Teladorsagia circumcincta 96.4%	Teladorsagia boreoarcticus +8	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	goat line
+ASV00257	window	4	411	0.9903	1	9	Haemonchus contortus 99.0%	Haemonchus placei +9	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00258	window	7	413	0.9831	1	13	Nematodirus spathiger 98.3%	Nematodirus helvetianus +13	family	Molineidae	family	Molineidae	genus	Nematodirus	
+ASV00259	window	2	415	0.9952	3	6	Cooperia oncophora 99.5%	Cooperia punctata +6	genus	Cooperia	family	Trichostrongylidae	species	Cooperia oncophora	
+ASV00260	window	0	412	1.0000	6	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
+ASV00261	window	52	414	0.8744	3		Nematodirella longissimespiculata / Nematodirus spathiger 87.4%	Nematodirus helvetianus +2	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00262	window	0	411	1.0000	4	2	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +2	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	
+ASV00263	window	18	408	0.9559	1	8	Trichostrongylus axei 95.6%	Trichostrongylus retortaeformis +8	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
+ASV00264	window	2	415	0.9952	3	7	Haemonchus contortus 99.5%	Haemonchus placei +7	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00265	window	4	412	0.9903	1	9	Haemonchus contortus 99.0%	Haemonchus placei +9	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00266	window	2	411	0.9951	1	63	Oesophagostomum radiatum 99.5%	Oesophagostomum stephanostomum +63	genus	Oesophagostomum	family	Strongylidae	species	Oesophagostomum radiatum	
+ASV00267	window	1	407	0.9975	2	6	Trichostrongylus axei 99.8%	Trichostrongylus retortaeformis +6	species	Trichostrongylus axei	genus	Trichostrongylus	species	Trichostrongylus axei	
+ASV00268	window	8	412	0.9806	1	12	Teladorsagia circumcincta 98.1%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia	goat line
+ASV00269	window	2	413	0.9952	1	5	Cooperia punctata 99.5%	Cooperia oncophora +5	genus	Cooperia	family	Trichostrongylidae	species	Cooperia punctata	
+ASV00270	window	6	413	0.9855	2	0	Trichostrongylus retortaeformis 98.5%	Trichostrongylus axei +0	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus	
+ASV00271	window	8	408	0.9804	1	7	Trichostrongylus rugatus 98.0%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus	
+ASV00272	window	21	405	0.9481	1	2	Haemonchus placei 94.8%	Haemonchus contortus +2	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00273	window	6	414	0.9855	2	5	Haemonchus contortus 98.6%	Haemonchus placei +5	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus	
+ASV00274	window	11	413	0.9734	1	13	Nematodirus spathiger 97.3%	Nematodirus helvetianus +13	family	Molineidae	family	Molineidae	genus	Nematodirus	
+ASV00275	window	0	412	1.0000	2	8	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +8	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei	
+ASV00276	window	31	416	0.9255	4	25	Ostertagia ostertagi 92.5%	Ostertagia gruehneri +25	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00277	window	8	407	0.9803	1	7	Trichostrongylus rugatus 98.0%	Trichostrongylus retortaeformis +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus	
+ASV00278	window	7	411	0.9830	1	7	Haemonchus contortus 98.3%	Haemonchus placei +7	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus	
+ASV00279	window	54	360	0.8500	1	13	Haemonchus contortus 85.0%	Haemonchus longistipes +13	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00280	window	21	422	0.9502	2	28	Ostertagia ostertagi 95.0%	Ostertagia gruehneri +28	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
+ASV00281	window	6	412	0.9854	1	12	Teladorsagia circumcincta 98.5%	Teladorsagia boreoarcticus +12	family	Trichostrongylidae	family	Trichostrongylidae	genus	Teladorsagia	goat line
+ASV00282	window	42	390	0.8923	1	11	Nematodirus spathiger 89.2%	Nematodirus helvetianus +11	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00283	window	42	390	0.8923	1	14	Nematodirus spathiger 89.2%	Nematodirus helvetianus +14	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00284	window	33	404	0.9183	1	16	Teladorsagia circumcincta 91.8%	Teladorsagia trifurcata +16	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00285	window	56	360	0.8444	1	38	Oesophagostomum radiatum 84.4%	Oesophagostomum stephanostomum +38	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00286	window	20	422	0.9526	1	30	Ostertagia ostertagi 95.3%	Ostertagia gruehneri +30	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
+ASV00287	window	2	411	0.9951	1	7	Haemonchus contortus 99.5%	Haemonchus placei +7	genus	Haemonchus	family	Trichostrongylidae	species	Haemonchus contortus	
+ASV00288	window		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00289	window	11	415	0.9735	3	6	Cooperia oncophora 97.3%	Cooperia punctata +6	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia	
+ASV00290	window	9	415	0.9783	1	6	Cooperia oncophora 97.8%	Cooperia punctata +6	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia	
+ASV00291	window	112	332	0.6627	1	2	Haemonchus contortus 66.3%	Haemonchus placei +2	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+ASV00292	window	19	415	0.9542	1	1	Trichostrongylus rugatus 95.4%	Trichostrongylus retortaeformis +1	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
+ASV00293	window	11	392	0.9719	1	10	Haemonchus contortus 97.2%	Haemonchus placei +10	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus	
+ASV00294	window	15	415	0.9639	1	9	Haemonchus contortus 96.4%	Haemonchus placei +9	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	

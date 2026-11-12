@@ -1,0 +1,108 @@
+# GenBank records missing from the nemabiome backbone, found by hand
+# (checked against NCBI's Strongyloidea ITS2 records, 2026-11-11).
+# bin/genbank_update.py fetches them with its queries.
+PP923170	Coronocyclus sagittatus, horse cyathostomin; ITS2
+Y08007	Metastrongylus confusus, pig lungworm; ITS2 and 28S
+Y08006	Metastrongylus asymmetricus, pig lungworm; ITS2 and 28S
+MN865428	Heligmosomoides bibullosus, Peromyscus
+MN865417	Heligmosomoides bibullosus
+MN865418	Heligmosomoides bibullosus
+MN865419	Heligmosomoides bibullosus
+MN865420	Heligmosomoides bibullosus
+MN865421	Heligmosomoides bibullosus
+MN865422	Heligmosomoides bibullosus
+MN865423	Heligmosomoides bibullosus
+MF284700	Cloacina galatea, Wallabia bicolor; ITS1 and ITS2
+MF284699	Cloacina anthea, Wallabia bicolor; ITS1 and ITS2
+PV074874	Hsiungia pekingensis, equid strongyle; ITS1 to ITS2
+# Oesophagostomum and Ternidens variants of named species missing from the backbone (2026-11-11)
+PZ347035	Oesophagostomum radiatum; 1 edits from the nearest record held
+PQ785722	Oesophagostomum quadrispinulatum; 5 edits from the nearest record held
+OR832859	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+LC628885	Oesophagostomum asperum; 2 edits from the nearest record held
+MW621361	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW621360	Oesophagostomum stephanostomum; 2 edits from the nearest record held
+MW621359	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW621358	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW621355	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW621354	Oesophagostomum stephanostomum; 2 edits from the nearest record held
+MW621353	Oesophagostomum stephanostomum; 2 edits from the nearest record held
+MW621352	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW621350	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW621348	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW621347	Oesophagostomum bifurcum; 1 edits from the nearest record held
+MW621345	Oesophagostomum stephanostomum; 2 edits from the nearest record held
+MW621343	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW617064	Ternidens deminutus; 11 edits from the nearest record held
+MW528474	Oesophagostomum stephanostomum; 2 edits from the nearest record held
+MW528473	Oesophagostomum stephanostomum; 2 edits from the nearest record held
+MW528472	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW528470	Oesophagostomum bifurcum; 1 edits from the nearest record held
+MW528465	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW040146	Oesophagostomum stephanostomum; 2 edits from the nearest record held
+MW040145	Oesophagostomum stephanostomum; 2 edits from the nearest record held
+MW040144	Oesophagostomum stephanostomum; 2 edits from the nearest record held
+MW040142	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW040141	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW040138	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+MW040131	Oesophagostomum stephanostomum; 2 edits from the nearest record held
+MW040127	Oesophagostomum stephanostomum; 2 edits from the nearest record held
+MW040126	Oesophagostomum stephanostomum; 2 edits from the nearest record held
+KR149654	Oesophagostomum bifurcum; 4 edits from the nearest record held
+KR149651	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+KR149650	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+KR149649	Oesophagostomum stephanostomum; 1 edits from the nearest record held
+# Oesophagostomum lineages without a species name, >= 4 edits from every named record: genus-level records, the name as lineage
+PP785340	Oesophagostomum sp.; 16 edits from Oesophagostomum dentatum
+PP785339	Oesophagostomum sp.; 16 edits from Oesophagostomum dentatum
+PP785337	Oesophagostomum sp.; 5 edits from Oesophagostomum dentatum
+PP235523	Oesophagostomum sp.; 10 edits from Oesophagostomum bifurcum
+PP235522	Oesophagostomum sp.; 11 edits from Oesophagostomum bifurcum
+PP235521	Oesophagostomum sp.; 10 edits from Oesophagostomum bifurcum
+ON178641	Oesophagostomum sp.; 4 edits from Oesophagostomum stephanostomum
+ON178622	Oesophagostomum sp.; 10 edits from Oesophagostomum stephanostomum
+ON178613	Oesophagostomum sp.; 4 edits from Oesophagostomum bifurcum
+MW621346	Oesophagostomum sp. 3341_CEB_CAM; 9 edits from Oesophagostomum stephanostomum
+MW528478	Oesophagostomum sp. 9800_CEB_CAM_B_OH14; 8 edits from Oesophagostomum stephanostomum
+MW528477	Oesophagostomum sp. 9800_CEB_CAM_A_OH13; 9 edits from Oesophagostomum stephanostomum
+MW528475	Oesophagostomum sp. 3335_MDR_CAM_OH15; 12 edits from Oesophagostomum bifurcum
+KR149658	Oesophagostomum sp. MC-2015; 10 edits from Oesophagostomum stephanostomum
+# Cloacina lineages without a species name, >= 4 edits from every named record: genus-level records, the name as lineage
+MK573551	Cloacina sp. 2 AJ-2019; 28 edits from Cloacina ceres; ITS2 identical to Zoniolaimus occidentalis, dropped (curation/overrides.tsv)
+MK573546	Cloacina sp. 4 AJ-2019; 11 edits from Cloacina eos
+MK573545	Cloacina sp. 1 AJ-2019; 10 edits from Cloacina eos
+MK573543	Cloacina sp. 3 AJ-2019; 12 edits from Cloacina eos
+# Trichostrongylus variants of named species missing from the backbone (2026-11-11). Left out: 15 'T. colubriformis'
+# from humans (Iran) and hares (KY3550xx, KC521364/73, KF826913, ON479720), 45-57 edits from every T. colubriformis
+# record and its genome copy, 12-25 from T. retortaeformis; and KR011272 'T. axei', 9 from T. colubriformis
+PQ869637	Trichostrongylus axei; 3 edits from the nearest record held
+PQ869636	Trichostrongylus axei; 3 edits from the nearest record held
+PQ869642	Trichostrongylus colubriformis; 1 edits from the nearest record held
+PQ869641	Trichostrongylus colubriformis; 1 edits from the nearest record held
+PQ869640	Trichostrongylus colubriformis; 1 edits from the nearest record held
+PQ869639	Trichostrongylus colubriformis; 1 edits from the nearest record held
+PQ869638	Trichostrongylus colubriformis; 1 edits from the nearest record held
+PQ785641	Trichostrongylus colubriformis; 1 edits from the nearest record held
+PQ785630	Trichostrongylus colubriformis; 1 edits from the nearest record held
+ON721586	Trichostrongylus colubriformis; 1 edits from the nearest record held
+ON497075	Trichostrongylus axei; 1 edits from the nearest record held
+MN845162	Trichostrongylus axei; 1 edits from the nearest record held
+MH481559	Trichostrongylus colubriformis; 1 edits from the nearest record held
+MH481544	Trichostrongylus colubriformis; 1 edits from the nearest record held
+KR002111	Trichostrongylus colubriformis; 2 edits from the nearest record held
+KC521379	Trichostrongylus colubriformis; 1 edits from the nearest record held
+KC521378	Trichostrongylus colubriformis; 1 edits from the nearest record held
+# Trichostrongylus lineages without a species name, >= 4 edits from every named record: genus-level records
+MH047848	Trichostrongylus sp. SMNPGL3R2; 5 edits from Trichostrongylus axei
+MH047849	Trichostrongylus sp. SMNPGL33R; 5 edits from Trichostrongylus axei
+MH047842	Trichostrongylus sp. SMNPOL33R; 10 edits from Trichostrongylus axei
+MH047841	Trichostrongylus sp. SMNPOL33F; 12 edits from Trichostrongylus axei
+MH047840	Trichostrongylus sp. SMNPOL32R; 12 edits from Trichostrongylus axei
+MH047847	Trichostrongylus sp. SMNPGL34R; 4 edits from Trichostrongylus axei
+MH047846	Trichostrongylus sp. SMNPGL32R; 4 edits from Trichostrongylus axei
+MG770098	Trichostrongylus sp. 3 SS-2018; 4 edits from Trichostrongylus axei
+MG770097	Trichostrongylus sp. 2 SS-2018; 5 edits from Trichostrongylus axei
+MG770096	Trichostrongylus sp. 1 SS-2018; 4 edits from Trichostrongylus axei
+MG711656	Trichostrongylus sp. RR-2017; 23 edits from Trichostrongylus axei; 0 from Cooperia pectinata, dropped (curation/overrides.tsv)
+KP688063	Trichostrongylus sp. Trich-R34-0909-139-3; 6 edits from Trichostrongylus colubriformis
+KP688062	Trichostrongylus sp. Trich-R34-0909-139-6; 7 edits from Trichostrongylus vitrinus

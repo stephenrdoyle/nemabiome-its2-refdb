@@ -75,6 +75,31 @@ reverse-complemented turned and re-cut, primer and 28S remnants trimmed,
 and margins and resolution tables computed against every candidate
 (issue #1).
 
+### Since v0.1.3 (on `main`, unreleased)
+
+11,288 records and 1,874 named species (427 genera) from 16,051 source
+records: the nemabiome backbone plus 733 GenBank records it lacks
+(`bin/genbank_update.py`: ITS2 records published since the backbone's
+17 March 2026 snapshot, 5.8S/28S records holding an ITS2, and 98
+accessions listed by hand in `curation/genbank_named.tsv`). Update
+records are taken only where `bin/its2.py` cut them at an anchor or
+their own end; 1,057 were not. New species include *Heligmosomoides
+bibullosus*, *Metastrongylus asymmetricus* and *M. confusus*.
+
+- **Informal names are not species.** "sp."/"spp." names (*Oesophagostomum*
+  sp. 3335_MDR_CAM_OH15, *Cloacina* sp. 1 AJ-2019, 19 records) are
+  genus-level, unnamed records; the informal name is in the `lineage`
+  column (`curation/lineages.tsv`).
+- **Species coherence screen** (`bin/species_coherence.py`,
+  `results/curation/species_coherence.tsv`): records far from their own
+  species and next to another. 65 more drops and 2 relabels
+  (`curation/overrides.tsv`, `docs/curation_pass_2026-11-11.md` F-H),
+  among them *Ashworthius sidemi* OP787564 (an *H. contortus* ITS2) and
+  24 West African "*H. contortus*" carrying the *H. placei* ITS2.
+- **Cuts:** an NC1 well inside a cut is taken as the start (5.8S and
+  ITS1 no longer ride along), and a record ending in a short 28S stub is
+  cut at it (a complete *Oesophagostomum radiatum*, PZ347037, is now in).
+
 <!-- figures:start -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/grade_dark.svg">
@@ -150,11 +175,11 @@ Tested two ways (docs/DESIGN.md §6): leave-one-out on the database
 itself, and two livestock datasets (one published) run through the standard
 nemabiome DADA2 workflow.
 
-Figures in this section are for v0.1.2 and v0.1.3 (same records). Since v0.1.0 the classifier
+Figures in this section are for `main` after v0.1.3 (above). Since v0.1.0 the classifier
 also scores every candidate (issue #1) and scores read windows strictly
 (docs/DESIGN.md §6).
 
-**Leave-one-out** (3,182 records of 1,220 species, read whole; 2x150 is
+**Leave-one-out** (3,224 records of 1,236 species, read whole; 2x150 is
 within 3 points). *Present*: only the query's own record removed.
 *Missing*: every record of the query's species removed, so any species
 named is wrong. Recall = right calls / reads; precision = right calls /
@@ -163,9 +188,9 @@ missing species (`results/leave_one_out/metrics.txt`).
 
 | Classifier, this database | Species recall | Species precision | Genus recall | Genus precision | Over-classification |
 |---|---:|---:|---:|---:|---:|
-| `bin/classify_asvs.py`, gap rule | 55.3% | **98.8%** | 88.9% | 99.3% | **5.9%** |
-| DECIPHER IdTaxa (threshold 60) | 78.8% | 96.9% | 93.5% | **99.5%** | 23.2% |
-| dada2 assignTaxonomy (minBoot 80) | **86.0%** | 95.1% | **97.2%** | 99.2% | 43.5% |
+| `bin/classify_asvs.py`, gap rule | 56.4% | **99.2%** | 89.4% | 99.4% | **5.4%** |
+| DECIPHER IdTaxa (threshold 60) | 80.3% | 97.5% | 94.5% | **99.6%** | 20.6% |
+| dada2 assignTaxonomy (minBoot 80) | **86.3%** | 95.4% | **97.7%** | 99.3% | 42.9% |
 
 The gap rule names a species only when the read is >= 99% identical to
 it and every other species is >= 4 edits further off, or the match is
@@ -190,10 +215,13 @@ they do not), and cut to 2x150:
 
 | Dataset | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db |
 |---|---:|---:|---:|---:|---:|
-| Francis & Šlapeta, cattle, goats, sheep, PRJNA936713, 2x250 | 72.0% | 81.7% | 99.9% | 99.8% | 93.8% |
-| same, cut to 2x150 | 76.0% | 88.2% | 99.1% | 99.1% | 94.5% |
-| Šlapeta group, unpublished, PRJNA1524548, cattle, kangaroos, pigs, rabbits, 2x250 | 70.4% | 69.7% | 94.9% | 99.1% | 95.2% |
-| same, cut to 2x150 | 73.7% | 65.9% | 94.8% | 87.2% | 95.9% |
+| Francis & Šlapeta, cattle, goats, sheep, PRJNA936713, 2x250 | 72.0% | 81.7% | 99.5% | 99.8% | 93.9% |
+| same, cut to 2x150 | 76.0% | 88.2% | 99.1% | 99.7% | 94.8% |
+| Šlapeta group, unpublished, PRJNA1524548, cattle, kangaroos, pigs, rabbits, 2x250 | 70.4% | 69.7% | 95.1% | 75.9%* | 94.3% |
+| same, cut to 2x150 | 73.7% | 65.9% | 94.8% | 85.5%* | 94.6% |
+
+\* IdTaxa with seed 1, which leaves the main *H. placei* ASVs at genus;
+seeds 2 and 3 name 99.0% and 99.2% of the 2x250 reads to species.
 
 assignTaxonomy and IdTaxa compare k-mers over the whole ASV, so with
 this database the ASVs' 28S stretch must be cut off first
@@ -211,8 +239,8 @@ calls, the merged and concatenated runs, and an HTML report per set
 ruminant, all species present, so they measure recall, not
 over-classification): no classifier, with either database, named a
 wrong species for an exact copy of a source sequence (precision 100%);
-the k-mer classifiers named 89-100% of reads to species, the gap rule
-88-100%, stopping at genus where a sister species is 1 edit off.
+the k-mer classifiers named 88-100% of reads to species, the gap rule
+90-100%, stopping at genus where a sister species is 1 edit off.
 The mocks' truth includes two backbone mislabels this database corrects
 (docs/DESIGN.md §6.3; `results/mocks/`).
 
@@ -286,11 +314,16 @@ than the span-scored gap rule (`bin/classify_asvs.py`).
 S=sources/nemabiome_its2_20260317/Nematode_ITS2_20260317
 python3 bin/nemabiome_export.py sources/nemabiome_its2_20260317/raw/database.xlsx $S
 python3 bin/fetch_backbone_records.py ${S}_taxonomy_nr.txt sources/genbank_backbone/records.fasta.gz
-python3 bin/its2.py ${S}_seqs_nr.fasta sources/genbank_backbone/records.fasta.gz work/its2/its2_cut
+# GenBank records the backbone lacks, merged with it (the last release is the reference)
+U=sources/genbank_update_20260317
+python3 bin/genbank_update.py ${S}_taxonomy_nr.txt releases/nemits2_v0.1.3 2026/03/17 $U curation/genbank_named.tsv
+python3 bin/genbank_update.py merge $S sources/genbank_backbone/records.fasta.gz $U work/its2
+python3 bin/its2.py work/its2/seqs.fasta work/its2/records.fasta.gz work/its2/its2_cut
 python3 bin/its2_partials.py work/its2/its2_cut work/its2/its2_refs 8
 python3 bin/ncbi_names.py ${S}_taxonomy_nr.txt curation/ncbi_names.tsv   # current NCBI names; refetch before a release
-python3 bin/build.py work/its2/its2 ${S}_taxonomy_nr.txt nemabiome_20260317 work/build --workers 8 \
-    --layer curation/long_read_its2.tsv
+python3 bin/build.py work/its2/its2 work/its2/taxonomy.txt nemabiome_20260317 work/build --workers 8 \
+    --layer curation/long_read_its2.tsv --lineages curation/lineages.tsv
+python3 bin/species_coherence.py work/build > work/build/species_coherence.tsv   # screen before a release
 bin/export_kmer.sh work/build work/build/kmer nemits2_dev   # DADA2 / IdTaxa files (R, dada2, DECIPHER)
 ```
 

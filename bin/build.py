@@ -37,11 +37,14 @@ species for each backbone taxid; a record named otherwise when markerDB
 built the backbone takes NCBI's current names (a moved genus, a synonym),
 noted in members.tsv. Then curation/overrides.tsv (--overrides) drops or
 relabels source records; a dropped record stays in members.tsv with its
-reason. Last, curation/lineages.tsv (--lineages) names a published line
-within a species (the Teladorsagia circumcincta goat line): a record
-takes the lineage of its annotated members, in taxonomy.tsv's lineage
-column, and keeps its species. Members disagreeing on a lineage stop the
-build.
+reason. A taxonomy row may carry a source column (bin/genbank_update.py's
+rows, appended to the backbone's): its record is credited to that source,
+and taken only where bin/its2.py cut it at an anchor or its own end. Last, curation/lineages.tsv (--lineages) names a published line
+within a species (the Teladorsagia circumcincta goat line), or the
+informal name a genus-level record goes by ("Oesophagostomum sp.
+3335_MDR_CAM_OH15"): a record takes the lineage of its annotated
+members, in taxonomy.tsv's lineage column, and keeps its taxonomy.
+Members disagreeing on a lineage stop the build.
 
 MERGING. Identical ITS2s become one record. At each rank the record
 takes the single informative name its members agree on; two names stop
@@ -101,7 +104,7 @@ PRIMER_LEN = 20
 STRETCH_28S = 47
 READ_LENGTHS = [150, 250]   # default; set per build with --read-lengths
 
-NOT_A_SPECIES = re.compile(r" x | (cf|aff)\.? |sensu lato| s\.l\.|environmental sample")
+NOT_A_SPECIES = re.compile(r" x | (cf|aff)\.? | spp?\. |sensu lato| s\.l\.|environmental sample")
 
 
 def windows(read_len):
@@ -401,6 +404,9 @@ def main() -> int:
                     help="accession -> lineage within its species; '' to skip")
     ap.add_argument("--layer", action="append", default=[],
                     help="a layer TSV from bin/genome_layer.py; repeatable")
+    ap.add_argument("--drop-partials", action="store_true",
+                    help="leave out records graded partial (< 75%% of the ITS2) whose species "
+                         "has a complete or near-complete record")
     ap.add_argument("--read-lengths", default=",".join(map(str, READ_LENGTHS)),
                     help="comma-separated Illumina read lengths; one resolution table and "
                          "margin column per length (default 150,250)")
@@ -413,12 +419,23 @@ def main() -> int:
     grade = {r["accession"]: r for r in csv.DictReader(open(a.its2 + "_refs.tsv"), delimiter="\t")}
     cut = {r["accession"]: r for r in csv.DictReader(open(a.its2 + "_cut.tsv"), delimiter="\t")}
     label, taxid = {}, {}
+    # A taxonomy row may name its own source (bin/genbank_update.py's rows,
+    # appended to the backbone's); otherwise it is the backbone.
+    source_of, layer_files = {}, []
     for r in csv.DictReader(open(a.taxonomy), delimiter="\t"):
         label[r["accn"].split(".")[0]] = (r["accn"], [r[k] for k in RANKS])
         taxid[r["accn"].split(".")[0]] = r["taxid"]
+        if r.get("source"):
+            source_of[r["accn"].split(".")[0]] = r["source"]
+    # Such a record has no HMM cut of its own; bin/its2.py's fallback
+    # boundary for it is where it aligns to this database, which can run
+    # into ITS1. Taken only if cut at an anchor or at its own end.
+    unanchored = sorted(acc for acc in source_of if acc in cut
+                        and "hmm" in (cut[acc]["start"], cut[acc]["end"]))
+    for acc in unanchored:
+        refs.pop(acc, None)
     # Layers (bin/genome_layer.py): ITS2 from genome assemblies and long
     # reads, cut at the same anchors, so complete by construction.
-    source_of, layer_files = {}, []
     for path in a.layer:
         layer_files.append(path)
         for r in csv.DictReader(open(path), delimiter="\t"):
@@ -537,6 +554,23 @@ def main() -> int:
                             "trimmed_end": g["trimmed_end"], "note": renamed.get(acc, "")})
     folded = fold_contained(seqs, tax, members, a.workers)
     folded_weak = fold_redundant(seqs, tax, members, a.workers)
+    # A short partial, compared only over the bases it has, can sit within
+    # the gap of another species' full-length record and hold its reads at
+    # genus. Where the species has a full-length record, the partial adds
+    # less than it costs (--drop-partials).
+    dropped_partials = 0
+    if a.drop_partials:
+        has_full = {t["species"] for t in tax.values() if t["species"] and t["grade"] in FULL_GRADES}
+        gone = {i for i, t in tax.items() if t["grade"] == "partial" and t["species"] in has_full}
+        for m in members:
+            if m["id"] in gone:
+                m["note"] = "; ".join(x for x in (m["note"], f"dropped with {m['id']}: partial "
+                                                  "(< 75% of the ITS2), its species has a full-length record")
+                                      if x)
+                m["id"], m["role"] = "", "dropped"
+        for i in gone:
+            del seqs[i], tax[i]
+        dropped_partials = len(gone)
     order = sorted(seqs)
     # Lineages after folding: a record takes its annotated members' lineage.
     lines_of = collections.defaultdict(set)
@@ -548,8 +582,8 @@ def main() -> int:
         ls = lines_of.get(rid, set())
         if len(ls) > 1:
             sys.exit(f"{rid}: members name lineages {sorted(ls)}")
-        if ls and not tax[rid]["species"]:
-            sys.exit(f"{rid}: lineage {ls.pop()} on a record with no species")
+        if ls and not tax[rid]["genus"]:
+            sys.exit(f"{rid}: lineage {ls.pop()} on a record with no genus")
         tax[rid]["lineage"] = ls.pop() if ls else ""
 
     with open(os.path.join(out, "refdb.fasta"), "w") as fh:
@@ -675,8 +709,8 @@ def main() -> int:
     dec = collections.Counter(c["decision"] for c in conflicts)
     pf = collections.Counter(fit_class.values())
     named = {t["species"] for t in tax.values() if t["species"]}
-    lcount = collections.Counter(f"{tax[rid]['species']}: {tax[rid]['lineage']}" for rid in order
-                                 if tax[rid]["lineage"])
+    lcount = collections.Counter(f"{tax[rid]['species'] or tax[rid]['genus']}: {tax[rid]['lineage']}"
+                                 for rid in order if tax[rid]["lineage"])
     manifest = {
         "name": f"nemits2_{a.version}", "version": a.version,
         "built": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -699,7 +733,8 @@ def main() -> int:
         "counts": {"records": len(order), "members": len(members), "named_species": len(named),
                    "lineage_records": dict(lcount),
                    "grade": dict(gcount), "deepest_rank_nanopore": dict(nano), "folded": folded, "folded_weak": folded_weak,
-                   "renamed": len(renamed),
+                   "renamed": len(renamed), "update_unanchored": len(unanchored),
+                   "dropped_partials": dropped_partials,
                    "member_roles": dict(roles), "conflicts": dict(dec), "primer_fit": dict(pf)},
         "files": {},
     }
@@ -717,7 +752,10 @@ def main() -> int:
              "members: " + ", ".join(f"{k} {v:,}" for k, v in sorted(roles.items()))
              + f"; partial records folded into a same-species full-length record: {folded:,}"
              + f"; weak records folded into a same-species record within 1 edit: {folded_weak:,}"
-             + f"; renamed to current NCBI names: {len(renamed):,}",
+             + f"; renamed to current NCBI names: {len(renamed):,}"
+             + (f"; update records left out, cut at no anchor: {len(unanchored):,}" if unanchored else "")
+             + (f"; partial records dropped, species has a full-length record: {dropped_partials:,}"
+                if dropped_partials else ""),
              "conflicts (order or above): " + (", ".join(f"{k} {v}" for k, v in sorted(dec.items())) or "none"),
              "lineages (records): " + (", ".join(f"{k} {v}" for k, v in sorted(lcount.items())) or "none"),
              "", "Grade (best member):"] + table(gcount, GRADES, len(order))
