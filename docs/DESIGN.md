@@ -1233,7 +1233,11 @@ amphid needs changes before it can use this database:
     beside the gap rule. Open: scoring each reference twice roughly
     doubles window scoring, most felt on concatenated tables; the
     tentative calls on kangaroo *Cloacina* cannot be checked without
-    more *Cloacina* references; and Australian goat-line
-    *T. circumcincta* and *Oe. venulosum* references, which would turn
-    the Francis & Šlapeta tentative calls into confident ones, have not
-    been searched for.
+    more *Cloacina* references. Australian goat-line *T. circumcincta*
+    references (2026-11-12): GenBank has none (the Australian
+    *T. circumcincta* ITS2s are 14 sheep fragments, MW161470-83), and
+    nothing in it is closer to the Francis & Šlapeta goat-line ASVs
+    than AJ577464/MG651890 (1-5 edits). Their own reference (database v2,
+    Usyd059-063, and *Oe. venulosum* Usyd065-068) holds the exact
+    variants, but as ASVs of the same study named by similarity; they
+    are left out, and the goat line stays annotated on our records.
