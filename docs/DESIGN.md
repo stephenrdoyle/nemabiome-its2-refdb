@@ -209,15 +209,15 @@ same effect dropped pairs in vespa-18s-refdb's neighbour check.)
 - **Ties**: a species-level record at margin 0 sits exactly inside
   another species' record over its span. A read scores the same
   against both, so the resolution tables stop it at the rank the two
-  share. 291 records read whole, 429 through 2x150 windows (`main` after
-v0.1.3; 297 and 416 in v0.1.2; 343
+  share. 291 records read whole, 429 through 2x150 windows (v0.1.4;
+297 and 416 in v0.1.2; 343
   and 473 in v0.1.1, 410 and 522 in
   v0.1.0, 732 and 745 before curation and folding).
 - **`species_status`** (`taxonomy.tsv`): `named` if the record reaches
   species; `shared` if it stops above species because its members name
   two or more species (80 records, 95 in v0.1.1: real shared ITS2s, such as *Cylicocyclus
   insigne* / *C. ashworthi*);
-  `unnamed` if no member names a species at all (51 on `main`, 32 in
+  `unnamed` if no member names a species at all (51 in v0.1.4, 32 in
   v0.1.3: hybrids, cf., environmental samples, and the informal "sp."
   names of the GenBank update, §2.1, whose name is in `lineage`).
   "sp."/"spp." count as no species name, as cf. and hybrids do: the
@@ -648,7 +648,7 @@ pairs, `bin/classify_asvs.py` for DADA2 ASVs. Both share the scorer.
 
 As in vespa-18s-refdb. `bin/its2_leave_one_out.py`: up to 5
 full-length species-level records per species, 3,224 queries from 1,236
-species (`main` after v0.1.3: the curation pass and the GenBank update,
+species (v0.1.4: the curation pass and the GenBank update,
 §2.1; 3,182 from 1,220 in v0.1.3, 3,195 from 1,224 before the pass), read whole and through 2x150 windows, as perfect reads.
 
 - **Missing**: every record holding a member of the query's species is
@@ -843,7 +843,7 @@ report per set):
 | merged only | 2,823,194 | 68.5% | 69.1% | 99.1% | 75.2% | 94.7% | 98.5% |
 | 2x150 | 2,985,412 | 73.7% | 65.9% | 94.8% | 85.5% | 94.7% | 98.3% |
 
-On `main` after v0.1.3 (§2.1), repeat-aware (§6).
+In v0.1.4 (§2.1), repeat-aware (§6).
 
 - **Repeat-aware scoring** changes only Francis & Šlapeta at 2x250
   (93.9 / 94.7% hybrid / merged before). Goat *Oe. venulosum* ASVs carry
@@ -989,7 +989,7 @@ the backbone IdTaxa column's change since the earlier runs (Francis &
 Šlapeta 95.4% then, 81.2% merged now; not tested beyond one seed), and
 IdTaxa x this db on PRJNA1524548 2x150 (95.7% before the curation pass,
 87.2% after, with *H. placei* partly at genus), are probably mostly this.
-On `main` after v0.1.3 it is shown: trained with seed 1, IdTaxa x this db
+In v0.1.4 it is shown: trained with seed 1, IdTaxa x this db
 names 75.9% of PRJNA1524548 hybrid reads to species, the main *H.
 placei* ASVs at genus; trained with seeds 2 and 3 on the same database,
 99.0% and 99.2% (v0.1.3, seed 1: 99.1%).
@@ -1030,7 +1030,7 @@ arm in every set: no arm named a wrong species or genus.
 | IdTaxa x this db | 99.7 / 100 | 100 / 100 | 96.6 / 99.2 |
 | gap rule x this db | 100 / 100 | 99.0 / 99.0 | 90.8 / 99.0 |
 
-On `main` after v0.1.3 (§2.1), repeat-aware (§6): 89.7 / 99.0 on the
+In v0.1.4 (§2.1), repeat-aware (§6): 89.7 / 99.0 on the
 ruminant mock before. The tiered rule gives 90.9 on the ruminant mock
 and, on equine ASVs 1-8 edits off their source, 82.7% against the gap
 rule's 73.0%, at 100% precision. v0.1.3 gave assignTaxonomy x this db

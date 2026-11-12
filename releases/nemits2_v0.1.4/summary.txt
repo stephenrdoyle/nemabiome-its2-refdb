@@ -1,0 +1,68 @@
+nemits2_v0.1.4  built 2026-11-12T22:27:01Z  code 9cb91700054573fe22d0a819ce8800d4eeb84a88
+primers NC1 ACGTCTGGTTCAGGGTTGTT / NC2 TTAGTTTCTTTTCCTCCGCT
+source nemabiome_20260317
+records 11,288 from 16,051 source records; named species 1,874
+members: dropped 119, kept 15,932; partial records folded into a same-species full-length record: 1,200; weak records folded into a same-species record within 1 edit: 799; renamed to current NCBI names: 64; update records left out, cut at no anchor: 1,057
+conflicts (order or above): none
+lineages (records): Cloacina: Cloacina sp. 1 AJ-2019 1, Cloacina: Cloacina sp. 3 AJ-2019 1, Cloacina: Cloacina sp. 4 AJ-2019 1, Oesophagostomum: Oesophagostomum sp. 29_S2-217OLI / 31_S2-324COC 1, Oesophagostomum: Oesophagostomum sp. 30_S2-29ZYO 1, Oesophagostomum: Oesophagostomum sp. 3335_MDR_CAM_OH15 1, Oesophagostomum: Oesophagostomum sp. 3341_CEB_CAM / 9800_CEB_CAM_A_OH13 1, Oesophagostomum: Oesophagostomum sp. 9800_CEB_CAM_B_OH14 1, Oesophagostomum: Oesophagostomum sp. ASV_12 1, Oesophagostomum: Oesophagostomum sp. ASV_40 1, Oesophagostomum: Oesophagostomum sp. MC-2015 1, Oesophagostomum: Oesophagostomum sp. OTU_142 1, Oesophagostomum: Oesophagostomum sp. OTU_152 1, Oesophagostomum: Oesophagostomum sp. OTU_180 1, Teladorsagia circumcincta: goat line 2, Trichostrongylus: Trichostrongylus sp. 1 SS-2018 1, Trichostrongylus: Trichostrongylus sp. 2 SS-2018 1, Trichostrongylus: Trichostrongylus sp. SMNPGL33R 1, Trichostrongylus: Trichostrongylus sp. SMNPOL32R 1, Trichostrongylus: Trichostrongylus sp. SMNPOL33R 1
+
+Grade (best member):
+    complete         4,504   39.9%
+    near_complete    3,502   31.0%
+    partial_90         644    5.7%
+    partial_75         473    4.2%
+    partial            480    4.3%
+    unmeasured       1,685   14.9%
+
+Deepest rank - nanopore (whole ITS2; 291 species-level records tied with another species' over their span):
+    species         10,860   96.2%
+    genus              407    3.6%
+    family              20    0.2%
+    order                1    0.0%
+    class                0    0.0%
+    phylum               0    0.0%
+    kingdom              0    0.0%
+    superkingdom         0    0.0%
+    (none)               0    0.0%
+  Illumina 150x150 (windows 130 + 83, 10,555 window groups; 429 tied):
+    species         10,705   94.8%
+    genus              560    5.0%
+    family              22    0.2%
+    order                1    0.0%
+    class                0    0.0%
+    phylum               0    0.0%
+    kingdom              0    0.0%
+    superkingdom         0    0.0%
+    (none)               0    0.0%
+  Illumina 250x250 (windows 230 + 183, 11,232 window groups; 298 tied):
+    species         10,853   96.1%
+    genus              414    3.7%
+    family              20    0.2%
+    order                1    0.0%
+    class                0    0.0%
+    phylum               0    0.0%
+    kingdom              0    0.0%
+    superkingdom         0    0.0%
+    (none)               0    0.0%
+
+Primer fit (best member holding the sites):
+    exact              216    1.9%
+    near               373    3.3%
+    poor             1,116    9.9%
+    one_site         6,946   61.5%
+    unknown          2,637   23.4%
+
+Species margins over the shorter record's span, read whole (11,151 species-level records):
+    0 (inside another species' record: tied)         291
+    1 edit                                           730
+    2 edits                                          557
+    3-5 edits                                      1,325
+    6-10 edits                                     1,353
+    11+ edits                                      2,871
+    no other species within reach                  4,024
+
+For the DADA2 workflow (README: For DADA2 and IdTaxa users):
+  nemits2_v0.1.4_dada2.fasta
+  nemits2_v0.1.4_idtaxa.RData
+  trim_28s.R
+  Run trim_28s.R on the ASVs first: records stop before the 28S stretch.

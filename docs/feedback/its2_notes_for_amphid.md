@@ -86,7 +86,7 @@ species is missing from the database.
 | dada2 assignTaxonomy, for scale | 86.3% | 95.4% | 97.7% | 99.3% | 42.9% |
 | DECIPHER IdTaxa, for scale | 80.3% | 97.5% | 94.5% | 99.6% | 20.6% |
 
-(`main` after v0.1.3, repeat-aware scoring below; before it the gap rule
+(v0.1.4, repeat-aware scoring below; before it the gap rule
 gave 56.4%, 99.2% and 5.4%, and v0.1.3 55.3%, 98.8% and 5.9%.)
 
 **A tentative tier.** Half the present-species reads the gap rule
@@ -121,7 +121,7 @@ differently. `bin/classify_asvs.py` writes these as `nearest` and
 published line within a species, kept under the species' name: the
 *Teladorsagia circumcincta* goat line (2 records), which Francis &
 Šlapeta (2023) found in goats and not in sheep on shared pasture. On
-`main` after v0.1.3 it also carries the informal name of a genus-level
+v0.1.4 it also carries the informal name of a genus-level
 record (19: *Oesophagostomum* sp. 3335_MDR_CAM_OH15, *Cloacina* sp. 1
 AJ-2019, *Trichostrongylus* sp. SMNPOL33R), whose species is blank. When every tied best reference carries the same lineage,
 report it with the call, at any rank: a goat-line read at 98% stops at

@@ -4,7 +4,7 @@ Status: **A, B and E applied** (53 rows added to `curation/overrides.tsv`,
 2026-11-11; v0.1.2); C left to check; D: *Ascaris lumbricoides* and *A. suum*
 stay apart (decided), the rest open. Rebuilt: 11,135 records, 1,864
 named species, 54 source records dropped (11,146, 1,869 and 28 before).
-**F, G, H and I applied after v0.1.3** (2026-11-12, on `main`): 65 more
+**F, G, H and I applied after v0.1.3** (2026-11-12; released in v0.1.4): 65 more
 drops and 2 relabels, the GenBank update, and two fixes to the cut.
 Rebuilt: 11,288 records, 1,874 named species, 119 source records
 dropped (I, below).
