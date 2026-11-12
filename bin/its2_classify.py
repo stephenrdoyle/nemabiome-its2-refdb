@@ -76,7 +76,8 @@ SPAN_SLACK = 5      # spans this close are equally strong evidence
 TRIM, SLACK = 30, 10   # window overhang allowed past a partial reference; indel room
 RULES = {"v4": [("species", 0.997), ("genus", 0.995), ("family", 0.95)],
          "exact": [("species", 1.0), ("genus", None), ("family", 0.95)],
-         "gap": [("species", "gap"), ("genus", 0.97), ("family", 0.95)]}
+         "gap": [("species", "gap"), ("genus", 0.97), ("family", 0.95)],
+         "tiered": [("species", "tiered"), ("genus", 0.97), ("family", 0.95)]}
 # Set by leave-one-out (bin/its2_leave_one_out.py, DESIGN 6.1). A species
 # call needs >= 99% identity and the nearest other species >= 4 edits
 # further away, or an exact match and the next species >= 2 edits away:
@@ -85,6 +86,14 @@ RULES = {"v4": [("species", 0.997), ("genus", 0.995), ("family", 0.95)],
 # (bin/loo_gap_split.py). Below 100%, 2-3 edits stay too close. The gap
 # is reported with each call as its confidence.
 GAP_IDENTITY, GAP_EDITS, GAP_EXACT = 0.99, 4, 2
+# tiered: the gap rule's species calls, plus tentative ones at >= 98%
+# with the same 4-edit gap. In leave-one-out a 98% floor raised right
+# species calls from 56% to 68% where the species is present, and wrong
+# ones from 5.4% to 9.0% where it is hidden; on real data it named the
+# goat-line T. circumcincta (98.0-98.8%), Oe. venulosum and Oe. radiatum
+# held at genus, and kangaroo Cloacina whose sisters may be unsampled.
+# A tiered call that the gap rule does not make is tentative.
+TENTATIVE_IDENTITY = 0.98
 
 
 # Every reference minimap2 proposes is scored. A cap on the top N by
@@ -214,9 +223,71 @@ def denoise(counts, alpha=ALPHA, max_d=2, min_reads=MIN_READS):
 _R = _T = None
 
 
+# Repeat-aware scoring: a simple repeat - a homopolymer of >= 4 bases, or
+# >= 3 copies of a 2-3 base unit - is written as two copies of its unit
+# and one marker for its copy number, so a read and a reference that
+# differ only in how many units a repeat has differ by one edit, not one
+# per base (an expanded (AT)n in goat Oe. venulosum cost 13-21 edits and
+# held 2.2% of a goat set's reads at family). Each reference is scored
+# plain and collapsed and the better identity kept: a substitution inside
+# a repeat, or a copy number either side of the threshold, breaks a run
+# in one sequence only and costs more collapsed. Only the best match is
+# scored so: the nearest other species is measured plain, so sister
+# species that differ mainly in a repeat's length keep their margin
+# (collapsed both ways, T. trichiura, O. volvulus and two Baylisascaris
+# fell to genus in leave-one-out). The marker follows the units
+# (before=False) or leads them (before=True): a window's repeat cut short
+# where the window stops then ends on the units, and the reference's
+# marker beyond it is free. ITS2_REPEATS=0 in the environment turns it off.
+REPEATS = os.environ.get("ITS2_REPEATS", "1") != "0"
+
+
+def collapse(s, before=False, open_end=None):
+    """(collapsed string, raw bases per character). open_end "start" or
+    "end": a repeat reaching that end of s is cut there, so it gets no
+    marker (its copy number is unknown) and is a repeat from one copy
+    fewer (two of a 2-3 base unit, three bases of one), as the record's
+    run beyond it may be long. The before-form is read from the right, so
+    a repeat's units are phased from its right end, as an end window's
+    are (it shares that end with the record, not the left)."""
+    if before:
+        o, w = collapse(s[::-1], open_end={"start": "end", "end": "start"}.get(open_end))
+        return o[::-1], w[::-1]
+    out, w, i, n = [], [], 0, len(s)
+    while i < n:
+        best = None
+        for p in (1, 2, 3):
+            u = s[i:i + p]
+            if len(u) < p or (p > 1 and len(set(u)) == 1) or "N" in u:
+                continue
+            k = 1
+            while s[i + k * p:i + (k + 1) * p] == u:
+                k += 1
+            # a partial unit after a run at the end is part of the cut
+            cut = open_end == "end" and n - (i + k * p) < p and u.startswith(s[i + k * p:])
+            if k >= (4 if p == 1 else 3) - cut and (best is None or k * p > best[0] * best[1]):
+                best = (k, p, u, cut)
+        if not best:
+            out.append(s[i])
+            w.append(1)
+            i += 1
+            continue
+        k, p, u, cut = best
+        run = n - i if cut else k * p
+        out.extend(u * 2 + ("" if cut else chr(0x100 + min(k, 255))))
+        w.extend([1] * (2 * p) + ([] if cut else [run - 2 * p]))
+        if cut:
+            w[-1] += run - 2 * p
+        i += run
+    return "".join(out), w
+
+
 def _init(refs, tax):
-    global _R, _T
+    global _R, _T, _RC
     _R, _T = refs, tax
+    if REPEATS:
+        # per record: after-form, its weights, before-form, its weights
+        _RC = {c: collapse(s) + collapse(s, before=True) for c, s in refs.items()}
 
 
 def overhang_distance(w, r, free=TRIM):
@@ -272,7 +343,13 @@ def _score(job):
         b = b.rstrip("N")
     elif b:
         b = trim_28s(b)[0]
-    scores = []
+    scores, plain = [], []
+    if REPEATS:
+        if mode == "whole":
+            ac = collapse(a)[0]
+        else:
+            ac = collapse(a, open_end="end")[0]
+            bc = collapse(b, before=True, open_end="start")[0]
     for c in cands:
         r = _R[c]
         if mode == "whole":
@@ -281,6 +358,19 @@ def _score(job):
             d1, k1 = _window(r, a, start=True)
             d2, k2 = _window(r, b, start=False)
             d, span = d1 + d2, k1 + k2
+        plain.append((d, span, c))
+        if REPEATS and d:
+            # collapsed too, the better identity kept (see REPEATS)
+            ra, wa, rb, wb = _RC[c]
+            if mode == "whole":
+                dr, spr = infix_distance(ra, ac), len(r)
+            else:
+                # spans back in record bases: the identity rules are per base
+                d1, k1 = _window(ra, ac, start=True)
+                d2, k2 = _window(rb, bc, start=False)
+                dr, spr = d1 + d2, sum(wa[:k1]) + sum(wb[len(wb) - k2:])
+            if spr >= min(span, MIN_SPAN) and 1 - dr / spr > 1 - d / max(span, 1):
+                d, span = dr, spr
         scores.append((d, span, c))
     # Rank by identity over the span scored, not by raw edits: a short
     # partial reference has fewer bases to get wrong, and on edits alone a
@@ -308,8 +398,10 @@ def _score(job):
     tied = {_T[x[2]]["species"] for x in ties}
     # A record naming no species counts as another species only when its
     # members name two (shared); hybrids and other unnamed records say
-    # nothing about which species a read is from.
-    other = [(1 - d / sp, c) for d, sp, c in scores if _T[c]["species"] not in tied
+    # nothing about which species a read is from. Other species are
+    # measured plain (see REPEATS).
+    vs = [x for x in plain if x[1] >= MIN_SPAN]
+    other = [(1 - d / sp, c) for d, sp, c in vs if _T[c]["species"] not in tied
              and _T[c].get("species_status", "shared") != "unnamed"]
     nxt = None
     if other:
@@ -377,8 +469,9 @@ def call(tax, ties, d, span, rule, gap=None, cover=1.0):
     ident = 1 - d / span
     allowed = None
     for rank, lim in RULES[rule]:
-        if lim == "gap":
-            ok = gap is not None and ((ident >= GAP_IDENTITY and gap >= GAP_EDITS)
+        if lim in ("gap", "tiered"):
+            floor = GAP_IDENTITY if lim == "gap" else TENTATIVE_IDENTITY
+            ok = gap is not None and ((ident >= floor and gap >= GAP_EDITS)
                                       or (d == 0 and gap >= GAP_EXACT))
         else:
             ok = (d <= 1) if lim is None else ident >= lim

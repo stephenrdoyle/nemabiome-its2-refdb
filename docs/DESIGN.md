@@ -612,12 +612,32 @@ pairs, `bin/classify_asvs.py` for DADA2 ASVs. Both share the scorer.
 - **Ties**: every reference at the best identity whose span is within
   5 bases of the longest such span. A partial matching only over a
   shorter span does not tie with a full-length match.
+- **Repeat-aware** (since v0.1.3): a difference in how many units a
+  simple repeat has - a homopolymer of >= 4 bases, or >= 3 copies of a
+  2-3 base unit - costs one edit, not one per base. Each reference is
+  scored plain and with its repeats collapsed (two copies of the unit and
+  a marker for the copy number), and the better identity is kept. Only
+  the best match is scored so: the nearest other species is measured
+  plain, so sister species that differ mainly in a repeat's length keep
+  their margin. A repeat cut short where a read window stops is not
+  charged. Goat *Oe. venulosum* with an (AT)n 16 bases longer than any
+  record cost 13-21 edits and held 2.2% of a goat set's reads at family
+  (§6.2). Collapsing both sides instead dropped *T. trichiura*,
+  *O. volvulus*, two *Baylisascaris* and *Pulchrascaris australis* to
+  genus in leave-one-out; collapsing without keeping the plain score
+  made a substitution inside a repeat cost several edits. `ITS2_REPEATS=0`
+  in the environment turns it off.
 - **The gap rule**: species when >= 99% identical and the nearest
   reference of any other species is >= 4 edits further off, or when the
   match is exact and it is >= 2 edits off (sister species share
   variants: an exact match with another species 1 edit off is right
   60% of the time, §6.1); genus at >= 97%, family at >= 95%. `shared` records count as another species,
   `unnamed` ones do not (§5).
+- **The tiered rule** (since v0.1.3): the gap rule's species calls, and
+  also species at >= 98% with the same 4-edit gap, flagged `tentative`.
+  It names intraspecific variants the 99% floor leaves at genus (the
+  goat line of *T. circumcincta*, §5.3) at the cost of more names for
+  missing species (§6.1). `gap` stays the confident call.
 - **What it reports**: identity, ties and gap, and two columns that say
   how close a call that stopped short came. `nearest` is the tied
   species and their identity; `next` is the nearest other species and
@@ -646,12 +666,21 @@ for all but one, and every method scores above 99.9%.
 
 | Rule (whole) | Species recall | Species precision | Genus recall | Genus precision | Over-classification, species | Over-classification, genus |
 |---|---:|---:|---:|---:|---:|---:|
-| amphid's V4 limits (99.7% / 99.5% / 95%) | 18.5% | 95.2% | 50.5% | 99.3% | 1.8% | 1.1% |
-| exact: species only at 0 edits | 11.2% | 94.0% | 53.1% | 99.3% | 1.3% | 1.1% |
-| gap (>= 99% and 4 edits clear, or exact and 2 clear) | 56.4% | 99.2% | 89.4% | 99.4% | 5.4% | 4.6% |
+| amphid's V4 limits (99.7% / 99.5% / 95%) | 19.2% | 95.2% | 52.1% | 99.3% | 1.8% | 1.1% |
+| exact: species only at 0 edits | 11.2% | 94.0% | 54.7% | 99.3% | 1.3% | 1.1% |
+| gap (>= 99% and 4 edits clear, or exact and 2 clear) | 57.3% | 99.2% | 89.6% | 99.4% | 5.5% | 4.6% |
+| tiered (gap, plus tentative at >= 98% and 4 clear) | 68.2% | 98.9% | 89.6% | 99.4% | 9.3% | 4.6% |
 
-At 2x150 the gap rule gives 59.3%, 99.4%, 90.3%, 99.4%, 5.9% and 4.6%
-(`results/leave_one_out/`). v0.1.3 gave 55.3%, 98.8% and 5.9% whole,
+All repeat-aware (§6). At 2x150 the gap rule gives 60.1%, 99.4%, 90.7%,
+99.4%, 6.1% and 4.6%, the tiered rule 68.8%, 99.2% and 9.6% at species
+(`results/leave_one_out/`). Before repeat-aware scoring the gap rule
+gave 56.4%, 99.2% and 5.4% whole, 59.3%, 99.4% and 5.9% at 2x150: it
+names 19 more species when present (*Chabertia erschowi*,
+*Metastrongylus salmi* and *M. pudendotectus*, *Gongylonema pulchrum*,
+*Spirocerca lupi*, *Eucoleus aerophilus* and nematodes of plants and
+insects) and loses none; when missing, 10 queries more are named as a
+sister (*Baylisascaris*, *Dirofilaria repens* as *D. asiatica*,
+*Pulchrascaris*, *Trichuris*), a few fewer otherwise. v0.1.3 gave 55.3%, 98.8% and 5.9% whole,
 58.1%, 99.0% and 6.5% at 2x150; the curation pass (§5.3) had moved these from
 53.4%, 98.5% and 6.4% whole, 56.3%, 98.7% and 7.0% at 2x150. Before exact matches were named at 2 edits
 clear, it gave 52.3%, 98.6% and 6.3% whole, 54.0%, 99.0% and 6.9% at
@@ -662,15 +691,15 @@ quarter of the over-classification. The V4 and exact rules seldom
 name a species even when it is there. The gap rule names three to five
 times as many, and is wrong less often on present species, because the
 margin to the next species is what separates right from wrong, not the
-identity. Its missing-species errors (173 of 3,224 queries read whole;
-187 in v0.1.3, 204 before the curation pass) are of three kinds. Most (138) are 99-100% to a sister species with
+identity. Its missing-species errors (178 of 3,224 queries read whole;
+173 before repeat-aware scoring, 187 in v0.1.3, 204 before the curation pass) are of three kinds. Most (143) are 99-100% to a sister species with
 nothing else within 4 edits: two species under 1% apart, one of them
 missing. 35 are identical to a record of another species, a shared ITS2
-or a mislabelled record. 22 of the 173 land in another genus, nearly
+or a mislabelled record. 22 of the 178 land in another genus, nearly
 all curation questions (§5.3). No threshold catches any of them;
 curating names and records can (`docs/curation_pass_2026-11-11.md`).
 
-A third of present-species reads stop at genus. 28% of queries are
+A third of present-species reads stop at genus. 27% of queries are
 below 99% identity to their own species (intraspecific variation; §5.4)
 and 18% have a gap of 0-3 edits (sister species whose ITS2 barely
 differs). Could a rule per genus or family do better?
@@ -683,6 +712,28 @@ points for 0.8 and 3.6 (`results/leave_one_out/group_rules.txt`). No
 per-group rule beats the global one by more than fractions of a point,
 from five splits of 1,220 species (v0.1.3; the rerun on `main` gives the
 same picture); one rule is kept.
+
+The identity floor is the larger part of what the gap rule gives up.
+Of the present-species queries it stops at genus, half have the next
+species >= 4 edits off but are under 99% to their own; assignTaxonomy
+names 91% of these right. Lowering the floor with the gap kept at 4
+(whole, before repeat-aware scoring):
+
+| Floor | Present: right | Missing: wrong |
+|---|---:|---:|
+| 99% (gap rule) | 56.4% | 5.4% |
+| 98.5% | 63.4% | 7.2% |
+| 98% | 67.7% | 9.0% |
+| 97% | 70.5% | 14.1% |
+| nearest species >= 1 edit ahead, >= 97% | 80.2% | 21.7% |
+
+IdTaxa (80.3%, 20.6%) behaves like the last row; assignTaxonomy (86.3%,
+42.9%) names a species almost whenever one is near. 98% is the tiered
+rule's floor: on the mocks it names no wrong species, and on real data
+it names the reads the gap rule left at genus that look like
+intraspecific variation (§6.2). Its calls are flagged rather than
+merged into the gap rule's because a query 1-2% from its own species
+looks the same as one 1-2% from a missing sister.
 
 ### 6.2 Against DADA2
 
@@ -783,16 +834,40 @@ sample. Each run from raw reads by `bin/real_data.sh`: primer trimming
 of reads named to species (`results/dada2_comparison/`, with an HTML
 report per set):
 
-| Set | Reads | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db |
-|---|---:|---:|---:|---:|---:|---:|
-| Francis & Šlapeta 2x250, hybrid | 488,062 | 72.0% | 81.7% | 99.5% | 99.8% | 93.9% |
-| merged only | 465,576 | 70.2% | 81.2% | 99.5% | 99.9% | 94.7% |
-| 2x150 | 484,432 | 76.0% | 88.2% | 99.1% | 99.7% | 94.8% |
-| PRJNA1524548 2x250, hybrid | 2,903,183 | 70.4% | 69.7% | 95.1% | 75.9% | 94.3% |
-| merged only | 2,823,194 | 68.5% | 69.1% | 99.1% | 75.2% | 94.7% |
-| 2x150 | 2,985,412 | 73.7% | 65.9% | 94.8% | 85.5% | 94.6% |
+| Set | Reads | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db | tiered x this db |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Francis & Šlapeta 2x250, hybrid | 488,062 | 72.0% | 81.7% | 99.5% | 99.8% | 95.3% | 99.0% |
+| merged only | 465,576 | 70.2% | 81.2% | 99.5% | 99.9% | 95.8% | 99.0% |
+| 2x150 | 484,432 | 76.0% | 88.2% | 99.1% | 99.7% | 94.8% | 98.1% |
+| PRJNA1524548 2x250, hybrid | 2,903,183 | 70.4% | 69.7% | 95.1% | 75.9% | 94.3% | 98.3% |
+| merged only | 2,823,194 | 68.5% | 69.1% | 99.1% | 75.2% | 94.7% | 98.5% |
+| 2x150 | 2,985,412 | 73.7% | 65.9% | 94.8% | 85.5% | 94.7% | 98.3% |
 
-On `main` after v0.1.3 (§2.1). v0.1.3 gave the gap rule 93.8 / 94.7 /
+On `main` after v0.1.3 (§2.1), repeat-aware (§6).
+
+- **Repeat-aware scoring** changes only Francis & Šlapeta at 2x250
+  (93.9 / 94.7% hybrid / merged before). Goat *Oe. venulosum* ASVs carry
+  an (AT)n 16 bases longer than any record; their pairs do not merge, and
+  concatenated they were 13-21 edits from Y10790 and held 2.2% of goat
+  reads (0.9% of the set) at family or unassigned. Now 1.3% of the set
+  is named *Oe. venulosum* and the rest reach genus; no read is left at
+  family in any host. The repeat sits outside both 2x150 windows, so
+  2x150 is unchanged. With the full-quality reads (SRA's normalized
+  files; ENA and SRA Lite carry Q30/Q3 only) the gap rule names 94.1% of
+  hybrid reads before and 95.4% after; quality trimming (cutadapt -q 20,
+  25) or fixed truncation (200/180, 180/170) did not help.
+- **The tiered rule** names 98-99% of every set but PRJNA1524548
+  concatenated (94.6%). The tentative calls are the goat line of
+  *T. circumcincta* (98.0-98.8% to the only goat-line records, from
+  Europe and Tunisia; 2.4% of Francis & Šlapeta), *Oe. venulosum* (3-4
+  edits; 1.4%), cattle *Oe. radiatum* (3 edits; 0.4% and 3% of
+  PRJNA1524548), and kangaroo *Cloacina* (98.0-98.7%; 0.5%), the one
+  group where they may be missing sisters rather than variants: 72
+  *Cloacina* species are named here, of many more described. Goats go
+  from 83.1% to 97.5% to species, kangaroos from 62.6% to 76.9%; 15-17% of
+  kangaroo reads stay at family or unassigned under every rule.
+
+v0.1.3 gave the gap rule 93.8 / 94.7 /
 94.5% (Francis & Šlapeta hybrid, merged, 2x150) and 95.2 / 95.7 / 95.9%
 (PRJNA1524548). The update's one regression was a mislabel: PZ569106, a
 Nigerian "*H. contortus*" with the *H. placei* ITS2, held the main *H.
@@ -921,9 +996,12 @@ placei* ASVs at genus; trained with seeds 2 and 3 on the same database,
 
 **Which to use.** For samples whose species are all in the database
 (livestock), assignTaxonomy or IdTaxa on 28S-cut ASVs with this
-database names most, and here agreed with every other arm. Where species may be
+database names most, and here agreed with every other arm; the tiered
+rule names nearly as many (98-99%) with half IdTaxa's
+over-classification. Where species may be
 missing (wildlife, new hosts, surveys), the gap rule's 3-7x lower
-over-classification matters more than its lower recall. amphid should
+over-classification matters more than its lower recall, and tentative
+calls are best read as genus. amphid should
 follow the gap rule (feedback note §5) and report `nearest` and `next`.
 
 ### 6.3 Simulated mocks
@@ -950,9 +1028,12 @@ arm in every set: no arm named a wrong species or genus.
 | IdTaxa x nemabiome | 100 / 100 | 100 / 100 | 91.5 / 98.3 |
 | assignTaxonomy x this db | 95.5 / 100 | 100 / 100 | 88.1 / 99.2 |
 | IdTaxa x this db | 99.7 / 100 | 100 / 100 | 96.6 / 99.2 |
-| gap rule x this db | 100 / 100 | 99.0 / 99.0 | 89.7 / 99.0 |
+| gap rule x this db | 100 / 100 | 99.0 / 99.0 | 90.8 / 99.0 |
 
-On `main` after v0.1.3 (§2.1); v0.1.3 gave assignTaxonomy x this db
+On `main` after v0.1.3 (§2.1), repeat-aware (§6): 89.7 / 99.0 on the
+ruminant mock before. The tiered rule gives 90.9 on the ruminant mock
+and, on equine ASVs 1-8 edits off their source, 82.7% against the gap
+rule's 73.0%, at 100% precision. v0.1.3 gave assignTaxonomy x this db
 88.7 / 99.2, IdTaxa 96.4 / 100 and 95.3 / 96.7, and the gap rule
 87.8 / 97.9 on the ruminant mock.
 
@@ -1148,3 +1229,11 @@ amphid needs changes before it can use this database:
     *Dirofilaria asiatica* against *D. repens*; and why *Hsiungia* failed
     the update's ITS2 region test. Informal lineages are kept only where
     listed by hand: a rule for the rest is open.
+17. **Repeat-aware scoring and the tiered rule** (§6): done, as defaults
+    beside the gap rule. Open: scoring each reference twice roughly
+    doubles window scoring, most felt on concatenated tables; the
+    tentative calls on kangaroo *Cloacina* cannot be checked without
+    more *Cloacina* references; and Australian goat-line
+    *T. circumcincta* and *Oe. venulosum* references, which would turn
+    the Francis & Šlapeta tentative calls into confident ones, have not
+    been searched for.

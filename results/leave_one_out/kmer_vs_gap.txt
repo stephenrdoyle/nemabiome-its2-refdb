@@ -2,25 +2,25 @@ Whole reads. Points of all queries of the mode; right / wrong species calls.
 
 == present (2,768 queries)
    gap rule outcome                      share        assignTaxonomy                IdTaxa
-   gap rule names species                56.8%       55.4 /   0.4       55.5 /   0.4
-   own species best, < 99%               23.2%       21.2 /   0.3       19.1 /   0.1
-   own >= 99%, sister 0-3 edits off       9.1%        6.9 /   0.5        4.7 /   0.2
-   another species closest                7.9%        1.9 /   2.5        0.7 /   1.4
-   tied with another species              2.2%        0.8 /   0.4        0.1 /   0.0
+   gap rule names species                57.7%       56.3 /   0.4       56.4 /   0.4
+   own species best, < 99%               22.3%       20.3 /   0.3       18.2 /   0.1
+   own >= 99%, sister 0-3 edits off       9.1%        6.9 /   0.5        4.8 /   0.2
+   another species closest                8.1%        1.9 /   2.6        0.7 /   1.4
+   tied with another species              2.1%        0.8 /   0.4        0.1 /   0.0
    no hit                                 0.7%        0.1 /   0.0        0.1 /   0.0
 
 == hidden (3,224 queries)
    gap rule outcome                      share        assignTaxonomy                IdTaxa
-   gap rule names species                 5.4%        0.0 /   4.8        0.0 /   4.6
-   another species closest               69.9%        0.0 /  35.0        0.0 /  15.8
-   tied with another species              2.5%        0.0 /   0.3        0.0 /   0.1
+   gap rule names species                 5.5%        0.0 /   5.0        0.0 /   4.8
+   another species closest               69.9%        0.0 /  34.9        0.0 /  15.6
+   tied with another species              2.3%        0.0 /   0.3        0.0 /   0.1
    no hit                                22.3%        0.0 /   2.7        0.0 /   0.2
 
 Species-call rate by identity of the best hit: present (own species best; calls right) /
 hidden (species missing; calls wrong).
    identity   present  hidden        assignTaxonomy                IdTaxa
-   >= 99%       1,846     317      95% /  75% (1759:239)      91% /  58% (1678:185)
-   98-99%         367     239      95% /  63% (348:151)      90% /  56% (331:135)
-   97-98%         100     275      88% /  57% (88:157)      83% /  48% (83:132)
-   95-97%         110     398      90% /  53% (99:209)      77% /  32% (85:129)
-   90-95%          59     611      90% /  51% (53:314)      49% /  11% (29:67)
+   >= 99%       1,868     323      95% /  76% (1781:245)      91% /  59% (1702:191)
+   98-99%         355     243      94% /  64% (333:155)      90% /  57% (318:138)
+   97-98%          91     275      90% /  57% (82:157)      82% /  48% (75:132)
+   95-97%         109     393      90% /  52% (98:203)      78% /  31% (85:123)
+   90-95%          56     616      89% /  51% (50:315)      46% /  11% (26:65)

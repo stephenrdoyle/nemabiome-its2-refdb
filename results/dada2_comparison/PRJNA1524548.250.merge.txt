@@ -3,7 +3,7 @@ arm                        species  genus  higher/unassigned
 dada2 x nemabiome            68.5%   30.9%    0.6%
 dada2 x this db              93.6%    5.8%    0.6%
 span x nemabiome             81.2%   11.9%    6.9%
-span x this db               81.8%   12.9%    5.3%
+span x this db               81.8%   13.0%    5.2%
 gap x nemabiome              88.8%   10.3%    0.9%
 gap x this db                94.7%    4.4%    0.9%
 dada2 x this db, 28S cut     99.1%    0.3%    0.6%

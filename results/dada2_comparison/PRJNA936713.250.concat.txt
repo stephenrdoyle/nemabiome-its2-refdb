@@ -5,30 +5,30 @@ dada2 x this db              72.7%   27.3%    0.0%
 span x nemabiome             55.6%   10.6%   33.8%
 span x this db               65.7%   10.8%   23.5%
 gap x nemabiome              73.2%   25.5%    1.3%
-gap x this db                94.7%    4.4%    0.9%
+gap x this db                96.1%    3.8%    0.0%
 dada2 x this db, 28S cut     99.7%    0.3%    0.0%
 idtaxa x this db, 28S cut    99.9%    0.0%    0.0%
 idtaxa x nemabiome           99.2%    0.8%    0.0%
 idtaxa x this db             92.2%    0.9%    6.9%
 
-idtaxa x this db, 28S cut vs gap x this db: both at species 94.7% of reads; disagree on 0.0%
+idtaxa x this db, 28S cut vs gap x this db: both at species 96.1% of reads; disagree on 0.0%
 
-idtaxa x nemabiome vs gap x this db: both at species 94.3% of reads; disagree on 0.0%
+idtaxa x nemabiome vs gap x this db: both at species 95.7% of reads; disagree on 0.0%
 
-dada2 x nemabiome vs gap x this db: both at species 94.5% of reads; disagree on 0.0%
+dada2 x nemabiome vs gap x this db: both at species 95.9% of reads; disagree on 0.0%
          98  Cooperia spatulata  vs  Cooperia punctata
 
-idtaxa x this db vs gap x this db: both at species 87.3% of reads; disagree on 0.0%
+idtaxa x this db vs gap x this db: both at species 88.7% of reads; disagree on 0.0%
 
-dada2 x this db vs gap x this db: both at species 67.8% of reads; disagree on 0.2%
+dada2 x this db vs gap x this db: both at species 69.2% of reads; disagree on 0.2%
         973  Cooperia spatulata  vs  Cooperia punctata
 
 dada2 x nemabiome | Haemonchus contortus 38.7%, Haemonchus placei 13.8%, Teladorsagia circumcincta 13.5%, Oesophagostomum venulosum 12.5%, Ostertagia ostertagi 8.3%, Trichostrongylus rugatus 4.2%, Oesophagostomum radiatum 2.5%
 dada2 x this db | (genus) Haemonchus 20.5%, Haemonchus contortus 18.2%, Haemonchus placei 13.8%, Oesophagostomum venulosum 12.5%, Ostertagia ostertagi 8.3%, (genus) Teladorsagia 6.8%, Teladorsagia circumcincta 6.7%
 span x nemabiome | Haemonchus contortus 27.0%, (family) Trichostrongylidae 25.7%, Haemonchus placei 13.5%, (genus) Oesophagostomum 8.3%, Ostertagia ostertagi 7.8%, (family) Strongylidae 6.2%, Trichostrongylus rugatus 3.2%
-span x this db | Haemonchus contortus 35.7%, (family) Trichostrongylidae 16.2%, Haemonchus placei 13.5%, (genus) Oesophagostomum 8.3%, Ostertagia ostertagi 7.8%, (family) Strongylidae 6.2%, Trichostrongylus rugatus 3.2%
+span x this db | Haemonchus contortus 35.7%, (family) Trichostrongylidae 16.2%, Haemonchus placei 13.5%, (genus) Oesophagostomum 8.3%, Ostertagia ostertagi 7.8%, (family) Strongylidae 6.7%, Trichostrongylus rugatus 3.2%
 gap x nemabiome | Haemonchus contortus 37.1%, Haemonchus placei 13.7%, (genus) Teladorsagia 12.2%, Oesophagostomum venulosum 10.2%, (genus) Ostertagia 6.4%, Trichostrongylus rugatus 4.1%, (genus) Oesophagostomum 3.9%
-gap x this db | Haemonchus contortus 38.7%, Haemonchus placei 13.8%, Teladorsagia circumcincta 11.3%, Oesophagostomum venulosum 10.2%, Ostertagia ostertagi 8.3%, Trichostrongylus rugatus 4.1%, (genus) Teladorsagia 2.2%
+gap x this db | Haemonchus contortus 38.7%, Haemonchus placei 13.8%, Oesophagostomum venulosum 11.7%, Teladorsagia circumcincta 11.3%, Ostertagia ostertagi 8.3%, Trichostrongylus rugatus 4.1%, (genus) Teladorsagia 2.2%
 dada2 x this db, 28S cut | Haemonchus contortus 38.7%, Haemonchus placei 13.8%, Teladorsagia circumcincta 13.5%, Oesophagostomum venulosum 12.5%, Ostertagia ostertagi 8.3%, Trichostrongylus rugatus 4.2%, Oesophagostomum radiatum 2.5%
 idtaxa x this db, 28S cut | Haemonchus contortus 38.7%, Haemonchus placei 13.8%, Teladorsagia circumcincta 13.5%, Oesophagostomum venulosum 12.5%, Ostertagia ostertagi 8.3%, Trichostrongylus rugatus 4.4%, Oesophagostomum radiatum 2.5%
 idtaxa x nemabiome | Haemonchus contortus 38.7%, Haemonchus placei 13.8%, Teladorsagia circumcincta 13.5%, Oesophagostomum venulosum 12.5%, Ostertagia ostertagi 8.3%, Trichostrongylus rugatus 3.8%, Oesophagostomum radiatum 2.5%

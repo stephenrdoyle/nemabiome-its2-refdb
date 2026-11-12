@@ -19,6 +19,7 @@ RANKS = ['superkingdom', 'kingdom', 'phylum', 'class', 'order', 'family', 'genus
 SETS = [("150", "2x150, concatenated"), ("250.merge", "2x250, merged"),
         ("250.concat", "2x250, concatenated"), ("250.hybrid", "2x250, hybrid")]
 ARMS = [("ours.nemits2_dev", "gap", "Gap rule, this database"),
+        ("ours.nemits2_dev", "tiered", "Tiered rule (gap + tentative), this database"),
         ("idtaxa.nemits2_dev.trim28s", None, "IdTaxa, this database, 28S cut"),
         ("tax.nemits2_dev.trim28s", None, "assignTaxonomy, this database, 28S cut"),
         ("idtaxa.nemabiome_20260317", None, "IdTaxa, nemabiome backbone"),
@@ -46,7 +47,14 @@ def kmer(f):
 
 
 def ours(f, rule):
-    return {r["asv"]: (r[rule + "_rank"], r[rule + "_name"]) for r in tsv(f)}
+    """A rule's calls, or None if the table predates it; a tentative
+    species (tiered rule) is labelled so."""
+    rows = tsv(f)
+    if rows and rule + "_rank" not in rows[0]:
+        return None
+    return {r["asv"]: (r[rule + "_rank"], r[rule + "_name"]
+                       + (" (tentative)" if rule == "tiered" and r.get("tentative") == "yes" else ""))
+            for r in rows}
 
 
 def call(rank, name):
@@ -81,6 +89,8 @@ for sid, slab in SETS:
         if not os.path.exists(f):
             continue
         calls = ours(f, rule) if rule else kmer(f)
+        if calls is None:
+            continue
         per = {}
         for smp, c in counts.items():
             comp = collections.Counter()

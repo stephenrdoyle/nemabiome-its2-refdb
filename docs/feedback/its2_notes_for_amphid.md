@@ -80,12 +80,27 @@ species is missing from the database.
 
 | Rule (whole reads) | Species recall | Species precision | Genus recall | Genus precision | Over-classification |
 |---|---:|---:|---:|---:|---:|
-| V4 limits | 18.5% | 95.2% | 50.5% | 99.3% | 1.8% |
-| gap rule | 56.4% | 99.2% | 89.4% | 99.4% | 5.4% |
+| V4 limits | 19.2% | 95.2% | 52.1% | 99.3% | 1.8% |
+| gap rule | 57.3% | 99.2% | 89.6% | 99.4% | 5.5% |
+| tiered: gap rule + tentative species at >= 98% | 68.2% | 98.9% | 89.6% | 99.4% | 9.3% |
 | dada2 assignTaxonomy, for scale | 86.3% | 95.4% | 97.7% | 99.3% | 42.9% |
 | DECIPHER IdTaxa, for scale | 80.3% | 97.5% | 94.5% | 99.6% | 20.6% |
 
-(`main` after v0.1.3; v0.1.3 gave the gap rule 55.3%, 98.8% and 5.9%.)
+(`main` after v0.1.3, repeat-aware scoring below; before it the gap rule
+gave 56.4%, 99.2% and 5.4%, and v0.1.3 55.3%, 98.8% and 5.9%.)
+
+**A tentative tier.** Half the present-species reads the gap rule
+stops at genus have no other species within 4 edits but are 1-3% from
+their own (intraspecific variation). Naming those at >= 98%, with the
+same 4-edit gap, as a flagged *tentative* species call gains 11 points
+of recall for 4 of over-classification, and on real data names the goat
+line of *T. circumcincta*, *Oe. venulosum* and *Oe. radiatum* reads held
+at genus (Francis & Šlapeta: 95.3% to 99.0% of reads to species). Keep
+the gap rule's call as the confident one and report the tentative call
+beside it: a read 1-2% from its own species looks the same as one 1-2%
+from a missing sister, which is what tentative kangaroo *Cloacina* calls
+may be. `bin/classify_asvs.py` writes `tiered_rank`, `tiered_name` and
+`tentative`.
 
 Limits set separately per genus or family did no better on held-out
 species. Thresholds cannot fix the remaining missing-species errors:
@@ -121,6 +136,19 @@ window at the 28S anchor, not at a fixed 47 bases. Giving a reference's
 first bases slack let one partial *H. bedfordi* record tie *H. placei*
 reads in the reference scorer (DESIGN §6.2); amphid already charges
 them.
+
+**Score simple repeats by copy number.** A difference in how many units
+a simple repeat has (a homopolymer of >= 4 bases, >= 3 copies of a 2-3
+base unit) should cost one edit, not one per base: goat *Oe. venulosum*
+reads with an (AT)n 16 bases longer than any reference were 13-21 edits
+off and stopped at family. Score each reference both plain and with
+repeats collapsed and keep the better, but measure the margin to the
+next species plain: collapsing that too made sister species that differ
+mainly in repeat length (*T. trichiura* / *T. incognita*, *O. volvulus* /
+*O. ochengi*) unresolvable. A repeat cut short where a read window stops
+should not be charged. In leave-one-out this names 19 more species when
+present and costs 0.1 points of over-classification
+(`bin/its2_classify.py` `collapse()`).
 
 **Orient reads.** A sequence whose best hit is on the reverse strand
 should be turned before scoring; IdTaxa does this with

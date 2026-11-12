@@ -23,8 +23,9 @@ tied species and their identity) and next (the nearest other species and
 how many edits further it is), the call under each rule of
 its2_classify.py (v4: amphid's V4 limits; exact: species
 only at 0 edits, genus at <= 1; gap: >= 99% and 4 edits
-clearer of any other species - the gap column is that margin), and the
-lineage within its species that the nearest records carry
+clearer of any other species - the gap column is that margin; tiered:
+the gap rule's species calls plus tentative ones at >= 98%, flagged in
+the tentative column), and the lineage within its species that the nearest records carry
 (curation/lineages.tsv), if any.
 """
 
@@ -109,16 +110,19 @@ def main() -> int:
         res = {k: (d, sp, t, g, cv, nx) for k, d, sp, t, g, cv, nx in pool.imap_unordered(_score, jobs, chunksize=50)}
     with open(a.out, "w") as fh:
         fh.write("asv\tmode\tedits\tspan\tidentity\tties\tgap\tnearest\tnext\t"
-                 + "\t".join(f"{r}_rank\t{r}_name" for r in RULES) + "\tlineage\n")
+                 + "\t".join(f"{r}_rank\t{r}_name" for r in RULES) + "\ttentative\tlineage\n")
         for i, (name, s) in enumerate(asvs):
             d, sp, t, g, cv, nx = res[i]
             near, nxt = describe(tax, t, d, sp, nx)
             ident = "" if d is None or not sp else f"{1 - d / sp:.4f}"
             calls = [call(tax, t, d, sp, r, g, cv) for r in RULES]
+            by = dict(zip(RULES, calls))
+            # a species named only by the tiered rule's lower floor
+            tent = "yes" if by["tiered"][0] == "species" and by["gap"][0] != "species" else ""
             fh.write(f"{name}\t{'window' if SEP in s else 'whole'}\t{'' if d is None else d}\t"
                      f"{sp}\t{ident}\t{len(t)}\t{'' if g is None else g}\t{near}\t{nxt}\t"
                      + "\t".join(f"{rk or 'unassigned'}\t{nm}" for rk, nm in calls)
-                     + f"\t{lineage(tax, t)}\n")
+                     + f"\t{tent}\t{lineage(tax, t)}\n")
     return 0
 
 

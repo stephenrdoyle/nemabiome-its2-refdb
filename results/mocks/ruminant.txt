@@ -6,7 +6,7 @@ Clean ASVs (an exact source copy; truth = the mock label), read-weighted:
    IdTaxa x nemabiome                      91.5%           100.0%            98.3%           100.0%        8.4%    26.4%
    assignTaxonomy x this db                88.1%           100.0%            99.2%           100.0%       12.0%    34.8%
    IdTaxa x this db                        96.6%           100.0%            99.2%           100.0%        3.5%    26.4%
-   gap rule x this db                      89.7%           100.0%            99.0%           100.0%       10.4%    27.2%
+   gap rule x this db                      90.8%           100.0%            99.0%           100.0%        9.5%    27.1%
 
 Noisy ASVs (1-8 edits from sources of one species), read-weighted:
    arm                            species recall        precision     genus recall        precision

@@ -3,8 +3,8 @@
 
     bin/loo_metrics.py <build dir> <loo.tsv> [<label>=<k-mer loo.tsv> ...]
 
-<loo.tsv> is bin/its2_leave_one_out.py's output (the v4, exact and gap
-rules); each k-mer file is bin/loo_dada2.py's (query, mode, view, rank,
+<loo.tsv> is bin/its2_leave_one_out.py's output (the v4, exact, gap and
+tiered rules); each k-mer file is bin/loo_dada2.py's (query, mode, view, rank,
 name) for the same queries. Per view (whole, 2xR), at species and genus:
 
   present   the query's species has other records in the database
@@ -29,7 +29,7 @@ import csv
 import os
 import sys
 
-RULES = ("v4", "exact", "gap")
+RULES = ("v4", "exact", "gap", "tiered")
 
 
 def main() -> int:
@@ -52,7 +52,8 @@ def main() -> int:
         k = (r["query"], r["mode"], r["view"])
         truth[k] = (r["species"], r["genus"])
         for rule in RULES:
-            calls[rule][k] = (r[f"{rule}_rank"], r[f"{rule}_name"])
+            if f"{rule}_rank" in r:      # tiered: since v0.1.3
+                calls[rule][k] = (r[f"{rule}_rank"], r[f"{rule}_name"])
     for label, path in kmer:
         for r in csv.DictReader(open(path), delimiter="\t"):
             k = (r["query"], r["mode"], r["view"])

@@ -37,8 +37,12 @@ f <- sort(list.files(dir, pattern = "_1\\.fastq\\.gz$", full.names = TRUE))
 r <- sub("_1\\.fastq\\.gz$", "_2.fastq.gz", f)
 samples <- sub("_1\\.fastq\\.gz$", "", basename(f))
 ff <- file.path(dir, "filtered", basename(f)); fr <- file.path(dir, "filtered", basename(r))
+# TRUNCLEN="F,R" (environment) cuts every read to a fixed length first;
+# pairs shorter than it are dropped, as filterAndTrim does.
+tl <- Sys.getenv("TRUNCLEN", "")
+tl <- if (nzchar(tl)) as.integer(strsplit(tl, ",")[[1]]) else c(0, 0)
 out <- filterAndTrim(f, ff, r, fr, maxN = 0, maxEE = c(2, 2), truncQ = 2, minLen = 50,
-                     rm.phix = TRUE, compress = TRUE, multithread = threads)
+                     truncLen = tl, rm.phix = TRUE, compress = TRUE, multithread = threads)
 keep <- out[, 2] > 0
 ff <- ff[keep]; fr <- fr[keep]; samples <- samples[keep]
 

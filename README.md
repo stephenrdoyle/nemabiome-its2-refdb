@@ -99,6 +99,15 @@ bibullosus*, *Metastrongylus asymmetricus* and *M. confusus*.
 - **Cuts:** an NC1 well inside a cut is taken as the start (5.8S and
   ITS1 no longer ride along), and a record ending in a short 28S stub is
   cut at it (a complete *Oesophagostomum radiatum*, PZ347037, is now in).
+- **Repeat-aware scoring** (`bin/its2_classify.py`): a read that differs
+  from a reference only in how many units a simple repeat has is one edit
+  off, not one per base. Goat *Oe. venulosum* reads with a long (AT)n
+  stopped at family; they are now named (docs/DESIGN.md §6).
+- **A tentative tier** (`tiered_rank`, `tiered_name`, `tentative` in
+  `bin/classify_asvs.py`'s output): species at >= 98% with the next
+  species >= 4 edits off, flagged, beside the gap rule's confident call.
+- `bin/dada2_nemabiome.R` takes `TRUNCLEN="F,R"` for a fixed truncation
+  (tested; it cost species calls, so the default stays off).
 
 <!-- figures:start -->
 <picture>
@@ -188,7 +197,8 @@ missing species (`results/leave_one_out/metrics.txt`).
 
 | Classifier, this database | Species recall | Species precision | Genus recall | Genus precision | Over-classification |
 |---|---:|---:|---:|---:|---:|
-| `bin/classify_asvs.py`, gap rule | 56.4% | **99.2%** | 89.4% | 99.4% | **5.4%** |
+| `bin/classify_asvs.py`, gap rule | 57.3% | **99.2%** | 89.6% | 99.4% | **5.5%** |
+| `bin/classify_asvs.py`, tiered (gap + tentative) | 68.2% | 98.9% | 89.6% | 99.4% | 9.3% |
 | DECIPHER IdTaxa (threshold 60) | 80.3% | 97.5% | 94.5% | **99.6%** | 20.6% |
 | dada2 assignTaxonomy (minBoot 80) | **86.3%** | 95.4% | **97.7%** | 99.3% | 42.9% |
 
@@ -199,7 +209,16 @@ genus (>= 97%) or family (>= 95%). It is the most conservative of the
 three: it names fewest species but is wrong least, which matters most in
 samples with species missing from the database (wildlife, new hosts). At
 genus all three are about 99% precise; they differ in how often they
-name a species that is not there.
+name a species that is not there. Differences in a simple repeat's
+length count as one edit when finding the best match, but not when
+measuring the gap to the next species.
+
+The tiered rule also names, as *tentative*, a species the read is
+>= 98% identical to with every other species >= 4 edits off: reads
+1-2% from their own species (the *Teladorsagia circumcincta* goat line,
+*Oe. venulosum*), but also reads of a missing sister species. Read
+tentative calls as species where the hosts' worms are well sampled
+(livestock), as genus where they may not be (wildlife).
 Tuning the rule per genus or family did not help on held-out species
 (`results/leave_one_out/group_rules.txt`). Each call carries `nearest`
 (the best species and its identity) and `next` (the nearest other
@@ -213,12 +232,12 @@ species wherever two of them named one). Two NC1/NC2 sets from the
 2x250 pairs joined hybrid (merged where they overlap, concatenated where
 they do not), and cut to 2x150:
 
-| Dataset | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db |
-|---|---:|---:|---:|---:|---:|
-| Francis & Šlapeta, cattle, goats, sheep, PRJNA936713, 2x250 | 72.0% | 81.7% | 99.5% | 99.8% | 93.9% |
-| same, cut to 2x150 | 76.0% | 88.2% | 99.1% | 99.7% | 94.8% |
-| Šlapeta group, unpublished, PRJNA1524548, cattle, kangaroos, pigs, rabbits, 2x250 | 70.4% | 69.7% | 95.1% | 75.9%* | 94.3% |
-| same, cut to 2x150 | 73.7% | 65.9% | 94.8% | 85.5%* | 94.6% |
+| Dataset | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db | tiered x this db |
+|---|---:|---:|---:|---:|---:|---:|
+| Francis & Šlapeta, cattle, goats, sheep, PRJNA936713, 2x250 | 72.0% | 81.7% | 99.5% | 99.8% | 95.3% | 99.0% |
+| same, cut to 2x150 | 76.0% | 88.2% | 99.1% | 99.7% | 94.8% | 98.1% |
+| Šlapeta group, unpublished, PRJNA1524548, cattle, kangaroos, pigs, rabbits, 2x250 | 70.4% | 69.7% | 95.1% | 75.9%* | 94.3% | 98.3% |
+| same, cut to 2x150 | 73.7% | 65.9% | 94.8% | 85.5%* | 94.7% | 98.3% |
 
 \* IdTaxa with seed 1, which leaves the main *H. placei* ASVs at genus;
 seeds 2 and 3 name 99.0% and 99.2% of the 2x250 reads to species.
@@ -240,7 +259,8 @@ ruminant, all species present, so they measure recall, not
 over-classification): no classifier, with either database, named a
 wrong species for an exact copy of a source sequence (precision 100%);
 the k-mer classifiers named 88-100% of reads to species, the gap rule
-90-100%, stopping at genus where a sister species is 1 edit off.
+91-100%, stopping at genus where a sister species is 1 edit off; the
+tiered rule named no wrong species either.
 The mocks' truth includes two backbone mislabels this database corrects
 (docs/DESIGN.md §6.3; `results/mocks/`).
 
@@ -306,7 +326,9 @@ confidence 62-76 and switched between species and genus with the seed.
 Which classifier to use is a trade-off (docs/DESIGN.md §6.2): k-mer
 classifiers name the most species when every species is in the
 database; when some may be missing, they name a wrong one far more often
-than the span-scored gap rule (`bin/classify_asvs.py`).
+than the span-scored gap rule (`bin/classify_asvs.py`). Its tiered rule
+sits between them: 98-99% of reads named on both livestock sets, with
+less than half IdTaxa's over-classification.
 
 ## Build
 

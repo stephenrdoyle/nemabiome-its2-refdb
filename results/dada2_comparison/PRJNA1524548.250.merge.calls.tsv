@@ -1,134 +1,134 @@
-asv	mode	edits	span	identity	ties	gap	nearest	next	v4_rank	v4_name	exact_rank	exact_name	gap_rank	gap_name	lineage
-ASV00001	whole	0	234	1.0000	2	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
-ASV00002	whole	0	234	1.0000	2	4	Haemonchus placei 100.0%	Haemonchus contortus +4	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
-ASV00003	whole	0	227	1.0000	1	33	Oesophagostomum radiatum 100.0%	Oesophagostomum stephanostomum +33	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum	
-ASV00004	whole	1	227	0.9956	1	33	Oesophagostomum radiatum 99.6%	Oesophagostomum stephanostomum +33	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum	
-ASV00005	whole	0	241	1.0000	2	3	Trichostrongylus retortaeformis 100.0%	Trichostrongylus vitrinus +3	species	Trichostrongylus retortaeformis	species	Trichostrongylus retortaeformis	species	Trichostrongylus retortaeformis	
-ASV00006	whole	0	240	1.0000	2	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei	
-ASV00007	whole	3	227	0.9868	1	30	Oesophagostomum radiatum 98.7%	Oesophagostomum stephanostomum +30	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
-ASV00008	whole	0	241	1.0000	2	20	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +20	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi	
-ASV00009	whole	0	422	1.0000	1	20	Metastrongylus apri 100.0%	Metastrongylus salmi +20	species	Metastrongylus apri	species	Metastrongylus apri	species	Metastrongylus apri	
-ASV00010	whole	1	234	0.9957	1	4	Haemonchus placei 99.6%	Haemonchus contortus +4	genus	Haemonchus	genus	Haemonchus	species	Haemonchus placei	
-ASV00011	whole	0	244	1.0000	2	3	Cooperia punctata 100.0%	Cooperia oncophora +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata	
-ASV00012	whole	3	227	0.9868	1	30	Oesophagostomum radiatum 98.7%	Oesophagostomum stephanostomum +30	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
-ASV00013	whole	0	241	1.0000	2	22	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +22	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi	
-ASV00014	whole	0	244	1.0000	2	3	Cooperia oncophora 100.0%	Cooperia punctata +3	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
-ASV00015	whole	0	219	1.0000	1	8	Cloacina clymene 100.0%	Cloacina dryope +8	species	Cloacina clymene	species	Cloacina clymene	species	Cloacina clymene	
-ASV00016	whole	0	228	1.0000	1	2	Cloacina herceus 100.0%	Cloacina hydriformis +2	species	Cloacina herceus	species	Cloacina herceus	species	Cloacina herceus	
-ASV00017	whole	0	218	1.0000	1	7	Cloacina macropodis 100.0%	Cloacina johnstoni +7	species	Cloacina macropodis	species	Cloacina macropodis	species	Cloacina macropodis	
-ASV00018	whole	0	237	1.0000	1	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei	
-ASV00019	whole	3	226	0.9867	1	12	Cloacina echidne 98.7%	Cloacina artemis +12	family	Strongylidae	family	Strongylidae	genus	Cloacina	
-ASV00020	whole	16	232	0.9310	1	7	Macropostrongylus macropostrongylus 93.1%	Macroponema beveridgei +7	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00021	whole	1	227	0.9956	1	33	Oesophagostomum radiatum 99.6%	Oesophagostomum stephanostomum +33	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum	
-ASV00022	whole	1	241	0.9959	1	3	Trichostrongylus retortaeformis 99.6%	Trichostrongylus vitrinus +3	genus	Trichostrongylus	genus	Trichostrongylus	genus	Trichostrongylus	
-ASV00023	whole	2	422	0.9953	3	16	Metastrongylus apri 99.5%	Metastrongylus salmi +16	genus	Metastrongylus	family	Metastrongylidae	species	Metastrongylus apri	
-ASV00024	whole	0	221	1.0000	1	6	Cloacina communis 100.0%	Cloacina petrogale +6	species	Cloacina communis	species	Cloacina communis	species	Cloacina communis	
-ASV00025	whole	8	222	0.9640	1	18	Cloacina typhon 96.4%	Cloacina magnipapillata +18	family	Strongylidae	family	Strongylidae	family	Strongylidae	
-ASV00026	whole	0	244	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
-ASV00027	whole	1	219	0.9954	1	8	Cloacina clymene 99.5%	Cloacina dryope +8	genus	Cloacina	genus	Cloacina	species	Cloacina clymene	
-ASV00028	whole	1	228	0.9956	1	2	Cloacina herceus 99.6%	Cloacina hydriformis +2	genus	Cloacina	genus	Cloacina	genus	Cloacina	
-ASV00029	whole	17	232	0.9267	1	7	Macropostrongylus macropostrongylus 92.7%	Macroponema beveridgei +7	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00030	whole	0	244	1.0000	1	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata	
-ASV00031	whole	4	226	0.9823	1	12	Cloacina echidne 98.2%	Cloacina artemis +12	family	Strongylidae	family	Strongylidae	genus	Cloacina	
-ASV00032	whole	1	296	0.9966	1	295	Hypodontus macropi 99.7%	none close	genus	Hypodontus	genus	Hypodontus	species	Hypodontus macropi	
-ASV00033	whole	0	218	1.0000	1	8	Cloacina macropodis 100.0%	Cloacina johnstoni +8	species	Cloacina macropodis	species	Cloacina macropodis	species	Cloacina macropodis	
-ASV00034	whole	1	218	0.9954	1	7	Cloacina macropodis 99.5%	Cloacina johnstoni +7	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis	
-ASV00035	whole	3	235	0.9872	1	25	Popovastrongylus macropodis 98.7%	Macropostrongylus macropostrongylus +25	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus	
-ASV00036	whole	2	288	0.9931	1	286	Hypodontus macropi 99.3%	none close	family	Strongylidae	family	Strongylidae	species	Hypodontus macropi	
-ASV00037	whole	0	244	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
-ASV00038	whole	2	219	0.9909	1	8	Cloacina clymene 99.1%	Cloacina dryope +8	family	Strongylidae	family	Strongylidae	species	Cloacina clymene	
-ASV00039	whole	0	244	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
-ASV00040	whole	17	232	0.9267	1	7	Macropostrongylus macropostrongylus 92.7%	Macroponema beveridgei +7	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00041	whole	5	235	0.9787	1	23	Popovastrongylus macropodis 97.9%	Macropostrongylus macropostrongylus +23	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus	
-ASV00042	whole	5	227	0.9780	1	29	Oesophagostomum radiatum 97.8%	Oesophagostomum stephanostomum +29	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	
-ASV00043	whole	1	224	0.9955	1	36	Cloacina pollux 99.6%	Wallabinema macropodis +36	genus	Cloacina	genus	Cloacina	species	Cloacina pollux	
-ASV00044	whole	2	234	0.9915	1	5	Haemonchus placei 99.1%	Haemonchus contortus +5	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus placei	
-ASV00045	whole	1	230	0.9957	1	20	Cloacina edwardsi 99.6%	Cloacina artemis +20	genus	Cloacina	genus	Cloacina	species	Cloacina edwardsi	
-ASV00046	whole	4	230	0.9826	1	16	Cloacina edwardsi 98.3%	Cloacina artemis +16	family	Strongylidae	family	Strongylidae	genus	Cloacina	
-ASV00047	whole	3	298	0.9899	1	295	Hypodontus macropi 99.0%	none close	family	Strongylidae	family	Strongylidae	genus	Hypodontus	
-ASV00048	whole	1	219	0.9954	1	8	Cloacina clymene 99.5%	Cloacina dryope +8	genus	Cloacina	genus	Cloacina	species	Cloacina clymene	
-ASV00049	whole	1	221	0.9955	2	3	Cloacina communis 99.5%	Cloacina petrogale +3	genus	Cloacina	genus	Cloacina	genus	Cloacina	
-ASV00050	whole	1	218	0.9954	1	11	Cloacina phaethon 99.5%	Cloacina parva +11	genus	Cloacina	genus	Cloacina	species	Cloacina phaethon	
-ASV00051	whole	1	219	0.9954	3	6	Cloacina feronia 99.5%	Cloacina themis +6	genus	Cloacina	genus	Cloacina	species	Cloacina feronia	
-ASV00052	whole	3	221	0.9864	1	4	Cloacina communis 98.6%	Cloacina phaedra +4	family	Strongylidae	family	Strongylidae	genus	Cloacina	
-ASV00053	whole	1	228	0.9956	1	2	Cloacina herceus 99.6%	Cloacina hydriformis +2	genus	Cloacina	genus	Cloacina	genus	Cloacina	
-ASV00054	whole	9	222	0.9595	1	16	Cloacina typhon 95.9%	Cloacina magnipapillata +16	family	Strongylidae	family	Strongylidae	family	Strongylidae	
-ASV00055	whole	9	222	0.9595	1	18	Cloacina typhon 95.9%	Cloacina magnipapillata +18	family	Strongylidae	family	Strongylidae	family	Strongylidae	
-ASV00056	whole	0	229	1.0000	1	20	Cloacina edwardsi 100.0%	Cloacina artemis +20	species	Cloacina edwardsi	species	Cloacina edwardsi	species	Cloacina edwardsi	
-ASV00057	whole	0	229	1.0000	1	20	Cloacina edwardsi 100.0%	Cloacina artemis +20	species	Cloacina edwardsi	species	Cloacina edwardsi	species	Cloacina edwardsi	
-ASV00058	whole	1	218	0.9954	1	7	Cloacina macropodis 99.5%	Cloacina johnstoni +7	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis	
-ASV00059	whole	0	227	1.0000	1	33	Oesophagostomum radiatum 100.0%	Oesophagostomum stephanostomum +33	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum	
-ASV00060	whole	2	218	0.9908	2	4	Cloacina parva 99.1%	Cloacina caenis +4	family	Strongylidae	family	Strongylidae	species	Cloacina parva	
-ASV00061	whole	1	244	0.9959	1	4	Cooperia punctata 99.6%	Cooperia oncophora +4	genus	Cooperia	genus	Cooperia	species	Cooperia punctata	
-ASV00062	whole	2	218	0.9908	2	11	Cloacina phaethon 99.1%	Cloacina parva +11	family	Strongylidae	family	Strongylidae	species	Cloacina phaethon	
-ASV00063	whole	0	118	1.0000	1	118	Meloidogyne hapla 100.0%	none close	species	Meloidogyne hapla	species	Meloidogyne hapla	species	Meloidogyne hapla	
-ASV00064	whole	1	218	0.9954	2	5	Cloacina macropodis 99.5%	Cloacina johnstoni +5	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis	
-ASV00065	whole	3	296	0.9899	1	293	Hypodontus macropi 99.0%	none close	family	Strongylidae	family	Strongylidae	genus	Hypodontus	
-ASV00066	whole	3	422	0.9929	3	16	Metastrongylus apri 99.3%	Metastrongylus salmi +16	family	Metastrongylidae	family	Metastrongylidae	species	Metastrongylus apri	
-ASV00067	whole	1	218	0.9954	2	4	Cloacina parva 99.5%	Cloacina caenis +4	genus	Cloacina	genus	Cloacina	species	Cloacina parva	
-ASV00068	whole	0	238	1.0000	1	4	Trichostrongylus rugatus 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	
-ASV00069	whole	4	226	0.9823	1	12	Cloacina echidne 98.2%	Cloacina artemis +12	family	Strongylidae	family	Strongylidae	genus	Cloacina	
-ASV00070	whole	2	219	0.9909	1	8	Cloacina clymene 99.1%	Cloacina dryope +8	family	Strongylidae	family	Strongylidae	species	Cloacina clymene	
-ASV00071	whole	5	226	0.9779	1	12	Cloacina echidne 97.8%	Cloacina artemis +12	family	Strongylidae	family	Strongylidae	genus	Cloacina	
-ASV00072	whole	2	218	0.9908	1	4	Cloacina macropodis 99.1%	Cloacina johnstoni +4	family	Strongylidae	family	Strongylidae	species	Cloacina macropodis	
-ASV00073	whole		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00074	whole	4	133	0.9699	1	6	Haemonchus contortus 97.0%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
-ASV00075	whole	1	218	0.9954	1	7	Cloacina macropodis 99.5%	Cloacina johnstoni +7	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis	
-ASV00076	whole	0	218	1.0000	1	4	Cloacina parva 100.0%	Cloacina caenis +4	species	Cloacina parva	species	Cloacina parva	species	Cloacina parva	
-ASV00077	whole	0	244	1.0000	3	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	
-ASV00078	whole	3	224	0.9866	1	36	Cloacina pollux 98.7%	Wallabinema macropodis +36	family	Strongylidae	family	Strongylidae	genus	Cloacina	
-ASV00079	whole	4	221	0.9819	1	3	Cloacina communis 98.2%	Cloacina petrogale +3	family	Strongylidae	family	Strongylidae	genus	Cloacina	
-ASV00080	whole	1	240	0.9958	1	4	Trichostrongylus axei 99.6%	Trichostrongylus retortaeformis +4	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus axei	
-ASV00081	whole	10	235	0.9574	1	18	Popovastrongylus macropodis 95.7%	Macropostrongylus macropostrongylus +18	family	Strongylidae	family	Strongylidae	family	Strongylidae	
-ASV00082	whole	2	219	0.9909	1	8	Cloacina clymene 99.1%	Cloacina dryope +8	family	Strongylidae	family	Strongylidae	species	Cloacina clymene	
-ASV00083	whole	2	222	0.9910	1	38	Cloacina pollux 99.1%	Wallabinema macropodis +38	family	Strongylidae	family	Strongylidae	species	Cloacina pollux	
-ASV00084	whole	6	235	0.9745	1	22	Popovastrongylus macropodis 97.4%	Macropostrongylus macropostrongylus +22	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus	
-ASV00085	whole	16	232	0.9310	1	7	Macropostrongylus macropostrongylus 93.1%	Macroponema beveridgei +7	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00086	whole	1	219	0.9954	1	8	Cloacina clymene 99.5%	Cloacina dryope +8	genus	Cloacina	genus	Cloacina	species	Cloacina clymene	
-ASV00087	whole	2	244	0.9918	1	1	Cooperia punctata 99.2%	Cooperia oncophora +1	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia	
-ASV00088	whole	3	228	0.9868	1	1	Cloacina herceus 98.7%	Cloacina hydriformis +1	family	Strongylidae	family	Strongylidae	genus	Cloacina	
-ASV00089	whole	7	235	0.9702	1	22	Popovastrongylus macropodis 97.0%	Macropostrongylus macropostrongylus +22	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus	
-ASV00090	whole	2	218	0.9908	1	11	Cloacina phaethon 99.1%	Cloacina parva +11	family	Strongylidae	family	Strongylidae	species	Cloacina phaethon	
-ASV00091	whole	0	242	1.0000	5	1	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +1	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus	
-ASV00092	whole	3	218	0.9862	3	5	Cloacina macropodis 98.6%	Cloacina johnstoni +5	family	Strongylidae	family	Strongylidae	genus	Cloacina	
-ASV00093	whole	1	219	0.9954	1	9	Cloacina clymene 99.5%	Cloacina dryope +9	genus	Cloacina	genus	Cloacina	species	Cloacina clymene	
-ASV00094	whole	89	236	0.6229	1	37	Metastrongylus salmi 62.3%	Metastrongylus asymmetricus +37	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00095	whole	3	224	0.9866	1	36	Cloacina pollux 98.7%	Wallabinema macropodis +36	family	Strongylidae	family	Strongylidae	genus	Cloacina	
-ASV00096	whole	4	133	0.9699	1	6	Haemonchus contortus 97.0%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
-ASV00097	whole	1	241	0.9959	1	20	Ostertagia ostertagi 99.6%	Ostertagia gruehneri +20	genus	Ostertagia	genus	Ostertagia	species	Ostertagia ostertagi	
-ASV00098	whole	7	235	0.9702	1	21	Popovastrongylus macropodis 97.0%	Macropostrongylus macropostrongylus +21	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus	
-ASV00099	whole	92	236	0.6102	1	34	Metastrongylus salmi 61.0%	Metastrongylus asymmetricus +34	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00100	whole	4	133	0.9699	1	6	Haemonchus contortus 97.0%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
-ASV00101	whole	1	244	0.9959	1	5	Cooperia oncophora 99.6%	Cooperia punctata +5	genus	Cooperia	genus	Cooperia	species	Cooperia oncophora	
-ASV00102	whole	3	222	0.9865	1	36	Cloacina pollux 98.6%	Wallabinema macropodis +36	family	Strongylidae	family	Strongylidae	genus	Cloacina	
-ASV00103	whole	6	133	0.9549	1	6	Haemonchus contortus 95.5%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
-ASV00104	whole	0	241	1.0000	2	3	Trichostrongylus retortaeformis 100.0%	Trichostrongylus vitrinus +3	species	Trichostrongylus retortaeformis	species	Trichostrongylus retortaeformis	species	Trichostrongylus retortaeformis	
-ASV00105	whole	25	227	0.8899	1	16	Oesophagostomum radiatum 89.0%	Oesophagostomum stephanostomum +16	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00106	whole	5	133	0.9624	1	5	Haemonchus contortus 96.2%	Haemonchus placei +5	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
-ASV00107	whole	6	133	0.9549	1	6	Haemonchus contortus 95.5%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
-ASV00108	whole	0	422	1.0000	1	20	Metastrongylus apri 100.0%	Metastrongylus salmi +20	species	Metastrongylus apri	species	Metastrongylus apri	species	Metastrongylus apri	
-ASV00109	whole	0	234	1.0000	2	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
-ASV00110	whole	38	218	0.8257	2	7	Cloacina macropodis 82.6%	Cloacina johnstoni +7	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00111	whole	1	422	0.9976	1	18	Metastrongylus apri 99.8%	Metastrongylus salmi +18	species	Metastrongylus apri	genus	Metastrongylus	species	Metastrongylus apri	
-ASV00112	whole	0	234	1.0000	1	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	
-ASV00113	whole	6	133	0.9549	1	6	Haemonchus contortus 95.5%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
-ASV00114	whole	4	133	0.9699	1	6	Haemonchus contortus 97.0%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
-ASV00115	whole	6	133	0.9549	1	4	Haemonchus contortus 95.5%	Haemonchus placei +4	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
-ASV00116	whole	7	133	0.9474	1	5	Haemonchus contortus 94.7%	Haemonchus placei +5	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00117	whole	19	227	0.9163	1	18	Oesophagostomum radiatum 91.6%	Oesophagostomum stephanostomum +18	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00118	whole	48	353	0.8640	1	3	Metastrongylus asymmetricus 86.4%	Metastrongylus confusus +3	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00119	whole	0	110	1.0000	1	17	Meloidogyne hapla 100.0%	Meloidogyne partityla +17	species	Meloidogyne hapla	species	Meloidogyne hapla	species	Meloidogyne hapla	
-ASV00120	whole	4	133	0.9699	1	6	Haemonchus contortus 97.0%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
-ASV00121	whole	34	151	0.7748	1	9	Teladorsagia circumcincta 77.5%	Ostertagia ostertagi +9	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00122	whole		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00123	whole		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00124	whole	19	227	0.9163	1	18	Oesophagostomum radiatum 91.6%	Oesophagostomum stephanostomum +18	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00125	whole		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00126	whole	0	234	1.0000	2	4	Haemonchus placei 100.0%	Haemonchus contortus +4	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	
-ASV00127	whole	49	224	0.7812	1	0	Haemonchus contortus 78.1%	Haemonchus placei +0	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00128	whole	23	227	0.8987	2	16	Oesophagostomum radiatum 89.9%	Oesophagostomum stephanostomum +16	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00129	whole	34	151	0.7748	1	9	Teladorsagia circumcincta 77.5%	Ostertagia ostertagi +9	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00130	whole		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00131	whole	25	227	0.8899	1	16	Oesophagostomum radiatum 89.0%	Oesophagostomum stephanostomum +16	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
-ASV00132	whole	5	107	0.9533	1	5	Haemonchus contortus 95.3%	Haemonchus placei +5	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	
-ASV00133	whole	38	218	0.8257	1	10	Cloacina phaethon 82.6%	Cloacina caenis +10	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	
+asv	mode	edits	span	identity	ties	gap	nearest	next	v4_rank	v4_name	exact_rank	exact_name	gap_rank	gap_name	tiered_rank	tiered_name	tentative	lineage
+ASV00001	whole	0	234	1.0000	2	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei		
+ASV00002	whole	0	234	1.0000	2	4	Haemonchus placei 100.0%	Haemonchus contortus +4	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei		
+ASV00003	whole	0	227	1.0000	1	33	Oesophagostomum radiatum 100.0%	Oesophagostomum stephanostomum +33	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum		
+ASV00004	whole	1	227	0.9956	1	33	Oesophagostomum radiatum 99.6%	Oesophagostomum stephanostomum +33	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum		
+ASV00005	whole	0	241	1.0000	2	3	Trichostrongylus retortaeformis 100.0%	Trichostrongylus vitrinus +3	species	Trichostrongylus retortaeformis	species	Trichostrongylus retortaeformis	species	Trichostrongylus retortaeformis	species	Trichostrongylus retortaeformis		
+ASV00006	whole	0	240	1.0000	2	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei		
+ASV00007	whole	3	227	0.9868	1	30	Oesophagostomum radiatum 98.7%	Oesophagostomum stephanostomum +30	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	species	Oesophagostomum radiatum	yes	
+ASV00008	whole	0	241	1.0000	2	20	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +20	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi		
+ASV00009	whole	0	422	1.0000	1	20	Metastrongylus apri 100.0%	Metastrongylus salmi +20	species	Metastrongylus apri	species	Metastrongylus apri	species	Metastrongylus apri	species	Metastrongylus apri		
+ASV00010	whole	1	234	0.9957	1	4	Haemonchus placei 99.6%	Haemonchus contortus +4	genus	Haemonchus	genus	Haemonchus	species	Haemonchus placei	species	Haemonchus placei		
+ASV00011	whole	0	244	1.0000	2	3	Cooperia punctata 100.0%	Cooperia oncophora +3	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata		
+ASV00012	whole	3	227	0.9868	1	30	Oesophagostomum radiatum 98.7%	Oesophagostomum stephanostomum +30	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	species	Oesophagostomum radiatum	yes	
+ASV00013	whole	0	241	1.0000	2	22	Ostertagia ostertagi 100.0%	Ostertagia gruehneri +22	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi	species	Ostertagia ostertagi		
+ASV00014	whole	0	244	1.0000	2	3	Cooperia oncophora 100.0%	Cooperia punctata +3	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora		
+ASV00015	whole	0	219	1.0000	1	8	Cloacina clymene 100.0%	Cloacina dryope +8	species	Cloacina clymene	species	Cloacina clymene	species	Cloacina clymene	species	Cloacina clymene		
+ASV00016	whole	0	228	1.0000	1	2	Cloacina herceus 100.0%	Cloacina hydriformis +2	species	Cloacina herceus	species	Cloacina herceus	species	Cloacina herceus	species	Cloacina herceus		
+ASV00017	whole	0	218	1.0000	1	7	Cloacina macropodis 100.0%	Cloacina johnstoni +7	species	Cloacina macropodis	species	Cloacina macropodis	species	Cloacina macropodis	species	Cloacina macropodis		
+ASV00018	whole	0	237	1.0000	1	4	Trichostrongylus axei 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei	species	Trichostrongylus axei		
+ASV00019	whole	3	226	0.9867	1	12	Cloacina echidne 98.7%	Cloacina artemis +12	family	Strongylidae	family	Strongylidae	genus	Cloacina	species	Cloacina echidne	yes	
+ASV00020	whole	16	232	0.9310	1	7	Macropostrongylus macropostrongylus 93.1%	Macroponema beveridgei +7	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00021	whole	1	227	0.9956	1	33	Oesophagostomum radiatum 99.6%	Oesophagostomum stephanostomum +33	genus	Oesophagostomum	genus	Oesophagostomum	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum		
+ASV00022	whole	1	241	0.9959	1	3	Trichostrongylus retortaeformis 99.6%	Trichostrongylus vitrinus +3	genus	Trichostrongylus	genus	Trichostrongylus	genus	Trichostrongylus	genus	Trichostrongylus		
+ASV00023	whole	2	422	0.9953	3	16	Metastrongylus apri 99.5%	Metastrongylus salmi +16	genus	Metastrongylus	family	Metastrongylidae	species	Metastrongylus apri	species	Metastrongylus apri		
+ASV00024	whole	0	221	1.0000	1	6	Cloacina communis 100.0%	Cloacina petrogale +6	species	Cloacina communis	species	Cloacina communis	species	Cloacina communis	species	Cloacina communis		
+ASV00025	whole	8	222	0.9640	1	18	Cloacina typhon 96.4%	Cloacina magnipapillata +18	family	Strongylidae	family	Strongylidae	family	Strongylidae	family	Strongylidae		
+ASV00026	whole	0	244	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora		
+ASV00027	whole	1	219	0.9954	1	8	Cloacina clymene 99.5%	Cloacina dryope +8	genus	Cloacina	genus	Cloacina	species	Cloacina clymene	species	Cloacina clymene		
+ASV00028	whole	1	228	0.9956	1	2	Cloacina herceus 99.6%	Cloacina hydriformis +2	genus	Cloacina	genus	Cloacina	genus	Cloacina	genus	Cloacina		
+ASV00029	whole	17	232	0.9267	1	7	Macropostrongylus macropostrongylus 92.7%	Macroponema beveridgei +7	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00030	whole	0	244	1.0000	1	6	Cooperia punctata 100.0%	Cooperia oncophora +6	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata	species	Cooperia punctata		
+ASV00031	whole	4	226	0.9823	1	12	Cloacina echidne 98.2%	Cloacina artemis +12	family	Strongylidae	family	Strongylidae	genus	Cloacina	species	Cloacina echidne	yes	
+ASV00032	whole	1	296	0.9966	1	295	Hypodontus macropi 99.7%	none close	genus	Hypodontus	genus	Hypodontus	species	Hypodontus macropi	species	Hypodontus macropi		
+ASV00033	whole	0	218	1.0000	1	8	Cloacina macropodis 100.0%	Cloacina johnstoni +8	species	Cloacina macropodis	species	Cloacina macropodis	species	Cloacina macropodis	species	Cloacina macropodis		
+ASV00034	whole	1	218	0.9954	1	7	Cloacina macropodis 99.5%	Cloacina johnstoni +7	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis	species	Cloacina macropodis		
+ASV00035	whole	3	235	0.9872	1	25	Popovastrongylus macropodis 98.7%	Macropostrongylus macropostrongylus +25	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus	species	Popovastrongylus macropodis	yes	
+ASV00036	whole	1	288	0.9965	1	287	Hypodontus macropi 99.7%	none close	genus	Hypodontus	genus	Hypodontus	species	Hypodontus macropi	species	Hypodontus macropi		
+ASV00037	whole	0	244	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora		
+ASV00038	whole	2	219	0.9909	1	8	Cloacina clymene 99.1%	Cloacina dryope +8	family	Strongylidae	family	Strongylidae	species	Cloacina clymene	species	Cloacina clymene		
+ASV00039	whole	0	244	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora		
+ASV00040	whole	17	232	0.9267	1	7	Macropostrongylus macropostrongylus 92.7%	Macroponema beveridgei +7	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00041	whole	5	235	0.9787	1	23	Popovastrongylus macropodis 97.9%	Macropostrongylus macropostrongylus +23	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus	genus	Popovastrongylus		
+ASV00042	whole	5	227	0.9780	1	29	Oesophagostomum radiatum 97.8%	Oesophagostomum stephanostomum +29	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	genus	Oesophagostomum		
+ASV00043	whole	1	224	0.9955	1	36	Cloacina pollux 99.6%	Wallabinema macropodis +36	genus	Cloacina	genus	Cloacina	species	Cloacina pollux	species	Cloacina pollux		
+ASV00044	whole	2	234	0.9915	1	5	Haemonchus placei 99.1%	Haemonchus contortus +5	family	Trichostrongylidae	family	Trichostrongylidae	species	Haemonchus placei	species	Haemonchus placei		
+ASV00045	whole	1	230	0.9957	1	20	Cloacina edwardsi 99.6%	Cloacina artemis +20	genus	Cloacina	genus	Cloacina	species	Cloacina edwardsi	species	Cloacina edwardsi		
+ASV00046	whole	3	230	0.9870	1	17	Cloacina edwardsi 98.7%	Cloacina artemis +17	family	Strongylidae	family	Strongylidae	genus	Cloacina	species	Cloacina edwardsi	yes	
+ASV00047	whole	3	298	0.9899	1	295	Hypodontus macropi 99.0%	none close	family	Strongylidae	family	Strongylidae	genus	Hypodontus	species	Hypodontus macropi	yes	
+ASV00048	whole	1	219	0.9954	1	8	Cloacina clymene 99.5%	Cloacina dryope +8	genus	Cloacina	genus	Cloacina	species	Cloacina clymene	species	Cloacina clymene		
+ASV00049	whole	1	221	0.9955	2	3	Cloacina communis 99.5%	Cloacina petrogale +3	genus	Cloacina	genus	Cloacina	genus	Cloacina	genus	Cloacina		
+ASV00050	whole	1	218	0.9954	1	11	Cloacina phaethon 99.5%	Cloacina parva +11	genus	Cloacina	genus	Cloacina	species	Cloacina phaethon	species	Cloacina phaethon		
+ASV00051	whole	1	219	0.9954	3	6	Cloacina feronia 99.5%	Cloacina themis +6	genus	Cloacina	genus	Cloacina	species	Cloacina feronia	species	Cloacina feronia		
+ASV00052	whole	3	221	0.9864	1	4	Cloacina communis 98.6%	Cloacina phaedra +4	family	Strongylidae	family	Strongylidae	genus	Cloacina	species	Cloacina communis	yes	
+ASV00053	whole	1	228	0.9956	1	2	Cloacina herceus 99.6%	Cloacina hydriformis +2	genus	Cloacina	genus	Cloacina	genus	Cloacina	genus	Cloacina		
+ASV00054	whole	9	222	0.9595	1	16	Cloacina typhon 95.9%	Cloacina magnipapillata +16	family	Strongylidae	family	Strongylidae	family	Strongylidae	family	Strongylidae		
+ASV00055	whole	9	222	0.9595	1	18	Cloacina typhon 95.9%	Cloacina magnipapillata +18	family	Strongylidae	family	Strongylidae	family	Strongylidae	family	Strongylidae		
+ASV00056	whole	0	229	1.0000	1	20	Cloacina edwardsi 100.0%	Cloacina artemis +20	species	Cloacina edwardsi	species	Cloacina edwardsi	species	Cloacina edwardsi	species	Cloacina edwardsi		
+ASV00057	whole	0	229	1.0000	1	20	Cloacina edwardsi 100.0%	Cloacina artemis +20	species	Cloacina edwardsi	species	Cloacina edwardsi	species	Cloacina edwardsi	species	Cloacina edwardsi		
+ASV00058	whole	1	218	0.9954	1	7	Cloacina macropodis 99.5%	Cloacina johnstoni +7	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis	species	Cloacina macropodis		
+ASV00059	whole	0	227	1.0000	1	33	Oesophagostomum radiatum 100.0%	Oesophagostomum stephanostomum +33	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum	species	Oesophagostomum radiatum		
+ASV00060	whole	2	218	0.9908	2	4	Cloacina parva 99.1%	Cloacina caenis +4	family	Strongylidae	family	Strongylidae	species	Cloacina parva	species	Cloacina parva		
+ASV00061	whole	1	244	0.9959	1	4	Cooperia punctata 99.6%	Cooperia oncophora +4	genus	Cooperia	genus	Cooperia	species	Cooperia punctata	species	Cooperia punctata		
+ASV00062	whole	2	218	0.9908	2	11	Cloacina phaethon 99.1%	Cloacina parva +11	family	Strongylidae	family	Strongylidae	species	Cloacina phaethon	species	Cloacina phaethon		
+ASV00063	whole	0	118	1.0000	1	118	Meloidogyne hapla 100.0%	none close	species	Meloidogyne hapla	species	Meloidogyne hapla	species	Meloidogyne hapla	species	Meloidogyne hapla		
+ASV00064	whole	1	218	0.9954	2	5	Cloacina macropodis 99.5%	Cloacina johnstoni +5	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis	species	Cloacina macropodis		
+ASV00065	whole	3	296	0.9899	1	293	Hypodontus macropi 99.0%	none close	family	Strongylidae	family	Strongylidae	genus	Hypodontus	species	Hypodontus macropi	yes	
+ASV00066	whole	3	422	0.9929	3	16	Metastrongylus apri 99.3%	Metastrongylus salmi +16	family	Metastrongylidae	family	Metastrongylidae	species	Metastrongylus apri	species	Metastrongylus apri		
+ASV00067	whole	1	218	0.9954	2	4	Cloacina parva 99.5%	Cloacina caenis +4	genus	Cloacina	genus	Cloacina	species	Cloacina parva	species	Cloacina parva		
+ASV00068	whole	0	238	1.0000	1	4	Trichostrongylus rugatus 100.0%	Trichostrongylus retortaeformis +4	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus	species	Trichostrongylus rugatus		
+ASV00069	whole	4	226	0.9823	1	12	Cloacina echidne 98.2%	Cloacina artemis +12	family	Strongylidae	family	Strongylidae	genus	Cloacina	species	Cloacina echidne	yes	
+ASV00070	whole	2	219	0.9909	1	8	Cloacina clymene 99.1%	Cloacina dryope +8	family	Strongylidae	family	Strongylidae	species	Cloacina clymene	species	Cloacina clymene		
+ASV00071	whole	5	226	0.9779	1	12	Cloacina echidne 97.8%	Cloacina artemis +12	family	Strongylidae	family	Strongylidae	genus	Cloacina	genus	Cloacina		
+ASV00072	whole	2	218	0.9908	1	4	Cloacina macropodis 99.1%	Cloacina johnstoni +4	family	Strongylidae	family	Strongylidae	species	Cloacina macropodis	species	Cloacina macropodis		
+ASV00073	whole		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00074	whole	4	133	0.9699	1	6	Haemonchus contortus 97.0%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae		
+ASV00075	whole	1	218	0.9954	1	7	Cloacina macropodis 99.5%	Cloacina johnstoni +7	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis	species	Cloacina macropodis		
+ASV00076	whole	0	218	1.0000	1	4	Cloacina parva 100.0%	Cloacina caenis +4	species	Cloacina parva	species	Cloacina parva	species	Cloacina parva	species	Cloacina parva		
+ASV00077	whole	0	244	1.0000	3	4	Cooperia oncophora 100.0%	Cooperia punctata +4	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora		
+ASV00078	whole	3	224	0.9866	1	36	Cloacina pollux 98.7%	Wallabinema macropodis +36	family	Strongylidae	family	Strongylidae	genus	Cloacina	species	Cloacina pollux	yes	
+ASV00079	whole	4	221	0.9819	1	3	Cloacina communis 98.2%	Cloacina petrogale +3	family	Strongylidae	family	Strongylidae	genus	Cloacina	genus	Cloacina		
+ASV00080	whole	1	240	0.9958	1	4	Trichostrongylus axei 99.6%	Trichostrongylus retortaeformis +4	genus	Trichostrongylus	genus	Trichostrongylus	species	Trichostrongylus axei	species	Trichostrongylus axei		
+ASV00081	whole	10	235	0.9574	1	18	Popovastrongylus macropodis 95.7%	Macropostrongylus macropostrongylus +18	family	Strongylidae	family	Strongylidae	family	Strongylidae	family	Strongylidae		
+ASV00082	whole	2	219	0.9909	1	8	Cloacina clymene 99.1%	Cloacina dryope +8	family	Strongylidae	family	Strongylidae	species	Cloacina clymene	species	Cloacina clymene		
+ASV00083	whole	2	222	0.9910	1	38	Cloacina pollux 99.1%	Wallabinema macropodis +38	family	Strongylidae	family	Strongylidae	species	Cloacina pollux	species	Cloacina pollux		
+ASV00084	whole	6	235	0.9745	1	22	Popovastrongylus macropodis 97.4%	Macropostrongylus macropostrongylus +22	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus	genus	Popovastrongylus		
+ASV00085	whole	16	232	0.9310	1	7	Macropostrongylus macropostrongylus 93.1%	Macroponema beveridgei +7	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00086	whole	1	219	0.9954	1	8	Cloacina clymene 99.5%	Cloacina dryope +8	genus	Cloacina	genus	Cloacina	species	Cloacina clymene	species	Cloacina clymene		
+ASV00087	whole	2	244	0.9918	1	1	Cooperia punctata 99.2%	Cooperia oncophora +1	family	Trichostrongylidae	family	Trichostrongylidae	genus	Cooperia	genus	Cooperia		
+ASV00088	whole	3	228	0.9868	1	1	Cloacina herceus 98.7%	Cloacina hydriformis +1	family	Strongylidae	family	Strongylidae	genus	Cloacina	genus	Cloacina		
+ASV00089	whole	7	235	0.9702	1	22	Popovastrongylus macropodis 97.0%	Macropostrongylus macropostrongylus +22	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus	genus	Popovastrongylus		
+ASV00090	whole	2	218	0.9908	1	11	Cloacina phaethon 99.1%	Cloacina parva +11	family	Strongylidae	family	Strongylidae	species	Cloacina phaethon	species	Cloacina phaethon		
+ASV00091	whole	0	242	1.0000	5	1	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +1	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus	genus	Trichostrongylus		
+ASV00092	whole	3	218	0.9862	3	5	Cloacina macropodis 98.6%	Cloacina johnstoni +5	family	Strongylidae	family	Strongylidae	genus	Cloacina	species	Cloacina macropodis	yes	
+ASV00093	whole	1	219	0.9954	1	9	Cloacina clymene 99.5%	Cloacina dryope +9	genus	Cloacina	genus	Cloacina	species	Cloacina clymene	species	Cloacina clymene		
+ASV00094	whole	70	236	0.7034	1	56	Metastrongylus salmi 70.3%	Metastrongylus asymmetricus +56	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00095	whole	3	224	0.9866	1	36	Cloacina pollux 98.7%	Wallabinema macropodis +36	family	Strongylidae	family	Strongylidae	genus	Cloacina	species	Cloacina pollux	yes	
+ASV00096	whole	4	133	0.9699	1	6	Haemonchus contortus 97.0%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae		
+ASV00097	whole	1	241	0.9959	1	20	Ostertagia ostertagi 99.6%	Ostertagia gruehneri +20	genus	Ostertagia	genus	Ostertagia	species	Ostertagia ostertagi	species	Ostertagia ostertagi		
+ASV00098	whole	7	235	0.9702	1	21	Popovastrongylus macropodis 97.0%	Macropostrongylus macropostrongylus +21	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus	genus	Popovastrongylus		
+ASV00099	whole	72	236	0.6949	1	54	Metastrongylus salmi 69.5%	Metastrongylus asymmetricus +54	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00100	whole	4	133	0.9699	1	6	Haemonchus contortus 97.0%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae		
+ASV00101	whole	1	244	0.9959	1	5	Cooperia oncophora 99.6%	Cooperia punctata +5	genus	Cooperia	genus	Cooperia	species	Cooperia oncophora	species	Cooperia oncophora		
+ASV00102	whole	3	222	0.9865	1	36	Cloacina pollux 98.6%	Wallabinema macropodis +36	family	Strongylidae	family	Strongylidae	genus	Cloacina	species	Cloacina pollux	yes	
+ASV00103	whole	6	133	0.9549	1	6	Haemonchus contortus 95.5%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae		
+ASV00104	whole	0	241	1.0000	2	3	Trichostrongylus retortaeformis 100.0%	Trichostrongylus vitrinus +3	species	Trichostrongylus retortaeformis	species	Trichostrongylus retortaeformis	species	Trichostrongylus retortaeformis	species	Trichostrongylus retortaeformis		
+ASV00105	whole	25	227	0.8899	1	16	Oesophagostomum radiatum 89.0%	Oesophagostomum stephanostomum +16	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00106	whole	5	133	0.9624	1	5	Haemonchus contortus 96.2%	Haemonchus placei +5	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae		
+ASV00107	whole	6	133	0.9549	1	6	Haemonchus contortus 95.5%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae		
+ASV00108	whole	0	422	1.0000	1	20	Metastrongylus apri 100.0%	Metastrongylus salmi +20	species	Metastrongylus apri	species	Metastrongylus apri	species	Metastrongylus apri	species	Metastrongylus apri		
+ASV00109	whole	0	234	1.0000	2	5	Haemonchus placei 100.0%	Haemonchus contortus +5	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei		
+ASV00110	whole	38	218	0.8257	2	7	Cloacina macropodis 82.6%	Cloacina johnstoni +7	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00111	whole	1	422	0.9976	1	18	Metastrongylus apri 99.8%	Metastrongylus salmi +18	species	Metastrongylus apri	genus	Metastrongylus	species	Metastrongylus apri	species	Metastrongylus apri		
+ASV00112	whole	0	234	1.0000	1	9	Haemonchus contortus 100.0%	Haemonchus placei +9	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus	species	Haemonchus contortus		
+ASV00113	whole	6	133	0.9549	1	6	Haemonchus contortus 95.5%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae		
+ASV00114	whole	4	133	0.9699	1	6	Haemonchus contortus 97.0%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae		
+ASV00115	whole	6	133	0.9549	1	4	Haemonchus contortus 95.5%	Haemonchus placei +4	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae		
+ASV00116	whole	7	133	0.9474	1	5	Haemonchus contortus 94.7%	Haemonchus placei +5	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00117	whole	19	227	0.9163	1	18	Oesophagostomum radiatum 91.6%	Oesophagostomum stephanostomum +18	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00118	whole	42	353	0.8810	1	9	Metastrongylus asymmetricus 88.1%	Metastrongylus confusus +9	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00119	whole	0	110	1.0000	1	17	Meloidogyne hapla 100.0%	Meloidogyne partityla +17	species	Meloidogyne hapla	species	Meloidogyne hapla	species	Meloidogyne hapla	species	Meloidogyne hapla		
+ASV00120	whole	4	133	0.9699	1	6	Haemonchus contortus 97.0%	Haemonchus placei +6	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae		
+ASV00121	whole	34	151	0.7748	1	9	Teladorsagia circumcincta 77.5%	Ostertagia ostertagi +9	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00122	whole		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00123	whole		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00124	whole	19	227	0.9163	1	18	Oesophagostomum radiatum 91.6%	Oesophagostomum stephanostomum +18	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00125	whole		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00126	whole	0	234	1.0000	2	4	Haemonchus placei 100.0%	Haemonchus contortus +4	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei	species	Haemonchus placei		
+ASV00127	whole	48	224	0.7857	1	1	Haemonchus contortus 78.6%	Haemonchus placei +1	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00128	whole	23	227	0.8987	2	16	Oesophagostomum radiatum 89.9%	Oesophagostomum stephanostomum +16	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00129	whole	34	151	0.7748	1	9	Teladorsagia circumcincta 77.5%	Ostertagia ostertagi +9	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00130	whole		0		0				unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00131	whole	25	227	0.8899	1	16	Oesophagostomum radiatum 89.0%	Oesophagostomum stephanostomum +16	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
+ASV00132	whole	5	107	0.9533	1	5	Haemonchus contortus 95.3%	Haemonchus placei +5	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae	family	Trichostrongylidae		
+ASV00133	whole	38	218	0.8257	1	10	Cloacina phaethon 82.6%	Cloacina caenis +10	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
