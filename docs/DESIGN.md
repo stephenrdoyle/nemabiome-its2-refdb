@@ -1241,3 +1241,12 @@ amphid needs changes before it can use this database:
     Usyd059-063, and *Oe. venulosum* Usyd065-068) holds the exact
     variants, but as ASVs of the same study named by similarity; they
     are left out, and the goat line stays annotated on our records.
+    Australian *Oe. venulosum* references (2026-11-12): GenBank's one
+    Australian *Oe. venulosum* record is not ITS2; of 142
+    *Oesophagostomum* ITS2s, Y10790 (sheep) is nearest the goat ASVs
+    (1-4 edits for the main merged ones), then MG651896 (aoudad,
+    Tunisia), both held, and the rest 15 or more edits off. No reference
+    carries the expanded repeat: the longest (AT)n is 14 bases in GenBank
+    (Y10790, MG651896) and 12-16 in the paper's Usyd065-068, against
+    14-38 in the goat reads (about 4,400 reads at 22-38). Repeat-aware
+    scoring (§6), not a reference, is what names them.
