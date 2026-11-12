@@ -1,8 +1,9 @@
 # Notes for amphid: using the nemabiome ITS2 database
 
-From nemabiome-its2-refdb v0.1.1 (2026-11-10). The
-database follows vespa-18s-refdb's release format. These are the
-places where ITS2 needs something V4 did not.
+From nemabiome-its2-refdb v0.1.1 (2026-11-10); updated for v0.1.4
+(2026-11-12, "What changed in v0.1.4" below). The database follows
+vespa-18s-refdb's release format. These are the places where ITS2 needs
+something V4 did not.
 
 Tracked in amphid as
 [stephenrdoyle/nf-amphid-pipeline#9](https://github.com/stephenrdoyle/nf-amphid-pipeline/issues/9),
@@ -10,6 +11,35 @@ which maps each point below to the amphid code it changes. The issue
 also covers two points not here: `taxonomy.tsv` has NCBI's eight ranks,
 not the PR2 levels amphid hard-codes, and amphid's identity charges a
 read's unaligned ends - for ITS2, the 28S stretch - as differences.
+
+## What changed in v0.1.4
+
+**The format did not change.** The same files, the same `taxonomy.tsv`
+columns (`lineage` last, since v0.1.3) and the same manifest keys; only
+the k-mer file names carry the new version. Whatever reads v0.1.3 reads
+v0.1.4.
+
+**The content did** (11,288 records, 1,874 named species, 427 genera;
+v0.1.3 11,135, 1,864, 426):
+
+- 733 GenBank records the nemabiome backbone lacks (published since its
+  17 March 2026 snapshot, or ITS2s inside 5.8S/28S records), among them
+  a complete *Oesophagostomum radiatum* (PZ347037) where that species
+  had only partials.
+- 65 more records dropped and 2 relabelled after a species coherence
+  screen, among them West African "*H. contortus*" carrying the
+  *H. placei* ITS2. Fewer wrong names to inherit.
+- Informal "sp." names are no longer species: 19 records are now
+  `species_status` = `unnamed` at genus, their informal name in
+  `lineage` (51 `unnamed` records in all, 32 in v0.1.3).
+- `manifest.json` `counts.lineage_records` lists these as well as the
+  goat line.
+
+**Two scoring points are new** (§5): score simple repeats by copy
+number, and report a tentative species tier beside the gap rule's call.
+Both are in this repository's reference scorer (`bin/its2_classify.py`)
+and change no release file. The leave-one-out and real-data figures in
+§5 are for v0.1.4 with both.
 
 ## 1. Score reads over the reference's span
 
@@ -57,12 +87,13 @@ grade with the call, and consider requiring a minimum aligned length
 The V4 limits (species 99.7% Illumina / 99.5% nanopore, genus 99.5% /
 99%, family 95%) were set for a ~400-base insert. Over a 240-base ITS2,
 one edit is 0.42%, so 99.7% means an exact match. Margins are thin: of
-the species-level records, 410 are tied with another species, 897 are
-one edit away and 712 two.
+the 11,151 species-level records in v0.1.4, 291 are tied with another
+species, 730 are one edit away and 557 two (`species_margins.tsv`, read
+whole).
 
-A leave-one-out test (DESIGN §6.1; 3,182 queries, 1,220 species, on
-v0.1.2) shows identity alone is the wrong
-measure. Under the V4 limits only 18.2% of reads whose species is in
+A leave-one-out test (DESIGN §6.1; 3,224 queries, 1,236 species, on
+v0.1.4) shows identity alone is the wrong
+measure. Under the V4 limits only 19.2% of reads whose species is in
 the database are named to species. What separates a right call from a
 wrong one is the margin to the next species. Recommended rule:
 
@@ -100,7 +131,9 @@ the gap rule's call as the confident one and report the tentative call
 beside it: a read 1-2% from its own species looks the same as one 1-2%
 from a missing sister, which is what tentative kangaroo *Cloacina* calls
 may be. `bin/classify_asvs.py` writes `tiered_rank`, `tiered_name` and
-`tentative`.
+`tentative`. On the Francis & Šlapeta goats this brings the goat line
+to species: per-host shares then match IdTaxa's to within a point, and
+the published analysis's within 1-2 points in cattle and sheep.
 
 Limits set separately per genus or family did no better on held-out
 species. Thresholds cannot fix the remaining missing-species errors:
@@ -120,7 +153,7 @@ differently. `bin/classify_asvs.py` writes these as `nearest` and
 **Report the lineage.** `taxonomy.tsv` has a `lineage` column: a
 published line within a species, kept under the species' name: the
 *Teladorsagia circumcincta* goat line (2 records), which Francis &
-Šlapeta (2023) found in goats and not in sheep on shared pasture. On
+Šlapeta (2023) found in goats and not in sheep on shared pasture. Since
 v0.1.4 it also carries the informal name of a genus-level
 record (19: *Oesophagostomum* sp. 3335_MDR_CAM_OH15, *Cloacina* sp. 1
 AJ-2019, *Trichostrongylus* sp. SMNPOL33R), whose species is blank. When every tied best reference carries the same lineage,
