@@ -42,6 +42,30 @@ record anchored at both ends: `complete`, `near_complete` (>= 98%),
 `partial_90`, `partial_75`, `partial`, or `unmeasured` (no relative at
 >= 80% identity).
 
+## Since v0.1.4 (on `main`, not yet released)
+
+Sixteen more genome assemblies scanned for ITS2 (`curation/long_read_sources.tsv`;
+docs/DESIGN.md §5.5): 74 copies of 15 species, 49 of them new records
+(*Dirofilaria immitis*, *Acanthocheilonema viteae*, *Dictyocaulus
+viviparus*, *Trichuris trichiura*, *Thelazia callipaeda* and others).
+The development build has 11,329 records and 1,873 named species. The
+genomes settle two curation questions (`curation/overrides.tsv`):
+
+- **The only *Trichostrongylus capricola* record, JF276023, is dropped.**
+  It is 1 edit from 692 of the 766 ITS2 copies of the
+  *T. colubriformis* genome GCA_963978875, inside that species' own
+  spread. *T. colubriformis* reads it held at genus are now named:
+  5.8% of the ruminant mock's reads (gap rule 90.8% -> 96.9% to
+  species), 2,052 Francis & Šlapeta reads (goats 87.2% -> 88.6%).
+- **Eight Sri Lankan "*D. repens*" records are *D. asiatica***
+  (ON332065-71, PV643877): 1-3 edits from the *D. asiatica* genome,
+  14-21 from the *D. repens* genome.
+
+Leave-one-out (3,230 queries): present species named 57.3% (gap rule) /
+68.2% (tiered), as in v0.1.4; over-classification 5.4% / 9.0%, from
+5.5% / 9.3%. The mocks still name no wrong species
+(`results/`, docs/DESIGN.md §6).
+
 ## v0.1.4
 
 11,288 records and 1,874 named species (427 genera) from 16,051 source
@@ -223,8 +247,8 @@ Tuning the rule per genus or family did not help on held-out species
 (`results/leave_one_out/group_rules.txt`). Each call carries `nearest`
 (the best species and its identity) and `next` (the nearest other
 species and how many edits further), so a genus call still says how
-close it came: *Trichostrongylus*; nearest *T. colubriformis* 100.0%;
-next *T. capricola* +1.
+close it came: *Trichostrongylus*; nearest *T. rugatus* 99.6%;
+next *T. retortaeformis* +2.
 
 **Real data** (share of reads named to species; all arms named the same
 species wherever two of them named one). Two NC1/NC2 sets from the

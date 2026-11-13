@@ -51,8 +51,9 @@ them to the backbone's sequences and taxonomy with a `source` column.
 record only where it was cut at an anchor or its own end: 1,057 were
 not, nearly all plant parasites whose record runs on into ITS1 past
 where the stand-in boundary lands. 733 update records are kept; with the
-2026-11-11 curation pass the build has 11,288 records and 1,874 named
-species (v0.1.3: 11,135 and 1,864). The update is screened before a
+2026-11-11 curation pass v0.1.4 has 11,288 records and 1,874 named
+species (v0.1.3: 11,135 and 1,864); with the genome scans of 2026-11-13
+(§5.5), 11,329 and 1,873. The update is screened before a
 build (§5.3): by `bin/species_coherence.py`, and for new records within
 2 edits of another species.
 
@@ -60,7 +61,9 @@ Some new records crowd a sister species and are kept as real: a complete
 *Trichostrongylus retortaeformis* (KC521376, KC521392, PV439847) 4 edits
 from *T. axei*, 3 through 2x150 windows; *Heligmosomoides bibullosus*
 1 edit from *H. vandegrifti*; *Metastrongylus asymmetricus* 1 from
-*M. salmi*; *Dirofilaria asiatica* 0-1 from *D. repens*.
+*M. salmi*. *Dirofilaria asiatica* was 0-1 edits from eight Sri Lankan
+"*D. repens*" records (ON332065-71, PV643877); the two species' genomes
+show those are *D. asiatica*, and they are relabelled (§5.5).
 
 ## 3. The reference unit
 
@@ -548,6 +551,34 @@ confirmation of the labels. The other four stop at genus: three
 shared type of §5.4), and a *Parascaris univalens* copy identical to a
 record shared with *P. equorum*.
 
+**The 2026-11-13 scans.** Sixteen more assemblies (ENA and WormBase
+ParaSite genomes not scanned before; 47 assemblies in all), chosen
+where a species was thin, had a sister problem, or had none: 74 copies
+of 15 species. 25 match a backbone record, all of their own species; 49
+are new records of 12 species (*D. immitis* 18, *Acanthocheilonema
+viteae* 9, *Dictyocaulus viviparus* 6, *Trichuris trichiura* and
+*Thelazia callipaeda* 3 each). No species enters. Three settle curation questions:
+
+- ***Dirofilaria repens* / *D. asiatica*.** The *D. repens* genome
+  (GCA_008729115; GCA_966211175 is its *Wolbachia*) and the
+  *D. asiatica* genome (GCA_053573785) are 14-21 edits apart. The
+  Sri Lankan "*D. repens*" records are 1-3 edits from the
+  *D. asiatica* genome and are relabelled.
+- ***Trichostrongylus capricola*.** JF276023, the only record of the
+  species (goat, Iran), is 1 edit from 692 of the 766 ITS2 copies of the
+  *T. colubriformis* genome GCA_963978875: inside that species' own
+  spread. Dropped; *T. capricola* leaves the database, and the
+  *T. colubriformis* reads it held at genus are named (§6.2, §6.3).
+- ***Aelurostrongylus abstrusus* GCA_060414415** is *Troglostrongylus
+  brevior*: 0-5 edits from *T. brevior* records, 81-192 from
+  *A. abstrusus*. Not used.
+
+Twenty assemblies gave no ITS2: all nine *Trichinella* (most likely a
+limit of the scanner in Trichinellida) and eleven
+short-read assemblies (*Haemonchus placei*, *Trichuris suis*,
+*Baylisascaris ailuri*, *Toxascaris*, *Enterobius*, *Syphacia*,
+four *Strongyloides*, *Anisakis simplex*).
+
 ### 5.6 Names: current NCBI Taxonomy
 
 markerDB named each record when the backbone was built; NCBI has renamed
@@ -647,9 +678,10 @@ pairs, `bin/classify_asvs.py` for DADA2 ASVs. Both share the scorer.
 ### 6.1 Leave-one-out
 
 As in vespa-18s-refdb. `bin/its2_leave_one_out.py`: up to 5
-full-length species-level records per species, 3,224 queries from 1,236
-species (v0.1.4: the curation pass and the GenBank update,
-§2.1; 3,182 from 1,220 in v0.1.3, 3,195 from 1,224 before the pass), read whole and through 2x150 windows, as perfect reads.
+full-length species-level records per species, 3,230 queries from 1,236
+species (after the 2026-11-13 genome scans, §5.5; 3,224 in v0.1.4, with
+the curation pass and the GenBank update, §2.1; 3,182 from 1,220 in
+v0.1.3, 3,195 from 1,224 before the pass), read whole and through 2x150 windows, as perfect reads.
 
 - **Missing**: every record holding a member of the query's species is
   removed. Any species named is wrong; genus or above is right.
@@ -666,14 +698,17 @@ for all but one, and every method scores above 99.9%.
 
 | Rule (whole) | Species recall | Species precision | Genus recall | Genus precision | Over-classification, species | Over-classification, genus |
 |---|---:|---:|---:|---:|---:|---:|
-| amphid's V4 limits (99.7% / 99.5% / 95%) | 19.2% | 95.2% | 52.1% | 99.3% | 1.8% | 1.1% |
-| exact: species only at 0 edits | 11.2% | 94.0% | 54.7% | 99.3% | 1.3% | 1.1% |
-| gap (>= 99% and 4 edits clear, or exact and 2 clear) | 57.3% | 99.2% | 89.6% | 99.4% | 5.5% | 4.6% |
-| tiered (gap, plus tentative at >= 98% and 4 clear) | 68.2% | 98.9% | 89.6% | 99.4% | 9.3% | 4.6% |
+| amphid's V4 limits (99.7% / 99.5% / 95%) | 19.3% | 95.0% | 51.5% | 99.3% | 1.8% | 1.1% |
+| exact: species only at 0 edits | 11.5% | 94.6% | 54.3% | 99.3% | 1.2% | 1.1% |
+| gap (>= 99% and 4 edits clear, or exact and 2 clear) | 57.3% | 99.3% | 89.4% | 99.4% | 5.4% | 4.5% |
+| tiered (gap, plus tentative at >= 98% and 4 clear) | 68.2% | 99.0% | 89.4% | 99.4% | 9.0% | 4.5% |
 
-All repeat-aware (§6). At 2x150 the gap rule gives 60.1%, 99.4%, 90.7%,
-99.4%, 6.1% and 4.6%, the tiered rule 68.8%, 99.2% and 9.6% at species
-(`results/leave_one_out/`). Before repeat-aware scoring the gap rule
+All repeat-aware (§6). At 2x150 the gap rule gives 60.1%, 99.5%, 90.7%,
+99.4%, 5.9% and 4.5%, the tiered rule 68.8%, 99.2% and 9.4% at species
+(`results/leave_one_out/`). v0.1.4 gave the gap rule 57.3%, 99.2% and
+5.5% whole, the tiered rule 68.2%, 98.9% and 9.3%: the genome scans
+(§5.5) cost no recall and remove the *T. capricola* / *T. colubriformis*
+errors and most of *D. repens* named as *D. asiatica*. Before repeat-aware scoring the gap rule
 gave 56.4%, 99.2% and 5.4% whole, 59.3%, 99.4% and 5.9% at 2x150: it
 names 19 more species when present (*Chabertia erschowi*,
 *Metastrongylus salmi* and *M. pudendotectus*, *Gongylonema pulchrum*,
@@ -691,11 +726,11 @@ quarter of the over-classification. The V4 and exact rules seldom
 name a species even when it is there. The gap rule names three to five
 times as many, and is wrong less often on present species, because the
 margin to the next species is what separates right from wrong, not the
-identity. Its missing-species errors (178 of 3,224 queries read whole;
-173 before repeat-aware scoring, 187 in v0.1.3, 204 before the curation pass) are of three kinds. Most (143) are 99-100% to a sister species with
+identity. Its missing-species errors (175 of 3,230 queries read whole;
+178 in v0.1.4, 173 before repeat-aware scoring, 187 in v0.1.3, 204 before the curation pass) are of three kinds. Most (142) are 99-100% to a sister species with
 nothing else within 4 edits: two species under 1% apart, one of them
-missing. 35 are identical to a record of another species, a shared ITS2
-or a mislabelled record. 22 of the 178 land in another genus, nearly
+missing. 33 are identical to a record of another species, a shared ITS2
+or a mislabelled record. 22 of the 175 land in another genus, nearly
 all curation questions (§5.3). No threshold catches any of them;
 curating names and records can (`docs/curation_pass_2026-11-11.md`).
 
@@ -727,8 +762,8 @@ names 91% of these right. Lowering the floor with the gap kept at 4
 | 97% | 70.5% | 14.1% |
 | nearest species >= 1 edit ahead, >= 97% | 80.2% | 21.7% |
 
-IdTaxa (80.3%, 20.6%) behaves like the last row; assignTaxonomy (86.3%,
-42.9%) names a species almost whenever one is near. 98% is the tiered
+IdTaxa (80.3%, 20.5%) behaves like the last row; assignTaxonomy (86.5%,
+42.6%) names a species almost whenever one is near. 98% is the tiered
 rule's floor: on the mocks it names no wrong species, and on real data
 it names the reads the gap rule left at genus that look like
 intraspecific variation (§6.2). Its calls are flagged rather than
@@ -753,13 +788,13 @@ IdTaxa retrain per fold, so 10 folds rather than one species at a time;
 
 | Classifier, this database (whole) | Species recall | Species precision | Genus recall | Genus precision | Over-classification, species | Over-classification, genus |
 |---|---:|---:|---:|---:|---:|---:|
-| assignTaxonomy | 86.3% | 95.4% | 97.7% | 99.3% | 42.9% | 23.7% |
-| IdTaxa | 80.3% | 97.5% | 94.5% | 99.6% | 20.6% | 9.5% |
-| gap rule | 56.4% | 99.2% | 89.4% | 99.4% | 5.4% | 4.6% |
+| assignTaxonomy | 86.5% | 95.6% | 97.7% | 99.4% | 42.6% | 24.5% |
+| IdTaxa | 80.3% | 97.2% | 94.0% | 99.5% | 20.5% | 9.1% |
+| gap rule | 57.3% | 99.3% | 89.4% | 99.4% | 5.4% | 4.5% |
 
-At 2x150: assignTaxonomy 87.1% recall, 96.2% precision, 38.3%
-over-classification; IdTaxa 80.3%, 97.9%, 20.3%; the gap rule 59.3%,
-99.4%, 5.9%. The three sit on one trade-off line. At genus they are
+At 2x150: assignTaxonomy 87.3% recall, 96.2% precision, 38.0%
+over-classification; IdTaxa 80.6%, 97.8%, 20.1%; the gap rule 60.1%,
+99.5%, 5.9%. The three sit on one trade-off line. At genus they are
 equally precise; at species they differ in how often they name a
 species that is not there. assignTaxonomy never declines: a read from a
 missing species gets a species name 44% of the time. IdTaxa halves
@@ -768,8 +803,8 @@ fewest. If 20% of a sample's reads come from species missing from the
 database, the share of species calls that are right is about 85%
 (assignTaxonomy), 90% (IdTaxa) and 96% (gap rule). Of missing-species
 reads whose genus is still in the database, the gap rule names the
-genus for 27% (precision 93%), IdTaxa 42% (94%), assignTaxonomy 72%
-(95%); most of the gap rule's rest stay unassigned. Reads left
+genus for 26% (precision 94%), IdTaxa 40% (94%), assignTaxonomy 71%
+(94%); most of the gap rule's rest stay unassigned. Reads left
 unassigned by IdTaxa and the gap rule are not junk: they are reads whose
 nearest reference is too far for a family (< 95%).
 
@@ -780,19 +815,19 @@ on the reads the gap rule stops short on):
 
 | Why the gap rule stops short | Share | assignTaxonomy | IdTaxa |
 |---|---:|---:|---:|
-| own species best, but < 99% | 23.0 | 21.2 / 0.2 | 18.6 / 0.1 |
-| own species >= 99%, a sister 0-3 edits off | 9.4 | 6.7 / 0.8 | 4.8 / 0.3 |
-| another species closest | 8.6 | 2.3 / 2.5 | 0.6 / 1.6 |
-| tied with another species | 2.1 | 0.9 / 0.3 | 0.1 / 0.0 |
+| own species best, but < 99% | 22.5 | 20.5 / 0.3 | 18.5 / 0.1 |
+| own species >= 99%, a sister 0-3 edits off | 8.9 | 6.5 / 0.5 | 4.8 / 0.3 |
+| another species closest | 8.1 | 2.1 / 2.5 | 0.5 / 1.5 |
+| tied with another species | 2.1 | 0.9 / 0.4 | 0.0 / 0.0 |
 
 - **The 99% floor is most of it.** Two thirds of assignTaxonomy's
-  31-point recall lead are reads from a divergent variant of a present
+  29-point recall lead are reads from a divergent variant of a present
   species, which it names almost always correctly. Its confidence is
   relative (does this species keep winning the bootstrap?), the gap
   rule's absolute (is the read within 1% of a record?). The same
   relative judgement names missing species: of hidden queries whose
   nearest record is another species, assignTaxonomy names a species for
-  36 points of all hidden queries, IdTaxa for 18.
+  35 points of all hidden queries, IdTaxa for 16.
 - **One or two diagnostic sites suffice for them.** The gap rule wants 4
   edits clear of the next species (2 for an exact match); the k-mer classifiers resolve sisters
   1-3 edits apart, mostly correctly when the species is present. The
@@ -807,8 +842,8 @@ on the reads the gap rule stops short on):
 They do not see what identity misses. Within one identity band of the
 best hit, the k-mer classifiers name a species for a present species'
 variant more often than for a missing species, but not by much: at
-98-99%, assignTaxonomy 97% against 67% (340 right calls to 159 wrong),
-IdTaxa 90% against 62%; below 98%, wrong calls outnumber right ones.
+98-99%, assignTaxonomy 94% against 67% (333 right calls to 158 wrong),
+IdTaxa 90% against 56%; below 98%, wrong calls outnumber right ones.
 About 2 right calls per wrong one is also what a distance-scaled floor
 gives the gap rule: below 99%, a species at >= 98% when the next species
 is >= max(8, 3 x edits to the best) further off. Chosen on four fifths
@@ -836,14 +871,24 @@ report per set):
 
 | Set | Reads | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db | tiered x this db |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Francis & Šlapeta 2x250, hybrid | 488,062 | 72.0% | 81.7% | 99.5% | 99.8% | 95.3% | 99.0% |
-| merged only | 465,576 | 70.2% | 81.2% | 99.5% | 99.9% | 95.8% | 99.0% |
-| 2x150 | 484,432 | 76.0% | 88.2% | 99.1% | 99.7% | 94.8% | 98.1% |
-| PRJNA1524548 2x250, hybrid | 2,903,183 | 70.4% | 69.7% | 95.1% | 75.9% | 94.3% | 98.3% |
-| merged only | 2,823,194 | 68.5% | 69.1% | 99.1% | 75.2% | 94.7% | 98.5% |
-| 2x150 | 2,985,412 | 73.7% | 65.9% | 94.8% | 85.5% | 94.7% | 98.3% |
+| Francis & Šlapeta 2x250, hybrid | 488,062 | 72.0% | 81.7% | 99.5% | 93.2% | 95.7% | 99.4% |
+| merged only | 465,576 | 70.2% | 81.2% | 99.5% | 93.0% | 96.2% | 99.4% |
+| 2x150 | 484,432 | 76.0% | 88.2% | 99.1% | 99.3% | 95.2% | 98.5% |
+| PRJNA1524548 2x250, hybrid | 2,903,183 | 70.4% | 69.7% | 95.1% | 74.8% | 94.3% | 98.3% |
+| merged only | 2,823,194 | 68.5% | 69.1% | 99.1% | 75.4% | 94.7% | 98.5% |
+| 2x150 | 2,985,412 | 73.7% | 65.9% | 94.8% | 80.3% | 94.7% | 98.3% |
 
-In v0.1.4 (§2.1), repeat-aware (§6).
+After the 2026-11-13 genome scans (§5.5), repeat-aware (§6).
+
+- **The genome scans** change the gap rule only through *T. colubriformis*,
+  named now that *T. capricola* JF276023 is dropped: 2,052 Francis &
+  Šlapeta reads (2,012 of them goats; goats 87.2% to 88.6% by the gap
+  rule, 97.5% to 98.9% by the tiered rule) and 164 PRJNA1524548 rabbit
+  reads. v0.1.4 gave the gap rule 95.3 / 95.8 / 94.8% and the tiered
+  rule 99.0 / 99.0 / 98.1% on Francis & Šlapeta (hybrid, merged,
+  2x150); PRJNA1524548 is unchanged. No read changed from one species
+  to another. IdTaxa x this db moves with its training (below): v0.1.4
+  gave 99.8 / 99.9 / 99.7% and 75.9 / 75.2 / 85.5%.
 
 - **Repeat-aware scoring** changes only Francis & Šlapeta at 2x250
   (93.9 / 94.7% hybrid / merged before). Goat *Oe. venulosum* ASVs carry
@@ -962,7 +1007,8 @@ into *C. oncophora* and *C. punctata* (§5.3).
 
   The other reads it stops at genus (4-6% of each set, 6-8% before the
   curation pass) are an exact match to one species with a sister 1 edit
-  off (*Trichostrongylus colubriformis* / *T. capricola*; until the
+  off (*Trichostrongylus colubriformis* / *T. capricola*, until
+  JF276023 was dropped, §5.5; until the
   curation pass folded the male morphs, *Cooperia oncophora* / *C.
   surnabada* and *C. punctata* / *C. spatulata*, §5.3), or < 99% to the
   nearest species with nothing else close (*Oesophagostomum radiatum*
@@ -992,7 +1038,11 @@ IdTaxa x this db on PRJNA1524548 2x150 (95.7% before the curation pass,
 In v0.1.4 it is shown: trained with seed 1, IdTaxa x this db
 names 75.9% of PRJNA1524548 hybrid reads to species, the main *H.
 placei* ASVs at genus; trained with seeds 2 and 3 on the same database,
-99.0% and 99.2% (v0.1.3, seed 1: 99.1%).
+99.0% and 99.2% (v0.1.3, seed 1: 99.1%). After the genome scans the same
+happens on Francis & Šlapeta: their main *H. placei* ASV (6.5% of reads)
+scored 61.8 in v0.1.4 and now falls just below 60, so IdTaxa x this db
+names 93.2% of hybrid reads with seed 1, 93.3% with seed 2 and 99.9%
+with seed 3.
 
 **Which to use.** For samples whose species are all in the database
 (livestock), assignTaxonomy or IdTaxa on 28S-cut ASVs with this
@@ -1026,14 +1076,19 @@ arm in every set: no arm named a wrong species or genus.
 |---|---|---|---|
 | assignTaxonomy x nemabiome | 95.5 / 100 | 100 / 100 | 93.0 / 100 |
 | IdTaxa x nemabiome | 100 / 100 | 100 / 100 | 91.5 / 98.3 |
-| assignTaxonomy x this db | 95.5 / 100 | 100 / 100 | 88.1 / 99.2 |
-| IdTaxa x this db | 99.7 / 100 | 100 / 100 | 96.6 / 99.2 |
-| gap rule x this db | 100 / 100 | 99.0 / 99.0 | 90.8 / 99.0 |
+| assignTaxonomy x this db | 95.5 / 100 | 100 / 100 | 88.7 / 99.2 |
+| IdTaxa x this db | 98.1 / 100 | 100 / 100 | 95.3 / 99.4 |
+| gap rule x this db | 100 / 100 | 99.0 / 99.0 | 96.9 / 99.0 |
 
-In v0.1.4 (§2.1), repeat-aware (§6): 89.7 / 99.0 on the
-ruminant mock before. The tiered rule gives 90.9 on the ruminant mock
-and, on equine ASVs 1-8 edits off their source, 82.7% against the gap
-rule's 73.0%, at 100% precision. v0.1.3 gave assignTaxonomy x this db
+After the 2026-11-13 genome scans (§5.5), repeat-aware (§6). v0.1.4
+gave the gap rule 90.8 / 99.0 on the ruminant mock: the 6 points are
+*T. colubriformis*, named now that *T. capricola* JF276023, 1 edit off,
+is dropped. The IdTaxa columns move by a point or two with retraining
+(§6.2); v0.1.4 gave 99.7 (canine) and 96.6 / 99.2 (ruminant). Before
+repeat-aware scoring the gap rule gave 89.7 / 99.0 on the ruminant
+mock. The tiered rule gives the same as the gap rule on the ruminant
+mock and, on equine ASVs 1-8 edits off their source, 82.7% against the
+gap rule's 73.0%, at 100% precision. v0.1.3 gave assignTaxonomy x this db
 88.7 / 99.2, IdTaxa 96.4 / 100 and 95.3 / 96.7, and the gap rule
 87.8 / 97.9 on the ruminant mock.
 
@@ -1072,10 +1127,10 @@ What the mocks can and cannot say:
 - **Present species only.** Every source record is in both databases,
   so the mocks re-test §6.1's present case. They reward naming boldly
   and cannot show the gap rule's lower error on missing species. Its
-  genus stops are mostly sisters 1 edit apart: *Trichostrongylus
-  colubriformis* / *T. capricola* (5.8% of ruminant reads); *Cooperia
-  oncophora* / *C. surnabada* (6.4%) and *C. punctata* / *C. spatulata*
-  were too until the curation pass.
+  genus stops were mostly sisters 1 edit apart: *Trichostrongylus
+  colubriformis* / *T. capricola* (5.8% of ruminant reads) until
+  JF276023 was dropped (§5.5); *Cooperia oncophora* / *C. surnabada*
+  (6.4%) and *C. punctata* / *C. spatulata* until the curation pass.
 - **They favour the backbone.** The sources are nemabiome's own
   references, boundaries and all; this database's records are re-cut at
   the anchors (§3.2), so ASVs carry flank bases its records lack.
@@ -1222,12 +1277,15 @@ amphid needs changes before it can use this database:
     *Marshallagia* shared records, and the other `sib=0` records of
     `results/curation/outlier_records.txt` outside livestock and
     companion animals.
-16. **After the GenBank update** (§2.1): *T. capricola* JF276023, the one
-    record of its species, 1-2 edits from *T. colubriformis* records new
-    and old (morph, mislabel or real?); two *T. colubriformis* assemblies
-    not yet scanned (GCA_963978875, an alternate haplotype; GCA_036373735);
-    *Dirofilaria asiatica* against *D. repens*; and why *Hsiungia* failed
-    the update's ITS2 region test. Informal lineages are kept only where
+16. **After the GenBank update** (§2.1): why *Hsiungia* failed the
+    update's ITS2 region test. Settled by the 2026-11-13 genome scans
+    (§5.5): *T. capricola* JF276023 lies inside the *T. colubriformis*
+    genome's own spread and is dropped; the Sri Lankan "*D. repens*"
+    records are *D. asiatica*. Open from the scans: no ITS2 found in any
+    *Trichinella* assembly (the scanner, most likely); and
+    GCA_060414415, deposited as *Aelurostrongylus abstrusus*, carries a
+    *Troglostrongylus brevior* ITS2, which its submitters may want to
+    know. Informal lineages are kept only where
     listed by hand: a rule for the rest is open.
 17. **Repeat-aware scoring and the tiered rule** (§6): done, as defaults
     beside the gap rule. Open: scoring each reference twice roughly

@@ -331,7 +331,7 @@ ASV00329	window	5	238	0.9790	1	33	Oesophagostomum radiatum 97.9%	Oesophagostomum
 ASV00330	window	1	207	0.9952	2	5	Cloacina macropodis 99.5%	Cloacina johnstoni +5	genus	Cloacina	genus	Cloacina	species	Cloacina macropodis	species	Cloacina macropodis		
 ASV00331	window	3	235	0.9872	1	1	Cloacina herceus 98.7%	Cloacina hydriformis +1	family	Strongylidae	family	Strongylidae	genus	Cloacina	genus	Cloacina		
 ASV00332	window	0	235	1.0000	1	5	Cooperia oncophora 100.0%	Cooperia punctata +5	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora	species	Cooperia oncophora		
-ASV00333	window	2	237	0.9916	2		Trichostrongylus colubriformis / Trichostrongylus retortaeformis 99.2%	Trichostrongylus capricola +1	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus	genus	Trichostrongylus		
+ASV00333	window	2	237	0.9916	2		Trichostrongylus colubriformis / Trichostrongylus retortaeformis 99.2%	Trichostrongylus vitrinus +2	family	Trichostrongylidae	family	Trichostrongylidae	genus	Trichostrongylus	genus	Trichostrongylus		
 ASV00334	window	3	212	0.9858	4		Haemonchus (genus) / Haemonchus contortus / Haemonchus placei 98.6%	Haemonchus bedfordi +3	family	Trichostrongylidae	family	Trichostrongylidae	genus	Haemonchus	genus	Haemonchus		
 ASV00335	window	4	209	0.9809	1	30	Oesophagostomum radiatum 98.1%	Oesophagostomum stephanostomum +30	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	species	Oesophagostomum radiatum	yes	
 ASV00336	window	4	208	0.9808	1	30	Oesophagostomum radiatum 98.1%	Oesophagostomum stephanostomum +30	family	Strongylidae	family	Strongylidae	genus	Oesophagostomum	species	Oesophagostomum radiatum	yes	

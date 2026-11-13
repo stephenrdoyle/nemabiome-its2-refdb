@@ -1,30 +1,30 @@
-Leave-one-out, 3,224 queries (5 per species at most) from 1,236 species in work/build.
+Leave-one-out, 3,230 queries (5 per species at most) from 1,236 species in work/build.
 
-== hidden, whole (3,224 queries)
+== hidden, whole (3,230 queries)
    rule       right species    WRONG species     genus, right      WRONG genus family or higher       unassigned
-   v4                  0.0%             1.8%             3.5%             0.3%            32.7%            61.7%
-   exact               0.0%             1.3%             4.8%             0.4%            31.8%            61.7%
-   gap                 0.0%             5.5%            19.4%             1.2%            12.2%            61.7%
-   tiered              0.0%             9.3%            16.0%             0.8%            12.2%            61.7%
+   v4                  0.0%             1.8%             3.2%             0.3%            32.8%            61.8%
+   exact               0.0%             1.2%             4.6%             0.4%            31.9%            61.8%
+   gap                 0.0%             5.4%            19.3%             1.2%            12.3%            61.8%
+   tiered              0.0%             9.0%            16.1%             0.8%            12.3%            61.8%
 
-== hidden, 2x150 (2,640 queries)
+== hidden, 2x150 (2,647 queries)
    rule       right species    WRONG species     genus, right      WRONG genus family or higher       unassigned
-   v4                  0.0%             2.3%             3.4%             0.4%            32.2%            61.7%
-   exact               0.0%             2.3%             3.8%             0.4%            31.9%            61.7%
-   gap                 0.0%             6.1%            18.4%             1.3%            12.5%            61.7%
-   tiered              0.0%             9.6%            15.3%             1.0%            12.5%            61.7%
+   v4                  0.0%             2.3%             3.2%             0.4%            32.3%            61.8%
+   exact               0.0%             2.3%             3.5%             0.4%            32.0%            61.8%
+   gap                 0.0%             5.9%            18.7%             1.3%            12.4%            61.8%
+   tiered              0.0%             9.4%            15.5%             1.0%            12.4%            61.8%
 
-== present, whole (2,768 queries)
+== present, whole (2,775 queries)
    rule       right species    WRONG species     genus, right      WRONG genus family or higher       unassigned
-   v4                 19.2%             1.0%            32.2%             0.1%            42.8%             4.7%
-   exact              11.2%             0.7%            42.8%             0.3%            40.2%             4.7%
-   gap                57.3%             0.4%            31.9%             0.5%             5.2%             4.7%
-   tiered             68.2%             0.8%            20.7%             0.4%             5.2%             4.7%
+   v4                 19.3%             1.0%            31.5%             0.1%            43.4%             4.7%
+   exact              11.5%             0.6%            42.3%             0.3%            40.6%             4.7%
+   gap                57.3%             0.4%            31.8%             0.5%             5.3%             4.7%
+   tiered             68.2%             0.7%            20.6%             0.4%             5.3%             4.7%
 
-== present, 2x150 (2,250 queries)
+== present, 2x150 (2,258 queries)
    rule       right species    WRONG species     genus, right      WRONG genus family or higher       unassigned
-   v4                 21.8%             0.9%            38.9%             0.2%            33.6%             4.5%
-   exact              21.8%             0.9%            39.4%             0.2%            33.2%             4.5%
-   gap                60.1%             0.4%            30.3%             0.5%             4.2%             4.5%
-   tiered             68.8%             0.5%            21.4%             0.5%             4.2%             4.5%
+   v4                 22.2%             0.8%            38.1%             0.2%            34.2%             4.4%
+   exact              22.2%             0.8%            38.5%             0.2%            33.8%             4.4%
+   gap                60.1%             0.3%            30.3%             0.5%             4.3%             4.4%
+   tiered             68.8%             0.5%            21.4%             0.5%             4.3%             4.4%
 

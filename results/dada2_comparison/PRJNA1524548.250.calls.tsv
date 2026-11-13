@@ -144,7 +144,7 @@ ASV00142	window	2	442	0.9955	1	6	Cooperia punctata 99.5%	Cooperia oncophora +6	g
 ASV00143	window	1	413	0.9976	2	7	Cooperia oncophora 99.8%	Cooperia punctata +7	species	Cooperia oncophora	genus	Cooperia	species	Cooperia oncophora	species	Cooperia oncophora		
 ASV00144	window	1	414	0.9976	2	35	Ostertagia ostertagi 99.8%	Ostertagia gruehneri +35	species	Ostertagia ostertagi	genus	Ostertagia	species	Ostertagia ostertagi	species	Ostertagia ostertagi		
 ASV00145	window	9	432	0.9792	1	24	Cloacina echidne 97.9%	Cloacina artemis +24	family	Strongylidae	family	Strongylidae	genus	Cloacina	genus	Cloacina		
-ASV00146	whole	0	242	1.0000	5	1	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +1	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus	genus	Trichostrongylus		
+ASV00146	whole	0	242	1.0000	5	5	Trichostrongylus colubriformis 100.0%	Trichostrongylus retortaeformis +5	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis		
 ASV00147	window	1	442	0.9977	1	10	Cooperia punctata 99.8%	Cooperia oncophora +10	species	Cooperia punctata	genus	Cooperia	species	Cooperia punctata	species	Cooperia punctata		
 ASV00148	window	12	423	0.9716	1	11	Cloacina clymene 97.2%	Cloacina dryope +11	family	Strongylidae	family	Strongylidae	genus	Cloacina	genus	Cloacina		
 ASV00149	window	14	423	0.9669	3	12	Cloacina feronia 96.7%	Cloacina themis +12	family	Strongylidae	family	Strongylidae	family	Strongylidae	family	Strongylidae		

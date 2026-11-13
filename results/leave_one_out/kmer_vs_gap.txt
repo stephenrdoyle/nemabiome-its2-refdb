@@ -1,26 +1,26 @@
 Whole reads. Points of all queries of the mode; right / wrong species calls.
 
-== present (2,768 queries)
+== present (2,775 queries)
    gap rule outcome                      share        assignTaxonomy                IdTaxa
-   gap rule names species                57.7%       56.3 /   0.4       56.4 /   0.4
-   own species best, < 99%               22.3%       20.3 /   0.3       18.2 /   0.1
-   own >= 99%, sister 0-3 edits off       9.1%        6.9 /   0.5        4.8 /   0.2
-   another species closest                8.1%        1.9 /   2.6        0.7 /   1.4
-   tied with another species              2.1%        0.8 /   0.4        0.1 /   0.0
+   gap rule names species                57.7%       56.4 /   0.3       56.3 /   0.3
+   own species best, < 99%               22.5%       20.5 /   0.3       18.5 /   0.1
+   own >= 99%, sister 0-3 edits off       8.9%        6.5 /   0.5        4.8 /   0.3
+   another species closest                8.1%        2.1 /   2.5        0.5 /   1.5
+   tied with another species              2.1%        0.9 /   0.4        0.0 /   0.0
    no hit                                 0.7%        0.1 /   0.0        0.1 /   0.0
 
-== hidden (3,224 queries)
+== hidden (3,230 queries)
    gap rule outcome                      share        assignTaxonomy                IdTaxa
-   gap rule names species                 5.5%        0.0 /   5.0        0.0 /   4.8
-   another species closest               69.9%        0.0 /  34.9        0.0 /  15.6
-   tied with another species              2.3%        0.0 /   0.3        0.0 /   0.1
-   no hit                                22.3%        0.0 /   2.7        0.0 /   0.2
+   gap rule names species                 5.4%        0.0 /   5.0        0.0 /   4.6
+   another species closest               70.0%        0.0 /  34.7        0.0 /  15.7
+   tied with another species              2.2%        0.0 /   0.3        0.0 /   0.0
+   no hit                                22.4%        0.0 /   2.5        0.0 /   0.2
 
 Species-call rate by identity of the best hit: present (own species best; calls right) /
 hidden (species missing; calls wrong).
    identity   present  hidden        assignTaxonomy                IdTaxa
-   >= 99%       1,868     323      95% /  76% (1781:245)      91% /  59% (1702:191)
-   98-99%         355     243      94% /  64% (333:155)      90% /  57% (318:138)
-   97-98%          91     275      90% /  57% (82:157)      82% /  48% (75:132)
-   95-97%         109     393      90% /  52% (98:203)      78% /  31% (85:123)
-   90-95%          56     616      89% /  51% (50:315)      46% /  11% (26:65)
+   >= 99%       1,865     319      95% /  76% (1778:241)      91% /  56% (1702:178)
+   98-99%         356     237      94% /  67% (333:158)      90% /  56% (322:133)
+   97-98%          93     282      88% /  59% (82:165)      83% /  49% (77:138)
+   95-97%         113     395      91% /  53% (103:209)      80% /  31% (90:124)
+   90-95%          57     618      93% /  49% (53:305)      44% /  12% (25:72)

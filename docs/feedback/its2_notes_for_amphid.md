@@ -143,8 +143,8 @@ name.
 
 **Report how close a call came.** With each call, give the best species
 and its identity, and the nearest other species with how many edits
-further it is. Example: "*Trichostrongylus*; nearest *T. colubriformis* 100%;
-next *T. capricola* +1". A genus call then says whether it is "exactly
+further it is. Example: "*Trichostrongylus*; nearest *T. rugatus* 99.6%;
+next *T. retortaeformis* +2". A genus call then says whether it is "exactly
 species X, but its sister is 1 edit away" or "98% to X, nothing else
 close". Both stop at genus for different reasons, and users act on them
 differently. `bin/classify_asvs.py` writes these as `nearest` and

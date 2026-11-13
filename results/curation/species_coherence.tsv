@@ -50,9 +50,9 @@ stray	ITS2_e007000e2026	Hysterothylacium fabri	55	1	23	1	27	14	33	Hysterothylaci
 stray	ITS2_c1626d0d6b22	Hysterothylacium sinense	131	1	37	1	38	7	37	(Hysterothylacium shared)		near_complete	MW370702.1	MW370738.1
 stray	ITS2_f58f9b925cb1	Pratylenchus coffeae	145	1	25	1	27	4	37	Pratylenchus speijeri	5	complete	KR106215.1	AB053485.1
 stray	ITS2_fb6a73b004de	Hysterothylacium amoyense	39	1	25	1	39	16	38	Hysterothylacium zhoushanense	10	partial_75	MW405345.1	KY081889.1
-stray	ITS2_a923acdede5c	Baylisascaris procyonis	7	1	46	0	46	5	49	Baylisascaris columnaris	2	partial	OQ975260.1	PX417439.1
+stray	ITS2_a923acdede5c	Baylisascaris procyonis	8	1	46	0	46	6	49	Baylisascaris columnaris	2	partial	OQ975260.1	PX417439.1
 stray	ITS2_8b8889b3dcf0	Aspiculuris tetraptera	7	1	39	2	40	5	54	Aspiculuris tianjinensis	1	near_complete	MT454665.1	KJ143617.1
-stray	ITS2_561b1a358692	Trichuris trichiura	89	1	40	2	179	11	58	Trichuris incognita	16	near_complete	GQ301554.1	MF288644.1
+stray	ITS2_561b1a358692	Trichuris trichiura	92	1	40	2	179	11	58	Trichuris incognita	16	near_complete	GQ301554.1	MF288644.1
 stray	ITS2_eeb04b602578	Anisakis ziphidarum	5	1	65	1	68	5	61	Anisakis nascettii	3	near_complete	PV770860.1	LC774454.1
 stray	ITS2_fe31182d7b5b	Mansonella perstans	4	1	72	36.5	72	4	72	Mansonella ozzardi	2	unmeasured	OL764408.1	GCA_031470935.1:JAVHUG010004935.1:22,GCA_037074765.1:JBAMDO010000573.1:698963,GCA_947561605.2:CANNZR030000627.1:35451
 stray	ITS2_bbddcea4300c	Globodera ellingtonae	24	1	98	1	99	7	75	Globodera rostochiensis	3	unmeasured	OQ339225.1	JF739906.1
@@ -96,23 +96,24 @@ stray	ITS2_6cce11193ef0	Hirschmanniella mucronata	42	1	63	1	65	6				complete	KF8
 stray	ITS2_ee6910d4a20c	Parabronema skrjabini	26	1	63	63.5	136	3				unmeasured	KP639193.1	KT318372.1
 stray	ITS2_2760e8d3e546	Heterodera avenae	188	1	59	1	111	11				unmeasured	HM068534.2	HM068514.2
 stray	ITS2_eb9d1d728ffd	Acanthocheilonema reconditum	54	1	58	10.5	58	4				unmeasured	JQ039745.1	KX932124.1,MG692567.1,OR882886.1
-stray	ITS2_99a440c8184e	Dirofilaria immitis	94	1	56	2	188	18				unmeasured	LN626259.1	KY644133.1
+stray	ITS2_99a440c8184e	Dirofilaria immitis	114	1	56	2	192	17				unmeasured	LN626259.1	KY644133.1
 stray	ITS2_01235524f706	Hirschmanniella mucronata	42	1	56	1	63	6				complete	EU722287.1	KP179331.1
-stray	ITS2_d42a7ac45ec3	Teladorsagia circumcincta	62	1	56	2	95	5				unmeasured	MK307663.1	MK328935.1
+stray	ITS2_d42a7ac45ec3	Teladorsagia circumcincta	62	1	56	2	95	6				unmeasured	MK307663.1	MK328935.1
 stray	ITS2_12dd3706668c	Toxocara cati	85	1	56	2	133	27				unmeasured	KY003076.1	PX443433.1
 stray	ITS2_06707d1f3679	Heterorhabditis indica	114	1	55	1	86	19				unmeasured	ON930400.1	GQ497259.1
 stray	ITS2_6dea32c1f321	Acanthocheilonema reconditum	54	1	55	10.5	60	4				unmeasured	MG692563.1	MG692568.1
+stray	ITS2_69645b8b47a7	Trichuris ovis	16	1	55	6	60	7				unmeasured	MK307637.1	MK307639.1
 stray	ITS2_2ac7d0bf1434	Acanthocheilonema reconditum	54	1	54	10.5	67	4				unmeasured	MG692568.1	MZ473248.1
 stray	ITS2_fdfe4494534d	Anisakis typica	46	1	54	1	55	24				complete	OR345164.1	JN005762.1
 stray	ITS2_61ea6b7b9da0	Heterodera latipons	19	1	54	2	56	11				unmeasured	MK291210.1	HM560790.1,OL828554.1
 stray	ITS2_eda8c9781f57	Heterodera latipons	19	1	53	2	53	11				unmeasured	MK291207.1	HM560790.1,OL828554.1
-stray	ITS2_dcc91f400194	Teladorsagia circumcincta	62	1	48	2	106	5				unmeasured	MK307664.1	MK328937.1
+stray	ITS2_dcc91f400194	Teladorsagia circumcincta	62	1	48	2	106	6				unmeasured	MK307664.1	MK328937.1
 stray	ITS2_29f0e7e004c2	Oscheius myriophilus	18	1	48	0	58	6				complete	MG742116.1	OR606786.1,OR606787.1
 stray	ITS2_381eb5328e17	Steinernema siamkayai	46	1	47	2.5	57	33				unmeasured	KY940074.1	PQ288528.1
 stray	ITS2_64b51cddd34e	Acanthocheilonema reconditum	54	1	46	10.5	51	4				partial	MG692574.1	KX932127.1
 stray	ITS2_87afab3cc527	Heterodera glycines	124	1	45	0	51	16				unmeasured	KJ161299.1	MZ646350.1
 stray	ITS2_c5ac6c1d9eaa	Acanthocheilonema reconditum	54	1	44	10.5	71	4				partial_75	MZ474199.1	OR882887.1
-stray	ITS2_82c9c4f4aeb2	Ostertagia ostertagi	24	1	42	1	106	6				unmeasured	KR779997.1	KR779998.1
+stray	ITS2_82c9c4f4aeb2	Ostertagia ostertagi	24	1	42	1	106	7				unmeasured	KR779997.1	KR779998.1
 stray	ITS2_36390d40f6ad	Acanthocheilonema reconditum	54	1	40	10.5	55	4				unmeasured	MG692572.1	MG692571.1
 stray	ITS2_2dc4f612781f	Heterorhabditis indica	114	1	39	1	85	19				unmeasured	OP452824.1	GQ497259.1
 stray	ITS2_0c71ff2f3108	Meloidogyne incognita	80	1	37	1	45	12				unmeasured	MW111209.1	PZ306470.1
@@ -128,8 +129,8 @@ stray	ITS2_15b016761608	Metarhabditis amsactae	22	1	34	1	44	6				unmeasured	OR19
 stray	ITS2_de4d88e15757	Toxocara canis	37	1	34	2	71	17				unmeasured	OM876374.1	OR623059.1
 stray	ITS2_e41a338ffdff	Angiostrongylus malaysiensis	35	1	34	19	113	3				unmeasured	OP935058.1	OP935051.1
 stray	ITS2_e55df315a07b	Acanthocheilonema reconditum	54	1	33	10.5	52	4				partial_75	MZ473248.1	OR882887.1
-stray	ITS2_8c12f0f7afb9	Ostertagia ostertagi	24	1	32	1	106	6				unmeasured	KR779998.1	KR779996.1
-stray	ITS2_bb44b2fb6e3d	Ostertagia ostertagi	24	1	32	1	106	6				unmeasured	KR779996.1	KR779998.1
+stray	ITS2_8c12f0f7afb9	Ostertagia ostertagi	24	1	32	1	106	7				unmeasured	KR779998.1	KR779996.1
+stray	ITS2_bb44b2fb6e3d	Ostertagia ostertagi	24	1	32	1	106	7				unmeasured	KR779996.1	KR779998.1
 stray	ITS2_2feddf227f65	Acanthocheilonema reconditum	54	1	30	10.5	41	4				partial	MG692562.1	MG692569.1
 stray	ITS2_f81b2246a2f5	Acanthocheilonema reconditum	54	1	30	10.5	49	4				partial	MG692571.1	MG692569.1
 stray	ITS2_b6e1d27841b0	Aphelenchus avenae	14	2	30	3	45	4				complete	KJ155784.1,ON112362.1	PZ270961.1
@@ -138,8 +139,8 @@ stray	ITS2_259005421b7a	Heterorhabditis indica	114	1	29	1	109	19				unmeasured	K
 stray	ITS2_6379613b5994	Meloidogyne incognita	80	1	29	1	35	12				complete	MW534393.1	KY009887.1
 stray	ITS2_a5e35da66722	Meloidogyne enterolobii	43	1	29	2	37	15				unmeasured	OR515679.1	MT952003.1
 stray	ITS2_818d4877562a	Toxocara cati	85	1	29	2	89	27				partial	KY003075.1	PX443438.1
-stray	ITS2_02504fca72d7	Toxocara canis	37	1	27	2	50	17				near_complete	OM876372.1	PV068182.1
 stray	ITS2_3f1e76e002f5	Heterakis gallinarum	42	1	27	1	41	4				partial_75	PX620342.1	PX620337.1
+stray	ITS2_02504fca72d7	Toxocara canis	37	1	27	2	50	17				near_complete	OM876372.1	PV068182.1
 stray	ITS2_586ce5ba62e6	Acanthocheilonema reconditum	54	1	27	10.5	31	4				partial	MG692583.1	MG692581.1
 stray	ITS2_314167ffc192	Toxocara cati	85	1	27	2	34	27				partial_75	OQ975262.1	OR625136.1
 stray	ITS2_3880d6fe48df	Hysterothylacium reliquens	11	1	27	1	28	14				partial_90	MZ148786.1	PX270835.1
@@ -198,14 +199,14 @@ stray	ITS2_9d1569418632	Heterakis gallinarum	42	1	136	1	182	4	251	Ascaridia gall
 closer	ITS2_bc800d2a6a76	Contracaecum multipapillatum	5	1	8	1			0	(Contracaecum shared)		partial_75	MH400190.1	KC437346.1
 closer	ITS2_4a3c423abbc6	Trichuris globulosa	7	1	8	1			0	Trichuris ovis	3	unmeasured	LN813018.1	OQ550211.1
 closer	ITS2_d43dd2867c7f	Hoplolaimus stephanus	33	1	4	0			0	Hoplolaimus galeatus	4	unmeasured	KP303660.1	OR948480.1
-closer	ITS2_32da03279432	Trichuris trichiura	89	1	4	2	189	11	0	Trichuris incognita	16	complete	KJ588135.1	GQ301555.1
+closer	ITS2_32da03279432	Trichuris trichiura	92	1	4	2	189	11	0	Trichuris incognita	16	complete	KJ588135.1	GQ301555.1
 closer	ITS2_4f45ba4d1b7f	Hoplolaimus galeatus	19	1	4	0			0	Hoplolaimus stephanus	4	unmeasured	PV863256.1	PV863240.1
 closer	ITS2_92110d0d7814	Contracaecum rudolphii	22	1	4	1	5	4	0	(Contracaecum unnamed)		partial_75	MT341179.1	AY603535.1
 closer	ITS2_3aa511db7326	Heterodera elachista	21	1	4	1	6	3	0	Heterodera oryzae		partial_90	MT579616.1	JN202916.1
 closer	ITS2_68c9b81fde36	Heterodera avenae	188	1	3	1	7	11	0	Heterodera filipjevi	1	near_complete	KF679395.1	GU377237.1
 closer	ITS2_00cce5a3d53a	Heterodera schachtii	32	1	3	1	3	13	0	Heterodera betae	1	complete	EF611108.1	ON644871.1
-closer	ITS2_8e89020643bc	Trichuris ovis	21	1	3	3			0	Trichuris globulosa	8	unmeasured	AJ238220.1	FR870274.1
 closer	ITS2_eec1be34d8ba	Contracaecum rudolphii	22	1	3	1	16	4	0	Contracaecum ogmorhini	0	complete	OP453442.1	FM210272.1
+closer	ITS2_8e89020643bc	Trichuris ovis	16	1	3	6	18	7	0	Trichuris globulosa	8	unmeasured	AJ238220.1	FR870274.1
 closer	ITS2_c94028633241	Cyathostoma americana	3	1	3	1	4	5	0	( shared)		near_complete	PV739826.1	PP461814.1
 closer	ITS2_ba3fe6598995	Hysterothylacium sinense	131	1	2	1	112	7	0	Hysterothylacium fabri	1	complete	MW371013.1	MW371004.1
 closer	ITS2_5e4d63377012	Eustrongylides excisus	5	22	2	0		22	0	Eustrongylides ignotus		unmeasured	MK545492.1,MK545497.1,MK545504.1,MK545507.1,MK545511.1,MK545512.1	MK007967.1
@@ -217,27 +218,27 @@ closer	ITS2_28af51f73711	Heterodera australis	2	6	2	2		6	0	Heterodera avenae	0	n
 closer	ITS2_70e356f14ecf	Heterodera trifolii	10	1	2	2	3	5	0	Heterodera schachtii	1	near_complete	AF498388.1	MW346580.1
 closer	ITS2_24c25f98d96e	Hysterothylacium liparis	13	1	2	2			0	Hysterothylacium sinense	1	complete	KP301514.1	KP301516.1
 closer	ITS2_f7d9393bfa15	Heterodera trifolii	10	1	2	2	2	5	0	Heterodera schachtii	0	partial_90	MW346576.1	AY692354.1,MG682350.1,MN720073.1
-closer	ITS2_5fac484be784	Ditylenchus gigas	8	1	2	4			0	(Ditylenchus shared)		partial_90	KC310732.1	HQ219239.1,JN376074.1
 closer	ITS2_78fcd4cdca1b	Baylisascaris columnaris	4	1	2	1			0	Baylisascaris procyonis	0	partial_75	KC543485.1	KC543484.1,MH030594.1
+closer	ITS2_5fac484be784	Ditylenchus gigas	8	1	2	4			0	(Ditylenchus shared)		partial_90	KC310732.1	HQ219239.1,JN376074.1
 closer	ITS2_4d3b938b8724	Aphelenchoides oryzae	2	1	2	2			0	Aphelenchoides besseyi	1	near_complete	PP903698.1	MT271862.1
+closer	ITS2_891e010830d1	Heterodera sonchophila	2	1	2	2			0	Heterodera medicaginis	1	partial_90	MW346595.1	MW346599.1
 closer	ITS2_423a03fe0b14	Heterodera daverti	2	1	2	2			0	(Heterodera shared)		near_complete	KT163232.1	KT163231.1,PX049242.1
 closer	ITS2_a669fc4a88f5	Heterodera daverti	2	2	2	2			0	Heterodera betae	1	near_complete	KT163231.1,PX049242.1	KT163232.1
-closer	ITS2_891e010830d1	Heterodera sonchophila	2	1	2	2			0	Heterodera medicaginis	1	partial_90	MW346595.1	MW346599.1
 closer	ITS2_693ffc4fe2de	Heterorhabditis pakistanense	4	1	2	1.5			0	(Heterorhabditis shared)		near_complete	JN571090.1	JN571094.1
 closer	ITS2_aa9070bbbf07	Phocanema bulbosa	2	1	2	2			0	Pseudoterranova decipiens	2	near_complete	AJ413972.1	OP355455.1
 closer	ITS2_ad4d203a3ac3	Phocanema bulbosa	2	1	2	2			0	Pseudoterranova decipiens	2	complete	OP355455.1	AJ413972.1
 closer	ITS2_ff166553f0f8	Devibursaphelenchus eproctatus	2	1	2	2			0	Devibursaphelenchus hunanensis		unmeasured	JN122011.1	JN122010.1
 closer	ITS2_9b389050c580	Anisakis pegreffii	48	1	1	1	1	17	0	(Anisakis unnamed)		near_complete	JN968593.1	FR849715.1,LC745162.1,LC745204.1
 closer	ITS2_ff02bb2cc823	Hysterothylacium sinense	131	1	1	1	1	7	0	Hysterothylacium liparis	2	complete	MW370557.1	MW370638.1,MW370668.1
-closer	ITS2_bbd493e0910f	Anisakis pegreffii	48	2	1	1	1	17	0	Anisakis simplex	1	near_complete	LC745161.1,MH197040.1	FR849715.1,LC745162.1,LC745204.1
 closer	ITS2_6c2a7eb2b409	Hysterothylacium sinense	131	1	1	1	2	7	0	(Hysterothylacium shared)		complete	MW370597.1	MW370829.1
+closer	ITS2_bbd493e0910f	Anisakis pegreffii	48	2	1	1	1	17	0	Anisakis simplex	1	near_complete	LC745161.1,MH197040.1	FR849715.1,LC745162.1,LC745204.1
 closer	ITS2_7aefb5648b6a	Hysterothylacium sinense	131	1	1	1	4	7	0	(Hysterothylacium shared)		complete	MW370609.1	MW370564.1,MW370571.1
 closer	ITS2_ca18e9cbd0fb	Heterodera glycines	124	1	1	0	3	16	0	Heterodera sonchophila	2	complete	MT254750.1	MT254745.1
 closer	ITS2_d52f3e90d9e3	Heterorhabditis sonorensis	9	1	1	1	1	4	0	Heterorhabditis taysearae	1	complete	MF372589.1	MF372591.1
 closer	ITS2_2e263254cc89	Heterodera avenae	188	1	1	1	1	11	0	Heterodera pratensis	1	complete	JN657202.1	KF679391.1,MK606026.1
+closer	ITS2_d037df3cadcb	Heterodera schachtii	32	1	1	1	3	13	0	Heterodera trifolii	2	complete	KT874519.1	KT874516.1,KT874517.1,MW346551.1
 closer	ITS2_8a3384c470ef	Heterodera schachtii	32	3	1	1	2	13	0	Heterodera ciceri	0	complete	KT874516.1,KT874517.1,MW346551.1	EF611110.1,EF611112.1,MW346588.1
 closer	ITS2_aa37bfbbbac5	Heterodera schachtii	32	1	1	1	4	13	0	Heterodera trifolii	2	near_complete	AF498389.1	EF611110.1,EF611112.1,MW346588.1
-closer	ITS2_d037df3cadcb	Heterodera schachtii	32	1	1	1	3	13	0	Heterodera trifolii	2	complete	KT874519.1	KT874516.1,KT874517.1,MW346551.1
 closer	ITS2_d8965706d70b	Heterodera avenae	188	1	1	1	3	11	0	Heterodera arenaria		complete	JX024193.1	EF153843.1,JX024191.1,JX024196.1
 closer	ITS2_18c6d43dc81b	Heterodera schachtii	32	3	1	1	2	13	0	Heterodera trifolii	2	complete	EF611116.1,JX024219.1,MW346552.1	EF611110.1,EF611112.1,MW346588.1
 closer	ITS2_e172effaf444	Meloidogyne graminis	16	1	1	1	29	7	0	Meloidogyne marylandi	1	complete	JN241868.1	JN241894.1
@@ -245,12 +246,12 @@ closer	ITS2_7e071688b5d1	Aphelenchoides besseyi	62	4	1	2	3	20	0	Aphelenchoides o
 closer	ITS2_51b47e4d0041	Meloidogyne incognita	80	1	1	1	1	12	0	(Meloidogyne shared)		complete	KY009888.1	KP179223.1,KP751205.1,KR265163.1
 closer	ITS2_adae781abee2	Meloidogyne incognita	80	1	1	1	1	12	0	(Meloidogyne shared)		complete	MW404001.1	KP179223.1,KP751205.1,KR265163.1
 closer	ITS2_d87479f6deab	Meloidogyne incognita	80	1	1	1	1	12	0	(Meloidogyne shared)		complete	KY009893.1	KP179223.1,KP751205.1,KR265163.1
-closer	ITS2_282d35e11d22	Hysterothylacium fabri	55	1	1	1	98	14	0	(Hysterothylacium shared)		complete	MW370908.1	MW370922.1
 closer	ITS2_42b11c35680f	Bursaphelenchus sexdentati	28	1	1	1			0	Bursaphelenchus piniperdae		near_complete	KP292859.1	KP292877.1
+closer	ITS2_282d35e11d22	Hysterothylacium fabri	55	1	1	1	98	14	0	(Hysterothylacium shared)		complete	MW370908.1	MW370922.1
 closer	ITS2_ea624173b324	Meloidogyne graminicola	62	1	1	1	5	26	0	Meloidogyne oryzae	1	complete	HM623443.1	OQ978217.1
 closer	ITS2_52de05daea9f	Anisakis simplex	97	1	1	1	1	24	0	Anisakis pegreffii	1	near_complete	KM272451.1	KM272486.1
-closer	ITS2_ffb9085cee02	Heterodera ciceri	3	2	1	0			0	(Heterodera shared)		near_complete	AY045758.1,MW346578.1	JX024201.1
 closer	ITS2_5bf46e7aaabe	Heterodera betae	5	1	1	2			0	Heterodera schachtii	3	partial_90	MW346566.1	MW346572.1
+closer	ITS2_ffb9085cee02	Heterodera ciceri	3	2	1	0			0	(Heterodera shared)		near_complete	AY045758.1,MW346578.1	JX024201.1
 closer	ITS2_7ecdd21f0cb0	Heterodera filipjevi	54	1	1	1	3	26	0	Heterodera avenae	3	near_complete	KM199842.1	AY148397.1,MW785799.1
 closer	ITS2_e9b1d43ff33c	Contracaecum rudolphii	22	1	1	1	17	4	0	(Contracaecum shared)		near_complete	FM210428.1	FM210268.1
 closer	ITS2_0aba69f09b4f	Heterodera carotae	10	4	1	1	3	5	0	Heterodera cruciferae	1	near_complete	AY347917.1,PV138344.1,PV138346.1,PV138349.1	AF274413.1
@@ -265,8 +266,8 @@ closer	ITS2_0b301e156967	Heterodera elachista	21	1	1	1	1	3	0	Heterodera oryzae		
 closer	ITS2_8a40b03787ff	Cephalenchus daisuce	27	1	1	1	4	3	0	(Cephalenchus shared)		complete	KU723367.1	KU723429.1
 closer	ITS2_cf58211bbc29	Cephalenchus daisuce	27	1	1	1	10	3	0	(Cephalenchus shared)		complete	KU723411.1	KU723424.1
 closer	ITS2_299984930d7e	Hemicriconemoides strictathecatus	8	1	1	1			0	Hemicriconemoides litchi	1	complete	MH142617.1	MT556011.1
-closer	ITS2_2a8c9649f1f0	Baylisascaris transfuga	12	1	1	2	1	4	0	(Baylisascaris shared)		near_complete	EU642819.1	KC543489.1,MH509389.1,MK496546.1
 closer	ITS2_0d8412e4e40b	Meloidogyne oryzae	2	1	1	1			0	Meloidogyne graminicola	1	complete	LS974440.1	LS974441.1
+closer	ITS2_2a8c9649f1f0	Baylisascaris transfuga	12	1	1	2	1	4	0	(Baylisascaris shared)		near_complete	EU642819.1	KC543489.1,MH509389.1,MK496546.1
 closer	ITS2_eea820d66c50	Globodera pallida	46	1	1	1	3	14	0	Globodera rostochiensis	0	complete	DQ097514.2	HQ260428.1,HQ670277.1
 closer	ITS2_c06121cb5656	Globodera pallida	46	2	1	1	2	14	0	Globodera mexicana	1	near_complete	HQ260428.1,HQ670277.1	EU006706.1
 closer	ITS2_bc93e9e3d901	Ditylenchus weischeri	22	1	1	0.5			0	Ditylenchus dipsaci	13	complete	MG384318.1	MG386841.1
@@ -276,16 +277,16 @@ closer	ITS2_1cfa0f5a359e	Meloidogyne suginamiensis	4	2	1	1.5			0	Meloidogyne vit
 closer	ITS2_6873df3be8c7	Heterodera trifolii	10	5	1	2		5	0	Heterodera daverti	2	near_complete	AY692354.1,MG682350.1,MN720073.1,MN720083.1,MW346569.1	LC208688.1
 closer	ITS2_22a84afc9531	Heterorhabditis taysearae	3	2	1	1	1	3	0	(Heterorhabditis shared)		complete	KY088208.1,MW543946.1	MW599211.1,MW599238.1,PQ483111.1
 closer	ITS2_d2b35f62865f	Heterorhabditis taysearae	3	3	1	1		3	0	Heterorhabditis sonorensis	0	near_complete	MW599211.1,MW599238.1,PQ483111.1	KY088208.1,MW543946.1
-closer	ITS2_bd080b76b704	Gracilacus paralatescens	3	1	1	1			0	Paratylenchus paralatescens		complete	MW714357.1	MH200615.1
 closer	ITS2_66eef7c9560d	Heterakis dispar	3	1	1	1			0	Heterakis isolonche		near_complete	MF319969.1	OM530144.1
+closer	ITS2_bd080b76b704	Gracilacus paralatescens	3	1	1	1			0	Paratylenchus paralatescens		complete	MW714357.1	MH200615.1
 closer	ITS2_3d48fb910769	Pratylenchus thornei	22	4	1	3		4	0	(Pratylenchus shared)		complete	FJ717820.1,OP902284.1,OQ520063.1,PZ229155.1	MT864347.1
-closer	ITS2_5cfb41584fc0	Globodera mexicana	9	1	1	1	2	4	0	Globodera pallida	1	complete	EU006708.1	MN116522.1
 closer	ITS2_685285d51838	Heterodera cruciferae	7	3	1	1	1	3	0	Heterodera carotae	1	near_complete	JX402415.1,LC884694.1,MG693179.1	KP114545.1
+closer	ITS2_5cfb41584fc0	Globodera mexicana	9	1	1	1	2	4	0	Globodera pallida	1	complete	EU006708.1	MN116522.1
 closer	ITS2_d607278394f0	Heterorhabditis pakistanense	4	1	1	1.5			0	Heterorhabditis indica	0	near_complete	JN571094.1	JX144740.1,KX954218.1
 closer	ITS2_be62ca32b2b3	Papillostrongylus barbatus	3	1	1	1			0	Rugopharynx alpha		complete	KJ776392.1	AJ309961.1
 closer	ITS2_b7a779dcee33	Heterodera medicaginis	6	1	1	1			0	Heterodera sonchophila	2	near_complete	MK093184.1	MK093192.1
-closer	ITS2_996913ff9b47	Hemicriconemoides litchi	3	1	1	1			0	Hemicriconemoides strictathecatus	1	complete	GQ354786.1	KP192482.1
 closer	ITS2_abb8be778e35	Meloidogyne luci	2	1	1	1			0	(Meloidogyne shared)		near_complete	LN626963.1	LN626962.1
+closer	ITS2_996913ff9b47	Hemicriconemoides litchi	3	1	1	1			0	Hemicriconemoides strictathecatus	1	complete	GQ354786.1	KP192482.1
 closer	ITS2_2572a4ff9c9a	Rhabdias ranae	2	1	9	9	9	4	1	Rhabdias joaquinensis	5	unmeasured	JX826436.1	DQ264766.1,EU360823.1,EU360825.1
 closer	ITS2_0459ad85d0c3	Toxocara malaysiensis	2	1	8	8			1	(Toxocara unnamed)		near_complete	PP851012.1	AM231609.1
 closer	ITS2_e5ac2cfe347b	Heterodera filipjevi	54	1	7	1	8	26	1	Heterodera avenae	0	complete	MW785814.1	JX024209.1
@@ -301,8 +302,8 @@ closer	ITS2_56394ef0a3aa	Rhabdias joaquinensis	2	1	5	5			1	Rhabdias ranae	9	unme
 closer	ITS2_e48c9e027357	Heterodera betae	5	1	4	2			1	Heterodera schachtii	0	partial_90	MW346586.1	MW346566.1
 closer	ITS2_8dd04152928c	Pratylenchus crenatus	31	1	4	1			1	Pratylenchus neglectus	78	near_complete	KY468898.1	LC030309.1
 closer	ITS2_f9f65fe5befc	Trichuris suis	39	1	4	3			1	Trichuris trichiura	2	near_complete	JN181791.1	JN181797.1
-closer	ITS2_73aefb889407	Dirofilaria repens	23	1	4	2	21	6	1	Dirofilaria asiatica	0	partial	KC429770.1	PP577922.1
 closer	ITS2_2bdb3aa531f3	Brugia pahangi	29	1	4	2			1	Brugia malayi	3	complete	PV646253.1	OK138711.1
+closer	ITS2_73aefb889407	Dirofilaria repens	19	1	4	2	16	6	1	Dirofilaria asiatica	0	partial	KC429770.1	PP577922.1
 closer	ITS2_3fdb93f2b37d	Nematodirus abnormalis	3	1	4	3			1	Nematodirus oiratianus	1	near_complete	PQ725599.1	PQ725609.1
 closer	ITS2_5c6f0858a64e	Pristionchus pacificus	5	1	3	3	3	5	1	Pristionchus entomophilus		near_complete	MZ506758.1	MG551685.1
 closer	ITS2_31a13f0ed020	Heterodera schachtii	32	1	3	1	3	13	1	Heterodera betae	2	complete	KF225726.1	ON644871.1
@@ -330,15 +331,15 @@ closer	ITS2_85cfb63633dc	Meloidogyne incognita	80	1	2	1	40	12	1	Meloidogyne gram
 closer	ITS2_f902cfe8f947	Meloidogyne incognita	80	1	2	1	6	12	1	Meloidogyne javanica	1	partial_90	PP059535.1	KP179223.1,KP751205.1,KR265163.1
 closer	ITS2_1f2f7e1db2a3	Hysterothylacium fabri	55	1	2	1	99	14	1	Hysterothylacium sinense	1	complete	MW370892.1	MW371015.1
 closer	ITS2_2f078acb6d61	Hysterothylacium fabri	55	1	2	1	100	14	1	Hysterothylacium thalassini	109	complete	MW370962.1	MW370905.1
-closer	ITS2_a2536d5832a8	Hysterothylacium fabri	55	1	2	1	98	14	1	Hysterothylacium thalassini	109	complete	MW370905.1	MW370962.1
 closer	ITS2_48c3acb0ff0d	Hysterothylacium fabri	55	1	2	1	9	14	1	Hysterothylacium aduncum	40	complete	MW370776.1	KF736943.1,MW370909.1,PP029274.1
+closer	ITS2_a2536d5832a8	Hysterothylacium fabri	55	1	2	1	98	14	1	Hysterothylacium thalassini	109	complete	MW370905.1	MW370962.1
 closer	ITS2_bc8c86b868e3	Ditylenchus dipsaci	25	2	2	2	15	16	1	Ditylenchus gigas	2	near_complete	AF396323.1,AY714540.1	AY714541.1
 closer	ITS2_ea9f1a271603	Ditylenchus dipsaci	25	1	2	2	16	16	1	Ditylenchus gigas	2	near_complete	AY714541.1	AF396323.1,AY714540.1
+closer	ITS2_884452d405d1	Trichuris trichiura	92	1	2	2	181	11	1	Trichuris suis	4	near_complete	JN181816.1	JN181813.1
+closer	ITS2_19309790bf63	Trichuris trichiura	92	1	2	2	182	11	1	Trichuris suis	2	near_complete	JN181813.1	JN181816.1
 closer	ITS2_1ba4ddf68205	Anisakis simplex	97	1	2	1	2	24	1	Anisakis pegreffii	1	near_complete	AJ937669.1	LC774449.1,MF668726.1,OM418766.1
 closer	ITS2_6fbf33458f4a	Anisakis simplex	97	1	2	1	2	24	1	Anisakis pegreffii	0	near_complete	JN968846.1	JN968813.1
 closer	ITS2_8d7d8cacd683	Anisakis simplex	97	1	2	1	2	24	1	Anisakis pegreffii	0	near_complete	KM272446.1	JN968813.1
-closer	ITS2_19309790bf63	Trichuris trichiura	89	1	2	2	182	11	1	Trichuris suis	2	near_complete	JN181813.1	JN181816.1
-closer	ITS2_884452d405d1	Trichuris trichiura	89	1	2	2	181	11	1	Trichuris suis	4	near_complete	JN181816.1	JN181813.1
 closer	ITS2_eef8b322638e	Meloidogyne arenaria	14	5	2	2		5	1	Meloidogyne incognita	0	near_complete	AF077083.1,KU356190.1,MG773545.1,MK018121.1,PZ577195.1	LC030356.1
 closer	ITS2_3222c1da26e4	Meloidogyne arenaria	14	1	2	2	2	5	1	Meloidogyne incognita	0	complete	LC030356.1	AF510063.1
 closer	ITS2_fbacf91aa028	Anisakis simplex	97	1	2	1	2	24	1	Anisakis pegreffii	0	near_complete	JN968842.1	JN968813.1
@@ -352,37 +353,36 @@ closer	ITS2_7ea11d72372f	Labiostrongylus longispicularis	5	1	2	2			1	Labiosimple
 closer	ITS2_4a3acebc91c9	Trichuris suis	39	1	2	3			1	Trichuris trichiura	1	near_complete	JN181776.1	AJ249966.1
 closer	ITS2_59752332b521	Trichuris suis	39	1	2	3			1	Trichuris trichiura	1	near_complete	AJ249966.1	JN181776.1
 closer	ITS2_46e771c9557b	Cooperia curticei	21	1	2	1			1	Cooperia fuelleborni	2	complete	KC998738.1	MH481604.1
-closer	ITS2_de0eac9511be	Heterodera elachista	21	1	2	1	3	3	1	Heterodera oryzae		near_complete	KU896213.1	JN202916.1
 closer	ITS2_93f19900d4fd	Trichuris suis	39	1	2	3			1	Trichuris trichiura	2	near_complete	JN181804.1	JN181803.1
+closer	ITS2_de0eac9511be	Heterodera elachista	21	1	2	1	3	3	1	Heterodera oryzae		near_complete	KU896213.1	JN202916.1
 closer	ITS2_0d5030cdbfed	Sheraphelenchus sucus	2	1	2	2			1	Japanema entomophagus	2	complete	LC765395.1	LC601019.1
 closer	ITS2_c382c3576644	Heligmosomoides bibullosus	4	1	2	2			1	Heligmosomoides vandegrifti	2	complete	MN865422.1	MN865428.1
 closer	ITS2_3279fa5ccbfb	Paratylenchus nanus	11	1	2	0	69	5	1	Paratylenchus neoprojectus		near_complete	KY468904.1	MN710514.1
 closer	ITS2_26145909ba6a	Baylisascaris transfuga	12	2	2	2	2	4	1	(Baylisascaris shared)		near_complete	AB571304.1,MH030601.1	KC543489.1,MH509389.1,MK496546.1
 closer	ITS2_4168fb2dcf2c	Meloidogyne hispanica	8	1	2	3.5			1	Meloidogyne enterolobii	0	near_complete	MZ328457.1	PX969674.1
 closer	ITS2_d05b553d9000	Meloidogyne hispanica	8	1	2	3.5			1	Meloidogyne incognita	5	complete	PX969674.1	MZ328457.1
-closer	ITS2_5bd981fdaaa7	Dirofilaria repens	23	1	2	2	15	6	1	Dirofilaria asiatica	0	partial_90	QB179995.1	JQ039743.1
-closer	ITS2_76a3c87e3d92	Dirofilaria repens	23	1	2	2	13	6	1	Dirofilaria asiatica	0	near_complete	JQ039743.1	QB179995.1
-closer	ITS2_f10fdce14b59	Dirofilaria repens	23	1	2	2	2	6	1	Dirofilaria asiatica	0	near_complete	PV643877.1	ON332071.1
-closer	ITS2_e341b8552aea	Cylicocyclus ashworthi	20	1	2	1			1	(Cylicocyclus shared)		near_complete	MW198060.1	PP923401.1
+closer	ITS2_5bd981fdaaa7	Dirofilaria repens	19	1	2	2	12	6	1	Dirofilaria asiatica	0	partial_90	QB179995.1	JQ039743.1
+closer	ITS2_76a3c87e3d92	Dirofilaria repens	19	1	2	2	12	6	1	Dirofilaria asiatica	0	near_complete	JQ039743.1	QB179995.1
 closer	ITS2_14aaf2a8c9b1	Japanema entomophagus	5	1	2	2			1	Sheraphelenchus sucus	2	complete	KC875230.1	KC875231.1
+closer	ITS2_e341b8552aea	Cylicocyclus ashworthi	20	1	2	1			1	(Cylicocyclus shared)		near_complete	MW198060.1	PP923401.1
 closer	ITS2_e558b4c748b6	Japanema entomophagus	5	1	2	2			1	Sheraphelenchus sucus	2	complete	KC875231.1	KC875230.1
 closer	ITS2_560191e97178	Rotylenchus brevicaudatus	4	1	2	9.5			1	Rotylenchus wimbii	0	complete	DQ309587.1	JX015430.1
+closer	ITS2_d2b28f474a2d	Heterodera trifolii	10	1	2	2	2	5	1	Heterodera ciceri	0	partial_90	MW346580.1	AY692354.1,MG682350.1,MN720073.1
 closer	ITS2_22b09a6e2325	Hysterothylacium liparis	13	1	2	2			1	Hysterothylacium sinense	0	complete	KP301516.1	KP301514.1
 closer	ITS2_2c5317d5ffcc	Hysterothylacium liparis	13	1	2	2			1	Hysterothylacium sinense	1	complete	MW370717.1	MW370542.1
 closer	ITS2_2ce4479e344a	Hysterothylacium liparis	13	1	2	2			1	Hysterothylacium sinense	0	complete	KF601895.1	KP301516.1
-closer	ITS2_c2d3804170e6	Heligmosomoides polygyrus	24	1	2	4			1	Heligmosomoides bakeri	1	complete	AM409090.1	AM409091.1
-closer	ITS2_e1e4933f63a1	Heligmosomoides polygyrus	24	1	2	4			1	Heligmosomoides bakeri	1	complete	AM409091.1	AM409090.1
-closer	ITS2_d2b28f474a2d	Heterodera trifolii	10	1	2	2	2	5	1	Heterodera ciceri	0	partial_90	MW346580.1	AY692354.1,MG682350.1,MN720073.1
 closer	ITS2_3f7b8dab1fa4	Hysterothylacium liparis	13	1	2	2			1	Hysterothylacium sinense	0	complete	KP301512.1	KP301516.1
 closer	ITS2_46144d69bbe6	Hysterothylacium liparis	13	1	2	2			1	Hysterothylacium sinense	0	complete	KP301508.1	KP301516.1
+closer	ITS2_c2d3804170e6	Heligmosomoides polygyrus	24	1	2	4			1	Heligmosomoides bakeri	1	complete	AM409090.1	AM409091.1
+closer	ITS2_e1e4933f63a1	Heligmosomoides polygyrus	24	1	2	4			1	Heligmosomoides bakeri	1	complete	AM409091.1	AM409090.1
 closer	ITS2_7bb051339392	Hysterothylacium liparis	13	1	2	2			1	Hysterothylacium sinense	0	complete	MW370633.1	KP301516.1
 closer	ITS2_964b45eb714c	Hysterothylacium liparis	13	1	2	2			1	Hysterothylacium sinense	0	complete	KP301507.1	KP301516.1
 closer	ITS2_da8e9c96599b	Hysterothylacium liparis	13	1	2	2			1	Hysterothylacium sinense	0	complete	KF601900.1	KP301516.1
 closer	ITS2_e1825e93f3c1	Hysterothylacium liparis	13	1	2	2			1	Hysterothylacium sinense	0	complete	KP301518.1	KP301516.1
-closer	ITS2_876f65108e92	Cephalenchus cephalodiscus	6	1	2	1			1	(Cephalenchus shared)		complete	KU723355.1	KX462090.1,KX462092.1
 closer	ITS2_c94e82e0e263	Xiphinema rivesi	10	1	2	2.5			1	Xiphinema inaequale		unmeasured	OR698915.1	OR698917.1
 closer	ITS2_29ae396845b2	Marshallagia trifida	2	1	2	2			1	(Marshallagia shared)		complete	MT118027.1	MZ148614.1
 closer	ITS2_457e7a590bbb	Marshallagia trifida	2	1	2	2			1	(Marshallagia shared)		complete	MZ148614.1	MT118027.1
+closer	ITS2_876f65108e92	Cephalenchus cephalodiscus	6	1	2	1			1	(Cephalenchus shared)		complete	KU723355.1	KX462090.1,KX462092.1
 closer	ITS2_534b5f462a4a	Globodera tabacum	8	1	2	1	2	6	1	Globodera virginiae		complete	DQ097515.2	AB207272.1,GQ294524.1,GQ294525.1
 closer	ITS2_b2502fea9d32	Globodera tabacum	8	1	2	1	2	6	1	Globodera virginiae		partial_90	HQ260400.1	AB207272.1,GQ294524.1,GQ294525.1
 closer	ITS2_76a827839b67	Heterodera hordecalis	18	1	2	1.5	71	4	1	Heterodera goettingiana	0	complete	PQ221927.1	PQ221924.1
@@ -402,14 +402,14 @@ closer	ITS2_5d83764bbb5d	Heterodera mediterranea	10	2	6	1			2	Heterodera schacht
 closer	ITS2_e85ff11dc25d	Anisakis pegreffii	48	1	5	1	7	17	2	Anisakis simplex	1	near_complete	PV770573.1	PX316979.1
 closer	ITS2_fed2484db1c4	Anisakis pegreffii	48	1	5	1	8	17	2	Anisakis simplex	1	partial_90	MH819248.1	PX316979.1
 closer	ITS2_03a06dc64366	Meloidogyne incognita	80	1	5	1	19	12	2	Meloidogyne enterolobii	1	complete	LC030366.1	KY009887.1
-closer	ITS2_89ac79417084	Trichostrongylus colubriformis	48	1	5	2	6	68	2	Trichostrongylus axei	1	partial_75	KC521394.1	PV441514.1
+closer	ITS2_89ac79417084	Trichostrongylus colubriformis	50	1	5	1.5	6	68	2	Trichostrongylus axei	1	partial_75	KC521394.1	PV441514.1
 closer	ITS2_100e4e0abfaa	Trichostrongylus retortaeformis	11	1	5	2	7	6	2	Trichostrongylus axei	1	partial_75	KC521397.1	KC521371.1,KC521388.1,KC521391.1
 closer	ITS2_4c89c34700e5	Oscheius chongmingensis	7	1	5	1			2	Steinernema khoisanae	1	partial	OR350564.1	OP077311.1
 closer	ITS2_44867922ff81	Cyathostomum pateratum	20	1	5	1	6	4	2	Cyathostomum catinatum	2	near_complete	PP923201.1	PP923194.1
 closer	ITS2_2eeb71af3d0d	Nacobbus bolivianus	4	1	5	6			2	Nacobbus aberrans	1	complete	AY254363.1	AY254362.1
 closer	ITS2_193380519568	Thylonema barkeri	2	1	4	4			2	Thylonema thylonema		unmeasured	MG865648.1	MG865649.1
-closer	ITS2_69f61a4b8965	Porrocaecum moraveci	3	1	4	4	4	5	2	Porrocaecum angusticolle	38	partial_90	PV739838.1	OQ858560.1,OR359365.1,OR359366.1
 closer	ITS2_e6b4b09eb033	Porrocaecum moraveci	3	5	4	4		5	2	Porrocaecum angusticolle	38	complete	OQ858560.1,OR359365.1,OR359366.1,OR359367.1,OR359368.1	PV739838.1
+closer	ITS2_69f61a4b8965	Porrocaecum moraveci	3	1	4	4	4	5	2	Porrocaecum angusticolle	38	partial_90	PV739838.1	OQ858560.1,OR359365.1,OR359366.1
 closer	ITS2_fe28761cbb1a	Hysterothylacium sinense	131	1	3	1	107	7	2	Hysterothylacium fabri	2	complete	MW370990.1	MW371012.1
 closer	ITS2_09f466cc4d8b	Anisakis pegreffii	48	1	3	1	21	17	2	Anisakis simplex	1	partial_90	PX270844.1	PX316979.1
 closer	ITS2_c1ca8b5775cf	Anisakis pegreffii	48	1	3	1	3	17	2	Anisakis simplex	1	partial_75	PX316979.1	JN968597.1
@@ -431,24 +431,24 @@ closer	ITS2_71c0cb015dbe	Heterodera trifolii	10	1	3	2	3	5	2	(Heterodera shared)	
 closer	ITS2_24e6e9ce51d1	Hysterothylacium liparis	13	1	3	2			2	Hysterothylacium sinense	0	complete	KP301511.1	KP301516.1
 closer	ITS2_85dcffb43f15	Cephalenchus cephalodiscus	6	1	3	1			2	(Cephalenchus shared)		complete	KU723350.1	KX462090.1,KX462092.1
 closer	ITS2_7bc4c9cfbdca	Gyrinicola gulabrevioris	6	1	3	3			2	(Gyrinicola shared)		complete	PP354092.1	OR247774.1
-closer	ITS2_93ea8182285d	Heterodera medicaginis	6	2	3	1			2	Heterodera sonchophila	2	near_complete	AF274391.1,MW346596.1	MK093184.1
 closer	ITS2_6b82b7d4d659	Cephalenchus leptus	3	1	3	3			2	(Cephalenchus shared)		complete	KX462105.1	KX462104.1
+closer	ITS2_93ea8182285d	Heterodera medicaginis	6	2	3	1			2	Heterodera sonchophila	2	near_complete	AF274391.1,MW346596.1	MK093184.1
 closer	ITS2_a7c703626008	Heterodera ustinovi	2	1	3	3			2	Heterodera iri	3	near_complete	AY148406.1	AY148405.1
 closer	ITS2_9d915e3903fa	Hemicriconemoides litchi	3	1	3	1			2	Hemicriconemoides strictathecatus	1	complete	PQ584801.1	GQ354786.1
 closer	ITS2_ad7c0e3faba7	Cooperia fuelleborni	3	1	3	2			2	Cooperia curticei	2	complete	KP688061.1	KP688059.1
 closer	ITS2_67460a04bf8a	Mesocriconema onoense	2	1	9	9			3	( shared)		near_complete	MZ361700.1	OR077139.1
 closer	ITS2_777325fdfa86	Rhabdias ranae	2	4	9	9		4	3	Rhabdias breviensis	6	unmeasured	DQ264766.1,EU360823.1,EU360825.1,JX826444.1	JX826436.1
-closer	ITS2_e4d53b7946dc	Teladorsagia circumcincta	62	1	8	2	12	5	3	Teladorsagia trifurcata		partial_90	JQ889796.1	KT428386.1,MK253693.1,MK253694.1
+closer	ITS2_e4d53b7946dc	Teladorsagia circumcincta	62	1	8	2	12	6	3	Teladorsagia trifurcata		partial_90	JQ889796.1	KT428386.1,MK253693.1,MK253694.1
 closer	ITS2_829e2a225a88	Labiosimplex dendrolagi	3	1	8	8			3	Cloacina nike		partial_90	MN864144.1	FR854205.1
 closer	ITS2_13a74e658786	Meloidogyne incognita	80	1	7	1	22	12	3	(Meloidogyne shared)		partial_90	PZ502926.1	MN759304.1,QB136614.1
-closer	ITS2_633a348a8614	Trichostrongylus colubriformis	48	1	6	2	6	68	3	Trichostrongylus vitrinus	1	partial_75	KC521381.1	MH481552.1
+closer	ITS2_633a348a8614	Trichostrongylus colubriformis	50	1	6	1.5	6	68	3	Trichostrongylus vitrinus	1	partial_75	KC521381.1	MH481552.1
 closer	ITS2_dd26ee0afff1	Meloidogyne javanica	12	1	6	1	6	6	3	(Meloidogyne shared)		partial_75	MN759302.1	AF387094.1,KU356191.1,ON112363.1
 closer	ITS2_5f12b86c644e	Pratylenchus thornei	22	1	6	3	75	4	3	Pratylenchus neglectus	0	complete	OQ674414.1	OQ674412.1
 closer	ITS2_7f8639dbb466	Anisakis pegreffii	48	1	5	1	5	17	3	Anisakis simplex	1	partial_90	MH819247.1	JN968597.1
 closer	ITS2_12eba37a9457	Cylicocyclus ashworthi	20	1	5	1			3	(Cylicocyclus shared)		near_complete	JQ906413.1	PP923400.1,PX289456.1
 closer	ITS2_7e8180c0668e	Haemonchus placei	19	1	5	1	5	8	3	Haemonchus contortus	2	near_complete	MN709009.1	MN833664.1
-closer	ITS2_a944e571f7ca	Nacobbus bolivianus	4	1	5	6			3	Nacobbus aberrans	1	complete	AY254362.1	AY254363.1
 closer	ITS2_2e963c25614d	Pratylenchoides leiocauda	4	1	5	0.5			3	Helicotylenchus digonicus	24	partial	PZ229157.1	OQ625808.1,PQ867375.1
+closer	ITS2_a944e571f7ca	Nacobbus bolivianus	4	1	5	6			3	Nacobbus aberrans	1	complete	AY254362.1	AY254363.1
 closer	ITS2_a9cead74bf0c	Ancylostoma caninum	38	1	4	1	8	19	3	Ancylostoma ceylanicum	0	complete	HQ452532.1	HQ452533.1
 closer	ITS2_8782c8fc04bc	Meloidogyne incognita	80	1	4	1	4	12	3	Meloidogyne javanica	0	complete	QB173158.1	MT239111.1
 closer	ITS2_a821fff904c4	Pratylenchus crenatus	31	1	4	1			3	Pratylenchus neglectus	78	complete	LC030309.1	KY468898.1
@@ -456,18 +456,18 @@ closer	ITS2_fdefa62462fc	Trichuris suis	39	2	4	3			3	Trichuris trichiura	1	near_
 closer	ITS2_9b8fb21c544a	Trichuris suis	39	1	4	3			3	Trichuris trichiura	2	near_complete	JN181806.1	JN181804.1
 closer	ITS2_1e470190f457	Heterodera elachista	21	1	4	1	4	3	3	Heterodera oryzae		near_complete	MG845127.1	JN202914.1
 closer	ITS2_0baaee224624	Heterorhabditis mexicana	6	1	4	1			3	Heterorhabditis floridensis		complete	MK421480.1	ON482174.1,ON489249.1
-closer	ITS2_3084a8426bfe	Quilonia africana	5	1	4	3			3	Quilonia renniei	1	partial_75	PQ578012.1	PQ578014.1
 closer	ITS2_c42ee2e098a7	Heterodera trifolii	10	1	4	2	4	5	3	(Heterodera shared)		near_complete	LC208685.1	AY692354.1,MG682350.1,MN720073.1
+closer	ITS2_3084a8426bfe	Quilonia africana	5	1	4	3			3	Quilonia renniei	1	partial_75	PQ578012.1	PQ578014.1
 closer	ITS2_7015370fea39	Steinernema kushidai	2	1	114	114			4	Steinernema karii	88	unmeasured	GQ497741.1	AB243440.1
 closer	ITS2_047b425fce66	Steinernema karii	2	1	88	88			4	Steinernema kushidai	114	unmeasured	GQ497742.1	AY230173.1
 closer	ITS2_720604700cc3	Pratylenchus penetrans	102	1	85	5			4	Pratylenchus vulnus	2	complete	FJ799117.1	LC030330.1
 closer	ITS2_0d464ed9ca13	Brugia malayi	39	3	51	4		3	4	Brugia pahangi	4	near_complete	MW192404.1,OK138869.1,OK138882.1	PP545335.1
-closer	ITS2_d489eca0e3cd	Dirofilaria immitis	94	1	41	2	115	18	4	Dirofilaria repens	2	near_complete	LN626260.1	KY644133.1
+closer	ITS2_d489eca0e3cd	Dirofilaria immitis	114	1	41	2	116	17	4	Dirofilaria repens	2	near_complete	LN626260.1	KY644133.1
 closer	ITS2_24857fbcf689	Meloidogyne javanica	12	1	23	1	23	6	4	Meloidogyne hispanica	2	near_complete	AF077085.1	QB158578.1
 closer	ITS2_d25a78e429fd	Marshallagia mongolica	2	1	16	16			4	Ostertagia leptospicularis	4	partial_75	JQ925871.1	JQ863404.1
 closer	ITS2_6fbb7f5bc182	Heterodera filipjevi	54	1	15	1	15	26	4	Heterodera avenae	2	near_complete	OR214983.1	OP712201.1
 closer	ITS2_a0c9d6830b05	Steinernema borjomiense	3	1	13	13			4	Steinernema affine	7	partial	LT984410.1	LT984409.1
-closer	ITS2_7d4984e53564	Teladorsagia circumcincta	62	1	12	2	27	5	4	Orloffia kasakhstanica		near_complete	AJ251124.1	MK328935.1
+closer	ITS2_7d4984e53564	Teladorsagia circumcincta	62	1	12	2	27	6	4	Orloffia kasakhstanica		near_complete	AJ251124.1	MK328935.1
 closer	ITS2_97741def06fa	Brugia malayi	39	1	12	4	60	3	4	Brugia pahangi	4	partial_90	MW192403.1	MW192405.1
 closer	ITS2_affe2eadb8bc	Pratylenchus scribneri	31	1	10	2	13	5	4	Pratylenchus agilis	7	complete	MW487240.1	KY424226.1
 closer	ITS2_11ad9805c77f	Meloidogyne hispanica	8	1	10	3.5			4	(Meloidogyne shared)		near_complete	MZ328459.1	PX969674.1
@@ -480,9 +480,9 @@ closer	ITS2_bec3b646ca2a	Heterodera ripae	4	1	8	0.5			4	Heterodera amaranthusiae
 closer	ITS2_b086b7f0e2df	Steinernema akhursti	4	1	8	5			4	Steinernema everestense	10	near_complete	OQ625863.1	OQ624892.1
 closer	ITS2_ebe4114f6252	Steinernema akhursti	4	1	8	5			4	Steinernema everestense	10	near_complete	OQ624892.1	OQ625863.1
 closer	ITS2_54884c09381d	Heterorhabditis pakistanense	4	1	8	1.5			4	Heterorhabditis indica	2	partial_90	JN571093.1	JX144740.1,KX954218.1
-closer	ITS2_7964b687ac4e	Trichuris ovis	21	1	7	3			4	Trichuris globulosa	1	unmeasured	LN651161.1	LN651162.1
 closer	ITS2_115365164057	Pratylenchus agilis	5	1	7	7			4	Pratylenchus scribneri	10	complete	KC952982.1	FJ712888.1
 closer	ITS2_ec3231ef3d05	Brugia malayi	39	1	7	4	63	3	4	Brugia pahangi	4	partial_90	QB179996.1	MW192406.1,PQ032437.1
+closer	ITS2_7964b687ac4e	Trichuris ovis	16	1	7	6	20	7	4	Trichuris globulosa	1	unmeasured	LN651161.1	LN651162.1
 closer	ITS2_2051621741ee	Steinernema affine	16	1	7	2	14	3	4	Steinernema borjomiense	13	partial_90	OM350119.1	MW480137.1
 closer	ITS2_81f953febaa9	Haemonchus placei	19	1	7	1	8	8	4	Haemonchus contortus	2	partial_90	PP531611.1	KP688064.1
 closer	ITS2_13b0abde510b	Haemonchus contortus	329	1	6	1	19	38	4	Haemonchus longistipes	1	near_complete	LC552171.1	PZ123210.1
@@ -491,7 +491,6 @@ closer	ITS2_f09385852902	Cyathostomum montgomeryi	12	1	6	1.5	6	4	4	Coronocyclus 
 closer	ITS2_344f1991dfb8	Paratylenchus enigmaticus	2	1	6	6	6	3	4	Paratylenchus indalus	1	partial	MW282773.1	MW798337.1,MZ265019.1,PX219901.1
 closer	ITS2_541404f4edc1	Haemonchus placei	19	1	6	1	7	8	4	Haemonchus contortus	2	partial_90	PP531612.1	JQ342248.1,LC367244.1,OR702556.1
 closer	ITS2_3c4f8ca5f0f3	Pratylenchus thornei	22	1	6	3	75	4	4	Pratylenchus neglectus	3	complete	OQ674412.1	OQ674414.1
-closer	ITS2_2447c6cb8cab	Trichuris ovis	21	1	5	3			4	Trichuris globulosa	8	unmeasured	LN813017.1	FR870274.1
 closer	ITS2_8960e401c63c	Onchocerca ochengi	5	1	5	3			4	Onchocerca volvulus	1	complete	DQ317659.1	FM206482.1
 closer	ITS2_eacbd14db1e9	Pratylenchus crenatus	31	1	5	1			4	Pratylenchus neglectus	78	near_complete	KY512776.1	KY468898.1
 closer	ITS2_42b779380c8f	Elaphostrongylus rangiferi	8	1	5	1			4	Elaphostrongylus cervi	1	complete	AY648408.1	AF504027.1
@@ -500,6 +499,7 @@ closer	ITS2_d64dc588fc65	Marshallagia marshalli	18	1	5	1	7	11	4	(Marshallagia sh
 closer	ITS2_49c949b3f0d6	Metastrongylus salmi	10	1	5	4.5			4	Metastrongylus asymmetricus		partial_90	ON197185.1	AJ305401.1
 closer	ITS2_1225c3ead7c2	Meloidogyne hispanica	8	1	5	3.5			4	(Meloidogyne shared)		partial_90	PP340177.1	MZ328458.1
 closer	ITS2_198dc924eef3	Heterodera urticae	2	1	5	5			4	Heterodera cruciferae	0	near_complete	AF274412.1	PV138334.1
+closer	ITS2_2447c6cb8cab	Trichuris ovis	16	1	5	6	22	7	4	Trichuris globulosa	8	unmeasured	LN813017.1	FR870274.1
 closer	ITS2_5741c54a1ba6	Globodera artemisiae	5	1	5	1	6	3	4	Globodera millefolii	37	partial_90	OQ625803.1	AF274415.1
 closer	ITS2_80ec831ac22b	Cloacina eos	7	1	5	3			4	Cloacina papillata	3	near_complete	KM219918.1	KM219912.1
 closer	ITS2_de89fd0f5658	Rhabdias joaquinensis	2	1	5	5			4	Rhabdias ranae	9	unmeasured	JX826430.1	KF999594.1
@@ -522,8 +522,8 @@ closer	ITS2_581437b40a56	Pratylenchus vulnus	36	1	9	1			6	Pratylenchus penetrans
 closer	ITS2_1df48cf609c0	Mesocriconema onoense	2	1	9	9			6	( shared)		near_complete	OR077139.1	MZ361700.1
 closer	ITS2_0b82f9f33c6f	Uncinaria stenocephala	20	3	8	1		3	6	Uncinaria yukonensis		complete	OQ773547.1,OQ773548.1,OQ773549.1	PX552155.1,PX552156.1,PX557809.1
 closer	ITS2_fb03f303c05c	Rotylenchulus borealis	6	1	8	3			6	Rotylenchulus macrosoma	1	near_complete	MW174239.1	MW174244.1
-closer	ITS2_902e9300fd66	Meloidogyne incognita	80	1	7	1	13	12	6	(Meloidogyne shared)		partial_75	PZ263543.1	MN759304.1,QB136614.1
 closer	ITS2_de24a47cb558	Meloidogyne incognita	80	1	7	1	7	12	6	Meloidogyne arenaria	2	complete	MT490921.1	KP179223.1,KP751205.1,KR265163.1
+closer	ITS2_902e9300fd66	Meloidogyne incognita	80	1	7	1	13	12	6	(Meloidogyne shared)		partial_75	PZ263543.1	MN759304.1,QB136614.1
 closer	ITS2_8674b029de80	Cloacina caenis	9	1	7	4			6	Cloacina robertsi	1	near_complete	FM992589.1	KJ776343.1
 closer	ITS2_d628ea281994	Uncinaria hamiltoni	8	1	7	0	7	3	6	Uncinaria stenocephala	8	partial	MW581839.1	HQ262113.1
 closer	ITS2_6f392e90f9d2	Hoplolaimus seinhorsti	3	1	7	1			6	Hoplolaimus columbus	1	partial_75	MK521872.1	ON123806.1
@@ -535,10 +535,10 @@ closer	ITS2_c8d7bb75bbe0	Brugia malayi	39	1	13	4	84	3	7	Brugia pahangi	4	near_co
 closer	ITS2_4855dfe613c0	Amplimerlinius paraglobigerus	5	1	11	25			7	Scutylenchus brevidens	7	near_complete	MN262449.1	MN262450.1
 closer	ITS2_78c7126cfc25	Cloacina hestia	2	1	11	11			7	Cloacina hera	7	near_complete	PP919597.1	PP919596.1
 closer	ITS2_e1b24adc9cbf	Stenurus globicephalae	2	3	11	11		3	7	Stenuroides herpestis		complete	FJ787303.1,MW192226.1,OR900632.1	MW192228.1
-closer	ITS2_6aa39c8c54bf	Trichuris ovis	21	1	9	3			7	Trichuris globulosa	1	unmeasured	MK402085.1	LN651161.1
 closer	ITS2_62d9e9fcc20b	Ancylostoma ceylanicum	21	1	9	1	102	18	7	Ancylostoma caninum	2	unmeasured	KU996387.1	KU996385.1
 closer	ITS2_30cf7861d974	Cloacina macropodis	6	1	9	1			7	Cloacina johnstoni	1	partial_90	KU853952.1	KU853940.1
 closer	ITS2_e1650e5160ac	Radopholus duriophilus	5	1	9	0	11	3	7	Radopholus arabocoffeae	0	complete	HQ823573.1	PQ662784.1
+closer	ITS2_6aa39c8c54bf	Trichuris ovis	16	1	9	6	22	7	7	Trichuris globulosa	1	unmeasured	MK402085.1	LN651161.1
 closer	ITS2_7ec81aa371b1	Anisakis pegreffii	48	2	8	1	8	17	7	Anisakis simplex	0	complete	MK889507.1,MK889508.1	JN968597.1
 closer	ITS2_822d004f2bec	Meloidogyne incognita	80	3	8	1	18	12	7	Meloidogyne hispanica	2	complete	LC030363.1,MW979595.1,PZ411673.1	KY009887.1
 closer	ITS2_0ec988ed9298	Toxocara malaysiensis	2	1	8	8			7	(Toxocara unnamed)		partial_90	AM231609.1	PP851012.1
@@ -560,7 +560,7 @@ closer	ITS2_92877b991911	Pratylenchus lentis	9	2	10	12			9	Pratylenchus pratensi
 closer	ITS2_6a514577b86b	Longidorus cholevae	5	1	156	8			10	Longidorus raskii	4	unmeasured	HG329719.1	FR775760.1
 closer	ITS2_f91c51e24555	Steinernema siamkayai	46	1	21	2.5	23	33	10	Steinernema minutum	9	unmeasured	OP862849.1	OP862850.1
 closer	ITS2_0b3fff5a0ab0	Gracilacus aculentus	2	1	20	20			10	Paratylenchus paralatescens		complete	EU247526.1	MW413588.1,MW413589.1
-closer	ITS2_2461a1a9b337	Teladorsagia circumcincta	62	1	16	2	34	5	10	Ostertagia leptospicularis	4	partial_90	KT215382.1	MK328937.1
+closer	ITS2_2461a1a9b337	Teladorsagia circumcincta	62	1	16	2	34	6	10	Ostertagia leptospicularis	4	partial_90	KT215382.1	MK328937.1
 closer	ITS2_53cd1975f29f	Macropostrongyloides lasiorhini	2	1	15	15			10	Macropostrongyloides yamagutii		unmeasured	MK842124.1	MK842123.1
 closer	ITS2_adb4b282cef9	Aphelenchoides besseyi	62	1	11	2	12	20	10	Aphelenchoides oryzae	2	partial_75	MT271861.1	MF669509.1,MN062029.1,MN062030.1
 closer	ITS2_7214376c9c79	Meloidogyne incognita	80	1	11	1	12	12	10	(Meloidogyne shared)		near_complete	OQ923660.1	MT490913.1
@@ -607,6 +607,7 @@ closer	ITS2_2934d5f95fd9	Mansonella perstans	4	4	72	36.5		4	65	Mansonella ozzard
 layer	ITS2_1023c870e07e	Trichuris incognita	4	1	16	20			0	Trichuris trichiura	4	complete	STPHxBioinformatics:TTRE_chr2_scaffold39:13832551	STPHxBioinformatics:TTRE_chr2_scaffold39:13871030
 layer	ITS2_145840e2cb5b	Cylicocyclus insigne	32	1	3	1	23	6	1	Cylicocyclus ashworthi	1	complete	ERR11658755:v6	ERR11658755:v5
 layer	ITS2_ff129eb40450	Cylicocyclus insigne	32	1	3	1	22	6	1	Cylicocyclus ashworthi	0	complete	ERR11658755:v5	ERR11658755:v6
+layer	ITS2_4780f5cfba99	Dirofilaria asiatica	12	1	3	0.5	3	9	2	Dirofilaria repens	2	complete	GCA_053573785.1:CM131949.1:13268599	PZ834612.1,PZ834616.1,PZ834620.1
 layer	ITS2_0ac0e1e35277	Parascaris univalens	5	1	8	1			5	(Parascaris shared)		complete	GCA_037576465.1:CM075173.1:52459006	GCA_037576465.1:CM075173.1:107304975
 layer	ITS2_864268fc7f00	Cylicocyclus nassatus	36	1	17	1	26	26	10	Cylicostephanus goldi	2	complete	GCA_958299035.1:CATQJL010000223.1:68858237	GCA_958299035.1:CATQJL010000326.1:9201990
 layer	ITS2_eebe70528f59	Trichuris incognita	4	1	16	20			12	Trichuris trichiura	1	complete	STPHxBioinformatics:TTRE_chr2_scaffold39:13871030	STPHxBioinformatics:TTRE_chr2_scaffold39:13832551
@@ -622,8 +623,9 @@ layer	ITS2_661738334a0a	Litomosoides sigmodontis	5	1	22	9						complete	GCA_9630
 layer	ITS2_c49ad4ec522e	Litomosoides sigmodontis	5	1	22	9						complete	GCA_963070105.1:OY718804.1:19089	GCA_963070105.1:OY718808.1:10328121
 layer	ITS2_dd11541af23b	Nematodirus battus	16	1	20	1	21	4				complete	GCA_966197035.1:OZ306384.1:74824038	GCA_966197035.1:CBIHKN010000034.1:19121,GCA_966197095.1:CBIHKP010000005.1:47465894
 layer	ITS2_4f95b1412405	Spirocerca lupi	4	1	17	9.5						complete	GCA_965124195.1:OZ222510.1:18581223	GCA_965124195.1:OZ222510.1:18730155
-layer	ITS2_b40cedcfd726	Strongylus vulgaris	52	1	14	1	32	7				complete	GCA_062004760.1:JCAWEY010004120.1:2982	PX442251.1
+layer	ITS2_b7c7f05a100d	Thelazia callipaeda	5	1	15	3						complete	GCA_965194785.1:OZ239431.1:249441	GCA_965194785.1:OZ239431.1:128474
 layer	ITS2_0bc13d3827c6	Strongylus vulgaris	52	1	14	1	31	7				complete	GCA_062004760.1:JCAWEY010000763.1:224193	PX442251.1
+layer	ITS2_b40cedcfd726	Strongylus vulgaris	52	1	14	1	32	7				complete	GCA_062004760.1:JCAWEY010004120.1:2982	PX442251.1
 layer	ITS2_ee84e5118d05	Strongylus vulgaris	52	1	13	1	21	7				complete	GCA_062004760.1:JCAWEY010002130.1:55812	PX442251.1
-layer	ITS2_337c17639f9e	Acanthocheilonema viteae	9	1	11	2						complete	GCA_046563165.1:CM102052.1:11813443	GCA_046563165.1:CM102054.1:10074096
+layer	ITS2_160aeaf273ec	Dirofilaria immitis	114	1	11	2	20	17				complete	GCA_988913905.1:CGEYZU010000001.1:133234	GCA_988913905.1:CGEYZU010000005.1:51049
 layer	ITS2_769bf2b12198	Spirocerca lupi	4	1	11	9.5						complete	GCA_965124195.1:OZ222510.1:18895014	GCA_965124195.1:OZ222510.1:18748745

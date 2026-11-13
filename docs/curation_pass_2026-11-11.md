@@ -106,6 +106,8 @@ is certain.
   so *Trichostrongylus* may simply be close. Check alignments.
 - **JF276023**, the only *T. capricola* record (goat, Iran), holds 20 of
   48 *T. colubriformis* records. Dropping it removes the species.
+  Dropped on 2026-11-13: it is 1 edit from 692 of the 766 ITS2 copies of
+  the *T. colubriformis* genome GCA_963978875 (docs/DESIGN.md §5.5).
 - **MT193647** *T. colubriformis* (Bactrian camel, China) is identical to
   *T. probolurus* EF427623 (Kuznetsov 2007). *T. probolurus* is a camel
   parasite, so this record may be *T. probolurus*. Dropped in E.

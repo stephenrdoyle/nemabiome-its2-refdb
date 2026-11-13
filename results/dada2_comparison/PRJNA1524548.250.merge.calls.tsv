@@ -89,7 +89,7 @@ ASV00087	whole	2	244	0.9918	1	1	Cooperia punctata 99.2%	Cooperia oncophora +1	fa
 ASV00088	whole	3	228	0.9868	1	1	Cloacina herceus 98.7%	Cloacina hydriformis +1	family	Strongylidae	family	Strongylidae	genus	Cloacina	genus	Cloacina		
 ASV00089	whole	7	235	0.9702	1	22	Popovastrongylus macropodis 97.0%	Macropostrongylus macropostrongylus +22	family	Strongylidae	family	Strongylidae	genus	Popovastrongylus	genus	Popovastrongylus		
 ASV00090	whole	2	218	0.9908	1	11	Cloacina phaethon 99.1%	Cloacina parva +11	family	Strongylidae	family	Strongylidae	species	Cloacina phaethon	species	Cloacina phaethon		
-ASV00091	whole	0	242	1.0000	5	1	Trichostrongylus colubriformis 100.0%	Trichostrongylus capricola +1	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	genus	Trichostrongylus	genus	Trichostrongylus		
+ASV00091	whole	0	242	1.0000	5	5	Trichostrongylus colubriformis 100.0%	Trichostrongylus retortaeformis +5	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis	species	Trichostrongylus colubriformis		
 ASV00092	whole	3	218	0.9862	3	5	Cloacina macropodis 98.6%	Cloacina johnstoni +5	family	Strongylidae	family	Strongylidae	genus	Cloacina	species	Cloacina macropodis	yes	
 ASV00093	whole	1	219	0.9954	1	9	Cloacina clymene 99.5%	Cloacina dryope +9	genus	Cloacina	genus	Cloacina	species	Cloacina clymene	species	Cloacina clymene		
 ASV00094	whole	70	236	0.7034	1	56	Metastrongylus salmi 70.3%	Metastrongylus asymmetricus +56	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned	unassigned		
