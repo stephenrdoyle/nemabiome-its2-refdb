@@ -1,6 +1,6 @@
 # Notes for amphid: using the nemabiome ITS2 database
 
-From nemabiome-its2-refdb v0.1.1 (2026-11-10); updated for v0.1.4
+From nematode-its2-refdb (named nemabiome-its2-refdb until v0.1.4) v0.1.1 (2026-11-10); updated for v0.1.4
 (2026-11-12, "What changed in v0.1.4" below). The database follows
 vespa-18s-refdb's release format. These are the places where ITS2 needs
 something V4 did not.

@@ -1,4 +1,4 @@
-# nemabiome-its2-refdb: design
+# nematode-its2-refdb: design
 
 The ITS2 counterpart of vespa-18s-refdb: a versioned reference database
 for amphid, built from the nemabiome ITS2 database rather than a primer

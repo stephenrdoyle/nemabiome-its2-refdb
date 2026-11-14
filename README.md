@@ -1,10 +1,15 @@
-# nemabiome-its2-refdb
+# nematode-its2-refdb
 
-Builds the nematode ITS2 reference database for NC1/NC2 "nemabiome"
-metabarcoding, read on Illumina (2x150, 2x250) and nanopore: every
-nematode in the nemabiome ITS2 database, re-cut to the span the reads
-cover, graded by how much of it each record holds, with taxonomy,
-resolution tables and the adapter look-alike mask. It is the ITS2
+Builds a curated nematode ITS2 reference database for NC1/NC2
+"nemabiome" metabarcoding, read on Illumina (2x150, 2x250) and
+nanopore. It starts from the nemabiome ITS2 database and adds GenBank
+records published since, informal "Genus sp." lineages, and ITS2 copies
+from genome assemblies; each record is re-cut to the span the reads
+cover, graded by how much of it it holds, and screened, with mislabelled
+records dropped or relabelled (`curation/`). It writes taxonomy,
+resolution tables and the adapter look-alike mask. It is an independent
+derivative, not a product of the nemabiome project; see
+[Citation](#citation). It is the ITS2
 counterpart of [vespa-18s-refdb](https://github.com/stephenrdoyle/vespa-18s-refdb),
 writes the same release format, and is consumed by
 [amphid](https://github.com/stephenrdoyle/nf-amphid-pipeline).
@@ -19,7 +24,7 @@ for what amphid needs to change to use it. DADA2 and IdTaxa users: see
 
 ```bash
 V=v0.1.4
-curl -LO https://github.com/stephenrdoyle/nemabiome-its2-refdb/releases/download/$V/nemits2_$V.tar.gz
+curl -LO https://github.com/stephenrdoyle/nematode-its2-refdb/releases/download/$V/nemits2_$V.tar.gz
 shasum -a 256 nemits2_$V.tar.gz
 # e8ed2dc74a5010a5a6f621329ad6f0a34da3cf9c794c3091a9d3dc2f78f165d6
 tar -xzf nemits2_$V.tar.gz

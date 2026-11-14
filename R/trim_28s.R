@@ -1,5 +1,5 @@
 # trim_28s(): cut the 28S stretch off NC1/NC2 ASVs before classifying
-# them with assignTaxonomy or IdTaxa against nemabiome-its2-refdb.
+# them with assignTaxonomy or IdTaxa against nematode-its2-refdb.
 #
 # Why: a primer-trimmed NC1/NC2 ASV ends in ~47 bases of 28S before NC2.
 # This database's records stop where that stretch starts (it varies by
