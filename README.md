@@ -65,6 +65,21 @@ Leave-one-out (3,230 queries): present species named 57.3% (gap rule) /
 5.5% / 9.3%. The mocks still name no wrong species
 (`results/`, docs/DESIGN.md §6).
 
+***Metastrongylus* curation** (docs/DESIGN.md §8.18;
+`curation/genbank_named.tsv`, `curation/overrides.tsv`). Most records
+are SSCP bands of Conole et al. (2001, Estonian wild boar), whose ITS2
+varies chiefly in microsatellites. *M. pudendotectus* is one species
+(records up to 78 edits apart plain are 2-11 apart with repeats
+collapsed, and repeat-aware scoring names it); *M. salmi* is not: three
+tight types, A and C 21-34 edits apart, about as far as A is from
+*M. apri*. Type C is the sequence Humbert & Henry (1997) deposited as
+*M. asymmetricus*, so it stays tied with that species at genus. Type B
+(AJ305395/400/403) is type A lacking a 44-base block every other record
+carries, most likely a gel-band artefact, and is dropped. Added by hand:
+the rest of the Conole bands, *M. apri* from Denmark, Viet Nam and
+Brazil, and 14 Brazilian wild boar *M. salmi* (OR660330-50, unpublished),
+a further type 17-27 edits from every other record.
+
 **Informal "Genus sp." records** (docs/DESIGN.md §5.7). Some lineages
 are known only by an informal name, such as the gorilla hookworm
 "*Necator* sp." of Hasegawa et al. The GenBank update now takes every
