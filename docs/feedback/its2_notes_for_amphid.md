@@ -88,7 +88,26 @@ tables in the release are computed the same way.
 
 NC1 `ACGTCTGGTTCAGGGTTGTT`, NC2 `TTAGTTTCTTTTCCTCCGCT`, each ordered
 with 0-3 N spacers behind the Illumina adapter (nemabiome.ca's
-protocol). Primer trimming must allow a 0-3 base offset.
+protocol). Primer trimming must allow a 0-3 base offset, and the
+deposited sets we tested needed more:
+
+- **pairs in both orientations**: some libraries ligate both ways
+  (PRJNA1137257, zoo antelopes); a pair with NC1 on read 2 and NC2 on
+  read 1 must be turned round, not discarded;
+- **read 2 starting inside 28S, with no NC2**: half the PRJNA1524548
+  libraries use a reverse primer on 28S; trim read 2 at the conserved
+  28S motif when NC2 is absent (93.9% of pairs kept instead of about
+  half);
+- **read-through**: a read longer than the amplicon runs on through the
+  other primer; cut it where the other read starts;
+- **primers clipped at the 5' end** by up to 3 bases (a fifth of the zoo
+  pairs) should still be accepted;
+- **reads deposited without primers** (PRJEB64582) need a mode that
+  skips primer finding and tells a pair's orientation by read 2's
+  conserved 28S start.
+
+Each acts only on a pair that needs it. Reference: `bin/trim_primers.py`
+(`--pretrimmed`; `--strict` turns the rest off).
 
 ## 3. Read windows
 
@@ -115,8 +134,13 @@ and concatenated ASVs side by side, and each is scored as it is: a
 merged ASV whole, a concatenated one as two windows (§5). The README's
 "For DADA2 and IdTaxa users" section has the dada2 code.
 
-At 2x150 we have only tested concatenating every pair; hybrid there is
-untested.
+At 2x150 concatenate every pair: that is what we have tested; hybrid
+there is untested. Nanopore reads are scored whole.
+
+DADA2's chimera check cannot see a chimera whose join falls in the gap
+between the two reads of a concatenated pair. Most of the zoo set's
+unplaced ITS2 (0.21% of reads) is such chimeras: read 1 *Haemonchus* or
+*Teladorsagia*, read 2 *T. axei*.
 
 ## 4. Grade
 
@@ -180,7 +204,8 @@ their own (intraspecific variation). Naming those at >= 98%, with the
 same 4-edit gap, as a flagged *tentative* species call gains 11 points
 of recall for 4 of over-classification, and on real data names the goat
 line of *T. circumcincta*, *Oe. venulosum* and *Oe. radiatum* reads held
-at genus (Francis & Šlapeta: 95.3% to 99.0% of reads to species). Keep
+at genus (Francis & Šlapeta, 2x250 hybrid: 95.7% to 99.4% of reads to
+species, v0.2.0). Keep
 the gap rule's call as the confident one and report the tentative call
 beside it: a read 1-2% from its own species looks the same as one 1-2%
 from a missing sister, which is what tentative kangaroo *Cloacina* calls
@@ -207,10 +232,13 @@ differently. `bin/classify_asvs.py` writes these as `nearest` and
 **Report the lineage.** `taxonomy.tsv` has a `lineage` column: a
 published line within a species, kept under the species' name: the
 *Teladorsagia circumcincta* goat line (2 records), which Francis &
-Šlapeta (2023) found in goats and not in sheep on shared pasture. Since
-v0.1.4 it also carries the informal name of a genus-level
-record (19: *Oesophagostomum* sp. 3335_MDR_CAM_OH15, *Cloacina* sp. 1
-AJ-2019, *Trichostrongylus* sp. SMNPOL33R), whose species is blank. When every tied best reference carries the same lineage,
+Šlapeta (2023) found in goats and not in sheep on shared pasture. It
+also carries the informal name of a genus-level record, whose species
+is blank (737 in v0.2.0, 19 in v0.1.4: *Oesophagostomum* sp.
+3335_MDR_CAM_OH15, *Cloacina* sp. 1 AJ-2019), and since v0.2.0 the
+Hasegawa *Necator* rDNA types ("Necator sp. type II", "type III"):
+gorilla, chimpanzee and human *Necator* reads in Cameroon that stop at
+genus are type II. When every tied best reference carries the same lineage,
 report it with the call, at any rank: a goat-line read at 98% stops at
 genus but is still "nearest *T. circumcincta* (goat line) 98.0%". Blank
 means no line is recorded, not the other line. `bin/classify_asvs.py`
@@ -222,7 +250,10 @@ before the reference's start (primer offset, up to 30). Cut the second
 window at the 28S anchor, not at a fixed 47 bases. Giving a reference's
 first bases slack let one partial *H. bedfordi* record tie *H. placei*
 reads in the reference scorer (DESIGN §6.2); amphid already charges
-them.
+them. A gap in our own scorer: where a pair overlaps but was
+concatenated (it failed to merge), read 1 can run past the ITS2 into
+28S, and that overrun is charged; cutting read 1's window at the anchor
+too would fix it (0.5% of Cameroon 2x250 reads, under 0.05% elsewhere).
 
 **Score simple repeats by copy number.** A difference in how many units
 a simple repeat has (a homopolymer of >= 4 bases, >= 3 copies of a 2-3
