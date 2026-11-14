@@ -636,7 +636,7 @@ def main() -> int:
     seqs, tax, members, conflicts = {}, {}, [], []
     for acc in drops:
         g = grade[acc]
-        members.append({"id": "", "source": a.source, "accession": label[acc][0],
+        members.append({"id": "", "source": source_of.get(acc, a.source), "accession": label[acc][0],
                         "label": ";".join(label[acc][1]), "role": "dropped", "grade": g["grade"],
                         "coverage": g["coverage"], "trimmed_start": g["trimmed_start"],
                         "trimmed_end": g["trimmed_end"], "note": drops[acc]})
