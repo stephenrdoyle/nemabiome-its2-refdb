@@ -48,8 +48,7 @@ Sixteen more genome assemblies scanned for ITS2 (`curation/long_read_sources.tsv
 docs/DESIGN.md §5.5): 74 copies of 15 species, 49 of them new records
 (*Dirofilaria immitis*, *Acanthocheilonema viteae*, *Dictyocaulus
 viviparus*, *Trichuris trichiura*, *Thelazia callipaeda* and others).
-The development build has 11,329 records and 1,873 named species. The
-genomes settle two curation questions (`curation/overrides.tsv`):
+The genomes settle two curation questions (`curation/overrides.tsv`):
 
 - **The only *Trichostrongylus capricola* record, JF276023, is dropped.**
   It is 1 edit from 692 of the 766 ITS2 copies of the
@@ -65,6 +64,26 @@ Leave-one-out (3,230 queries): present species named 57.3% (gap rule) /
 68.2% (tiered), as in v0.1.4; over-classification 5.4% / 9.0%, from
 5.5% / 9.3%. The mocks still name no wrong species
 (`results/`, docs/DESIGN.md §6).
+
+**Informal "Genus sp." records** (docs/DESIGN.md §5.7). Some lineages
+are known only by an informal name, such as the gorilla hookworm
+"*Necator* sp." of Hasegawa et al. The GenBank update now takes every
+nematode ITS2 record named "Genus sp. X"; the build gives each its genus
+only (`species_status` `unnamed`, the name in `lineage`) and drops it
+where a named record's ITS2 is identical to, inside or contains it, or
+where its genus disagrees with its ITS2 (a named record of another
+genus >= 97% identical and closer than any of its own genus: 86 records,
+mostly *Raphidascaris* and *Terranova* inside *Hysterothylacium* and
+*Euterranova*). The classifier scores reads against named records
+first and uses informal ones only where that call stops above genus, so
+they add genus calls and never change one. 737 are kept. Leave-one-out:
+missing species reach the right genus 23.5% of the time (from 19.3%),
+wrong genus unchanged at 1.2%. Real data: no species call changes;
+gorilla *Necator* (18-21% of Cameroon ape reads) and kangaroo
+*Macropostrongylus* (0.6-0.7% of PRJNA1524548) reach genus instead of
+unassigned.
+
+The development build has 12,054 records and 1,873 named species.
 
 ## v0.1.4
 

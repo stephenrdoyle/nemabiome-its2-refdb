@@ -123,7 +123,13 @@ wrong one is the margin to the next species. Recommended rule:
 - **genus** >= 97%, **family** >= 95%;
 - a reference with `species_status` = `unnamed` (hybrids, cf.,
   environmental, informal "sp." names) is not "another species"; a
-  `shared` one is.
+  `shared` one is;
+- score against named records first, and against the informal
+  "Genus sp." records (`unnamed`, informal name in `lineage`) only where
+  that call stops above genus, keeping the deeper call. They are there
+  to place reads no named record reaches (the gorilla *Necator* sp.),
+  and scored alongside the named ones they can take a named species'
+  variants. Since the build after v0.1.4 there are 737 of them.
 
 Recall = right calls / reads; precision = right calls / calls made at
 that rank; over-classification = a species named for a read whose

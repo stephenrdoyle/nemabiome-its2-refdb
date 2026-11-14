@@ -41,8 +41,9 @@ of any date annotated with 5.8S and 28S but never ITS2 (128), and
 accessions listed by hand in `curation/genbank_named.tsv` (98: strongylid
 species and informal lineages found missing by checking NCBI's
 Strongyloidea ITS2 records against the build). Of 3,917, 3,152 sit at or
-below a formally named species (informal "sp." names are kept only when
-listed by hand) and 1,834 hold an ITS2 region (>= 80 bases at >= 70% to
+below a formally named species (informal "sp." names were then kept only when
+listed by hand; since 2026-11-13 a fifth query takes every nematode ITS2
+record named "Genus sp. X", §5.7) and 1,834 hold an ITS2 region (>= 80 bases at >= 70% to
 a build record, by minimap2); the best hit, scored as matches less
 twice the differences, stands in for the HMM boundary. `merge` appends
 them to the backbone's sequences and taxonomy with a `source` column.
@@ -220,7 +221,8 @@ same effect dropped pairs in vespa-18s-refdb's neighbour check.)
   species; `shared` if it stops above species because its members name
   two or more species (80 records, 95 in v0.1.1: real shared ITS2s, such as *Cylicocyclus
   insigne* / *C. ashworthi*);
-  `unnamed` if no member names a species at all (51 in v0.1.4, 32 in
+  `unnamed` if no member names a species at all (769 in the development
+  build, most of them informal "Genus sp." records, §5.7; 51 in v0.1.4, 32 in
   v0.1.3: hybrids, cf., environmental samples, and the informal "sp."
   names of the GenBank update, §2.1, whose name is in `lineage`).
   "sp."/"spp." count as no species name, as cf. and hybrids do: the
@@ -611,6 +613,51 @@ Rhabditidae. ITS2 sides with *Oscheius*; the rule follows NCBI, and the
 case is left as a flag. The evaluation in §6 was run on the build before
 this step; renaming changes labels, not sequences or ties.
 
+### 5.7 Informal names (since 2026-11-13)
+
+Some lineages are known only by an informal name: the gorilla hookworm
+of Hasegawa et al. is "*Necator* sp." in GenBank, 45 edits from
+*N. americanus*, and without it 17.7-20.5% of the Cameroon ape reads
+(PRJEB64582) stayed unassigned. `bin/genbank_update.py` now also takes
+every nematode ITS2 record named "Genus sp. X" (any date; not cf., aff.,
+hybrids, environmental or "sp." above genus). The build gives each its
+genus only (`species_status` `unnamed`, the name in `lineage`) and
+treats it as adding, never changing:
+
+- **Left out where a named record covers it**: an informal record whose
+  ITS2 is identical to, inside or contains a named record's ITS2 adds
+  nothing and is dropped (636 source records).
+- **Left out where its genus disagrees with its ITS2** (the genus
+  screen): larval and environmental "sp." records often carry another
+  genus's ITS2. An informal record is dropped when a named record of
+  another genus is >= 97% identical (the genus limit) and closer than
+  any named record of its own genus: 125 source records, 86 records,
+  most of them *Raphidascaris*, *Terranova* and *Anisakis* records
+  inside *Hysterothylacium*, *Euterranova*, *Pulchrascaris* and
+  *Pseudoterranova*, and *Panagrolaimus* and *Pristionchus* records that
+  are *Caenorhabditis*. Kept, they named reads of a missing species to
+  the wrong genus.
+- **Not counted** in any other record's margins or window groups, nor
+  as "another species" in the gap rule; `bin/its2_partials.py` never
+  takes one as the relative that sets a partial's boundary (a complete
+  "*Ascaris* sp." did, and split *A. lumbricoides* partials from the
+  *A. suum* record they had been identical to).
+- **Scored after the named records**: the classifiers
+  (`score_named_first` in `bin/its2_classify.py`) call each read
+  against named records alone, and score it again with informal ones
+  only where that call stops above genus, keeping the deeper call. An
+  informal record can turn an unassigned read into a genus call; it
+  never changes a call the named records make.
+
+737 informal records are kept. In leave-one-out (§6.1, gap rule),
+reads of species missing from the database reach the right genus 23.5%
+of the time, from 19.3%, with wrong-genus calls at 1.2% as before; the
+genus screen took them back down from 1.7%. Present species and
+wrong-species rates are unchanged. On real data no species call is lost
+or changed; gorilla *Necator* (17.7-20.5% of Cameroon reads) and
+kangaroo *Macropostrongylus* (0.6-0.7% of PRJNA1524548) move from
+unassigned to genus.
+
 ## 6. Naming reads: the classifier and its tests
 
 amphid cannot use this database yet (§7), so a small stand-in scores
@@ -663,7 +710,8 @@ pairs, `bin/classify_asvs.py` for DADA2 ASVs. Both share the scorer.
   match is exact and it is >= 2 edits off (sister species share
   variants: an exact match with another species 1 edit off is right
   60% of the time, §6.1); genus at >= 97%, family at >= 95%. `shared` records count as another species,
-  `unnamed` ones do not (§5).
+  `unnamed` ones do not (§5). Informal "Genus sp." records are
+  scored only where the named records stop above genus (§5.7).
 - **The tiered rule** (since v0.1.3): the gap rule's species calls, and
   also species at >= 98% with the same 4-edit gap, flagged `tentative`.
   It names intraspecific variants the 99% floor leaves at genus (the
@@ -1285,8 +1333,9 @@ amphid needs changes before it can use this database:
     *Trichinella* assembly (the scanner, most likely); and
     GCA_060414415, deposited as *Aelurostrongylus abstrusus*, carries a
     *Troglostrongylus brevior* ITS2, which its submitters may want to
-    know. Informal lineages are kept only where
-    listed by hand: a rule for the rest is open.
+    know. Informal lineages: settled by the
+    rule in §5.7 (all "Genus sp." ITS2 records, genus only, scored after
+    the named ones, screened for genus).
 17. **Repeat-aware scoring and the tiered rule** (§6): done, as defaults
     beside the gap rule. Open: scoring each reference twice roughly
     doubles window scoring, most felt on concatenated tables; the
