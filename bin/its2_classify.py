@@ -62,7 +62,7 @@ import tempfile
 from multiprocessing import Pool
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build import RANKS, deepest, infix_distance, merge_records, read_fasta  # noqa: E402
+from build import RANKS, deepest, infix_distance, informal, merge_records, read_fasta  # noqa: E402
 from its2 import NC1, NC2  # noqa: E402
 from seqmatch import find_anchor_cost, revcomp  # noqa: E402
 from trim_28s import trim as trim_28s  # noqa: E402
@@ -462,6 +462,39 @@ def lineage(tax, ties):
     return ls.pop() if len(ls) == 1 else ""
 
 
+def informal_records(build):
+    """Records all of whose kept members carry an informal "Genus sp. X"
+    name (bin/build.py, INFORMAL NAMES)."""
+    loose = collections.defaultdict(list)
+    for r in csv.DictReader(open(os.path.join(build, "members.tsv")), delimiter="\t"):
+        if r["id"] and r["role"] == "kept":
+            loose[r["id"]].append(informal(r["label"].split(";")))
+    return {i for i, v in loose.items() if all(v)}
+
+
+def score_named_first(pool, jobs, tax, loose, chunksize=50):
+    """_score each job against the named records alone; where that call
+    stops above genus (gap rule) and an informal-name record was among
+    the candidates, score again with them and keep the deeper call.
+    Informal records add calls and never change one the named records
+    make: a "Genus sp." record next to a named species (a larva given the
+    wrong genus) cannot take that species' variants. {key: _score row}."""
+    first = [(k, m, a, b, [c for c in cs if c not in loose]) for k, m, a, b, cs in jobs]
+    res = {r[0]: r for r in pool.imap_unordered(_score, first, chunksize=chunksize)}
+    if not loose:
+        return res
+
+    def depth(r):
+        rank = call(tax, r[3], r[1], r[2], "gap", r[4], r[5])[0]
+        return RANKS.index(rank) if rank else -1
+    again = [j for j in jobs if any(c in loose for c in j[4])
+             and depth(res[j[0]]) < RANKS.index("genus")]
+    for r in pool.imap_unordered(_score, again, chunksize=chunksize):
+        if depth(r) > depth(res[r[0]]):
+            res[r[0]] = r
+    return res
+
+
 def call(tax, ties, d, span, rule, gap=None, cover=1.0):
     lab = merge_records([[tax[t][k] for k in RANKS] for t in ties])
     if d is None or span == 0:
@@ -543,7 +576,8 @@ def main() -> int:
             x, y = (s, "") if m == "whole" else s
             jobs.append(((m, i), "whole" if m == "whole" else "window", x, y, cand.get(i, [])))
     with Pool(a.workers, initializer=_init, initargs=(refs, tax)) as pool:
-        res = {k: (d, sp, t, g, cv, nx) for k, d, sp, t, g, cv, nx in pool.imap_unordered(_score, jobs, chunksize=200)}
+        res = {k: r[1:] for k, r in score_named_first(pool, jobs, tax, informal_records(a.build),
+                                                      200).items()}
 
     idx = {m: {s: i for i, s in enumerate(its)} for m, its in items.items()}
     with open(a.prefix + ".reads.tsv", "w") as fh:

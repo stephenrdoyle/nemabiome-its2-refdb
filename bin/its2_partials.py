@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Measure, trim and grade the ITS2 records bin/its2.py could not anchor.
 
-    bin/its2_partials.py <its2 cut prefix> <out prefix> [threads]
+    bin/its2_partials.py <its2 cut prefix> <out prefix> [threads] [not_relatives.txt]
 
 Two thirds of the backbone's source records lack NC1, the 28S stretch or
 both: submitters trimmed at a primer, at the ITS2 boundary, or somewhere
@@ -26,6 +26,12 @@ anchor:
 80% is low on purpose: sister species within a genus are often 85-90%
 identical over ITS2 and still align end to end, which is all a boundary
 estimate needs.
+
+not_relatives.txt lists accessions (one per line) never used as a
+relative: informal "Genus sp." records (bin/build.py, INFORMAL NAMES),
+which only add to the database. A complete "Ascaris sp." record taken as
+the relative trimmed A. lumbricoides partials one base differently and
+split them from the A. suum record they had been identical to.
 
 minimap2 runs with -f 1000000: its default drops minimizers shared by
 too many targets, and thousands of near-identical strongylid records
@@ -70,6 +76,8 @@ def grade(cov):
 def main() -> int:
     cut, prefix = sys.argv[1:3]
     threads = sys.argv[3] if len(sys.argv) > 3 else "8"
+    loose = ({ln.split()[0] for ln in open(sys.argv[4]) if ln.strip()}
+             if len(sys.argv) > 4 else set())
     meta = {r["accession"]: r for r in csv.DictReader(open(cut + ".tsv"), delimiter="\t")}
     seqs = read_fasta(cut + ".fasta")
     complete = {a for a, r in meta.items() if r["start"] in ANCHORED and r["end"] in ANCHORED}
@@ -78,7 +86,10 @@ def main() -> int:
         cf, pf = os.path.join(d, "c.fa"), os.path.join(d, "p.fa")
         with open(cf, "w") as c, open(pf, "w") as p:
             for a, s in seqs.items():
-                (c if a in complete else p).write(f">{a}\n{s}\n")
+                if a not in complete:
+                    p.write(f">{a}\n{s}\n")
+                elif a not in loose:
+                    c.write(f">{a}\n{s}\n")
         paf = subprocess.run(["minimap2", "-c", "-k", "11", "-w", "5", "-f", "1000000",
                               "-N", "50", "-p", "0.5", "-t", threads, "--secondary=yes", cf, pf],
                              capture_output=True, text=True, check=True).stdout

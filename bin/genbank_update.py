@@ -14,16 +14,20 @@ backbone. Three Entrez queries, nematodes only:
   new rDNA     5.8S, 28S or large subunit, published since <since>
   unlabelled   5.8S and 28S / large subunit in one record, never called
                ITS2 (any date): the ITS2 lies between them
+  informal     ITS2 in the record (any date), named "Genus sp. X": the
+               backbone holds no such record, and some lineages are
+               known only so (the gorilla Necator of Hasegawa et al.)
   named        the accessions in [accessions.txt] (one per line, # notes),
-               records found missing from the backbone by hand. An
-               informal name ("Oesophagostomum sp. OTU_152") is kept for
-               these: the build gives such a record its genus only, and
-               curation/lineages.tsv can carry the name
+               records found missing from the backbone by hand. Any
+               informal name is kept for these
 
 Kept: records whose accession is not in the backbone, 80-20,000 bases,
-whose taxon sits at or below an NCBI species with a formal name: NCBI
-ranks "Genus sp. X", cf., aff. and hybrids as species, and the backbone
-holds none of them. Lineage: NCBI Taxonomy's superkingdom (or domain) ...
+whose taxon sits at or below an NCBI species with a formal name, or is a
+"Genus sp. X" under a nematode genus. NCBI ranks "Genus sp. X", cf.,
+aff. and hybrids as species; the build gives a "sp." record its genus
+only (species_status unnamed), and curation/lineages.tsv can carry the
+name. cf., aff., hybrids, environmental and uncultured samples, and
+"sp." names above genus ("Strongyloidea sp.") are left out. Lineage: NCBI Taxonomy's superkingdom (or domain) ...
 species. The ITS2 region of each record, which bin/its2.py needs as the
 backbone's HMM cut, is where it aligns to the build's records (minimap2,
 the best hit by matches less twice the differences, extended by the
@@ -70,6 +74,14 @@ ITS2 = '("internal transcribed spacer 2"[All Fields] OR ITS2[All Fields] OR ITS-
 MIN_LEN, MAX_LEN = 80, 20000
 MIN_ALN, MIN_ID = 80, 0.70
 INFORMAL = re.compile(r" sp\.| spp\.| cf\.| aff\.| x |[0-9]|^[A-Z][a-z]+ [A-Z]|uncultured|environmental")
+NOT_SP = re.compile(r" cf\.| aff\.| x |uncultured|environmental")
+
+
+def genus_sp(ranks):
+    """An informal "Genus sp. X" name under a genus: kept at genus."""
+    sp, genus = ranks["species"], ranks["genus"]
+    return bool(genus) and re.match(re.escape(genus) + r" spp?\. ", sp + " ") is not None \
+        and not NOT_SP.search(sp)
 
 
 def call(util, **params):
@@ -106,7 +118,8 @@ def summaries(uids):
 def lineages(taxids, informal_ok=frozenset()):
     """taxid -> {rank: name} for the eight ranks, species from the species-rank
     ancestor (or the taxon itself); None where no species rank exists, or
-    where it is an informal name and the taxid is not in informal_ok."""
+    where it is an informal name other than "Genus sp. X" and the taxid is
+    not in informal_ok."""
     out = {}
     for k in range(0, len(taxids), 200):
         root = ET.fromstring(call("efetch.fcgi", db="taxonomy", id=",".join(taxids[k:k + 200])))
@@ -118,9 +131,10 @@ def lineages(taxids, informal_ok=frozenset()):
             ranks[t.findtext("Rank")] = t.findtext("ScientificName")
             if "superkingdom" not in ranks and "domain" in ranks:
                 ranks["superkingdom"] = ranks["domain"]
-            out[tid] = ({r: ranks.get(r, "") for r in RANKS}
-                        if ranks.get("species") and ranks.get("phylum") == "Nematoda"
-                        and (tid in informal_ok or not INFORMAL.search(ranks["species"]))
+            lin = {r: ranks.get(r, "") for r in RANKS}
+            out[tid] = (lin if lin["species"] and lin["phylum"] == "Nematoda"
+                        and (tid in informal_ok or not INFORMAL.search(lin["species"])
+                             or genus_sp(lin))
                         else None)
     return out
 
@@ -212,6 +226,8 @@ def main() -> int:
     if len(sys.argv) > 5:
         named = [ln.split()[0] for ln in open(sys.argv[5]) if ln.strip() and not ln.startswith("#")]
         queries["named"] = " OR ".join(f"{a}[Accession]" for a in named)
+    # Last: a record any query above finds is credited to that one.
+    queries["informal"] = f"{nem} AND {ITS2}"
     uids, why = [], {}
     for name, term in queries.items():
         ids = search(term)
@@ -228,9 +244,13 @@ def main() -> int:
     named_base = {a.split(".")[0] for a in named}
     lin = lineages(sorted({s[1] for s in keep.values()}),
                    frozenset(s[1] for s in keep.values() if s[0].split(".")[0] in named_base))
-    keep = {u: s for u, s in keep.items() if lin.get(s[1])
-            and (s[0].split(".")[0] in named_base or not INFORMAL.search(lin[s[1]]["species"]))}
-    log.append(f"at or below a formally named nematode species: {len(keep)}")
+    def wanted(u, s):
+        if s[0].split(".")[0] in named_base:
+            return True
+        formal = not INFORMAL.search(lin[s[1]]["species"])
+        return (not formal if why[u] == "informal" else formal) or genus_sp(lin[s[1]])
+    keep = {u: s for u, s in keep.items() if lin.get(s[1]) and wanted(u, s)}
+    log.append(f"at or below a formally named nematode species, or Genus sp. X: {len(keep)}")
     fasta = fetch_fasta([s[0] for s in keep.values()])
     records = {h.split()[0].split(".")[0]: v for h, v in fasta.items()}
     titles = {h.split()[0].split(".")[0]: h for h in fasta}

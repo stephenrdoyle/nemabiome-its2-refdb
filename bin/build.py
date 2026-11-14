@@ -46,6 +46,21 @@ informal name a genus-level record goes by ("Oesophagostomum sp.
 members, in taxonomy.tsv's lineage column, and keeps its taxonomy.
 Members disagreeing on a lineage stop the build.
 
+INFORMAL NAMES. A source record named "Genus sp. X" (no species, only a
+genus) only adds: it is left out where its ITS2 is identical to, or
+lies within or contains, the ITS2 of a formally named record, and it is
+not counted in any other record's margins or window groups (the
+classifier's gap rule does not count it as another species either). So
+it reaches reads no named record covers - the gorilla Necator known only
+as "Necator sp." - without changing a named record. Larval and
+environmental "sp." records often carry another genus's ITS2
+("Uncinaria sp." with H. contortus's). So an informal record is also
+left out where its genus disagrees with its ITS2: a named record of
+another genus is within the genus limit (97%) and closer than any named
+record of its own genus ("Panagrolaimus sp." records that are
+Caenorhabditis briggsae). Kept, it would name a missing species' reads
+to the wrong genus.
+
 MERGING. Identical ITS2s become one record. At each rank the record
 takes the single informative name its members agree on; two names stop
 it there. Species names that do not name one species do not vote:
@@ -105,6 +120,14 @@ STRETCH_28S = 47
 READ_LENGTHS = [150, 250]   # default; set per build with --read-lengths
 
 NOT_A_SPECIES = re.compile(r" x | (cf|aff)\.? | spp?\. |sensu lato| s\.l\.|environmental sample")
+GENUS_SP = re.compile(r"^\S+ spp?\. ")
+
+
+def informal(lab):
+    """A "Genus sp. X" label: a genus, no species (see INFORMAL NAMES)."""
+    sp = lab[RANKS.index("species")] + " "
+    return bool(lab[RANKS.index("genus")]) and bool(GENUS_SP.match(sp)) \
+        and not re.search(r" x | (cf|aff)\.? |environmental", sp)
 
 
 def windows(read_len):
@@ -263,7 +286,7 @@ def _margin(job):
     return out + near
 
 
-def margins(fasta, seqs, tax, geoms, workers):
+def margins(fasta, seqs, tax, geoms, workers, skip=frozenset()):
     """Edits from each species-level record to the nearest record naming
     another species (or none): every record of another species minimap2
     proposes is scored with span_distance. v0.1.0 kept the top 30 by
@@ -272,7 +295,8 @@ def margins(fasta, seqs, tax, geoms, workers):
     minimizers are not dropped across thousands of near-identical
     strongylid records; a
     candidate must chain matches over half the SHORTER record, so a
-    partial still finds the complete records it sits inside."""
+    partial still finds the complete records it sits inside. Records in
+    skip (informal names) are never a candidate."""
     p = subprocess.Popen(["minimap2", "-t", str(workers), "-X", "-k", "11", "-w", "5",
                           "-f", "1000000", "-N", "2000", "-p", "0.5", fasta, fasta],
                          stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
@@ -283,6 +307,8 @@ def margins(fasta, seqs, tax, geoms, workers):
         if m < 0.5 * min(int(f[1]), int(f[6])):
             continue
         for a, b in ((q, t), (t, q)):
+            if b in skip:
+                continue
             if tax[a]["deepest_rank"] == "species" and tax[b]["species"] != tax[a]["species"]:
                 cand[a].add(b)
     if p.wait():
@@ -381,6 +407,114 @@ def fold_redundant(seqs, tax, members, workers, max_edits=1):
     for i in host:
         del seqs[i], tax[i]
     return len(host)
+
+
+def _covers(job):
+    i, cs = job
+    return i, next((c for c in cs if infix_distance(_S[i], _S[c]) == 0
+                    or infix_distance(_S[c], _S[i]) == 0), None)
+
+
+def drop_informal_overlaps(seqs, tax, members, informal_ids, workers):
+    """Leave out an informal-only record whose ITS2 lies within, or
+    contains, a named record's ITS2 exactly (see INFORMAL NAMES): it
+    would tie with that record, or take its partials in folding.
+    Returns the ids left out."""
+    rest = [i for i in tax if i not in informal_ids]
+    with tempfile.TemporaryDirectory() as d:
+        rf, qf = os.path.join(d, "r.fa"), os.path.join(d, "q.fa")
+        with open(rf, "w") as fh:
+            fh.writelines(f">{i}\n{seqs[i]}\n" for i in rest)
+        with open(qf, "w") as fh:
+            fh.writelines(f">{i}\n{seqs[i]}\n" for i in informal_ids)
+        out = subprocess.run(["minimap2", "-k", "11", "-w", "5", "-f", "1000000", "-N", "200",
+                              "-p", "0.5", "-t", str(workers), rf, qf],
+                             capture_output=True, text=True, check=True).stdout
+    cand = collections.defaultdict(set)
+    for line in out.splitlines():
+        f = line.split("\t")
+        cand[f[0]].add(f[5])
+    with Pool(workers, initializer=_init, initargs=(seqs, [])) as pool:
+        hit = dict(pool.map(_covers, [(i, sorted(cs)) for i, cs in cand.items()], chunksize=20))
+    gone = {i: c for i, c in hit.items() if c}
+    for m in members:
+        if m["id"] in gone:
+            c = gone[m["id"]]
+            m["note"] = "; ".join(x for x in (m["note"], f"left out: informal name, ITS2 identical "
+                                              f"over its span to named record {c} "
+                                              f"({tax[c]['species'] or tax[c]['genus'] or tax[c]['family']})")
+                                  if x)
+            m["id"], m["role"] = "", "dropped"
+    for i in gone:
+        del seqs[i], tax[i]
+    return set(gone)
+
+
+# An informal record nearer than this to a named record of another genus,
+# and nearer to it than to any of its own genus, is left out: the genus
+# limit the classifier names a genus at.
+INFORMAL_GENUS_MIN = 0.97
+
+
+_GENUS = None
+
+
+def _init_genus(seqs, genus):
+    global _S, _GENUS
+    _S, _GENUS = seqs, genus
+
+
+def _nearest_by_genus(job):
+    """(id, {genus: (identity, record)}) for the named candidates, each
+    scored over the shorter record's span."""
+    i, cs = job
+    best = {}
+    for c in cs:
+        d = span_distance(_S[i], _S[c])
+        ident = 1 - d / min(len(_S[i]), len(_S[c]))
+        g = _GENUS[c]
+        if g not in best or ident > best[g][0]:
+            best[g] = (ident, c)
+    return i, best
+
+
+def drop_informal_misplaced(seqs, tax, members, informal_ids, workers):
+    """Leave out an informal record whose genus its ITS2 contradicts (see
+    INFORMAL NAMES). Returns the ids left out."""
+    named = [i for i in tax if tax[i]["species_status"] == "named" and tax[i]["genus"]]
+    with tempfile.TemporaryDirectory() as d:
+        rf, qf = os.path.join(d, "r.fa"), os.path.join(d, "q.fa")
+        with open(rf, "w") as fh:
+            fh.writelines(f">{i}\n{seqs[i]}\n" for i in named)
+        with open(qf, "w") as fh:
+            fh.writelines(f">{i}\n{seqs[i]}\n" for i in informal_ids)
+        out = subprocess.run(["minimap2", "-k", "11", "-w", "5", "-f", "1000000", "-N", "200",
+                              "-p", "0.5", "-t", str(workers), rf, qf],
+                             capture_output=True, text=True, check=True).stdout
+    cand = collections.defaultdict(set)
+    for line in out.splitlines():
+        f = line.split("\t")
+        cand[f[0]].add(f[5])
+    with Pool(workers, initializer=_init_genus, initargs=(seqs, {i: tax[i]["genus"] for i in named})) as pool:
+        near = dict(pool.map(_nearest_by_genus, [(i, sorted(cs)) for i, cs in cand.items()], chunksize=20))
+    gone = {}
+    for i, best in near.items():
+        own = tax[i]["genus"]
+        other = max((v + (g,) for g, v in best.items() if g != own), default=None)
+        if other and other[0] >= INFORMAL_GENUS_MIN and other[0] > best.get(own, (0,))[0]:
+            gone[i] = (other, best.get(own))
+    for m in members:
+        if m["id"] in gone:
+            (ident, c, g), mine = gone[m["id"]]
+            m["note"] = "; ".join(x for x in (m["note"], f"left out: informal name, genus disagrees: "
+                                              f"{100 * ident:.1f}% to named record {c} ({tax[c]['species']}), "
+                                              + (f"{100 * mine[0]:.1f}% to the nearest named {tax[m['id']]['genus']}"
+                                                 if mine else f"no named {tax[m['id']]['genus']} near"))
+                                  if x)
+            m["id"], m["role"] = "", "dropped"
+    for i in gone:
+        del seqs[i], tax[i]
+    return set(gone)
 
 
 def lookalike_chunk(items):
@@ -506,8 +640,21 @@ def main() -> int:
                         "label": ";".join(label[acc][1]), "role": "dropped", "grade": g["grade"],
                         "coverage": g["coverage"], "trimmed_start": g["trimmed_start"],
                         "trimmed_end": g["trimmed_end"], "note": drops[acc]})
+    informal_ids = set()
     for s, accs in groups.items():
         rid = "ITS2_" + hashlib.sha1(s.encode()).hexdigest()[:12]
+        loose = [acc for acc in accs if informal(label[acc][1])]
+        if loose and len(loose) < len(accs):
+            for acc in loose:
+                g = grade[acc]
+                members.append({"id": "", "source": source_of.get(acc, a.source),
+                                "accession": label[acc][0], "label": ";".join(label[acc][1]),
+                                "role": "dropped", "grade": g["grade"], "coverage": g["coverage"],
+                                "trimmed_start": g["trimmed_start"], "trimmed_end": g["trimmed_end"],
+                                "note": f"left out: informal name, ITS2 identical to {rid}'s named members"})
+            accs = [acc for acc in accs if acc not in loose]
+        elif loose:
+            informal_ids.add(rid)
         labs = {acc: label[acc][1] for acc in accs}
         role = {acc: "kept" for acc in accs}
         top = merge(labs.values())
@@ -552,6 +699,10 @@ def main() -> int:
                             "label": ";".join(labs[acc]), "role": role[acc], "grade": g["grade"],
                             "coverage": g["coverage"], "trimmed_start": g["trimmed_start"],
                             "trimmed_end": g["trimmed_end"], "note": renamed.get(acc, "")})
+    informal_gone = drop_informal_overlaps(seqs, tax, members, informal_ids, a.workers)
+    informal_ids -= informal_gone
+    informal_misplaced = drop_informal_misplaced(seqs, tax, members, informal_ids, a.workers)
+    informal_ids -= informal_misplaced
     folded = fold_contained(seqs, tax, members, a.workers)
     folded_weak = fold_redundant(seqs, tax, members, a.workers)
     # A short partial, compared only over the bases it has, can sit within
@@ -632,7 +783,8 @@ def main() -> int:
 
     # --- margins
     geoms = [windows(r) for r in read_lengths]
-    marg = margins(os.path.join(out, "refdb.fasta"), seqs, tax, geoms, a.workers)
+    informal_ids &= set(seqs)
+    marg = margins(os.path.join(out, "refdb.fasta"), seqs, tax, geoms, a.workers, informal_ids)
     with open(os.path.join(out, "species_margins.tsv"), "w") as fh:
         fh.write("\t".join(["id", "margin_whole"] + [f"margin_{w1}x{w2}" for w1, w2 in geoms]
                            + ["nearest_whole"] + [f"nearest_{w1}x{w2}" for w1, w2 in geoms]) + "\n")
@@ -668,16 +820,18 @@ def main() -> int:
     geometries = []
     for gi, (read_len, (w1, w2)) in enumerate(zip(read_lengths, geoms)):
         key = {rid: (s if len(s) <= w1 + w2 else s[:w1] + "|" + s[-w2:]) for rid, s in seqs.items()}
-        by = collections.defaultdict(list)
+        by, by_formal = collections.defaultdict(list), collections.defaultdict(list)
         for rid, k in key.items():
             by[k].append(rid)
+            if rid not in informal_ids:
+                by_formal[k].append(rid)
         gid = {k: "W_" + hashlib.sha1(k.encode()).hexdigest()[:12] for k in by}
         table = f"resolution_illumina_{read_len}x{read_len}.tsv"
         ill, ill_tied = collections.Counter(), 0
         with open(os.path.join(out, table), "w") as fh:
             fh.write("id\twindow_group\trecords_in_group\tdeepest_rank\tname\tgrade\tmargin\n")
             for rid in order:
-                ids = by[key[rid]]
+                ids = by[key[rid]] if rid in informal_ids else by_formal[key[rid]]
                 win, t = tied(rid, 1 + gi)
                 ill_tied += t
                 # Never deeper than read whole: fold in the whole-read call.
@@ -735,6 +889,9 @@ def main() -> int:
                    "grade": dict(gcount), "deepest_rank_nanopore": dict(nano), "folded": folded, "folded_weak": folded_weak,
                    "renamed": len(renamed), "update_unanchored": len(unanchored),
                    "dropped_partials": dropped_partials,
+                   "informal_records": len(informal_ids),
+                   "informal_left_out": sum(1 for m in members if m["note"].startswith("left out: informal")
+                                            or "; left out: informal" in m["note"]),
                    "member_roles": dict(roles), "conflicts": dict(dec), "primer_fit": dict(pf)},
         "files": {},
     }
@@ -755,7 +912,10 @@ def main() -> int:
              + f"; renamed to current NCBI names: {len(renamed):,}"
              + (f"; update records left out, cut at no anchor: {len(unanchored):,}" if unanchored else "")
              + (f"; partial records dropped, species has a full-length record: {dropped_partials:,}"
-                if dropped_partials else ""),
+                if dropped_partials else "")
+             + f"; informal-name (Genus sp.) records {manifest['counts']['informal_records']:,}, "
+               f"source records left out as identical to a named record "
+               f"{manifest['counts']['informal_left_out']:,}",
              "conflicts (order or above): " + (", ".join(f"{k} {v}" for k, v in sorted(dec.items())) or "none"),
              "lineages (records): " + (", ".join(f"{k} {v}" for k, v in sorted(lcount.items())) or "none"),
              "", "Grade (best member):"] + table(gcount, GRADES, len(order))

@@ -34,7 +34,8 @@ from multiprocessing import Pool
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build import RANKS, deepest, merge_records, read_fasta  # noqa: E402
-from its2_classify import RULES, STRETCH_28S, _init, _score, call, minimap_candidates  # noqa: E402
+from its2_classify import (RULES, STRETCH_28S, _init, call, informal_records,  # noqa: E402
+                           minimap_candidates, score_named_first)
 
 
 def main() -> int:
@@ -82,7 +83,7 @@ def main() -> int:
                         continue      # the windows see it whole
                     jobs.append(((qi, mode, view), "window", s[:w1], s[-w2:] + "N" * STRETCH_28S, cs))
     with Pool(a.workers, initializer=_init, initargs=(seqs, tax)) as pool:
-        res = list(pool.imap_unordered(_score, jobs, chunksize=50))
+        res = list(score_named_first(pool, jobs, tax, informal_records(a.build)).values())
 
     rows = []
     with open(a.prefix + ".tsv", "w") as fh:

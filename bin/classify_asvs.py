@@ -42,8 +42,8 @@ from multiprocessing import Pool
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build import RANKS, merge, read_fasta  # noqa: E402
-from its2_classify import (RULES, _init, _score, call, describe, lineage,  # noqa: E402
-                           load_taxonomy, minimap_candidates)
+from its2_classify import (RULES, _init, call, describe, informal_records, lineage,  # noqa: E402
+                           load_taxonomy, minimap_candidates, score_named_first)
 from seqmatch import revcomp  # noqa: E402
 
 SEP = "N" * 10
@@ -106,8 +106,11 @@ def main() -> int:
             jobs.append((i, "window", x, y.strip("N"), c))
         else:
             jobs.append((i, "whole", s, "", c))
+    loose = informal_records(a.reference) if os.path.isdir(a.reference) else set()
     with Pool(a.workers, initializer=_init, initargs=(refs, tax)) as pool:
-        res = {k: (d, sp, t, g, cv, nx) for k, d, sp, t, g, cv, nx in pool.imap_unordered(_score, jobs, chunksize=50)}
+        # batches of up to 50, but small enough to keep every worker busy on a short list
+        chunk = max(1, min(50, len(jobs) // (4 * a.workers)))
+        res = {k: r[1:] for k, r in score_named_first(pool, jobs, tax, loose, chunk).items()}
     with open(a.out, "w") as fh:
         fh.write("asv\tmode\tedits\tspan\tidentity\tties\tgap\tnearest\tnext\t"
                  + "\t".join(f"{r}_rank\t{r}_name" for r in RULES) + "\ttentative\tlineage\n")
