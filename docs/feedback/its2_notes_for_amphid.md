@@ -73,6 +73,26 @@ the last 83 of the ITS2. 2x250: 230 + 183. With a median ITS2 of 240
 bases, most 2x250 pairs and many 2x150 pairs overlap and merge.
 `manifest.json` → `illumina_geometries` gives the windows.
 
+**Join 2x250 pairs hybrid**: merged where the pair overlaps,
+concatenated (forward + reverse, as for unmerged pairs) where it does
+not. Merging alone silently drops every pair whose ITS2 is too long to
+overlap: `mergePairs` needs 12 bases, and after primer trimming (about
+230 + 230) any ITS2 over about 400 bases never merges. That is
+*Metastrongylus* (413-422 bases), Trichuridae, Metastrongylidae,
+Onchocercidae and others. In PRJNA1524548 two pig libraries kept 6 and
+665 reads merged against 22,932 and 19,801 hybrid, and *M. apri* rose
+from 1.6% to 3.0% of the set's reads. Hybrid also keeps pairs that
+overlap but fail merging on mismatches (4.6% of Francis & Šlapeta
+pairs). It costs the gap rule 0.7-0.9 points of species calls against
+merging alone; concatenating every pair costs more where the ITS2 is
+short and read 1 runs through into 28S. The ASV table then holds merged
+and concatenated ASVs side by side, and each is scored as it is: a
+merged ASV whole, a concatenated one as two windows (§5). The README's
+"For DADA2 and IdTaxa users" section has the dada2 code.
+
+At 2x150 we have only tested concatenating every pair; hybrid there is
+untested.
+
 ## 4. Grade
 
 `taxonomy.tsv` and the resolution tables carry each record's `grade`:
@@ -207,3 +227,28 @@ from alignments, a read hitting both at the same score must be given
 their common ancestor. That is the usual LCA rule, but it only works if
 both hits are reported, so secondary alignments must not be capped
 below the number of tied records.
+
+## 7. Save what stays unplaced
+
+An ASV left above family falls into one of two groups, and they mean
+different things:
+
+- **unplaced ITS2**: it aligns to records, but none is within family
+  range (95%). It ends in the 28S stretch like any ITS2 amplicon, and
+  the `nearest` record says roughly where it sits. These are nematodes
+  the database lacks: in the Cameroon apes (PRJEB64582), 17% of reads,
+  mostly a *Paralibyostrongylus* 79-92% from anything named.
+- **not ITS2-like**: nothing in the database aligns to it, and it
+  seldom carries the 28S stretch. Primer dimers, chimeras and
+  off-target products: BLAST finds gut bacteria and phages, or nothing.
+  Zoo antelopes (PRJNA1137257) 8% of reads, Cameroon 0.6%.
+
+Write each group to its own FASTA, so that unplaced ITS2 can be taken
+further (BLAST, a tree, a request for adult-worm references) without
+digging it out of the tables:
+
+    >ASV00004 reads=188804 libraries=139 nearest=Libyostrongylus_douglassi identity=91.4 next=Libyostrongylus_dentatus+8
+    TTGT...
+
+and report both shares beside the classified ones, not as one
+"unassigned". The ASV is the whole amplicon, 28S stretch included.
