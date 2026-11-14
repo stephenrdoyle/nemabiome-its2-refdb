@@ -395,11 +395,12 @@ S=sources/nemabiome_its2_20260317/Nematode_ITS2_20260317
 python3 bin/nemabiome_export.py sources/nemabiome_its2_20260317/raw/database.xlsx $S
 python3 bin/fetch_backbone_records.py ${S}_taxonomy_nr.txt sources/genbank_backbone/records.fasta.gz
 # GenBank records the backbone lacks, merged with it (the last release is the reference)
-U=sources/genbank_update_20260317
+U=sources/genbank_update_20261113
 python3 bin/genbank_update.py ${S}_taxonomy_nr.txt releases/nemits2_v0.1.3 2026/03/17 $U curation/genbank_named.tsv
 python3 bin/genbank_update.py merge $S sources/genbank_backbone/records.fasta.gz $U work/its2
 python3 bin/its2.py work/its2/seqs.fasta work/its2/records.fasta.gz work/its2/its2_cut
-python3 bin/its2_partials.py work/its2/its2_cut work/its2/its2_refs 8
+python3 bin/informal_accessions.py work/its2/taxonomy.txt > work/its2/informal.txt   # never a partial's relative
+python3 bin/its2_partials.py work/its2/its2_cut work/its2/its2_refs 8 work/its2/informal.txt
 python3 bin/ncbi_names.py ${S}_taxonomy_nr.txt curation/ncbi_names.tsv   # current NCBI names; refetch before a release
 python3 bin/build.py work/its2/its2 work/its2/taxonomy.txt nemabiome_20260317 work/build --workers 8 \
     --layer curation/long_read_its2.tsv --lineages curation/lineages.tsv
