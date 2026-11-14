@@ -221,8 +221,7 @@ same effect dropped pairs in vespa-18s-refdb's neighbour check.)
   species; `shared` if it stops above species because its members name
   two or more species (80 records, 95 in v0.1.1: real shared ITS2s, such as *Cylicocyclus
   insigne* / *C. ashworthi*);
-  `unnamed` if no member names a species at all (769 in the development
-  build, most of them informal "Genus sp." records, §5.7; 51 in v0.1.4, 32 in
+  `unnamed` if no member names a species at all (769 in v0.2.0, most of them informal "Genus sp." records, §5.7; 51 in v0.1.4, 32 in
   v0.1.3: hybrids, cf., environmental samples, and the informal "sp."
   names of the GenBank update, §2.1, whose name is in `lineage`).
   "sp."/"spp." count as no species name, as cf. and hybrids do: the

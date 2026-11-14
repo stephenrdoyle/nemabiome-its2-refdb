@@ -1,7 +1,8 @@
-# Notes for amphid: using the nemabiome ITS2 database
+# Notes for amphid: using the nematode ITS2 database
 
-From nematode-its2-refdb (named nemabiome-its2-refdb until v0.1.4) v0.1.1 (2026-11-10); updated for v0.1.4
-(2026-11-12, "What changed in v0.1.4" below). The database follows
+From nematode-its2-refdb (named nemabiome-its2-refdb until v0.1.4)
+v0.1.1 (2026-11-10); updated for v0.2.0 (2026-11-14, "What changed in
+v0.2.0" below). The database follows
 vespa-18s-refdb's release format. These are the places where ITS2 needs
 something V4 did not.
 
@@ -11,6 +12,30 @@ which maps each point below to the amphid code it changes. The issue
 also covers two points not here: `taxonomy.tsv` has NCBI's eight ranks,
 not the PR2 levels amphid hard-codes, and amphid's identity charges a
 read's unaligned ends - for ITS2, the 28S stretch - as differences.
+
+## What changed in v0.2.0
+
+**The format did not change.** The same files, columns and manifest
+keys as v0.1.4; only the file names carry the new version, and the
+repository is now nematode-its2-refdb (the old URLs redirect).
+
+**The content did** (12,053 records, 1,873 named species, 439 genera;
+v0.1.4 11,288, 1,874, 427):
+
+- 737 informal "Genus sp. X" records from GenBank: `species_status` =
+  `unnamed`, genus only, the informal name in `lineage` (769 `unnamed`
+  records in all, 51 in v0.1.4). Score them only after the named
+  records (§5): they place reads no named record reaches, such as the
+  gorilla hookworm "*Necator* sp.", 45 edits from *N. americanus*.
+- `lineage` also carries the Hasegawa *Necator* rDNA types (type II,
+  type III).
+- 248 ITS2 copies from 48 genome assemblies and 10 long-read sets (174
+  in v0.1.4), and curation since: the *Metastrongylus* records, two
+  more drops (MF784940, PZ362967), *T. capricola* JF276023 dropped and
+  eight Sri Lankan "*D. repens*" relabelled *D. asiatica*.
+
+New here: §3 recommends joining 2x250 pairs hybrid, and §7 asks for
+the unplaced ITS2 as FASTA.
 
 ## What changed in v0.1.4
 
@@ -107,13 +132,13 @@ grade with the call, and consider requiring a minimum aligned length
 The V4 limits (species 99.7% Illumina / 99.5% nanopore, genus 99.5% /
 99%, family 95%) were set for a ~400-base insert. Over a 240-base ITS2,
 one edit is 0.42%, so 99.7% means an exact match. Margins are thin: of
-the 11,151 species-level records in v0.1.4, 291 are tied with another
-species, 730 are one edit away and 557 two (`species_margins.tsv`, read
+the 11,197 species-level records in v0.2.0, 290 are tied with another
+species, 723 are one edit away and 549 two (`species_margins.tsv`, read
 whole).
 
-A leave-one-out test (DESIGN §6.1; 3,224 queries, 1,236 species, on
-v0.1.4) shows identity alone is the wrong
-measure. Under the V4 limits only 19.2% of reads whose species is in
+A leave-one-out test (DESIGN §6.1; 3,226 queries, 1,232 species, on
+v0.2.0) shows identity alone is the wrong
+measure. Under the V4 limits only 19.3% of reads whose species is in
 the database are named to species. What separates a right call from a
 wrong one is the margin to the next species. Recommended rule:
 
@@ -137,14 +162,17 @@ species is missing from the database.
 
 | Rule (whole reads) | Species recall | Species precision | Genus recall | Genus precision | Over-classification |
 |---|---:|---:|---:|---:|---:|
-| V4 limits | 19.2% | 95.2% | 52.1% | 99.3% | 1.8% |
-| gap rule | 57.3% | 99.2% | 89.6% | 99.4% | 5.5% |
-| tiered: gap rule + tentative species at >= 98% | 68.2% | 98.9% | 89.6% | 99.4% | 9.3% |
-| dada2 assignTaxonomy, for scale | 86.3% | 95.4% | 97.7% | 99.3% | 42.9% |
-| DECIPHER IdTaxa, for scale | 80.3% | 97.5% | 94.5% | 99.6% | 20.6% |
+| V4 limits | 19.3% | 94.7% | 51.8% | 99.3% | 1.9% |
+| gap rule | 57.7% | 99.3% | 89.8% | 99.4% | 5.4% |
+| tiered: gap rule + tentative species at >= 98% | 68.7% | 99.0% | 89.8% | 99.4% | 9.1% |
+| dada2 assignTaxonomy, for scale | 86.3% | 95.5% | 97.8% | 99.4% | 40.5% |
+| DECIPHER IdTaxa, for scale | 79.6% | 97.6% | 94.2% | 99.6% | 20.2% |
 
-(v0.1.4, repeat-aware scoring below; before it the gap rule
-gave 56.4%, 99.2% and 5.4%, and v0.1.3 55.3%, 98.8% and 5.9%.)
+(v0.2.0; v0.1.4 gave 57.3%, 99.2% and 5.5% for the gap rule, before
+repeat-aware scoring 56.4%, 99.2% and 5.4%, and v0.1.3 55.3%, 98.8% and
+5.9%. With informal records, reads of a missing species whose genus is in the
+database reach the right genus 30.7% of the time, from 26.2% in v0.1.4,
+with no more wrong genera.)
 
 **A tentative tier.** Half the present-species reads the gap rule
 stops at genus have no other species within 4 edits but are 1-3% from

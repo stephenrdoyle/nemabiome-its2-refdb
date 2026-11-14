@@ -14,7 +14,7 @@ counterpart of [vespa-18s-refdb](https://github.com/stephenrdoyle/vespa-18s-refd
 writes the same release format, and is consumed by
 [amphid](https://github.com/stephenrdoyle/nf-amphid-pipeline).
 
-**Status: v0.1.4 (2026-11-12).** v0.1.0 was the first release. See
+**Status: v0.2.0 (2026-11-14).** v0.1.0 was the first release. See
 [docs/DESIGN.md](docs/DESIGN.md) for the design and the measurements
 behind it, and [docs/feedback/its2_notes_for_amphid.md](docs/feedback/its2_notes_for_amphid.md)
 for what amphid needs to change to use it. DADA2 and IdTaxa users: see
@@ -23,10 +23,10 @@ for what amphid needs to change to use it. DADA2 and IdTaxa users: see
 ## Download and verify
 
 ```bash
-V=v0.1.4
+V=v0.2.0
 curl -LO https://github.com/stephenrdoyle/nematode-its2-refdb/releases/download/$V/nemits2_$V.tar.gz
 shasum -a 256 nemits2_$V.tar.gz
-# e8ed2dc74a5010a5a6f621329ad6f0a34da3cf9c794c3091a9d3dc2f78f165d6
+# 424c4e2929b39fcb68dd0ff363c038f568441a05bb8d062f9d3ebd22beb6b86d
 tar -xzf nemits2_$V.tar.gz
 ```
 
@@ -47,7 +47,19 @@ record anchored at both ends: `complete`, `near_complete` (>= 98%),
 `partial_90`, `partial_75`, `partial`, or `unmeasured` (no relative at
 >= 80% identity).
 
-## Since v0.1.4 (on `main`, not yet released)
+## v0.2.0
+
+12,053 records and 1,873 named species (439 genera) from 18,023 source
+records: the nemabiome backbone (15,107), 2,668 GenBank records it
+lacks (from `sources/genbank_update_20261113`, fetched 2026-11-13,
+whose 5,897 records holding an ITS2 include 3,894 informal "Genus sp."
+records; those cut at no anchor or identical to a named record are left
+out), and 248 ITS2 copies from 48 genome assemblies and 10 long-read
+sets. The first release under the name nematode-its2-refdb (until
+v0.1.4, nemabiome-its2-refdb): it is a curated derivative of the
+nemabiome ITS2 database, not a copy. The release format is unchanged
+from v0.1.4: the same files and columns, `lineage` now also carrying the
+informal name of 737 genus-level records and two *Necator* types.
 
 Sixteen more genome assemblies scanned for ITS2 (`curation/long_read_sources.tsv`;
 docs/DESIGN.md §5.5): 74 copies of 15 species, 49 of them new records
@@ -103,9 +115,32 @@ gorilla *Necator* (18-21% of Cameroon ape reads) and kangaroo
 *Macropostrongylus* (0.6-0.7% of PRJNA1524548) reach genus instead of
 unassigned.
 
-The development build has 12,054 records and 1,873 named species.
+**Hasegawa *Necator* types** (`curation/lineages.tsv`). The informal
+*Necator* records of Hasegawa et al. (2014, 2017) carry their rDNA type
+as the lineage: type II (types II and II', 1-3 edits apart; 28 records,
+among them all the untyped "*Necator* sp. HH-2015" records, 0-4 edits
+from type II) and type III (19-20 edits from type II); type I is
+*N. americanus*. Gorilla, chimpanzee and human *Necator* reads in
+Cameroon (PRJEB64582) that stop at genus are type II.
 
-## v0.1.4
+**Curation since v0.1.4** (`curation/overrides.tsv`): MF784940, an
+"*Uncinaria* sp." carrying the *H. contortus* ITS2, and PZ362967, a
+*Meloidogyne graminicola* 63 edits from every other record of its
+species (the v0.2.0 species coherence screen), are dropped. Records
+dropped by an override now keep their own source in `members.tsv`.
+
+**Tools.** `bin/trim_primers.py` turns pairs sequenced in both
+orientations, cuts read-through and accepts primers clipped at the 5'
+end, each only where a pair needs it (`--strict` restores the old
+trims), and takes reads deposited without primers (`--pretrimmed`).
+`bin/real_data_report.py` pages show "Unplaced ITS2" (aligns, but no
+family within range) apart from "Not ITS2-like" (nothing aligns:
+primer dimers, chimeras, off-target), and can count by sample.
+
+## Earlier releases
+
+
+### v0.1.4
 
 11,288 records and 1,874 named species (427 genera) from 16,051 source
 records: the nemabiome backbone plus 733 GenBank records it lacks
@@ -139,7 +174,7 @@ bibullosus*, *Metastrongylus asymmetricus* and *M. confusus*.
 - `bin/dada2_nemabiome.R` takes `TRUNCLEN="F,R"` for a fixed truncation
   (tested; it cost species calls, so the default stays off).
 
-### Earlier releases
+### v0.1.3 and before
 
 v0.1.3 adds a `lineage` column to `taxonomy.tsv` (the *Teladorsagia
 circumcincta* goat line, `curation/lineages.tsv`); records and calls are
@@ -175,51 +210,51 @@ and margins and resolution tables computed against every candidate
 <!-- figures:start -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/grade_dark.svg">
-  <img alt="Bar chart: records per nematode group in nemits2_v0.1.4, by how much of the ITS2 they hold: I · animal parasites 371 (complete 28, near complete 176, partial 55, unmeasured 112); I · plant parasites 167 (complete 0, near complete 0, partial 0, unmeasured 167); I · free-living 16 (complete 2, near complete 2, partial 0, unmeasured 12); II · plant parasites 56 (complete 0, near complete 0, partial 0, unmeasured 56); II · free-living 19 (complete 1, near complete 0, partial 0, unmeasured 18); III · animal parasites 2,016 (complete 786, near complete 667, partial 356, unmeasured 207); IV · animal parasites 701 (complete 156, near complete 242, partial 91, unmeasured 212); IV · plant parasites 4,165 (complete 2,205, near complete 906, partial 480, unmeasured 574); IV · free-living 42 (complete 13, near complete 9, partial 6, unmeasured 14); V · animal parasites 3,416 (complete 1,113, near complete 1,453, partial 589, unmeasured 261); V · free-living 303 (complete 199, near complete 47, partial 20, unmeasured 37); Other Chromadoria · free-living 15 (complete 0, near complete 0, partial 0, unmeasured 15); Family not placed 1 (complete 1, near complete 0, partial 0, unmeasured 0)." src="docs/figures/grade_light.svg" width="760">
+  <img alt="Bar chart: records per nematode group in nemits2_v0.2.0, by how much of the ITS2 they hold: I · animal parasites 446 (complete 49, near complete 186, partial 59, unmeasured 152); I · plant parasites 167 (complete 0, near complete 0, partial 0, unmeasured 167); I · free-living 16 (complete 2, near complete 2, partial 0, unmeasured 12); II · plant parasites 56 (complete 0, near complete 0, partial 0, unmeasured 56); II · free-living 19 (complete 1, near complete 0, partial 0, unmeasured 18); III · animal parasites 2,145 (complete 858, near complete 695, partial 370, unmeasured 222); IV · animal parasites 784 (complete 178, near complete 244, partial 140, unmeasured 222); IV · plant parasites 4,353 (complete 2,311, near complete 914, partial 509, unmeasured 619); IV · free-living 50 (complete 18, near complete 9, partial 8, unmeasured 15); V · animal parasites 3,629 (complete 1,175, near complete 1,470, partial 713, unmeasured 271); V · free-living 370 (complete 246, near complete 50, partial 36, unmeasured 38); Other Chromadoria · free-living 16 (complete 0, near complete 0, partial 0, unmeasured 16); Family not placed 2 (complete 2, near complete 0, partial 0, unmeasured 0)." src="docs/figures/grade_light.svg" width="760">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/taxa_dark.svg">
-  <img alt="Bar chart: records per nematode group in nemits2_v0.1.4, and how many resolve to species read whole: I · animal parasites 371 (365 to species); I · plant parasites 167 (167 to species); I · free-living 16 (16 to species); II · plant parasites 56 (56 to species); II · free-living 19 (19 to species); III · animal parasites 2,016 (1,892 to species); IV · animal parasites 701 (691 to species); IV · plant parasites 4,165 (3,982 to species); IV · free-living 42 (42 to species); V · animal parasites 3,416 (3,324 to species); V · free-living 303 (292 to species); Other Chromadoria · free-living 15 (14 to species); Family not placed 1 (0 to species)." src="docs/figures/taxa_light.svg" width="760">
+  <img alt="Bar chart: records per nematode group in nemits2_v0.2.0, and how many resolve to species read whole: I · animal parasites 446 (365 to species); I · plant parasites 167 (167 to species); I · free-living 16 (16 to species); II · plant parasites 56 (56 to species); II · free-living 19 (19 to species); III · animal parasites 2,145 (1,924 to species); IV · animal parasites 784 (691 to species); IV · plant parasites 4,353 (3,983 to species); IV · free-living 50 (42 to species); V · animal parasites 3,629 (3,338 to species); V · free-living 370 (292 to species); Other Chromadoria · free-living 16 (14 to species); Family not placed 2 (0 to species)." src="docs/figures/taxa_light.svg" width="760">
 </picture>
 
-How many species nemits2_v0.1.4 can name. A species named in the source records but with no record of its own shares its ITS2 with another species (or sits inside another species' record over its span), so a read from it is named only to genus or above. Names are counted as written.
+How many species nemits2_v0.2.0 can name. A species named in the source records but with no record of its own shares its ITS2 with another species (or sits inside another species' record over its span), so a read from it is named only to genus or above. Names are counted as written.
 
 | Records | Species named in sources | Species with their own record (read whole) | Species named through Illumina 150x150 | Species named through Illumina 250x250 | Genera |
 |---|---:|---:|---:|---:|---:|
-| All records | 1,904 | 1,846 | 1,840 | 1,846 | 427 |
-| **I · animal parasites** | 34 | 33 | 33 | 33 | 6 |
+| All records | 2,439 | 1,845 | 1,839 | 1,845 | 439 |
+| **I · animal parasites** | 94 | 33 | 33 | 33 | 6 |
 | I · plant parasites | 65 | 65 | 64 | 65 | 3 |
 | I · free-living | 10 | 10 | 10 | 10 | 9 |
 | II · plant parasites | 18 | 18 | 18 | 18 | 2 |
 | II · free-living | 9 | 9 | 9 | 9 | 6 |
-| **III · animal parasites** | 300 | 290 | 285 | 290 | 101 |
-| **IV · animal parasites** | 152 | 149 | 149 | 149 | 13 |
-| IV · plant parasites | 665 | 646 | 646 | 646 | 94 |
-| IV · free-living | 21 | 21 | 21 | 21 | 12 |
-| **V · animal parasites** | 521 | 502 | 502 | 502 | 156 |
-| V · free-living | 106 | 102 | 102 | 102 | 23 |
-| Other Chromadoria · free-living | 1 | 1 | 1 | 1 | 2 |
-| Family not placed | 2 | 0 | 0 | 0 | 0 |
+| **III · animal parasites** | 397 | 290 | 285 | 290 | 104 |
+| **IV · animal parasites** | 225 | 149 | 149 | 149 | 13 |
+| IV · plant parasites | 807 | 646 | 646 | 646 | 94 |
+| IV · free-living | 29 | 21 | 21 | 21 | 13 |
+| **V · animal parasites** | 622 | 501 | 501 | 501 | 161 |
+| V · free-living | 158 | 102 | 102 | 102 | 25 |
+| Other Chromadoria · free-living | 2 | 1 | 1 | 1 | 2 |
+| Family not placed | 3 | 0 | 0 | 0 | 1 |
 
-How far a record can be named in nemits2_v0.1.4, best case (an exact read, no sequencing error): the share of records resolving to species, and to genus at best.
+How far a record can be named in nemits2_v0.2.0, best case (an exact read, no sequencing error): the share of records resolving to species, and to genus at best.
 
 | Records | Nanopore (whole ITS2): species | genus | Illumina 150x150: species | genus | Illumina 250x250: species | genus |
 |---|---:|---:|---:|---:|---:|---:|
-| All records (11,288) | 96% | 4% | 95% | 5% | 96% | 4% |
-| **I · animal parasites** (371) | 98% | 2% | 92% | 8% | 97% | 3% |
+| All records (12,053) | 90% | 9% | 89% | 11% | 90% | 9% |
+| **I · animal parasites** (446) | 82% | 18% | 76% | 24% | 81% | 19% |
 | I · plant parasites (167) | 100% | 0% | 99% | 1% | 100% | 0% |
 | I · free-living (16) | 100% | 0% | 100% | 0% | 100% | 0% |
 | II · plant parasites (56) | 100% | 0% | 100% | 0% | 100% | 0% |
 | II · free-living (19) | 100% | 0% | 100% | 0% | 100% | 0% |
-| **III · animal parasites** (2,016) | 94% | 6% | 90% | 10% | 94% | 6% |
-| **IV · animal parasites** (701) | 99% | 1% | 99% | 1% | 99% | 1% |
-| IV · plant parasites (4,165) | 96% | 4% | 95% | 5% | 96% | 4% |
-| IV · free-living (42) | 100% | 0% | 100% | 0% | 100% | 0% |
-| **V · animal parasites** (3,416) | 97% | 3% | 97% | 3% | 97% | 3% |
-| V · free-living (303) | 96% | 2% | 96% | 2% | 96% | 2% |
-| Other Chromadoria · free-living (15) | 93% | 7% | 93% | 7% | 93% | 7% |
-| Family not placed (1) | 0% | 0% | 0% | 0% | 0% | 0% |
+| **III · animal parasites** (2,145) | 90% | 10% | 86% | 14% | 90% | 10% |
+| **IV · animal parasites** (784) | 88% | 12% | 88% | 12% | 88% | 12% |
+| IV · plant parasites (4,353) | 92% | 8% | 91% | 9% | 92% | 8% |
+| IV · free-living (50) | 84% | 16% | 84% | 16% | 84% | 16% |
+| **V · animal parasites** (3,629) | 92% | 8% | 91% | 9% | 92% | 8% |
+| V · free-living (370) | 79% | 20% | 79% | 20% | 79% | 20% |
+| Other Chromadoria · free-living (16) | 88% | 12% | 88% | 12% | 88% | 12% |
+| Family not placed (2) | 0% | 50% | 0% | 50% | 0% | 50% |
 <!-- figures:end -->
 
 The figures and tables above are generated from the build by
@@ -236,8 +271,8 @@ animal parasites; fungal feeders (*Aphelenchoides*, *Bursaphelenchus*)
 count as plant parasites. A record whose span sits exactly inside
 another species' record is tied with it and stops at the rank they share.
 
-Most species-level records are close to another species: 897 at one
-edit, 712 at two, 410 tied (`species_margins.tsv`), over a median ITS2 of
+Most species-level records are close to another species: 723 at one
+edit, 549 at two, 290 tied (`species_margins.tsv`, read whole), over a median ITS2 of
 240 bases. At that length amphid's 99.7% species limit allows no
 mismatch at all.
 
@@ -247,11 +282,11 @@ Tested two ways (docs/DESIGN.md §6): leave-one-out on the database
 itself, and two livestock datasets (one published) run through the standard
 nemabiome DADA2 workflow.
 
-Figures in this section are for v0.1.4. Since v0.1.0 the classifier
+Figures in this section are for v0.2.0. Since v0.1.0 the classifier
 also scores every candidate (issue #1) and scores read windows strictly
 (docs/DESIGN.md §6).
 
-**Leave-one-out** (3,224 records of 1,236 species, read whole; 2x150 is
+**Leave-one-out** (3,226 records of 1,232 species, read whole; 2x150 is
 within 3 points). *Present*: only the query's own record removed.
 *Missing*: every record of the query's species removed, so any species
 named is wrong. Recall = right calls / reads; precision = right calls /
@@ -260,10 +295,10 @@ missing species (`results/leave_one_out/metrics.txt`).
 
 | Classifier, this database | Species recall | Species precision | Genus recall | Genus precision | Over-classification |
 |---|---:|---:|---:|---:|---:|
-| `bin/classify_asvs.py`, gap rule | 57.3% | **99.2%** | 89.6% | 99.4% | **5.5%** |
-| `bin/classify_asvs.py`, tiered (gap + tentative) | 68.2% | 98.9% | 89.6% | 99.4% | 9.3% |
-| DECIPHER IdTaxa (threshold 60) | 80.3% | 97.5% | 94.5% | **99.6%** | 20.6% |
-| dada2 assignTaxonomy (minBoot 80) | **86.3%** | 95.4% | **97.7%** | 99.3% | 42.9% |
+| `bin/classify_asvs.py`, gap rule | 57.7% | **99.3%** | 89.8% | 99.4% | **5.4%** |
+| `bin/classify_asvs.py`, tiered (gap + tentative) | 68.7% | 99.0% | 89.8% | 99.4% | 9.1% |
+| DECIPHER IdTaxa (threshold 60) | 79.6% | 97.6% | 94.2% | **99.6%** | 20.2% |
+| dada2 assignTaxonomy (minBoot 80) | **86.3%** | 95.5% | **97.8%** | 99.4% | 40.5% |
 
 The gap rule names a species only when the read is >= 99% identical to
 it and every other species is >= 4 edits further off, or the match is
@@ -290,20 +325,31 @@ close it came: *Trichostrongylus*; nearest *T. rugatus* 99.6%;
 next *T. retortaeformis* +2.
 
 **Real data** (share of reads named to species; all arms named the same
-species wherever two of them named one). Two NC1/NC2 sets from the
-Šlapeta group, one published,
+species wherever two of them named one). Four NC1/NC2 sets: two from
+the Šlapeta group, one published, from livestock and Australian
+wildlife; humans and great apes in Cameroon (deposited without
+primers); and zoo antelopes (2x150 only, both orientations ligated).
 2x250 pairs joined hybrid (merged where they overlap, concatenated where
 they do not), and cut to 2x150:
 
 | Dataset | assignTaxonomy x nemabiome | IdTaxa x nemabiome | assignTaxonomy x this db | IdTaxa x this db | gap rule x this db | tiered x this db |
 |---|---:|---:|---:|---:|---:|---:|
-| Francis & Šlapeta, cattle, goats, sheep, PRJNA936713, 2x250 | 72.0% | 81.7% | 99.5% | 99.8% | 95.3% | 99.0% |
-| same, cut to 2x150 | 76.0% | 88.2% | 99.1% | 99.7% | 94.8% | 98.1% |
-| Šlapeta group, unpublished, PRJNA1524548, cattle, kangaroos, pigs, rabbits, 2x250 | 70.4% | 69.7% | 95.1% | 75.9%* | 94.3% | 98.3% |
-| same, cut to 2x150 | 73.7% | 65.9% | 94.8% | 85.5%* | 94.7% | 98.3% |
+| Francis & Šlapeta, cattle, goats, sheep, PRJNA936713, 2x250 | 72.0% | 81.7% | 99.5% | 99.7% | 95.7% | 99.4% |
+| same, cut to 2x150 | 76.0% | 88.2% | 99.1% | 92.4%* | 95.2% | 98.5% |
+| Šlapeta group, unpublished, PRJNA1524548, cattle, kangaroos, pigs, rabbits, 2x250 | 70.4% | 69.7% | 95.1% | 93.7% | 94.3% | 98.3% |
+| same, cut to 2x150 | 73.7% | 65.9% | 94.9% | 96.9% | 94.7% | 98.3% |
+| Ilík et al., humans, chimpanzees, gorillas, Cameroon, PRJEB64582, 2x250 | 99.1%† | 62.8% | 73.3% | 62.2% | 62.5% | 62.5% |
+| same, cut to 2x150 | 99.0%† | 85.9% | 78.5% | 61.9% | 59.8% | 59.8% |
+| zoo antelopes, PRJNA1137257, 2x150 | 12.6% | 62.6% | 67.2% | 68.2% | 60.3% | 69.7% |
 
-\* IdTaxa with seed 1, which leaves the main *H. placei* ASVs at genus;
-seeds 2 and 3 name 99.0% and 99.2% of the 2x250 reads to species.
+\* IdTaxa sits on its threshold for the main *H. placei* ASV (6.5% of
+reads): retrained, it names it or leaves it at genus. Set a seed and
+report it.
+† assignTaxonomy on the nemabiome backbone names the gorilla hookworm
+(Hasegawa type II, 45 edits from *N. americanus*) as *N. americanus*;
+this database leaves it at genus *Necator*. Cameroon's ape
+trichostrongyloid (a *Paralibyostrongylus*, 79-92% to anything named)
+has no record in either.
 
 assignTaxonomy and IdTaxa compare k-mers over the whole ASV, so with
 this database the ASVs' 28S stretch must be cut off first
