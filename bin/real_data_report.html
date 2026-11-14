@@ -10,7 +10,7 @@
   --accent: #0f6e66;
   --lv-species: #184f95; --lv-genus: #3987e5; --lv-higher: #86b6ef;
   --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300; --s7: #6250d6;
-  --other: #a3aca9; --unassigned: #d6dbd8;
+  --other: #a3aca9; --unassigned: #d6dbd8; --lv-none: #e3d6bf;
   --display: "Public Sans", system-ui, sans-serif; --body: "Public Sans", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 }
@@ -19,13 +19,13 @@
   --accent: #4fc2b5;
   --lv-species: #b7d3f6; --lv-genus: #5598e7; --lv-higher: #1c5cab;
   --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9;
-  --other: #66706d; --unassigned: #3a4341; color-scheme: dark } }
+  --other: #66706d; --unassigned: #3a4341; --lv-none: #5a4f3c; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #121615; --panel: #1a1f1e; --fg: #eef1ef; --fg2: #bcc5c2; --muted: #8b9592; --rule: #2d3533;
   --accent: #4fc2b5;
   --lv-species: #b7d3f6; --lv-genus: #5598e7; --lv-higher: #1c5cab;
   --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9;
-  --other: #66706d; --unassigned: #3a4341; color-scheme: dark }
+  --other: #66706d; --unassigned: #3a4341; --lv-none: #5a4f3c; color-scheme: dark }
 body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body);
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 32px 64px }
 main { max-width: 1120px; margin: 0 auto; display: grid; gap: 40px }
@@ -89,8 +89,8 @@ footer { color: var(--muted); font-size: 0.8rem }
 
   <section>
     <h2>How deep each classifier names the reads</h2>
-    <p class="sub">Share of reads named to species, stopped at genus, or left at family or above. Hover a bar for the numbers.</p>
-    <div class="legend"><span><i style="background:var(--lv-species)"></i>Species</span><span><i style="background:var(--lv-genus)"></i>Genus</span><span><i style="background:var(--lv-higher)"></i>Family or above, or unassigned</span></div>
+    <p class="sub">Share of reads named to species, stopped at genus, stopped at family or above, or left unassigned. Reads no record aligns to (likely off-target) are shown apart from unassigned. Hover a bar for the numbers.</p>
+    <div class="legend"><span><i style="background:var(--lv-species)"></i>Species</span><span><i style="background:var(--lv-genus)"></i>Genus</span><span><i style="background:var(--lv-higher)"></i>Family or above</span><span><i style="background:var(--unassigned)"></i>Unassigned</span><span><i style="background:var(--lv-none)"></i>No record aligns</span></div>
     <div class="panel"><div class="small-multiples" id="depth"></div></div>
   </section>
 
@@ -100,6 +100,7 @@ footer { color: var(--muted); font-size: 0.8rem }
     <div class="controls">
       <label for="set">DADA2 option<select id="set"></select></label>
       <label for="arm">Classifier<select id="arm"></select></label>
+      <label for="unit" id="unit-wrap" hidden>Count by<select id="unit"><option value="lib">Library</option><option value="smp">Sample: ASVs in both libraries</option></select></label>
     </div>
     <div class="legend" id="genus-legend"></div>
     <div class="panel scroll"><svg id="comp" role="img" aria-label="Per-sample composition"></svg></div>
@@ -107,7 +108,7 @@ footer { color: var(--muted); font-size: 0.8rem }
 
   <section>
     <h2>Per sample</h2>
-    <p class="sub">Trimming and reads kept by each 2x250 option, with the species share and top call for the option and classifier chosen above. Gain is hybrid over merged.</p>
+    <p class="sub" id="samples-sub">Trimming and reads kept by each 2x250 option, with the species share and top call for the option and classifier chosen above. Gain is hybrid over merged.</p>
     <div class="panel scroll"><table id="samples"></table></div>
   </section>
 
@@ -154,21 +155,26 @@ $("#lede").textContent = `${D.samples.length} samples: ` + Object.entries(hosts)
 })();
 
 /* depth small multiples */
+const LV = ["species", "genus", "higher", "unassigned", "none"];
+const LVNAME = {species: "Species", genus: "Genus", higher: "Family or above", unassigned: "Unassigned", none: "No record aligns"};
+const bySample = () => unitSel.value === "smp" && D.groups;
+const percall = (set, arm) => (bySample() ? set.by_sample : set.arms)[arm];
 function levels(set, arm) {
-  const c = {species: 0, genus: 0, higher: 0};
-  Object.values(set.arms[arm] || {}).forEach(rows => rows.forEach(([lv, , , n]) => c[lv] += n));
+  const c = {species: 0, genus: 0, higher: 0, unassigned: 0, none: 0};
+  Object.values(percall(set, arm) || {}).forEach(rows => rows.forEach(([lv, , , n]) => c[lv] += n));
   return c;
 }
-(function () {
+const total = c => LV.reduce((a, lv) => a + c[lv], 0);
+function drawDepth() {
   let h = "";
   D.arms.forEach(arm => {
     h += `<div class="sm"><h3>${esc(arm)}</h3>`;
     D.sets.forEach(s => {
       if (!s.arms[arm]) return;
-      const c = levels(s, arm), t = c.species + c.genus + c.higher;
-      const seg = ["species", "genus", "higher"].map(lv => {
+      const c = levels(s, arm), t = total(c);
+      const seg = LV.map(lv => {
         const w = pct(c[lv], t);
-        return w > 0 ? `<span style="width:${w}%;background:var(--lv-${lv})">${lv === "species" && w > 14 ? `<b class="lab">${w.toFixed(0)}%</b>` : ""}</span>` : "";
+        return w > 0 ? `<span style="width:${w}%;background:${lv === "unassigned" ? "var(--unassigned)" : `var(--lv-${lv})`}">${lv === "species" && w > 14 ? `<b class="lab">${w.toFixed(0)}%</b>` : ""}</span>` : "";
       }).join("");
       h += `<div class="bar-row" data-arm="${esc(arm)}" data-set="${s.id}"><span>${esc(s.label)}</span><div class="stack">${seg}</div></div>`;
     });
@@ -176,14 +182,14 @@ function levels(set, arm) {
   });
   $("#depth").innerHTML = h;
   document.querySelectorAll("#depth .bar-row").forEach(el => {
-    const s = D.sets.find(x => x.id === el.dataset.set), c = levels(s, el.dataset.arm), t = c.species + c.genus + c.higher;
+    const s = D.sets.find(x => x.id === el.dataset.set), c = levels(s, el.dataset.arm), t = total(c);
     const html = `<b>${esc(el.dataset.arm)}</b><br>${esc(s.label)}` +
-      ["species", "genus", "higher"].map(lv => `<div class="row"><span>${lv === "higher" ? "Family or above" : lv[0].toUpperCase() + lv.slice(1)}</span><span>${p1(pct(c[lv], t))}</span></div>`).join("");
+      LV.filter(lv => lv !== "none" || c.none).map(lv => `<div class="row"><span>${LVNAME[lv]}</span><span>${p1(pct(c[lv], t))}</span></div>`).join("");
     el.addEventListener("mouseenter", e => showTip(e, html));
     el.addEventListener("mousemove", moveTip);
     el.addEventListener("mouseleave", hideTip);
   });
-})();
+}
 
 /* genus colours: fixed by total reads over every set and classifier, so they never repaint */
 const gTot = {};
@@ -191,33 +197,35 @@ D.sets.forEach(s => Object.values(s.arms).forEach(per => Object.values(per).forE
   rows.forEach(([lv, g, , n]) => { if (g) gTot[g] = (gTot[g] || 0) + n }))));
 const topG = Object.entries(gTot).sort((a, b) => b[1] - a[1]).slice(0, 7).map(x => x[0]);
 const gColor = g => topG.includes(g) ? `var(--s${topG.indexOf(g) + 1})` : g ? "var(--other)" : "var(--unassigned)";
-const gKey = g => topG.includes(g) ? g : g ? "Other genera" : "Family or above";
+const gKey = (g, lv) => lv === "none" ? "No record aligns" : lv === "unassigned" ? "Unassigned" : topG.includes(g) ? g : g ? "Other genera" : "Family or above";
 $("#genus-legend").innerHTML = topG.map(g => `<span><i style="background:${gColor(g)}"></i><em>${esc(g)}</em></span>`).join("") +
-  `<span><i style="background:var(--other)"></i>Other genera</span><span><i style="background:var(--unassigned)"></i>Family or above, or unassigned</span>` +
+  `<span><i style="background:var(--other)"></i>Other genera</span><span><i style="background:var(--muted)"></i>Family or above</span><span><i style="background:var(--unassigned)"></i>Unassigned</span><span><i style="background:var(--lv-none)"></i>No record aligns</span>` +
   `<span><i style="background:repeating-linear-gradient(135deg,var(--fg2) 0 2px,transparent 2px 5px)"></i>Stops at genus</span>`;
 
-const setSel = $("#set"), armSel = $("#arm");
+const setSel = $("#set"), armSel = $("#arm"), unitSel = $("#unit");
+if (D.groups) $("#unit-wrap").hidden = false;
 setSel.innerHTML = D.sets.map(s => `<option value="${s.id}">${esc(s.label)}</option>`).join("");
 armSel.innerHTML = D.arms.map(a => `<option>${esc(a)}</option>`).join("");
 const pref = D.sets.find(s => s.id === "250.hybrid") || D.sets[0];
 setSel.value = pref.id;
 try { const v = JSON.parse(localStorage.getItem("rdr-" + D.project) || "{}");
-  if (D.sets.some(s => s.id === v.set)) setSel.value = v.set; if (D.arms.includes(v.arm)) armSel.value = v.arm } catch (e) {}
-function save() { try { localStorage.setItem("rdr-" + D.project, JSON.stringify({set: setSel.value, arm: armSel.value})) } catch (e) {} }
+  if (D.sets.some(s => s.id === v.set)) setSel.value = v.set; if (D.arms.includes(v.arm)) armSel.value = v.arm;
+  if (D.groups && v.unit) unitSel.value = v.unit } catch (e) {}
+function save() { try { localStorage.setItem("rdr-" + D.project, JSON.stringify({set: setSel.value, arm: armSel.value, unit: unitSel.value})) } catch (e) {} }
 
 function sampleBlocks(rows) {
   /* group a sample's calls into genus blocks, species part then genus-only part */
-  const order = [...topG, "Other genera", "Family or above"], b = {};
+  const order = [...topG, "Other genera", "Family or above", "Unassigned", "No record aligns"], b = {};
   rows.forEach(([lv, g, lab, n]) => {
-    const k = gKey(g), x = b[k] = b[k] || {sp: 0, ge: 0, hi: 0, g, items: []};
+    const k = gKey(g, lv), x = b[k] = b[k] || {sp: 0, ge: 0, hi: 0, g, items: []};
     x[lv === "species" ? "sp" : lv === "genus" ? "ge" : "hi"] += n; x.items.push([lab, n]);
   });
   return order.filter(k => b[k]).map(k => ({key: k, ...b[k]}));
 }
 
 function drawComp() {
-  const set = D.sets.find(s => s.id === setSel.value), per = set.arms[armSel.value] || {};
-  const S = D.samples.filter(s => per[s.run]);
+  const set = D.sets.find(s => s.id === setSel.value), per = percall(set, armSel.value) || {};
+  const S = cols().filter(s => per[s.run]);
   const nHost = new Set(S.map(s => s.host)).size, gap = 3, hostGap = 18, top = 26, H = 220, left = 40;
   const avail = $("#comp").parentElement.clientWidth - 36 - left - 10 - hostGap * (nHost - 1);
   const bw = Math.max(8, Math.min(28, Math.floor(avail / S.length) - gap));
@@ -231,7 +239,7 @@ function drawComp() {
       [["sp", false], ["ge", true], ["hi", false]].forEach(([f, hatch]) => {
         if (!bk[f]) return;
         const h = H * bk[f] / t; y -= h;
-        const fill = bk.key === "Family or above" ? "var(--unassigned)" : gColor(bk.g);
+        const fill = bk.key === "No record aligns" ? "var(--lv-none)" : bk.key === "Unassigned" ? "var(--unassigned)" : bk.key === "Family or above" ? "var(--muted)" : gColor(bk.g);
         out.push(`<rect x="${x}" y="${y.toFixed(2)}" width="${bw}" height="${Math.max(h - 1, 0.5).toFixed(2)}" fill="${fill}"${hatch ? ` mask="url(#hatch)"` : ""} data-run="${s.run}"/>`);
       });
     });
@@ -249,8 +257,8 @@ function drawComp() {
   svg.innerHTML = `<defs><pattern id="hp" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#fff"/><rect width="2" height="5" fill="#000"/></pattern><mask id="hatch" maskContentUnits="userSpaceOnUse"><rect x="0" y="0" width="${W}" height="${top + H + 12}" fill="url(#hp)"/></mask></defs>` +
     ticks + heads.map(([hx, h]) => `<text class="host" x="${hx}" y="${top - 10}">${esc(h)}</text>`).join("") + out.join("");
   svg.querySelectorAll(".hit").forEach(r => {
-    const s = D.samples.find(q => q.run === r.dataset.run), rows = per[s.run], t = rows.reduce((a, q) => a + q[3], 0);
-    const html = `<b>${esc(s.alias)}</b> · ${esc(s.run)} · ${esc(s.host)}<br>${fmt(t)} reads` +
+    const s = S.find(q => q.run === r.dataset.run), rows = per[s.run], t = rows.reduce((a, q) => a + q[3], 0);
+    const html = `<b>${esc(s.alias)}</b> · ${esc(s.sub)} · ${esc(s.host)}<br>${fmt(t)} reads` +
       rows.slice(0, 8).map(([lv, g, lab, n]) => `<div class="row"><span>${lv === "species" ? `<em>${esc(lab)}</em>` : esc(lab)}</span><span>${p1(pct(n, t))}</span></div>`).join("") +
       (rows.length > 8 ? `<div class="row"><span>${rows.length - 8} more</span><span>${p1(pct(rows.slice(8).reduce((a, q) => a + q[3], 0), t))}</span></div>` : "");
     r.addEventListener("mouseenter", e => { r.setAttribute("stroke", "var(--fg)"); showTip(e, html) });
@@ -259,7 +267,38 @@ function drawComp() {
   });
 }
 
+/* composition columns: libraries, or samples pooled over their libraries */
+function cols() {
+  if (!bySample()) return D.samples.map(s => ({...s, sub: s.run}));
+  return D.groups.map(g => ({run: g.id, alias: g.id, host: g.host, runs: g.runs,
+    sub: g.runs.length > 1 ? `${g.runs.length} libraries` : "1 library, kept whole"}));
+}
+function drawGroups() {
+  const set = D.sets.find(s => s.id === setSel.value), per = set.by_sample[armSel.value] || {};
+  let h = `<tr><th class="l">Sample</th><th class="l">Host</th><th class="l">Libraries</th><th>Reads</th><th>In both libraries</th>
+    <th>Species, ${esc(set.label)}</th><th>No record aligns</th><th class="l">Top call</th></tr>`;
+  D.groups.forEach(g => {
+    const rows = per[g.id] || [], t = rows.reduce((a, q) => a + q[3], 0);
+    const all = g.runs.reduce((a, r) => a + (set.track[r] ? set.track[r].nonchim : 0), 0);
+    const sp = rows.filter(q => q[0] === "species").reduce((a, q) => a + q[3], 0);
+    const no = rows.filter(q => q[0] === "none").reduce((a, q) => a + q[3], 0);
+    const top = rows[0];
+    h += `<tr><td class="mono">${esc(g.id)}</td><td class="l">${esc(g.host)}</td><td class="l mono">${g.runs.map(esc).join(" ")}</td>
+      <td>${fmt(all)}</td><td>${all ? p1(pct(t, all)) : "–"}</td>
+      <td>${t ? p1(pct(sp, t)) + `<span class="minibar" style="width:${(40 * sp / t).toFixed(1)}px;background:var(--lv-species)"></span>` : "–"}</td>
+      <td>${t ? p1(pct(no, t)) : "–"}</td>
+      <td class="l">${top ? (top[0] === "species" ? `<em>${esc(top[2])}</em>` : esc(top[2])) + ` <span style="color:var(--muted)">${p1(pct(top[3], t))}</span>` : "–"}</td></tr>`;
+  });
+  $("#samples").innerHTML = h;
+}
 function drawSamples() {
+  const sub = $("#samples-sub");
+  sub.dataset.lib = sub.dataset.lib || sub.textContent;
+  if (bySample()) {
+    sub.textContent = "Each sample's libraries pooled, keeping only ASVs found in every library of it (a sample with one library is kept whole), with the species share and top call for the option and classifier chosen above.";
+    return drawGroups();
+  }
+  sub.textContent = sub.dataset.lib;
   const set = D.sets.find(s => s.id === setSel.value), per = set.arms[armSel.value] || {};
   const g = id => D.sets.find(s => s.id === id);
   const m = g("250.merge"), c = g("250.concat"), hy = g("250.hybrid");
@@ -284,8 +323,8 @@ function drawSamples() {
   });
   $("#samples").innerHTML = h;
 }
-function redraw() { drawComp(); drawSamples(); save() }
-setSel.addEventListener("change", redraw); armSel.addEventListener("change", redraw);
+function redraw() { drawDepth(); drawComp(); drawSamples(); save() }
+setSel.addEventListener("change", redraw); armSel.addEventListener("change", redraw); unitSel.addEventListener("change", redraw);
 let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(drawComp, 150) });
 redraw();
 </script>

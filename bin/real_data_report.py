@@ -6,7 +6,13 @@
 Reads <out dir>/<project>/{250,150}/trim_stats.tsv, every DADA2 run
 <out dir>/<project>.<set> (track, counts, and each arm's calls, as
 bin/compare_arms.py does) and work/testdata/<project>.runs.tsv for the
-host of each run. One self-contained page: trimming, the 2x250 merge
+host of each run (from work/testdata/<project>.hosts.tsv, run_accession
+and host, where the run titles do not name it). Where
+work/testdata/<project>.replicates.tsv (run_accession, sample) pairs
+libraries of one sample, the page can also count by sample, keeping only
+ASVs found in every library of it. An ASV no record aligns to (blank
+`nearest` in the gap rule's table) is shown apart from unassigned when a
+classifier leaves it above genus. One self-contained page: trimming, the 2x250 merge
 options against 2x150, the share of reads each classifier names to
 species, genus or above, per-sample composition, and a per-sample table.
 [notes.html] is a fragment placed under the title (the findings).
@@ -57,20 +63,35 @@ def ours(f, rule):
             for r in rows}
 
 
-def call(rank, name):
-    """(level, genus, label): level species / genus / higher."""
+NONE = "no record aligns"
+
+
+def call(rank, name, stray=False):
+    """(level, genus, label): level species / genus / higher (family or
+    above) / unassigned, or none for a stray ASV (no record aligns) left
+    above genus."""
+    if stray and rank not in ("species", "genus"):
+        return "none", "", NONE
     if rank == "species":
         return "species", name.split()[0], name
     if rank == "genus":
         return "genus", name, name + " (genus)"
-    return "higher", "", (f"{name} ({rank})" if name else "unassigned")
+    if rank == "unassigned" or not name:
+        return "unassigned", "", "unassigned"
+    return "higher", "", f"{name} ({rank})"
 
 
 runs = {r["run_accession"]: r for r in tsv(f"work/testdata/{P}.runs.tsv")}
-host = {k: re.search(r"(cattle|sheep|goat|pig|kangaroo|rabbit)", r["experiment_title"]).group(1)
-        for k, r in runs.items()}
+if os.path.exists(f"work/testdata/{P}.hosts.tsv"):     # run_accession, host
+    host = {r["run_accession"]: r["host"] for r in tsv(f"work/testdata/{P}.hosts.tsv")}
+else:
+    host = {k: re.search(r"(cattle|sheep|goat|pig|kangaroo|rabbit)", r["experiment_title"]).group(1)
+            for k, r in runs.items()}
 alias = {k: r["library_name"] or r["sample_alias"] for k, r in runs.items()}
-trim = {r["run"]: r for r in tsv(f"{OUT}/{P}/250/trim_stats.tsv")}
+trim_dir = f"{OUT}/{P}/250" if os.path.exists(f"{OUT}/{P}/250/trim_stats.tsv") else f"{OUT}/{P}/150"
+trim = {r["run"]: r for r in tsv(f"{trim_dir}/trim_stats.tsv")}
+rep_f = f"work/testdata/{P}.replicates.tsv"
+group = {r["run_accession"]: r["sample"] for r in tsv(rep_f)} if os.path.exists(rep_f) else {}
 
 data = dict(project=P, title=TITLE, sets=[], arms=[a[2] for a in ARMS], samples=[])
 for sid, slab in SETS:
@@ -83,7 +104,19 @@ for sid, slab in SETS:
     track = {r["sample"]: r for r in tsv(pre + ".track.tsv")}
     s = dict(id=sid, label=slab, asvs=len({a for c in counts.values() for a in c}),
              track={k: {c: int(v[c]) for c in ("input", "used", "nonchim")} for k, v in track.items()},
-             arms={})
+             arms={}, by_sample={})
+    stray = {r["asv"] for r in tsv(f"{pre}.ours.nemits2_dev.tsv")
+             if r["gap_rank"] == "unassigned" and not r["nearest"]} \
+        if os.path.exists(f"{pre}.ours.nemits2_dev.tsv") else set()
+    pooled = collections.defaultdict(collections.Counter)    # sample -> ASVs in all its libraries
+    libs = collections.defaultdict(list)
+    for smp in counts:
+        if smp in group:
+            libs[group[smp]].append(smp)
+    for g, ls in libs.items():
+        keep = set.intersection(*({a for a, n in counts[l].items() if n} for l in ls))
+        for l in ls:
+            pooled[g].update({a: n for a, n in counts[l].items() if a in keep})
     for suf, rule, alab in ARMS:
         f = f"{pre}.{suf}.tsv"
         if not os.path.exists(f):
@@ -91,13 +124,14 @@ for sid, slab in SETS:
         calls = ours(f, rule) if rule else kmer(f)
         if calls is None:
             continue
-        per = {}
-        for smp, c in counts.items():
+        def comp_of(c):
             comp = collections.Counter()
             for asv, n in c.items():
-                comp[call(*calls.get(asv, ("unassigned", "")))] += n
-            per[smp] = [[lv, g, lab, n] for (lv, g, lab), n in comp.most_common()]
-        s["arms"][alab] = per
+                comp[call(*calls.get(asv, ("unassigned", "")), asv in stray)] += n
+            return [[lv, g, lab, n] for (lv, g, lab), n in comp.most_common()]
+        s["arms"][alab] = {smp: comp_of(c) for smp, c in counts.items()}
+        if pooled:
+            s["by_sample"][alab] = {g: comp_of(c) for g, c in pooled.items()}
     data["sets"].append(s)
 
 samples = sorted(trim, key=lambda k: (host[k], alias[k]))
@@ -106,6 +140,11 @@ for k in samples:
     data["samples"].append(dict(run=k, alias=alias[k], host=host[k], pairs=int(t["pairs"]),
                                 kept=int(t["kept"]), nc2=int(t["read_2_at_NC2"]),
                                 in28s=int(t["read_2_in_28S"])))
+
+if group:
+    data["groups"] = [dict(id=g, host=host[ls[0]], runs=ls) for g, ls in sorted(
+        {g: sorted(r for r in group if group[r] == g and r in trim) for g in set(group.values())}.items(),
+        key=lambda x: (host[x[1][0]] if x[1] else "", x[0])) if ls]
 
 page = open(os.path.join(os.path.dirname(__file__), "real_data_report.html")).read()
 page = (page.replace("{{TITLE}}", html.escape(TITLE)).replace("{{NOTES}}", NOTES)

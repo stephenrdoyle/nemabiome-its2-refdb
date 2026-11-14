@@ -13,6 +13,10 @@
 # again on 28S-cut ASVs against this build, bin/classify_asvs.py against
 # both, and bin/compare_arms.py. Steps whose output exists are skipped:
 # delete an output to redo it.
+#
+# TRIM_ARGS passes options to bin/trim_primers.py (--pretrimmed for reads
+# deposited without primers); ONLY150=1 runs the 2x150 set alone, for
+# 2x150 data.
 set -e
 P=$1; BUILD=$2; OUT=$3
 T=${THREADS:-8}
@@ -21,8 +25,8 @@ mkdir -p $OUT $REFS
 [ -s $REFS/nemits2_dev.fasta ] || python3 -I bin/export_dada2.py $BUILD $REFS/nemits2_dev.fasta
 [ -s $REFS/nemabiome_20260317.fasta ] || cp work/test/refs/nemabiome_20260317.fasta $REFS/
 
-[ -s $OUT/$P/250/trim_stats.tsv ] || python3 -I bin/trim_primers.py work/testdata/$P $OUT/$P/250 --workers $T
-[ -s $OUT/$P/150/trim_stats.tsv ] || python3 -I bin/trim_primers.py work/testdata/$P $OUT/$P/150 --length 150 --workers $T
+[ "${ONLY150:-0}" = 1 ] || [ -s $OUT/$P/250/trim_stats.tsv ] || python3 -I bin/trim_primers.py work/testdata/$P $OUT/$P/250 --workers $T $TRIM_ARGS
+[ -s $OUT/$P/150/trim_stats.tsv ] || python3 -I bin/trim_primers.py work/testdata/$P $OUT/$P/150 --length 150 --workers $T $TRIM_ARGS
 
 arms() {
   local X=$1
@@ -40,6 +44,7 @@ arms() {
 [ -s $OUT/$P.150.counts.tsv ] || THREADS=$T Rscript bin/dada2_nemabiome.R $OUT/$P/150 $OUT/$P.150 concat \
   $REFS/nemabiome_20260317.fasta $REFS/nemits2_dev.fasta
 arms $OUT/$P.150
+[ "${ONLY150:-0}" = 1 ] && exit 0
 [ -s $OUT/$P.250.hybrid.counts.tsv ] || THREADS=$T Rscript bin/dada2_nemabiome.R $OUT/$P/250 $OUT/$P.250 merge,concat,hybrid \
   $REFS/nemabiome_20260317.fasta $REFS/nemits2_dev.fasta
 for m in merge concat hybrid; do arms $OUT/$P.250.$m; done

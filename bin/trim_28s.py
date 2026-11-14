@@ -15,6 +15,10 @@ bases), taken only if it removes 35-60 bases; else the last 47 bases go.
 A concatenated ASV (forward + 10 N + reverse, from 2x150 pairs) is cut
 in its reverse part. ASVs with under 100 bases left are not ITS2 and are
 dropped (a few short junk ASVs; they also overflow IdTaxa's memory).
+An ASV whose reverse primer sat on the anchor itself (PRJEB64582: the
+primer covers its last 20 bases) ends partway into it. Where the whole
+anchor is not found, a prefix of it (>= 15 bases, <= 2 edits) that runs
+to the ASV's very end is taken instead.
 --anchor-only leaves an ASV whole when the anchor is not found, for
 ASVs that may not reach 28S (the simulated mocks, which were made from
 database records rather than amplicons). Writes asv, sequence.
@@ -41,6 +45,19 @@ SEP = "N" * 10
 ANCHOR = S28[:-4]
 
 
+MIN_PREFIX, PREFIX_EDITS = 15, 2
+
+
+def prefix_cut(part):
+    """Where the longest anchor prefix ending at part's end starts, or None."""
+    for k in range(len(ANCHOR) - 1, MIN_PREFIX - 1, -1):
+        tail = part[-(k + PREFIX_EDITS):]
+        hit = find_anchor_cost(tail, ANCHOR[:k], PREFIX_EDITS)
+        if hit and hit[1] >= len(tail) - PREFIX_EDITS:     # fit runs to the end
+            return len(part) - len(tail) + hit[0]
+    return None
+
+
 def trim(s, anchor_only=False):
     """(trimmed sequence, whether the anchor was found)."""
     head, sep, tail = s.partition(SEP)
@@ -48,6 +65,9 @@ def trim(s, anchor_only=False):
     hit = find_anchor_cost(part[-LOOK:], ANCHOR, MAX_EDITS) if len(part) >= LOOK else None
     cut = len(part) - LOOK + hit[0] if hit else None
     found = cut is not None and CUT_RANGE[0] <= len(part) - cut <= CUT_RANGE[1]
+    if not found:
+        cut = prefix_cut(part)
+        found = cut is not None
     if not found:
         if anchor_only:
             return s, False
