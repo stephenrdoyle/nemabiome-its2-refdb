@@ -1308,3 +1308,23 @@ amphid needs changes before it can use this database:
     (Y10790, MG651896) and 12-16 in the paper's Usyd065-068, against
     14-38 in the goat reads (about 4,400 reads at 22-38). Repeat-aware
     scoring (§6), not a reference, is what names them.
+18. ***Metastrongylus* (2026-11-13).** Nearly all records are SSCP bands
+    of Conole et al. (2001, Parasitology 122:195; Estonian wild boar),
+    whose ITS2 varies chiefly in microsatellites, within and between
+    worms. *M. pudendotectus* is one species: records up to 78 edits
+    apart plain are 2-11 apart with repeats collapsed, and repeat-aware
+    scoring names it. *M. salmi* is not: three types, each tight, A
+    (AJ305394/99/402, 396/397) and C (AJ305398/401/404, Uzbek ON197185)
+    21-34 edits apart, about as far as A is from *M. apri*. Type C
+    is the sequence Humbert & Henry (1997) deposited as
+    *M. asymmetricus* (Y08006, identical over its span), and their own
+    "*M. salmi*" (Y08009, reverse-complemented, not in the database) is
+    2 edits from their *M. confusus* (Y08007). The two studies' labels
+    cannot both be right; type C stays tied with *M. asymmetricus* at
+    genus, and Y08008/Y08009 are left out. Type B (AJ305395/400/403) is
+    type A lacking a 44-base block after the (TCG)n that every other
+    record carries, most likely an artefact of sequencing a gel band:
+    dropped. Added by hand (`curation/genbank_named.tsv`): the rest of
+    the Conole bands, *M. apri* from Denmark, Viet Nam and Brazil, and 14
+    Brazilian wild boar *M. salmi* (OR660330-50, unpublished), a further
+    type 17-27 edits from every other record.

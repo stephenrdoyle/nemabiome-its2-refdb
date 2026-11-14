@@ -151,7 +151,7 @@ PZ369172	drop		Ashworthius sidemi 100 edits from every other Ashworthius sidemi 
 PZ439646	drop		Ditylenchus dipsaci 74 edits from every other Ditylenchus dipsaci record and nothing within 10 (genbank_update; bin/species_coherence.py, stray)
 PP987714	drop		Mastophorus muris 66 edits from every other Mastophorus muris record and nothing within 10 (genbank_update; bin/species_coherence.py, stray)
 LC968611	drop		Meloidogyne graminicola 52 edits from every other Meloidogyne graminicola record and nothing within 10 (genbank_update; bin/species_coherence.py, stray)
-PZ600301	drop		Haemonchus contortus 44 edits from every other Haemonchus contortus record and nothing within 10 (genbank_update; bin/species_coherence.py, stray)
+# PZ600301 (dropped 2026-11-11 as a stray H. contortus) is an ITS1/5.8S record with no ITS2; bin/genbank_update.py no longer takes it (2026-11-13)
 PZ213868	drop		Steinernema pakistanense 32 edits from every other Steinernema pakistanense record and nothing within 10 (genbank_update; bin/species_coherence.py, stray)
 PZ558333	drop		Oscheius myriophilus 31 edits from every other Oscheius myriophilus record and nothing within 10 (genbank_update; bin/species_coherence.py, stray)
 PZ558334	drop		Oscheius myriophilus 31 edits from every other Oscheius myriophilus record and nothing within 10 (genbank_update; bin/species_coherence.py, stray)
@@ -171,3 +171,6 @@ ON332070	relabel	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Onchocercidae
 ON332071	relabel	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Onchocercidae;Dirofilaria;Dirofilaria asiatica	Dirofilaria repens -> D. asiatica: Sri Lankan dog (Kandy), 1-3 edits from the D. asiatica genome GCA_053573785, 22-24 from the D. repens genome GCA_008729115; D. asiatica's range, 2026-11-12
 PV643877	relabel	Eukaryota;Metazoa;Nematoda;Chromadorea;Rhabditida;Onchocercidae;Dirofilaria;Dirofilaria asiatica	Dirofilaria repens -> D. asiatica: GenBank now names it D. asiatica (Sri Lanka, Kandy); 1-3 edits from the D. asiatica genome, 2026-11-12
 JF276023	drop		Trichostrongylus capricola, the one record of its species (goat, Iran): 1 edit from 692 of 766 ITS2 copies of the T. colubriformis genome GCA_963978875, inside that genome's own 1-7 edit spread; held T. colubriformis reads at genus, 2026-11-12
+AJ305395	drop		Metastrongylus salmi ITS2 'type B' (Conole et al. 2001 SSCP band): identical to type A (AJ305394/99/402) except it lacks the 44-base block after the (TCG)n repeat that every other Metastrongylus record carries; likely an artefact of sequencing a gel band, 2026-11-13
+AJ305400	drop		Metastrongylus salmi ITS2 'type B' (Conole et al. 2001 SSCP band): identical to type A (AJ305394/99/402) except it lacks the 44-base block after the (TCG)n repeat that every other Metastrongylus record carries; likely an artefact of sequencing a gel band, 2026-11-13
+AJ305403	drop		Metastrongylus salmi ITS2 'type B' (Conole et al. 2001 SSCP band): identical to type A (AJ305394/99/402) except it lacks the 44-base block after the (TCG)n repeat that every other Metastrongylus record carries; likely an artefact of sequencing a gel band, 2026-11-13
