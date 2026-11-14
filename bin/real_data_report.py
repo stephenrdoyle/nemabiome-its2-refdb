@@ -11,7 +11,8 @@ and host, where the run titles do not name it). Where
 work/testdata/<project>.replicates.tsv (run_accession, sample) pairs
 libraries of one sample, the page can also count by sample, keeping only
 ASVs found in every library of it. An ASV no record aligns to (blank
-`nearest` in the gap rule's table) is shown apart from unassigned when a
+`nearest` in the gap rule's table; off-target products, primer dimers)
+is shown as "not ITS2-like", apart from unassigned ("unplaced ITS2"), when a
 classifier leaves it above genus. One self-contained page: trimming, the 2x250 merge
 options against 2x150, the share of reads each classifier names to
 species, genus or above, per-sample composition, and a per-sample table.
@@ -63,12 +64,12 @@ def ours(f, rule):
             for r in rows}
 
 
-NONE = "no record aligns"
+NONE = "not ITS2-like"
 
 
 def call(rank, name, stray=False):
     """(level, genus, label): level species / genus / higher (family or
-    above) / unassigned, or none for a stray ASV (no record aligns) left
+    above) / unassigned (unplaced ITS2), or none for a stray ASV (not ITS2-like) left
     above genus."""
     if stray and rank not in ("species", "genus"):
         return "none", "", NONE
@@ -77,7 +78,7 @@ def call(rank, name, stray=False):
     if rank == "genus":
         return "genus", name, name + " (genus)"
     if rank == "unassigned" or not name:
-        return "unassigned", "", "unassigned"
+        return "unassigned", "", "unplaced ITS2"
     return "higher", "", f"{name} ({rank})"
 
 

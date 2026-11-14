@@ -89,8 +89,8 @@ footer { color: var(--muted); font-size: 0.8rem }
 
   <section>
     <h2>How deep each classifier names the reads</h2>
-    <p class="sub">Share of reads named to species, stopped at genus, stopped at family or above, or left unassigned. Reads no record aligns to (likely off-target) are shown apart from unassigned. Hover a bar for the numbers.</p>
-    <div class="legend"><span><i style="background:var(--lv-species)"></i>Species</span><span><i style="background:var(--lv-genus)"></i>Genus</span><span><i style="background:var(--lv-higher)"></i>Family or above</span><span><i style="background:var(--unassigned)"></i>Unassigned</span><span><i style="background:var(--lv-none)"></i>No record aligns</span></div>
+    <p class="sub">Share of reads named to species, stopped at genus, stopped at family or above, or unplaced: ITS2 too far from every record to name a family. Reads nothing in the database aligns to, mostly off-target products and primer dimers, are shown as not ITS2-like. Hover a bar for the numbers.</p>
+    <div class="legend"><span><i style="background:var(--lv-species)"></i>Species</span><span><i style="background:var(--lv-genus)"></i>Genus</span><span><i style="background:var(--lv-higher)"></i>Family or above</span><span><i style="background:var(--unassigned)"></i>Unplaced ITS2</span><span><i style="background:var(--lv-none)"></i>Not ITS2-like</span></div>
     <div class="panel"><div class="small-multiples" id="depth"></div></div>
   </section>
 
@@ -156,7 +156,7 @@ $("#lede").textContent = `${D.samples.length} samples: ` + Object.entries(hosts)
 
 /* depth small multiples */
 const LV = ["species", "genus", "higher", "unassigned", "none"];
-const LVNAME = {species: "Species", genus: "Genus", higher: "Family or above", unassigned: "Unassigned", none: "No record aligns"};
+const LVNAME = {species: "Species", genus: "Genus", higher: "Family or above", unassigned: "Unplaced ITS2", none: "Not ITS2-like"};
 const bySample = () => unitSel.value === "smp" && D.groups;
 const percall = (set, arm) => (bySample() ? set.by_sample : set.arms)[arm];
 function levels(set, arm) {
@@ -197,9 +197,9 @@ D.sets.forEach(s => Object.values(s.arms).forEach(per => Object.values(per).forE
   rows.forEach(([lv, g, , n]) => { if (g) gTot[g] = (gTot[g] || 0) + n }))));
 const topG = Object.entries(gTot).sort((a, b) => b[1] - a[1]).slice(0, 7).map(x => x[0]);
 const gColor = g => topG.includes(g) ? `var(--s${topG.indexOf(g) + 1})` : g ? "var(--other)" : "var(--unassigned)";
-const gKey = (g, lv) => lv === "none" ? "No record aligns" : lv === "unassigned" ? "Unassigned" : topG.includes(g) ? g : g ? "Other genera" : "Family or above";
+const gKey = (g, lv) => lv === "none" ? "Not ITS2-like" : lv === "unassigned" ? "Unplaced ITS2" : topG.includes(g) ? g : g ? "Other genera" : "Family or above";
 $("#genus-legend").innerHTML = topG.map(g => `<span><i style="background:${gColor(g)}"></i><em>${esc(g)}</em></span>`).join("") +
-  `<span><i style="background:var(--other)"></i>Other genera</span><span><i style="background:var(--muted)"></i>Family or above</span><span><i style="background:var(--unassigned)"></i>Unassigned</span><span><i style="background:var(--lv-none)"></i>No record aligns</span>` +
+  `<span><i style="background:var(--other)"></i>Other genera</span><span><i style="background:var(--muted)"></i>Family or above</span><span><i style="background:var(--unassigned)"></i>Unplaced ITS2</span><span><i style="background:var(--lv-none)"></i>Not ITS2-like</span>` +
   `<span><i style="background:repeating-linear-gradient(135deg,var(--fg2) 0 2px,transparent 2px 5px)"></i>Stops at genus</span>`;
 
 const setSel = $("#set"), armSel = $("#arm"), unitSel = $("#unit");
@@ -215,7 +215,7 @@ function save() { try { localStorage.setItem("rdr-" + D.project, JSON.stringify(
 
 function sampleBlocks(rows) {
   /* group a sample's calls into genus blocks, species part then genus-only part */
-  const order = [...topG, "Other genera", "Family or above", "Unassigned", "No record aligns"], b = {};
+  const order = [...topG, "Other genera", "Family or above", "Unplaced ITS2", "Not ITS2-like"], b = {};
   rows.forEach(([lv, g, lab, n]) => {
     const k = gKey(g, lv), x = b[k] = b[k] || {sp: 0, ge: 0, hi: 0, g, items: []};
     x[lv === "species" ? "sp" : lv === "genus" ? "ge" : "hi"] += n; x.items.push([lab, n]);
@@ -239,7 +239,7 @@ function drawComp() {
       [["sp", false], ["ge", true], ["hi", false]].forEach(([f, hatch]) => {
         if (!bk[f]) return;
         const h = H * bk[f] / t; y -= h;
-        const fill = bk.key === "No record aligns" ? "var(--lv-none)" : bk.key === "Unassigned" ? "var(--unassigned)" : bk.key === "Family or above" ? "var(--muted)" : gColor(bk.g);
+        const fill = bk.key === "Not ITS2-like" ? "var(--lv-none)" : bk.key === "Unplaced ITS2" ? "var(--unassigned)" : bk.key === "Family or above" ? "var(--muted)" : gColor(bk.g);
         out.push(`<rect x="${x}" y="${y.toFixed(2)}" width="${bw}" height="${Math.max(h - 1, 0.5).toFixed(2)}" fill="${fill}"${hatch ? ` mask="url(#hatch)"` : ""} data-run="${s.run}"/>`);
       });
     });
@@ -276,7 +276,7 @@ function cols() {
 function drawGroups() {
   const set = D.sets.find(s => s.id === setSel.value), per = set.by_sample[armSel.value] || {};
   let h = `<tr><th class="l">Sample</th><th class="l">Host</th><th class="l">Libraries</th><th>Reads</th><th>In both libraries</th>
-    <th>Species, ${esc(set.label)}</th><th>No record aligns</th><th class="l">Top call</th></tr>`;
+    <th>Species, ${esc(set.label)}</th><th>Not ITS2-like</th><th class="l">Top call</th></tr>`;
   D.groups.forEach(g => {
     const rows = per[g.id] || [], t = rows.reduce((a, q) => a + q[3], 0);
     const all = g.runs.reduce((a, r) => a + (set.track[r] ? set.track[r].nonchim : 0), 0);
